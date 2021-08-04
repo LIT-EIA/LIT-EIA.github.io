@@ -1,6 +1,6 @@
 [
   {
-    "_component": "text",
+    "_component": "quicknav",
     "_classes": "",
     "_isOptional": false,
     "_isAvailable": true,
@@ -8,13 +8,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "New Component Title",
-    "displayTitle": "New Component Title",
-    "body": "This is a text component",
-    "_id": "5ffe24a70f1c9f0f2675b553",
-    "_parentId": "5ffe24a70f1c9f0f2675b552",
+    "title": "Quick Navigation (title hidden)",
+    "displayTitle": "",
+    "body": "<p>The <strong>Exploring Beginner Component</strong> Module is now complete.</p><p>Select the <strong>Previous </strong>button to return to the previous module, or the&nbsp;<strong>Next</strong> button to continue to the Next Module.</p><p>To go to the Main Menu, either select the <strong>Return to Main Menu</strong> button, or select the <strong>Home</strong> button on the top left corner.</p>",
+    "_id": "610459140f1c9f0f2677e652",
+    "_parentId": "610459140f1c9f0f2677e621",
     "_type": "component",
     "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -22,6 +27,208 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": "",
+    "_loopStyle": "none",
+    "_buttons": {
+      "_returnToPreviousLocation": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Return",
+        "ariaLabel": "Return to previous location",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}"
+      },
+      "_previous": {
+        "_isEnabled": true,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Previous",
+        "ariaLabel": "Previous Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_root": {
+        "_isEnabled": true,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Return to Main Menu",
+        "ariaLabel": "Return to Main Menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_up": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Back to menu",
+        "ariaLabel": "Back to menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_next": {
+        "_isEnabled": true,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Next >",
+        "ariaLabel": "Next Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_sibling": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "{{inc index}}",
+        "ariaLabel": "Page {{inc index}}",
+        "_showTooltip": true,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_close": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Close",
+        "ariaLabel": "Close window",
+        "_showTooltip": false,
+        "tooltip": "Close window"
+      }
+    }
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Accordion Component ",
+    "displayTitle": "",
+    "body": "<p>You can use the accordion component to present learners with a series of headings, which once selected, expand to reveal associated text.</p><p>The maximum recommended number of headings is eight within a component.</p>",
+    "_id": "610459140f1c9f0f2677e660",
+    "_parentId": "610459140f1c9f0f2677e62e",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select each title to learn more. Open/read all 4 accordions to complete this activity.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "ITEM TITLE - Lists",
+        "body": "<p>Grocery List</p><ul><li>Bread</li><li>Cheese</li><li>Cookies</li><li>Eggs</li><li>Milk</li></ul>",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "ITEM TITLE #2 - Steps in a process",
+        "body": "<p>Here you can add text with steps in a process. Example of doing laundry:</p><ol><li>Sort the clothing by color.</li><li>Sort the clothing by fabric (e.g. delicates).</li><li>Special instructions for certain fabrics (e.g. dry clean only).</li><li>Place the clothing in the washing machine.</li><li>Add detergent.</li></ol>",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Regular Item",
+        "body": "<p>Add regular paragraphs:</p><p>Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>Lorem Ipsum has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Text with graphic",
+        "body": "<p>You may want to do the accordion with text and an image. If you do so, ensure consistency. Text with image for all the headings or just text.</p><p>This is a demonstration only.</p><p>Reminder: if your image is decorative, no alternate text is required.</p><p><strong>We will go more in-depth about images in a future module</strong>.</p>",
+        "_graphic": {
+          "alt": "",
+          "src": "course/en/assets/e2fb3d5f470e3d4ae81588d03eb373330494abfa.jpg",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Graphic Component",
+    "displayTitle": "",
+    "body": "<p>In a graphic component, you can display or hide the title, and you may also choose to display some text or not. If your image is decorative, you do not need to add \"alt text\" for your image.</p><p>When adding your image from the Asset Management, simply select \"autofill\" for the image to be uploaded to both to the Large and Small graphic section.</p>",
+    "_id": "610459140f1c9f0f2677e661",
+    "_parentId": "610459140f1c9f0f2677e627",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "rubix cube.",
+      "large": "course/en/assets/41b9f7059aebf0bd23bdc644133ebbc78a21197d.png",
+      "small": "course/en/assets/41b9f7059aebf0bd23bdc644133ebbc78a21197d.png",
+      "attribution": ""
     }
   },
   {
@@ -33,13 +240,186 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Sharepoint folder",
-    "displayTitle": "Sharepoint folder",
-    "body": "<ul><li>Verify that the folder is labeled Working&nbsp;</li><li>If it is not labeled Working– contact the GT4 who assigned it to verify these are the correct files to be used&nbsp;</li><li>Download files to your C&nbsp;</li><li>Start working&nbsp;</li></ul>",
-    "_id": "5ffe2d750f1c9f0f2675b5b8",
-    "_parentId": "5ffe24f00f1c9f0f2675b55c",
+    "title": "Text Component",
+    "displayTitle": "",
+    "body": "<p>This is the body of the text component.</p><p>If you are doing a copy &amp; paste from another source into Adapt, use the paste as plain text icon (clipboard with a letter T) to insert your text.</p><p>Rule of thumb, use bold and italized sparingly.</p><p>Italics should only be used for the following:</p><ul><li>Title of books, pamphlets, published reports, films, most works of art, newspapers, magazines and other periodicals;</li><li>Complete name of policies, court cases, statutes and acts; and</li><li>French or foreign words that have not been anglicized.</li></ul><p>&nbsp;</p>",
+    "_id": "610459140f1c9f0f2677e662",
+    "_parentId": "610459140f1c9f0f2677e625",
     "_type": "component",
     "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "What is Adapt? (graphic)",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e663",
+    "_parentId": "610459140f1c9f0f2677e62f",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/c917eba5cb15e646b8324047d980f0d534896fb0.png",
+      "small": "course/en/assets/c917eba5cb15e646b8324047d980f0d534896fb0.png",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "What is Adapt?",
+    "displayTitle": "",
+    "body": "<p>To do any job effectively, you need tools that can help you do the work. In construction, you have tools to help you put in nails and screws, to cut wood, etc.</p><p>To create eLearning, you need tools to help you build your course; these are called eLearning Authoring Tools, or eLATs. Many companies offer eLATs: Adobe has Captivate, eLearning Brothers has Lectora (previously known as SNAP), dominKnow has DominKnow ONE, and other tools are open source, like Adapt.</p><p>Some are harder to use and some easier, but all of these eLearning Authoring Tools do the same thing: they make it easy to create eLearning without needing to know any programming.</p>",
+    "_id": "610459140f1c9f0f2677e664",
+    "_parentId": "610459140f1c9f0f2677e62f",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Adapt - Graphic Component",
+    "displayTitle": "",
+    "body": "<p>At ESDC, we use <strong>Adapt</strong>.</p><p><strong>Adapt </strong>is a free (open source software) <strong>eLearning Authoring Tool.</strong> What makes it easy to use is the way it structures a course.</p><p>The best model to explain the structure of an Adapt course is a magazine.</p><p>A magazine consists of pages with articles, paragraphs, pictures, stand out quotes, etc. Adapt lets you build courses the same way. &nbsp;</p><p>Let’s look at the typical magazine layout and compare it to the Adapt structure.</p>",
+    "_id": "610459140f1c9f0f2677e665",
+    "_parentId": "610459140f1c9f0f2677e630",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "Adapt logo",
+      "large": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "small": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Magazine graphic",
+    "displayTitle": "",
+    "body": "<p style=\"text-align:center\">A <strong>MAGAZINE </strong>has:</p><p style=\"text-align:center\"><span style=\"color:#B22222\"><strong>PAGES</strong></span><span style=\"color:#FFA500\"> </span>with <span style=\"color:#008000\"><strong>ARTICLES</strong></span>,</p><p style=\"text-align:center\"><span style=\"color:#008000\"><strong>ARTICLES</strong> </span>with <span style=\"color:#800080\"><strong>PARAGRAPHS </strong></span>and</p><p style=\"text-align:center\"><span style=\"color:#800080\"><strong>PARAGRAPHS </strong></span>with interesting <span style=\"color:#0000FF\"><strong>ELEMENTS</strong>.</span></p>",
+    "_id": "610459140f1c9f0f2677e666",
+    "_parentId": "610459140f1c9f0f2677e631",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "MAgazine with labels",
+      "large": "course/en/assets/57524b6f5bc473ddca6ea0d13e1f6c757d98635b.jpg",
+      "small": "course/en/assets/57524b6f5bc473ddca6ea0d13e1f6c757d98635b.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Magazine",
+    "displayTitle": "",
+    "body": "<p style=\"text-align:center\"><strong>Magazine</strong></p><ul><li>Every <strong>Magazine</strong> has a <strong>Name</strong>.</li><li>In a magazine, there are<strong> <span style=\"color:rgb(178, 34, 34)\">PAGES</span></strong>. Each page (or set of pages) has information on a topic or subject.</li><li>On a page, depending on the size of the magazine, there is one or more <span style=\"color:rgb(0, 128, 0)\"><strong>ARTICLES</strong></span>. Each article has a Headline and may have a Kicker (abstract). When articles are grouped under the same topic, there might be a Running Head so the reader can tell that each article deals with the same topic.</li><li>The body of an article consists of a number of <span style=\"color:rgb(128, 0, 128)\"><strong>PARAGRAPHS</strong></span> (body text). Each paragraph is on the article's&nbsp;topic, but has a different key point or message. Some paragraphs will have a Subhead, and some may not. &nbsp;</li><li>To make a magazine more interesting and to keep the attention of the reader, many paragraphs have attention pieces called <span style=\"color:rgb(0, 0, 205)\"><strong>ELEMENTS</strong></span>.&nbsp;Elements include pictures (images),&nbsp;word art (Pull Quotes) or lists in a box that further highlights a point.</li></ul>",
+    "_id": "610459140f1c9f0f2677e667",
+    "_parentId": "610459140f1c9f0f2677e631",
+    "_type": "component",
+    "_layout": "right",
     "_onScreen": {
       "_isEnabled": false,
       "_classes": "",
@@ -64,13 +444,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2d7f0f1c9f0f2675b5b9",
-    "_parentId": "5ffe24e30f1c9f0f2675b559",
+    "title": "Adapt course",
+    "displayTitle": "",
+    "body": "<p style=\"text-align:center\"><strong>Adapt</strong></p><ul><li>In Adapt there is a <strong>Course Title</strong>, which&nbsp;is like the name of a magazine.</li><li>In Adapt, a course consists of <strong><span style=\"color:rgb(178, 34, 34)\">PAGES</span>.</strong> Each represents a new subject, lesson or learning activity.</li><li>In Adapt; each page can have as many <strong><span style=\"color:rgb(0, 100, 0)\">ARTICLES</span> </strong>as needed. These articles can have “Article Titles” and text to explain what is coming. Typically, each article on a page will be on the same topic, but may explore different parts of the topic. The “running title” in an Adapt course is the Page Title.</li><li>In Adapt, each article is made up of many <span style=\"color:rgb(128, 0, 128)\"><strong>BLOCKS</strong> </span>(paragraphs). Just like in a magazine, each block points out a key message. As with a paragraph, some of the blocks may have a visible Subheader (block title), and some may not.</li><li>In Adapt, every block consists of one or two <strong>\"<span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span>\"</strong> (elements). These can be text, graphics, videos, etc., all to ensure the learner is engaged and attentive.</li></ul>",
+    "_id": "610459140f1c9f0f2677e668",
+    "_parentId": "610459140f1c9f0f2677e632",
     "_type": "component",
-    "_layout": "full",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -78,6 +463,284 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Adapt course graphic",
+    "displayTitle": "",
+    "body": "<p style=\"text-align: center;\"><strong>An Adapt course </strong>has:</p><p style=\"text-align: center;\"><span style=\"color:rgb(178, 34, 34)\"><strong>PAGES </strong></span>with <strong><span style=\"color:rgb(0, 128, 0)\">ARTICLES</span>, </strong></p><p style=\"text-align: center;\"><strong><span style=\"color:rgb(0, 100, 0)\">ARTICLES</span></strong> with <span style=\"color:rgb(128, 0, 128)\"><strong>BLOCKS </strong></span>and</p><p style=\"text-align: center;\"><strong><span style=\"color:rgb(128, 0, 128)\">BLOCKS</span> </strong>with interesting <span style=\"color:rgb(0, 0, 255)\"><strong>COMPONENTS</strong></span>.</p><p style=\"text-align: center;\">&nbsp;</p>",
+    "_id": "610459140f1c9f0f2677e669",
+    "_parentId": "610459140f1c9f0f2677e632",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "ADAPT back end Picture",
+      "large": "course/en/assets/06aae87ab2f8903b3df60700a5e929a166339497.jpg",
+      "small": "course/en/assets/06aae87ab2f8903b3df60700a5e929a166339497.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "quicknav",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Quick Navigation",
+    "displayTitle": "",
+    "body": "<p>This concludes the <strong>Adapt eLearning Authoring Tool</strong> module.</p><p>Select the <strong>Next</strong> button to move on to the next module. In the next lesson, we will look at what a page, article, block and component look like in a course.</p><p>To access the main menu, select the <strong>Return to Main Menu </strong>button<strong> </strong>or the <strong>Home </strong>button located in the upper left corner of the page in the navigation section.</p>",
+    "_id": "610459140f1c9f0f2677e66a",
+    "_parentId": "610459140f1c9f0f2677e633",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_loopStyle": "none",
+    "_buttons": {
+      "_returnToPreviousLocation": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Return",
+        "ariaLabel": "Return to previous location",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}"
+      },
+      "_previous": {
+        "_isEnabled": true,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Previous",
+        "ariaLabel": "Previous Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_root": {
+        "_isEnabled": true,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Return to Main Menu",
+        "ariaLabel": "Return to Main Menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_up": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Back to menu",
+        "ariaLabel": "Back to menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_next": {
+        "_isEnabled": true,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Next >",
+        "ariaLabel": "Next Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_sibling": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "{{inc index}}",
+        "ariaLabel": "Page {{inc index}}",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_close": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Close",
+        "ariaLabel": "Close window",
+        "_showTooltip": false,
+        "tooltip": "Close window"
+      }
+    }
+  },
+  {
+    "_component": "quicknav",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Quick Navigation",
+    "displayTitle": "",
+    "body": "<p>To access the main menu, select the <strong>Return to Main Menu</strong> button or the <strong>Home</strong> button located in the upper left corner of the page in the navigation section.</p><p>If you are done with the course, close this browser.</p>",
+    "_id": "610459140f1c9f0f2677e66b",
+    "_parentId": "610459140f1c9f0f2677e636",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_loopStyle": "none",
+    "_buttons": {
+      "_returnToPreviousLocation": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Return",
+        "ariaLabel": "Return to previous location",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}"
+      },
+      "_previous": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Previous",
+        "ariaLabel": "Previous Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_root": {
+        "_isEnabled": true,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Return to Main Menu",
+        "ariaLabel": "Return to Main Menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_up": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Back to menu",
+        "ariaLabel": "Back to menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_next": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Next >",
+        "ariaLabel": "Next Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_sibling": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "{{inc index}}",
+        "ariaLabel": "Page {{inc index}}",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_close": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Close",
+        "ariaLabel": "Close window",
+        "_showTooltip": false,
+        "tooltip": "Close window"
+      }
     }
   },
   {
@@ -89,13 +752,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2d8f0f1c9f0f2675b5ba",
-    "_parentId": "5ffe299e0f1c9f0f2675b579",
+    "title": "Comments / Feedback",
+    "displayTitle": "",
+    "body": "<p>Thank you for taking the time to participate in this <strong>Adapt Authoring Tool - Beginners</strong> pilot. Please join us from 2:00pm to 3:00pm (EST) to provide us with your comments and feedback. The link to join us on MS Teams is available in your calendar invite.</p><p>Your comments / feedback are very important and will allow us to make the final changes to our course before its official launch in September.</p>",
+    "_id": "610459140f1c9f0f2677e66c",
+    "_parentId": "610459140f1c9f0f2677e635",
     "_type": "component",
-    "_layout": "full",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -103,6 +771,226 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Ready for your account creation",
+    "displayTitle": "",
+    "body": "<p>Now that you have completed the <strong>Adapt Authoring Tool - Beginners </strong>on-line course, you are ready to have your account created. Please email us at the following address to obtain a username and password:</p><p><a href=\"mailto:NC-SIGA-SABA-APPRENTISSAGE-ILMS-SABA-LEARNING-GD@hrsdc-rhdcc.gc.ca?subject=Demande%20de%20cr%C3%A9ation%20de%20compte%20Adapt%20%7C%20Request%20for%20Adapt%20account%20creation&amp;body=Bonjour%20%2F%20Hello%2C%0A%0ASVP%20me%20donner%20acc%C3%A8s%20%C3%A0%20un%20compte%20Adapt%20%2F%20Please%20give%20me%20access%20to%20an%20Adapt%20account.%0A%0ACourriel%20%2F%20Email%20%3A%20%0ANom%20%2F%20Last%20Name%20%3A%20%0APr%C3%A9nom%20%2F%20First%20Name%20%3A%20%0A%0AMerci%20%2F%20Thank%20you\">NC-SIGA-SABA-APPRENTISSAGE-ILMS-SABA-LEARNING-GD@hrsdc-rhdcc.gc.ca</a></p>",
+    "_id": "610459140f1c9f0f2677e66d",
+    "_parentId": "610459140f1c9f0f2677e637",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Learning Objectives",
+    "displayTitle": "",
+    "body": "<p>The authoring tool allows you to quickly build HTML5 content without knowing coding.</p><p>In this course, you will learn about:</p><ul><li>The basics of the Adapt Authoring Tool</li><li>A plain language description of the Tool</li><li>A few basic components to get you started</li></ul>",
+    "_id": "610459140f1c9f0f2677e66e",
+    "_parentId": "610459140f1c9f0f2677e638",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "quicknav",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Quick Navigation",
+    "displayTitle": "",
+    "body": "<p>This concludes the <strong>Introduction</strong> module.</p><p>Select the <strong>Next</strong> button to move on to the next module.</p><p>To access the main menu, select the <strong>Return to Main Menu </strong>button<strong> </strong>or the <strong>Home </strong>button located in the upper left corner of the page in the navigation section.</p>",
+    "_id": "610459140f1c9f0f2677e66f",
+    "_parentId": "610459140f1c9f0f2677e639",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_loopStyle": "none",
+    "_buttons": {
+      "_returnToPreviousLocation": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Return",
+        "ariaLabel": "Return to previous location",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}"
+      },
+      "_previous": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Previous",
+        "ariaLabel": "Previous Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_root": {
+        "_isEnabled": true,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Return to Main Menu",
+        "ariaLabel": "Return to Main Menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_up": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Back to menu",
+        "ariaLabel": "Back to menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_next": {
+        "_isEnabled": true,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Next >",
+        "ariaLabel": "Next Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_sibling": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "{{inc index}}",
+        "ariaLabel": "Page {{inc index}}",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_close": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Close",
+        "ariaLabel": "Close window",
+        "_showTooltip": false,
+        "tooltip": "Close window"
+      }
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "ADAPT Graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e670",
+    "_parentId": "610459140f1c9f0f2677e63a",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "small": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "attribution": ""
     }
   },
   {
@@ -114,13 +1002,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2d9c0f1c9f0f2675b5bb",
-    "_parentId": "5ffe2aff0f1c9f0f2675b5a1",
+    "title": "Introduction",
+    "displayTitle": "",
+    "body": "<p>Welcome to the<strong> Adapt Authoring Tool - Beginner</strong> online course.</p><p>This course is mandatory for all new Adapt users. After completing this online course, you will receive an Adapt username and password to familiarize yourself with the Authoring Tool. You will also be invited to attend the instructor-led virtual class, which will cover how to create eLearning training in Adapt.</p><p>This course should take you approximately 45 minutes to complete.</p>",
+    "_id": "610459140f1c9f0f2677e671",
+    "_parentId": "610459140f1c9f0f2677e63a",
     "_type": "component",
-    "_layout": "full",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -128,6 +1021,155 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Learning Objectives Graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e672",
+    "_parentId": "610459140f1c9f0f2677e638",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/28320f04ef6d38e66566b174cac61617cdb0ec8a.jpg",
+      "small": "course/en/assets/28320f04ef6d38e66566b174cac61617cdb0ec8a.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Comments / Feedback Graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e674",
+    "_parentId": "610459140f1c9f0f2677e635",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/432d683065409d8ae2ad10ff8b4dfd1a5d46580e.jpg",
+      "small": "course/en/assets/432d683065409d8ae2ad10ff8b4dfd1a5d46580e.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Account Creation Graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e675",
+    "_parentId": "610459140f1c9f0f2677e637",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "small": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "End of Course",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e676",
+    "_parentId": "610459140f1c9f0f2677e63c",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/28320f04ef6d38e66566b174cac61617cdb0ec8a.jpg",
+      "small": "course/en/assets/28320f04ef6d38e66566b174cac61617cdb0ec8a.jpg",
+      "attribution": ""
     }
   },
   {
@@ -139,13 +1181,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2da40f1c9f0f2675b5bc",
-    "_parentId": "5ffe2b350f1c9f0f2675b5a4",
+    "title": "End of Course",
+    "displayTitle": "",
+    "body": "<p>Congratulations! You have now completed the <strong>Adapt Authoring Tool - Beginner</strong> on-line course.</p><p>You will be invited to register in Saba to attend an instructor-led virtual class which will cover how to create online eLearning training.</p>",
+    "_id": "610459140f1c9f0f2677e677",
+    "_parentId": "610459140f1c9f0f2677e63c",
     "_type": "component",
-    "_layout": "full",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -153,6 +1200,448 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Next Course",
+    "displayTitle": "",
+    "body": "<p>In the next instructor led course, you will learn more about:</p><ul><li>Different components (presentation and question components)</li><li>Preview, Publish and Export</li><li>Asset Management</li><li>Accessibility Best Practices</li></ul>",
+    "_id": "610459140f1c9f0f2677e678",
+    "_parentId": "610459140f1c9f0f2677e63d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Video",
+    "displayTitle": "",
+    "body": "<p>This video is a step-by-step process of how to add a new course in Adapt.</p>",
+    "_id": "610459140f1c9f0f2677e679",
+    "_parentId": "610459140f1c9f0f2677e626",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select the play button below to start the video and/or select the transcript button to read the narration.",
+    "_media": {
+      "mp4": "course/en/assets/726c522d58ed7a441dd5afef7e91519c5e6a7be3.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": true,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View transcript",
+      "inlineTranscriptCloseButton": "Hide transcript",
+      "inlineTranscriptBody": "<p>Once you have logged into the Adapt authoring tool Dashboard:</p><ul><li>Select the green button labelled <strong>Add new course</strong> located at the top left of the screen.</li><li>In the field labelled <strong>Title</strong>: Enter a&nbsp;course title and select the button labelled <strong>Save</strong>.</li></ul><p>When you select the Save button, Adapt will automatically add a page to the course build.</p><p>To change this&nbsp;Page's title:</p><ul><li>Select the gearwheel button labelled <strong>click to edit</strong>&nbsp;and select <strong>Edit </strong>from the options given.</li><li>In the field labelled <strong>Page title</strong>: Enter a new Page title.</li><li>Select the button labelled <strong>Save</strong>.</li></ul><p>Adapt will save your work and take you back to the Course structure page.</p><p>This is the first step to&nbsp;building your course!</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Sample Video - Add a Block",
+    "displayTitle": "",
+    "body": "<p>When utilizing the Accordion&nbsp;component, the impacts are at the <span style=\"color:rgb(128, 0, 128)\"><strong>BLOCK</strong> </span>and <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> levels.</p>",
+    "_id": "610459140f1c9f0f2677e67a",
+    "_parentId": "610459140f1c9f0f2677e62d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select the play button below to start the video and/or select the transcript button to read the narration.",
+    "_media": {
+      "mp4": "course/en/assets/f320841d472e3e1a81b46c67fb3a6bca5165c4f4.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View Transcript",
+      "inlineTranscriptCloseButton": "Hide Transcript",
+      "inlineTranscriptBody": "<p>Double click on the page you have just created and named. Adapt will bring you to the back-end of the authoring tool framework (Page structure) where the Page title, a New Article, a New Block and a New Text Component are automatically created and presented. Each time that you create a new course, the first page is populated with these items.</p><p>At this stage you can change/update:</p><ul><li>The Page title (if applicable);</li><li>The New Article Title; and</li><li>The New Block Title.</li></ul><p>There is an option to add content (text) at the <strong><span style=\"color:rgb(128, 0, 0)\">PAGE</span></strong>, <strong><span style=\"color:rgb(0, 100, 0)\">ARTICLE</span></strong>, and&nbsp;<span style=\"color:rgb(128, 0, 128)\"><strong>BLOCK</strong></span>&nbsp;levels, but it is not mandatory.</p><p><strong>You will learn more about this in future modules</strong>.</p><p>The Text Component can be changed or updated with additional information. To do this:</p><ul><li>Select the gearwheel button labelled “click to edit” and select Edit from the options given.</li></ul><p>There is an option to&nbsp;add additional content (text) in the field labelled Body (current text displays as \"This is a text component\").</p><p><strong>You will learn more about this in future modules</strong>.</p><p>At the <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;level you must select the option \"Add block\".</p><p>A new <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> is added to the page.&nbsp;</p><p>You have the option to add a title at the element labelled&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> title:</p><ul><li>Select the gearwheel labelled \"click to edit\" and select Edit from the options given.</li><li>Enter the name of the Block (if applicable) in the field under the box labelled Title.</li><li>Select the button labelled Save.</li></ul><p>Adapt will save your work and take you back to the Page structure page.</p><p>A new&nbsp;<span style=\"color:rgb(128, 0, 0)\"><strong>BLOCK</strong></span>&nbsp;can consist of one (full width) or two (one on the left and one on the right) <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span></strong>.</p><p>This new&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;allows you to add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>.&nbsp;There is an option to add content (text) here at the&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>&nbsp;level, but it is not mandatory.</p><p><strong>You will learn more about this in future modules</strong>.</p><p>To add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> you must:</p><ul><li>Select the&nbsp;button labelled Add Component.&nbsp;</li></ul><p>A side panel of available Adapt components appears on the right of the screen.</p><ul><li>Select or type the word Accordion from the list of available components.</li></ul><p>There are three (3) buttons that will&nbsp;appear:</p><ul><li>Add to left;</li><li>Add full, or</li><li>Add to right.</li></ul><p>For this exercise select the button labelled Add full.</p><p>A full width Accordion <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> is added to the page.</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Text on Building Course for Practice",
+    "displayTitle": "",
+    "body": "<p>The best way to ensure you understand the principles introduced is by creating your own simple course using the Adapt Authoring Tool. Refer to the concepts learned in the \"Exploring Components\" section of this course.</p><p>Consult the Resources section for helpful links and Job Aids:</p><ul><li>MeD SharePoint - link to be bookmarked<ul><li>Consult the Adapt section for extra documents, including the Best Practice and Instructions guide</li></ul></li><li>Adapt job aid user information</li><li>Log into your Adapt account job aid</li></ul><p>Should you have any additional questions in regards to concepts that have not been covered in this Beginners course, please refer to the Adapt Super User of your Design Team.</p>",
+    "_id": "610459140f1c9f0f2677e67b",
+    "_parentId": "610459140f1c9f0f2677e641",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Graphic for journey",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e67c",
+    "_parentId": "610459140f1c9f0f2677e641",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/876c147eedcc1836d8e7a16a7b03b219773ad11f.jpg",
+      "small": "course/en/assets/876c147eedcc1836d8e7a16a7b03b219773ad11f.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Sample video - Add Accordion component",
+    "displayTitle": "",
+    "body": "<p>When creating content for the Accordion&nbsp;component, the impact&nbsp;is at the <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> level.</p>",
+    "_id": "610459140f1c9f0f2677e67d",
+    "_parentId": "610459140f1c9f0f2677e63e",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_media": {
+      "mp4": "course/en/assets/8b095bb2506c1f5156ee11b6dafc3d2eefcd2024.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View Transcript",
+      "inlineTranscriptCloseButton": "Hide Transcript",
+      "inlineTranscriptBody": "<p>You can now create&nbsp;the content for the&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>:</p><ul><li>Select the gearwheel button labelled “click to edit” and select Edit from the options given.</li><li>Enter the title name of the Component (if applicable) in the field under the box labelled Title.</li><li>Written content (text) can be added to the box labelled Body (if applicable).</li></ul><p>Scroll down to Properties section to the box under the Instruction section:&nbsp;</p><ul><li>Instructions must be added to ensure learners navigate the component properly (e.g. Select each title to learn more on (...). Open/read all 4 accordions to complete this activity.) [Refer to the Best Practices and Instructions Adapt Authoring Tool guide.]</li></ul><p>Select the button labelled <strong>Add</strong>. A side panel will appear with options to:</p><ul><li>Add an Item Title.</li><li>Add item body content (type text in this box).</li></ul><p>Once you have added the item title and body content use the navigation bar to scroll down.</p><ul><li>Select the button labelled OK.</li><li>Select the button labelled Save.</li></ul><p>Congratulations, your first Accordion heading has been created!</p><p>To add more headings repeat the process, from the Select the button labelled Add instructions above.&nbsp;</p><p>The maximum recommended number of headings is eight within this component.</p><p>Select the button labelled Save once all headings have been added.</p><p>Adapt will save your work and take you back to the <strong>Page structure</strong> page.</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Sample video - Add a Block & Graphic Component ",
+    "displayTitle": "",
+    "body": "<p>When utilizing the Graphic component, the impacts are at the <span style=\"color:rgb(128, 0, 128)\"><strong>BLOCK</strong></span> and <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> levels.</p>",
+    "_id": "610459140f1c9f0f2677e67e",
+    "_parentId": "610459140f1c9f0f2677e63f",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select the play button below to start the video and/or select the transcript button to read the narration.",
+    "_media": {
+      "mp4": "course/en/assets/3a7fa46d41554735e34870f202f46aa0e00f6f18.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View Transcript",
+      "inlineTranscriptCloseButton": "Hide Transcript",
+      "inlineTranscriptBody": "<p>At the <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;level you must select the option \"Add block\".</p><p>A new <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> is added to the page.&nbsp;</p><p>You have the option to add a title at the element labelled&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> title:</p><ul><li>Select the gearwheel labelled \"click to edit\" and select Edit from the options given.</li><li>Enter the name of the Block (if applicable) in the field under the box labelled Title.</li><li>Select the button labelled Save.</li></ul><p>Adapt will save your work and take you back to the Page structure page.</p><p>A new&nbsp;<span style=\"color:rgb(128, 0, 0)\"><strong>BLOCK</strong></span>&nbsp;can consist of one (full width) or two (one on the left and one on the right) <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span></strong>.</p><p>This new&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;allows you to add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>.&nbsp;There is an option to add content (text) here at the&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>&nbsp;level, but it is not mandatory.</p><p><strong>You will learn more about this in future modules</strong>.</p><p>To add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> you must:</p><ul><li>Select the&nbsp;button labelled Add Component.&nbsp;</li></ul><p>A side panel of available Adapt components appears on the right of the screen.</p><ul><li>Select or type the word Graphic from the list of available components.</li></ul><p>There are three (3) buttons that will&nbsp;appear:</p><ul><li>Add to left</li><li>Add full, or</li><li>Add to right.</li></ul><p>For this exercise select the button labelled Add full.</p><p>A full width Graphic&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> is added to the page.</p><p>You can now create&nbsp;the content for the&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>:</p><ul><li>Select the gearwheel button labelled “click to edit” and select Edit from the options given.</li><li>Enter the title name of the Component (if applicable) in the field under the box labelled Title.</li><li>Written content (text) can be added to the box labelled Body (if applicable).</li></ul><p>Select the button labelled&nbsp;Select an Asset. Adapt will navigate to the asset management library where you will choose the appropriate graphic. There is an option to upload a new asset (graphic), but you will learn more about this in future modules.&nbsp;For this exercise type the word \"map\" in the Search box:</p><ul><li>A listing of all the map graphics currently available in Adapt will be displayed.</li><li>Choose the first map displayed.</li><li>Select the button labelled \"Autofill\".</li></ul><p>Adapt will save your graphic choice and take you back to the Component settings page.</p><p>Above the graphic you just added is a box labelled Alternative Text.&nbsp;Add a brief description of the image (e.g. map of Canada).</p><p><strong>You will learn more about this in future modules</strong>.</p><p>Select the button labelled Save.</p><p>Adapt will save your work and take you back to the Page structure page</p><p>Congratulations, your first Graphic component has been created!</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Sample video - Add a Block & Text Component",
+    "displayTitle": "",
+    "body": "<p>When utilizing this component, the impacts are at the <span style=\"color:rgb(128, 0, 128)\"><strong>BLOCK</strong></span> and <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> levels.</p>",
+    "_id": "610459140f1c9f0f2677e67f",
+    "_parentId": "610459140f1c9f0f2677e640",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select the play button below to start the video and/or select the transcript button to read the narration.",
+    "_media": {
+      "mp4": "course/en/assets/2fe5a42f13d5b5bb99697742eb1eadd68cef921a.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View Transcript",
+      "inlineTranscriptCloseButton": "Hide Transcript",
+      "inlineTranscriptBody": "<p>At the <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;level you must select the option \"Add block\".</p><p>A new <strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> is added to the page.&nbsp;</p><p>You have the option to add a title at the element labelled&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong> title:</p><ul><li>Select the gearwheel labelled \"click to edit\" and select Edit from the options given.</li><li>Enter the name of the Block (if applicable) in the field under the box labelled Title.</li><li>Select the button labelled Save.</li></ul><p>Adapt will save your work and take you back to the Page structure page.</p><p>A new&nbsp;<span style=\"color:rgb(128, 0, 0)\"><strong>BLOCK</strong></span>&nbsp;can consist of one (full width) or two (one on the left and one on the right) <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span></strong>.</p><p>This new&nbsp;<strong><span style=\"color:rgb(128, 0, 0)\">BLOCK</span></strong>&nbsp;allows you to add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>.&nbsp;There is an option to add content (text) here at the&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong>&nbsp;level, but it is not mandatory.</p><p><strong>You will learn more about this in future modules</strong>.</p><p>To add a <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> you must:</p><ul><li>Select the&nbsp;button labelled Add Component.&nbsp;</li></ul><p>A side panel of available Adapt components appears on the right of the screen.</p><ul><li>Select or type the word Text from the list of available components.</li></ul><p>There are three (3) buttons that will&nbsp;appear:</p><ul><li>Add to left</li><li>Add full, or</li><li>Add to right.</li></ul><p>For this exercise select the button labelled Add full.</p><p>A full width Text&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT</span></strong> is added to the page.</p><p>You can now create&nbsp;the content for the&nbsp;<span style=\"color:rgb(0, 0, 205)\"><strong>COMPONENT</strong></span>:</p><ul><li>Select the gearwheel button labelled “click to edit” and select Edit from the options given.</li><li>Enter the title name of the Component (if applicable) in the field under the box labelled Title.</li><li>Written content (text) is added to the box labelled Body.</li><li>Scroll back up and select the button labelled Save.</li></ul><p>Adapt will save your typed or paste as plain text content&nbsp;and take you back to the Page structure page.</p><p><strong>You will learn more about this (paste as plain text) in future modules</strong>.</p><p>Congratulations, your first Text component has been created!</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Navigation Tips - Graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e680",
+    "_parentId": "610459140f1c9f0f2677e643",
+    "_type": "component",
+    "_layout": "right",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/5e88027fb84455e6daeb98bd840767a48b6e2b62.jpg",
+      "small": "course/en/assets/5e88027fb84455e6daeb98bd840767a48b6e2b62.jpg",
+      "attribution": ""
     }
   },
   {
@@ -164,13 +1653,18 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2dad0f1c9f0f2675b5bd",
-    "_parentId": "5ffe2b3f0f1c9f0f2675b5a7",
+    "title": "Tips",
+    "displayTitle": "",
+    "body": "<p>This course is designed to be interactive.&nbsp;</p><p>As you navigate through each module, you will see different interactive elements that contain more information or activities.</p><p>You will need to:</p><ul><li>open each available accordion window (up/down);</li><li>select each button (where applicable); and</li><li>select the <strong>Continue</strong> button to navigate through each page of this&nbsp;training; please note the Continue button becomes activated&nbsp;only once the section is complete.</li></ul><p>The <strong>page level progress</strong> at the top right of the page and above the module on the main menu indicate your progress within that module.</p><p>Please select the <strong>Open courses' resources</strong> button, located in the top right corner of this window, to access the following:</p><ul><li><strong>Glossary:</strong> to consult any unfamiliar terms;</li><li><strong>Resources:</strong> to view additional resources for this course;</li><li><strong>Search:</strong> to search words in this course.</li></ul><p><strong>Note</strong>: the hyperlinks included in the Resources section open in a new tab. These links are accessible from the network.</p>",
+    "_id": "610459140f1c9f0f2677e681",
+    "_parentId": "610459140f1c9f0f2677e643",
     "_type": "component",
-    "_layout": "full",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -178,6 +1672,105 @@
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Instructions Sample video - Preview a Course",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e682",
+    "_parentId": "610459140f1c9f0f2677e642",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select the play button below to start the video and/or select the transcript button to read the narration.",
+    "_media": {
+      "mp4": "course/en/assets/429dec281dc5b35d39d30d55a3cc644ac10992fd.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/5a1a4f981fc9166c8f939b40bb5e0fc67d8fbac6.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "inview",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "View Transcript",
+      "inlineTranscriptCloseButton": "Hide Transcript",
+      "inlineTranscriptBody": "<p>To Preview your course:</p><ul><li>Select the button labelled Preview course.</li><li>Adapt will open another tab/window with the created course Home Page.</li><li>You will see the name of your course, and the name of your first lesson/topic.</li></ul><p>Once the course loads in another tab/window select the button labelled View.</p><p>Adapt will showcase the items currently included in the first page of the course.</p><p>Scroll down to see the Accordion, Graphic and Text components you created.</p><p>Ensure that you select and open all interactive elements.</p><p>Congratulations, you have just previewed your first course!</p><p>You can use the X to close out the tab you previewed the course on, and speak with the Adapt super user on your team for more information.</p>",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Special Instructions for the Pilot - graphic",
+    "displayTitle": "",
+    "body": "",
+    "_id": "610459140f1c9f0f2677e683",
+    "_parentId": "610459140f1c9f0f2677e644",
+    "_type": "component",
+    "_layout": "left",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/2a5977e409bf88bb7440ee52743e376c7161db60.jpg",
+      "small": "course/en/assets/2a5977e409bf88bb7440ee52743e376c7161db60.jpg",
+      "attribution": ""
     }
   },
   {
@@ -189,88 +1782,13 @@
     "_isVisible": true,
     "_ariaLevel": 0,
     "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2db80f1c9f0f2675b5be",
-    "_parentId": "5ffe2bbf0f1c9f0f2675b5aa",
+    "title": "Special Instructions for the Pilot",
+    "displayTitle": "",
+    "body": "<p>For the purpose of this pilot:</p><ul><li>watch the demo in each of the components;</li><li>click/select the <strong>View Transcript</strong> button to view the step by step process of the demo.</li></ul><p><strong>NOTE:</strong> for the official launch, a correction will be made to the title \"Titre ICE/Title HERE\" to read as \"Titre ICI/Title HERE\" in each of the animations. Also, a narration will be added to correspond with the text appearing in the View Transcript.</p>",
+    "_id": "610459140f1c9f0f2677e684",
+    "_parentId": "610459140f1c9f0f2677e644",
     "_type": "component",
-    "_layout": "full",
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "_component": "text",
-    "_classes": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2dc10f1c9f0f2675b5bf",
-    "_parentId": "5ffe2bd90f1c9f0f2675b5ad",
-    "_type": "component",
-    "_layout": "full",
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "_component": "text",
-    "_classes": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_disableAccessibilityState": false,
-    "title": "Component title",
-    "displayTitle": "Component title",
-    "body": "",
-    "_id": "5ffe2dc90f1c9f0f2675b5c0",
-    "_parentId": "5ffe2c0a0f1c9f0f2675b5b0",
-    "_type": "component",
-    "_layout": "full",
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "_component": "text",
-    "_classes": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_disableAccessibilityState": false,
-    "title": "Loading Live",
-    "displayTitle": "Loading Live",
-    "body": "<ul><li>Verify that the folder is labeled Working&nbsp;</li><li>Verify the dates on the SCORM package dates on SharePoint match the dates in the go live email&nbsp;</li><li>If not – Contact the GT3 that did the work to load their files to SharePoint with the GT4 and mailbox in cc&nbsp;</li><li>Load SCORM pkgs to LIVE&nbsp;</li><li>Download the Working folder (downloads as a zip)&nbsp;</li><li>Name the zip file SABALive-courseID-Language-DateloadedLive&nbsp;</li><li>Save this zip file to the U in the appropriate location&nbsp;</li><li>If the U current SABALive on the U is a folder archive the folder&nbsp;</li><li>If the U current SABALive on the U is a zip – do not rename – only add the current zip&nbsp;</li><li>On SharePoint rename the Working folder to Ready&nbsp;</li><li>Use the current SABALive QA email template&nbsp;</li><li>CC the Saba Team when you email the client any Saba Live Uploads: EDSC.DGSRH.SABA.HRSB.ESDC@servicecanada.gc.ca&nbsp;</li></ul>",
-    "_id": "5fff29760f1c9f0f2675ba78",
-    "_parentId": "5fff29070f1c9f0f2675ba76",
-    "_type": "component",
-    "_layout": "full",
+    "_layout": "right",
     "_onScreen": {
       "_isEnabled": false,
       "_classes": "",

@@ -1,13 +1,13 @@
 [
   {
-    "title": "Initial WR Steps",
-    "displayTitle": "Initial WR Steps",
+    "title": "Introduction",
+    "displayTitle": "Introduction",
     "body": "",
     "_classes": "",
     "pageBody": "",
     "instruction": "",
     "_htmlClassName": "",
-    "linkText": "View",
+    "linkText": "View Introduction",
     "duration": "",
     "_lockedBy": [],
     "_lockType": "",
@@ -16,277 +16,12 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe24a60f1c9f0f2675b550",
-    "_type": "page",
-    "_parentId": "course",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Contract support",
-    "displayTitle": "Contract support",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe299e0f1c9f0f2675b577",
-    "_parentId": "5ffe2a200f1c9f0f2675b587",
-    "_type": "page",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Doing the work",
-    "displayTitle": "Doing the work",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe26500f1c9f0f2675b56f",
-    "_parentId": "course",
-    "_type": "menu",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Working with SNAP Content",
-    "displayTitle": "Working with SNAP Content",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe2a200f1c9f0f2675b587",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
-    "_type": "menu",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "MeD Work",
-    "displayTitle": "MeD Work",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe2aff0f1c9f0f2675b59f",
-    "_parentId": "5ffe2a200f1c9f0f2675b587",
-    "_type": "page",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Uploading to Saba Dev",
-    "displayTitle": "Uploading to Saba Dev",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe24e30f1c9f0f2675b557",
+    "_id": "610459140f1c9f0f2677e608",
     "_parentId": "course",
     "_type": "page",
     "_graphic": {
       "alt": "",
-      "src": ""
+      "src": "course/en/assets/7b9c38e0180bee8380c34273971278a701624614.png"
     },
     "_onScreen": {
       "_isEnabled": false,
@@ -306,26 +41,26 @@
     "_pageIncompletePrompt": {
       "_isEnabled": true
     },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
     "_homeButton": {
       "_isEnabled": false,
       "_hideHomeButton": false,
       "_hideBackButton": false,
       "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
     }
   },
   {
-    "title": "Working with Captivate content",
-    "displayTitle": "Working with Captivate content",
+    "title": "Adapt eLearning Authoring Tool",
+    "displayTitle": "Adapt eLearning Authoring Tool",
     "body": "",
     "_classes": "",
     "pageBody": "",
     "instruction": "",
     "_htmlClassName": "",
-    "linkText": "View",
+    "linkText": "View Adapt eLearning Authoring Tool",
     "duration": "",
     "_lockedBy": [],
     "_lockType": "",
@@ -334,65 +69,12 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2b350f1c9f0f2675b5a2",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
-    "_type": "page",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Uploading to Saba Live",
-    "displayTitle": "Uploading to Saba Live",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe24f00f1c9f0f2675b55a",
+    "_id": "610459140f1c9f0f2677e606",
     "_parentId": "course",
     "_type": "page",
     "_graphic": {
       "alt": "",
-      "src": ""
+      "src": "course/en/assets/6eedaf62e487918b043b8b49a68cb01659ea9021.jpg"
     },
     "_onScreen": {
       "_isEnabled": false,
@@ -412,26 +94,26 @@
     "_pageIncompletePrompt": {
       "_isEnabled": true
     },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
     "_homeButton": {
       "_isEnabled": false,
       "_hideHomeButton": false,
       "_hideBackButton": false,
       "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
     }
   },
   {
-    "title": "Working with Adapt content",
-    "displayTitle": "Working with Adapt content",
+    "title": "Exploring Beginner Components",
+    "displayTitle": "Exploring Beginner Components",
     "body": "",
     "_classes": "",
     "pageBody": "",
     "instruction": "",
     "_htmlClassName": "",
-    "linkText": "View",
+    "linkText": "View Exploring Beginner Components",
     "duration": "",
     "_lockedBy": [],
     "_lockType": "",
@@ -440,12 +122,12 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2b3f0f1c9f0f2675b5a5",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
+    "_id": "610459140f1c9f0f2677e604",
     "_type": "page",
+    "_parentId": "course",
     "_graphic": {
       "alt": "",
-      "src": ""
+      "src": "course/en/assets/7d3c1dfc734a8920a2ad6cbfd042e8e7afaf8490.jpg"
     },
     "_onScreen": {
       "_isEnabled": false,
@@ -465,26 +147,26 @@
     "_pageIncompletePrompt": {
       "_isEnabled": true
     },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
     "_search": {
       "_isEnabled": true,
       "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
     }
   },
   {
-    "title": "Creating / Editing Images or Graphics",
-    "displayTitle": "Creating / Editing Images or Graphics",
+    "title": "Conclusion",
+    "displayTitle": "Conclusion",
     "body": "",
     "_classes": "",
     "pageBody": "",
     "instruction": "",
     "_htmlClassName": "",
-    "linkText": "View",
+    "linkText": "View Conclusion",
     "duration": "",
     "_lockedBy": [],
     "_lockType": "",
@@ -493,12 +175,12 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2bbe0f1c9f0f2675b5a8",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
+    "_id": "610459140f1c9f0f2677e607",
+    "_parentId": "course",
     "_type": "page",
     "_graphic": {
       "alt": "",
-      "src": ""
+      "src": "course/en/assets/a0484b51b36cf4dd3da1040661561ecdb32b3276.jpg"
     },
     "_onScreen": {
       "_isEnabled": false,
@@ -518,121 +200,15 @@
     "_pageIncompletePrompt": {
       "_isEnabled": true
     },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
     "_search": {
       "_isEnabled": true,
       "keywords": ""
-    }
-  },
-  {
-    "title": "Creating / Editing Video files",
-    "displayTitle": "Creating / Editing Video files",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe2bd90f1c9f0f2675b5ab",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
-    "_type": "page",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
     },
     "_homeButton": {
       "_isEnabled": false,
       "_hideHomeButton": false,
       "_hideBackButton": false,
       "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Creating / Editing Audio",
-    "displayTitle": "Creating / Editing Audio",
-    "body": "",
-    "_classes": "",
-    "pageBody": "",
-    "instruction": "",
-    "_htmlClassName": "",
-    "linkText": "View",
-    "duration": "",
-    "_lockedBy": [],
-    "_lockType": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe2c0a0f1c9f0f2675b5ae",
-    "_parentId": "5ffe26500f1c9f0f2675b56f",
-    "_type": "page",
-    "_graphic": {
-      "alt": "",
-      "src": ""
-    },
-    "_onScreen": {
-      "_isEnabled": false,
-      "_classes": "",
-      "_percentInviewVertical": 50
-    },
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_showPageCompletion": true,
-      "_isCompletionIndicatorEnabled": false,
-      "_excludeAssessments": false
-    },
-    "_bookmarking": {
-      "_isEnabled": true,
-      "_level": "inherit"
-    },
-    "_pageIncompletePrompt": {
-      "_isEnabled": true
-    },
-    "_homeButton": {
-      "_isEnabled": false,
-      "_hideHomeButton": false,
-      "_hideBackButton": false,
-      "_redirectToId": ""
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
     }
   }
 ]

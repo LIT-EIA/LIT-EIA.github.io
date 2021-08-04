@@ -1,10 +1,10 @@
 {
-  "title": "00000000EN - MeD Process",
-  "displayTitle": "00000000EN - MeD Process",
+  "title": "Adapt Authoring Tool - Beginners",
+  "displayTitle": "Adapt Authoring Tool - Beginner",
   "body": "",
   "description": "",
   "_htmlClassName": "",
-  "_latestTrackingId": 11,
+  "_latestTrackingId": 26,
   "_buttons": {
     "_submit": {
       "buttonText": "Submit",
@@ -138,6 +138,9 @@
       }
     },
     "_extensions": {
+      "_trickle": {
+        "incompleteContent": "There is incomplete content above. You must complete this before you can proceed through the course."
+      },
       "_pageLevelProgress": {
         "pageLevelProgress": "Page sections",
         "pageLevelProgressIndicatorBar": "Page progress. Use this to listen to the list of regions in this topic and whether they're completed. You can jump directly to any that are incomplete or which sound particularly interesting. {{percentageComplete}}%",
@@ -150,10 +153,33 @@
       },
       "_glossary": {
         "glossary": "Glossary"
+      },
+      "_close": {
+        "closeButton": "Select here to close the window."
       }
     }
   },
   "_type": "course",
+  "themeVariables": {
+    "_colors": {
+      "primary-color": "#1c4e8a",
+      "primary-color-inverted": "#ffffff",
+      "secondary-color": "#4b4e4f",
+      "secondary-color-inverted": "#ffffff",
+      "tertiary-color": "#ffffff",
+      "tertiary-color-inverted": "#1e2326",
+      "quaternary-color": "#0f2a4a",
+      "quaternary-color-inverted": "#ffffff",
+      "foreground-color": "#1e2326",
+      "background-color": "#ffffff",
+      "foreground-color-inverted": "#ffffff",
+      "background-color-inverted": "#37474f",
+      "validation-error": "#dd0529",
+      "validation-success": "#44cd20",
+      "disabled-color": "#7e7e7e",
+      "disabled-color-inverted": "#d8d8d8"
+    }
+  },
   "_pageLevelProgress": {
     "_isEnabled": true,
     "_showPageCompletion": true,
@@ -162,9 +188,9 @@
   },
   "_resources": {
     "_isEnabled": true,
-    "_drawerOrder": 0,
+    "_drawerOrder": 1,
     "title": "Resources",
-    "description": "Click here to view resources for this course",
+    "description": "Consult the resources for this course",
     "_filterButtons": {
       "all": "All",
       "document": "Documents",
@@ -177,12 +203,37 @@
       "mediaAria": "View media resources",
       "linkAria": "View resource links"
     },
-    "_resourcesItems": []
+    "_resourcesItems": [
+      {
+        "_type": "document",
+        "_forceDownload": false,
+        "title": "Adapt job aid - user information",
+        "filename": "",
+        "description": "",
+        "_link": "course/en/assets/6069e6e8f16dd3caf9e318142e9320ec27f100f0.docx"
+      },
+      {
+        "_type": "document",
+        "_forceDownload": false,
+        "title": "Log into your Adapt account",
+        "filename": "",
+        "description": "",
+        "_link": "course/en/assets/f41f34e2b50fc98a14d3361707cff4946ca1aec8.docx"
+      },
+      {
+        "_type": "link",
+        "_forceDownload": false,
+        "title": "MeD SharePoint",
+        "filename": "MeD SharePoint site with documents",
+        "description": "",
+        "_link": "https://dialogue/grp/SCC-HRSDC-CSC-RHDCC/SiteAssets/MeD.aspx"
+      }
+    ]
   },
   "_bookmarking": {
     "_isEnabled": true,
     "_level": "page",
-    "_showPrompt": false,
+    "_showPrompt": true,
     "title": "Bookmarking",
     "body": "Would you like to continue where you left off?",
     "_buttons": {
@@ -191,35 +242,46 @@
     }
   },
   "_glossary": {
-    "_isEnabled": false,
+    "_isEnabled": true,
     "_drawerOrder": 0,
-    "title": "",
-    "description": "",
+    "title": "Glossary",
+    "description": "Specialized vocabulary used in this training.",
     "clearSearch": "",
     "searchItemsAlert": "{{filteredItems.length}} found.",
-    "searchPlaceholder": "",
-    "searchWithInDescriptionLabel": "",
+    "searchPlaceholder": "Search term in glossary.",
+    "searchWithInDescriptionLabel": "Search within glossary definitions.",
     "itemNotFoundMessage": "No results found",
-    "_glossaryItems": []
+    "_glossaryItems": [
+      {
+        "description": "<p>Consists of buttons which expand or collapse to reveal or hide the content inside.</p>",
+        "term": "Accordion"
+      },
+      {
+        "description": "<p>Displays images at full width (one component) or half width (two components).</p>",
+        "term": "Graphic"
+      },
+      {
+        "description": "<p>Displays the page navigation buttons.</p>",
+        "term": "Quick Navigation"
+      },
+      {
+        "description": "<p>Simplest and basic of all components.</p>",
+        "term": "Text"
+      }
+    ]
   },
   "_pageIncompletePrompt": {
-    "_isEnabled": false,
+    "_isEnabled": true,
     "title": "Page incomplete",
-    "message": "Are you sure you would like to leave?",
+    "message": "Are you sure you would like to leave? Remember that you need to open and select all the interactive elements on this page in order to complete this module. To find out which elements are complete and which ones are outstanding, select the Page Level Progress at the top right of the page. Select the No button in order to review the page level progress.",
     "_buttons": {
       "yes": "Yes",
       "no": "No"
     }
   },
-  "_homeButton": {
-    "_isEnabled": true,
-    "_hideHomeButton": false,
-    "_redirectToId": "",
-    "alt": "Home"
-  },
   "_search": {
     "_isEnabled": true,
-    "_drawerOrder": 0,
+    "_drawerOrder": 2,
     "_matchOn": {
       "_contentWordBeginsPhraseWord": false,
       "_contentWordContainsPhraseWord": false,
@@ -235,11 +297,37 @@
     "_frequencyImportance": 5,
     "title": "Search",
     "description": "Enter search criteria",
-    "placeholder": "",
+    "placeholder": "Search word(s) in course",
     "noResultsMessage": "No results found",
     "awaitingResultsMessage": "Formulating results..."
   },
-  "_pagesInNavBar": {
-    "_isEnabled": true
+  "_close": {
+    "_isEnabled": true,
+    "_button": {
+      "_closeViaLMSFinish": false,
+      "_isEnabled": true,
+      "_notifyPromptIfIncomplete": {
+        "_isEnabled": false,
+        "title": "Confirm close",
+        "body": "<p>Are you sure you want to close the window?</p>",
+        "confirm": "Close window",
+        "cancel": "Cancel"
+      },
+      "_notifyPromptIfComplete": {
+        "_isEnabled": false,
+        "title": "Confirm close",
+        "body": "<p>Are you sure you want to close the window?</p>",
+        "confirm": "Close window",
+        "cancel": "Cancel"
+      }
+    },
+    "browserPromptIfIncomplete": "",
+    "browserPromptIfComplete": ""
+  },
+  "_homeButton": {
+    "_isEnabled": true,
+    "_hideHomeButton": false,
+    "_redirectToId": "",
+    "alt": "Home"
   }
 }

@@ -1,8 +1,8 @@
 [
   {
-    "title": "New Article Title",
-    "displayTitle": "New Article Title",
-    "body": "",
+    "title": "ARTICLE TITLE - Building a Course in ADAPT",
+    "displayTitle": "ARTICLE TITLE - Building a Course in ADAPT",
+    "body": "<p>As seen on the Adapt eLearning Authoring tool page, when we are ready to build in Adapt, we will use the <span style=\"color:#B22222\"><strong>PAGES</strong></span>, <strong><span style=\"color:#006400\">ARTICLES</span></strong>, <strong><span style=\"color:#800080\">BLOCKS</span></strong> and <strong><span style=\"color:#0000CD\">COMPONENTS</span></strong> to convey the message or story of each individual page of our magazine.</p><p>This Page will showcase the instructions, and a listing of three available components in Adapt: the Accordion, the Graphic&nbsp;and Text components.</p><p>We will have an individual&nbsp;<strong><span style=\"color:#006400\">ARTICLE </span></strong>to represent the <strong>INSTRUCTIONS</strong> and each&nbsp;<strong><span style=\"color:#800080\">BLOCK</span></strong>&nbsp;and <strong><span style=\"color:#0000CD\">COMPONENT&nbsp;</span></strong>of the Accordion, Graphic, and Text front (what is previewed) and back end (how to build).&nbsp;</p>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -10,60 +10,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe24a70f1c9f0f2675b551",
-    "_parentId": "5ffe24a60f1c9f0f2675b550",
-    "_type": "article",
-    "_pageLevelProgress": {
-      "_isEnabled": false,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Article title",
-    "displayTitle": "Article title",
-    "body": "",
-    "_classes": "",
-    "instruction": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe24e30f1c9f0f2675b558",
-    "_parentId": "5ffe24e30f1c9f0f2675b557",
-    "_type": "article",
-    "_pageLevelProgress": {
-      "_isEnabled": false,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_search": {
-      "_isEnabled": true,
-      "keywords": ""
-    }
-  },
-  {
-    "title": "Sharepoint folder process",
-    "displayTitle": "",
-    "body": "",
-    "_classes": "",
-    "instruction": "",
-    "_isOptional": false,
-    "_isAvailable": true,
-    "_isHidden": false,
-    "_isVisible": true,
-    "_ariaLevel": 0,
-    "_id": "5ffe24f00f1c9f0f2675b55b",
-    "_parentId": "5ffe24f00f1c9f0f2675b55a",
+    "_id": "610459140f1c9f0f2677e60c",
+    "_parentId": "610459140f1c9f0f2677e604",
     "_type": "article",
     "_onScreen": {
       "_isEnabled": false,
       "_classes": "",
       "_percentInviewVertical": 50
     },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -74,9 +52,9 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
-    "body": "",
+    "title": "The Tool",
+    "displayTitle": "The Tool",
+    "body": "<p>In this section you will discover what <strong>Adapt</strong> is and general information about its structure.</p>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -84,9 +62,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe299e0f1c9f0f2675b578",
-    "_parentId": "5ffe299e0f1c9f0f2675b577",
+    "_id": "610459140f1c9f0f2677e610",
+    "_parentId": "610459140f1c9f0f2677e606",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -97,9 +104,9 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
-    "body": "",
+    "title": "Overview",
+    "displayTitle": "Overview",
+    "body": "<p>As noted in this course, the Adapt Authoring Tool allows you to quickly build HTML5 content without knowing coding.</p><p>As you learn more and get ready to build in Adapt, keep in mind the basic analogy reviewed in the Adapt eLearning Authoring Tool section. Visualize the magazine structure compared to the Adapt structure:</p><ul><li>in Adapt, we use the <span style=\"color:rgb(178, 34, 34)\"><strong>PAGES</strong></span>, <strong><span style=\"color:rgb(0, 100, 0)\">ARTICLES</span></strong>, <strong><span style=\"color:rgb(128, 0, 128)\">BLOCKS</span></strong> and <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span></strong> to convey a message or story in our eLearnings.</li></ul>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -107,9 +114,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2aff0f1c9f0f2675b5a0",
-    "_parentId": "5ffe2aff0f1c9f0f2675b59f",
+    "_id": "610459140f1c9f0f2677e611",
+    "_parentId": "610459140f1c9f0f2677e607",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -120,9 +156,9 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
-    "body": "",
+    "title": "Adapt Authoring Tool - Beginner",
+    "displayTitle": "Adapt Authoring Tool - Beginner",
+    "body": "<p>Welcome to the<strong> Adapt Authoring Tool - Beginner </strong>online course.</p>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -130,9 +166,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2b350f1c9f0f2675b5a3",
-    "_parentId": "5ffe2b350f1c9f0f2675b5a2",
+    "_id": "610459140f1c9f0f2677e612",
+    "_parentId": "610459140f1c9f0f2677e608",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -143,8 +208,8 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
+    "title": "Creating an Accordion Component",
+    "displayTitle": "Creating an Accordion Component",
     "body": "",
     "_classes": "",
     "instruction": "",
@@ -153,9 +218,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2b3f0f1c9f0f2675b5a6",
-    "_parentId": "5ffe2b3f0f1c9f0f2675b5a5",
+    "_id": "610459140f1c9f0f2677e613",
+    "_parentId": "610459140f1c9f0f2677e604",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -166,8 +260,8 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
+    "title": "Creating a Graphic Component",
+    "displayTitle": "Creating a Graphic Component",
     "body": "",
     "_classes": "",
     "instruction": "",
@@ -176,9 +270,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2bbf0f1c9f0f2675b5a9",
-    "_parentId": "5ffe2bbe0f1c9f0f2675b5a8",
+    "_id": "610459140f1c9f0f2677e614",
+    "_parentId": "610459140f1c9f0f2677e604",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -189,8 +312,8 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
+    "title": "Creating a Text Component",
+    "displayTitle": "Creating a Text Component",
     "body": "",
     "_classes": "",
     "instruction": "",
@@ -199,9 +322,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2bd90f1c9f0f2675b5ac",
-    "_parentId": "5ffe2bd90f1c9f0f2675b5ab",
+    "_id": "610459140f1c9f0f2677e60d",
+    "_parentId": "610459140f1c9f0f2677e604",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
@@ -212,9 +364,9 @@
     }
   },
   {
-    "title": "Article title",
-    "displayTitle": "Article title",
-    "body": "",
+    "title": "Navigation",
+    "displayTitle": "Navigation",
+    "body": "<p>In <strong>Adapt</strong>, navigation between <span style=\"color:rgb(178, 34, 34)\"><strong>PAGES</strong></span>&nbsp;can help the learner better move between parts or lessons in a course. Here is an example for the Quick Navigation&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT.</span></strong></p><p>&nbsp;</p>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -222,9 +374,38 @@
     "_isHidden": false,
     "_isVisible": true,
     "_ariaLevel": 0,
-    "_id": "5ffe2c0a0f1c9f0f2675b5af",
-    "_parentId": "5ffe2c0a0f1c9f0f2675b5ae",
+    "_id": "610459140f1c9f0f2677e60f",
+    "_parentId": "610459140f1c9f0f2677e604",
     "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_trickle": {
+      "_isEnabled": false,
+      "_autoScroll": false,
+      "_scrollDuration": 500,
+      "_onChildren": false,
+      "_scrollTo": "@block +1",
+      "_button": {
+        "_isEnabled": false,
+        "_styleBeforeCompletion": "hidden",
+        "_styleAfterClick": "hidden",
+        "_isFullWidth": true,
+        "_autoHide": false,
+        "_className": "",
+        "text": "Continue",
+        "startText": "Begin",
+        "finalText": "Finish",
+        "_component": "trickle-button"
+      },
+      "_stepLocking": {
+        "_isEnabled": true,
+        "_isCompletionRequired": true,
+        "_isLockedOnRevisit": false
+      }
+    },
     "_pageLevelProgress": {
       "_isEnabled": false,
       "_isCompletionIndicatorEnabled": false
