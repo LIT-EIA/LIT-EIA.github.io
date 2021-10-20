@@ -1,0 +1,532 @@
+[
+  {
+    "title": "Introduction",
+    "displayTitle": "Introduction",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Introduction",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb72",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/7b9c38e0180bee8380c34273971278a701624614.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "2 - Adapt eLearning Authoring Tool",
+    "displayTitle": "2 - Adapt eLearning Authoring Tool",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 2",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb70",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/6eedaf62e487918b043b8b49a68cb01659ea9021.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "3 - Getting Started - Creating a Course",
+    "displayTitle": "3 - Getting Started - Creating a Course",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 3",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611556c90f1c9f0f26780a4a",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/c4a295679cde3a6f166f20472a9881158f91f501.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "4 - Basic Structure - Articles and Blocks",
+    "displayTitle": "4 - Basic Structure - Articles and Blocks",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 4",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb77",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/a55a4f0d7be4a0564ec00e72c41832a123183821.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "5 - Exploring Text Component",
+    "displayTitle": "5 - Exploring Text Component",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 5",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb74",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/48a32621d3b3d363b18573785d25de9a855ab96e.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "6 - Exploring Graphic Component",
+    "displayTitle": "6 - Exploring Graphic Component",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 6",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb73",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/58cd7d173416527a87247f6f72b1eed05462c35f.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "7 - Exploring Accordion Component",
+    "displayTitle": "7 - Exploring Accordion Component",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 7",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb6f",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/4c1995ff5ce3d87e46d0c97ee8b035a49f1ad7ab.png"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "8 - Exploring Preview",
+    "displayTitle": "8 - Exploring Preview",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 8",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb75",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/7d3c1dfc734a8920a2ad6cbfd042e8e7afaf8490.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "9 - Test Your Knowledge",
+    "displayTitle": "9 - Test Your Knowledge",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View module 9",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb76",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/1b7e1e7f388cf73887ddfe1d7b7c5bb5bdd96861.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Conclusion",
+    "displayTitle": "Conclusion",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Conclusion",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb71",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/a0484b51b36cf4dd3da1040661561ecdb32b3276.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "_defaultLanguage": "en",
+  "_defaultDirection": "ltr",
+  "_questionWeight": 1,
+  "_generateSourcemap": false,
+  "_forceRouteLocking": true,
+  "_disableAnimationFor": [],
+  "_id": "611149bf0f1c9f0f2677fbe2",
+  "_courseId": "611149be0f1c9f0f2677fb6d",
+  "_drawer": {
+    "_showEasing": "easeOutQuart",
+    "_hideEasing": "easeInQuart",
+    "_duration": 400
+  },
+  "_accessibility": {
+    "_isEnabled": true,
+    "_isTextProcessorEnabled": true,
+    "_isSkipNavigationEnabled": true,
+    "_ariaLevels": {
+      "_menu": 1,
+      "_menuItem": 2,
+      "_page": 1,
+      "_article": 2,
+      "_block": 3,
+      "_component": 4,
+      "_componentItem": 5,
+      "_notify": 1
+    }
+  },
+  "screenSize": {
+    "small": 519,
+    "medium": 759,
+    "large": 1024
+  },
+  "__v": 0,
+  "_completionCriteria": {
+    "_requireContentCompleted": true,
+    "_requireAssessmentCompleted": false
+  },
+  "_logging": {
+    "_isEnabled": true,
+    "_level": "info",
+    "_console": true
+  },
+  "_scrollingContainer": {
+    "_isEnabled": false,
+    "_limitToSelector": ""
+  },
+  "_homeButton": {
+    "_isEnabled": true
+  },
+  "_spoor": {
+    "_isEnabled": true,
+    "_tracking": {
+      "_shouldSubmitScore": false,
+      "_shouldStoreResponses": true,
+      "_shouldRecordInteractions": true
+    },
+    "_reporting": {
+      "_onTrackingCriteriaMet": "completed",
+      "_onAssessmentFailure": "incomplete",
+      "_resetStatusOnLanguageChange": false
+    },
+    "_advancedSettings": {
+      "_showDebugWindow": false,
+      "_commitOnStatusChange": true,
+      "_timedCommitFrequency": 10,
+      "_maxCommitRetries": 5,
+      "_commitRetryDelay": 2000,
+      "_suppressErrors": false,
+      "_commitOnVisibilityChangeHidden": true,
+      "_manifestIdentifier": "adapt_manifest",
+      "_exitStateIfIncomplete": "auto",
+      "_exitStateIfComplete": "auto",
+      "_launchPage": "index_lms.html"
+    }
+  },
+  "_Adapt-accessibilityfixes": {
+    "_inlineConfig": {
+      "extensions": [
+        "tex2jax.js"
+      ],
+      "jax": [
+        "input/TeX",
+        "output/HTML-CSS"
+      ]
+    },
+    "_src": "./assets/Adapt-accessibilityfixes.js"
+  },
+  "build": {
+    "includes": [
+      "adapt-contrib-boxMenu",
+      "5dc4e8b5eb456b062dccb6b0",
+      "adapt-quicknav",
+      "adapt-contrib-graphic",
+      "adapt-contrib-text",
+      "adapt-contrib-media",
+      "adapt-contrib-mcq",
+      "adapt-contrib-accordion",
+      "adapt-homeButton",
+      "adapt-pageIncompletePrompt",
+      "adapt-contrib-pageLevelProgress",
+      "adapt-contrib-bookmarking",
+      "adapt-close",
+      "adapt-contrib-tutor",
+      "adapt-contrib-resources",
+      "adapt-contrib-glossary",
+      "adapt-search",
+      "Adapt-accessibilityfixes",
+      "adapt-contrib-spoor"
+    ]
+  }
+}

@@ -1,0 +1,534 @@
+[
+  {
+    "title": "The Tool",
+    "displayTitle": "The Tool",
+    "body": "<p>In this module, you will discover what <strong>Adapt</strong> is, and general information about its structure.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7a",
+    "_parentId": "611149be0f1c9f0f2677fb70",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Overview",
+    "displayTitle": "Overview",
+    "body": "<p>As noted in this course, the Adapt Authoring Tool allows you to quickly build HTML5 content without knowledge of coding.</p><p>As you learn more and get ready to build in Adapt, keep in mind the basic analogy reviewed in the Adapt eLearning Authoring Tool module. Visualize the structure of a magazine as a model for the Adapt structure:</p><ul><li>in Adapt, we use the <span style=\"color:rgb(178, 34, 34)\"><strong>PAGES</strong></span>, <strong><span style=\"color:rgb(0, 100, 0)\">ARTICLES</span></strong>, <strong><span style=\"color:rgb(128, 0, 128)\">BLOCKS</span></strong> and <strong><span style=\"color:rgb(0, 0, 205)\">COMPONENTS</span></strong> to convey a message or story in our eLearnings.</li></ul>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7b",
+    "_parentId": "611149be0f1c9f0f2677fb71",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Adapt Authoring Tool - Beginners",
+    "displayTitle": "Adapt Authoring Tool - Beginners",
+    "body": "<p>Welcome to the<strong> Adapt Authoring Tool - Beginners </strong>online course.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7c",
+    "_parentId": "611149be0f1c9f0f2677fb72",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Creating an Accordion Component",
+    "displayTitle": "Creating an Accordion Component",
+    "body": "<p>This page features instructions&nbsp;and lists&nbsp;components for the Accordion component.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7d",
+    "_parentId": "611149be0f1c9f0f2677fb6f",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Creating a Graphic Component",
+    "displayTitle": "Creating a Graphic Component",
+    "body": "<p>Use the Graphic Component to add images to the blocks.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7e",
+    "_parentId": "611149be0f1c9f0f2677fb73",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Creating a Text Component",
+    "displayTitle": "Creating a Text Component",
+    "body": "<p>The text component is the simplest and most basic of all components.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb7f",
+    "_parentId": "611149be0f1c9f0f2677fb74",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Preview",
+    "displayTitle": "Preview",
+    "body": "<p>This module will show how to preview the course structure and content.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb81",
+    "_parentId": "611149be0f1c9f0f2677fb75",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Let's Test Your Knowledge!",
+    "displayTitle": "Let's Test Your Knowledge!",
+    "body": "<p>Answer the following questions to review the content you learned in this course.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb83",
+    "_parentId": "611149be0f1c9f0f2677fb76",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "How to Create a Course",
+    "displayTitle": "How to Create a Course",
+    "body": "<p>As described in the last module, magazines are comparable to courses. In this module, you will learn how to create a course on Adapt.&nbsp;</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "6115571d0f1c9f0f26780a61",
+    "_parentId": "611556c90f1c9f0f26780a4a",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "How to Create an Article",
+    "displayTitle": "How to Create an Article",
+    "body": "<p>As seen on the Adapt eLearning Authoring Tool page, when we are ready to build in Adapt, we will use <span style=\"color:#006400\"><strong>ARTICLES</strong></span>,&nbsp;<span style=\"color:#800080\"><strong>BLOCKS</strong>&nbsp;</span>and&nbsp;<span style=\"color:#0000CD\"><strong>COMPONENTS</strong>&nbsp;</span>to convey the message or story of each individual page in our magazine.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611e93bb0f1c9f0f267817eb",
+    "_parentId": "611149be0f1c9f0f2677fb77",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb79",
+    "_parentId": "611149be0f1c9f0f2677fb6f",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb82",
+    "_parentId": "611149be0f1c9f0f2677fb75",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb84",
+    "_parentId": "611149be0f1c9f0f2677fb76",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Article title",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611191e50f1c9f0f2677ff6d",
+    "_parentId": "611149be0f1c9f0f2677fb73",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "How to Create a Page",
+    "displayTitle": "How to Create a Page",
+    "body": "<p>To build your course structure, you can add pages for topics to be covered in the course. Let's explore how to add a page to our course.&nbsp;</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611556c90f1c9f0f26780a4e",
+    "_parentId": "611556c90f1c9f0f26780a4a",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "How to Create a Block",
+    "displayTitle": "How to Create a Block",
+    "body": "<p>Let's explore how to add a block to our article.</p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611e939f0f1c9f0f267817e3",
+    "_parentId": "611149be0f1c9f0f2677fb77",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb80",
+    "_parentId": "611149be0f1c9f0f2677fb74",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611149be0f1c9f0f2677fb86",
+    "_parentId": "611149be0f1c9f0f2677fb77",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  },
+  {
+    "title": "Navigation",
+    "displayTitle": "Navigation",
+    "body": "<p>In <strong>Adapt</strong>, navigating between <span style=\"color:rgb(178, 34, 34)\"><strong>PAGES</strong></span>&nbsp;can help the learner move more easily between the parts or modules&nbsp;of&nbsp;a course. Here is an example for the Quick Navigation&nbsp;<strong><span style=\"color:rgb(0, 0, 205)\">COMPONENT.</span></strong></p>",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "611556c90f1c9f0f26780a4c",
+    "_parentId": "611556c90f1c9f0f26780a4a",
+    "_type": "article",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  }
+]
