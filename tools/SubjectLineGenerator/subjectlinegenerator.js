@@ -24,6 +24,7 @@ $(document).ready(function() {
 
     function UpdateGen() {
         var genString = "";
+        genString += "WR";
         genString += $("#wrnum").val();
         genString += " - ";
         genString += $("#liveid").val();
