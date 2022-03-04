@@ -98,33 +98,31 @@
                     <label for="duedate">Due</label><br/><input id="duedate" type="text" value="" maxlength="6" />
                 </div>
                 <div>
-                    <label for="wpverif">WP Verified?</label><br/><select id="wpverif">
-						<option selected="selected" value=" - Work Plan Verified">YES</option>
-						<option value="">NO</option>
-					</select>
-                </div>
-                <div>
                     <label for="tobeopen">Step</label><br/><select id="tobeopen">
-						<option selected="selected" value=" - To be opened">To be opened</option>
+                        <option selected="selected" value=" - To verify Work Plan">To Verify Work Plan</option>
+						<option value=" - Work Plan Verified - To be opened">Work Plan Verified - To be opened</option>
+                        <option value=" - Not on Work Plan - To be escalated">Not on Work Plan - To be escalated</option>
+                        <option value=" - Not on Work Plan - To be opened">Not on Work Plan - To be opened</option>
 						<option value=" - To be assigned">To be assigned</option>
-                        <option value=" - To be assigned">Assigned</option>
+                        <option value=" - Assigned">Assigned</option>
 					</select>
                 </div>
                 <div>
-                    <label for="task">Task</label><br/><input id="task" type="text" value="" />
+                    <label for="task">Additional Task</label><br/><input id="task" type="text" value="" />
                 </div>
             </div>
         </fieldset>
         <fieldset>
             <legend>Generated subject line</legend>
             <div id="gen"></div>
+            <button id="btn">COPY</button>
         </fieldset>
     </div>
 </body>
 <style>
     body {
         font-family: "Arial";
-        background-color: darkslategray;
+        background-color: darkslateblue;
     }
     
     #contents {
@@ -152,7 +150,18 @@
     }
     
     #gen {
+        width: 100%;
         display: block;
+    }
+    
+    #btn {
+        width: 15%;
+        display: block;
+        margin-top: 15px;
+    }
+    
+    #tobeopen {
+        width: 300px;
     }
     
     input,
