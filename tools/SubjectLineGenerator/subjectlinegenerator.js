@@ -36,8 +36,11 @@ function UpdateGen() {
     genString += ") ";
     genString += $("#gnwt").val();
     genString += $("#acessibility").val();
-    genString += " - ";
-    genString += $("#duedate").val();
+
+    if ($("#duedate").val() != "") {
+        genString += " - Due ";
+        genString += $("#duedate").val();
+    }
     genString += $("#wpverif").val();
     genString += $("#tobeopen").val();
     genString += " > Task = ";
