@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSH Subject line Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="subjectlinegenerator.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        td {
+            border: 1px solid #666;
+            padding: 2px 10px;
+        }
+        
+        .heading {
+            font-weight: bold;
+            background-color: #666;
+            color: white;
+        }
+        
+        .heading td {
+            width: 100px;
+        }
+        
+        .subheading {
+            font-weight: bold;
+            font-size: 0.8em;
+            border-bottom: 0.5px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="contents">
+        <fieldset>
+            <legend>WR details</legend>
+            <div>
+                <div>
+                    <label for="wrnum">WR # </label><br/><input id="wrnum" type="text" value="0000" maxlength="5" />
+                </div>
+                <div>
+                    <label for="liveid">LiveID </label><br/><input id="liveid" type="text" value="" maxlength="14" />
+                </div>
+                <div>
+                    <label for="lang">Lang </label><br/><select id="lang">
+						<option selected="selected" value="EN">EN</option>
+						<option value="FR">FR</option>
+					</select>
+                </div>
+                <div>
+                    <label for="title">Course Title </label><br/><input id="title" type="text" value="" />
+                </div>
+            </div><br/>
+
+            <div>
+                <div>
+                    <label for="bl">BL</label><br/><select id="bl">
+						<option selected="selected" value="CCC-CPPOAS">CCC-CPPOAS</option>
+						<option value="CCC-EI">CCC-EI</option>
+						<option value="CORPORATE">CORPORATE</option>
+						<option value="CPPD-MA">CPPD-MA</option>
+						<option value="CPPOAS">CPPOAS</option>
+						<option value="CSB_Passport_TFW">CSB_Passport_TFW</option>
+						<option value="EI">EI</option>
+						<option value="Integrity">Integrity</option>
+						<option value="GsCs">GsCs</option>
+						<option value="HRSB">HRSB</option>
+						<option value="iservice/Teamsite">iservice/Teamsite</option>
+						<option value="Other">Other</option>
+					</select>
+                </div>
+                <div>
+                    <label for="wtype">Work Type</label><br/><select id="wtype">
+						<option selected="selected" value="Maintenance">Maintenance</option>
+						<option value="New Development">New Development</option>
+					</select>
+                </div>
+                <div>
+                    <label for="gnwt">GNWT?</label><br/><select id="gnwt">
+						<option selected="selected" value="(GNWT) ">YES</option>
+						<option value="">NO</option>
+					</select>
+                </div>
+                <div>
+                    <label for="acessibility">+accessibility?</label><br/><select id="acessibility">
+						<option selected="selected" value="(+Accessibility)">YES</option>
+						<option value="">NO</option>
+					</select>
+                </div>
+            </div><br/>
+            <div>
+                <div>
+                    <label for="duedate">Due date</label><br/><input id="duedate" type="text" value="" maxlength="8" />
+                </div>
+                <div>
+                    <label for="wpverif">WP Verified?</label><br/><select id="wpverif">
+						<option selected="selected" value=" - Work Plan Verified">YES</option>
+						<option value="">NO</option>
+					</select>
+                </div>
+                <div>
+                    <label for="tobeopen">To be opened?</label><br/><select id="tobeopen">
+						<option selected="selected" value=" - To be opened">YES</option>
+						<option value="">NO</option>
+					</select>
+                </div>
+                <div>
+                    <label for="task">Task</label><br/><input id="task" type="text" value="" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Generated subject line</legend>
+            <div id="gen"></div>
+        </fieldset>
+    </div>
+</body>
+<style>
+    body {
+        font-family: "Arial";
+        background-color: darkslategray;
+    }
+    
+    #contents {
+        background-color: white;
+    }
+    
+    #wrnum {
+        width: 40px;
+    }
+    
+    #liveid {
+        width: 120px;
+    }
+    
+    #title {
+        width: 500px;
+    }
+    
+    #duedate {
+        width: 65px;
+    }
+    
+    #task {
+        width: 250px;
+    }
+    
+    #gen {
+        display: block;
+    }
+    
+    input,
+    select {
+        margin-bottom: 8px;
+    }
+    
+    div {
+        display: block;
+        padding: 5px;
+    }
+    
+    div div {
+        display: inline-block;
+    }
+    /*
+    liveid lang title bl wtype gnwt acessibility duedate wpverif tobeopen task
+	*/
+</style>
+
+</html>
