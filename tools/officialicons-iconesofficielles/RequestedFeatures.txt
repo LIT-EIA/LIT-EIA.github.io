@@ -1,0 +1,4 @@
+- Split into two columns, a menu on the left and image on the right side
+- Add a field for the Alt text that was in the document, allow copying of the alt text
+	- Even better if we can find a way for the alt text to copy over directly into the word document when you copy the image.
+	
