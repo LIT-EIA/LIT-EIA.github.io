@@ -1,7 +1,6 @@
 <!doctype html>
-<html>
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Icons / Icones</title>
     <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -9,7 +8,7 @@
     <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
-<body onload="langValue()">     
+<body >     
     <div class="container center">  
         <nav class="navbar navbar-light">
             <a class="navbar-brand" href="#">
@@ -27,7 +26,7 @@
             <div class="col-4">
                 <p class="lang" key="SELECTICON">Select icon</p>
                 <p>
-                    <select class="form-select" id="iconSelector">
+                    <select class="form-select" id="iconSelector" aria-label="Select icon">
                         <option class="lang" key="CALCULATION" altfr="Calcul" alten="Calculation" value="0">Calculation</option>
                         <option class="lang" key="FORMULA" altfr="Formule" alten="Formula" value="1">Formula</option>
                         <option class="lang" key="GOTO" altfr="Allez à (Aller à un autre endroit dans un document, programme ou site Web)" alten="Go To (Go to another location in a document, program or web site)" value="2">Go To</option>
@@ -61,7 +60,7 @@
                 </p>
                 <p>
                     <p class="lang" key="SELECTBGCOLOR">Select Background Color</p>
-                    <select class="form-select" id="iconColorSelector">
+                    <select class="form-select" id="iconColorSelector" aria-label="Select Background Color">
                         <option class="lang" key="COVE" selected="selected" value="#051c37">Deep Cove</option>
                         <option class="lang" key="VIOLET" value="#cd1c69">Red Violet</option>
                         <option class="lang" key="PURPLE" value="#69459c">Royal Purple</option>
@@ -72,7 +71,7 @@
                 </p>
                 <p>
                     <p class="lang" key="SELECTICONCOLOR">Select Icon Color</p>
-                    <select class="form-select" id="bgColorSelector">
+                    <select class="form-select" id="bgColorSelector" aria-label="Select Icon Color">
                         <option class="lang" key="WHITE" selected="selected" value="#FFFFFF">Solid White</option>
                         <option class="lang" key="COVE" value="#051c37">Deep Cove</option>
                         <option class="lang" key="VIOLET" value="#cd1c69">Red Violet</option>
@@ -83,7 +82,7 @@
                 </p>
                 <p>    
                     <p class="lang" key="SELECTICONCOLOR">Select Icon Size</p>         
-                    <select class="form-select" id="sizeSelector">
+                    <select class="form-select" id="sizeSelector" aria-label="Select Icon Size">
 						<option value="16">16x16 pixels</option>
                         <option value="25">25x25 pixels</option>
 						<option value="80">80x80 pixels</option>
@@ -97,7 +96,9 @@
         </div>
     </div>
     <div class="container">
-        <button class="SAVE" id="savebtn" download="image.png" href="#">Save</button>
+        <div class="col-12 center" >
+            <button class="lang btn btn-primary center" key="SAVE" id="savebtn" download="image.png" href="#">Save</button>
+        </div>
         <div class="col-12 center" >
             <canvas id="canvas"></canvas>
         </div>
@@ -239,14 +240,38 @@
             $('#alt_FR').html("alt=\"" + $("#iconSelector option:selected").attr("altfr") + "\"");
         })
 
+        
         var button = document.getElementById('savebtn');
         button.addEventListener('click', function (e){
+            
             var canvas = $(document).find('#canvas');
             console.log(canvas);
             var dataUrl = canvas.get(0).toDataURL('image/png');
-            button.href=dataUrl;
             
+            var a  = document.createElement('a');
+            a.href = dataUrl;
+
+            a.download = 'image.png';
+            a.click();
+            element.remove();
+            /*
+                console.log(dataUrl);
+                button.href=dataUrl;
+            */
         });
+        
+        /*
+        var button = document.getElementById('savebtn');
+        button.addEventListener('click', function (e){
+            const svg = document.getElementById('canvas').outerHTML;
+            const blob = new Blob([svg.toString()]);
+            const element = document.createElement("a");
+            element.download = "image.svg";
+            element.href = window.URL.createObjectURL(blob);
+            element.click();
+            element.remove();
+        });
+        */
       
 
     </script>
