@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Webpage HTML document for image resizer tool-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="style.css">
+
+  
+
+  <title>Image Resizer Tool</title>
+  
+</head>
+
+<body>
+
+<div class="header">
+
+  <a href="index.html"> <button> English </button></a>
+
+  <a href="french.html"> <button> Français </button></a>
+
+
+ <h2 style="text-align:right;" >Image Resizer Tool</h2>
+
+ <form>
+
+  <label> Upload an Image </label>
+ <input type="file" class="upload"> </input>
+
+
+    <div class="dimensions">
+
+      <label>Width</label>
+      <input type="text" class="resizer__input WidthSize"  placeholder= "Enter Width in px: " >
+      
+      <label>Height</label>
+      <input type="text" class="resizer__input HeightSize" placeholder= "Enter Height in px:  ">
+
+      <label>Name File</label>
+      <input type="text" name="Name" placeholder= "Customize file name:  " >
+
+      <button type="button" onclick="downloadImage()">Download</button>
+
+      <button type="submit" id="preview">New Image</button>
+      
+      <div class="wrapper">
+       <label> <input type="checkbox" class="AspectRatio"  checked>
+       Keep Aspect Ratio</label>
+      </div>
+      
+    </form>
+
+</div>
+
+<div class="container">
+<div  class="col-12 center">
+ <canvas  class="ImgCanvas" ></canvas>
+</div>
+</div>
+
+  <script src="main.js" defer></script>
+
+</body>
+</html>
