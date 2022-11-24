@@ -1,0 +1,154 @@
+{
+  "0897f3db9a66f710a4975dbdcc5fed765b62be0f.png": {
+    "title": "placeholder.png",
+    "description": "Placeholder image",
+    "tags": []
+  },
+  "1146add3b1ed3b3f1c9093d8e40465d9e9e4318e.png": {
+    "title": "BL56-StrikeMgmt-PIC-ProcessV2.png",
+    "description": "Diagram of the PIC process",
+    "tags": []
+  },
+  "2ec6168f783f2c1c927d2a5524f684fe16da0358.jpg": {
+    "title": "close-up-view-of-light-blue-pink-and-purple-paint-.jpg",
+    "description": "cool cloudy smoke",
+    "tags": [
+      {
+        "title": "Chris King",
+        "_id": "63348981015f1824ffb6c0f6"
+      }
+    ]
+  },
+  "30b0e80e04267d0ca1fd6bf20088fbd9150a9a87.jpg": {
+    "title": "pinky-green-paint-.jpg",
+    "description": "pinkish green paint dissolving",
+    "tags": []
+  },
+  "32f01341bdfc482c608ddbed38884fd5fa3662c5.jpg": {
+    "title": "rapper.jpg",
+    "description": "blurred out image of a rap star",
+    "tags": [
+      {
+        "title": "anonymous music star",
+        "_id": "63348982015f1824ffb6c0f9"
+      },
+      {
+        "title": "rap",
+        "_id": "63348982015f1824ffb6c0fa"
+      }
+    ]
+  },
+  "3e4f69436901b5e9877d35a5a6459595e8ad418f.png": {
+    "title": "triangles.png",
+    "description": "triangles",
+    "tags": [
+      {
+        "title": "triangles",
+        "_id": "63348982015f1824ffb6c0fc"
+      }
+    ]
+  },
+  "41dffd133d498d243ec1119fa549df19e8040e1f.jpg": {
+    "title": "Galapagos-Ecuador-cr-Shutterstock-1000x667.jpg",
+    "description": "tropical island",
+    "tags": [
+      {
+        "title": "tropical",
+        "_id": "63348983015f1824ffb6c0fe"
+      },
+      {
+        "title": "island",
+        "_id": "63348983015f1824ffb6c0ff"
+      }
+    ]
+  },
+  "71e689f6ca46b61d3e4af6c96a632e3ad23d575b.jpg": {
+    "title": "top-view-of-curved-multicolored-lines-on-blue-and-.jpg",
+    "description": "multicoloured lines",
+    "tags": []
+  },
+  "807cdc7697ed89210b95b2a7167fd616c9a5f26f.jpg": {
+    "title": "sheba-Queen.jpg",
+    "description": "Queen of Sheba - old painting",
+    "tags": [
+      {
+        "title": "queen of Sheba",
+        "_id": "63348983015f1824ffb6c102"
+      }
+    ]
+  },
+  "8d78ae3df38219e3fbf34ce475c1aa6f0bd64700.svg": {
+    "title": "noun-accessibility-paleBlue.svg",
+    "description": "test",
+    "tags": []
+  },
+  "966d631bb11eca396107a1423331f47ad24e09b0.jpg": {
+    "title": "liquidMetal-greenie.jpg",
+    "description": "liquid colour waves",
+    "tags": [
+      {
+        "title": "Chris King",
+        "_id": "63348981015f1824ffb6c0f6"
+      }
+    ]
+  },
+  "a23d2e033556627f3c38c228aeb089b687cbc1a9.png": {
+    "title": "MeD Placeholder",
+    "description": "Created by MeD",
+    "tags": []
+  },
+  "c155ba3990f0fb982a9000cc8657fac9bd2df52c.png": {
+    "title": "circles.png",
+    "description": "circles",
+    "tags": []
+  },
+  "c86302b90778f27d56d71dbe7531f7097a3236f6.jpg": {
+    "title": "colorful-liquid-metallic-wavy-background-3d-render.jpg",
+    "description": "colourful liquid metallic wavy background",
+    "tags": [
+      {
+        "title": "Chris King",
+        "_id": "63348981015f1824ffb6c0f6"
+      }
+    ]
+  },
+  "ce30cabab3d63b569baf7c81b5becacce40fa0f5.png": {
+    "title": "Group 1.png",
+    "description": "red pin",
+    "tags": []
+  },
+  "cf79d160c6eeb7df442f2bd52f45dff86eee401f.jpg": {
+    "title": "BL99-BlueSmokeCloud",
+    "description": "EN: Smoke cloud of blue color\r\nFR: Nuage de fumée bleue",
+    "tags": [
+      {
+        "title": "GEN",
+        "_id": "63348987015f1824ffb6c10a"
+      },
+      {
+        "title": "MeD",
+        "_id": "63348987015f1824ffb6c10b"
+      }
+    ]
+  },
+  "ef53935ff59f0ade30360954e4a6c731e2f429bc.jpg": {
+    "title": "yellow-turquoise-paint-.jpg",
+    "description": "cloudy paint dissolving in water",
+    "tags": [
+      {
+        "title": "Chris King",
+        "_id": "63348981015f1824ffb6c0f6"
+      }
+    ]
+  },
+  "ffc4bc537657a7c7b302f38c8fa04602c68ae8f2.jpg": {
+    "title": "liquidMetal-purpleish.jpg",
+    "description": "liquid metal other",
+    "tags": [
+      {
+        "title": "Chris King",
+        "_id": "63348981015f1824ffb6c0f6"
+      }
+    ]
+  }
+}
