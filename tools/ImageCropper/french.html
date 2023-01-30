@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= stylesheet href="../ImageCropper/main.css">
+    <!-- cropper js -->
+    <link  href="../node_modules/cropperjs/dist/cropper.min.css" rel="stylesheet">
+   
+    <title>Outil de recadrage d'image</title>
+</head>
+
+<body>
+    <!-- Header  -->
+    <article class="lang">
+        <a href="index.html"><div class="lang-btn">English</div></a>
+        <!-- <a href=""><div class="lang-btn">Français</div></a> -->
+    </article>
+    <header>
+        <h1 class="cropper">Outil de recadrage d'image </h1>
+    
+    </header>
+    <div class="line"></div>
+    <!-- Main Container -->
+        <div class="container">
+            <div class="text">
+                <h2><label class = "text" for="freeform">Insérez le texte ci-dessous</label>
+                    </h2>
+                    <br>
+    
+                <textarea id="freeform" name="freeform" rows="20" cols="60
+                ">
+                
+                </textarea>
+            </div>
+            <div class="imageBox">
+                <div class="boxHeader">
+                    <h2 class="text">Télécharger l'image</h2>
+                    
+                    <article class="files">  
+                        <input type="file" id="file-input" onchange="readUrl(this)" >
+                        
+                    </article>
+                </div>
+                <br>
+                
+                <div class="img-cont">
+                    <img id="a" alt="" class="cropper-hidden">
+                </div>
+                
+                <!-- buttons for the cropping canvas-->
+                <div class="options">
+                    <button id="cropBtn"   onclick="ZoomIn()" >Agrandir</button>
+                    <button id="cropBtn"   onclick="ZoomOut()" >Dézoomer</button>
+                    <button id="cropBtn"  onclick="Rotate()" >Rotation 45%</button>
+                    <button id="cropBtn"  onclick="Rotatefull()" >Rotation 180%</button>
+                    <button id="cropBtn"  onclick="Preview()">Aperçu comme sur ADAPT </button>
+                    <button id="cropBtn"  onclick="Reset()"> Réinitialiser</button>
+                </div>
+
+                <div class="previews">
+                    <button id="cropBtn"  onclick="Preview()">Aperçu comme sur ADAPT (demi-largeur) </button>
+                    <button id="cropBtn"  onclick="PreviewFull()">Aperçu comme sur ADAPT (pleine largeur) </button>
+                </div>
+    
+                <button id="cropBtn" class ="hide" onclick="Crop()" >Recadrer </button>
+            </div>
+            
+        </div>
+            <!-- end of Main Container -->
+    
+            <!-- The cropped image  -->
+        <div class="output-cont">
+        </div>
+    
+        <!-- The Modal (the result page with the text and image) -->
+        <div id="myModal" class="modal">
+            <div class="header">
+    
+                <button class="close-btn" id="cropBtn">
+                    Fermer
+                </button>
+            </div>
+            <div class="container wrap">
+                <div class="text-box">
+                    <textarea name="ab" id="ab" cols="60" rows="20" readonly></textarea>
+                </div>
+                <div class="res-container">
+                </div>
+                
+            </div>
+    
+            <div class="footer">
+                <label for="">Nom au dossier</label><input type="text" placeholder="personnaliser le nom du fichier">
+                <button class="save-btn " id="cropBtn">
+                    Télécharger
+                </button>
+    
+            </div>
+    
+        </div>
+        <!-- End of Modal Div -->
+        
+    
+        <script src="../ImageCropper/script.js"></script>
+        <script src ="../ImageCropper/FileSaver.js"></script>
+        <script src="../node_modules/cropperjs/dist/cropper.min.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,270 @@
+/* universal*/
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+  margin: 0;
+}
+
+.text{
+    color: var(--headerTwo);
+    font-size: 1.3rem;
+}
+:root {
+   
+    --headerOne : #051c37;
+    --headerTwo : #1f7c9b;
+    --headerThree: #69459c;
+    --headerFour: #cd1c69;
+    --headerFive: #666666;
+    --white: #FCFCFC;
+    
+}
+
+.hide{
+    display: none;
+}
+
+/* End of Univeral  */
+/* Start lang area styling */
+.lang{
+    
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--headerTwo);
+    
+    
+}
+
+.lang-btn{
+    padding: 10px;
+    padding-right: 50px;
+    color: var(--white);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+/* End of lang area styling */
+
+
+/* Header Area Styling  */
+
+header{
+    
+    background-color:var(--headerTwo);
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.cropper{
+    
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    color: var(--white);
+}
+
+
+
+/* End of header area  */
+.line{
+    height: 2px;
+    background-color: var(--headerFive);
+    margin-bottom: 5rem;
+    
+}
+
+/* Main Container styling */
+.container{
+   
+    display: flex;
+    justify-content: center;
+    margin: auto auto;
+    border-radius: 2px;
+    padding: 1rem;
+    
+}
+.boxHeader{
+    display: flex;
+}
+
+input::file-selector-button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    margin-left: 1rem;
+    
+    color: var(--headerTwo);
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input::file-selector-button:hover {
+    background-color: white;
+    transition: .7s;
+}
+.files{
+    display: flex;
+    transform: translateY(20%);
+}
+
+
+textarea,#ab{
+    resize: none;
+    padding: 1rem;
+    text-align: start;
+    font-size: 1rem;
+    border: solid var(--headerFive) 1px;
+    border-radius: 5px;
+}
+.imageBox{
+    border: none;
+    margin-left: 2rem;
+}
+#a{
+   display: block;
+    width: 600px;
+    height: auto;
+    border:none;
+    /* width: max-content; */
+    
+}
+img{
+    border: none;
+}
+
+.options,.previews{
+    
+    display: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: 1s;
+    }
+#cropBtn{
+    color: var(--headerTwo);
+    padding: 0.5em;
+    border: 2px solid var(--headerFive);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+#cropBtn:hover{
+    background-color: var(--headerTwo) ;
+    color: white;
+    transition: .7s;
+    
+    
+}
+/* End of Main Container styling */
+
+.output-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+/* width is 400px on ADAPT  */
+.b{
+    width: 600px; 
+    height: max-content;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.c{
+    width: 467px; 
+    height: auto;
+}
+
+.d{
+    width: 964px; 
+    height: auto;
+}
+
+
+/* Modal Styling*/
+.modal {
+   display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* min-height: calc(100vh- 100px); */
+    overflow-y: auto; /* Enable scroll if needed */
+    background-color: rgb(211, 211, 211); /* Fallback color */
+    background-color: rgba(255, 255, 255, 1);
+    /* transition: all 1s animation; */
+    animation-name: animation;
+    /* height: 1300px; */
+}
+  
+
+.wrap{
+    margin-top: 2rem;
+}
+ 
+.header{
+   position: relative;
+   margin-bottom: 3rem;
+}
+
+.close-btn{
+    position: absolute;
+    top:-20px;
+    right: 5%;
+    cursor: pointer;
+}
+
+
+.close:hover{
+    background-color: grey;
+    transition: 1s;
+    border-radius: 5px;
+    
+}
+.res-container{
+    margin-left: 15px;
+}
+
+
+
+.footer{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+input[type=text]{
+    border : 2px solid var(--headerFive);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+label{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--headerTwo);
+    margin-right: 15px;
+    transform: translateY(10px);
+}
+.save-btn{
+    margin-left: 25px;
+}
+@keyframes animation {
+
+
+    0% {opacity:0 };
+    25% {opacity: 0.25 };
+    50% {opacity: 0.75;};
+    100% {opacity :1};
+
+  }
+
+  /* End of Modal Styling */
+

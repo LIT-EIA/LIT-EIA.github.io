@@ -15,46 +15,62 @@
 </head>
 
 <body>
+  
+  <div class="lang">
+    <a  href="index.html"> <div  class="lang-btn" > English </div></a>
+    <!-- <a href="french.html"> <div class="lang-btn"> Français </div></a> -->
+  </div>
+ 
 
 <div class="header">
 
- <a href="index.html"> <button> English </button></a>
-
-<a href="french.html"> <button> Français </button></a>
-
-
- <h2 style="margin-left: 60%;" , style="margin-bottom:auto;" >Redimensionneur d'image</h2>
-
- <form>
-
-  <label> Télécharger Une Image </label>
- <input type="file" class="upload"> </input>
-
-
-    <div class="dimensions">
-
-      <label>Largeur</label>
-      <input type="text" class="resizer__input WidthSize"  placeholder= "Entrez la largeur en px: " >
-      
-      <label>Hauteur</label>
-      <input type="text" class="resizer__input HeightSize"  placeholder= "Entrer la hauteur en px: ">
-
-      <label>Nom du fichier</label>
-      <input type="text" name="Name"placeholder= "Personnaliser le nom du fichier: ">
-
-      <button type="button" onclick="downloadImage()">Télécharger</button>
-      
-      <button type="submit" id="preview">Nouvelle Image</button>
-      
-      <div class="wrapper">
-       <label> <input type="checkbox" class="AspectRatio" checked>
-        Conserver le Rapport d'aspect</label>
-      </div>
-
-      
-    </form>
+ <h1 class =  "title">Redimensionneur d'image</h1>
 
 </div>
+
+<div class="line">
+  
+</div>
+<!-- end of header  -->
+
+<article class="main-cont">
+<div class="form-container">
+  <form >
+
+    <h2> Télécharger Une Image </h2>
+      <input type="file" class="upload"> </input>
+
+      <select name="width" id="width" class="WidthSize">
+        <option value="">veuillez choisir une option</option>
+        <option value="2200"> Extra détaillé (2200px) </option>
+        <option default value="1200"> Pleine largeur (1200px)</option>
+        <option value="600">Demi-largeur (600px)</option>
+        <option value="400"> Frid chaud(400px)</option>
+        <option value="120">Icône (120px)</option>
+        
+        
+      </select>
+    
+    <h2>Hauteur</h2>
+    <input type="text" class="resizer__input HeightSize" placeholder= "hauteur correspondante " disabled>
+
+    <h2>Nom du fichier</h2>
+    <input type="text" name="Name" placeholder= "personnaliser le nom du fichier " >
+
+    <button type="button" onclick="downloadImage()">Télécharger</button>
+
+    <button type="submit" id="preview">Nouvelle Image</button>
+    
+    <div class="wrapper">
+    <label> <input type="checkbox" class="AspectRatio"  checked readonly>
+      Conserver le Rapport d'aspect</label>
+    </div>
+    
+  </form>
+</div>
+     
+</article>
+
 
 
 <div class="container">
@@ -67,3 +83,4 @@
 
 </body>
 </html>
+

@@ -10,50 +10,69 @@
 
   
 
-  <title>Image Resizer Tool</title>
+  <title>Image Optimizer Tool</title>
   
 </head>
 
 <body>
+  
+  <div class="lang">
+    <!-- <a  href="index.html"> <div  class="lang-btn" > English </div></a> -->
+    <a href="french.html"> <div class="lang-btn"> Français </div></a>
+  </div>
+ 
 
 <div class="header">
 
-  <a href="index.html"> <button> English </button></a>
-
-  <a href="french.html"> <button> Français </button></a>
-
-
- <h2 style="text-align:right;" >Image Resizer Tool</h2>
-
- <form>
-
-  <label> Upload an Image </label>
- <input type="file" class="upload"> </input>
-
-
-    <div class="dimensions">
-
-      <label>Width</label>
-      <input type="text" class="resizer__input WidthSize"  placeholder= "Enter Width in px: " >
-      
-      <label>Height</label>
-      <input type="text" class="resizer__input HeightSize" placeholder= "Enter Height in px:  ">
-
-      <label>Name File</label>
-      <input type="text" name="Name" placeholder= "Customize file name:  " >
-
-      <button type="button" onclick="downloadImage()">Download</button>
-
-      <button type="submit" id="preview">New Image</button>
-      
-      <div class="wrapper">
-       <label> <input type="checkbox" class="AspectRatio"  checked>
-       Keep Aspect Ratio</label>
-      </div>
-      
-    </form>
+ <h1 class =  "title">Image Optimizer Tool</h1>
 
 </div>
+
+<div class="line">
+
+</div>
+<!-- end of header  -->
+
+<article class="main-cont">
+<div class="form-container">
+  <form >
+
+    <h2> Upload an Image </h2>
+      <input type="file" class="upload"> </input>
+
+    <h2>Width</h2>
+  
+    <select name="width" id="width" class="WidthSize">
+      <option value="">Please choose an option</option>
+      <option value="2200"> Extra Detailed (2200px) </option>
+      <option default value="1200"> Full Width (1200px)</option>
+      <option value="600">Half Width (600px)</option>
+      <option value="400"> Hot Grid (400px)</option>
+      <option value="120">Icon (120px)</option>
+      
+      
+    </select>
+    <h2>Height</h2>
+    <input type="text" class="resizer__input HeightSize" placeholder= " Coressponding Height " disabled>
+
+    <h2>Name File</h2>
+    <input type="text" name="Name" placeholder= "Customize file name " >
+
+    <button type="button" onclick="downloadImage()">Download</button>
+
+    <button type="submit" id="preview">New Image</button>
+    
+    <div class="wrapper">
+    <label> <input type="checkbox" class="AspectRatio"  checked readonly>
+    Keep Aspect Ratio</label>
+    </div>
+    
+  </form>
+</div>
+     
+</article>
+
+
 
 <div class="container">
 <div  class="col-12 center">

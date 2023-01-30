@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image Cropper Tool </title>
+    <link rel= stylesheet href="../ImageCropper/main.css">
+    <!-- cropper js -->
+    <link  href="../node_modules/cropperjs/dist/cropper.min.css" rel="stylesheet">
+   
+</head>
+<body>
+<!-- Header  -->
+<article class="lang">
+    <!-- <a href=""><div class="lang-btn">English</div></a> -->
+    <a href="french.html"><div class="lang-btn">Français</div></a>
+</article>
+<header>
+    <h1 class="cropper">Image Cropper Tool </h1>
+
+</header>
+<div class="line"></div>
+<!-- Main Container -->
+    <div class="container">
+        <div class="text">
+            <h2 class = "text" for="freeform">Insert Text Below
+                </h2>
+                <br>
+
+            <textarea id="freeform" name="freeform" rows="20" cols="60
+            ">
+            
+            </textarea>
+        </div>
+        <div class="imageBox">
+            <div class="boxHeader">
+                <h2 class="text">Upload Image</h2>
+               
+                <article class="files">  
+                    <input type="file" id="file-input" onchange="readUrl(this)" >
+                    
+                </article>
+            </div>
+            <br>
+            
+            <div class="img-cont">
+                <img id="a" alt="" class="">
+            </div>
+           
+            <!-- buttons for the cropping canvas-->
+            <div class="options">
+                <button id="cropBtn"   onclick="ZoomIn()" >Zoom In</button>
+                <button id="cropBtn"   onclick="ZoomOut()" >Zoom Out</button>
+                <button id="cropBtn"  onclick="Rotate()" >Rotate 45%</button>
+                <button id="cropBtn"  onclick="Rotatefull()" >Rotate 180%</button>
+                <button id="cropBtn"  onclick="Reset()"> Reset</button>
+            </div>
+
+            <div class="previews">
+                <button id="cropBtn"  onclick="Preview()">Preview like on ADAPT (Half width) </button>
+                <button id="cropBtn"  onclick="PreviewFull()">Preview like on ADAPT (Full width) </button>
+            </div>
+
+            <button id="cropBtn" class ="hide" onclick="Crop()" >Crop </button>
+            <!-- <button id="cropBtn" class ="hide" onclick="Preview()">Preview like on ADAPT (Half width) </button>
+            <button id="cropBtn"class ="hide"  onclick="PreviewFull()">Preview like on ADAPT (Full width) </button> -->
+        </div>
+        
+    </div>
+      <!-- end of Main Container -->
+
+      <!-- The cropped image  -->
+    <div class="output-cont">
+    </div>
+
+    <!-- The Modal (the result page with the text and image) -->
+    <div id="myModal" class="modal">
+        <div class="header">
+
+           <button class="close-btn" id="cropBtn">
+               Close
+           </button>
+        </div>
+        <div class="container wrap">
+            <div class="text-box">
+                <textarea name="ab" id="ab" cols="60" rows="20" readonly></textarea>
+            </div>
+            <div class="res-container">
+            </div>
+         
+        </div>
+
+        <div class="footer">
+            <article class="nameonFile">
+                <label for="">Name on file</label><input name= "Name" class="fileName" type="text" placeholder="Customize file name">
+            </article>
+           
+            <button class="save-btn " id="cropBtn">
+                Download 
+            </button>
+
+        </div>
+
+    </div>
+    <!-- End of Modal Div -->
+  
+
+    <script src="../ImageCropper/script.js"></script>
+    <script src ="../ImageCropper/FileSaver.js"></script>
+    <script src="../node_modules/cropperjs/dist/cropper.min.js"></script>
+</body>
+</html>

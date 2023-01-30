@@ -99,36 +99,6 @@ function resizeImg(width, height) {
 }
 
 
-/**
- * function to download images 
- * function allows the downloaded image to have the same name as the orginial image name 
- */
-
-//const down = document.querySelector("#download");
-//down.addEventListener("click",downloadImage);
-//const UploadImage = document.querySelector(".upload");
-//var files = document.getElementsByClassName("upload");
-//const WidthPx = document.querySelector(".WidthSize");
-/*function downloadImage(){
-
-  if (window.navigator.msSaveBlob) {
-    window.navigator.msSaveBlob(canvas.msToBlob(),  "Resized.png");
-  }
-
-  else {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.href = canvas.toDataURL();
-
-    a.download = "Resized.png" 
-    a.click();
-
-    document.body.removeChild(a);
-        }
-
-  window.location.reload();
-  }
-*/
 
   function downloadImage() {
 
