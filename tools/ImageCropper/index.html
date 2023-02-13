@@ -71,36 +71,69 @@
       <!-- end of Main Container -->
 
       <!-- The cropped image  -->
-    <div class="output-cont">
+      <div class="centering flex">
+        <div class="output-cont">
+        </div>
+  
+
+        
+        
     </div>
+    <div class="footer-wrapper">
+         <div class="footer">
+                <article class="nameonFile">
+                    <label for="">Name on file</label><input name= "Name" class="fileName" type="text" placeholder="Customize file name">
+                </article>
+        
+                <button class="save-btn " id="cropBtn">
+                    Download 
+                </button>
+
+        </div>
+
+    </div>
+    
+    
 
     <!-- The Modal (the result page with the text and image) -->
     <div id="myModal" class="modal">
-        <div class="header">
+  
+    <button class="close-btn" id="cropBtn">
+        Close
+    </button>
 
-           <button class="close-btn" id="cropBtn">
-               Close
-           </button>
-        </div>
-        <div class="container wrap">
-            <div class="text-box">
-                <textarea name="ab" id="ab" cols="60" rows="20" readonly></textarea>
+          
+        
+        <div class="body flex">
+            <div class="greyBox white">
+                <div class="block-title">
+                            New Block Title
+                </div>
+    
+                <div class="container wrap">
+                    <div class="text-box white">
+                        <div class="txt-a">
+                            New Component Title 
+                        </div>
+                        <div class="paragraph" id="ab">
+
+                        </div>
+                        
+                    </div>
+                    <div class="res-container white">
+                       
+                       
+                    </div>
+                 
+                </div>
+        
             </div>
-            <div class="res-container">
-            </div>
-         
         </div>
-
-        <div class="footer">
-            <article class="nameonFile">
-                <label for="">Name on file</label><input name= "Name" class="fileName" type="text" placeholder="Customize file name">
-            </article>
-           
-            <button class="save-btn " id="cropBtn">
-                Download 
-            </button>
-
-        </div>
+        
+        
+        <br>
+        <br>
+        <br>
 
     </div>
     <!-- End of Modal Div -->

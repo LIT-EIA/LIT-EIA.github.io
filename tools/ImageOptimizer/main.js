@@ -5,6 +5,7 @@
  * 1) ImageLoaded refers to the image that is currently in use - whenever image is changed it is stored in this variable.
  * 2) WTHR refers to the orginial width to height ratio  of the ImageLoaded - it helps with the Apsect Ratio eg 150x100 = 1.5 w to h ratio used to maintain aspect ratio
  */
+const pixel = document.querySelector(".pixelated");
 const fileInput = document.querySelector(".upload");
 const widthInput = document.querySelector(".WidthSize");
 const heightInput = document.querySelector(".HeightSize");
@@ -94,7 +95,7 @@ function resizeImg(width, height) {
 
   widthInput.value = Math.floor(width); //updating width and height input with the correct values (default width and height of image)
   heightInput.value = Math.floor(height); 
-
+pixelated(ImageLoaded.width, widthInput.value);
   canvasCtx.drawImage(ImageLoaded, 0, 0, Math.floor(width), Math.floor(height)); // draws on the canvas 
 }
 
@@ -117,6 +118,15 @@ function resizeImg(width, height) {
     window.location.reload();
   }
 
+
+  function pixelated(a, selectedWidth){
+
+    if (a < selectedWidth ){
+      console.log('image will be pixelated')
+      pixel.style.display = 'block';
+    // pixel.innerHTML = "<p>Warning : Image will be pixelated </p>";
+    }
+  }
 
 
   

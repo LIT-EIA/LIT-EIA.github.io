@@ -155,6 +155,13 @@ input::file-selector-button {
    background-color: var(--headerFive);
  }
 
+ .pixelated{
+   display: none;
+   color: var(--headerFive);
+   
+   font-size: 20px;
+ }
+
  
 
 

@@ -72,32 +72,60 @@
     
             <!-- The cropped image  -->
         <div class="output-cont">
+            
+            
         </div>
-    
-        <!-- The Modal (the result page with the text and image) -->
-        <div id="myModal" class="modal">
-            <div class="header">
-    
-                <button class="close-btn" id="cropBtn">
-                    Fermer
-                </button>
-            </div>
-            <div class="container wrap">
-                <div class="text-box">
-                    <textarea name="ab" id="ab" cols="60" rows="20" readonly></textarea>
-                </div>
-                <div class="res-container">
-                </div>
-                
-            </div>
-    
+
+        <div class="footer-wrapper">
             <div class="footer">
-                <label for="">Nom au dossier</label><input type="text" placeholder="personnaliser le nom du fichier">
+                <article class="nameonFile">
+                    <label for="">Nom au dossier</label><input type="text" placeholder="personnaliser le nom du fichier">
+                </article>
+               
                 <button class="save-btn " id="cropBtn">
                     Télécharger
                 </button>
     
             </div>
+        </div>
+        
+    
+        <!-- The Modal (the result page with the text and image) -->
+        <div id="myModal" class="modal">
+            
+    
+                <button class="close-btn" id="cropBtn">
+                    Fermer
+                </button>
+                <div class="body flex">
+                    <div class="greyBox white">
+                        <div class="block-title">
+                            New Block Title
+                        </div>
+                    
+                        <div class="container wrap">
+                                <div class="text-box white">
+                                    <div class="txt-a">
+                                        New Component Title 
+                                    </div>
+                                    <div class="paragraph" id="ab">
+        
+                                    </div>
+                                    
+                                </div>
+                                <div class="res-container white">
+                                
+                                
+                                </div>
+                     
+                        </div>
+                    </div>
+
+                    
+                
+                </div>
+
+                
     
         </div>
         <!-- End of Modal Div -->
