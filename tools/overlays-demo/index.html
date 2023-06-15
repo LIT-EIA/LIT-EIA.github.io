@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-b.css">
+    <title>Prototype</title>
+</head>
+<body>
+    <!-- header  -->
+    <div class="top-section">
+        <!-- design the grouping buttons and them make them invisible . . . . . -->
+
+        <div class="tabs visually-hidden" style="display: flex" >
+            <fieldset>
+                <legend>Menu:</legend>
+                <div>
+                    
+                    <!-- should i have labels for each one -->
+                   
+                    <button class="btn" alt = "Open">Open</button>
+                    <button class="btn" alt = "Close">Close SIN</button>
+                    <button class="btn" alt = "Save">Save</button>
+                    <button class="btn" alt = "Draft">Draft</button>
+                    <button class="btn" alt = "Delete">Delete</button>
+                    <button class="btn" alt = "Add">Add</button>
+                    <button class="btn" alt = "Note">Note</button>
+                    <button class="btn" alt = "Print">Print</button>
+                </div>
+              
+            </fieldset>
+    
+            <fieldset>
+                <legend>Work Item:</legend>
+                <div>
+                    <!-- <label for="shipping_name">
+                  <span class="hidden">Shipping </span>Name:
+                    </label> -->
+                    <!-- should i have labels for each button? -->
+                   
+                    <button class="btn" alt = "Open">Create</button>
+                    <button class="btn" alt = "Close">Complete</button>
+                    <button class="btn" alt = "Save">Reactivate</button>
+                    <button class="btn" alt = "Draft">Reassign</button>
+                    <button class="btn" alt = "Delete">Modify pending data</button>
+                    <button class="btn" alt = "Add">Move to pending</button>
+                    <button class="btn" alt = "Note">Move to current</button>
+                    <button class="btn" alt = "Print">SIR OPTIONS</button>
+                </div>
+              
+            
+            </fieldset>
+    
+            <fieldset>
+                <legend>Document:</legend>
+                <div>
+                    <!-- <label for="shipping_name">
+                  <span class="hidden">Shipping </span>Name:
+                    </label> -->
+                    <!-- should i have labels for each button? -->
+                    <button class="btn" alt = "Open">Create</button>
+                    <button class="btn" alt = "Close">Reinstate</button>
+                    <button class="btn" alt = "Save">Move </button>
+                    <button class="btn" alt = "Draft">Modify</button>
+                    <button class="btn" alt = "Delete">Decision Options</button>
+                   
+                </div>
+              
+            
+            </fieldset>
+    
+            <fieldset>
+                <legend>Systems:</legend>
+                <div>
+                    <!-- <label for="shipping_name">
+                  <span class="hidden">Shipping </span>Name:
+                    </label> -->
+                    <!-- should i have labels for each button? -->
+                    <button class="btn" alt = "RCM">RCM</button>
+                    <button class="btn" alt = "MSCA">MSCA</button>
+                    <button class="btn" alt = "Save">Create Questionnarie </button>
+                    <button class="btn" alt = "Draft">View Questionnarie</button>
+                    <button class="btn" alt = "Delete">Processing Activities</button>
+                    <button class="btn" alt = "Delete">Reference Tools</button>
+                    <button class="btn" alt = "Delete">View Tools</button>
+                    <button class="btn" alt = "Delete">View Documents</button>
+                    <button class="btn" alt = "Delete">Upload Documents</button>
+                   
+                </div>
+              
+            
+            </fieldset>
+
+        </div>
+        
+
+
+
+
+        <!-- screenshots of top section -->
+            <img src="./headerandtabs.PNG" alt="">
+            <!-- tabs -->
+            
+           
+            <img src="./fullBar.PNG" alt="">
+
+    </div>
+    <!-- end of header -->
+<!-- screenshots / divs of the steps in images 15-19 -->
+<div class="part-a">
+    <img class ="icon-a"src="./steps/create-Icon.PNG" style ="display:none" alt="Icon">
+    <article class="" style="display: none;">Click on Create button </article>
+</div>
+
+<div class="part-b">
+    <img class ="icon-b" src="./steps/step-a.PNG" style ="display:none"  alt="step-a">
+    <article class="" style="display: none;">Click on Action Item</article>
+</div>
+   
+  
+    <img class ="icon-d" src="./steps/pre-ActionItemHighlight.PNG" alt="" style= "display:none">
+    <div class="part-c" style = "display: none;"> 
+    <span class = "arrow">&#8592;</span> Select Other from 'Issue' dropdown menu</div>
+    <div class="part-f" style="display: none">
+        <span class = "arrow">&#8592;</span> Please fill all relevant fields </div>
+    </div>
+    
+    <div class="part-e" style="display: none">
+        <img src="./steps/save-btn.PNG" alt=""></div>
+<!-- <div class="part-d">rest of form.. </div> -->
+<!-- main container that includes left pane and the the form -->
+    <div class="main-cont" style="display:flex ; height:auto">
+        <div class="left-cont">
+            <!-- insert image here -->
+            <img src="./overlays/leftSide.PNG" alt="">
+
+        </div>
+        <div class="form-cont">
+
+            <img class = "homepageImg" src="./steps/home-page.PNG" alt="" >
+
+            <div class="form-createAction" style="display:none">
+                <article class="header-form">
+                    <img src="./overlays/main-containerHeader.PNG" alt="">
+                </article>
+    
+                <h4 class="form-title"> Create work Item - Action Item</h4>
+                <!-- start of form  -->
+                <form class="form-a" style="display: block" >
+                    
+                    <div class="span">
+                        <label for="cars">Urgent Category:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+                    
+                    
+                    <div class="span">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" class="blue" ><br><br>
+                    </div>
+                   
+    
+                    <div class="span">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" class="blue"><br><br>
+                    </div>
+                    
+                    <div class="span">
+                        <label for="cars">Complexity</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">Level 1</option>
+                        </select>
+                    
+                    </div>
+    
+                   
+                    <div class="span">
+                        <label for="cars">Language</label>
+                        <select id="language " name="cars">
+                            <option value="volvo" id="claim"></option>
+                            <option id = "lang" value="lang" >English</option>
+                        </select>  
+                    </div>
+                       
+                     
+                    <div class="span">
+    
+                        <label for="cars">Claim Type</label>
+                        <select id="claim" name="cars">
+                            <option value="volvo" id="claim"></option>
+                            <option value="volvo" id="claim">Initial </option>
+                        </select> 
+                    </div>
+    
+                    <div class="span">
+                        <label for="cars">Benefit Type</label>
+                        <select id="benefits" name="cars">
+                            <option value="volvo"> </option>
+                        </select> 
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">Phone Number:</label>
+    
+                        <div class="span-b">
+                            <input type="text" id="fname" name="fname" >
+    
+                            <label for="fname"  class="labelMargin">Ext.</label>
+                            <input type="text" id="ext" name="fname" >
+        
+                            <label for="cars" class="labelMargin">Type</label>
+                            <select id="cars" name="cars">
+                            <option value="volvo"> Home</option>
+                            </select> 
+                        </div>
+                        
+                    </div>
+                    <div class="span">
+                        <label for="fname">Phone Number:</label>
+    
+                        <div class="span-b">
+                            <input type="text" id="fname" name="fname" class="blue">
+    
+                            <label for="fname"  class="labelMargin">Ext.</label>
+                            <input type="text" id="ext" name="fname" class="blue">
+        
+                            <label for="cars" class="labelMargin">Type</label>
+                            <select id="cars" name="cars">
+                            <option value="volvo"> Home</option>
+                            </select> 
+                        </div>
+                        
+                    </div>
+    
+                    
+                    
+                    
+    
+                    <!-- destination -->
+    
+                    <div class="span">
+                        <label for="cars">Destination:</label>
+    
+                        <div class="span-b">
+                            <article class="radio">
+                                <input type="radio"   id="html" name="fav_language" value="HTML">
+                                <label for="html" >SCC</label><br>
+                            </article>
+                            
+                            <select id="cars" name="cars">
+                                <option value="volvo">Enter SCC or Code Name</option>
+                            </select>
+                                                
+                        </div>
+                        
+                    </div>
+    
+    
+                    
+    
+    
+                    <!-- End user -->
+    
+                    <div class="span">
+                        <label for="cars">Category:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+                    
+    
+                    <div class="span">
+                        <label for="cars">Issue:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                            <option value="volvo">Other</option>
+                            <option value="volvo">Other</option>
+                            <option value="volvo">Out of Canada</option>
+                            <option value="volvo">Overpayment</option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">BPC:</label>
+                        <input type="text" id="fname" name="fname" class="blue"><br><br>
+                    </div>
+    
+                    
+    
+                    <div class="span">
+                        <label for="fname">Renewal:</label>
+                        <input type="text" id="fname" name="fname" class="blue"><br><br>
+                    </div>
+    
+                    
+    
+                    <!-- Details text area -->
+    
+    
+    
+                    <div class="span">
+                        <label for="fname">Comments:</label>
+                        <textarea name="textarea" id="textarea" cols="30" rows="10" ></textarea>
+                       
+                    </div>
+                    
+                    
+                    <div class="span">
+                        <label for="cars">Obtained by:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="cars">Obtained from:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+    
+    
+                    <div class="span">
+                        <label for="cars">Obtained On:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">Source details:</label>
+                        <input type="text" id="fname" name="fname" class="blue"><br><br>
+                    </div>
+    
+                    
+                    
+                </form>
+    
+                <!-- end of form . . .  -->
+
+                <!-- duplicate from  -->
+                <form class =" form-b" style="display: none">
+                    
+                    <div class="span">
+                        <label for="cars">Urgent Category:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo"></option>
+                        </select>
+                        
+                    </div>
+                    
+                    
+                    <div class="span">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" class="blue" value = "Ahmed"><br><br>
+                    </div>
+                   
+    
+                    <div class="span">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" class="blue " value = "Hassan"><br><br>
+                    </div>
+                    
+                    <div class="span">
+                        <label for="cars">Complexity</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">Level 1</option>
+                        </select>
+                    
+                    </div>
+    
+                   
+                    <div class="span">
+                        <label for="cars">Language</label>
+                        <select id="language " name="cars">
+                           
+                            <option id = "lang" value="lang" >English</option>
+                        </select>  
+                    </div>
+                       
+                     
+                    <div class="span">
+    
+                        <label for="cars">Claim Type</label>
+                        <select id="claim" name="cars">
+                            
+                            <option value="volvo" id="claim">Initial </option>
+                        </select> 
+                    </div>
+    
+                    <div class="span">
+                        <label for="cars">Benefit Type</label>
+                        <select id="benefits" name="cars">
+                            <option value="volvo">Sickness</option>
+                        </select> 
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">Phone Number:</label>
+    
+                        <div class="span-b">
+                            <input type="text" id="fname" name="fname" value="555-111-0000">
+    
+                            <label for="fname"  class="labelMargin">Ext.</label>
+                            <input type="text" id="ext" name="fname" >
+        
+                            <label for="cars" class="labelMargin">Type</label>
+                            <select id="cars" name="cars">
+                            <option value="volvo"> Home</option>
+                            </select> 
+                        </div>
+                        
+                    </div>
+                    <div class="span">
+                        <label for="fname">Phone Number:</label>
+    
+                        <div class="span-b">
+                            <input type="text" id="fname" name="fname" class="blue">
+    
+                            <label for="fname"  class="labelMargin">Ext.</label>
+                            <input type="text" id="ext" name="fname" class="blue">
+        
+                            <label for="cars" class="labelMargin">Type</label>
+                            <select id="cars" name="cars">
+                            <option value="volvo"> Home</option>
+                            </select> 
+                        </div>
+                        
+                    </div>
+    
+                    
+                    
+                    
+    
+                    <!-- destination -->
+    
+                    <div class="span">
+                        <label for="cars">Destination:</label>
+    
+                        <div class="span-b">
+                            <article class="radio">
+                                <input type="radio"   id="html" name="fav_language" value="HTML">
+                                <label for="html" >SCC</label><br>
+                            </article>
+                            
+                            <select id="cars" name="cars">
+                                <option value="volvo">Enter SCC or Code Name</option>
+                            </select>
+                                                
+                        </div>
+                        
+                    </div>
+    
+    
+                    
+    
+    
+                    <!-- End user -->
+    
+                    <div class="span">
+                        <label for="cars">Category:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">Not pay affected </option>
+                        </select>
+                        
+                    </div>
+                    
+    
+                    <div class="span">
+                        <label for="cars">Issue:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">Other</option>
+                            <option value="volvo">Other</option>
+                            <option value="volvo">Other</option>
+                            <option value="volvo">Out of Canada</option>
+                            <option value="volvo">Overpayment</option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">BPC:</label>
+                        <input type="text" id="fname" name="fname" class="blue" value ="1211"><br><br>
+                    </div>
+    
+                    
+    
+                    <div class="span">
+                        <label for="fname">Renewal:</label>
+                        <input type="text" id="fname" name="fname" class="blue"><br><br>
+                    </div>
+    
+                    
+    
+                    <!-- Details text area -->
+    
+    
+    
+                    <div class="span">
+                        <label for="fname">Comments:</label>
+                        <textarea name="textarea" id="textarea" cols="30" rows="10" >Info request letter of authorization</textarea>
+                       
+                    </div>
+                    
+                    
+                    <div class="span">
+                        <label for="cars">Obtained by</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">interview</option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="cars">Obtained from:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">client</option>
+                        </select>
+                        
+                    </div>
+    
+    
+                    <div class="span">
+                        <label for="cars">Obtained On:</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">18/04/2023</option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="span">
+                        <label for="fname">Source details:</label>
+                        <input type="text" id="fname" name="fname" class="blue" value = 'third party'><br><br>
+                    </div>
+    
+                    
+                    
+                </form>
+                <!-- end of duplicate form  -->
+            </div>
+              
+        </div>
+    </div>
+    <!-- end of main container -->
+
+    <button class="overlay-btn">Next Step</button>
+    <button class="reset">Reset</button>
+ 
+    <div class="footer">
+        <img src="./overlays/footer.PNG" alt="">
+    </div>
+    
+
+    <script src="script-b (1).js"></script>
+</body>
+</html>
