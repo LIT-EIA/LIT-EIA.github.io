@@ -1,18 +1,31 @@
-$(function() {
+var types = {};
+
+$(function () {
 
   var el = $('#release-notes');
   el.html('<h2>Loading…</h2>')
 
-  var success = function(data) {
+  var success = function (data) {
     buildReleases(data);
   }
 
-  var error = function(data) {
+  var setTypes = function(data){
+    types = data;
+    console.log(types);
+  }
+
+  var error = function (data) {
     el.html('<h2>An error occurred while fetching release notes.</h2>')
   }
 
   $.ajax({
-    url: 'https://med-dmc.github.io/adapt/release-notes/data.json',
+    url: 'http://localhost:5500/adapt/release-notes/types.json' || 'https://med-dmc.github.io/adapt/release-notes/types.json',
+    success: setTypes,
+    error: error
+  })
+
+  $.ajax({
+    url: 'http://localhost:5500/adapt/release-notes/data.json' || 'https://med-dmc.github.io/adapt/release-notes/data.json',
     success: success,
     error: error
   })
@@ -21,12 +34,17 @@ $(function() {
 
 function buildReleases(data) {
   var releases = $.map(data, createRelease);
+  console.log(releases);
 
   $("#release-notes").empty().append(releases);
 }
 
 function createRelease(r) {
-  var changes = r.notes.filter(isRegularNote)
+  if (r.notes.filter) {
+    var changes = r.notes.filter(isRegularNote)
+  } else {
+    var changes = r.notes.authoring.filter(isRegularNote);
+  }
 
   var header = $("<header class='timeline-decorator d-flex flex-items-center mb-3' />")
     .append($("<span class='version-badge d-inline-block bg-purple p-1 rounded-1 mr-2 text-bold' />")
@@ -34,11 +52,17 @@ function createRelease(r) {
     .append($("<h2 class='f3-light css-truncate css-truncate-target' />")
       .text(r.pub_date ? moment(r.pub_date).format('MMMM Do YYYY') : ""));
 
-  var changelog = $("<ul class='list-style-none change-log' />")
-    .append($.map(changes, createChange));
+  //var changelog = $("<ul class='list-style-none change-log' />")
+  var section = $("<section class='release-note position-relative container-new py-6 px-3 text-left' />").append(header);
+  Object.keys(r.notes).forEach(function (type) {
+    var changelog = $("<ul class='list-style-none change-log change-log-" + type + "' />")
+    const item = r.notes[type];
+    //console.log(item);
+    changelog.append($.map(item, createChange));
+    section.append($('<h3 class="subsection-title change-log">' + types[type] + '</h3>')).append(changelog);
+  })
 
-  return $("<section class='release-note position-relative container-new py-6 px-3 text-left' />")
-    .append(header).append(changelog);
+  return section;
 }
 
 function isRegularNote(changeText) {
