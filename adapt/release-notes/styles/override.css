@@ -34,3 +34,10 @@ h3 {
         margin-left: 95px;
     }
 }
+
+@media (max-width: 767px) {
+    .subsection-title {
+        margin-left: 23px!important;
+        color: #24292e !important;
+    }
+}
