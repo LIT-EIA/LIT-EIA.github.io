@@ -45,10 +45,16 @@ function createRelease(r) {
   } else {
     var changes = r.notes.authoring.filter(isRegularNote);
   }
-
+console.log(r.pub_date);
+  var span = $("<span class='version-badge d-inline-block bg-purple p-1 rounded-1 mr-2 text-bold' />");
+  if(r.pub_date > new Date().toISOString()){
+    span.text('PLANNED');
+    span.addClass('planned-version');
+  } else {
+    span.text(r.version);
+  }
   var header = $("<header class='timeline-decorator d-flex flex-items-center mb-3' />")
-    .append($("<span class='version-badge d-inline-block bg-purple p-1 rounded-1 mr-2 text-bold' />")
-      .text(r.version))
+    .append(span)
     .append($("<h2 class='f3-light css-truncate css-truncate-target' />")
       .text(r.pub_date ? moment(r.pub_date).format('MMMM Do YYYY') : ""));
 
