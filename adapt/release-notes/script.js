@@ -12,8 +12,7 @@ $(function() {
   }
 
   $.ajax({
-    url: 'https://central.github.com/deployments/desktop/desktop/changelog.json',
-    dataType: 'jsonp',
+    url: 'https://med-dmc.github.io/adapt/release-notes/data.json',
     success: success,
     error: error
   })

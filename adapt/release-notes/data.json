@@ -2,8 +2,8 @@
     {
         "name": "",
         "notes": [
-            "[Fixed] Improved performance when selecting and viewing a large number of commits - #16880",
-            "[Fixed] Fix crash using Edit -\u003e Copy menu when no text is selected in the diff - #16876",
+            "[Fixed] Accessibility Titles",
+            "[Fixed] Test 1-2",
             "[Fixed] Emoji autocomplete list highlights filter text correctly - #16899",
             "[Fixed] Allow filtering autocomplete results using uppercase characters - #16886"
         ],
