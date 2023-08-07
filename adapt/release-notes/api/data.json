@@ -1,0 +1,211 @@
+[
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[New] Articles, blocks and components can be copied between courses",
+                "[New] Message Ribbon for important notices",
+                "[Improved] All the interface is available in French"
+            ],
+            "a11y": [
+                "[New] Authoring Tool page titles are now descriptive"
+            ],
+            "infrastructure": [
+                "[New] Server setup that allows to perform updates without downtime"
+            ],
+            "security": [
+                "[New] Roles for Accessibility Tester and User Manager"
+            ]
+        },
+        "pub_date": "2023-04-14T12:00:00Z",
+        "version": "1.1.3"
+    },
+    {
+        "name": "",
+        "notes": {
+            "security": [
+                "[New] Required OS updates"
+            ]
+        },
+        "pub_date": "2023-04-14T12:00:00Z",
+        "version": "1.1.3"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Improved] Most of the interface is available in French"
+            ]
+        },
+        "pub_date": "2023-03-03T12:00:00Z",
+        "version": "1.2.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[New] Automated asset cleanup. All unused assets will be deleted the first of each month",
+                "[Improved] Current file size limit of 5 MB increased to 15 MB, enabling users to upload longer videos"
+            ],
+            "security": [
+                "[Improved] Required security updates"
+            ]
+        },
+        "pub_date": "2023-02-15T12:00:00Z",
+        "version": "1.2.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[New] Automatic learner’s pick for MQ and MCQ with several options"
+            ],
+            "theme": [
+                "[Fixed] Slowdowns and pages getting stuck when closing feedback on a page contained a lot of questions have been resolved",
+                "[Fixed] The screen no longer scrolls up when clicking the submit button on a question"
+            ],
+            "a11y": [
+                "[New] The feedback of Open Text Input now shows in the same type of popup used by other questions",
+                "[Improved] Various issues with Open Text Input",
+                "[Improved] Focus and popup titles have been enhanced for screen readers"
+            ]
+        },
+        "pub_date": "2023-01-18T12:00:00Z",
+        "version": "1.2.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[New] Option for selecting between Legacy and Improved block padding",
+                "[New] Added styles to support accessibilityfixes",
+                "[Improved] Focus styles for multiple choice questions containing a single correct answer"
+            ],
+            "a11y": [
+                "[Fixed] Contrast ratio on links added to text that will show on darker backgrounds",
+                "[Improved] Radio button focus",
+                "[Improved] Focus indicator",
+                "[Removed] Styles from accessibilityfixes"
+            ]
+        },
+        "pub_date": "2022-11-24T12:00:00Z",
+        "version": "1.2.5"
+    },
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[New] Alternate table styles for components that have dark blue bg",
+                "[Fixed] Multi choice fixed overlap of icon with buttons on submit",
+                "[Fixed] Corrected padding for instructions in text component .iconbox class",
+                "[Fixed] Centered block titles in block padding space",
+                "[Improved] Swapped the bold and non bold styles of headers and descriptions in the resources menu",
+                "[Removed] Double borders on tags"
+            ],
+            "a11y": [
+                "[New] Secondary focus for radio button for multi choice question",
+                "[Fixed] adjusted @esdc-cyan-text hex to meet color contrast",
+                "[Fixed] adjusted link colors shades to meet contrast with dark blue bg (popups, page header, narrative)"
+            ]
+        },
+        "pub_date": "2022-10-07T12:00:00Z",
+        "version": "1.2.4"
+    },
+    {
+        "name": "",
+        "notes": {
+            "infrastructure": [
+                "[Improved] Migrated servers to Azure"
+            ]
+        },
+        "pub_date": "2022-09-26T12:00:00Z",
+        "version": "1.2.3"
+    },
+    {
+        "name": "",
+        "notes": {
+            "tools": [
+                "[New] Published [Adapt Authoring Tool – Intermediate Course](https://esdc.sabacloud.com/Saba/Web_spf/CA1PRD0006/common/ledetail/cours000000000118367/latestversion) to further the users knowledge of the application"
+            ]
+        },
+        "pub_date": "2022-08-19T12:00:00Z",
+        "version": "1.2.2"
+    },  
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[New] Relaxed tracking available in Spoor extension. Courses can be marked as completed when 80% finished"
+            ]
+        },
+        "pub_date": "2022-06-22T12:00:00Z",
+        "version": "1.2.2"
+    },     
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[Fixed] Issue where the content of dropdowns in matching questions was getting cut off on the left",
+                "[Fixed] Several issues with nested ordered and unordered lists",
+                "[Fixed] Issue with ordered lists now showing bullet styles instead of numbers",
+                "[Fixed] Alignment of bullet text when multiline",
+                "[Fixed] Issue with links showing blue/purple on a blue background in the resources menu",
+                "[Improved] Swapped the bold and non bold styles of headers and descriptions in the resources menu"
+            ]
+        },
+        "pub_date": "2022-03-12T12:00:00Z",
+        "version": "1.2.2"
+    },     
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[New] Updated Authoring Tool to v0.10.5",
+                "[Fixed] Articles now copy at the right place",
+                "[Fixed] The top navigation that was sometimes blocking the save button for some users",
+                "[Fixed] The extensions that could go missing from components",
+                "[Improved] Performance when generating previews"
+            ], 
+            "theme": [
+                "[New] A new styling class for Text components has been introduced, but no icons are available yet",
+                "[Fixed] Nested bullet lists now have different bullet styles, matching those seen in the authoring tool",
+                "[Fixed] Issue with the Media component where Closed Captions that spans more than one line could overlap",
+                "[Fixed] When using \"trickle\" in the middle of a \"Combineblock\", a space was left after clicking \"continue\"",
+                "[Fixed] Hotgrid item title color, it was white and not visible on a component's white background",
+                "[Improved] Cleaned up link styles to make sure they are the right color in all components"
+            ]
+        },
+        "pub_date": "2022-02-05T12:00:00Z",
+        "version": "1.2.1"
+    },
+    {
+        "name": "",
+        "notes": {
+            "a11y": [
+                "[New] Accessibility plugin to make courses comply with the assessment by [WSCoE](https://esdc.prv/en/iitb/es/ts/wscoe/index-eng.shtml)"
+            ],
+            "tools": [
+                "[New] Published [Adapt Best Practices Guide](https://014gc.sharepoint.com/:w:/r/sites/A11YSpecialistNetwork/Shared%20Documents/College-wide/adapt-best-practices.docx?d=wff22e64646a44f2a8c40338281a441f8&csf=1&web=1&e=bioXuG) to help designer meet WCAG 2.1 standards"
+            ]
+        },
+        "pub_date": "2021-12-17T12:00:00Z",
+        "version": "1.1.2"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring":[
+                "[New] Some parts of the interface is available in French"
+            ],
+            "tools": [
+                "[New] Published [Adapt Authoring Tool – Beginners Course](https://esdc.sabacloud.com/Saba/Web_wdk/CA1PRD0006/index/prelogin.rdf?spfUrl=%2FSaba%2FWeb_spf%2FCA1PRD0006%2Fcommon%2Fledetail%2F0000117334#/login) to introduce new users to the application"
+            ],
+            "security": [
+                "[Improved] Previews are available to anyone on the ESDC network"
+            ]
+        },
+        "pub_date": "2021-09-27T12:00:00Z",
+        "version": "1.1.1"
+    }
+]
+

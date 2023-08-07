@@ -9,45 +9,38 @@ $(function () {
     buildReleases(data);
   }
 
-  var setTypes = function(data){
+  var setTypes = function (data) {
     types = data;
-    console.log(types);
   }
 
   var error = function (data) {
     el.html('<h2>An error occurred while fetching release notes.</h2>')
   }
 
-  $.ajax({
-    url: 'http://localhost:5500/adapt/release-notes/types.json' || 'https://med-dmc.github.io/adapt/release-notes/types.json',
-    success: setTypes,
-    error: error
-  })
+  async function getData() {
+    await $.ajax({
+      url: 'https://lit-eia.github.io/adapt/release-notes/api/types.json',
+      success: setTypes,
+      error: error
+    })
 
-  $.ajax({
-    url: 'http://localhost:5500/adapt/release-notes/data.json' || 'https://med-dmc.github.io/adapt/release-notes/data.json',
-    success: success,
-    error: error
-  })
-
+    await $.ajax({
+      url: 'https://lit-eia.github.io/adapt/release-notes/api/data.json',
+      success: success,
+      error: error
+    })
+  }
+  getData();
 });
 
 function buildReleases(data) {
   var releases = $.map(data, createRelease);
-  console.log(releases);
-
   $("#release-notes").empty().append(releases);
 }
 
 function createRelease(r) {
-  if (r.notes.filter) {
-    var changes = r.notes.filter(isRegularNote)
-  } else {
-    var changes = r.notes.authoring.filter(isRegularNote);
-  }
-console.log(r.pub_date);
   var span = $("<span class='version-badge d-inline-block bg-purple p-1 rounded-1 mr-2 text-bold' />");
-  if(r.pub_date > new Date().toISOString()){
+  if (r.pub_date > new Date().toISOString()) {
     span.text('PLANNED');
     span.addClass('planned-version');
   } else {
@@ -55,7 +48,7 @@ console.log(r.pub_date);
   }
   var header = $("<header class='timeline-decorator d-flex flex-items-center mb-3' />")
     .append(span)
-    .append($("<h2 class='f3-light css-truncate css-truncate-target' />")
+    .append($("<h2 class='f3 css-truncate css-truncate-target' />")
       .text(r.pub_date ? moment(r.pub_date).format('MMMM Do YYYY') : ""));
 
   //var changelog = $("<ul class='list-style-none change-log' />")
@@ -79,11 +72,20 @@ function createChange(changeText) {
   if (changeText != '') {
     var trimmed = $.trim(changeText);
     var typeMatches = trimmed.match(/^\[(new|fixed|improved|removed|added)\]\s(.*)/i);
+    var link = trimmed.match(/\[([^\[]+)\](\(.*\))/gm);
+  
     if (typeMatches) {
       var changeType = typeMatches[1];
       var changeDescription = typeMatches[2];
-
+      //console.log(changeDescription)
+      if(link){
+        var word = link[0].split('(')[0].slice(1, -1);
+        var url = link[0].split('(')[1].slice(0, -1);
+        changeDescription = changeDescription.replace(/\[([^\[]+)\](\(.*\))/gm, `<a href="${url}" target="_blank">${word}</a>`)
+        //console.log(changeDescription)
+      }
       var changePieces = changeDescription.split(/(#\d+)/i);
+      //console.log(changePieces)
 
       var elClassnames = "d-flex flex-items-start mb-2";
 
@@ -104,7 +106,7 @@ function createChange(changeText) {
           var link = $("<a>").attr("href", 'https://github.com/desktop/desktop/issues/' + issuePieces[1]).text(piece);
           changeDescriptionContainer = changeDescriptionContainer.append(link);
         } else {
-          changeDescriptionContainer = changeDescriptionContainer.append(document.createTextNode(piece));
+          changeDescriptionContainer = changeDescriptionContainer.append(piece);
         }
       }
       el = el.append(changeDescriptionContainer);
