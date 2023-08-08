@@ -1,0 +1,105 @@
+body {
+    background-image: none;
+    font-family: 'Roboto';
+}
+
+.college {
+    display: inline;
+    margin-left: 45px;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+#header {
+    display: flex;
+    padding: 30px 30px;
+    margin: 0px auto;
+    align-items: center;
+}
+
+@media (min-width: 1012px) {
+    #header {
+        max-width: 1012px;
+    }
+}
+
+@media (min-width: 1280px){
+    #header {
+        max-width: 1280px;
+    }
+}
+
+.subsection-title {
+    padding: 15px 0px;
+}
+
+.version-badge {
+    width: 80px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 120%;
+}
+
+.planned-version {
+    background-color: #0b7463 !important;
+}
+
+.mr-2 {
+    margin-right: 15px !important;
+}
+
+@media (min-width: 768px) {
+    .change-log {
+        margin-left: 95px;
+    }
+}
+
+@media (max-width: 767px) {
+    .subsection-title {
+        margin-left: 23px !important;
+        color: #24292e !important;
+    }
+}
+
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    margin: -1px;
+}
+
+.langswitcher {
+    margin-left: auto;
+    order: 2;
+    color: #b2b4b6;
+}
+
+.change-badge-nouveau,
+.change-badge-ajout {
+    background-color: #28a745
+}
+
+.change-badge-corrigé,
+.change-badge-amélioré {
+    background-color: #0366d6
+}
+
+.change-badge-supprimé {
+    background-color: #d73a49
+}

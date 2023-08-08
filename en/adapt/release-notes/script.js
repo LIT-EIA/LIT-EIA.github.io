@@ -3,7 +3,7 @@ var types = {};
 $(function () {
 
   var el = $('#release-notes');
-  el.html('<h2>Loading…</h2>')
+  el.html('<h2 style="text-align: center">Loading…</h2>')
 
   var success = function (data) {
     buildReleases(data);
@@ -19,13 +19,13 @@ $(function () {
 
   async function getData() {
     await $.ajax({
-      url: 'https://lit-eia.github.io/adapt/release-notes/api/types.json',
+      url: 'https://lit-eia.github.io/en/adapt/release-notes/api/types.json',
       success: setTypes,
       error: error
     })
 
     await $.ajax({
-      url: 'https://lit-eia.github.io/adapt/release-notes/api/data.json',
+      url: 'https://lit-eia.github.io/en/adapt/release-notes/api/data.json',
       success: success,
       error: error
     })

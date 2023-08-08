@@ -1,0 +1,225 @@
+[
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Nouveau] Réinitialisation du mot de passe facilitée via la notification par courriel"
+            ],
+            "a11y": [
+                "[Amélioré] Formulaire d'exigence de mot de passe dans l'outil de création",
+                "[Amélioré] Schéma de couleurs avec des contrastes conformes dans l'outil de création"
+            ],
+            "security": [
+                "[Nouveau] Changement obligatoire du mot de passe une seule fois pour tous les utilisateurs et après des réinitialisations administrateur",
+                "[Nouveau] Autorisations permettant la modification des cours uniquement par leurs propriétaires ou les utilisateurs partagés"
+            ]
+        },
+        "pub_date": "2023-08-15T12:00:00Z",
+        "version": "1.4.1"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Nouveau] Duplication d'articles, de blocs et de composants entre différents cours",
+                "[Nouveau] Ruban de message pour transmettre efficacement les notifications essentielles",
+                "[Amélioré] Interface entièrement disponible en français"
+            ],
+            "a11y": [
+                "[Nouveau] Titres de page descriptifs dans l'outil de création"
+            ],
+            "environment": [
+                "[Nouveau] Configuration du serveur permettant les mises à jour sans causer d'interruption de service"
+            ],
+            "security": [
+                "[Nouveau] Rôles pour Testeur d'accessibilité et Gestionnaire d'utilisateurs"
+            ]
+        },
+        "pub_date": "2023-04-14T12:00:00Z",
+        "version": "1.4.0"
+    },
+    {
+        "name": "",
+        "notes": {
+            "security": [
+                "[Nouveau] Mises à jour du système d'exploitation requises"
+            ]
+        },
+        "pub_date": "2023-04-14T12:00:00Z",
+        "version": "1.3.1"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Amélioré] Extension de la disponibilité de l'interface en français"
+            ]
+        },
+        "pub_date": "2023-03-03T12:00:00Z",
+        "version": "1.3.0"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Nouveau] Nettoyage automatisé des ressources. Les ressources inutilisées sont régulièrement supprimées le premier jour de chaque mois",
+                "[Amélioré] Limite de taille des fichiers étendue de 5 Mo à 15 Mo, permettant aux utilisateurs de télécharger des vidéos plus longues"
+            ],
+            "security": [
+                "[Amélioré] Mises à jour critiques pour maintenir la sécurité et l'intégrité du système"
+            ]
+        },
+        "pub_date": "2023-02-15T12:00:00Z",
+        "version": "1.2.8"
+    },
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[Nouveau] Sélection automatique de l'apprenant pour QA et QCM avec plusieurs options"
+            ],
+            "theme": [
+                "[Corrigé] Ralentissements et problèmes de page lors de la fermeture des rétroactions avec de nombreuses questions",
+                "[Corrigé] Problème où l'écran défilait vers le haut après avoir cliqué sur le bouton de soumission d'une question"
+            ],
+            "a11y": [
+                "[Amélioré] Affichage des rétroaction pour les questions ouverte",
+                "[Amélioré] Résolution de divers problèmes avec les questions ouverte",
+                "[Amélioré] Focus et titres des fenêtres contextuelles améliorés pour les lecteurs d'écran"
+            ]
+        },
+        "pub_date": "2023-01-18T12:00:00Z",
+        "version": "1.2.7"
+    },
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[Nouveau] Option pour choisir entre le padding de bloc Par Défaut et Amélioré",
+                "[Ajout] Styles pour prendre en charge les corrections d'accessibilité",
+                "[Amélioré] Styles de focus pour les questions à choix multiples avec une seule réponse correcte"
+            ],
+            "a11y": [
+                "[Corrigé] Ratios de contraste pour les liens ajoutés au texte affiché sur des arrière-plans plus sombres",
+                "[Amélioré] Comportement de focus pour les boutons radio",
+                "[Amélioré] Indicateur de focus",
+                "[Supprimé] Styles de l'extension corrections d'accessibilité"
+            ]
+        },
+        "pub_date": "2022-11-24T12:00:00Z",
+        "version": "1.2.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[Nouveau] Nouveaux styles de tableau alternatifs pour les composants avec des arrière-plans bleu foncé",
+                "[Corrigé] Problèmes de chevauchement d'icônes lors de la soumission de questions à choix multiples",
+                "[Corrigé] Padding des instructions de la classe .iconbox du composant texte",
+                "[Corrigé] Alignement centré des titres de bloc dans le padding du bloc",
+                "[Amélioré] Hiérarchie visuelle en ajustant les styles des en-têtes et des descriptions dans le menu des ressources",
+                "[Supprimé] Doubles bordures sur les étiquettes"
+            ],
+            "a11y": [
+                "[Nouveau] Focus secondaire pour les boutons radio dans les questions à choix multiples",
+                "[Corrigé] Contraste des couleurs ajusté par les valeurs hexadécimales @esdc-cyan-text",
+                "[Corrigé] Ajustement des nuances de couleurs des liens pour correspondre au contraste avec des arrière-plans bleu foncé"
+            ]
+        },
+        "pub_date": "2022-10-07T12:00:00Z",
+        "version": "1.2.5"
+    },
+    {
+        "name": "",
+        "notes": {
+            "environment": [
+                "[Amélioré] Migration du serveur vers Azure"
+            ]
+        },
+        "pub_date": "2022-09-26T12:00:00Z",
+        "version": "1.2.4"
+    },
+    {
+        "name": "",
+        "notes": {
+            "tools": [
+                "[Nouveau] Publication du [Cours intermédiaire - Outil de création Adapt](https://esdc.sabacloud.com/Saba/Web_spf/CA1PRD0006/common/ledetail/cours000000000118367/latestversion) pour approfondir la connaissance des utilisateurs de l'application"
+            ]
+        },
+        "pub_date": "2022-08-19T12:00:00Z",
+        "version": "1.2.3"
+    },  
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[Nouveau] Suivi assoupli disponible dans l'extension Spoor. Les cours peuvent être marqués comme terminés lorsqu'ils atteignent 80% de progression"
+            ]
+        },
+        "pub_date": "2022-06-22T12:00:00Z",
+        "version": "1.2.2"
+    },     
+    {
+        "name": "",
+        "notes": {
+            "theme": [
+                "[Corrigé] Problème de troncature du contenu dans les listes déroulantes pour les questions d'associations",
+                "[Corrigé] Problèmes divers avec les listes ordonnées et non ordonnées imbriquées",
+                "[Corrigé] Problème des listes ordonnées affichant des puces au lieu de numéros pour un formatage précis",
+                "[Corrigé] Alignement du texte des puce, en particulier dans les listes multilignes",
+                "[Corrigé] Problème des liens apparaissant incorrectement sur un fond bleu dans le menu des ressources",
+                "[Amélioré] Styles harmonisés en échangeant les styles en gras et non gras pour les en-têtes et les descriptions dans le menu des ressources"
+            ]
+        },
+        "pub_date": "2022-03-12T12:00:00Z",
+        "version": "1.2.1"
+    },     
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
+                "[Nouveau] Mise à jour de l'outil de création à la version v0.10.5",
+                "[Corrigé] Fonctionnalité de la copie des articles, assurant un placement précis",
+                "[Corrigé] Problème où la navigation supérieure obstruait parfois le bouton d'enregistrement pour certains utilisateurs",
+                "[Amélioré] Performances lors de la génération d'aperçus"
+            ], 
+            "theme": [
+                "[Nouveau] Nouvelle classe de style icône pour les composants Texte, bien que les icônes soient en attente",
+                "[Corrigé] Styles de liste à puces imbriquées pour correspondre à ceux de l'outil de création",
+                "[Corrigé] Problème des Sous-titres fermés occupant plusieurs lignes et se chevauchant dans le composant Média",
+                "[Corrigé] Problème d'espace survenant après avoir cliqué sur \"continuer\" avec \"ruissellement\" dans un \"Combineblock\"",
+                "[Corrigé] Visibilité des titres des éléments de grille d'images, améliorant la lisibilité sur fond blanc",
+                "[Amélioré] Cohérence des couleurs des liens dans tous les composants, favorisant une expérience utilisateur unifiée"
+            ]
+        },
+        "pub_date": "2022-02-05T12:00:00Z",
+        "version": "1.2.0"
+    },
+    {
+        "name": "",
+        "notes": {
+            "a11y": [
+                "[Nouveau] Plugiciel de corrections d'accessibilité pour que les cours soient conformes à l'évaluation par [WSCoE](https://esdc.prv/fr/iitb/es/ts/wscoe/index-fra.shtml)"
+            ],
+            "tools": [
+                "[Nouveau] Publication du [Guide des meilleures pratiques Adapt](https://014gc.sharepoint.com/:w:/r/sites/A11YSpecialistNetwork/Shared%20Documents/College-wide/adapt-best-practices.docx?d=wff22e64646a44f2a8c40338281a441f8&csf=1&web=1&e=bioXuG) pour aider les concepteurs à respecter les normes WCAG 2.1"
+            ]
+        },
+        "pub_date": "2021-12-17T12:00:00Z",
+        "version": "1.1.2"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring":[
+                "[Nouveau] Certaines parties de l'interface sont disponibles en français"
+            ],
+            "tools": [
+                "[Nouveau] Publication du [Cours pour débutants - Outil de création Adapt](https://esdc.sabacloud.com/Saba/Web_wdk/CA1PRD0006/index/prelogin.rdf?spfUrl=%2FSaba%2FWeb_spf%2FCA1PRD0006%2Fcommon%2Fledetail%2F0000117334#/login) pour initier les nouveaux utilisateurs à l'application",
+                "[Amélioré] Les aperçus sont disponibles pour tous les utilisateurs du réseau ESDC"
+            ]
+        },
+        "pub_date": "2021-09-27T12:00:00Z",
+        "version": "1.1.1"
+    }
+]
