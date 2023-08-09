@@ -103,3 +103,7 @@ h3 {
 .change-badge-supprimé {
     background-color: #d73a49
 }
+
+.change-badge-urgent {
+    background-color: #d76a3a;
+}

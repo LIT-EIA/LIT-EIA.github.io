@@ -21,6 +21,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Urgent] Correction de problèmes empêchant le copier-coller"
+            ]
+        },
+        "pub_date": "2023-08-08T17:00:00Z",
+        "version": "1.4.1"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Nouveau] Duplication d'articles, de blocs et de composants entre différents cours",
                 "[Nouveau] Ruban de message pour transmettre efficacement les notifications essentielles",
                 "[Amélioré] Interface entièrement disponible en français"

@@ -71,22 +71,18 @@ function isRegularNote(changeText) {
 function createChange(changeText) {
   if (changeText != '') {
     var trimmed = $.trim(changeText);
-    var typeMatches = trimmed.match(/^\[(new|fixed|improved|removed|added)\]\s(.*)/i);
+    var typeMatches = trimmed.match(/^\[(new|fixed|improved|removed|added|urgent)\]\s(.*)/i);
     var link = trimmed.match(/\[([^\[]+)\](\(.*\))/gm);
   
     if (typeMatches) {
       var changeType = typeMatches[1];
       var changeDescription = typeMatches[2];
-      //console.log(changeDescription)
       if(link){
         var word = link[0].split('(')[0].slice(1, -1);
         var url = link[0].split('(')[1].slice(0, -1);
         changeDescription = changeDescription.replace(/\[([^\[]+)\](\(.*\))/gm, `<a href="${url}" target="_blank">${word}</a>`)
-        //console.log(changeDescription)
       }
       var changePieces = changeDescription.split(/(#\d+)/i);
-      //console.log(changePieces)
-
       var elClassnames = "d-flex flex-items-start mb-2";
 
       var el = $("<li />")

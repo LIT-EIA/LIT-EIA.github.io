@@ -73,7 +73,7 @@ function isRegularNote(changeText) {
 function createChange(changeText) {
   if (changeText != '') {
     var trimmed = $.trim(changeText);
-    var typeMatches = trimmed.match(/^\[(nouveau|corrigé|amélioré|supprimé|ajout)\]\s(.*)/i);
+    var typeMatches = trimmed.match(/^\[(nouveau|corrigé|amélioré|supprimé|ajout|urgent)\]\s(.*)/i);
     var link = trimmed.match(/\[([^\[]+)\](\(.*\))/gm);
   
     if (typeMatches) {

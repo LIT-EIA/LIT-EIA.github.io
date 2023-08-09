@@ -89,3 +89,7 @@ h3 {
     order: 2;
     color: #b2b4b6;
 }
+
+.change-badge-urgent {
+    background-color: #d76a3a;
+}

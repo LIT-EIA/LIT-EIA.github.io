@@ -22,6 +22,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Urgent] Fixed issues preventing copy-paste"
+            ]
+        },
+        "pub_date": "2023-08-08T17:00:00Z",
+        "version": "1.4.1"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[New] Duplication of articles, blocks, and components across different courses",
                 "[New] Message ribbon for effectively conveying essential notifications",
                 "[Improved] Now providing a fully available interface in French"
