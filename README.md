@@ -1,2 +1,1 @@
-# MeD-DMC.github.io
-MeD's website
+# LIT-EIA.github.io
