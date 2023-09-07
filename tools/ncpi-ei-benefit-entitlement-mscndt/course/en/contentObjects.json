@@ -1,0 +1,320 @@
+[
+  {
+    "title": "Course Overview",
+    "displayTitle": "Course Overview",
+    "body": "<p>This section lays out your global learning objectives for the course and provides you with navigation instructions.</p>",
+    "_classes": "",
+    "pageBody": "<p>This section lays out your global learning objectives for the course and provides you with navigation instructions.</p>",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Course Overview",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b09995c",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/5e9284868498183a391ca87ebc76dfe3c2cce1d0.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Voluntary Leaving vs Dismissal",
+    "displayTitle": "Voluntary Leaving vs Dismissal",
+    "body": "<p>In this section, you will discover the difference between Voluntary Leaving and Dismissal and when a disqualification is in order.</p>",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Voluntary Leaving vs Dismissal",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b09995b",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/e73b8c5f5fb9c07ecc28955bc2a0bbc076312fbf.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Misconduct",
+    "displayTitle": "Misconduct",
+    "body": "<p>You will learn about the working definition of misconduct, what misconduct is and the four questions used to prove it.</p>",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Misconduct",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b09995a",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/553f4b5cfc9fddf92c01c5dca03b6d06e4a210a3.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Fact-finding",
+    "displayTitle": "Fact-finding",
+    "body": "<p>In this section, we will discuss the concept of Onus of Proof as well as some other details about fact-finding.</p>",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Fact-Finding",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b099959",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/88fb5409282edf9a87ec85f3933970c48f0b53d0.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Making a Recommendation",
+    "displayTitle": "Making a Recommendation",
+    "body": "<p>In this section, you will learn about the four options for recommendations you can make when sending a case to Agent.</p>",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Making a Recommendation",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b099957",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/66e8b5f69be68ae1b77b4f6734a87cd52d1cb2d2.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": false,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  },
+  {
+    "title": "Quiz",
+    "displayTitle": "Quiz",
+    "body": "<p>In this section, you will test your knowledge on what you have learned in the course.</p>",
+    "_classes": "",
+    "pageBody": "",
+    "instruction": "",
+    "_htmlClassName": "",
+    "linkText": "View Quiz",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_id": "64e3a9aec3ce7abe4b099958",
+    "_parentId": "course",
+    "_type": "page",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/0993c6724f36c62644c69dbb7e04139fd9aee471.jpg"
+    },
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true,
+      "_isCompletionIndicatorEnabled": false,
+      "_excludeAssessments": false
+    },
+    "_bookmarking": {
+      "_isEnabled": true,
+      "_level": "inherit"
+    },
+    "_pageIncompletePrompt": {
+      "_isEnabled": true
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "_homeButton": {
+      "_isEnabled": true,
+      "_hideHomeButton": false,
+      "_hideBackButton": false,
+      "_redirectToId": ""
+    }
+  }
+]
