@@ -85,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="messageBar">
 			<div class="messageForm">
 				<input id="textbox" placeholder="Type your question or your keywords" name="msg" autocomplete="off" type="text">
-				<button id="send" onclick="sendMessage()">Send</button>
+				<button id="send" onclick="sendMessage()">Send </button>
 			</div>
 		</div>
 		
@@ -102,39 +102,262 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 				</div>
 <div class="rightOptions">
-<div id="questions">
-<button class="bubble question default employee" onclick="findAnswer(1)" id="Q1">How do I get a Saba account?</button><p class="keywords">saba, account, access</p>
-<button class="bubble question default" onclick="findAnswer(2)" id="Q2">How can I access my Saba Account for the first time?</button><p class="keywords">saba, account, access</p>
-<button class="bubble question default" onclick="findAnswer(3)" id="Q3">When I try to reset my Saba password, it doesn’t work.</button><p class="keywords">peoplesoft, reset, password, pass, pwd</p>
-<button class="bubble question default" onclick="findAnswer(4)" id="Q4">How do I reset my Saba password if forgotten?</button><p class="keywords">peoplesoft, reset, password, pass, pwd</p>
-<button class="bubble question default" onclick="findAnswer(5)" id="Q5">How do I update my manager in Saba?</button><p class="keywords">manager, team lead</p>
+
+<!-- Built in Questions Buttons, do not touch! -->  
+<div id="built-in-questions">
+
+	<button id="allQuestions" class="bubble question"  style="margin-bottom:0px" onclick="listAllQuestions()">List all questions.</button>
+		
+	<button id="initialQuestions" class="bubble question hidden"  onclick="listInitialQuestions()">List initial options.</button>
+
+
+</div><!-- End of Built in Questions Buttons -->
+
+
+	<!-- start of questions -->
+<div id="questions" style="padding-top:3px">
+<button class="bubble question default employee" onclick="findAnswer(1)"
+
+id="Q1">How do I get a Saba account?</button><p class="keywords">saba, account, access</p>
+<button class="bubble question default" onclick="findAnswer(2)"
+
+id="Q2">How can I access my Saba Account for the first time?</button><p class="keywords">Access, new, login, log in, connect, first, peoplesoft </p>
+<button class="bubble question default" onclick="findAnswer(3)"
+
+id="Q3">When I try to reset my Saba password, it doesn’t work.</button><p class="keywords">
+	peoplesoft, password, pass, pwd, change, update, access, new, login, log in, connect, first  </p>
+<button class="bubble question default" onclick="findAnswer(4)"
+
+id="Q4">How do I reset my Saba password if forgotten?</button><p class="keywords">
+	peoplesoft, password, pass, pwd, change, update, access, new, login, log in, connect, first </p>
+
+
+<button class="bubble question default" onclick="findAnswer(5)"
+
+id="Q5">How do I update my manager in Saba?</button><p class="keywords">manager, managers, manager’s, team lead, lead </p>
+
+
 <button class="bubble question hidden" onclick="findAnswer(6)" id="Q6">I cannot find my manager in Saba.</button><p class="keywords">manager, team lead</p>
-<button class="bubble question hidden" onclick="findAnswer(7)" id="Q7">I need manager/team lead access in Saba.</button><p class="keywords">manager, team lead</p>
-<button class="bubble question hidden" onclick="findAnswer(8)" id="Q8">How do I add completed learning in Saba if the course was completed on another learning system? (Including Essential Training Curriculum [ETC] courses completed on the Canada School of Public Service Learning Platform [CSPS]).</button><p class="keywords">completed, complete, learning, add, etc</p>
-<button class="bubble question hidden" onclick="findAnswer(9)" id="Q9">How do I add completed learning from Canada School of Public Service (CSPS) to Saba (for example – Essential Training Curriculum- [ETC])?</button><p class="keywords">completed, complete, learning, add, etc</p>
-<button class="bubble question hidden" onclick="findAnswer(10)" id="Q10">An employee has exhausted all attempts at passing a test. How do I add an attempt?</button><p class="keywords">attempts, attempt, exhausted, tries, test</p>
-<button class="bubble question hidden" onclick="findAnswer(11)" id="Q11">I have exhausted all attempts at passing a test. How can I get another attempt?</button><p class="keywords">attempts, attempt, exhausted, tries, test</p>
-<button class="bubble question default" onclick="findAnswer(12)" id="Q12">I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC?</button><p class="keywords">essential, etc, curriculum</p>
-<button class="bubble question default" onclick="findAnswer(13)" id="Q13">How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile?</button><p class="keywords">essential, etc, curriculum, School of Public Service, CSPS, school</p>
-<button class="bubble question default" onclick="findAnswer(14)" id="Q14">How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform?</button><p class="keywords">essential, etc, curriculum, School of Public Service, CSPS, school</p>
-<button class="bubble question default" onclick="findAnswer(15)" id="Q15">I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago, yet it is not showing up in my Saba learning history as complete. What do I do?</button><p class="keywords">essential, etc, curriculum, School of Public Service, CSPS, school</p>
-<button class="bubble question hidden" onclick="findAnswer(16)" id="Q16">How do I make sure my Indigenous Awareness and Reconciliation learning is accurately captured in my Saba learning history?</button><p class="keywords">indigenous, awareness, reconciliation</p>
-<button class="bubble question default" onclick="findAnswer(17)" id="Q17">What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course?</button><p class="keywords">essential, etc, curriculum, alt, alternative, version, alternate</p>
-<button class="bubble question default" onclick="findAnswer(18)" id="Q18">What should I do if I encounter technical difficulties with Saba?</button><p class="keywords">technical, difficulties, problem, problems, ticket, tickets, national desk, national service, national service desk, NSD</p>
-<button class="bubble question hidden" onclick="findAnswer(19)" id="Q19">What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course?</button><p class="keywords">School of Public Service, CSPS, school</p>
-<button class="bubble question hidden" onclick="findAnswer(20)" id="Q20">How do I access my team’s Essential Training Curriculum (ETC) completion data?</button><p class="keywords">essential, etc, curriculum</p>
-<button class="bubble question hidden" onclick="findAnswer(21)" id="Q21">As a manager, what should I do to ensure that my Saba reports are accurate?</button><p class="keywords">report, reports</p>
+
+
+<button class="bubble question hidden" onclick="findAnswer(7)" id="Q7">I need manager/team lead access in Saba.</button><p class="keywords">manager, managers, manager’s, team lead, lead </p>
+<button class="bubble question hidden" onclick="findAnswer(8)" id="Q8">How do I add completed learning in Saba if the course was completed on another learning system? (Including Essential Training Curriculum [ETC] courses completed on the Canada School of Public Service Learning Platform [CSPS]).</button><p class="keywords">completed, complete, learning, etc, adding, done, finished, add, external, outside, Saba, update, learning, course, class, update </p>
+
+<button class="bubble question hidden" onclick="findAnswer(9)" id="Q9">How do I add completed learning from Canada School of Public Service (CSPS) to Saba (for example – Essential Training Curriculum- [ETC])?</button><p class="keywords">completed, complete, learning, etc, adding, done, finished, add, external, outside, Saba, update, learning, course, class, update </p>
+<button class="bubble question hidden" onclick="findAnswer(10)" id="Q10">An employee has exhausted all attempts at passing a test. How do I add an attempt?</button><p class="keywords">attempts, attempt, exhausted, tries, test, additional, unsuccessful,  
+
+ 
+
+	manager, managers, manager’s, team lead, lead </p>
+<button class="bubble question hidden" onclick="findAnswer(11)" id="Q11">I have exhausted all attempts at passing a test. How can I get another attempt?</button><p class="keywords">attempts, attempt, exhausted, tries, test 
+	manager, managers, manager’s, team lead, lead </p>
+<button class="bubble question default" onclick="findAnswer(12)" id="Q12">I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC?</button>
+<p class="keywords">essential, etc, curricula, courses, classes, transfer, start over, profile, repeat, redo, equivalence, missing </p>
+
+<button class="bubble question default" onclick="findAnswer(13)" id="Q13">How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile?</button>
+<p class="keywords">essential, etc, curriculum, School of Public Service, school, curricula, courses, classes, transfer, start over, repeat, redo, transfer, equivalence, missing </p>
+<button class="bubble question default" onclick="findAnswer(14)" id="Q14">How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform?</button>
+<p class="keywords">essential, etc, curriculum, School of Public Service, CSPS, school, equivalent, equivalence, transfer, completed, how much time, how long, completions, profile, equivalence, missing </p>
+
+<button class="bubble question default" onclick="findAnswer(15)" id="Q15">I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago, yet it is not showing up in my Saba learning history as complete. What do I do?</button>
+<p class="keywords">essential, etc, curriculum, School of Public Service, CSPS, school, equivalent, equivalence, transfer, completed, how much time, how long, completions, profile, equivalence, missing </p>
+<button class="bubble question hidden" onclick="findAnswer(16)" id="Q16">How do I make sure my Indigenous Awareness and Reconciliation learning is accurately captured in my Saba learning history?</button><p class="keywords">essential, etc, curriculum, reconciliation, equivalence, equivalent, transfer, completed, completions, profile, missing, completion, completed </p>
+
+<button class="bubble question default" onclick="findAnswer(17)" id="Q17">What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course?</button><p class="keywords">essential, etc, curriculum, alternative, equivalence, equivalence, accessibility, accessible </p>
+<button class="bubble question default" onclick="findAnswer(18)" id="Q18">What should I do if I encounter technical difficulties with Saba?</button><p class="keywords">technical, difficulties, problem, problems, tickets, national desk, national service, national service desk, NSD, client services, help, does not work </p>
+<button class="bubble question hidden" onclick="findAnswer(19)" id="Q19">What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course?</button><p class="keywords">technical, difficulties, problem, problems, client services, customer, help, does not work </p>
+<button class="bubble question hidden " onclick="findAnswer(20)" id="Q20">How do I access my team’s Essential Training Curriculum (ETC) completion data?</button><p class="keywords">manager, managers, manager’s, team lead, lead, report, analytics, statistics, stats, incomplete, information, employees, team, reports, direct </p>
+<button class="bubble question hidden manager" onclick="findAnswer(21)" id="Q21">As a manager, what should I do to ensure that my Saba reports are accurate?</button><p class="keywords">manager, managers, manager’s, team lead, lead, report, analytics, statistics, stats, incomplete, information, employees, team, reports, direct, incorrect, false, inaccurate </p>
+<button class="bubble question hidden manager" onclick="findAnswer(22)" id="Q22">Where can I find the managers’ job aids? </button><p class="keywords">job aids, job aid, job aids, tool, tools, work tool, work tools, where, all, location 
+	manager, managers, manager’s, team lead, lead 
+
+</p>
+<!-- employee questions -->
+<button class="bubble question hidden employee" onclick="findAnswer(23)" id="Q23">Where can I find all the Learner job aids?  </button><p class="keywords">job aids, learner,job aid, job aids, tool, tools, work tool, work tools, where, all, location, students, pupils </p>
+<button class="bubble question hidden employee" onclick="findAnswer(24)" id="Q24">How can I accept a waitlisted seat?   </button><p class="keywords">job aids, learner, job aid, job aids, tool, tools, work tool, work tools 
+	waitlist, class </p>
+<button class="bubble question hidden employee" onclick="findAnswer(25)"
+ id="Q25"> How can I access my Saba account for the first time? </button><p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	saba, account, new, PeopleSoft, password, pw </p>
+<button class="bubble question hidden employee" onclick="findAnswer(26)"
+ id="Q26"> How can I activate accessibility mode?  </button><p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	accessible </p>
+<button class="bubble question hidden employee" onclick="findAnswer(27)"
+ id="Q27"> How can I add a completed course?  </button><p class="keywords">job aid, job aids, tool, tools, work tool, work tools, done, finished, add, external, outside, Saba, update, learning, course, class, update r</p>
+<button class="bubble question hidden employee" onclick="findAnswer(28)" 
+id="Q28"> How can I change my language preference?  </button> <p class="keywords"> job aid, job aids, tool, tools, work tool, work tools 
+	French, English, language, change, account, log in, connection, login, session, setting, settings </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(29)"
+ id="Q29"> How can I change my password?   </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	peoplesoft, reset, pass, pwd, change, update, account, modify, modification </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(30)"
+ id="Q30"> How can I drop a class?  </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	abandon, quit, leave, remove, cancel, registration, course, training, event  </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(31)"
+id="Q31"> How do I navigate within Saba? </button> <p class="keywords"> 
+job aid, job aids, tool, tools, work tool, work tools 
+how to, instructions, help, guide, navigation, general, account, use, me page, my plan, menu, actions, profile, launch, open, launching, curriculum, curricula, certification, class, course, register, registering 
+</p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(32)" 
+id="Q32"> How can I print or export a certificate of achievement?   </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	completion, complete, save, prove, proof, transfer, share, new department, send, attach, join, download, upload, import </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(33)"
+ id="Q33"> How can I reset my password? </button> <p class="keywords"> job aid, job aids, tool, tools, work tool, work tools 
+	peoplesoft, pass, pwd, change, update, account, modify, modification, cannot access, login, log in, connection, enter, let me in  </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(34)"
+ id="Q34"> How do I search the learning catalogue? </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	how to, instructions, help, guide, navigation, general, use, me page, my plan, menu, curriculum, curricula, certification, class, course, register, registering, find, training, browse, consult, list, filter </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(35)"
+ id="Q35"> How do I update my manager in Saba? </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools, 
+	manager, managers, manager’s, team lead, lead, change, new, management, profile, account r</p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(36)"
+ id="Q36"> How do I view a class attachment?</button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	resource, resources, document, content, reading material, download, save, find, course, where, course </p>
+
+<button class="bubble question hidden employee" onclick="findAnswer(37)" 
+id="Q37"> How can I relaunch content from a completed course? </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	launch, can’t access, cannot access, view, old, previously completed, updated, new </p>
+
+<!-- admin questions -->
+
+<button class="bubble question hidden employee" onclick="findAnswer(38)" 
+id="Q38"> Where can I find all the administrator job aids that are linked here? </button> <p class="keywords">job aid, job aids, tool, tools, work tool,
+	 work tools, where, all, location, class creation, class administration, course creation, analytics, reports, content administrator, instructor, classroom </p>
+
+<button class="bubble question hidden admin" onclick="findAnswer(39)" 
+id="Q39"> As an administrator, how do I add a facilitator to a class? </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools
+person, resource, resources, trainer, activities tab, instructor, lead, leader, co-presenter, course 
+</p>
+
+<button class="bubble question hidden admin" onclick="findAnswer(40)" 
+id="Q40"> As an administrator, how do I add an evaluation to a class?  </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+activities tab, standard course evaluation, general, attach, survey, publish, course 
+</p>
+
+
+
+<!-- 41 to 46 -->
+
+<button class="bubble question hidden admin" onclick="findAnswer(41)"
+ id="Q41"> As an administrator, how do I add attachments to a class?   </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+related info tab, resource, resources, document, content, reading material, download, save, course, URL, file, upload 
+ </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(42)" 
+id="Q42"> As an administrator, how do I create a blended class?   </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools, course 
+	creation, guide, guidelines, procedure, steps, delivery type, mixed, sessions, session, resource, virtual, web based, instructor-led </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(43)" 
+id="Q43"> As an administrator, how do I create a virtual class?  </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools, course 
+creation, guide, guidelines, procedure, steps, delivery type, scheduling details, session template, reunion, teams, Webex, Non Integrated VLE Provider 
+</p>
+
+<button class="bubble question hidden admin" onclick="findAnswer(44)"
+ id="Q44"> As an administrator, how do I create a Web-based class?  </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+	creation, guide, guidelines, procedure, steps, delivery type, content, SCORM, online, activity sequencing, course </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(45)" 
+id="Q45"> As an administrator, how do I create an instructor-led class?  </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+creation, guide, guidelines, procedure, steps, delivery type, in person, classroom, instructor, course 
+</p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(46)" 
+id="Q46"> As an administrator, how do I attach content to a Web-based or blended class?  </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+	module, SCORM, package, file, URL, test, exam, examination, recording, sign off, attempt, attempts, sequence, sequencing, publish, publishing, disable, delete, course 
+
+</p>
+
+
+
+<!-- 47 to 51 -->
+
+<button class="bubble question hidden admin" onclick="findAnswer(47)" 
+id="Q47"> As an administrator, how do I add a learner to a class through the roster?  </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	register, registration, registrar desktop, sign up, learners, course, list, students, student, pupil, pupils, add to plan </p>
+
+	<!-- remove question -->
+
+<!-- <button class="bubble question hidden admin" onclick="findAnswer(48)" 
+id="Q48">As an administrator, how do I archive or unarchive a learning event?  </button> <p class="keywords"></p> -->
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(49)" 
+id="Q49"> As an administrator, how do I assign a learning activity to a learner using the registrar desktop?   </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	register, registration, registrar desktop, sign up, learners, course, list, students, pupils, student, pupil, add to plan </p>
+
+<button class="bubble question hidden admin" onclick="findAnswer(50)"
+ id="Q50"> As an administrator, how do I cancel a class?   </button> 
+ 
+ <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	course, close, cannot offer </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(51)"
+ id="Q51"> As an administrator, how do I modify a registration?   </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+learner, student, students, pupil, pupils, order, change, replace, reschedule, switch, drop, transfer, cancel 
+ </p>
+
+<!-- 52 to 56 -->
+
+<button class="bubble question hidden admin" onclick="findAnswer(52)"
+ id="Q52"> As an administrator, how do I record a learner’s status in a class?    </button> <p class="keywords">
+	job aid, job aids, tool, tools, work tool, work tools 
+learners, students, student, pupil, pupils, update, change, mark complete, unsuccessful, successful, close class, completion, attendance, roster, list, score, grade, passed, course 
+ </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(53)" 
+id="Q53"> As an administrator, how do I close a class?   </button> <p class="keywords">job aid, job aids, tool, tools, work tool, work tools 
+	grant credit, course, mark delivered, update status </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(54)"
+ id="Q54"> As an administrator, how do I Reschedule a class?   </button> <p class="keywords">job aid, job aids, tool, tools,
+	 work tool, work tools 
+	course, new date, day, change date, modify, session, template, calendar </p>
+
+
+<button class="bubble question hidden admin" onclick="findAnswer(55)" 
+id="Q55"> As an administrator, how do I  Search for a class and find its roster?   </button> <p class="keywords">job aid, job aids, tool, tools,
+	 work tool, work tools, course virtual, web based, web-based, blended, instructor-led, instructor led, list, learners, learner, students, student, pupil, pupils</p>
+
+
+
+
 </div>
+
+<!-- end of questions -->
+
+ 
+
+
+
+
+
 
 	
 
-<!-- Built in Questions Buttons, do not touch! -->
-<div id="built-in-questions">
-<button id="initialQuestions" class="bubble question hidden" onclick="listInitialQuestions()">List initial options.</button>
-<button id="allQuestions" class="bubble question" onclick="listAllQuestions()">List all questions.</button>
 
-<br><!-- need this break to space the bottom scrollbar -->
-</div><!-- End of Built in Questions Buttons -->
 
 <!-- Put your answers here, and make sure to include the same classes as the other answers (bubble and answer). -->
 <!-- Please make sure that you have the exact number of answers as the number of questions. ANSWERS MUST BE in the same ORDER corresponding to the question above. -->
@@ -260,44 +483,242 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 <div class="bubble answer inlineblock" id="A20">
 
-<p>The deadline to complete the ETC is March 31<sup>st</sup>, for most employees.</p>
-<p>&nbsp;</p>
-<p>The completion deadline for employees who joined the department after April 1st is one year from the date they were assigned the curriculum (see Individual Deadlines in Saba).</p>
-<p>&nbsp;</p>
-<p><strong>Please note: </strong>These employees are excluded from their team&rsquo;s ETC completion objectives.</p>
-<p>&nbsp;</p>
-<p>Follow these instructions to view an accurate picture of your team&rsquo;s completion data:</p>
-<ol>
-<li>Select the <strong>Main menu button,</strong> which appears as <strong>three lines </strong>in the top left hand corner of the page.<br /><br /></li>
-<li>Select the <strong>My Team</strong> item to display the &ldquo;Direct Team&rdquo; page. Select the <strong>Expand</strong> <strong>icon</strong>, which appears as <strong>four (4) tiles </strong>in the top left hand corner of the Direct Team page.<br /><br /></li>
-<li>Select <strong>Manager Dashboards</strong>. This opens the Manager Dashboards page. The default report shown is the Summary Report for ESDC&rsquo;s Essential Training Curriculum, and contains four (4) additional reports.<br /><br /></li>
-<li>Select the graphic of your choice, which will bring you to your desired report.<br /><br /></li>
-<li>To export your data in Excel, select the <strong>download button</strong> (Export as a PDF&hellip;) appearing as <strong>a downward arrow</strong>, which is located in the top right hand corner of the page.</li>
-</ol>
-<p>&nbsp;</p>
-<p>For more information:</p>
-<ul>
-<li>Visit the <a target=“_blank” href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Feng%2Fcollege%2Fmandatory_training%2Ffaq_mandatory_training_managers.shtml&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339327707%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=5BIdx6dOFGsX0mQ9Fp%2BG8o%2FiUUuYOeTvfzFuYZXw78U%3D&amp;reserved=0">ETC for Team Leaders, Supervisors, Managers and Executives FAQ</a> page.</li><br>
-<li>Visit the <a target=“_blank” href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Feng%2Fcollege%2Fmandatory_training%2Findex.shtml%3Fsite%3Diservice-prv%23reporting&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339327707%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=%2F99nJd5hJR21x0gOWZPA8kmkjcE66iopEe7Om9n5Z5c%3D&amp;reserved=0">Tracking and Reporting</a> section of the ETC iService page for more information on tracking and generating reports.</li>
-</ul>
-	
+	<p>The deadline to complete the ETC is March 31<sup>st</sup>, for most employees.</p>
+	<p>&nbsp;</p>
+	<p>The completion deadline for employees who joined the department after April 1st is one year from the date they were assigned the curriculum (see Individual Deadlines in Saba).</p>
+	<p>&nbsp;</p>
+	<p><strong>Please note: </strong>These employees are excluded from their team&rsquo;s ETC completion objectives.</p>
+	<p>&nbsp;</p>
+	<p>Follow these instructions to view an accurate picture of your team&rsquo;s completion data:</p>
+	<ol>
+	<li>Select the <strong>Main menu button,</strong> which appears as <strong>three lines </strong>in the top left hand corner of the page.<br /><br /></li>
+	<li>Select the <strong>My Team</strong> item to display the &ldquo;Direct Team&rdquo; page. Select the <strong>Expand</strong> <strong>icon</strong>, which appears as <strong>four (4) tiles </strong>in the top left hand corner of the Direct Team page.<br /><br /></li>
+	<li>Select <strong>Manager Dashboards</strong>. This opens the Manager Dashboards page. The default report shown is the Summary Report for ESDC&rsquo;s Essential Training Curriculum, and contains four (4) additional reports.<br /><br /></li>
+	<li>Select the graphic of your choice, which will bring you to your desired report.<br /><br /></li>
+	<li>To export your data in Excel, select the <strong>download button</strong> (Export as a PDF&hellip;) appearing as <strong>a downward arrow</strong>, which is located in the top right hand corner of the page.</li>
+	</ol>
+	<p>&nbsp;</p>
+	<p>For more information:</p>
+	<ul>
+	<li>Visit the <a target=“_blank” href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Feng%2Fcollege%2Fmandatory_training%2Ffaq_mandatory_training_managers.shtml&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339327707%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=5BIdx6dOFGsX0mQ9Fp%2BG8o%2FiUUuYOeTvfzFuYZXw78U%3D&amp;reserved=0">ETC for Team Leaders, Supervisors, Managers and Executives FAQ</a> page.</li><br>
+	<li>Visit the <a target=“_blank” href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Feng%2Fcollege%2Fmandatory_training%2Findex.shtml%3Fsite%3Diservice-prv%23reporting&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339327707%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=%2F99nJd5hJR21x0gOWZPA8kmkjcE66iopEe7Om9n5Z5c%3D&amp;reserved=0">Tracking and Reporting</a> section of the ETC iService page for more information on tracking and generating reports.</li>
+	</ul>
+		
 
 </div>
 	
 	
 <div class="bubble answer inlineblock" id="A21"><p>To ensure that your Saba reports are accurate, review the organizational structure of your employees in PeopleSoft.</p><br>
-<p>If your organizational structure is not up to date, open a ticket with the <a target="_blank" href="https://iservice.prv/eng/imit/nsd/index.shtml">National Service Desk</a> to have it updated.</p><br>
-<p><strong>Please note:</strong> If your data is not up to date, a 100% completion rate will not be achievable.</p>
+	<p>If your organizational structure is not up to date, open a ticket with the <a target="_blank" href="https://iservice.prv/eng/imit/nsd/index.shtml">National Service Desk</a> to have it updated.</p><br>
+	<p><strong>Please note:</strong> If your data is not up to date, a 100% completion rate will not be achievable.</p>
+</div>
+
+
+<div class="bubble answer inlineblock" id="A22"><p>Some job aids have not made their way to this location yet! You can still find all the manager.</p><br>
+	<p>If your organizational structure is not up to date, open a ticket with the <a target="_blank" href="https://iservice.prv/eng/college/saba/managers.shtml">manager job aids on the Saba Managers page on iService.</a> </p><br>
+	
+</div>
+
+<div class="bubble answer inlineblock" id="A23">
+	<p>To browse all job aids, please <a target="_blank" href="https://014gc.sharepoint.com/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Forms/AllItems.aspx?ga=1&viewid=96e8d7a4%2Dc6e2%2D4219%2Daa49%2Ddfd730e0a29d">access our sharepoint</a> and choose your preferred language, then the role associated with your question.</p><br>
+	<p> Please note that we named our folders and documents following the <a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26164 "> Directive on Official Languages for Communications and Services</a> which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names. </p>
+	
+</div>
+
+
+<div class="bubble answer inlineblock" id="A24">
+	<p>This answer can be found in the<a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Accepter%20une%20place%20en%20attente%20%E2%80%93%20(Learner)%20Accept%20a%20Waitlisted%20Seat_EN.docx?d=wb19a6150e10745b2be5faa66bf0fbdd1&csf=1&web=1&e=C2SUa0">(Learner) Accept a Waitlisted Seat</a> job aid</p><br>
+
+
+</div>
+
+<div class="bubble answer inlineblock" id="A25">
+	<p>This answer can be found in the<a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20%E2%80%93%20Acc%C3%A9der%20%C3%A0%20votre%20compte%20Saba%20pour%20la%20premi%C3%A8re%20fois%20%E2%80%93%20(Learner)%20Access%20Your%20Saba%20Account%20for%20the%20First%20Time_EN.docx?d=w2c39da3f170948fab05cbc959f220136&csf=1&web=1&e=XXYpJg">(Learner) Access Your Saba Account for the First Time</a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A26">
+	<p>This answer can be found in the <a target="_blank" href=" https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Activer%20le%20mode%20accessibilit%C3%A9%20%E2%80%93%20(Learner)%20Activate%20Accessibility%20Mode_EN.docx?d=w2cf5560267654ee1b18a70a2f4420958&csf=1&web=1&e=Lchknf    ">“(Learner) Activate Accessibility Mode” </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A27">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Ajouter%20une%20formation%20achev%C3%A9e%20%E2%80%93%20(Learner)%20Add%20a%20Completed%20Course_EN.docx?d=w7c614f598f014d8586fe4de1aa6b30fb&csf=1&web=1&e=otNBL7 ">“(Learner) Add a completed ourse” </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A28">
+	<p>This answer can be found in the <a target="_blank" href="  https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Changer%20sa%20langue%20de%20pr%C3%A9f%C3%A9rence%20%E2%80%93%20(Learner)%20Change%20Your%20Language%20Preference_EN.docx?d=wb8a347fd5f2e4435978293c4f4cf35a6&csf=1&web=1&e=WbIhlC">“(Learner) Change Your Language Preference” </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A29">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Changer%20son%20mot%20de%20passe%20%E2%80%93%20(Learner)%20Change%20Your%20Password_EN.docx?d=w4871956e595a45fd9ea27ed5697da27a&csf=1&web=1&e=1cbdaP"> “(Learner) Change Your Password”  </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A30">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Abandonner%20une%20classe%20%E2%80%93(Learner)%20Drop%20a%20Class_EN.docx?d=w0363626c67594246ac54471b90fb3704&csf=1&web=1&e=RQwXKB"> “(Learner) Drop a Class” </a> job aid</p><br>
+
+</div>
+<div class="bubble answer inlineblock" id="A31">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Naviguer%20dans%20Saba%20%E2%80%93%20(Learner)%20Navigate%20Within%20Saba_EN.docx?d=w31971656811242339abf1c6907fa13a9&csf=1&web=1&e=mHbRFd">“(Learner) Navigate Within Saba” </a> job aid</p><br>
+
+</div>
+<div class="bubble answer inlineblock" id="A32">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Imprimer%20ou%20exporter%20un%20certificat%20d%E2%80%99ach%C3%A8vement%20%E2%80%93%20(Learner)%20Print%20or%20Export%20a%20Certificate%20of%20Achievement_EN.docx?d=w042905410bef4b299992bf98951e38b9&csf=1&web=1&e=gQ4eJn">“(Learner) Print or Export a Certificate of Achievement" </a> job aid</p><br>
+
+</div>
+<div class="bubble answer inlineblock" id="A33">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20R%C3%A9initialiser%20son%20mot%20de%20passe%20%E2%80%93%20(Learner)%20Reset%20Your%20Password_EN.docx?d=w9d01e5fc31294e3991901117d53bcd70&csf=1&web=1&e=Cwt9Lb">“(Learner) Reset Your Password”</a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A34">
+	<p>This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Chercher%20dans%20le%20catalogue%20de%20formation%20%E2%80%93%20(Learner)%20Search%20the%20Learning%20Catalogue_EN.docx?d=w60568c7cf22841dc85120f2f3bd25ec1&csf=1&web=1&e=t68Xoj ">“(Learner) Search the Learning Catalogue” </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A35">
+	<p>This answer can be found in the <a target="_blank" href=" https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Mettre%20%C3%A0%20jour%20son%20responsable%20(gestionnaire)%20dans%20Saba%20%E2%80%93%20(Learner)%20Update%20Your%20Manager%20in%20Saba_EN.docx?d=w1b37a956cebb46bdbc342a80b7fffddd&csf=1&web=1&e=jEipzW ">“(Learner) Update Your Manager in Saba” </a> job aid</p><br>
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A36">
+	<p>This answer can be found in the <a target="_blank" href=" https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Visionner%20les%20fichiers%20joints%20d%E2%80%99une%20classe%20%E2%80%93%20(Learner)%20View%20a%20Class%20Attachment_EN.docx?d=weaedb19f7509414abe32d114266693c5&csf=1&web=1&e=q1DCiC ">“(Learner) View a Class Attachment” </a> job aid</p><br>
+
+</div>
+
+<div class="bubble answer inlineblock" id="A37">
+	<p>This answer can be found in the <a target="_blank" href=" https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Apprenant%20-%20Learner/(Apprenant)%20Visionner%20les%20fichiers%20joints%20d%E2%80%99une%20classe%20%E2%80%93%20(Learner)%20View%20a%20Class%20Attachment_EN.docx?d=weaedb19f7509414abe32d114266693c5&csf=1&web=1&e=q1DCiC ">“(Learner) Relaunch Content From a Completed Course” </a> job aid</p><br>
+ 
+</div>
+
+<div class="bubble answer inlineblock" id="A38">
+	<p>To browse all job aids, please <a target="_blank" href="https://014gc.sharepoint.com/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Forms/AllItems.aspx?ga=1&viewid=96e8d7a4%2Dc6e2%2D4219%2Daa49%2Ddfd730e0a29d"> access our Sharepoint  </a> and choose your preferred language, then the role associated with your question</p><br>
+	<p>Please note that we named our folders and documents following the <a target="_blank" href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26164 "> Directive on Official Languages for Communications and Services </a> which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names.</p><br>
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A39">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Ajouter%20un%20formateur%20%C3%A0%20une%20classe%20%E2%80%93%20(Administrator)%20Add%20a%20Facilitator%20to%20a%20Class_EN.docx?d=w16664c97aa6840678211ea6cd2a87fd1&csf=1&web=1&e=G6Ozo7"> "(Administrator) Add a Facilitator to a Class”  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A40">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Ajouter%20une%20%C3%A9valuation%20%C3%A0%20une%20classe%20%E2%80%93%20(Administrator)%20Add%20an%20Evaluation%20to%20a%20Class_EN.docx?d=w0cbaafc90c8b465c8efd758a04e4e755&csf=1&web=1&e=o0tiht"> "(Administrator) Add an Evaluation to a Class”  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A41">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Ajouter%20des%20fichiers%20joints%20%C3%A0%20une%20classe%20%E2%80%93%20(Administrator)%20Add%20Attachments%20to%20a%20Class_EN.docx?d=w49f0f085b9014f538b06a675dcc59a9c&csf=1&web=1&e=idyEN0"> "(Administrator) Add Attachments to a Class”  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
 </div>
 
 
 
+<div class="bubble answer inlineblock" id="A42">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Cr%C3%A9er%20une%20classe%20mixte%20%E2%80%93%20(Administrator)%20Create%20a%20Blended%20Class_EN.docx?d=w0f764dc3654c44b1bfe2fe73b05a0784&csf=1&web=1&e=eD19VI"> "(Administrator) Create a Blended Class”"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
 
-</div><!-- end of answers div. -->
+</div>
+
+<div class="bubble answer inlineblock" id="A43">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Cr%C3%A9er%20une%20classe%20virtuelle%20%E2%80%93%20(Administrator)%20Create%20a%20Virtual%20Class_EN.docx?d=wf8b094ae693044f385a1ec940af71696&csf=1&web=1&e=gPpPXX"> "(Administrator) Create a Virtual Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+<div class="bubble answer inlineblock" id="A44">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Cr%C3%A9er%20une%20classe%20sur%20le%20Web%20%E2%80%93%20(Administrator)%20Create%20a%20Web-Based%20Class_EN.docx?d=w324b2c12cb654440a285b0a80dd8c984&csf=1&web=1&e=xoVM8h"> "(Administrator) Create a Web-Based Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
 
 
 
+<div class="bubble answer inlineblock" id="A45">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Cr%C3%A9er%20une%20classe%20sur%20le%20Web%20%E2%80%93%20(Administrator)%20Create%20a%20Web-Based%20Class_EN.docx?d=w324b2c12cb654440a285b0a80dd8c984&csf=1&web=1&e=xoVM8h"> "(Administrator) Create an Instructor-Led Class”"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
 
+</div>
+
+<div class="bubble answer inlineblock" id="A46">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Joindre%20du%20contenu%20%C3%A0%20un%20cours%20sur%20le%20Web%20ou%20mixte%20%E2%80%93%20(Administrator)%20Attach%20Content%20to%20a%20Web%20Based%20or%20Blended%20Class_EN.docx?d=w3623ca9646c049eab95ce5c97497d210&csf=1&web=1&e=JoYDNN"> "(Administrator) Attach Content to a Web Based or Blended Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A47">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Ajouter%20un%20apprenant%20%C3%A0%20une%20classe%20%C3%A0%20partir%20de%20la%20liste%20des%20inscrits%20%E2%80%93%20(Administrator)%20Add%20a%20Learner%20to%20a%20Class%20Through%20the%20Roster_EN.docx?d=w73d781591d90458c9cf0a387dbed1a57&csf=1&web=1&e=0f4u1A"> "(Administrator) Add a Learner to a Class Through the Roster”"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+<!-- <div class="bubble answer inlineblock" id="A48">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Archiver%20ou%20d%C3%A9sarchiver%20un%20%C3%A9v%C3%A9nement%20de%20formation%20%E2%80%93%20(Administrator)%20Archive%20and%20Unarchive%20a%20Learning%20Event_EN.docx?d=w419e65af2e4147d088e58d3d362444ac&csf=1&web=1&e=0GBnKo"> "(Administrator) Archive and Unarchive a Learning Event"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div> -->
+
+<div class="bubble answer inlineblock" id="A49">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Affecter%20un%20%C3%A9v%C3%A9nement%20de%20formation%20%C3%A0%20un%20apprenant%20du%20bureau%20du%20charg%C3%A9%20d%E2%80%99inscription%20%E2%80%93%20(Administrator)%20Assign%20a%20Learning%20Activity%20to%20a%20Learner%20Registrar%20Desktop_EN.docx?d=w542a703784ef4d8e820184ae6e703467&csf=1&web=1&e=Hp7kgr"> "(Administrator) Assign a Learning Activity to a Learner using the Registrar Desktop"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A50">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Annuler%20une%20classe%20%E2%80%93%20(Administrator)%20Cancel%20a%20Class_EN.docx?d=w0d48bc76f72c4bc7b5f069eee63c5504&csf=1&web=1&e=0SeH7b"> "(Administrator) Cancel a Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A51">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Modifier%20une%20inscription%20%E2%80%93%20(Administrator)%20Modify%20a%20Registration_EN.docx?d=w974ab49c7aae42e282c9683da3fac31b&csf=1&web=1&e=zQRKwP"> "(Administrator) Modify a Registration”"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+<div class="bubble answer inlineblock" id="A52">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Enregistrer%20le%20statut%20d%27apprenants%20dans%20une%20classe%20%E2%80%93%20(Administrator)%20Record%20Learner%20Status%20in%20a%20Class_EN.docx?d=w2277e86528cd448385012246ba42756c&csf=1&web=1&e=wFyOL1"> "(Administrator) Record Learner Status in a Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+<div class="bubble answer inlineblock" id="A53">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Fermer%20une%20classe%20%E2%80%93%20(Administrator)%20Close%20a%20Class_EN.docx?d=wde25c94722fa4aaba879561fa1613694&csf=1&web=1&e=N2IBn4"> "(Administrator) Close a Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+
+<div class="bubble answer inlineblock" id="A54">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Reporter%20une%20classe%20%E2%80%93%20(Administrator)%20Reschedule%20a%20Class_EN.docx?d=w3a5d540cb7204f05bb442ceec7257511&csf=1&web=1&e=6aiwmM"> "(Administrator) Reschedule a Class"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+
+
+<div class="bubble answer inlineblock" id="A55">
+	<p> This answer can be found in the <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20anglais%20-%20English%20Job%20Aids/Administrateur%20-%20Administrator/Administration%20des%20classes%20-%20Class%20Administration/(Administrateur)%20Chercher%20une%20classe%20et%20trouver%20une%20liste%20des%20inscrits%20%E2%80%93%20(Administrator)%20Search%20for%20a%20Class%20and%20Find%20its%20Roster_EN.docx?d=wafabd4a839ee4c01960ea98a476ff6df&csf=1&web=1&e=KaiuE4"> "(Administrator) Search for a Class and Find its Roster"  </a>job aid. Please consult it to discover all the steps of the procedure!</p><br>
+	
+
+</div>
+
+<!-- end of answers div. -->
 
 </div><!-- end of rightOptions. -->
 </div><!-- end of rightDiv. -->

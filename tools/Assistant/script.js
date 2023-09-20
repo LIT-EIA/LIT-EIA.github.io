@@ -2,6 +2,7 @@ var isEnglish = true;
 var typingTimeout;
 var isTyping = false;
 
+var userType = "";
 
 
 //General approach: We usually display all questions, and then hide as we go.
@@ -30,15 +31,20 @@ function setLanguage(){
 	
 }
 
+
+const pointAEng = " 1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right.";
+const pointBEng =  " 2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.";
+const pointCtEng = "3) To filter the questions by role, select the role related to your question directly in this bubble."
+
 function displayIntroMessage(){
 	var message = document.createElement("p");
 	if (isEnglish){
-		message.innerText = "Hello, I am your Saba Virtual Assistant!\n\nTo begin, please select one of the questions to the right, or enter a keyword or enquiry in the message bar below.";
+		message.innerText = "Hello, I am your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
 	}else {
-		message.innerText = "Bonjour, je suis votre spécialiste en assistance virtuelle !\n\nPour commencer, veuillez sélectionner l’une des questions à la droite ou saisir un mot-clé ou une demande dans la barre de message ci-dessous.";
+		message.innerText = "Bonjour, je suis votre spécialiste en assistance virtuelle !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
 	}
+	askUserType(message);
 	
-	//Uncomment if you want to ask UserType.
 	assistantTypes(message, false);
 }
 
@@ -87,11 +93,14 @@ function sendMessage(){
 			}else {
 				message.innerText = "Je crois pouvoir vous aider avec ceci! Veuillez trouver les informations relatives à votre mot-clé ou à votre demande à la droite de cette boîte de dialogue.";
 			}
+
+
+			//Display List all options
+			showAllQuestionsButton();
 			
 			//Display List of initial options
 			showInitialQuestionsButton();
-			//Display List all options
-			showAllQuestionsButton();
+			
 			
 			assistantTypes(message, false);
 		}else {
@@ -177,8 +186,10 @@ function listInitialQuestions(){
 		}
 
 	}
-	hideInitialQuestionsButton();
+
 	showAllQuestionsButton();
+	hideInitialQuestionsButton();
+	
 }
 
 function hideAllQuestions(){
@@ -364,3 +375,103 @@ function add_closeMessage(){
 }
 
 
+
+/*
+The functions down below are used to filter usertypes.
+*/
+
+
+function askUserType(message){
+	var break1 = document.createElement("br");
+	var break2 = document.createElement("br");
+	
+	message.append(break1);
+	message.append(break2);
+	
+	var employeeButton = document.createElement("button");
+	var managerButton = document.createElement("button");
+	var adminButton = document.createElement("button");
+	employeeButton.classList.add("bubble");
+	employeeButton.classList.add("question");
+	managerButton.classList.add("bubble");
+	managerButton.classList.add("question");
+	adminButton.classList.add("bubble");
+	adminButton.classList.add("question");
+	
+	
+
+	// 
+
+	if (isEnglish){
+		employeeButton.innerText = "Employee";
+		managerButton.innerText = "Manager";
+		adminButton.innerText = "Administrator";
+	}else{
+		employeeButton.innerText = "Apprenant(e)";
+		managerButton.innerText = "Responsable (gestionnaire, chef d'équipe)";
+		adminButton.innerText = "Administrateur/Administratrice";
+	}
+	
+	employeeButton.onclick = function(){
+		setUser(1);
+		//filterQuestionsByUserType();
+	};
+	
+	managerButton.onclick = function(){
+		setUser(2);
+		//filterQuestionsByUserType();
+	};
+	
+	adminButton.onclick = function(){
+		setUser(3);
+		//filterQuestionsByUserType();
+	};
+	
+	message.append(employeeButton);
+	message.append(managerButton);
+	message.append(adminButton);
+	assistantTypes(message);
+	
+}
+
+function setUser(userTypeInt){
+	//These should match the exact class names!
+	if (userTypeInt == 1){
+		userType = "employee";
+	}
+	if (userTypeInt == 2){
+		userType = "manager";
+	}
+	if (userTypeInt == 3){
+		userType = "admin";
+	}
+	filterQuestionsByUserType();
+}
+
+function filterQuestionsByUserType(){
+	var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+
+
+	for (let i = 0; i < nbQuestions; i++) {
+		
+		var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
+		var classes = htmlButton.classList;
+		
+		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin")){
+			if (classes.contains(userType)){
+				//We display it for the user.
+				//Leave empty as we display all questions by default.
+				htmlButton.style.visibility = 'visible';
+				htmlButton.style.display = 'block';
+			} else{
+				
+				//We hide it as this is not a generic question.
+				htmlButton.style.visibility = 'hidden';
+				htmlButton.style.display = 'none';
+			}
+		}else{
+			//This is a generic question
+			//Leave this blank on purpose.
+		}
+	}
+}
