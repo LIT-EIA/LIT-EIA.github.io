@@ -4,18 +4,23 @@
         "name": "",
         "notes": {
             "authoring": [
-                "[New] Password reset facilitated through email notification"
+                "[New] Password reset facilitated through email notification",
+                "[New] Ownership of courses can be transferred for individual courses from the course's context menu",
+                "[New] Ownership of all courses for a user can be transferred by an administrator from the user management window",
+                "[Improved] Missing translations for drawer"
             ],
             "a11y": [
                 "[Improved] Password requirement form in the Authoring Tool",
-                "[Improved] Color scheme with compliant contrasts in the Authoring Tool"
+                "[Improved] Added more descriptive labels on forms in the Authoring Tool"
             ],
             "security": [
                 "[New] Mandatory one-time password change for all users and after administrator-initiated resets",
-                "[New] Permissions so that courses can be modified only by their owners or shared users"
+                "[New] Permissions so that courses can be modified only by their owners or shared users",
+                "[New] Permissions so that previews can be viewed only by their owners or shared users when outside ESDC's network",
+                "[New] Accessibility role that allows to view all courses but prevents editing"
             ]
         },
-        "pub_date": "2023-08-15T12:00:00Z",
+        "pub_date": "2023-09-22T12:00:00Z",
         "version": "1.4.1"
     },
     {
