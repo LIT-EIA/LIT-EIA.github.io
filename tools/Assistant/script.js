@@ -11,6 +11,7 @@ var userType = "";
 function init(){
 	setLanguage();
 	displayIntroMessage();
+	popaulateKeywords();
 }
 
 function setLanguage(){
@@ -65,12 +66,23 @@ function sendMessage(){
 	
 		var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
 		var foundKeyword = false;
+		var keywordsArray = [];
+
+			keywordsArray = popaulateKeywords();
 	
 		//Filter Questions by Keywords.
 		for (let i = 0; i < nbQuestions; i++) {
-			var keywords = (document.getElementById("questions").getElementsByClassName("keywords")[i].innerText);
+			// var keywords = (document.getElementById("questions").getElementsByClassName("keywords")[i].innerText);
 
-			if (isMatchKeywords(messageParts, keywords)){
+			let a =  keywordsArray[i].join(' ');;
+
+			console.log("Keywords Array: ", a);
+			
+			
+			// keywords = popaulateKeywords;
+			// console.log("line send message: ",keywords);
+
+			if (isMatchKeywords(messageParts, a)){
 				
 				if (foundKeyword == false){
 					//Since we found a matching keyword, we will hide the answers only 1 time.
@@ -475,3 +487,62 @@ function filterQuestionsByUserType(){
 		}
 	}
 }
+
+
+// popaulate key words and return new array with keywords that include words from the question
+
+function popaulateKeywords(){
+
+	const newArray = [];
+
+	let length = document.getElementById("questions").getElementsByTagName("button").length;
+
+	for (let i = 0; i< length ; i++){
+
+		var keywords = document.getElementById("questions").getElementsByClassName("keywords")[i].innerText;
+		
+		let questions = document.getElementById("questions").querySelectorAll("button")[i].innerText;
+
+		let splitQuestions = splitandFilter(questions);
+		
+		//store new keywords in array (comprised of old key words , and filtered words from the questions )
+		let  newkeywords = [keywords,...splitQuestions];
+	
+
+		newArray.push(newkeywords);
+
+		
+	}
+
+
+	console.log('updated Array is', newArray);
+
+
+	return newArray;
+
+
+
+}
+
+//function to split the questions and filter certain words
+function splitandFilter(word){
+	let result = word.split(' ');
+
+	const wordsToExclude = ["How", "can", "I", "do","when","a","for"];
+
+
+	const updatedResult = result.filter((word)=>{
+		return !wordsToExclude.includes(word);
+	})
+
+	return updatedResult;
+}
+
+
+
+
+
+
+
+
+
