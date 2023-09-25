@@ -3,18 +3,23 @@
         "name": "",
         "notes": {
             "authoring": [
-                "[Nouveau] Réinitialisation du mot de passe facilitée via la notification par courriel"
+                "[Nouveau] Réinitialisation de mot de passe facilitée grâce à une notification par e-mail",
+                "[Nouveau] La propriété des cours peut être transférée pour des cours individuels à partir du menu contextuel du cours",
+                "[Nouveau] Un administrateur peut transférer la propriété de tous les cours d'un utilisateur depuis la fenêtre de gestion des utilisateurs",
+                "[Amélioré] Traductions manquantes pour le tiroir"
             ],
             "a11y": [
-                "[Amélioré] Formulaire d'exigence de mot de passe dans l'outil de création",
-                "[Amélioré] Schéma de couleurs avec des contrastes conformes dans l'outil de création"
+                "[Amélioré] Formulaire d'exigences de mot de passe amélioré dans l'outil de création",
+                "[Amélioré] Ajout de libellés plus descriptifs sur les formulaires dans l'outil de création"
             ],
             "security": [
-                "[Nouveau] Changement obligatoire du mot de passe une seule fois pour tous les utilisateurs et après des réinitialisations administrateur",
-                "[Nouveau] Autorisations permettant la modification des cours uniquement par leurs propriétaires ou les utilisateurs partagés"
+                "[Nouveau] Changement obligatoire du mot de passe une seule fois pour tous les utilisateurs et après les réinitialisations initiées par les administrateurs",
+                "[Nouveau] Autorisations pour que seuls les propriétaires ou les utilisateurs partagés puissent modifier les cours",
+                "[Nouveau] Autorisations pour que seuls les propriétaires ou les utilisateurs partagés puissent voir les prévisualisations en dehors du réseau EDSC",
+                "[Nouveau] Rôle testeur d'accessibilité qui permet de voir tous les cours tout en empêchant les modifications"
             ]
         },
-        "pub_date": "2023-08-15T12:00:00Z",
+        "pub_date": "2023-09-22T12:00:00Z",
         "version": "1.4.1"
     },
     {
