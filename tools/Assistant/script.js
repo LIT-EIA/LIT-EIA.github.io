@@ -11,6 +11,7 @@ var userType = "";
 function init(){
 	setLanguage();
 	displayIntroMessage();
+	popaulateKeywords();
 }
 
 function setLanguage(){
@@ -53,6 +54,9 @@ function sendMessage(){
 	
 	//textbox is the message bar.
 	var textboxMessage = document.getElementById("textbox").value;
+
+
+
 	if (textboxMessage != ""){
 		
 		//Split the message by parts to search for keywords.
@@ -65,12 +69,23 @@ function sendMessage(){
 	
 		var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
 		var foundKeyword = false;
+		var keywordsArray = [];
+
+			keywordsArray = popaulateKeywords();
 	
 		//Filter Questions by Keywords.
 		for (let i = 0; i < nbQuestions; i++) {
-			var keywords = (document.getElementById("questions").getElementsByClassName("keywords")[i].innerText);
+			// var keywords = (document.getElementById("questions").getElementsByClassName("keywords")[i].innerText);
 
-			if (isMatchKeywords(messageParts, keywords)){
+			let a =  keywordsArray[i].join(' ');;
+
+			console.log("Keywords Array: ", a);
+			
+			
+			// keywords = popaulateKeywords;
+			// console.log("line send message: ",keywords);
+
+			if (isMatchKeywords(messageParts, a)){
 				
 				if (foundKeyword == false){
 					//Since we found a matching keyword, we will hide the answers only 1 time.
@@ -82,6 +97,54 @@ function sendMessage(){
 				var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
 				htmlButton.style.visibility = 'visible';
 				htmlButton.style.display = 'block';
+			}
+		}
+
+		if(textboxMessage.value === "hello" || "hi" || "hi there" || " hey" ||"greetings"|| " salutations" ||"howdy"|| "what's up" ||  "yo" || "hiya" ||"how are you" ||"how's it going"
+		|| "hello" || "hi" || "hi there" || " hey" ||"greetings"|| " salutations" ||"howdy"|| "what's up" ||  "yo" || "hiya" ||"how are you" ||"how's it going" ||
+		"Allô" ||  "allo" || "salut" || "bonjour" || "bonsoir" || "coucou" || "salutations" ||"ça va" || "ca va" || "hey" || "yo"
+		){
+			if(isEnglish){
+				message.innerHTML = `
+						<div class ="black">
+							<p class= "black">Welcome to my page! </p> <br>
+
+							<p> I was given a predetermined list of frequently asked questions and answers to help you with anything Saba-related. </p> <br>
+
+
+							<p>To begin, you can filter my questions in three ways:</p> <br>
+							<ol>
+								<li>To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right. </li> <br>
+								<li>To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.  </li> <br>
+								<li>To filter the questions by role, select the role related to your question directly in this bubble. </li> <br>
+							</ol>
+						</div>`
+						
+				
+
+				
+			assistantTypes(message, true);
+			}else{
+				message.innerHTML = 
+				`
+				<div class ="black">
+					<p class="black">Bienvenue sur ma page!  </p> <br>
+
+					<p> I was given a predetermined list of frequently asked questions and answers to help you with anything Saba-related. </p> <br>
+
+
+					<p>Pour commencer, vous pouvez filtrer mes questions de trois façons:  </p> <br>
+					<ol>
+						<li> Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.  </li> <br>
+						<li>Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.   </li> <br>
+						<li>Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.  </li> <br>
+					</ol>;
+				</div>`
+				
+
+
+				
+			assistantTypes(message, true);
 			}
 		}
 		
@@ -475,3 +538,62 @@ function filterQuestionsByUserType(){
 		}
 	}
 }
+
+
+// popaulate key words and return new array with keywords that include words from the question
+
+function popaulateKeywords(){
+
+	const newArray = [];
+
+	let length = document.getElementById("questions").getElementsByTagName("button").length;
+
+	for (let i = 0; i< length ; i++){
+
+		var keywords = document.getElementById("questions").getElementsByClassName("keywords")[i].innerText;
+		
+		let questions = document.getElementById("questions").querySelectorAll("button")[i].innerText;
+
+		let splitQuestions = splitandFilter(questions);
+		
+		//store new keywords in array (comprised of old key words , and filtered words from the questions )
+		let  newkeywords = [keywords,...splitQuestions];
+	
+
+		newArray.push(newkeywords);
+
+		
+	}
+
+
+	console.log('updated Array is', newArray);
+
+
+	return newArray;
+
+
+
+}
+
+//function to split the questions and filter certain words
+function splitandFilter(word){
+	let result = word.split(' ');
+
+	const wordsToExclude = ["How", "can", "I", "do","when","a","for"];
+
+
+	const updatedResult = result.filter((word)=>{
+		return !wordsToExclude.includes(word);
+	})
+
+	return updatedResult;
+}
+
+
+
+
+
+
+
+
+
