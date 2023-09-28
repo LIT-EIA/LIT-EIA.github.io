@@ -102,55 +102,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="rightOptions">
 
 
-	<!-- Built in Questions, do not touch! -->
+<!-- 	
+<div id="built-in-questions">
+	<button class="bubble question" onclick="listAllQuestions()">Afficher toutes les questions.</button>
+	<button class="bubble question hidden" style="margin-bottom:0px" onclick="listInitialQuestions()">Afficher les questions initales.</button>
+	
+
+	</div> -->
+
+
+	<!-- Built in Questions Buttons, do not touch! -->  
 <div id="built-in-questions">
 
-	<button class="bubble question hidden" style="margin-bottom:0px" onclick="listInitialQuestions()">Afficher les questions initales.</button>
-	<button class="bubble question" onclick="listAllQuestions()">Afficher toutes les questions.</button>
+	<button id="allQuestions" class="bubble question"  style="margin-bottom:0px" onclick="listAllQuestions()">Afficher toutes les questions</button>
+		
+	<button id="initialQuestions" class="bubble question hidden"  onclick="listInitialQuestions()">Afficher les questions initales.</button>
 
-	</div>
+
+</div><!-- End of Built in Questions Buttons -->
+
+
 <div id="questions" style="padding-top:3px">
 
 
 
-<button class="bubble question default" onclick="findAnswer(1)" id="Q1">Comment puis-je obtenir un compte Saba ?</button><p class="keywords">conte, comte, acces, nouveau, nouvel, nouvelle, accès, acces, connexion, connection, connecter, premier, première, premiere </p>
-<button class="bubble question default" onclick="findAnswer(2)" id="Q2">Comment puis-je accéder à mon compte Saba pour la première fois ?</button><p class="keywords">conte, comte, acces, nouveau, nouvel, nouvelle, accès, acces, connexion, connection, connecter, premier, première, premiere, peoplesoft </p>
-<button class="bubble question default" onclick="findAnswer(3)" id="Q3">Lorsque j'essaie de réinitialiser mon mot de passe Saba, cela ne fonctionne pas.</button><p class="keywords">peoplesoft, mot de passe, mdp, reinitialiser, mettre à jour, acces, accès, new, login, log in, connect, first </p>
-<button class="bubble question default" onclick="findAnswer(4)" id="Q4">Comment puis-je réinitialiser mon mot de passe si je l'ai oublié ?</button><p class="keywords">peoplesoft, mot de passe, mdp, reinitialiser, mettre à jour, acces, accès, new, login, log in, connect, first </p>
-<button class="bubble question default" onclick="findAnswer(5)" id="Q5">Je dois mettre à jour mon gestionnaire dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
-<button class="bubble question hidden" onclick="findAnswer(6)" id="Q6">Je ne trouve pas mon gestionnaire dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
-<button class="bubble question hidden" onclick="findAnswer(7)" id="Q7">J'ai besoin d'un accès gestionnaire/chef d'équipe dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
+<!-- <button class="bubble question default" onclick="findAnswer(1)" id="Q1">Comment puis-je obtenir un compte Saba ?</button><p class="keywords">conte, comte, acces, nouveau, nouvel, nouvelle, accès, acces, connexion, connection, connecter, premier, première, premiere </p> -->
+<!-- <button class="bubble question default" onclick="findAnswer(2)" id="Q2">Comment puis-je accéder à mon compte Saba pour la première fois ?</button><p class="keywords">conte, comte, acces, nouveau, nouvel, nouvelle, accès, acces, connexion, connection, connecter, premier, première, premiere, peoplesoft </p> -->
+<button class="bubble question default employee" onclick="findAnswer(3)" id="Q3">Lorsque j'essaie de réinitialiser mon mot de passe Saba, cela ne fonctionne pas.</button><p class="keywords">peoplesoft, mot de passe, mdp, reinitialiser, mettre à jour, acces, accès, new, login, log in, connect, first </p>
+<button class="bubble question default employee" onclick="findAnswer(4)" id="Q4">Comment puis-je réinitialiser mon mot de passe si je l'ai oublié ?</button><p class="keywords">peoplesoft, mot de passe, mdp, reinitialiser, mettre à jour, acces, accès, new, login, log in, connect, first </p>
+<button class="bubble question default employee" onclick="findAnswer(5)" id="Q5">Je dois mettre à jour mon gestionnaire dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
+<button class="bubble question hidden employee" onclick="findAnswer(6)" id="Q6">Je ne trouve pas mon gestionnaire dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
+<button class="bubble question hidden employee" onclick="findAnswer(7)" id="Q7">J'ai besoin d'un accès gestionnaire/chef d'équipe dans Saba.</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
 
 
-<button class="bubble question hidden" onclick="findAnswer(8)" id="Q8">Comment puis-je ajouter de la formation complétée dans Saba si le cours a été complété sur un autre système d’apprentissage? (Incluant les cours du Curriculum de formation essentielle [CFE] complétés sur la plateforme d’apprentissage de L’École de la fonction publique du Canada [EFPC]).</button>
-<p class="keywords">completee, complété, complete, formation, cfe, complété, achevé, acheve, fini, réussi, reussi, ajouter, ajoute, ajouté, externe, en dehors, Saba, cours, mettre à jour, mettre a jour, mise à jour, mise a jour </p>
-<button class="bubble question hidden" onclick="findAnswer(9)" id="Q9">Comment puis-je ajouter une formation achevée à Saba si elle a été complétée à L’École de la fonction publique du Canada (EFPC). (Par exemple - Curriculum de formation essentielle [CFE]) ?</button>
-<p class="keywords">completee, complété, complete, formation, cfe, complété, achevé, acheve, fini, réussi, reussi, ajouter, ajoute, ajouté, externe, en dehors, Saba, cours, mettre à jour, mettre a jour, mise à jour, mise a jour </p>
-<button class="bubble question hidden" onclick="findAnswer(10)" id="Q10">Un employé a épuisé toutes les tentatives pour réussir un examen. Comment faire pour ajouter une tentative ?</button>
+<button class="bubble question hidden employee" onclick="findAnswer(8)" id="Q8">Comment puis-je ajouter de la formation complétée dans Saba si le cours a été complété sur un autre système d’apprentissage? (Incluant les cours du Curriculum de formation essentielle [CFE] complétés sur la plateforme d’apprentissage de L’École de la fonction publique du Canada [EFPC]).</button>
+<p class="keywords">completee, complété, complete, formation, cfe, complété, achevé, acheve, fini, réussi, reussi, ajouter, ajoute, ajouté, externe, en dehors, Saba, cours, mettre à jour, mettre a jour, mise à jour, mise a jour,ETC </p>
+<button class="bubble question hidden employee" onclick="findAnswer(9)" id="Q9">Comment puis-je ajouter une formation achevée à Saba si elle a été complétée à L’École de la fonction publique du Canada (EFPC). (Par exemple - Curriculum de formation essentielle [CFE]) ?</button>
+<p class="keywords">completee, complété, complete, formation, cfe, complété, achevé, acheve, fini, réussi, reussi, ajouter, ajoute, ajouté, externe, en dehors, Saba, cours, mettre à jour, mettre a jour, mise à jour, mise a jour,ETC </p>
+<button class="bubble question hidden manager" onclick="findAnswer(10)" id="Q10">Un employé a épuisé toutes les tentatives pour réussir un examen. Comment faire pour ajouter une tentative ?</button>
 <p class="keywords">epuise, tentatives, essai, essais, examen, chances, supplementaire, supplémentaire, supplémentaires, terminé, termine, échoué, echoue, échouer, echouer, coulé, couler, coule,  
-	gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, equipe, responsable, responsables </p>
+	gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, equipe, responsable, responsables, test, exam,ETC </p>
 
 
 
-<button class="bubble question hidden" onclick="findAnswer(11)" id="Q11">J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative ?</button>
-<p class="keywords">epuise, tentative, tentatives, essai, essais, examen 
+<button class="bubble question hidden manager" onclick="findAnswer(11)" id="Q11">J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative ?</button>
+<p class="keywords">epuise, tentative, tentatives, essai, essais, examen , test, exam
 gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe </p>
-<button class="bubble question default" onclick="findAnswer(12)" id="Q12">J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC ?</button><p class="keywords">curriculum, curricula, complété, complete, completer, essentielle, cfe, obligatoire, ESDC, cours, classes, transférer, transfert, transferer, recommencer, profil, répéter, repeter, refaire, de nouveau, équivalence, equivalence, manque, manquant manquantes </p>
-<button class="bubble question default" onclick="findAnswer(13)" id="Q13">Dois-je faire quelque chose de particulier pour que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba ?</button>
-<p class="keywords">curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, répéter, repeter, refaire, de nouveau, transfert, transféré, transfere, équivalence, equivalence, manque, manquant manquantes </p>
+<button class="bubble question default employee" onclick="findAnswer(12)" id="Q12">J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC ?</button><p class="keywords">curriculum, curricula, complété, complete, completer, essentielle, cfe,ETC, obligatoire, ESDC, cours, classes, transférer, transfert, transferer, recommencer, profil, répéter, repeter, refaire, de nouveau, équivalence, equivalence, manque, manquant manquantes, ETC </p>
+<button class="bubble question default employee" onclick="findAnswer(13)" id="Q13">Dois-je faire quelque chose de particulier pour que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba ?</button>
+<p class="keywords">curriculum, essentielle, cfe, ETC,ecole de la fonction publique du Canada, EFPC, ecole, répéter, repeter, refaire, de nouveau, transfert, transféré, transfere, équivalence, equivalence, manque, manquant manquantes, ETC </p>
 
 
-<button class="bubble question default" onclick="findAnswer(14)" id="Q14">Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC), quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement ?</button>
-<p class="keywords">curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, équivalence, equivalence, transfert, transférer, transferer, complété, complete, combien de temps, achèvements, achevements, delai, profil, équivalence, equivalence, manque, manquant manquantes </p>
-<button class="bubble question default" onclick="findAnswer(15)" id="Q15">J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant, mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire ?</button>
-<p class="keywords">curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, équivalence, equivalence, transfert, transférer, transferer, complété, complete, combien de temps, achèvements, achevements, delai, profil, équivalence, equivalence, manque, manquant, manquantes </p>
-<button class="bubble question hidden" onclick="findAnswer(16)" id="Q16">Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba ?</button>
+<button class="bubble question default employee" onclick="findAnswer(14)" id="Q14">Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC), quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement ?</button>
+<p class="keywords">curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, équivalence, equivalence, transfert, transférer, transferer, complété, complete, combien de temps, achèvements, achevements, delai, profil, équivalence, equivalence, manque, manquant manquantes,ETC </p>
+<button class="bubble question default employee" onclick="findAnswer(15)" id="Q15">J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant, mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire ?</button>
+<p class="keywords">curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, équivalence, equivalence, transfert, transférer, transferer, complété, complete, combien de temps, achèvements, achevements, delai, profil, équivalence, equivalence, manque, manquant, manquantes, ETC </p>
+<button class="bubble question hidden employee" onclick="findAnswer(16)" id="Q16">Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba ?</button>
 <p class="keywords">curriculum, essentielle, cfe, reconciliation, enregistrée, enregistree, enregistrer, capturé, capturée, capturee, équivalence, equivalence, transfert, transférer, transferer, complété, complete, profil, equivalence, manque, manquant, manquantes, achèvement, achevement  </p>
-<button class="bubble question default" onclick="findAnswer(17)" id="Q17">Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE) ?</button><p class="keywords">curriculum, essentielle, cfe, version, accessible, équivalence, equivalence, accessibilité, accessible, accessibilite </p>
-<button class="bubble question default" onclick="findAnswer(18)" id="Q18">Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba ?</button><p class="keywords">Problèmes techniques, problemes, ticket, demande, billets, difficultes, probleme, problemes, inforservice, infoservice national, NSD, service clientèle, clientele, aide, ne fonctionne pas </p>
-<button class="bubble question hidden" onclick="findAnswer(19)" id="Q19">Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC) ?</button><p class="keywords">Problèmes techniques, problemes, ticket, demande, billets, difficultes, probleme, problemes, inforservice, infoservice national, NSD, service clientèle, clientele, aide, ne fonctionne pas </p>
-<button class="bubble question hidden" onclick="findAnswer(20)" id="Q20">Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe ?</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe, analytique, statistiques, achèvements, stats, incomplet, complété, complet, complete, information, employés, employées, employée, directe, rapports, dat</p>
-<button class="bubble question hidden manager" onclick="findAnswer(21)" id="Q21">En tant que gestionnaire, que dois-je faire pour m'assurer que mes rapports sont exacts ?</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe, analytique, statistiques, achèvements, stats, incomplet, complété, complet, complete, information, employés, employées, employée, directe, rapports, data, fausses, faux, inexactes, inexacts</p>
+<button class="bubble question default employee" onclick="findAnswer(17)" id="Q17">Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE) ?</button><p class="keywords">curriculum, ETC essentielle, cfe, version, accessible, équivalence, equivalence, accessibilité, accessible, accessibilite </p>
+<button class="bubble question default employee" onclick="findAnswer(18)" id="Q18">Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba ?</button><p class="keywords">Problèmes techniques, problemes, ticket, demande, billets, difficultes, probleme, problemes, inforservice, infoservice national, NSD, service clientèle, clientele, aide, ne fonctionne pas </p>
+<button class="bubble question hidden employee" onclick="findAnswer(19)" id="Q19">Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC) ?</button><p class="keywords">Problèmes techniques,ETC ,problemes, ticket, demande, billets, difficultes, probleme, problemes, inforservice, infoservice national, NSD, service clientèle, clientele, aide, ne fonctionne pas </p>
+<button class="bubble question hidden manager" onclick="findAnswer(20)" id="Q20">Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe ?</button><p class="keywords">gestionnaire, ETC ,gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe, analytique, statistiques, achèvements, stats, incomplet, complété, complet, complete, information, employés, employées, employée, directe, rapports, dat</p>
+<button class="bubble question hidden manager" onclick="findAnswer(21)" id="Q21">En tant que gestionnaire, que dois-je faire pour m'assurer que mes rapports sont exacts ?</button><p class="keywords">gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe, analytique, statistiques, achèvements, stats, incomplet, complété, complet, complete, information, employés, employées, employée, directe, rapports, data, fausses, faux, inexactes, inexacts, curriculum, essentielle, cfe, complété, complete, achèvements, achevements, profil, manque, ETC </p>
 <button class="bubble question hidden manager" onclick="findAnswer(22)" id="Q22">Où puis-je trouver tous les aide-mémoires pour gestionnaires?  </button><p class="keywords">aide-mémoire, aides-mémoires, aide-mémoires, aide, mémoire, job aids, outil, outils, outil de travail, outils de travail, où, ou, tous, emplacement, aide-memoire, aides-memoires, aide-memoires, memoire 
 
  
@@ -271,7 +284,7 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 
  
 
-	onglet activités, activites, évaluation de cours standard, evaluation, général, general, attacher, joindre, joint, enquête, publier, cours, administratrice </p>
+	onglet activités, activites, évaluation de cours standard, evaluation, général, general, attacher, joindre, joint, enquête, publier, cours, administratrice, exam, examen, test </p>
 
 
 
@@ -411,7 +424,7 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 	
 
 
-	<div class="bubble answer inlineblock" id="A1">
+	<!-- <div class="bubble answer inlineblock" id="A1">
 	
 	<p>Veuillez suivre les directives pr&eacute;sent&eacute;es dans&nbsp;l&rsquo;aide-m&eacute;moire: &laquo; <a target="_blank" href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Ffra%2Fcollege%2Fsaba%2Fpremiere-fois.shtml&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339483930%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=ePhPn1%2B2AQGb%2BoloZsULmhlpz%2FSigD43H6P1ltjAth0%3D&amp;reserved=0">Acc&eacute;der &agrave; votre compte Saba pour la premi&egrave;re fois</a> &raquo;. Vous y trouverez plus d&rsquo;informations selon votre situation particuli&egrave;re&nbsp;:&nbsp;</p>
 	<br>
@@ -422,9 +435,9 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 	<li>Je suis un employ&eacute; ayant un profil actif dans PeopleSoft et j&rsquo;aurai besoin d&rsquo;acc&eacute;der &agrave; Saba pour la premi&egrave;re fois</li>
 	</ul>
 		
-	</div>
+	</div> -->
 	
-	<div class="bubble answer inlineblock" id="A2">
+	<!-- <div class="bubble answer inlineblock" id="A2">
 		
 	<p>Veuillez suivre les directives pr&eacute;sent&eacute;es dans&nbsp;l&rsquo;aide-m&eacute;moire: &laquo; <a target="_blank" href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiservice.prv%2Ffra%2Fcollege%2Fsaba%2Fpremiere-fois.shtml&amp;data=05%7C01%7Ccaroline.filion%40servicecanada.gc.ca%7C98ed5c43f5664966202d08db2a34b3ef%7C9ed558468a814246acd8b1a01abfc0d1%7C0%7C0%7C638150178339483930%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=ePhPn1%2B2AQGb%2BoloZsULmhlpz%2FSigD43H6P1ltjAth0%3D&amp;reserved=0">Acc&eacute;der &agrave; votre compte Saba pour la premi&egrave;re fois</a> &raquo;. Vous y trouverez plus d&rsquo;informations selon votre situation particuli&egrave;re&nbsp;:&nbsp;</p>
 	<br>
@@ -435,12 +448,12 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 	<li>Je suis un employ&eacute; ayant un profil actif dans PeopleSoft et j&rsquo;aurai besoin d&rsquo;acc&eacute;der &agrave; Saba pour la premi&egrave;re fois</li>
 	</ul>
 	
-	</div>
+	</div> -->
 	
 		
 	<div class="bubble answer inlineblock" id="A3"><ol>
 	<ol>
-	<li>Veuillez suivre les directives suivantes afin de <a target="_blank" href="https://iservice.prv/fra/college/saba/reinitialiser-mot-passe.shtml">R&eacute;initialiser votre mot de passe Saba</a>.</li><br>
+	<li>Veuillez suivre les directives présentées dans l’aide-mémoire:<a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire  Job Aids/Aide-m%C3%A9moires en fran%C3%A7ais - French Job Aids/Apprenant - Learner/(Apprenant) R%C3%A9initialiser son mot de passe %E2%80%93 (Learner) Reset Your Password_FR.docx?d=w96de827afa474ae2ac230830abaa8f3a&csf=1&web=1&e=fbKvLT">R&eacute;initialiser son mot de passe</a>.</li><br>
 	<li>Si vous ne recevez pas de courriel dans l&rsquo;heure apr&egrave;s avoir suivi les instructions ci-dessus, veuillez soumettre une demande &agrave; l&rsquo;<a target="_blank" href="https://iservice.prv/fra/giti/isn/index.shtml">InfoService national</a> en inscrivant Saba lorsque vous devez s&eacute;lectionner produit/syst&egrave;me/application.</li>
 	</ol>
 		
@@ -448,14 +461,14 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 		
 	<div class="bubble answer inlineblock" id="A4"><ol>
 	<ol>
-	<li>Veuillez suivre les directives suivantes afin de <a target="_blank" href="https://iservice.prv/fra/college/saba/reinitialiser-mot-passe.shtml">R&eacute;initialiser votre mot de passe Saba</a>.</li><br>
+	<li>1.	Veuillez suivre les directives présentées dans l’aide-mémoire:<a target="_blank" href="https://iservice.prv/fra/college/saba/reinitialiser-mot-passe.shtml">R&eacute;initialiser son mot de passe</a>.</li><br>
 	<li>Si vous ne recevez pas de courriel dans l&rsquo;heure apr&egrave;s avoir suivi les instructions ci-dessus, veuillez soumettre une demande &agrave; l&rsquo;<a target="_blank" href="https://iservice.prv/fra/giti/isn/index.shtml">InfoService national</a> en inscrivant Saba lorsque vous devez s&eacute;lectionner produit/syst&egrave;me/application.</li>
 	</ol>
 	</div>
 		
 	<div class="bubble answer inlineblock" id="A5">	
 		
-	<p>Afin de mettre votre gestionnaire &agrave; jour dans Saba,&nbsp;veuillez suivre les directives pr&eacute;sent&eacute;es dans&nbsp;: &laquo;&nbsp;<a target="_blank" href="https://iservice.prv/fra/college/saba/apprenants.shtml">Changer votre gestionnaire dans Saba</a><span>&nbsp;&raquo;</span>.</p><br>
+	<p>Veuillez suivre les directives présentées dans l’aide-mémoire;<a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire  Job Aids/Aide-m%C3%A9moires en fran%C3%A7ais - French Job Aids/Apprenant - Learner/(Apprenant) Mettre %C3%A0 jour son responsable (gestionnaire) dans Saba %E2%80%93 (Learner) Update Your Manager in Saba_FR.docx?d=w7bba0130d947457a807d7a366fb88dca&csf=1&web=1&e=BaOUre"> Mettre à jour votre responsable dans Saba </a><span>&nbsp;&raquo;</span>.</p><br>
 	<p>Veuillez noter que <strong>l'orthographe</strong> du nom de votre gestionnaire peut affecter votre recherche (par exemple, E ou &Eacute;).</p>
 	</div>
 		
@@ -467,14 +480,14 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 	<p>Veuillez noter que <strong>l'orthographe</strong> du nom de votre gestionnaire peut affecter votre recherche (par exemple, E ou &Eacute;).</p>
 	</div>
 	
-	<div class="bubble answer inlineblock" id="A8"><p>Pour ajouter une formation compl&eacute;t&eacute;e en dehors de Saba &agrave; votre profil Saba, veuillez &nbsp;suivre les directives pr&eacute;sent&eacute;es dans&nbsp;: &laquo; <a target="_blank" href="https://iservice.prv/fra/college/saba/ajouter-cours-complete.shtml">Ajouter un cours compl&eacute;t&eacute;</a> &raquo;.</p><br>
+	<div class="bubble answer inlineblock" id="A8"><p>Pour ajouter une formation complétée en dehors de Saba à votre profil Saba, Veuillez suivre les directives présentées dans l’aide-mémoire:; <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/_layouts/15/Doc.aspx?sourcedoc=%7BDE03481A-3E51-4676-9C0D-1AB8643F8785%7D&file=(Apprenant)%20Ajouter%20une%20formation%20achev%25u00e9e%20%25u2013%20(Learner)%20Add%20a%20Completed%20Course_FR.docx&wdLOR=c26CD4C6D-F798-4693-B71A-B68CE2552DC0&action=default&mobileredirect=true">;</a>  Ajouter une formation achevée</p><br>
 	<p>Si vous faites r&eacute;f&eacute;rence aux cours du Curriculum de formation essentielle (CFE) compl&eacute;t&eacute;s sur la plateforme d&rsquo;apprentissage de L&rsquo;&Eacute;cole de la fonction publique du Canada (EFPC), notez que l'importation des donn&eacute;es pour les cours compl&eacute;t&eacute;s est effectu&eacute;e <strong>quotidiennement</strong>. Si vous avez compl&eacute;t&eacute; un cours dans les derni&egrave;res 24 heures, veuillez attendre le prochain jour ouvrable afin de permettre aux mises &agrave; jour de se refl&eacute;ter dans votre profil Saba.</p><br>
 	<p>Pour vous assurer que vos cours soient transf&eacute;r&eacute;s correctement, v&eacute;rifiez que l&rsquo;adresse courriel utilis&eacute;e dans votre profil de l&rsquo;<a target="_blank" href="https://csps-efpc.gc.ca/">&Eacute;cole de la fonction publique du Canada</a> correspond &agrave; celle utilis&eacute;e dans votre profil Saba.</p><br>
 	<p>Si vous avez besoin d&rsquo;aide pour mettre &agrave; jour/cr&eacute;er votre compte EFPC, veuillez contacter le centre de contact avec la client&egrave;le <a target="_blank" href="https://www.csps-efpc.gc.ca/contact_us/inquiries-fra.aspx">Centre de contact avec la client&egrave;le</a> de l&rsquo;EFPC.</p><br>
 	<p><strong>Veuillez noter</strong> que nous transf&eacute;rons automatiquement seulement les cours qui sont obligatoires pour notre Minist&egrave;re.</p>
 		</div>
 		
-	<div class="bubble answer inlineblock" id="A9"><p>Pour ajouter une formation compl&eacute;t&eacute;e en dehors de Saba &agrave; votre profil Saba, veuillez &nbsp;suivre les directives pr&eacute;sent&eacute;es dans&nbsp;: &laquo; <a target="_blank" href="https://iservice.prv/fra/college/saba/ajouter-cours-complete.shtml">Ajouter un cours compl&eacute;t&eacute;</a> &raquo;.</p><br>
+	<div class="bubble answer inlineblock" id="A9"><p>Pour ajouter une formation complétée en dehors de Saba à votre profil Saba, Veuillez suivre les directives présentées dans l’aide-mémoire: <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire  Job Aids/Aide-m%C3%A9moires en fran%C3%A7ais - French Job Aids/Apprenant - Learner/(Apprenant) Ajouter une formation achev%C3%A9e %E2%80%93 (Learner) Add a Completed Course_FR.docx?d=wde03481a3e5146769c0d1ab8643f8785&csf=1&web=1&e=KteBCE">Ajouter un cours compl&eacute;t&eacute;</a> &raquo;.</p><br>
 	<p>Si vous faites r&eacute;f&eacute;rence aux cours du Curriculum de formation essentielle (CFE) compl&eacute;t&eacute;s sur la plateforme d&rsquo;apprentissage de L&rsquo;&Eacute;cole de la fonction publique du Canada (EFPC), notez que l'importation des donn&eacute;es pour les cours compl&eacute;t&eacute;s est effectu&eacute;e <strong>quotidiennement</strong>. Si vous avez compl&eacute;t&eacute; un cours dans les derni&egrave;res 24 heures, veuillez attendre le prochain jour ouvrable afin de permettre aux mises &agrave; jour de se refl&eacute;ter dans votre profil Saba.</p><br>
 	<p>Pour vous assurer que vos cours soient transf&eacute;r&eacute;s correctement, v&eacute;rifiez que l&rsquo;adresse courriel utilis&eacute;e dans votre profil de l&rsquo;<a target="_blank" href="https://csps-efpc.gc.ca/">&Eacute;cole de la fonction publique du Canada</a> correspond &agrave; celle utilis&eacute;e dans votre profil Saba.</p><br>
 	<p>Si vous avez besoin d&rsquo;aide pour mettre &agrave; jour/cr&eacute;er votre compte EFPC, veuillez contacter le centre de contact avec la client&egrave;le <a target="_blank" href="https://www.csps-efpc.gc.ca/contact_us/inquiries-fra.aspx">Centre de contact avec la client&egrave;le</a> de l&rsquo;EFPC.</p><br>
@@ -729,7 +742,7 @@ gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, respo
 
 
 <div class="bubble answer inlineblock" id="A45">
-	<p> Cette réponse se trouve dans l’aide-mémoire <a target="_blank" href=" https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire%20%20Job%20Aids/Aide-m%C3%A9moires%20en%20fran%C3%A7ais%20-%20French%20Job%20Aids/Administrateur%20-%20Administrator/Cr%C3%A9ation%20des%20classes%20-%20Class%20Creation/(Administrateur)%20Cr%C3%A9er%20une%20classe%20tutor%C3%A9e%20%E2%80%93%20(Administrator)%20Create%20an%20Instructor-Led%20Class_FR.docx?d=wf733dc027470421aa14d936b1bf0c141&csf=1&web=1&e=iP5Yif "> « (Administrateur) Créer une classe tutorée »  </a> N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure! </p><br>
+	<p> Cette réponse se trouve dans l’aide-mémoire <a target="_blank" href="https://014gc.sharepoint.com/:w:/r/sites/ILMS-SIGA/Aidesmmoire  Job Aids/Aide-m%C3%A9moires en fran%C3%A7ais - French Job Aids/Administrateur - Administrator/Cr%C3%A9ation des classes - Class Creation/(Administrateur) Cr%C3%A9er une classe tutor%C3%A9e %E2%80%93 (Administrator) Create an Instructor-Led Class_FR.docx?d=wf733dc027470421aa14d936b1bf0c141&csf=1&web=1&e=iP5Yif"> « (Administrateur) Créer une classe tutorée »  </a> N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure! </p><br>
 	
 
 </div>

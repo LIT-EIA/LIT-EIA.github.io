@@ -466,11 +466,11 @@ function askUserType(message){
 	// 
 
 	if (isEnglish){
-		employeeButton.innerText = "Employee";
+		employeeButton.innerText = "Learner";
 		managerButton.innerText = "Manager";
 		adminButton.innerText = "Administrator";
 	}else{
-		employeeButton.innerText = "Apprenant(e)";
+		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire, chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
 	}
