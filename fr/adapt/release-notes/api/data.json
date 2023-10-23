@@ -2,6 +2,16 @@
     {
         "name": "",
         "notes": {
+            "security": [
+                "[Nouveau] Effacement de la session après modification du mot de passe d'un utilisateur"
+            ]
+        },
+        "pub_date": "2023-11-01T12:00:00Z",
+        "version": "1.4.2"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[Nouveau] Réinitialisation de mot de passe facilitée grâce à une notification par e-mail",
                 "[Nouveau] La propriété des cours peut être transférée pour des cours individuels à partir du menu contextuel du cours",
