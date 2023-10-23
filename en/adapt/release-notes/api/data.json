@@ -4,7 +4,7 @@
         "name": "",
         "notes": {
             "security": [
-                "[New] Session clearing after a user's password is changed
+                "[New] Session clearing after a user's password is changed"
             ]
         },
         "pub_date": "2023-11-01T12:00:00Z",
