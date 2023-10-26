@@ -1,12 +1,22 @@
 [
-    {
+      {
         "name": "",
         "notes": {
             "security": [
-                "[Nouveau] Effacement de la session après modification du mot de passe d'un utilisateur"
+                "[Nouveau] Invalidation des sessions sur d'autres appareils lorsqu'un mot de passe est modifié, garantissant que le compte n'est accessible qu'à l'utilisateur ayant effectué le changement",
+                "[Nouveau] Les médias sensibles peuvent être exclus de la bibliothèque d'images afin que seul le créateur puisse y accéder et les utiliser"
+            ],
+            "a11y": [
+                "[Nouveau] Contournement de blocs permettant aux utilisateurs d'accéder directement au contenu ou à l'assistance et de contourner la navigation dans l'outil d'auteur"
+            ],
+            "tools": [
+                "[Nouveau] Boîte d'aide interactive pour améliorer le support utilisateur en les guidant vers les bonnes ressources pour résoudre les problèmes et obtenir des réponses à leurs questions"
+            ],
+            "authoring": [
+                "[Amélioré] La duplication de cours supprime désormais automatiquement les utilisateurs partagés pour une gestion plus simple et une sécurité renforcée"
             ]
         },
-        "pub_date": "2023-11-01T12:00:00Z",
+        "pub_date": "2023-11-08T12:00:00Z",
         "version": "1.4.2"
     },
     {
