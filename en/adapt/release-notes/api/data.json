@@ -4,7 +4,17 @@
         "name": "",
         "notes": {
             "security": [
-                "[New] Session clearing after a user's password is changed"
+                "[New] Invalidating sessions on other devices when a password is changed, ensuring the account is only accessible to the user who made the change",
+                "[New] Sensitive assets can be kept out of the image library so that only the creator can access and utilise them"
+            ],
+            "a11y": [
+                "[New] Bypass block allowing users to access content or assistance directly and bypass the navigation in the Authoring Tool"
+            ],
+            "tools": [
+                "[New] Interactive help dialog to improve user support by guiding them to the right resources for issue resolution and answers to their questions"
+            ],       
+            "authoring": [
+                "[Improved] Course duplication now automatically removes shared users for simpler management and enhanced security"
             ]
         },
         "pub_date": "2023-11-01T12:00:00Z",
