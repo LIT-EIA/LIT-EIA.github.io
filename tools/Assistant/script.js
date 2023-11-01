@@ -3,6 +3,9 @@ var typingTimeout;
 var isTyping = false;
 
 var userType = "";
+var keywordJSON = [];
+var questionJSON = [];
+var answerJSON = [];
 
 
 //General approach: We usually display all questions, and then hide as we go.
@@ -12,6 +15,7 @@ function init(){
 	setLanguage();
 	displayIntroMessage();
 	popaulateKeywords();
+	
 }
 
 function setLanguage(){
@@ -547,6 +551,10 @@ function filterQuestionsByUserType(){
 function popaulateKeywords(){
 
 	const newArray = [];
+	const questionsArray = [];
+	const answerArray = [];
+
+
 
 	let length = document.getElementById("questions").getElementsByTagName("button").length;
 
@@ -556,6 +564,8 @@ function popaulateKeywords(){
 		
 		let questions = document.getElementById("questions").querySelectorAll("button")[i].innerText;
 
+		let answers = document.getElementById("answers").querySelectorAll("div")[i].innerText;
+
 		let splitQuestions = splitandFilter(questions);
 		
 		//store new keywords in array (comprised of old key words , and filtered words from the questions )
@@ -563,17 +573,38 @@ function popaulateKeywords(){
 	
 
 		newArray.push(newkeywords);
+		questionsArray.push(questions);
+		answerArray.push(answers)
+
 
 		
 	}
 
 
-	console.log('updated Array is', newArray);
 
+	// console.log('updated Key Word Array is', newArray);
+	// console.log('updated questions Array is', questionsArray);
+	// console.log('updated answers Array is', answerArray);
+
+	keywordJSON = newArray;
+	questionJSON = questionsArray;
+	answerJSON = answerArray;
+
+	
+
+	var convertedtoJSON = JSON.stringify(keywordJSON);
+
+	console.log("keyword JSON is", convertedtoJSON);
+
+	var convertedtoJSONquestion = JSON.stringify(questionJSON);
+
+	console.log("question JSON is" , convertedtoJSONquestion);
+
+	var convertedtoJSONanswers = JSON.stringify(answerJSON);
+
+	console.log("answer JSON is",convertedtoJSONanswers);
 
 	return newArray;
-
-
 
 }
 
@@ -590,6 +621,53 @@ function splitandFilter(word){
 
 	return updatedResult;
 }
+
+// sample function
+
+const remoteUrl = 'https://lit-eia.github.io/JSON-API/sampleData.json';
+
+// Step 1: Retrieve the data from the website
+fetch(remoteUrl)
+  .then(response => response.json())
+  .then(jsonData => {
+
+	console.log(jsonData);
+	let a = popaulateKeywords();
+    // Step 2: Modify the data as needed
+    // jsonData.push({ key: 'newData' });
+
+    // Step 3: Send the modified data back to the website (typically via an API)
+    // Here, we're assuming a hypothetical updateData function for the API call
+    updateData(remoteUrl, a)
+      .then(() => {
+        console.log('Data pushed to the remote JSON file.');
+      })
+      .catch(error => {
+        console.error('Error updating data:', error);
+      });
+  })
+  .catch(error => {
+    console.error('Error retrieving data:', error);
+  });
+
+// Hypothetical function to update data on the remote website
+function updateData(url, newData) {
+  return fetch(url, {
+    method: 'PUT', // Use 'PUT' or 'POST' depending on the API's requirements
+    body: JSON.stringify(newData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
+
+
+
+
+
+
+
 
 
 
