@@ -133,7 +133,7 @@ function sendMessage(){
 					<div class ="black">
 						<p class="black">Bienvenue sur ma page!  </p> <br>
 	
-						<p> I was given a predetermined list of frequently asked questions and answers to help you with anything Saba-related. </p> <br>
+						<p> On m’a donné une liste de questions et réponses prédéterminées qui sont fréquemment posées afin que je puisse vous aider avec tout ce qui concerne Saba.. </p> <br>
 	
 	
 						<p>Pour commencer, vous pouvez filtrer mes questions de trois façons:  </p> <br>
@@ -181,7 +181,7 @@ function sendMessage(){
 				message.innerText = "Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
 			}
 			
-			assistantTypes(message, true);
+			assistantTypes(message, false);
 		}
 	}
 	
