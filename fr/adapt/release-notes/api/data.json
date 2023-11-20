@@ -4,7 +4,8 @@
         "notes": {
             "security": [
                 "[Nouveau] Invalidation des sessions sur d'autres appareils lorsqu'un mot de passe est modifié, garantissant que le compte n'est accessible qu'à l'utilisateur ayant effectué le changement",
-                "[Nouveau] Les médias sensibles peuvent être exclus de la bibliothèque d'images afin que seul le créateur puisse y accéder et les utiliser"
+                "[Nouveau] Les médias sensibles peuvent être exclus de la bibliothèque d'images afin que seul le créateur puisse y accéder et les utiliser",
+                "[Nouveau] Rôle contracteur pour identifier les utilisateurs externes et limiter l'utilisation"
             ],
             "a11y": [
                 "[Nouveau] Contournement de blocs permettant aux utilisateurs d'accéder directement au contenu ou à l'assistance et de contourner la navigation dans l'outil d'auteur"
