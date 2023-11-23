@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+    <title>Incorrect Adapt Preview Link</title>
+</head>
+
+<body>
+    <div id="message"></div>
+</body>
+<script>
+    var url = window.location.href;
+    var urlParams = new URLSearchParams(window.location.search);
+    var encodedString = urlParams.get('providedurl');
+    var originalString = decodeURIComponent(encodedString);
+    console.log('providedurl: ', originalString);
+    var messageDiv = document.getElementById("message");
+    messageDiv.innerHTML = "<p>Invalid Adapt Preview link! The following link provided in the form was not a valid URL:</p><p>" + originalString + "</p>";
+</script>
+
+</html>
