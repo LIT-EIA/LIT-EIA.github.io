@@ -18,7 +18,7 @@
     var originalString = decodeURIComponent(encodedString);
     console.log('providedurl: ', originalString);
     var messageDiv = document.getElementById("message");
-    messageDiv.innerHTML = "<p>Invalid Adapt Preview link! The following link provided in the form was not a valid URL:</p><p>" + originalString + "</p>";
+    messageDiv.innerHTML = "<p>Invalid URL! The following link provided in the form was not a valid URL, it has been altered to be able to save in the database. If needed, contact the requestor to obtain a proper Adapt preview link</p><p>" + originalString + "</p>";
 </script>
 
 </html>
