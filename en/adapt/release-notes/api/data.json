@@ -3,6 +3,16 @@
     {
         "name": "",
         "notes": {
+            "authoring": [
+                "[Urgent] Fixed the permission issue related to the deletion of associated resources for a course."
+            ]
+        },
+        "pub_date": "2023-12-01T13:30:00Z",
+        "version": "PATCH"
+    },
+    {
+        "name": "",
+        "notes": {
             "security": [
                 "[New] Invalidating sessions on other devices when a password is changed, ensuring the account is only accessible to the user who made the change",
                 "[New] Sensitive assets can be kept out of the image library so that only the creator can access and utilise them",
