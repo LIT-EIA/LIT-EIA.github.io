@@ -2,6 +2,16 @@
       {
         "name": "",
         "notes": {
+            "authoring": [
+                "[Urgent] Correction du problème de permission lié à la suppression des ressources associées à un cours."
+            ]
+        },
+        "pub_date": "2023-12-01T13:30:00Z",
+        "version": "PATCH"
+      },
+      {
+        "name": "",
+        "notes": {
             "security": [
                 "[Nouveau] Invalidation des sessions sur d'autres appareils lorsqu'un mot de passe est modifié, garantissant que le compte n'est accessible qu'à l'utilisateur ayant effectué le changement",
                 "[Nouveau] Les médias sensibles peuvent être exclus de la bibliothèque d'images afin que seul le créateur puisse y accéder et les utiliser",
