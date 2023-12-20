@@ -3,6 +3,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Urgent] Correction partielle du problème des champs de texte grisés."
+            ]
+        },
+        "pub_date": "2023-12-20T11:00:00Z",
+        "version": "PATCH"
+      },
+      {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Urgent] Correction du problème de permission lié à la suppression des ressources associées à un cours."
             ]
         },
