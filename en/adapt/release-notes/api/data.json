@@ -4,6 +4,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Urgent] Fixed partially the intermittent greyed-out text field issue."
+            ]
+        },
+        "pub_date": "2023-12-20T11:00:00Z",
+        "version": "PATCH"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Urgent] Fixed the permission issue related to the deletion of associated resources for a course."
             ]
         },
