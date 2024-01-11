@@ -7,6 +7,8 @@ var keywordJSON = [];
 var questionJSON = [];
 var answerJSON = [];
 
+var defaultforMessage = false;
+
 
 //General approach: We usually display all questions, and then hide as we go.
 //We do NOT do the opposite: hiding all, display questions as we go.
@@ -14,7 +16,7 @@ var answerJSON = [];
 function init(){
 	setLanguage();
 	displayIntroMessage();
-	popaulateKeywords();
+	populateKeywords();
 	
 }
 
@@ -37,16 +39,18 @@ function setLanguage(){
 }
 
 
-const pointAEng = " 1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right.";
-const pointBEng =  " 2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.";
-const pointCtEng = "3) To filter the questions by role, select the role related to your question directly in this bubble."
+
+
+// const pointAEng = " 1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right.";
+// const pointBEng =  " 2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.";
+// const pointCtEng = "3) To filter the questions by role, select the role related to your question directly in this bubble."
 
 function displayIntroMessage(){
 	var message = document.createElement("p");
 	if (isEnglish){
-		message.innerText = "Hello, I am your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
+		message.innerText = "Hello, I am Sam, your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
 	}else {
-		message.innerText = "Bonjour, je suis votre spécialiste en assistance virtuelle !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
+		message.innerText = "je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
 	}
 	askUserType(message);
 	
@@ -55,35 +59,108 @@ function displayIntroMessage(){
 
 //when a user press enter in the textbox, it will fire this function.
 function sendMessage(){
-	
+	let validGreetings = ["hello", "allo", "hi" , "hi there" , " hey" ,"greetings", " salutations" ,"howdy", "what's up" ,  "yo" , "hiya" ,"how are you" ,"how's it going"
+		, "hello" , "hi" , "hi there" , " hey" ,"greetings", " salutations" ,"howdy", "what's up" ,  "yo" , "hiya" ,"how are you" ,"how's it going" ,
+		"Allô" ,  "allo" , "salut" , "bonjour" , "bonsoir" , "coucou" , "salutations" ,"ça va" , "ca va" , "hey" , "yo" ];
 	//textbox is the message bar.
-	var textboxMessage = document.getElementById("textbox").value;
+	
 
 
 
-	if (textboxMessage != ""){
-		
-		//Split the message by parts to search for keywords.
-		var messageParts = textboxMessage.split(" ");
-
+	
+		var textboxMessage = document.getElementById("textbox").value;
 		var message = document.createElement("p");
 		message.innerText = textboxMessage;
-		userTypes(message);
+		console.log('result is ', message)
+		var messageParts = textboxMessage.split(" ");
+		
+
+
+		
+		
 		document.getElementById("textbox").value = "";
+
+
+
+		let introMessage = messageParts[0].toLowerCase();
+		
+			if( validGreetings.includes(introMessage)){
+
 	
+			
+				if(isEnglish){
+					message.innerHTML = `
+							<div class ="black">
+								<p class= "black">Welcome to my page! </p> <br>
+	
+								<p> I was given a predetermined list of frequently asked questions and answers to help you with anything Saba-related. </p> <br>
+	
+	
+								<p>To begin, you can filter my questions in three ways:</p> <br>
+								<ol>
+									<li>To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right. </li> <br>
+									<li>To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.  </li> <br>
+									<li>To filter the questions by role, select the role related to your question directly in this bubble. </li> <br>
+								</ol>
+
+
+								<p> Once you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box. </p> <br>
+
+
+							</div>`
+							
+					
+	
+							console.log('here2');
+							assistantTypes(message,  true );
+				}else{
+					message.innerHTML = 
+					`
+					<div class ="black">
+						<p class="black">Bienvenue sur ma page!  </p> <br>
+	
+						<p> On m’a donné une liste de questions et réponses prédéterminées qui sont fréquemment posées afin que je puisse vous aider avec tout ce qui concerne Saba.. </p> <br>
+	
+	
+						<p>Pour commencer, vous pouvez filtrer mes questions de trois façons:  </p> <br>
+						<ol>
+							<li> Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.  </li> <br>
+							<li>Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.   </li> <br>
+							<li>Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.  </li> <br>
+						</ol>
+
+						<p> Quand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.</p> <br>
+					</div>`
+
+					assistantTypes(message, true );
+				}
+			
+			
+				
+			}
+		
+
+		
+		
+		if (textboxMessage != ""){
 		var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
 		var foundKeyword = false;
 		var keywordsArray = [];
+		userTypes(message);
+		console.log("message parts are ", messageParts)
+		keywordsArray = populateKeywords();
 
-			keywordsArray = popaulateKeywords();
+		
+
 	
 		//Filter Questions by Keywords.
 		for (let i = 0; i < nbQuestions; i++) {
-			// var keywords = (document.getElementById("questions").getElementsByClassName("keywords")[i].innerText);
+			
 
-			let a =  keywordsArray[i].join(' ');;
+			let a =  keywordsArray[i].join(' ,');;
+			console.log("final arrays", a );
 
-		
+			
 
 			if (isMatchKeywords(messageParts, a)){
 				
@@ -100,61 +177,13 @@ function sendMessage(){
 			}
 		}
 
-		if(!foundKeyword){
-			if(textboxMessage.value === "hello" || "hi" || "hi there" || " hey" ||"greetings"|| " salutations" ||"howdy"|| "what's up" ||  "yo" || "hiya" ||"how are you" ||"how's it going"
-			|| "hello" || "hi" || "hi there" || " hey" ||"greetings"|| " salutations" ||"howdy"|| "what's up" ||  "yo" || "hiya" ||"how are you" ||"how's it going" ||
-			"Allô" ||  "allo" || "salut" || "bonjour" || "bonsoir" || "coucou" || "salutations" ||"ça va" || "ca va" || "hey" || "yo"
-			){
 	
-				console.log("here");
-				if(isEnglish){
-					message.innerHTML = `
-							<div class ="black">
-								<p class= "black">Welcome to my page! </p> <br>
-	
-								<p> I was given a predetermined list of frequently asked questions and answers to help you with anything Saba-related. </p> <br>
-	
-	
-								<p>To begin, you can filter my questions in three ways:</p> <br>
-								<ol>
-									<li>To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right. </li> <br>
-									<li>To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.  </li> <br>
-									<li>To filter the questions by role, select the role related to your question directly in this bubble. </li> <br>
-								</ol>
-							</div>`
-							
-					
-	
-					
-				assistantTypes(message, true);
-				}else{
-					message.innerHTML = 
-					`
-					<div class ="black">
-						<p class="black">Bienvenue sur ma page!  </p> <br>
-	
-						<p> On m’a donné une liste de questions et réponses prédéterminées qui sont fréquemment posées afin que je puisse vous aider avec tout ce qui concerne Saba.. </p> <br>
-	
-	
-						<p>Pour commencer, vous pouvez filtrer mes questions de trois façons:  </p> <br>
-						<ol>
-							<li> Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.  </li> <br>
-							<li>Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.   </li> <br>
-							<li>Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.  </li> <br>
-						</ol>;
-					</div>`
-					
-	
-	
-					
-				assistantTypes(message, true);
-				}
-			}
-		}
 
-		
-		
+	
+				
 		if (foundKeyword){
+
+			console.log("Case positive ")
 			var message = document.createElement("p");
 
 			if (isEnglish){
@@ -170,9 +199,10 @@ function sendMessage(){
 			//Display List of initial options
 			showInitialQuestionsButton();
 			
-			
+			// userTypes(message);
 			assistantTypes(message, false);
 		}else {
+			console.log("Case negative")
 			var message = document.createElement("p");
 			
 			if (isEnglish){
@@ -180,7 +210,7 @@ function sendMessage(){
 			}else {
 				message.innerText = "Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
 			}
-			
+			// userTypes(message);
 			assistantTypes(message, false);
 		}
 	}
@@ -189,14 +219,24 @@ function sendMessage(){
 	//Once the assistant finishes typing, it will scroll down again.
 	scrollDownOfDiv("conversationDiv");
 }
-
+// let introMessage = messageParts[0].toLowerCase();
 function isMatchKeywords(messageParts, keywords) {
+
 	
 	//Checking if the message sent by user has any matching keywords to our answers.
 	for (let i = 0; i < messageParts.length; i++) {
+		
+	
 		if (messageParts[i].length > 1){
 			var messagePartLcase = messageParts[i].toLowerCase();
+			console.log("lowecase part",)
 			var keywordsLcase = keywords.toLowerCase();
+
+			//if key word are either in , for , and 
+			if (wordsToExclude.includes(messagePartLcase)){
+				console.log('breaking from loop');
+				return false;
+			}
 			if (keywordsLcase.search(messagePartLcase) >= 0 ){ 
 				return true;
 			}
@@ -374,6 +414,13 @@ function assistantTypes(elmt, withCloseMessage){
 	}, 600); 
 	isTyping = false
 }
+// 
+
+
+
+
+
+
 
 //adds the close message (for more assistance, survey)
 function add_closeMessage(){
@@ -386,11 +433,11 @@ function add_closeMessage(){
 	nationalLink.target = 'blank';
 	
 	if (isEnglish){
-		message.innerText = "If you require more assistance, contact the ";
+		message.innerText = "If you require more assistance, please open a ticket with the ";
 		nationalLink.href = 'https://iservice.prv/eng/imit/nsd/index.shtml';
 		nationalLink.textContent = 'National Service Desk';
 	}else {
-		message.innerText = "Si vous avez besoin d’assistance supplémentaire, communiquez avec l'";
+		message.innerText = "Si vous avez besoin d’assistance supplémentaire, veuillez ouvrir un billet auprès de ";
 		nationalLink.href = 'https://iservice.prv/fra/giti/isn/index.shtml';
 		nationalLink.textContent = 'InfoService national';
 	}
@@ -473,11 +520,11 @@ function askUserType(message){
 
 	if (isEnglish){
 		employeeButton.innerText = "Learner";
-		managerButton.innerText = "Manager";
+		managerButton.innerText = "Manager (and team leader)";
 		adminButton.innerText = "Administrator";
 	}else{
 		employeeButton.innerText = "Apprenant(e)" ;
-		managerButton.innerText = "Responsable (gestionnaire, chef d'équipe)";
+		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
 	}
 	
@@ -548,7 +595,7 @@ function filterQuestionsByUserType(){
 
 // popaulate key words and return new array with keywords that include words from the question
 
-function popaulateKeywords(){
+function populateKeywords(){
 
 	const newArray = [];
 	const questionsArray = [];
@@ -570,6 +617,9 @@ function popaulateKeywords(){
 		
 		//store new keywords in array (comprised of old key words , and filtered words from the questions )
 		let  newkeywords = [keywords,...splitQuestions];
+
+
+		
 	
 
 		newArray.push(newkeywords);
@@ -594,16 +644,16 @@ function popaulateKeywords(){
 
 	var convertedtoJSON = JSON.stringify(keywordJSON);
 
-	console.log("keyword JSON is", convertedtoJSON);
+	// console.log("keyword JSON is", convertedtoJSON);
 
 	var convertedtoJSONquestion = JSON.stringify(questionJSON);
 
-	console.log("question JSON is" , convertedtoJSONquestion);
+	// console.log("question JSON is" , convertedtoJSONquestion);
 
 	var convertedtoJSONanswers = JSON.stringify(answerJSON);
 
-	console.log("answer JSON is",convertedtoJSONanswers);
-
+	// console.log("answer JSON is",convertedtoJSONanswers);
+	// console.log("FInal keyword",newArray);
 	return newArray;
 
 }
@@ -612,7 +662,7 @@ function popaulateKeywords(){
 function splitandFilter(word){
 	let result = word.split(' ');
 
-	const wordsToExclude = ["How", "can", "I", "do","when","a","for"];
+	const wordsToExclude = ["How", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is", "fcb", "soccer"];
 
 
 	const updatedResult = result.filter((word)=>{
@@ -632,7 +682,7 @@ fetch(remoteUrl)
   .then(jsonData => {
 
 	console.log(jsonData);
-	let a = popaulateKeywords();
+	let a = populateKeywords();
     // Step 2: Modify the data as needed
     // jsonData.push({ key: 'newData' });
 
