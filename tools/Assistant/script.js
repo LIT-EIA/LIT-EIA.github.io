@@ -160,8 +160,6 @@ function sendMessage(){
 			let a =  keywordsArray[i].join(' ,');;
 			console.log("final arrays", a );
 
-			
-
 			if (isMatchKeywords(messageParts, a)){
 				
 				if (foundKeyword == false){
@@ -219,24 +217,14 @@ function sendMessage(){
 	//Once the assistant finishes typing, it will scroll down again.
 	scrollDownOfDiv("conversationDiv");
 }
-// let introMessage = messageParts[0].toLowerCase();
-function isMatchKeywords(messageParts, keywords) {
 
+function isMatchKeywords(messageParts, keywords) {
 	
 	//Checking if the message sent by user has any matching keywords to our answers.
 	for (let i = 0; i < messageParts.length; i++) {
-		
-	
 		if (messageParts[i].length > 1){
 			var messagePartLcase = messageParts[i].toLowerCase();
-			console.log("lowecase part",)
 			var keywordsLcase = keywords.toLowerCase();
-
-			//if key word are either in , for , and 
-			if (wordsToExclude.includes(messagePartLcase)){
-				console.log('breaking from loop');
-				return false;
-			}
 			if (keywordsLcase.search(messagePartLcase) >= 0 ){ 
 				return true;
 			}
@@ -662,7 +650,7 @@ function populateKeywords(){
 function splitandFilter(word){
 	let result = word.split(' ');
 
-	const wordsToExclude = ["How", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is",];
+	const wordsToExclude = ["How ", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is", "fcbar ", "soccer"]
 
 
 	const updatedResult = result.filter((word)=>{
