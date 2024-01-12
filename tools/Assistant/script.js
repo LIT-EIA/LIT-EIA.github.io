@@ -662,7 +662,7 @@ function populateKeywords(){
 function splitandFilter(word){
 	let result = word.split(' ');
 
-	const wordsToExclude = ["How", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is", "fcb", "soccer"];
+	const wordsToExclude = ["How", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is",];
 
 
 	const updatedResult = result.filter((word)=>{
