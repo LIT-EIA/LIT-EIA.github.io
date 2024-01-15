@@ -50,7 +50,7 @@ function displayIntroMessage(){
 	if (isEnglish){
 		message.innerText = "Hello, I am Sam, your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
 	}else {
-		message.innerText = "je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
+		message.innerText = "Je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
 	}
 	askUserType(message);
 	
@@ -225,7 +225,7 @@ function isMatchKeywords(messageParts, keywords) {
 		if (messageParts[i].length > 1){
 			var messagePartLcase = messageParts[i].toLowerCase();
 			var keywordsLcase = keywords.toLowerCase();
-			if (keywordsLcase.search(messagePartLcase) >= 0 ){ 
+			if (keywordsLcase.search(messagePartLcase) >= 0 && messagePartLcase != "de" ){ 
 				return true;
 			}
 		}
@@ -601,10 +601,10 @@ function populateKeywords(){
 
 		let answers = document.getElementById("answers").querySelectorAll("div")[i].innerText;
 
-		let splitQuestions = splitandFilter(questions);
+		// let splitQuestions = splitandFilter(questions);
 		
 		//store new keywords in array (comprised of old key words , and filtered words from the questions )
-		let  newkeywords = [keywords,...splitQuestions];
+		let  newkeywords = [keywords];
 
 
 		
@@ -640,8 +640,8 @@ function populateKeywords(){
 
 	var convertedtoJSONanswers = JSON.stringify(answerJSON);
 
-	// console.log("answer JSON is",convertedtoJSONanswers);
-	// console.log("FInal keyword",newArray);
+
+	 console.log("Revised keywords",newArray);
 	return newArray;
 
 }
@@ -650,7 +650,7 @@ function populateKeywords(){
 function splitandFilter(word){
 	let result = word.split(' ');
 
-	const wordsToExclude = ["How ", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is", "fcbar ", "soccer"]
+	const wordsToExclude = ["How \n", "can", "I", "do","when","a","for", "de","of", "my", "in","to", "is", "fcbar, soccer"];
 
 
 	const updatedResult = result.filter((word)=>{
@@ -660,44 +660,6 @@ function splitandFilter(word){
 	return updatedResult;
 }
 
-// sample function
-
-const remoteUrl = 'https://lit-eia.github.io/JSON-API/sampleData.json';
-
-// Step 1: Retrieve the data from the website
-fetch(remoteUrl)
-  .then(response => response.json())
-  .then(jsonData => {
-
-	console.log(jsonData);
-	let a = populateKeywords();
-    // Step 2: Modify the data as needed
-    // jsonData.push({ key: 'newData' });
-
-    // Step 3: Send the modified data back to the website (typically via an API)
-    // Here, we're assuming a hypothetical updateData function for the API call
-    updateData(remoteUrl, a)
-      .then(() => {
-        console.log('Data pushed to the remote JSON file.');
-      })
-      .catch(error => {
-        console.error('Error updating data:', error);
-      });
-  })
-  .catch(error => {
-    console.error('Error retrieving data:', error);
-  });
-
-// Hypothetical function to update data on the remote website
-function updateData(url, newData) {
-  return fetch(url, {
-    method: 'PUT', // Use 'PUT' or 'POST' depending on the API's requirements
-    body: JSON.stringify(newData),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-}
 
 
 
