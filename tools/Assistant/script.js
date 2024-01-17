@@ -206,7 +206,7 @@ function sendMessage(){
 			if (isEnglish){
 				message.innerText = "I’m sorry, I could not find any information on this. Please try a different keyword or enquiry.";
 			}else {
-				message.innerText = "Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
+				message.innerText = " Bonjour Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
 			}
 			// userTypes(message);
 			assistantTypes(message, false);
