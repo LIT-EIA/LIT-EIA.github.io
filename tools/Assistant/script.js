@@ -223,9 +223,10 @@ function isMatchKeywords(messageParts, keywords) {
 	//Checking if the message sent by user has any matching keywords to our answers.
 	for (let i = 0; i < messageParts.length; i++) {
 		if (messageParts[i].length > 1){
+			var excludedWords = 'de in for';
 			var messagePartLcase = messageParts[i].toLowerCase();
 			var keywordsLcase = keywords.toLowerCase();
-			if (keywordsLcase.search(messagePartLcase) >= 0 && messagePartLcase != "de" ){ 
+			if (keywordsLcase.search(messagePartLcase) >= 0 && excludedWords.includes(messagePartLcase) == false ){ 
 				return true;
 			}
 		}
