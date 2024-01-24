@@ -50,7 +50,7 @@ function displayIntroMessage(){
 	if (isEnglish){
 		message.innerText = "Hello, I am Sam, your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
 	}else {
-		message.innerText = "Je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
+		message.innerText = "Bonjour Je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
 	}
 	askUserType(message);
 	
@@ -206,7 +206,7 @@ function sendMessage(){
 			if (isEnglish){
 				message.innerText = "I’m sorry, I could not find any information on this. Please try a different keyword or enquiry.";
 			}else {
-				message.innerText = " Bonjour Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
+				message.innerText = "  Je suis désolé, je n’ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question. ";
 			}
 			// userTypes(message);
 			assistantTypes(message, false);
