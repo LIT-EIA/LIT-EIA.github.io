@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--Webpage HTML document for image resizer tool-->
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,12 @@
   <form >
 
     <h2> Télécharger Une Image </h2>
-      <input type="file" class="upload"> </input>
+    <div class="french-upload" style="display: flex">
+      <label for="fileInput" accept-language="fr" id="french-label">Choisir un fichier</label>
+      <input type="file" id="fileInput"  name = "fileInput"  class="upload" class="french-input">
+    </div>
+    <br>
+
       <h2>Largeur</h2>
       <div class="pixelated">Attention : l'image sera pixélisée</div>
       <select name="width" id="width" class="WidthSize">
