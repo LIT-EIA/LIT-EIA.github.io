@@ -5,5 +5,6 @@
     "security": "🔐 Securité",
     "components": "🔌 Composants",
     "tools": "🛠 Outils",
-    "environment": "🌐 Environnement"
+    "environment": "🌐 Environnement",
+    "ckeditor": "📝 CKEditor"
 }
