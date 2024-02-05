@@ -10,8 +10,8 @@
                 "[New] Color palette for the authoring tool to comply with accessibility contrast.",
                 "[Fixed] Unpredictable focus order on the login page.",
                 "[Fixed] New or changed content was not being conveyed to Assistive Technologies during a login error.",
-                "[Improved] Implementation of breadcrumbs, transforming them into <nav> elements instead of <div> elements.",
-                "[Improved] Requirement for form <input>/<select>/<textarea> elements to include labels.",
+                "[Improved] Implementation of breadcrumbs, transforming them into nav elements instead of div elements.",
+                "[Improved] Requirement for form input, select, textarea elements to include labels.",
                 "[Improved] Labeling on the login page."
             ],
             "components": [
@@ -21,10 +21,9 @@
             ],
             "ckeditor": [
                 "[New] Migrated from CKEditor 4 to the latest CKEditor 5",
-                "[New] Abbreviation button to create <abbr> tags visually",
+                "[New] Abbreviation button to create abbr tags visually",
                 "[New] Special characters button allowing to insert various HTML characters (e.g. equation signs)",
                 "[Improved] Language of parts button, now featuring only the opposite language of the course",
-                "[Improved] Abbreviation button to create <abbr> tags visually",
                 "[Improved] Copy-pasting, allowing better results when copying from the Office suite"
             ]
         },
