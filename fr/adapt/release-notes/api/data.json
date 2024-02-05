@@ -22,11 +22,11 @@
                 "[Nouveau] Migration de CKEditor 4 vers la dernière version de CKEditor 5",
                 "[Nouveau] Bouton d'abréviation pour créer visuellement des étiquettes abbr",
                 "[Nouveau] Bouton de caractères spéciaux permettant d'insérer divers caractères HTML (par exemple des signes d'équation)",
-                "[Amélioré] Bouton "Langue des parties", ne comportant plus que la langue opposée au cours",
+                "[Amélioré] Bouton Langue des parties, ne comportant plus que la langue opposée au cours",
                 "[Amélioré] Copier-coller, permettant de meilleurs résultats lors de la copie à partir de la suite Office"
             ]
         },
-        "pub_date": "2024-2-29T12:00:00Z",
+        "pub_date": "2024-02-29T12:00:00Z",
         "version": "1.4.3"
       },
       {
