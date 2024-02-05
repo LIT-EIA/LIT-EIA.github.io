@@ -3,6 +3,36 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Amélioré] Fonctionnalité d'insensibilité à la casse pour les adresses électroniques de connexion, améliorant le confort d'utilisation lors de la procédure de connexion"
+            ],
+            "a11y": [
+                "[Nouveau] Palette de couleurs pour l'outil de création afin de respecter le contraste d'accessibilité",
+                "[Corrigé] Ordre de focus imprévisible sur la page de connexion",
+                "[Corrigé] Le contenu nouveau ou modifié n'était pas transmis aux technologies d'assistance lors d'une erreur de connexion",
+                "[Amélioré] Mise en œuvre des fils d'Ariane, en les transformant en éléments nav au lieu d'éléments div",
+                "[Amélioré] Exigence d'inclusion d'étiquettes pour les éléments input, select et textarea des formulaires",
+                "[Amélioré] Étiquetage de la page de connexion"
+            ],
+            "components": [
+                "[Nouveau] Plugiciel pour autoriser les traductions en utilisant jQuery i18n",
+                "[Amélioré] Plugiciel d'outils de développement pour fournir une interface en français",
+                "[Amélioré] Plugiciel d'outils pour développeurs permettant d'ajouter un menu avec des statistiques sur le cours (par exemple, le nombre d'articles, de blocs, de composants)."
+            ],
+            "ckeditor": [
+                "[Nouveau] Migration de CKEditor 4 vers la dernière version de CKEditor 5",
+                "[Nouveau] Bouton d'abréviation pour créer visuellement des étiquettes abbr",
+                "[Nouveau] Bouton de caractères spéciaux permettant d'insérer divers caractères HTML (par exemple des signes d'équation)",
+                "[Amélioré] Bouton "Langue des parties", ne comportant plus que la langue opposée au cours",
+                "[Amélioré] Copier-coller, permettant de meilleurs résultats lors de la copie à partir de la suite Office"
+            ]
+        },
+        "pub_date": "2024-2-29T12:00:00Z",
+        "version": "1.4.3"
+      },
+      {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Urgent] Correction partielle du problème des champs de texte grisés."
             ]
         },
