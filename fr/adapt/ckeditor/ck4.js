@@ -13,9 +13,6 @@ $(document).ready(function () {
         extraAllowedContent: 'span(*)',
         removePlugins: 'exportpdf',
         on: {
-            change: function () {
-                this.trigger('change', this);
-            }.bind(this),
             instanceReady: function () {
                 var writer = this.dataProcessor.writer;
                 var elements = Object.keys(CKEDITOR.dtd.$block);
