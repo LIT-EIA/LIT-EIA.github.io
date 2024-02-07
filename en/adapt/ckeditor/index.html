@@ -1,0 +1,186 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.21.0/full-all/ckeditor.js"></script>
+    <script src="./ck4.js"></script>
+    <script src="./ckeditor.js"></script>
+    <script src="./ck5.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .mainContent {
+            display: flex;
+            padding: 0px 50px;
+        }
+
+        .mainContent .panel {
+            width: 50%;
+            padding: 15px;
+        }
+
+        .title {
+            padding: 0px 50px;
+            text-align: center;
+            text-transform: uppercase;
+            background: #105067;
+            color: #fff;
+        }
+
+        .subtitles {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">CK Editor Upgrade - Comparison</h1>
+    <div class="mainContent">
+        <div class="panel">
+            <h2 class="subtitles">Current Editor</h2>
+            <textarea id="editor4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec eleifend ipsum.
+                Suspendisse posuere porta arcu eget aliquet. Duis tristique risus eget imperdiet consectetur. Donec nec
+                neque eget justo vulputate venenatis. Phasellus et ligula dui. Etiam sem elit, imperdiet et justo at,
+                convallis mollis ante. Nullam scelerisque lorem lectus, venenatis ullamcorper nunc rutrum vel. Nulla
+                consequat mi elit, in fringilla enim imperdiet sed. Pellentesque vestibulum, ipsum id congue facilisis,
+                nisi lectus dictum est, a mollis leo elit ut diam. Quisque nibh leo, sagittis sit amet dolor eu,
+                volutpat vulputate elit. Cras eget neque accumsan, sodales mauris et, porta ligula. Quisque suscipit
+                faucibus iaculis. Nam neque nulla, iaculis ut dolor in, hendrerit feugiat quam. Integer eu feugiat nibh.
+                Proin varius dui varius urna iaculis, vitae luctus diam aliquet. Etiam sit amet ex neque.
+
+                Duis justo sapien, mattis non mauris nec, pulvinar mollis magna. Aliquam erat volutpat. Nulla quis augue
+                vitae nunc sagittis facilisis. Suspendisse ornare ultrices metus, non auctor nibh mollis eget. Nulla
+                gravida porta velit, vel vehicula metus facilisis eu. Donec nisl tortor, cursus in elit vitae, pulvinar
+                faucibus velit. Vivamus at euismod nisi. Etiam sed euismod mi. Morbi laoreet, neque in cursus rutrum,
+                massa nisi porttitor augue, vitae elementum lorem lorem id arcu. Vivamus a congue magna.
+
+                Nunc viverra mi nec laoreet venenatis. Donec id dolor sagittis, ultrices turpis eu, dapibus metus.
+                Pellentesque et magna vitae ligula ultricies maximus hendrerit et nisl. Donec et tellus non neque
+                suscipit ultrices. Pellentesque blandit finibus risus, ut tempus turpis rutrum semper. Aliquam nisl ex,
+                ullamcorper id purus vel, semper porttitor nibh. Quisque velit sapien, vestibulum at nisi in, hendrerit
+                varius arcu. Mauris at pharetra metus. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Donec pellentesque tincidunt pharetra. Aenean luctus lectus orci, sit
+                amet mollis nisl vestibulum nec.
+
+                Suspendisse vestibulum gravida felis, at porta dui interdum a. Morbi quis libero non libero cursus
+                sagittis. Donec consequat lorem ut nisi euismod, id euismod lacus fermentum. Aenean vitae arcu augue.
+                Morbi bibendum lacus nec risus rutrum ultricies. Nulla malesuada facilisis arcu. Pellentesque tincidunt
+                nisl orci, vitae maximus sem porta nec. Nulla facilisi. Aliquam erat volutpat. Nam eu bibendum nulla.
+                Quisque mattis quis tellus ac tempor. Proin ornare quis lacus ut sodales. Donec vulputate consectetur
+                luctus. Morbi a ante vestibulum, tincidunt dui at, semper nisl.
+            </textarea>
+        </div>
+        <div class="panel">
+            <h2 class="subtitles">New Editor</h2>
+            <div id="editor5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec eleifend ipsum.
+                Suspendisse posuere porta arcu eget aliquet. Duis tristique risus eget imperdiet consectetur. Donec nec
+                neque eget justo vulputate venenatis. Phasellus et ligula dui. Etiam sem elit, imperdiet et justo at,
+                convallis mollis ante. Nullam scelerisque lorem lectus, venenatis ullamcorper nunc rutrum vel. Nulla
+                consequat mi elit, in fringilla enim imperdiet sed. Pellentesque vestibulum, ipsum id congue facilisis,
+                nisi lectus dictum est, a mollis leo elit ut diam. Quisque nibh leo, sagittis sit amet dolor eu,
+                volutpat vulputate elit. Cras eget neque accumsan, sodales mauris et, porta ligula. Quisque suscipit
+                faucibus iaculis. Nam neque nulla, iaculis ut dolor in, hendrerit feugiat quam. Integer eu feugiat nibh.
+                Proin varius dui varius urna iaculis, vitae luctus diam aliquet. Etiam sit amet ex neque.
+
+                Duis justo sapien, mattis non mauris nec, pulvinar mollis magna. Aliquam erat volutpat. Nulla quis augue
+                vitae nunc sagittis facilisis. Suspendisse ornare ultrices metus, non auctor nibh mollis eget. Nulla
+                gravida porta velit, vel vehicula metus facilisis eu. Donec nisl tortor, cursus in elit vitae, pulvinar
+                faucibus velit. Vivamus at euismod nisi. Etiam sed euismod mi. Morbi laoreet, neque in cursus rutrum,
+                massa nisi porttitor augue, vitae elementum lorem lorem id arcu. Vivamus a congue magna.
+
+                Nunc viverra mi nec laoreet venenatis. Donec id dolor sagittis, ultrices turpis eu, dapibus metus.
+                Pellentesque et magna vitae ligula ultricies maximus hendrerit et nisl. Donec et tellus non neque
+                suscipit ultrices. Pellentesque blandit finibus risus, ut tempus turpis rutrum semper. Aliquam nisl ex,
+                ullamcorper id purus vel, semper porttitor nibh. Quisque velit sapien, vestibulum at nisi in, hendrerit
+                varius arcu. Mauris at pharetra metus. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Donec pellentesque tincidunt pharetra. Aenean luctus lectus orci, sit
+                amet mollis nisl vestibulum nec.
+
+                Suspendisse vestibulum gravida felis, at porta dui interdum a. Morbi quis libero non libero cursus
+                sagittis. Donec consequat lorem ut nisi euismod, id euismod lacus fermentum. Aenean vitae arcu augue.
+                Morbi bibendum lacus nec risus rutrum ultricies. Nulla malesuada facilisis arcu. Pellentesque tincidunt
+                nisl orci, vitae maximus sem porta nec. Nulla facilisi. Aliquam erat volutpat. Nam eu bibendum nulla.
+                Quisque mattis quis tellus ac tempor. Proin ornare quis lacus ut sodales. Donec vulputate consectetur
+                luctus. Morbi a ante vestibulum, tincidunt dui at, semper nisl.</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        let defaultLanguage = 'en';
+
+        let textLanguageParts = [
+            defaultLanguage === 'en' ? { title: 'Français', languageCode: 'fr' } : { title: 'English', languageCode: 'en' }
+        ];
+
+
+        var language = 'en';
+        var watchdog = new CKSource.EditorWatchdog();
+        watchdog.setCreator((element, config) => {
+            return CKSource.Editor
+                .create(element, config)
+                .then(editor => {
+                    const textpart = editor.ui.view.toolbar.items.find(button => $(button.element).hasClass('ck-text-fragment-language-dropdown'));
+                    if (textpart) {
+                        const label = language === 'en' ? 'Language of Parts' : 'Langue d’un passage';
+                        $(textpart.element).find('.ck-button__label').text(label);
+                    }
+                    return editor;
+                });
+        });
+
+        watchdog
+            .create(document.querySelector('#editor5'), {
+                language: {
+                    ui: language,
+                    textPartLanguage: textLanguageParts
+                },
+                unsafeElements: false,
+                htmlSupport: {
+                    allow: [
+                        {
+                            // name: /^(div|span|svg|abbr|path)$/,
+                            name: /.*/,
+                            attributes: true,
+                            classes: true,
+                            styles: true,
+                            content: true
+                        }
+                    ],
+                    disallow: [
+                        {
+                            name: /^(script|video|audio|img|var)$/
+                        }
+                    ]
+                },
+                additionalLanguages: ['en', 'fr'],
+                fontSize: {
+                    options: [
+                        'default',
+                        'big',
+                        'huge'
+                    ]
+                },
+                toolbar: {
+                    items: [
+                        'sourceEditing', 'showBlocks', '|',
+                        'undo', 'redo', '|',
+                        'findAndReplace', 'selectAll', '|',
+                        'fontSize', '|',
+                        'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'removeFormat', '|',
+                        'numberedList', 'bulletedList', 'alignment', 'indent', 'outdent', '|',
+                        'blockQuote', '|',
+                        'link', '|',
+                        'fontColor', 'fontBackgroundColor', '|',
+                        'specialCharacters', 'insertTable', '|', 'abbreviation', 'textPartLanguage'
+                    ],
+                    shouldNotGroupWhenFull: true
+                }
+            })
+            .catch((error) => { });
+        this.editor = watchdog;
+        })
+    </script>
+</body>
+
+</html>
