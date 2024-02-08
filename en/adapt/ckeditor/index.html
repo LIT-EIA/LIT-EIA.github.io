@@ -1,27 +1,38 @@
 <html>
+
 <head>
     <title>CK Editor Upgrade - Adapt Authoring Tool</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="//cdn.ckeditor.com/4.21.0/full-all/ckeditor.js"></script>
     <script src="./ck4.js"></script>
     <script src="./ckeditor.js"></script>
-    <script src="./ck5.js"></script>
     <style>
         body {
-            font-family: Arial;
+            color: rgba(255, 255, 255, 0.65);
+            background: #24292e;
+
+            margin: 0;
+            font-family: "Roboto";
         }
+
         .mainContent {
             display: flex;
-            padding: 0px 50px;
         }
 
         .mainContent .panel {
             width: 50%;
-            padding: 15px;
+        }
+
+        .left {
+            padding: 0 15px 0 0;
+        }
+
+        .right {
+            padding: 0 0 0 15px;
         }
 
         .title {
-            padding: 0px 50px;
+            padding: 20px 50px;
             text-align: center;
             text-transform: uppercase;
             background: #105067;
@@ -31,155 +42,338 @@
         .subtitles {
             text-transform: uppercase;
         }
+
+        .introduction {
+            font-size: 15px;
+            margin: 30px 0;
+        }
+
+        .ck.ck-editor__main {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .college {
+            display: inline;
+            margin: 0px 0px 0px 45px;
+            font-weight: 400;
+            font-size: 19px;
+        }
+
+        #header {
+            display: flex;
+            padding: 30px 30px;
+            margin: 0px auto;
+            align-items: center;
+            -webkit-text-size-adjust: 100%;
+            color-scheme: light dark;
+            font-size: 14px;
+            line-height: 1.5;
+            font-family: "Roboto";
+            color: rgba(255, 255, 255, 0.65);
+            box-sizing: border-box;
+            display: flex;
+            padding: 30px 30px;
+            margin: 0px auto;
+            align-items: center;
+            max-width: 1280px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:active {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 1012px) {
+            #header {
+                max-width: 1012px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #header {
+                max-width: 1280px;
+            }
+        }
+
+        .subsection-title {
+            padding: 15px 0px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 120%;
+        }
+
+        .sr-only {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+            margin: -1px;
+        }
+
+        .langswitcher {
+            margin-left: auto;
+            order: 2;
+            color: #b2b4b6;
+        }
+
+        .container-new {
+            max-width: 980px;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        @media (min-width: 1012px) {
+            .container-new {
+                max-width: 955px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container-new {
+                max-width: 1220px
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h1 class="title">CK Editor Upgrade</h1>
-    <div class="mainContent">
-        <div class="panel">
-            <h2 class="subtitles">Current Editor</h2>
-            <textarea id="editor4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec eleifend ipsum.
-                Suspendisse posuere porta arcu eget aliquet. Duis tristique risus eget imperdiet consectetur. Donec nec
-                neque eget justo vulputate venenatis. Phasellus et ligula dui. Etiam sem elit, imperdiet et justo at,
-                convallis mollis ante. Nullam scelerisque lorem lectus, venenatis ullamcorper nunc rutrum vel. Nulla
-                consequat mi elit, in fringilla enim imperdiet sed. Pellentesque vestibulum, ipsum id congue facilisis,
-                nisi lectus dictum est, a mollis leo elit ut diam. Quisque nibh leo, sagittis sit amet dolor eu,
-                volutpat vulputate elit. Cras eget neque accumsan, sodales mauris et, porta ligula. Quisque suscipit
-                faucibus iaculis. Nam neque nulla, iaculis ut dolor in, hendrerit feugiat quam. Integer eu feugiat nibh.
-                Proin varius dui varius urna iaculis, vitae luctus diam aliquet. Etiam sit amet ex neque.
-
-                Duis justo sapien, mattis non mauris nec, pulvinar mollis magna. Aliquam erat volutpat. Nulla quis augue
-                vitae nunc sagittis facilisis. Suspendisse ornare ultrices metus, non auctor nibh mollis eget. Nulla
-                gravida porta velit, vel vehicula metus facilisis eu. Donec nisl tortor, cursus in elit vitae, pulvinar
-                faucibus velit. Vivamus at euismod nisi. Etiam sed euismod mi. Morbi laoreet, neque in cursus rutrum,
-                massa nisi porttitor augue, vitae elementum lorem lorem id arcu. Vivamus a congue magna.
-
-                Nunc viverra mi nec laoreet venenatis. Donec id dolor sagittis, ultrices turpis eu, dapibus metus.
-                Pellentesque et magna vitae ligula ultricies maximus hendrerit et nisl. Donec et tellus non neque
-                suscipit ultrices. Pellentesque blandit finibus risus, ut tempus turpis rutrum semper. Aliquam nisl ex,
-                ullamcorper id purus vel, semper porttitor nibh. Quisque velit sapien, vestibulum at nisi in, hendrerit
-                varius arcu. Mauris at pharetra metus. Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Donec pellentesque tincidunt pharetra. Aenean luctus lectus orci, sit
-                amet mollis nisl vestibulum nec.
-
-                Suspendisse vestibulum gravida felis, at porta dui interdum a. Morbi quis libero non libero cursus
-                sagittis. Donec consequat lorem ut nisi euismod, id euismod lacus fermentum. Aenean vitae arcu augue.
-                Morbi bibendum lacus nec risus rutrum ultricies. Nulla malesuada facilisis arcu. Pellentesque tincidunt
-                nisl orci, vitae maximus sem porta nec. Nulla facilisi. Aliquam erat volutpat. Nam eu bibendum nulla.
-                Quisque mattis quis tellus ac tempor. Proin ornare quis lacus ut sodales. Donec vulputate consectetur
-                luctus. Morbi a ante vestibulum, tincidunt dui at, semper nisl.
-            </textarea>
-        </div>
-        <div class="panel">
-            <h2 class="subtitles">New Editor</h2>
-            <div id="editor5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec eleifend ipsum.
-                Suspendisse posuere porta arcu eget aliquet. Duis tristique risus eget imperdiet consectetur. Donec nec
-                neque eget justo vulputate venenatis. Phasellus et ligula dui. Etiam sem elit, imperdiet et justo at,
-                convallis mollis ante. Nullam scelerisque lorem lectus, venenatis ullamcorper nunc rutrum vel. Nulla
-                consequat mi elit, in fringilla enim imperdiet sed. Pellentesque vestibulum, ipsum id congue facilisis,
-                nisi lectus dictum est, a mollis leo elit ut diam. Quisque nibh leo, sagittis sit amet dolor eu,
-                volutpat vulputate elit. Cras eget neque accumsan, sodales mauris et, porta ligula. Quisque suscipit
-                faucibus iaculis. Nam neque nulla, iaculis ut dolor in, hendrerit feugiat quam. Integer eu feugiat nibh.
-                Proin varius dui varius urna iaculis, vitae luctus diam aliquet. Etiam sit amet ex neque.
-
-                Duis justo sapien, mattis non mauris nec, pulvinar mollis magna. Aliquam erat volutpat. Nulla quis augue
-                vitae nunc sagittis facilisis. Suspendisse ornare ultrices metus, non auctor nibh mollis eget. Nulla
-                gravida porta velit, vel vehicula metus facilisis eu. Donec nisl tortor, cursus in elit vitae, pulvinar
-                faucibus velit. Vivamus at euismod nisi. Etiam sed euismod mi. Morbi laoreet, neque in cursus rutrum,
-                massa nisi porttitor augue, vitae elementum lorem lorem id arcu. Vivamus a congue magna.
-
-                Nunc viverra mi nec laoreet venenatis. Donec id dolor sagittis, ultrices turpis eu, dapibus metus.
-                Pellentesque et magna vitae ligula ultricies maximus hendrerit et nisl. Donec et tellus non neque
-                suscipit ultrices. Pellentesque blandit finibus risus, ut tempus turpis rutrum semper. Aliquam nisl ex,
-                ullamcorper id purus vel, semper porttitor nibh. Quisque velit sapien, vestibulum at nisi in, hendrerit
-                varius arcu. Mauris at pharetra metus. Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Donec pellentesque tincidunt pharetra. Aenean luctus lectus orci, sit
-                amet mollis nisl vestibulum nec.
-
-                Suspendisse vestibulum gravida felis, at porta dui interdum a. Morbi quis libero non libero cursus
-                sagittis. Donec consequat lorem ut nisi euismod, id euismod lacus fermentum. Aenean vitae arcu augue.
-                Morbi bibendum lacus nec risus rutrum ultricies. Nulla malesuada facilisis arcu. Pellentesque tincidunt
-                nisl orci, vitae maximus sem porta nec. Nulla facilisi. Aliquam erat volutpat. Nam eu bibendum nulla.
-                Quisque mattis quis tellus ac tempor. Proin ornare quis lacus ut sodales. Donec vulputate consectetur
-                luctus. Morbi a ante vestibulum, tincidunt dui at, semper nisl.</div>
+    <div id="header">
+        <img alt="Adapt" src="./images/adapt.png">
+        <h1 class="sr-only">Release Notes</h1>
+        <h2 class="college">CK Editor Upgrade</h2>
+        <a lang="fr" class="langswitcher" href="/fr/adapt/ckeditor/">Français</a>
+    </div>
+    <div class="mainDiv container-new">
+        <p class="introduction">
+            We are thrilled to announce a significant upgrade to the Adapt Authoring Tool's editor, transitioning from
+            CK
+            Editor version 4 to version 5. This upgrade brings forth a host of new features and improvements that will
+            enhance your content creation experience. Join us for an exclusive info-session to explore the revamped
+            editor
+            and discover how these changes will empower your workflow.
+        </p>
+        <p>
+            In the following section, you can compare the current editor to the new editor that will be integrated
+            shortly.
+        </p>
+        <div class="mainContent">
+            <div class="panel left">
+                <h2 class="subtitles">Current Editor</h2>
+                <textarea id="editor4">
+                    <p>
+                        <strong>Here are the key highlights of the new CK Editor 5</strong>
+                    </p>
+                    <p>
+                        <strong>1. User-Friendly Accessibility:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Right-Click Actions:</strong> The new editor promotes accessibility by eliminating right-click actions. All functions previously accessible through right-click are now conveniently available through single clicks or keyboard actions within the UI.
+                        </li>
+                        <li>
+                            <strong>Dynamic Text Display:</strong> Say goodbye to internal scrollbars! The upgraded editor dynamically adjusts its size on the page, ensuring a seamless display of large text without the need for internal scrollbars.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>2. Smart Text Pasting:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Paste Intelligence:</strong> Forget about "paste as plain text" and "paste from word" buttons. The advanced editor can now intelligently detect the source of pasted text, automatically converting and filtering out non-valid formatting. If needed, a new "Remove Format" button is at your disposal to strip selected text of its formatting while preserving essential non-styling elements like links.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>3. Font Control:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to sizes larger than the default size to ensure accessibility.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>4. Enhanced Content Editing:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Symbol Menu:</strong> The editor now features a dedicated menu for adding symbols, including mathematical symbols, making it simpler to incorporate HTML symbols into your content.
+                        </li>
+                        <li>
+                            <strong>Improved Table Creation:</strong> Introducing a more intuitive table creation UI, similar to the Office suite. Visually edit tables with ease to create professional-looking content effortlessly.
+                        </li>
+                        <li>
+                            <strong>Abbreviation Functionality:</strong> A new "Abbreviation" button lets you add full-text to your abbreviations and acronyms by adding HTML abbreviations (abbr) to selected text, enhancing the richness, clarity and accessibility of your content.
+                        </li>
+                        <li>
+                            <strong>Language of Parts:</strong> The "Language of Parts" button has been improved to allow you to set the opposite language of the course more easily, minimizing confusion and streamlining the language selection process.
+                        </li>
+                    </ul>
+                </textarea>
+            </div>
+            <div class="panel right">
+                <h2 class="subtitles">New Editor</h2>
+                <div id="editor5">
+                    <p>
+                        <strong>Here are the key highlights of the new CK Editor 5</strong>
+                    </p>
+                    <p>
+                        <strong>1. User-Friendly Accessibility:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Right-Click Actions:</strong> The new editor promotes accessibility by eliminating
+                            right-click actions. All functions previously accessible through right-click are now
+                            conveniently available through single clicks or keyboard actions within the UI.
+                        </li>
+                        <li>
+                            <strong>Dynamic Text Display:</strong> Say goodbye to internal scrollbars! The upgraded
+                            editor dynamically adjusts its size on the page, ensuring a seamless display of large text
+                            without the need for internal scrollbars.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>2. Smart Text Pasting:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Paste Intelligence:</strong> Forget about "paste as plain text" and "paste from
+                            word" buttons. The advanced editor can now intelligently detect the source of pasted text,
+                            automatically converting and filtering out non-valid formatting. If needed, a new "Remove
+                            Format" button is at your disposal to strip selected text of its formatting while preserving
+                            essential non-styling elements like links.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>3. Font Control:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you
+                            to easily adjust the font size of selected text. Font sizes are limited to sizes larger than
+                            the default size to ensure accessibility.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>4. Enhanced Content Editing:</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Symbol Menu:</strong> The editor now features a dedicated menu for adding symbols,
+                            including mathematical symbols, making it simpler to incorporate HTML symbols into your
+                            content.
+                        </li>
+                        <li>
+                            <strong>Improved Table Creation:</strong> Introducing a more intuitive table creation UI,
+                            similar to the Office suite. Visually edit tables with ease to create professional-looking
+                            content effortlessly.
+                        </li>
+                        <li>
+                            <strong>Abbreviation Functionality:</strong> A new "Abbreviation" button lets you add
+                            full-text to your abbreviations and acronyms by adding HTML abbreviations (abbr) to selected
+                            text, enhancing the richness, clarity and accessibility of your content.
+                        </li>
+                        <li>
+                            <strong>Language of Parts:</strong> The "Language of Parts" button has been improved to
+                            allow you to set the opposite language of the course more easily, minimizing confusion and
+                            streamlining the language selection process.
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
     <script type="text/javascript">
         $(document).ready(function () {
-        let defaultLanguage = 'en';
+            let defaultLanguage = 'en';
 
-        let textLanguageParts = [
-            defaultLanguage === 'en' ? { title: 'Français', languageCode: 'fr' } : { title: 'English', languageCode: 'en' }
-        ];
+            let textLanguageParts = [
+                defaultLanguage === 'en' ? { title: 'Français', languageCode: 'fr' } : { title: 'English', languageCode: 'en' }
+            ];
 
 
-        var language = 'en';
-        var watchdog = new CKSource.EditorWatchdog();
-        watchdog.setCreator((element, config) => {
-            return CKSource.Editor
-                .create(element, config)
-                .then(editor => {
-                    const textpart = editor.ui.view.toolbar.items.find(button => $(button.element).hasClass('ck-text-fragment-language-dropdown'));
-                    if (textpart) {
-                        const label = language === 'en' ? 'Language of Parts' : 'Langue d’un passage';
-                        $(textpart.element).find('.ck-button__label').text(label);
+            var language = 'en';
+            var watchdog = new CKSource.EditorWatchdog();
+            watchdog.setCreator((element, config) => {
+                return CKSource.Editor
+                    .create(element, config)
+                    .then(editor => {
+                        const textpart = editor.ui.view.toolbar.items.find(button => $(button.element).hasClass('ck-text-fragment-language-dropdown'));
+                        if (textpart) {
+                            const label = language === 'en' ? 'Language of Parts' : 'Langue d’un passage';
+                            $(textpart.element).find('.ck-button__label').text(label);
+                        }
+                        return editor;
+                    });
+            });
+
+            watchdog
+                .create(document.querySelector('#editor5'), {
+                    language: {
+                        ui: language,
+                        textPartLanguage: textLanguageParts
+                    },
+                    unsafeElements: false,
+                    htmlSupport: {
+                        allow: [
+                            {
+                                // name: /^(div|span|svg|abbr|path)$/,
+                                name: /.*/,
+                                attributes: true,
+                                classes: true,
+                                styles: true,
+                                content: true
+                            }
+                        ],
+                        disallow: [
+                            {
+                                name: /^(script|video|audio|img|var)$/
+                            }
+                        ]
+                    },
+                    additionalLanguages: ['en', 'fr'],
+                    fontSize: {
+                        options: [
+                            'default',
+                            'big',
+                            'huge'
+                        ]
+                    },
+                    toolbar: {
+                        items: [
+                            'sourceEditing', 'showBlocks', '|',
+                            'undo', 'redo', '|',
+                            'findAndReplace', 'selectAll', '|',
+                            'fontSize', '|',
+                            'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'removeFormat', '|',
+                            'numberedList', 'bulletedList', 'alignment', 'indent', 'outdent', '|',
+                            'blockQuote', '|',
+                            'link', '|',
+                            'fontColor', 'fontBackgroundColor', '|',
+                            'specialCharacters', 'insertTable', '|', 'abbreviation', 'textPartLanguage'
+                        ],
+                        shouldNotGroupWhenFull: true
                     }
-                    return editor;
-                });
-        });
-
-        watchdog
-            .create(document.querySelector('#editor5'), {
-                language: {
-                    ui: language,
-                    textPartLanguage: textLanguageParts
-                },
-                unsafeElements: false,
-                htmlSupport: {
-                    allow: [
-                        {
-                            // name: /^(div|span|svg|abbr|path)$/,
-                            name: /.*/,
-                            attributes: true,
-                            classes: true,
-                            styles: true,
-                            content: true
-                        }
-                    ],
-                    disallow: [
-                        {
-                            name: /^(script|video|audio|img|var)$/
-                        }
-                    ]
-                },
-                additionalLanguages: ['en', 'fr'],
-                fontSize: {
-                    options: [
-                        'default',
-                        'big',
-                        'huge'
-                    ]
-                },
-                toolbar: {
-                    items: [
-                        'sourceEditing', 'showBlocks', '|',
-                        'undo', 'redo', '|',
-                        'findAndReplace', 'selectAll', '|',
-                        'fontSize', '|',
-                        'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'removeFormat', '|',
-                        'numberedList', 'bulletedList', 'alignment', 'indent', 'outdent', '|',
-                        'blockQuote', '|',
-                        'link', '|',
-                        'fontColor', 'fontBackgroundColor', '|',
-                        'specialCharacters', 'insertTable', '|', 'abbreviation', 'textPartLanguage'
-                    ],
-                    shouldNotGroupWhenFull: true
-                }
-            })
-            .catch((error) => { });
-        this.editor = watchdog;
+                })
+                .catch((error) => { });
+            this.editor = watchdog;
         })
     </script>
 </body>
