@@ -6,6 +6,8 @@
     <script src="//cdn.ckeditor.com/4.21.0/full-all/ckeditor.js"></script>
     <script src="./ck4.js"></script>
     <script src="./ckeditor.js"></script>
+    <link rel="stylesheet" href="./styles/shepherd.css" />
+    <script src="./shepherd.js"></script>
     <style>
         body {
             color: rgba(255, 255, 255, 0.65);
@@ -152,6 +154,30 @@
                 max-width: 1220px
             }
         }
+
+        .shepherd-title {
+            color: #eaeaea;
+        }
+
+        .shepherd-header {
+            background: #105067!important;
+        }
+
+        .shepherd-text {
+            color: #000;
+        }
+
+        .shepherd-content {
+            background: #bfbfbf;
+        }
+
+        .shepherd-button {
+           background: #105067;
+        } 
+
+        .shepherd-arrow {
+            filter: contrast(0.5);
+        }
     </style>
 </head>
 
@@ -162,17 +188,6 @@
         <a lang="fr" class="langswitcher" href="/fr/adapt/ckeditor/">Français</a>
     </div>
     <div class="mainDiv container-new">
-        <p class="introduction">
-            We are thrilled to announce a significant upgrade to the Adapt Authoring Tool's editor, transitioning from
-            CK
-            Editor version 4 to version 5. This upgrade brings forth a host of new features and improvements that will
-            enhance your content creation experience. Join us for an exclusive info-session to explore the revamped
-            editor
-            and discover how these changes will empower your workflow.
-        </p>
-        <p>
-            In the following section, you can familiarize yourseilf with the new editor that will be integrated shortly and compare it to the current editor.
-        </p>
         <div class="mainContent">
             <div class="panel left">
                 <h2 class="subtitles">Current Editor</h2>
@@ -373,6 +388,293 @@
                 .catch((error) => { });
             this.editor = watchdog;
         })
+    </script>
+
+    <script>
+        const tour = new Shepherd.Tour({
+            defaultStepOptions: {
+                cancelIcon: {
+                    enabled: true
+                },
+                classes: 'class-1 class-2',
+                scrollTo: { behavior: 'smooth', block: 'center' }
+            }
+        });
+
+        tour.addStep({
+            title: 'CK Editor Upgrade',
+            text: 'We are thrilled to announce a significant upgrade to the Adapt Authoring Tool\'s editor, transitioning from CK Editor version 4 to version 5. This upgrade brings forth a host of new features and improvements that will enhance your content creation experience.Join us for an exclusive info- session to explore the revamped editor and discover how these changes will empower your workflow. \n In the following section, you can familiarize yourseilf with the new editor that will be integrated shortly and compare it to the current editor.',
+            buttons: [
+                {
+                    action() {
+                        return tour.cancel();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Close'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ],
+            id: 'creating'
+        });
+
+        tour.addStep({
+            id: 'right-click',
+            title: 'Right-Click Actions',
+            text: 'The new editor promotes accessibility by eliminating right-click actions. All functions previously accessible through right-click are now conveniently available through single clicks or keyboard actions within the UI.',
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'scrollbars',
+            title: 'Dynamic Text Display',
+            text: 'Say goodbye to internal scrollbars! The upgraded editor dynamically adjusts its size on the page, ensuring a seamless display of large text without the need for internal scrollbars.',
+            attachTo: {
+                element: '.cke_editor_editor4',
+                on: 'right'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'paste-1',
+            title: 'Paste Intelligence',
+            text: 'Forget about "paste as plain text" and "paste from word" buttons. The advanced editor can now intelligently detect the source of pasted text, automatically converting and filtering out non-valid formatting.',
+            attachTo: {
+                element: '.cke_button__pastefromword',
+                on: 'right'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'paste-1',
+            title: 'Paste Intelligence',
+            text: 'If needed, a new "Remove Format" button is at your disposal to strip selected text of its formatting while preserving essential non-styling elements like links.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Remove Format"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'font-control',
+            title: 'Font Size Customization',
+            text: 'Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to sizes larger than the default size to ensure accessibility.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Font Size"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'symbol-menu',
+            title: 'Special Characters',
+            text: 'The editor now features a dedicated menu for adding symbols, including mathematical symbols, making it simpler to incorporate HTML symbols into your content.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Special characters"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'table-menu',
+            title: 'Improved Table Creation',
+            text: 'Introducing a more intuitive table creation UI, similar to the Office suite. Visually edit tables with ease to create professional-looking content effortlessly.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Insert table"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'abbr-menu',
+            title: 'Abbreviation Functionality',
+            text: 'A new "Abbreviation" button lets you add full-text to your abbreviations and acronyms by adding HTML abbreviations (abbr) to selected text, enhancing the richness, clarity and accessibility of your content.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Abbreviation"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'lang-part-menu',
+            title: 'Language of Parts',
+            text: 'The "Language of Parts" button has been improved to allow you to set the opposite language of the course more easily, minimizing confusion and streamlining the language selection process.',
+            attachTo: {
+                element: 'button[data-cke-tooltip-text="Language"]',
+                on: 'left'
+            },
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Next'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'conclusion',
+            title: 'Conclusion',
+            text: 'This brings the guided tour to an end. After you close this dialog box, you will be able to use the editor to get acquainted with it. If you have any further questions or would like to learn more about the new features, please attend the DATE information session.',
+            classes: 'example-step-extra-class',
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Back'
+                },
+                {
+                    action() {
+                        return tour.cancel();
+                    },
+                    text: 'Close'
+                }
+            ]
+        });
+
+        tour.start();
     </script>
 </body>
 
