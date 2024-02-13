@@ -7,6 +7,8 @@
     <script src="./ck4.js"></script>
     <script src="./ckeditorTranslationFr.js"></script>
     <script src="./ckeditor.js"></script>
+    <link rel="stylesheet" href="./styles/shepherd.css" />
+    <script src="./shepherd.js"></script>
     <style>
         body {
             color: rgba(255, 255, 255, 0.65);
@@ -153,6 +155,30 @@
                 max-width: 1220px
             }
         }
+        
+        .shepherd-title {
+            color: #eaeaea;
+        }
+
+        .shepherd-header {
+            background: #105067!important;
+        }
+
+        .shepherd-text {
+            color: #000;
+        }
+
+        .shepherd-content {
+            background: #bfbfbf;
+        }
+
+        .shepherd-button {
+           background: #105067;
+        } 
+
+        .shepherd-arrow {
+            filter: contrast(0.5);
+        }
     </style>
 </head>
 
@@ -164,136 +190,115 @@
     </div>
     <div class="mainDiv container-new">
         <p class="introduction">
-            Nous sommes ravis d'annoncer une mise à jour importante de l'éditeur de l'outil-auteur Adapt, qui passe de
-            la version 4 à la version 5 de l'éditeur CK. Cette mise à jour apporte un grand nombre de nouvelles
-            fonctionnalités et d'améliorations qui amélioreront votre expérience de création de contenu. Rejoignez-nous
-            pour une séance d'information exclusive afin d'explorer l'éditeur remanié et de découvrir comment ces
-            changements amélioreront votre flux de travail.
-        </p>
-        <p>
-            Dans la section suivante, vous pourrez comparer l'éditeur actuel au nouvel éditeur qui sera intégré prochainement.
+            Dans la section suivante, vous pouvez vous familiariser avec le nouvel éditeur qui sera bientôt intégré et le comparer à l'éditeur actuel.
         </p>
         <div class="mainContent">
             <div class="panel left">
                 <h2 class="subtitles">Éditeur actuel</h2>
                 <textarea id="editor4">
                     <p>
-                        <strong>Here are the key highlights of the new CK Editor 5</strong>
+                        <strong>Voici les principales caractéristiques du nouveau CK Editor 5</strong>
                     </p>
-                    <p>
-                        <strong>1. User-Friendly Accessibility:</strong>
-                    </p>
-                    <ul>
+                    <ol>
                         <li>
-                            <strong>Right-Click Actions:</strong> The new editor promotes accessibility by eliminating right-click actions. All functions previously accessible through right-click are now conveniently available through single clicks or keyboard actions within the UI.
+                            <strong>Accessibilité conviviale :</strong>
+                            <ul>
+                                <li>
+                                    Actions par clic droit : Le nouvel éditeur favorise l'accessibilité en éliminant les actions par clic droit. Toutes les fonctions précédemment accessibles par un clic droit sont désormais disponibles par un simple clic ou par des actions au clavier dans l'interface utilisateur.
+                                </li>
+                                <li>
+                                    Affichage dynamique du texte : Dites adieu aux barres de défilement internes ! L'éditeur mis à jour ajuste dynamiquement sa taille sur la page, garantissant ainsi un affichage continu des textes volumineux sans avoir recours à des barres de défilement internes.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Dynamic Text Display:</strong> Say goodbye to internal scrollbars! The upgraded editor dynamically adjusts its size on the page, ensuring a seamless display of large text without the need for internal scrollbars.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>2. Smart Text Pasting:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Paste Intelligence:</strong> Forget about "paste as plain text" and "paste from word" buttons. The advanced editor can now intelligently detect the source of pasted text, automatically converting and filtering out non-valid formatting. If needed, a new "Remove Format" button is at your disposal to strip selected text of its formatting while preserving essential non-styling elements like links.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>3. Font Control:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to sizes larger than the default size to ensure accessibility.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>4. Enhanced Content Editing:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Symbol Menu:</strong> The editor now features a dedicated menu for adding symbols, including mathematical symbols, making it simpler to incorporate HTML symbols into your content.
+                            <strong>Collage de texte intelligent :</strong>
+                            <ul>
+                                <li>
+                                    Coller intelligent : Oubliez les boutons "coller comme texte brut" et "coller depuis Word". L'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides. Si nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Improved Table Creation:</strong> Introducing a more intuitive table creation UI, similar to the Office suite. Visually edit tables with ease to create professional-looking content effortlessly.
+                            <strong>Contrôle de la police :</strong>
+                            <ul>
+                                <li>
+                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton "Taille de police" vous permet d'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à des tailles supérieures à la taille par défaut afin de garantir l'accessibilité.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Abbreviation Functionality:</strong> A new "Abbreviation" button lets you add full-text to your abbreviations and acronyms by adding HTML abbreviations (abbr) to selected text, enhancing the richness, clarity and accessibility of your content.
+                            <strong>Édition améliorée du contenu :</strong>
+                            <ul>
+                                <li>
+                                    <strong>Menu des symboles :</strong> L'éditeur dispose désormais d'un menu dédié à l'ajout de symboles, y compris de symboles mathématiques, ce qui simplifie l'intégration de symboles HTML dans votre contenu.
+                                </li>
+                                <li>
+                                    <strong>Création de tableaux améliorée :</strong> Introduction d'une interface de création de tableaux plus intuitive, similaire à celle de la suite Office. Modifiez visuellement les tableaux avec facilité pour créer un contenu d'aspect professionnel sans effort.
+                                </li>
+                                <li>
+                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton "Abréviation" vous permet d'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l'accessibilité de votre contenu.
+                                </li>
+                                <li>
+                                    <strong>Langue d'un passage :</strong> Le bouton "Langue d'un passage" a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <strong>Language of Parts:</strong> The "Language of Parts" button has been improved to allow you to set the opposite language of the course more easily, minimizing confusion and streamlining the language selection process.
-                        </li>
-                    </ul>
+                    </ol>
                 </textarea>
             </div>
             <div class="panel right">
                 <h2 class="subtitles">Nouvel Éditeur</h2>
                 <div id="editor5">
                     <p>
-                        <strong>Here are the key highlights of the new CK Editor 5</strong>
+                        <strong>Voici les principales caractéristiques du nouveau CK Editor 5</strong>
                     </p>
-                    <p>
-                        <strong>1. User-Friendly Accessibility:</strong>
-                    </p>
-                    <ul>
+                    <ol>
                         <li>
-                            <strong>Right-Click Actions:</strong> The new editor promotes accessibility by eliminating
-                            right-click actions. All functions previously accessible through right-click are now
-                            conveniently available through single clicks or keyboard actions within the UI.
+                            <strong>Accessibilité conviviale :</strong>
+                            <ul>
+                                <li>
+                                    Actions par clic droit : Le nouvel éditeur favorise l'accessibilité en éliminant les actions par clic droit. Toutes les fonctions précédemment accessibles par un clic droit sont désormais disponibles par un simple clic ou par des actions au clavier dans l'interface utilisateur.
+                                </li>
+                                <li>
+                                    Affichage dynamique du texte : Dites adieu aux barres de défilement internes ! L'éditeur mis à jour ajuste dynamiquement sa taille sur la page, garantissant ainsi un affichage continu des textes volumineux sans avoir recours à des barres de défilement internes.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Dynamic Text Display:</strong> Say goodbye to internal scrollbars! The upgraded
-                            editor dynamically adjusts its size on the page, ensuring a seamless display of large text
-                            without the need for internal scrollbars.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>2. Smart Text Pasting:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Paste Intelligence:</strong> Forget about "paste as plain text" and "paste from
-                            word" buttons. The advanced editor can now intelligently detect the source of pasted text,
-                            automatically converting and filtering out non-valid formatting. If needed, a new "Remove
-                            Format" button is at your disposal to strip selected text of its formatting while preserving
-                            essential non-styling elements like links.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>3. Font Control:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you
-                            to easily adjust the font size of selected text. Font sizes are limited to sizes larger than
-                            the default size to ensure accessibility.
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>4. Enhanced Content Editing:</strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Symbol Menu:</strong> The editor now features a dedicated menu for adding symbols,
-                            including mathematical symbols, making it simpler to incorporate HTML symbols into your
-                            content.
+                            <strong>Collage de texte intelligent :</strong>
+                            <ul>
+                                <li>
+                                    Coller intelligent : Oubliez les boutons "coller comme texte brut" et "coller depuis Word". L'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides. Si nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Improved Table Creation:</strong> Introducing a more intuitive table creation UI,
-                            similar to the Office suite. Visually edit tables with ease to create professional-looking
-                            content effortlessly.
+                            <strong>Contrôle de la police :</strong>
+                            <ul>
+                                <li>
+                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton "Taille de police" vous permet d'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à des tailles supérieures à la taille par défaut afin de garantir l'accessibilité.
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <strong>Abbreviation Functionality:</strong> A new "Abbreviation" button lets you add
-                            full-text to your abbreviations and acronyms by adding HTML abbreviations (abbr) to selected
-                            text, enhancing the richness, clarity and accessibility of your content.
+                            <strong>Édition améliorée du contenu :</strong>
+                            <ul>
+                                <li>
+                                    <strong>Menu des symboles :</strong> L'éditeur dispose désormais d'un menu dédié à l'ajout de symboles, y compris de symboles mathématiques, ce qui simplifie l'intégration de symboles HTML dans votre contenu.
+                                </li>
+                                <li>
+                                    <strong>Création de tableaux améliorée :</strong> Introduction d'une interface de création de tableaux plus intuitive, similaire à celle de la suite Office. Modifiez visuellement les tableaux avec facilité pour créer un contenu d'aspect professionnel sans effort.
+                                </li>
+                                <li>
+                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton "Abréviation" vous permet d'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l'accessibilité de votre contenu.
+                                </li>
+                                <li>
+                                    <strong>Langue d'un passage :</strong> Le bouton "Langue d'un passage" a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <strong>Language of Parts:</strong> The "Language of Parts" button has been improved to
-                            allow you to set the opposite language of the course more easily, minimizing confusion and
-                            streamlining the language selection process.
-                        </li>
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -375,6 +380,293 @@
             this.editor = watchdog;
         })
     </script>
+
+<script>
+    const tour = new Shepherd.Tour({
+        defaultStepOptions: {
+            cancelIcon: {
+                enabled: true
+            },
+            classes: 'class-1 class-2',
+            scrollTo: { behavior: 'smooth', block: 'center' }
+        }
+    });
+
+    tour.addStep({
+        title: 'Mise à niveau de CK Editor',
+        text: 'Nous sommes ravis d\'annoncer une mise à niveau importante de l\'éditeur de l\'outil de création Adapt, qui passe de la version 4 à la version 5 de l\'éditeur CK. Cette mise à niveau apporte un grand nombre de nouvelles fonctionnalités et d\'améliorations qui optimiseront votre expérience de création de contenu.',
+        buttons: [
+            {
+                action() {
+                    return tour.cancel();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Fermer'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ],
+        id: 'introduction'
+    });
+
+    tour.addStep({
+        id: 'right-click',
+        title: 'Actions par clic droit',
+        text: 'Le nouvel éditeur favorise l\'accessibilité en éliminant les actions par clic droit. Toutes les fonctions précédemment accessibles par un clic droit sont désormais disponibles par un simple clic ou par des actions au clavier dans l\'interface utilisateur.',
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'scrollbars',
+        title: 'Affichage dynamique du texte',
+        text: 'Dites adieu aux barres de défilement internes ! L\'éditeur mis à jour ajuste dynamiquement sa taille sur la page, garantissant ainsi un affichage continu des textes volumineux sans avoir recours à des barres de défilement internes.',
+        attachTo: {
+            element: '.cke_editor_editor4',
+            on: 'right'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'paste-1',
+        title: 'Coller intelligent',
+        text: 'Oubliez les boutons "coller comme texte brut" et "coller depuis Word". L\'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides.',
+        attachTo: {
+            element: '.cke_button__pastefromword',
+            on: 'right'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'paste-1',
+        title: 'Coller intelligent',
+        text: 'Si nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Supprimer le format"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'font-control',
+        title: 'Personnalisation de la taille de la police',
+        text: 'Le bouton "Taille de police" vous permet d\'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à des tailles supérieures à la taille par défaut afin de garantir l\'accessibilité.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Taille de police"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'symbol-menu',
+        title: 'Caractères spéciaux',
+        text: 'L\'éditeur dispose désormais d\'un menu dédié à l\'ajout de symboles, y compris de symboles mathématiques, ce qui simplifie l\'intégration de symboles HTML dans votre contenu.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Caractères spéciaux"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'table-menu',
+        title: 'Création de tableaux améliorée',
+        text: 'Introduction d\'une interface de création de tableaux plus intuitive, similaire à celle de la suite Office. Modifiez visuellement les tableaux avec facilité pour créer un contenu d\'aspect professionnel sans effort.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Insérer un tableau"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'abbr-menu',
+        title: 'Fonctionnalité d\'abréviation',
+        text: 'Un nouveau bouton "Abréviation" vous permet d\'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l\'accessibilité de votre contenu.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Abréviation"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'lang-part-menu',
+        title: 'Langue d\'un passage',
+        text: 'Le bouton "Langue d\'un passage" a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.',
+        attachTo: {
+            element: 'button[data-cke-tooltip-text="Langue"]',
+            on: 'left'
+        },
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return this.next();
+                },
+                text: 'Suivant'
+            }
+        ]
+    });
+
+    tour.addStep({
+        id: 'conclusion',
+        title: 'Conclusion',
+        text: 'Ceci met fin à la visite guidée. Après avoir fermé cette boîte de dialogue, vous pourrez utiliser l\'éditeur pour vous familiariser avec celui-ci. Si vous avez d\'autres questions, veuillez consulter votre représentant du groupe de travail sur les outils de création (GTOC) ou nous contacter à l\'adresse suivante : EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca',
+        classes: 'example-step-extra-class',
+        buttons: [
+            {
+                action() {
+                    return this.back();
+                },
+                classes: 'shepherd-button-secondary',
+                text: 'Retour'
+            },
+            {
+                action() {
+                    return tour.cancel();
+                },
+                text: 'Fermer'
+            }
+        ]
+    });
+
+    tour.start();
+</script>
 </body>
 
 </html>
