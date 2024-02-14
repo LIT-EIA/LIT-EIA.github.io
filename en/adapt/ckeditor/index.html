@@ -184,6 +184,15 @@
         .shepherd-arrow {
             filter: contrast(0.5);
         }
+
+        .shepherd-element a {
+            color: blue;
+        }
+        
+        .sup-label {
+            font-size: 60%;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -198,7 +207,7 @@
             integrated shortly and compare it to the current editor.</p>
         <div class="mainContent">
             <div class="panel left">
-                <h2 class="subtitles">Current Editor</h2>
+                <h2 class="subtitles">Current Editor <span class="sup-label">(CK Editor 4)</span></h2>
                 <textarea id="editor4">
                     <p>
                         <strong>Here are the key highlights of the new CK Editor 5</strong>
@@ -227,7 +236,7 @@
                     </p>
                     <ul>
                         <li>
-                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to sizes larger than the default size to ensure accessibility.
+                            <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to two sizes larger than the default size to ensure accessibility.
                         </li>
                     </ul>
                     <p>
@@ -250,7 +259,7 @@
                 </textarea>
             </div>
             <div class="panel right">
-                <h2 class="subtitles">New Editor</h2>
+                <h2 class="subtitles">New Editor <span class="sup-label">(CK Editor 5)</span></h2>
                 <div id="editor5">
                     <p>
                         <strong>Here are the key highlights of the new CK Editor 5</strong>
@@ -288,7 +297,7 @@
                     <ul>
                         <li>
                             <strong>Font Size Customization:</strong> Introducing the "Font Size" button, allowing you
-                            to easily adjust the font size of selected text. Font sizes are limited to sizes larger than
+                            to easily adjust the font size of selected text. Font sizes are limited to two sizes larger than
                             the default size to ensure accessibility.
                         </li>
                     </ul>
@@ -533,7 +542,7 @@
         tour.addStep({
             id: 'font-control',
             title: 'Font Size Customization',
-            text: 'Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to sizes larger than the default size to ensure accessibility.',
+            text: 'Introducing the "Font Size" button, allowing you to easily adjust the font size of selected text. Font sizes are limited to two sizes larger than the default size to ensure accessibility.',
             attachTo: {
                 element: 'button[data-cke-tooltip-text="Font Size"]',
                 on: 'left'
@@ -663,7 +672,7 @@
         tour.addStep({
             id: 'conclusion',
             title: 'Conclusion',
-            text: 'This brings the guided tour to an end. After you close this dialog box, you will be able to use the editor to get acquainted with it. If you have any further questions plese consult your Adapt Authoring Tool Project Team (ATPT) representative or contact us at: EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca',
+            text: 'This brings the guided tour to an end. After you close this dialog box, you will be able to use the editor to get acquainted with it. If you have any further questions plese consult your Adapt Authoring Tool Project Team (ATPT) representative or contact us at: <a href="mailto:EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca?subject=Technical%20Support%20-%20CK%20Editor%205">EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca</a>',
             classes: 'example-step-extra-class',
             buttons: [
                 {

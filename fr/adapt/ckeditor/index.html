@@ -185,13 +185,22 @@
         .shepherd-arrow {
             filter: contrast(0.5);
         }
+
+        .shepherd-element a {
+            color: blue;
+        }
+
+        .sup-label {
+            font-size: 60%;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
 <body>
     <div id="header">
         <img alt="Adapt" src="./images/adapt.png">
-        <h2 class="college">Mise à niveau CK Editor</h2>
+        <h2 class="college">Mise à niveau <span lang="en">CK Editor</span></h2>
         <a lang="en" class="langswitcher" href="/en/adapt/ckeditor/">English</a>
     </div>
     <div class="mainDiv container-new">
@@ -201,7 +210,7 @@
         </p>
         <div class="mainContent">
             <div class="panel left">
-                <h2 class="subtitles">Éditeur actuel</h2>
+                <h2 class="subtitles">Éditeur actuel <span class="sup-label" lang="en">(CK Editor 4)</span></h2>
                 <textarea id="editor4">
                     <p>
                         <strong>Voici les principales caractéristiques du nouveau CK Editor 5</strong>
@@ -222,7 +231,7 @@
                             <strong>Collage de texte intelligent :</strong>
                             <ul>
                                 <li>
-                                    Coller intelligent : Oubliez les boutons "coller comme texte brut" et "coller depuis Word". L'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides. Si nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.
+                                    <strong>Fonction «&nbsp;coller&nbsp;» intelligente :</strong> Oubliez les boutons «&nbsp;coller comme texte brut&nbsp;» et «&nbsp;coller depuis Word&nbsp;». L'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides. Si nécessaire, un nouveau bouton «&nbsp;Supprimer le format&nbsp;» est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.
                                 </li>
                             </ul>
                         </li>
@@ -230,7 +239,7 @@
                             <strong>Contrôle de la police :</strong>
                             <ul>
                                 <li>
-                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton "Taille de police" vous permet d'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à des tailles supérieures à la taille par défaut afin de garantir l'accessibilité.
+                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton «&nbsp;Taille de police&nbsp;» vous permet d'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à deux tailles tailles supérieures à la taille par défaut afin de garantir l'accessibilité.
                                 </li>
                             </ul>
                         </li>
@@ -244,10 +253,10 @@
                                     <strong>Création de tableaux améliorée :</strong> Introduction d'une interface de création de tableaux plus intuitive, similaire à celle de la suite Office. Modifiez visuellement les tableaux avec facilité pour créer un contenu d'aspect professionnel sans effort.
                                 </li>
                                 <li>
-                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton "Abréviation" vous permet d'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l'accessibilité de votre contenu.
+                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton «&nbsp;Abréviation&nbsp;» vous permet d'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l'accessibilité de votre contenu.
                                 </li>
                                 <li>
-                                    <strong>Langue d'un passage :</strong> Le bouton "Langue d'un passage" a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.
+                                    <strong>Langue d'un passage :</strong> Le bouton «&nbsp;Langue d'un passage&nbsp;» a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.
                                 </li>
                             </ul>
                         </li>
@@ -255,7 +264,7 @@
                 </textarea>
             </div>
             <div class="panel right">
-                <h2 class="subtitles">Nouvel Éditeur</h2>
+                <h2 class="subtitles">Nouvel Éditeur <span class="sup-label" lang="en">(CK Editor 5)</span></h2>
                 <div id="editor5">
                     <p>
                         <strong>Voici les principales caractéristiques du nouveau CK Editor 5</strong>
@@ -282,10 +291,11 @@
                             <strong>Collage de texte intelligent :</strong>
                             <ul>
                                 <li>
-                                    Coller intelligent : Oubliez les boutons "coller comme texte brut" et "coller depuis
-                                    Word". L'éditeur avancé peut désormais détecter intelligemment la source du texte
+                                    <strong>Fonction «&nbsp;coller&nbsp;» intelligente :</strong> Oubliez les boutons «&nbsp;coller comme texte brut&nbsp;» et
+                                    «&nbsp;coller depuis Word&nbsp;». L'éditeur avancé peut désormais détecter
+                                    intelligemment la source du texte
                                     collé, en convertissant et en filtrant automatiquement les formats non valides. Si
-                                    nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour
+                                    nécessaire, un nouveau bouton «&nbsp;Supprimer le format&nbsp;» est à votre disposition pour
                                     éliminer le formatage du texte sélectionné tout en préservant les éléments
                                     essentiels non stylistiques tels que les liens.
                                 </li>
@@ -295,9 +305,10 @@
                             <strong>Contrôle de la police :</strong>
                             <ul>
                                 <li>
-                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton "Taille de
-                                    police" vous permet d'ajuster facilement la taille de la police du texte
-                                    sélectionné. Les tailles de police sont limitées à des tailles supérieures à la
+                                    <strong>Personnalisation de la taille de la police :</strong> Le bouton
+                                    «&nbsp;Taille de police&nbsp;» vous permet d'ajuster facilement la taille de la
+                                    police du texte
+                                    sélectionné. Les tailles de police sont limitées à deux tailles supérieures à la
                                     taille par défaut afin de garantir l'accessibilité.
                                 </li>
                             </ul>
@@ -317,13 +328,15 @@
                                     sans effort.
                                 </li>
                                 <li>
-                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton "Abréviation" vous
+                                    <strong>Fonctionnalité d'abréviation :</strong> Un nouveau bouton
+                                    «&nbsp;Abréviation&nbsp;» vous
                                     permet d'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des
                                     abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la
                                     clarté et l'accessibilité de votre contenu.
                                 </li>
                                 <li>
-                                    <strong>Langue d'un passage :</strong> Le bouton "Langue d'un passage" a été
+                                    <strong>Langue d'un passage :</strong> Le bouton «&nbsp;Langue d'un passage&nbsp;» a
+                                    été
                                     amélioré pour vous permettre de définir plus facilement la langue opposée du cours,
                                     minimisant ainsi la confusion et rationalisant le processus de sélection de la
                                     langue.
@@ -495,8 +508,8 @@
 
         tour.addStep({
             id: 'paste-1',
-            title: 'Coller intelligent',
-            text: 'Oubliez les boutons "coller comme texte brut" et "coller depuis Word". L\'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides.',
+            title: 'Fonction «&nbsp;coller&nbsp;» intelligente',
+            text: 'Oubliez les boutons «&nbsp;coller comme texte brut&nbsp;» et «&nbsp;coller depuis Word&nbsp;». L\'éditeur avancé peut désormais détecter intelligemment la source du texte collé, en convertissant et en filtrant automatiquement les formats non valides.',
             attachTo: {
                 element: '.cke_button__pastefromword',
                 on: 'right'
@@ -521,8 +534,8 @@
 
         tour.addStep({
             id: 'paste-1',
-            title: 'Coller intelligent',
-            text: 'Si nécessaire, un nouveau bouton "Supprimer le format" est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.',
+            title: 'Fonction «&nbsp;coller&nbsp;» intelligente',
+            text: 'Si nécessaire, un nouveau bouton «&nbsp;Supprimer le format&nbsp;» est à votre disposition pour éliminer le formatage du texte sélectionné tout en préservant les éléments essentiels non stylistiques tels que les liens.',
             attachTo: {
                 element: 'button[data-cke-tooltip-text="Supprimer le format"]',
                 on: 'left'
@@ -548,7 +561,7 @@
         tour.addStep({
             id: 'font-control',
             title: 'Personnalisation de la taille de la police',
-            text: 'Le bouton "Taille de police" vous permet d\'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à des tailles supérieures à la taille par défaut afin de garantir l\'accessibilité.',
+            text: 'Le bouton «&nbsp;Taille de police&nbsp;» vous permet d\'ajuster facilement la taille de la police du texte sélectionné. Les tailles de police sont limitées à deux tailles supérieures à la taille par défaut afin de garantir l\'accessibilité.',
             attachTo: {
                 element: 'button[data-cke-tooltip-text="Taille de police"]',
                 on: 'left'
@@ -626,7 +639,7 @@
         tour.addStep({
             id: 'abbr-menu',
             title: 'Fonctionnalité d\'abréviation',
-            text: 'Un nouveau bouton "Abréviation" vous permet d\'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l\'accessibilité de votre contenu.',
+            text: 'Un nouveau bouton «&nbsp;Abréviation&nbsp;» vous permet d\'ajouter du texte intégral à vos abréviations et acronymes en ajoutant des abréviations HTML (abbr) au texte sélectionné, améliorant ainsi la richesse, la clarté et l\'accessibilité de votre contenu.',
             attachTo: {
                 element: 'button[data-cke-tooltip-text="Abréviation"]',
                 on: 'left'
@@ -652,7 +665,7 @@
         tour.addStep({
             id: 'lang-part-menu',
             title: 'Langue d\'un passage',
-            text: 'Le bouton "Langue d\'un passage" a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.',
+            text: 'Le bouton «&nbsp;Langue d\'un passage&nbsp;» a été amélioré pour vous permettre de définir plus facilement la langue opposée du cours, minimisant ainsi la confusion et rationalisant le processus de sélection de la langue.',
             attachTo: {
                 element: 'button[data-cke-tooltip-text="Langue"]',
                 on: 'left'
@@ -678,7 +691,7 @@
         tour.addStep({
             id: 'conclusion',
             title: 'Conclusion',
-            text: 'Ceci met fin à la visite guidée. Après avoir fermé cette boîte de dialogue, vous pourrez utiliser l\'éditeur pour vous familiariser avec celui-ci. Si vous avez d\'autres questions, veuillez consulter votre représentant du groupe de travail sur les outils de création (GTOC) ou nous contacter à l\'adresse suivante : EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca',
+            text: 'Ceci met fin à la visite guidée. Après avoir fermé cette boîte de dialogue, vous pourrez utiliser l\'éditeur pour vous familiariser avec celui-ci. Si vous avez d\'autres questions, veuillez consulter votre représentant du groupe de travail sur les outils de création (GTOC) ou nous contacter à l\'adresse suivante : <a href="mailto:EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca?subject=Support%20technique%20-%20CK%20Editor%205">EDSC.DGSRH.STAA-TSBA.HRSB.ESDC@hrsdc-rhdcc.gc.ca</a>',
             classes: 'example-step-extra-class',
             buttons: [
                 {
