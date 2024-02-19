@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/shepherd.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/override.css">
-
+    
     <script src="./shepherd.js"></script>
     <style>
         #image-container {
@@ -62,17 +62,19 @@
         <a lang="fr" class="langswitcher" href="#">Français</a>
     </div>
     <div class="mainDiv container-new">
-        <p class="introduction">On this page, you can find the desired positions for your step pins. First, upload your step image. You will
+        <p class="introduction">On this page, you can find the desired positions for your step pins. First, upload your
+            step image. You will
             then be able to select the bubble direction and position the step using drag & drop. Just drag the red
             target to the desired position.</p>
-        <div id="image-container">
-            <input type="file" id="image-input" accept="image/*" onchange="loadImage(event)">
-            <label id="upload_label" for="image-input">Upload Image</label>
+            <div id="image-container">
+                <input type="file" id="image-input" accept="image/*" onchange="loadImage(event)">
+                <label id="upload_label" for="image-input">Upload Image</label>
 
-            <img id="uploaded-image" class="display-none" alt="Uploaded Image">
+                <img id="uploaded-image" class="display-none" alt="Uploaded Image">
 
-            <div id="target" class="display-none" onmousedown="startDragging(event)" ondragstart="return false"></div>
-        </div>
+                <div id="target" class="display-none" onmousedown="startDragging(event)" ondragstart="return false">
+                </div>
+            </div>
         <div id="cheat_div"></div>
     </div>
 
@@ -128,9 +130,7 @@
             document.getElementById("directionSelect").addEventListener("change", function () {
                 // Get the selected value
                 var selectedValue = this.value;
-
-                // You can do something with the selected value here
-                console.log("Selected value: " + selectedValue);
+                var textAreaSize = document.getElementById('example_text').style.height;
                 tour.cancel();
                 tour.removeStep('target');
                 var selectionNone = selectedValue === 'none' ? 'selected' : '';
@@ -158,7 +158,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <textarea style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
+                                <textarea id="example_text" style="resize: vertical; width: 100%;height: ${textAreaSize};margin-top: 5px;" placeholder="example text for sizing"></textarea>
                                 `,
                     attachTo: {
                         element: '#target',
@@ -184,6 +184,7 @@
             reader.onload = function (e) {
                 document.getElementById('target').classList.remove('display-none');
                 document.getElementById('cheat_div').classList.add('cheat-margin');
+                window.scrollTo(0, document.body.scrollHeight);
                 tour.start();
                 selectlistener();
                 const imageUrl = e.target.result;
@@ -248,7 +249,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <textarea style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
+                                <textarea id="example_text" style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
                                 `,
             attachTo: {
                 element: '#target',
