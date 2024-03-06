@@ -11,9 +11,14 @@
 	<!--  <script src="script.js"></script>  -->
 	
 	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
-	
 
+	 <!-- Include jQuery from a CDN (Content Delivery Network) -->
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="script.js">
+		
+	</script>
+	
 
 
 <!-- Google Tag Manager -->
@@ -21,7 +26,9 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MXTC589');</script>
+})(window,document,'script','dataLayer','GTM-MXTC589');
+
+</script>
 <!-- End Google Tag Manager -->
 
 
@@ -1071,6 +1078,72 @@ document.getElementById("send").click();
 
 
 </script>
+
+<script  defer >
+	// const questionContainer = document.querySelector('#questions');
+	const questionContainer =$('#questions');
+	const answerContainer = $('#answers');// jQuery
+	const answerArr = [];
+	
+	function fetchJSONData(){
+		
+		fetch('./output.json').then(res=> res.json())
+	
+	.then(data=> {
+		console.log('data is',data);
+		data.forEach((question, index)=>{
+			
+			let count = 62; 
+			
+	
+
+		
+		
+			let res = count + index;
+
+		
+
+			
+		   
+			
+			//add both elements to questions div 
+	
+			questionContainer.append(`<button class = "question bubble default" id= "Q${res}" onclick=findAnswer(${res})> Question : ${question.QuestionEN} </button> `);
+			questionContainer.append(`<p class = "keywords"> ${question.KeywordsEN}  </p>`)
+			// create answer paragraph
+	
+			
+			
+
+			answerContainer.append(`<div class = "bubble inlineblock answer" id= "A${res}" > Answer : ${question.AnswerEN} </div> `);
+
+			
+			
+			
+	
+		});
+		
+	
+	
+			// paragraph for key words
+		}).catch(error=>console.error('error ', error));
+		
+	
+	
+	
+	
+	
+	}
+	
+	fetchJSONData();
+	
+		</script>
+
+		<script>
+		
+		</script>
+
+		
 
 </body>
 </htlm>

@@ -1,0 +1,188 @@
+[
+  {
+    "Title": 4,
+    "QuestionEN": "What is VAT?",
+    "QuestionFR": "Question text le franciais",
+    "AnswerEN": "It's great!",
+    "AnswerFR": "C'est bon!",
+    "Choose Type": "For Learner",
+    "ID": 2,
+    "KeywordsEN": [
+      "DALLAS",
+      "CHICAGO",
+      "MIAMI"
+    ],
+    "KeywordsFR": [
+      "NEW MEXICO",
+      "DOHA",
+      "RIYADH"
+    ]
+  },
+  {
+    "Title": 3,
+    "QuestionEN": "Manager trying to access Saba?",
+    "QuestionFR": "Manager trying to access Saba? - In French",
+    "AnswerEN": "Enter Password",
+    "AnswerFR": "Entrer le mot de passe",
+    "Choose Type": "For Learner",
+    "ID": 4,
+    "KeywordsEN": [
+      "Saba. LOS ANGELES",
+      "NEW YORK"
+    ],
+    "KeywordsFR": [
+      "Saba. ARKANSAS",
+      "JAKARTA"
+    ]
+  },
+  {
+    "Title": 2,
+    "QuestionEN": "What is LIT?",
+    "QuestionFR": "Qu’est-ce que le LIT ?",
+    "AnswerEN": "Learning Infrusture team",
+    "AnswerFR": "Équipe d’infrastructure d’apprentissage",
+    "Choose Type": "For Learner",
+    "ID": 5,
+    "KeywordsEN": [
+      "LIT",
+      "MONTREAL",
+      "TORONTO"
+    ],
+    "KeywordsFR": [
+      "LIT",
+      "PARIS",
+      "GENEVA"
+    ]
+  },
+  {
+    "Title": 1,
+    "QuestionEN": "What is MED?",
+    "QuestionFR": "Qu’est-ce que le MED ?",
+    "AnswerEN": "Multimedia ",
+    "AnswerFR": "Multimedia ",
+    "Choose Type": "For Learner",
+    "ID": 6,
+    "KeywordsEN": [
+      "MED",
+      "VAT",
+      "QUE",
+      "OTTAWA"
+    ],
+    "KeywordsFR": [
+      "MED",
+      "MED",
+      "CAIRO"
+    ]
+  },
+  {
+    "Title": 8,
+    "QuestionEN": "What is ESDC?",
+    "QuestionFR": "Qu’est-ce que le ESDC ?",
+    "AnswerEN": "Multimedia ",
+    "AnswerFR": "Multimedia ",
+    "Choose Type": "For Learner",
+    "ID": 6,
+    "KeywordsEN": [
+      "MED",
+      "VAT",
+      "QUE",
+      "OTTAWA"
+    ],
+    "KeywordsFR": [
+      "ESDC",
+      "EFC",
+      "CAIRO"
+    ]
+  },
+  {
+    "Title": 5,
+    "QuestionEN": "Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile?",
+    "QuestionFR": "Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? ",
+    "AnswerEN": "DOWNLOAD VAT",
+    "AnswerFR": "TÉLÉCHARGER LA TVA",
+    "Choose Type": "For Learner",
+    "ID": 7,
+    "KeywordsEN": [
+      "cirriculum",
+      "EETC"
+    ],
+    "KeywordsFR": [
+      "programme d'études",
+      "TOKYO",
+      "KIYOTO"
+    ]
+  },
+  {
+    "Title": 6,
+    "QuestionEN": "I need manager access (for managers/team leaders) in Saba",
+    "QuestionFR": "J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba",
+    "AnswerEN": "CONTACT HELP DESK",
+    "AnswerFR": "contacter le service d'assistance",
+    "Choose Type": "For Manager",
+    "ID": 8,
+    "KeywordsEN": [
+      "manager",
+      "managers",
+      "manager’s",
+      "team lead",
+      "lead"
+    ],
+    "KeywordsFR": [
+      "gestionnaire",
+      "gestionnaires",
+      "chef",
+      "chef d'équipe",
+      "chefs",
+      "chefs d'équipe",
+      "responsable",
+      "responsables",
+      "equipe"
+    ]
+  },
+  {
+    "Title": 7,
+    "QuestionEN": "As an administrator how do I add an evaluation to a class?",
+    "QuestionFR": "En tant qu’administrateur comment puis-je ajouter une évaluation à une classe? ",
+    "AnswerEN": "SEND EMAIL TO LIT",
+    "AnswerFR": "envoyer un email à lit",
+    "Choose Type": "For Manager",
+    "ID": 9,
+    "KeywordsEN": [
+      "job aid",
+      "job aids",
+      "tool",
+      "tools",
+      "work tool",
+      "work tools  activities tab",
+      "standard course evaluation",
+      "general",
+      "attach",
+      "survey",
+      "publish",
+      "course",
+      "exam",
+      "test",
+      "examination"
+    ],
+    "KeywordsFR": [
+      "aide-mémoire",
+      "aide",
+      "mémoire",
+      "aides-mémoires",
+      "aide-mémoires",
+      "job aids",
+      "outil",
+      "outils",
+      "outil de travail",
+      "outils de travail",
+      "aide-memoire",
+      "aides-memoires",
+      "aide-memoires",
+      "memoire   \tonglet activités",
+      "astandard",
+      "evaluation",
+      "général"
+    ]
+  }
+]
+
