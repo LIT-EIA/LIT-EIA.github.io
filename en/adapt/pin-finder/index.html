@@ -52,6 +52,14 @@
         .shepherd-content {
             user-select: none;
         }
+
+        .direction {
+            margin-bottom: 20px;
+        }
+
+        .half-width {
+            max-width: 420px!important;
+        }
     </style>
 </head>
 
@@ -129,6 +137,7 @@
             copylistener();
             document.getElementById("directionSelect").addEventListener("change", function () {
                 // Get the selected value
+                var layout = document.getElementById('layoutSelect').value;
                 var selectedValue = this.value;
                 var textAreaSize = document.getElementById('example_text').style.height;
                 tour.cancel();
@@ -138,6 +147,8 @@
                 var selectionRight = selectedValue === 'right' ? 'selected' : '';
                 var selectionTop = selectedValue === 'top' ? 'selected' : '';
                 var selectionBottom = selectedValue === 'bottom' ? 'selected' : '';
+                var selectionFull = layout === 'full' ? 'selected' : '';
+                var selectionHalf = layout === 'half' ? 'selected' : '';
                 tour.addStep({
                     id: 'target',
                     title: 'Pin Position Finder',
@@ -147,16 +158,25 @@
                                         <div><span style="margin-right: 5px;" id="left">Left: 0%</span><button id="copyLeft">copy</button></div>
                                         <div><span style="margin-right: 5px;" id="top">Top:  0%</span><button id="copyTop">copy</button></div>
                                         </div>
-                                        <div class="direction">
-                                        <label style="display:block" for="directionSelect">Bubble Direction:</label>
-                                        <select style="display:block" id="directionSelect" name="direction">
-                                            <option value="none" ${selectionNone}>None</option>
-                                            <option value="left" ${selectionLeft}>Left</option>
-                                            <option value="right" ${selectionRight}>Right</option>
-                                            <option value="top" ${selectionTop}>Top</option>
-                                            <option value="bottom" ${selectionBottom}>Bottom</option>
-                                        </select>
-                                    </div>
+                                        <div class="dropdowns">
+                                            <div class="direction">
+                                                <label style="display:block" for="directionSelect">Bubble Direction:</label>
+                                                <select style="display:block" id="directionSelect" name="direction">
+                                                    <option value="none" ${selectionNone}>None</option>
+                                                    <option value="left" ${selectionLeft}>Left</option>
+                                                    <option value="right" ${selectionRight}>Right</option>
+                                                    <option value="top" ${selectionTop}>Top</option>
+                                                    <option value="bottom" ${selectionBottom}>Bottom</option>
+                                                </select>
+                                            </div>
+                                            <div class="layout">
+                                                <label style="display:block" for="directionSelect">Component Width:</label>
+                                                <select style="display:block" id="layoutSelect" name="layout">
+                                                    <option value="full" ${selectionFull}>Full Width</option>
+                                                    <option value="half" ${selectionHalf}>Half Width</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                 </div>
                                 <textarea id="example_text" style="resize: vertical; width: 100%;height: ${textAreaSize};margin-top: 5px;" placeholder="example text for sizing"></textarea>
                                 `,
@@ -165,6 +185,67 @@
                         on: selectedValue === 'none' ? 'bottom' : selectedValue
                     },
                     arrow: selectedValue === 'none' ? false : true,
+                    classes: 'example-step-extra-class'
+                });
+                tour.start();
+                updateCoordinates();
+                selectlistener();
+            });
+            document.getElementById("layoutSelect").addEventListener("change", function () {
+                // Get the selected value
+                var selectedValue = this.value;
+                var textAreaSize = document.getElementById('example_text').style.height;
+                var direction =  document.getElementById('directionSelect').value;
+                tour.cancel();
+                tour.removeStep('target');
+                var selectionNone = direction === 'none' ? 'selected' : '';
+                var selectionLeft = direction === 'left' ? 'selected' : '';
+                var selectionRight = direction === 'right' ? 'selected' : '';
+                var selectionTop = direction === 'top' ? 'selected' : '';
+                var selectionBottom = direction === 'bottom' ? 'selected' : '';
+                var selectionFull = selectedValue === 'full' ? 'selected' : '';
+                var selectionHalf = selectedValue === 'half' ? 'selected' : '';
+                if(selectedValue === 'half'){
+                    document.getElementById('image-container').classList.add('half-width');
+                } else {
+                    document.getElementById('image-container').classList.remove('half-width');
+                }
+                tour.addStep({
+                    id: 'target',
+                    title: 'Pin Position Finder',
+                    text: `             <div style="display:flex; margin-bottom: 5px;" class="pin-data">
+                                    <div style="width:65%" class="position">
+                                        <label style="block">Position:</label>
+                                        <div><span style="margin-right: 5px;" id="left">Left: 0%</span><button id="copyLeft">copy</button></div>
+                                        <div><span style="margin-right: 5px;" id="top">Top:  0%</span><button id="copyTop">copy</button></div>
+                                        </div>
+                                        <div class="dropdowns">
+                                            <div class="direction">
+                                                <label style="display:block" for="directionSelect">Bubble Direction:</label>
+                                                <select style="display:block" id="directionSelect" name="direction">
+                                                    <option value="none" ${selectionNone}>None</option>
+                                                    <option value="left" ${selectionLeft}>Left</option>
+                                                    <option value="right" ${selectionRight}>Right</option>
+                                                    <option value="top" ${selectionTop}>Top</option>
+                                                    <option value="bottom" ${selectionBottom}>Bottom</option>
+                                                </select>
+                                            </div>
+                                            <div class="layout">
+                                                <label style="display:block" for="directionSelect">Component Width:</label>
+                                                <select style="display:block" id="layoutSelect" name="layout">
+                                                    <option value="full" ${selectionFull}>Full Width</option>
+                                                    <option value="half" ${selectionHalf}>Half Width</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+                                <textarea id="example_text" style="resize: vertical; width: 100%;height: ${textAreaSize};margin-top: 5px;" placeholder="example text for sizing"></textarea>
+                                `,
+                    attachTo: {
+                        element: '#target',
+                        on: direction === 'none' ? 'bottom' : direction
+                    },
+                    arrow: direction === 'none' ? false : true,
                     classes: 'example-step-extra-class'
                 });
                 tour.start();
@@ -238,16 +319,25 @@
                                         <div><span style="margin-right: 5px;" id="left">Left: 0%</span><button id="copyLeft">copy</button></div>
                                         <div><span style="margin-right: 5px;" id="top">Top:  0%</span><button id="copyTop">copy</button></div>
                                         </div>
-                                        <div class="direction">
-                                        <label style="display:block" for="directionSelect">Bubble Direction:</label>
-                                        <select style="display:block" id="directionSelect" name="direction">
-                                            <option value="none">None</option>
-                                            <option value="left">Left</option>
-                                            <option value="right" selected>Right</option>
-                                            <option value="top">Top</option>
-                                            <option value="bottom">Bottom</option>
-                                        </select>
-                                    </div>
+                                        <div class="dropdowns">
+                                            <div class="direction">
+                                                <label style="display:block" for="directionSelect">Bubble Direction:</label>
+                                                <select style="display:block" id="directionSelect" name="direction">
+                                                    <option value="none">None</option>
+                                                    <option value="left">Left</option>
+                                                    <option value="right" selected>Right</option>
+                                                    <option value="top">Top</option>
+                                                    <option value="bottom">Bottom</option>
+                                                </select>
+                                            </div>
+                                            <div class="layout">
+                                                <label style="display:block" for="directionSelect">Component Width:</label>
+                                                <select style="display:block" id="layoutSelect" name="layout">
+                                                    <option value="full" selected>Full Width</option>
+                                                    <option value="half">Half Width</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                 </div>
                                 <textarea id="example_text" style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
                                 `,
