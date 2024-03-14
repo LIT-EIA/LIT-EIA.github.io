@@ -544,16 +544,16 @@ this["Handlebars"]["templates"]["guidedtour"] = Handlebars.template({"1":functio
 
   return "  <div class=\"guidedtour-widget tour-"
     + alias3(((helper = (helper = helpers.cid || (depth0 != null ? depth0.cid : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias2,{"name":"cid","hash":{},"data":data,"loc":{"start":{"line":4,"column":37},"end":{"line":4,"column":44}}}) : helper)))
-    + " component-widget pin\">\n    <div class=\"loading-step sr-only\" aria-hidden=\"true\" role=\"dialog\" tabindex=\"-1\">loading</div>\n    <div class=\"guidedtour-graphic\"role=\"list\">\n        <button class=\"start-tour\">"
+    + " component-widget pin\">\r\n    <div class=\"loading-step sr-only\" aria-hidden=\"true\" role=\"dialog\" tabindex=\"-1\">loading</div>\r\n    <div class=\"guidedtour-graphic\"role=\"list\">\r\n        <button class=\"start-tour\">"
     + alias3(alias4(((stack1 = (depth0 != null ? depth0.guidedtour : depth0)) != null ? stack1.startTourText : stack1), depth0))
-    + "</button>\n        <img src=\""
+    + "</button>\r\n        <img src=\""
     + alias3(alias4(((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0._items : depth0)) != null ? stack1["0"] : stack1)) != null ? stack1._graphic : stack1)) != null ? stack1.src : stack1), depth0))
     + "\" class=\"tour-disabled\" "
     + ((stack1 = helpers["if"].call(alias2,((stack1 = (depth0 != null ? depth0._graphic : depth0)) != null ? stack1.alt : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data,"loc":{"start":{"line":8,"column":67},"end":{"line":8,"column":149}}})) != null ? stack1 : "")
-    + "/>\n"
+    + "/>\r\n"
     + ((stack1 = helpers["if"].call(alias2,((stack1 = (depth0 != null ? depth0._graphic : depth0)) != null ? stack1.attribution : stack1),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":9,"column":8},"end":{"line":11,"column":15}}})) != null ? stack1 : "")
     + ((stack1 = helpers.each.call(alias2,(depth0 != null ? depth0._items : depth0),{"name":"each","hash":{},"fn":container.program(8, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":12,"column":8},"end":{"line":16,"column":17}}})) != null ? stack1 : "")
-    + "    </div>\n  </div>\n";
+    + "    </div>\r\n  </div>\r\n";
 },"2":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.propertyIsEnumerable;
 
@@ -567,11 +567,11 @@ this["Handlebars"]["templates"]["guidedtour"] = Handlebars.template({"1":functio
 
   return "          <div class=\"graphic-attribution\">"
     + ((stack1 = container.lambda(((stack1 = (depth0 != null ? depth0._graphic : depth0)) != null ? stack1.attribution : stack1), depth0)) != null ? stack1 : "")
-    + "</div>\n";
+    + "</div>\r\n";
 },"8":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=container.propertyIsEnumerable, alias2=depth0 != null ? depth0 : (container.nullContext || {}), alias3=container.hooks.helperMissing, alias4="function", alias5=container.escapeExpression, alias6=container.lambda;
 
-  return "          <div class=\"guidedtour-graphic-pin-list-item\" role=\"listitem\">\n            <span class=\"base guidedtour-graphic-pin component-item-text-color tour-item-"
+  return "          <div class=\"guidedtour-graphic-pin-list-item\" role=\"listitem\">\r\n            <span class=\"base guidedtour-graphic-pin component-item-text-color tour-item-"
     + alias5(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":14,"column":89},"end":{"line":14,"column":99}}}) : helper)))
     + "\" data-index=\""
     + alias5(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":14,"column":113},"end":{"line":14,"column":123}}}) : helper)))
@@ -579,14 +579,14 @@ this["Handlebars"]["templates"]["guidedtour"] = Handlebars.template({"1":functio
     + ((stack1 = alias6(((stack1 = (depth0 != null ? depth0._pin : depth0)) != null ? stack1._top : stack1), depth0)) != null ? stack1 : "")
     + "%; left:"
     + ((stack1 = alias6(((stack1 = (depth0 != null ? depth0._pin : depth0)) != null ? stack1._left : stack1), depth0)) != null ? stack1 : "")
-    + "%;\"></span>\n          </div>\n";
+    + "%;\"></span>\r\n          </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.propertyIsEnumerable;
 
-  return "<div class=\"guidedtour-inner component-inner\">\n"
+  return "<div class=\"guidedtour-inner component-inner\">\r\n"
     + ((stack1 = container.invokePartial(partials.component,depth0,{"name":"component","data":data,"indent":"  ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.active : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":3,"column":2},"end":{"line":19,"column":9}}})) != null ? stack1 : "")
-    + "</div>\n";
+    + "</div>\r\n";
 },"usePartial":true,"useData":true});
 
 this["Handlebars"]["templates"]["quicknav-tooltip"] = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
