@@ -1,0 +1,374 @@
+[
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "New Component Title",
+    "displayTitle": "",
+    "body": "<p><meta name=\"generator\" content=\"quillbot-pphr\">Welcome to the Guided Tour Component, the ideal tool for easily conveying essential details to software learners. With this tool, you can walk users through step-by-step instructions, linking relevant details to specific UI elements in screenshots. Easily change out screenshots for each step to provide a simple and effective learning experience. This versatile guided tour feature simplifies complexity and improves user understanding.</p>",
+    "_id": "65f2eea2fd2eed030d5a21bd",
+    "_parentId": "65f2eea0fd2eed030d5a21b8",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "guidedtour",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 3,
+    "_disableAccessibilityState": false,
+    "title": "New Component Title",
+    "displayTitle": "",
+    "body": "<p><meta name=\"generator\" content=\"quillbot-pphr\">In this example, we will look at a Guided Tour component designed to teach navigation in the Saba Learning Management System.</p>",
+    "_id": "65f2eea2fd2eed030d5a21be",
+    "_parentId": "65f2eea0fd2eed030d5a21ba",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "To begin the activity, select \"Start Tour\". After reading all of the steps, select \"Close\" to continue.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Explore the Main Menu",
+        "body": "<p>To navigate within Saba,&nbsp;select the <strong>Main menu button</strong>, which appears as three lines in the top left-hand corner of the page.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/f4fa8d0ac1303b4541a60e707e8e87378da0a6ab.jpg",
+          "alt": "Screenshot of the Saba landing page, showing ongoing and completed learning, navigation options, and a decorative header."
+        },
+        "_pin": {
+          "_left": 3.33,
+          "_top": 3.82,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Home",
+        "body": "<p>The <strong>Home</strong> item displays up to five (5) completed learning events in the “Completed Learning” box, and five (5) enrollments in the “My Learning” box.</p>",
+        "_graphic": {
+          "src": "course/en/assets/b2af82e8bc56f1d6b498fc80a0a6ed7956844f0a.jpg",
+          "alt": "Screenshot of the Saba landing page with the three-lines navigation menu open. The Home option is highlighted."
+        },
+        "_pin": {
+          "_left": 18.69,
+          "_top": 12.67,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Me",
+        "body": "<p>The <strong>Me</strong> (My Plan) item displays elements specific to your learning activities and history.<strong><o:p></o:p></strong></p>",
+        "_graphic": {
+          "src": "course/en/assets/e4b922c039d76b52bfa1b92da5bc9777de62ae05.jpg",
+          "alt": "Screenshot of the Saba landing page with the three-lines navigation menu open. The Me option is highlighted."
+        },
+        "_pin": {
+          "_left": 18.69,
+          "_top": 20.32,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Workspaces",
+        "body": "<p>The <strong>Workspaces</strong> item is currently not used.<strong><o:p></o:p></strong></p>",
+        "_graphic": {
+          "src": "course/en/assets/0dbcf8f307c1c7e75b9dce3caee967c150404d68.jpg",
+          "alt": "Screenshot of the Saba landing page with the three-lines navigation menu open. The Workspaces option is highlighted."
+        },
+        "_pin": {
+          "_left": 18.69,
+          "_top": 28.7,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Groups",
+        "body": "<p>The <strong>Groups</strong> item displays your groups’ discussions. Every learner has access to the ESDC group.</p>",
+        "_graphic": {
+          "src": "course/en/assets/ce925027073f1a99228b18dfd20c2b3c16f17138.jpg",
+          "alt": "Screenshot of the Saba landing page with the three-lines navigation menu open. The Groups option is highlighted."
+        },
+        "_pin": {
+          "_left": 18.69,
+          "_top": 36.11,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "My Plan Page",
+        "body": "<p>Select the <strong>Me</strong> item to open the My Plan page. Here, you will find elements such as your training and submenus to view your personal information.<strong><o:p></o:p></strong></p>",
+        "_graphic": {
+          "src": "course/en/assets/e4b922c039d76b52bfa1b92da5bc9777de62ae05.jpg",
+          "alt": "Screenshot of the My Plan screen with the three-lines navigation menu open. The Me option is highlighted."
+        },
+        "_pin": {
+          "_left": 18.69,
+          "_top": 20.32,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Actions Drop-down Menu",
+        "body": "<p>Select the <strong>Actions&nbsp;</strong>button to open the drop-down menu.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/99a2a739ca7d13962f0c50e5c6536f448d189592.jpg",
+          "alt": "Screenshot of the My Plan screen in Saba, displaying the learner's progress on their Learning & Certifications."
+        },
+        "_pin": {
+          "_left": 29.17,
+          "_top": 19.37,
+          "_bubbledirection": "bottom"
+        }
+      },
+      {
+        "title": "Add Completed Course",
+        "body": "<p>The <strong>Add Completed Course</strong> option can be used to add:<o:p></o:p></p><ul><li>Courses that were completed prior to the launch of Saba (January 2017);<o:p></o:p></li><li>Courses that were completed outside of Saba; and/or<o:p></o:p></li><li>Courses from the Saba catalogue that were completed but were not tracked.</li></ul>",
+        "_graphic": {
+          "src": "course/en/assets/a1f9842b0d58a686459b1971ef9e93a9ec3e2249.jpg",
+          "alt": "Screenshot of the My Plan screen in Saba with the Actions menu open to show how learner can add learning to their plan."
+        },
+        "_pin": {
+          "_left": 34.29,
+          "_top": 29.18,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Learning & Certifications",
+        "body": "<p>In the <strong>Learning &amp; Certifications</strong> box, select the <strong>In Progress</strong>, <strong>Completed</strong> or <strong>Pending Action</strong> hyperlink to view your training associated with the selected status.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/99a2a739ca7d13962f0c50e5c6536f448d189592.jpg",
+          "alt": "Screenshot of the Learning & Certifications box, showing the number of courses In Progress, Completed or Pending Action."
+        },
+        "_pin": {
+          "_left": 28.93,
+          "_top": 43.53,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Profile Submenu",
+        "body": "<p>On the left-hand of the page, under the Plan menu, select the <strong>Profile&nbsp;</strong>submenu to view/edit your information such as your manager in Saba.<o:p></o:p><o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/99a2a739ca7d13962f0c50e5c6536f448d189592.jpg",
+          "alt": "Screenshot of the My Plan screen in Saba showing the Plan menu. The Profile option is indicated."
+        },
+        "_pin": {
+          "_left": 14.17,
+          "_top": 17.93,
+          "_bubbledirection": "right"
+        }
+      },
+      {
+        "title": "Launching Your Courses",
+        "body": "<p>You can launch courses displayed in the <strong>My Learning</strong> box on your Home page.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/f4fa8d0ac1303b4541a60e707e8e87378da0a6ab.jpg",
+          "alt": "Screenshot of the Saba landing page with the My Learning box indicated."
+        },
+        "_pin": {
+          "_left": 49.64,
+          "_top": 60.99,
+          "_bubbledirection": "top"
+        }
+      },
+      {
+        "title": "Launching Your Courses",
+        "body": "<p>For courses containing one single activity, select the <strong>Launch</strong> button associated with the course.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/bee39722652f6510f115be288c3ac25fc53a5021.jpg",
+          "alt": "Screenshot of the launch page for a course on Saba. The Activities tab is open, indicating the Launch button for the course."
+        },
+        "_pin": {
+          "_left": 66.31,
+          "_top": 75.83,
+          "_bubbledirection": "left"
+        }
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "30percent",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "New component title",
+    "displayTitle": "",
+    "body": "<p>In conclusion, the Guided Tour Component serves as a practical tool for simplifying software learning. Its straightforward interface and customizable screenshots help streamline complex processes, supporting user understanding and proficiency. Consider leveraging the Guided Tour Component to enhance software knowledge and facilitate smoother execution of tasks.</p>",
+    "_id": "65f2eea2fd2eed030d5a21bf",
+    "_parentId": "65f2eea0fd2eed030d5a21bb",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "quicknav",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Quick navigation",
+    "displayTitle": "",
+    "body": "<p>To go to the Main Menu, either select the \"<strong>Return to Main Menu</strong>\" button, or select the \"<strong>Home</strong>\" button on the top left corner.</p>",
+    "_id": "65f2eea2fd2eed030d5a21c0",
+    "_parentId": "65f2eea0fd2eed030d5a21bc",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "",
+    "_loopStyle": "none",
+    "_buttons": {
+      "_returnToPreviousLocation": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Return",
+        "ariaLabel": "Return to previous location",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}"
+      },
+      "_previous": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "< Previous",
+        "ariaLabel": "Previous Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_root": {
+        "_isEnabled": true,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Return to Main Menu",
+        "ariaLabel": "Return to Main Menu",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_up": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Scroll back to top",
+        "ariaLabel": "Scroll back to top",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_next": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Next >",
+        "ariaLabel": "Next Page",
+        "_showTooltip": false,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_sibling": {
+        "_isEnabled": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "{{inc index}}",
+        "ariaLabel": "Page {{inc index}}",
+        "_showTooltip": true,
+        "tooltip": "{{displayTitle}}",
+        "_customRouteId": ""
+      },
+      "_close": {
+        "_isEnabled": false,
+        "_lockUntilPageComplete": false,
+        "_order": 0,
+        "_classes": "",
+        "_iconClass": "",
+        "_alignIconRight": false,
+        "text": "Close",
+        "ariaLabel": "Close window",
+        "_showTooltip": false,
+        "tooltip": "Close window"
+      }
+    }
+  }
+]
