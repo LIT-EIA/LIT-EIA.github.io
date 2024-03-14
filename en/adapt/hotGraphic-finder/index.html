@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guided Tour Pin Position Finder - Adapt Authoring Tool</title>
-    <link rel="stylesheet" href="./styles/shepherd.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/override.css">
+    <title>Hot Graphic Pin Finder  - Adapt Authoring Tool</title>
+    <link rel="stylesheet" href="../pin-finder/styles/shepherd.css">
+    <link rel="stylesheet" href="../pin-finder/styles/styles.css">
+    <link rel="stylesheet" href="../pin-finder/styles/override.css">
     
-    <script src="./shepherd.js"></script>
+    <script src="../pin-finder/shepherd.js"></script>
     <style>
         #image-container {
             position: absolute;
@@ -26,13 +26,14 @@
 
         #target {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: red;
+            width: 48px;
+            height: 48px;
+            /* background-color: red; */
             border-radius: 50%;
             cursor: move;
             user-select: none;
             z-index: 99999999;
+            color:#0f2a4a ;
         }
 
         input[type="file"] {
@@ -49,12 +50,15 @@
             padding: 10px;
         }
 
-        .shepherd-content {
-            user-select: none;
+        
+        #uploadPin_label {
+            background: white;
+            color: black;
+            padding: 10px;
         }
 
-        .direction {
-            margin-bottom: 20px;
+        .shepherd-content {
+            user-select: none;
         }
 
         .half-width {
@@ -66,22 +70,29 @@
 <body>
     <div id="header">
         <img alt="Adapt" src="./images/adapt.png">
-        <h2 class="college">Guided Tour Pin Position Finder</h2>
+        <h2 class="college">Hot Graphic Pin Finder  </h2>
         <a lang="fr" class="langswitcher" href="#">Français</a>
     </div>
     <div class="mainDiv container-new">
         <p class="introduction">On this page, you can find the desired positions for your step pins. First, upload your
-            step image. You will
-            then be able to select the bubble direction and position the step using drag & drop. Just drag the red
-            target to the desired position.</p>
+            step image. Then upload your pins. You will be able to move the pins to your desired location.
+            You will be able to copy the cooridnates (x , y percentages) corressponding coordinates</p>
             <div id="image-container">
                 <input type="file" id="image-input" accept="image/*" onchange="loadImage(event)">
                 <label id="upload_label" for="image-input">Upload Image</label>
 
-                <img id="uploaded-image" class="display-none" alt="Uploaded Image">
+                <input type="file" id="pin-input" accept="image/*" onchange="loadPinImage(event)">
+                <label id="uploadPin_label" for="pin-input" style="margin-left: 20px;">Upload Pin</label>
+                <br>
+                <img id="uploaded-image" class="display-none"   style="margin-top: 20px;" alt="Uploaded Image">
 
-                <div id="target" class="display-none" onmousedown="startDragging(event)" ondragstart="return false">
-                </div>
+                <img id="target" class="display-none" src="./images/defaultImg.png" alt="Uploaded Image" class="display-none" onmousedown="startDragging(event)" ondragstart="return false"
+                
+                
+                >
+
+                <!-- <div id="target" class="display-none" onmousedown="startDragging(event)" ondragstart="return false">
+                </div> -->
             </div>
         <div id="cheat_div"></div>
     </div>
@@ -149,6 +160,12 @@
                 var selectionBottom = selectedValue === 'bottom' ? 'selected' : '';
                 var selectionFull = layout === 'full' ? 'selected' : '';
                 var selectionHalf = layout === 'half' ? 'selected' : '';
+
+                if(selectedValue === 'half'){
+                    document.getElementById('image-container').classList.add('half-width');
+                } else {
+                    document.getElementById('image-container').classList.remove('half-width');
+                }
                 tour.addStep({
                     id: 'target',
                     title: 'Pin Position Finder',
@@ -254,12 +271,12 @@
             });
         }
 
-        //end of Selectlistener
+        // end of select listener 
 
         function loadImage(event) {
             const fileInput = event.target;
             const uploadedImage = document.getElementById('uploaded-image');
-            const target = document.getElementById('target');
+            // const target = document.getElementById('target');
 
             const file = fileInput.files[0];
             const reader = new FileReader();
@@ -272,8 +289,8 @@
                 selectlistener();
                 const imageUrl = e.target.result;
                 uploadedImage.src = imageUrl;
-                target.style.left = '50%';
-                target.style.top = '50%';
+                target.style.left = '0%';
+                target.style.top = '4%';
                 updateCoordinates();
                 document.getElementById('upload_label').classList.add('display-none');
                 document.getElementById('uploaded-image').classList.remove('display-none');
@@ -281,6 +298,41 @@
 
             reader.readAsDataURL(file);
         }
+
+
+        function loadPinImage(event) {
+            const fileInput = event.target;
+            // const uploadedPinImage = document.getElementById('uploaded-pins');
+            const target = document.getElementById('target');
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                // document.getElementById('target').classList.remove('display-none');
+                document.getElementById('cheat_div').classList.add('cheat-margin');
+                window.scrollTo(0, document.body.scrollHeight);
+                tour.start();
+                selectlistener();
+                const imageUrl = e.target.result;
+                target.src = imageUrl;
+                target.style.left = '0%';
+                target.style.top = '4%';
+                console.log('pin uploaded');
+                updateCoordinates();
+                // document.getElementById('uploadPin_label').classList.add('display-none');
+                // document.getElementById('uploaded-pins').classList.remove('display-none');
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+
+
+
+
+
+
 
         function updateCoordinates() {
             var left = document.getElementById('left');
@@ -305,52 +357,52 @@
             return { left: percentageX.toFixed(2), top: percentageY.toFixed(2) }
         }
     </script>
-    <script>
-        var tour = new Shepherd.Tour({
-            defaultStepOptions: {
-                classes: 'class-1 class-2',
-                scrollTo: false
-            }
-        });
-        tour.addStep({
-            id: 'target',
-            title: 'Pin Position Finder',
-            text: `             <div style="display:flex; margin-bottom: 5px;" class="pin-data">
-                                    <div style="width:65%" class="position">
-                                        <label style="block">Position:</label>
-                                        <div><span style="margin-right: 5px;" id="left">Left: 0%</span><button id="copyLeft">copy</button></div>
-                                        <div><span style="margin-right: 5px;" id="top">Top:  0%</span><button id="copyTop">copy</button></div>
+  <script>
+    var tour = new Shepherd.Tour({
+        defaultStepOptions: {
+            classes: 'class-1 class-2',
+            scrollTo: false
+        }
+    });
+    tour.addStep({
+        id: 'target',
+        title: 'Pin Position Finder',
+        text: `             <div style="display:flex; margin-bottom: 5px;" class="pin-data">
+                                <div style="width:65%" class="position">
+                                    <label style="block">Position:</label>
+                                    <div><span style="margin-right: 5px;" id="left">Left: 0%</span><button id="copyLeft">copy</button></div>
+                                    <div><span style="margin-right: 5px;" id="top">Top:  0%</span><button id="copyTop">copy</button></div>
+                                    </div>
+                                    <div class="dropdowns">
+                                        <div class="direction">
+                                            <label style="display:block" for="directionSelect">Bubble Direction:</label>
+                                            <select style="display:block" id="directionSelect" name="direction">
+                                                <option value="none">None</option>
+                                                <option value="left">Left</option>
+                                                <option value="right" selected>Right</option>
+                                                <option value="top">Top</option>
+                                                <option value="bottom">Bottom</option>
+                                            </select>
                                         </div>
-                                        <div class="dropdowns">
-                                            <div class="direction">
-                                                <label style="display:block" for="directionSelect">Bubble Direction:</label>
-                                                <select style="display:block" id="directionSelect" name="direction">
-                                                    <option value="none">None</option>
-                                                    <option value="left">Left</option>
-                                                    <option value="right" selected>Right</option>
-                                                    <option value="top">Top</option>
-                                                    <option value="bottom">Bottom</option>
-                                                </select>
-                                            </div>
-                                            <div class="layout">
-                                                <label style="display:block" for="directionSelect">Component Width:</label>
-                                                <select style="display:block" id="layoutSelect" name="layout">
-                                                    <option value="full" selected>Full Width</option>
-                                                    <option value="half">Half Width</option>
-                                                </select>
-                                            </div>
+                                        <div class="layout">
+                                            <label style="display:block" for="directionSelect">Component Width:</label>
+                                            <select style="display:block" id="layoutSelect" name="layout">
+                                                <option value="full" selected>Full Width</option>
+                                                <option value="half">Half Width</option>
+                                            </select>
                                         </div>
-                                </div>
-                                <textarea id="example_text" style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
-                                `,
-            attachTo: {
-                element: '#target',
-                on: 'right'
-            },
-            classes: 'example-step-extra-class'
-        });
+                                    </div>
+                            </div>
+                            <textarea id="example_text" style="resize: vertical; width: 100%;height: 25px;margin-top: 5px;" placeholder="example text for sizing"></textarea>
+                            `,
+        attachTo: {
+            element: '#target',
+            on: 'right'
+        },
+        classes: 'example-step-extra-class'
+    });
 
-    </script>
+</script>
 </body>
 
 </html>
