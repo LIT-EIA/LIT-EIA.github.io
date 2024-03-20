@@ -82,6 +82,6 @@
     "_completionAttribute": "_isComplete"
   },
   "_devtools": {
-    "_isEnabled": true
+    "_isEnabled": false
   }
 }
