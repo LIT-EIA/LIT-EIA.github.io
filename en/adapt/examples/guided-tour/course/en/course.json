@@ -1,5 +1,5 @@
 {
-  "title": "Introducing Guided Tour: A Brand New Adapt Component",
+  "title": "Introducing Guided Tour: A Brand New Adapt Component - with Fixes",
   "displayTitle": "Introducing Guided Tour: A Brand New Adapt Component",
   "body": "",
   "description": "",
@@ -69,9 +69,6 @@
       "_text": {
         "ariaRegion": ""
       },
-      "_narrative": {
-        "ariaRegion": "Slide show. Select the next button to progress."
-      },
       "_media": {
         "ariaRegion": "Media player{{#any _transcript._inlineTranscript _transcript._externalTranscript}} and transcript{{/any}}.",
         "skipToTranscript": "Skip to transcript"
@@ -79,9 +76,6 @@
       "_hotgraphic": {
         "ariaRegion": "Image with selectable areas. Select each button to show more information.",
         "popupPagination": "{{itemNumber}} / {{totalItems}}"
-      },
-      "_accordion": {
-        "ariaRegion": "Accordion. Select each button to expand the content."
       },
       "_graphic": {
         "ariaRegion": ""
@@ -95,46 +89,33 @@
       "_mcq": {
         "ariaRegion": "Multiple choice question. Select your option and then submit."
       },
-      "_gmcq": {
-        "ariaRegion": "Multiple choice question. Select your option and then submit."
-      },
-      "_assessmentResults": {
-        "ariaRegion": "Assessment results."
-      },
       "_slider": {
         "ariaRegion": "Slider. Respond to the question by selecting a value on the scale and then submit.",
         "labelStart": "Start of the scale",
         "labelEnd": "End of the scale"
       },
-      "_textinputinline": {
-        "ariaRegion": "This question requires you to input your answer in the textbox provided. When you have done so, select the submit button below."
+      "_narrative": {
+        "ariaRegion": "Slide show. Select the next button to progress."
       },
       "_imageSlider": {
-        "ariaRegion": ""
-      },
-      "_expose": {
-        "ariaRegion": ""
-      },
-      "_timedMcq": {
-        "ariaRegion": "This component is a timed multiple choice question. You must select the correct answer within the time limit."
-      },
-      "_chat": {
-        "ariaRegion": ""
-      },
-      "_imageTextReveal": {
         "ariaRegion": ""
       },
       "_hotgrid": {
         "ariaRegion": "Selectable image component. Select each item to show more information.",
         "popupPagination": "{{itemNumber}} / {{totalItems}}"
       },
-      "_stacklist": {
-        "ariaRegion": "This stacklist component presents a list of items. Select the button to access each item in turn.",
-        "ariaButtonLabel": "Select this button to access the next item in the stacklist."
+      "_accordion": {
+        "ariaRegion": "Accordion. Select each button to expand the content."
       },
-      "_vimeo": {
-        "ariaRegion": "This is a media component which displays a Vimeo video. Select the play / pause button to watch it.",
-        "skipToTranscript ": "Skip to transcript"
+      "_gmcq": {
+        "ariaRegion": "Multiple choice question. Select your option and then submit."
+      },
+      "_simulation": {
+        "ariaRegion": "Image with selectable areas. Select each button to show more information.",
+        "closeText": "Close",
+        "nextText": "Next",
+        "previousText": "Previous",
+        "startTourText": "Start Tour"
       },
       "_guidedtour": {
         "ariaRegion": "Tour with steps image by image. Read each step and select Next to continue.",
@@ -145,6 +126,9 @@
       }
     },
     "_extensions": {
+      "_trickle": {
+        "incompleteContent": "There is incomplete content above. You must complete this before you can proceed through the course."
+      },
       "_pageLevelProgress": {
         "pageLevelProgress": "Page sections",
         "pageLevelProgressIndicatorBar": "Page progress. Use this to listen to the list of regions in this topic and whether they're completed. You can jump directly to any that are incomplete or which sound particularly interesting. {{percentageComplete}}%",
@@ -152,14 +136,11 @@
         "pageLevelProgressEnd": "You have reached the end of the list of page sections.",
         "optionalContent": "Optional content"
       },
-      "_resources": {
-        "resources": "Additional resources."
-      },
       "_glossary": {
         "glossary": "Glossary"
       },
-      "_trickle": {
-        "incompleteContent": "There is incomplete content above. You must complete this before you can proceed through the course."
+      "_resources": {
+        "resources": "Additional resources."
       }
     }
   },

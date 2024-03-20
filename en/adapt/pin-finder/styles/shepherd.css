@@ -260,7 +260,7 @@
 
 .shepherd-element {
     border-radius: 0 !important;
-    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.67)!important;
 }
 
 .shepherd-content,

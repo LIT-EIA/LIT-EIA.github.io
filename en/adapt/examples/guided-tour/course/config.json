@@ -5,8 +5,8 @@
   "_generateSourcemap": false,
   "_forceRouteLocking": true,
   "_disableAnimationFor": [],
-  "_id": "65f2eea2fd2eed030d5a21c3",
-  "_courseId": "65f2ee9ffd2eed030d5a21b3",
+  "_id": "65fb2f428c06850d90162c44",
+  "_courseId": "65fb2f428c06850d90162c2a",
   "_drawer": {
     "_showEasing": "easeOutQuart",
     "_hideEasing": "easeInQuart",
@@ -80,5 +80,8 @@
   },
   "_trickle": {
     "_completionAttribute": "_isComplete"
+  },
+  "_devtools": {
+    "_isEnabled": true
   }
 }
