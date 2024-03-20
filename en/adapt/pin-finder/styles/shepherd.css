@@ -237,5 +237,42 @@
 }
 
 .shepherd-enabled:focus {
-    outline: none!important;
+    outline: none !important;
+}
+
+.start-tour {
+    position: absolute;
+    width: 25%;
+    height: 15%;
+    z-index: 1;
+    left: 37.5%;
+    top: 41.5%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.shepherd-element {
+    border-radius: 0 !important;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.shepherd-content,
+.shepherd-header {
+    border-radius: 0;
+}
+
+body,
+body h2,
+body a {
+    background: lightgray!important;
+    color: black !important;
 }
