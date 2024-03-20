@@ -284,10 +284,6 @@ h3 {
     background: #105067;
 }
 
-.shepherd-arrow {
-    filter: contrast(0.5);
-}
-
 .shepherd-element a {
     color: blue;
 }
@@ -299,4 +295,8 @@ h3 {
 
 .display-none {
     display: none;
+}
+
+.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow:before {
+    background-color: #105067;
 }
