@@ -15,7 +15,7 @@
             position: absolute;
             width: 100%;
             height: auto;
-            max-width: 840px;
+            max-width: 964px;
             user-select: none;
         }
 
@@ -28,7 +28,8 @@
             position: absolute;
             width: 48px;
             height: 48px;
-            /* background-color: red; */
+             background-color: white;
+             
             border-radius: 50%;
             cursor: move;
             user-select: none;
@@ -70,7 +71,7 @@
 <body>
     <div id="header">
         <img alt="Adapt" src="./images/adapt.png">
-        <h2 class="college">Hot Graphic Pin Finder - TITLE TO BE RENAMED  </h2>
+        <h2 class="college">Hot Graphic Pin Finder </h2>
         <br>
         <a lang="fr" class="langswitcher" href="#">Français</a>
     </div>
@@ -78,24 +79,32 @@
         <p class="introduction">On this page, you can find the desired positions for your step pins. First, upload your
             step image. Then upload your pins. You will be able to move the pins to your desired location.
             You will be able to copy the cooridnates (x , y percentages) corressponding coordinates</p>
-            <div id="image-container">
+
+            <div class="input-container" style= "display: flex; justify-content: center; margin-bottom: 30px;" >
                 <input type="file" id="image-input" accept="image/*" onchange="loadImage(event)">
                 <label id="upload_label" for="image-input">Upload Image</label>
 
                 <input type="file" id="pin-input" accept="image/*" onchange="loadPinImage(event)">
                 <label id="uploadPin_label" for="pin-input" style="margin-left: 20px;">Upload Pin</label>
                 <br>
-                <img id="uploaded-image" class="display-none"   style="margin-top: 20px;" alt="Uploaded Image">
-
-                <img id="target" class="display-none" src="./images/defaultImg.png" alt="Uploaded Image" class="display-none" onmousedown="startDragging(event)" ondragstart="return false"
                 
-                
-                >
-
-                <!-- <div id="target" class="display-none" onmousedown="startDragging(event)" ondragstart="return false">
-                </div> -->
             </div>
-        <div id="cheat_div"></div>
+
+                        
+            <div class = "main-container" style= "display: flex; justify-content: center;"> 
+
+                       
+   
+                    <div id="image-container"> 
+                        <img id="uploaded-image" class="display-none"    alt="Uploaded Image">
+                            <img id="target" class="display-none" src="./images/defaultPin.png" alt="Uploaded Image"  onmousedown="startDragging(event)" ondragstart="return false"
+                            
+                            >
+                    </div>
+                   
+            <div id="cheat_div"></div>
+            </div>
+           
     </div>
 
 
@@ -116,11 +125,16 @@
                 const imageContainer = document.getElementById('image-container');
 
                 const containerRect = imageContainer.getBoundingClientRect();
+                console.log(containerRect);
+                
                 const x = event.clientX - containerRect.left - target.offsetWidth / 2;
                 const y = event.clientY - containerRect.top - target.offsetHeight / 2;
 
+               
+
                 const percentageX = (x / containerRect.width) * 100;
-                const percentageY = (y / containerRect.height) * 100;
+                const percentageY = ((y / containerRect.height)) * 100;
+              
 
                 target.style.left = `${percentageX}%`;
                 target.style.top = `${percentageY}%`;
@@ -290,6 +304,8 @@
                 selectlistener();
                 const imageUrl = e.target.result;
                 uploadedImage.src = imageUrl;
+                // uploadedImage.style.height = '400px';
+                // uploadedImage.style.width = '960px';
                 target.style.left = '0%';
                 target.style.top = '4%';
                 updateCoordinates();
@@ -319,6 +335,9 @@
                 target.src = imageUrl;
                 target.style.left = '0%';
                 target.style.top = '4%';
+                target.style.background = 'none';
+              
+                
                 console.log('pin uploaded');
                 updateCoordinates();
                 // document.getElementById('uploadPin_label').classList.add('display-none');
