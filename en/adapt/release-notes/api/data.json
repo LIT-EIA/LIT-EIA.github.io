@@ -4,6 +4,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[New] Component width ratio editor to control the width ratio in percentages between the left and right components within the block. This is only applicable when using two components."
+            ]
+        },
+        "pub_date": "2024-04-11T12:00:00Z",
+        "version": "1.4.4"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Improved] Case-insensitive functionality for login email addresses, enhancing user convenience during the login process"
             ],
             "a11y": [
