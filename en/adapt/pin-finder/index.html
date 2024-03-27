@@ -65,7 +65,7 @@
 
 <body>
     <div id="header">
-        <img style="filter: invert(1)" alt="Adapt" src="./images/adapt.png">
+        <img alt="Adapt" src="./images/adapt.png">
         <h2 class="college">Guided Tour Pin Position Finder</h2>
         <a lang="fr" class="langswitcher" href="#">Français</a>
     </div>
@@ -185,7 +185,7 @@
                         on: selectedValue === 'none' ? 'bottom' : selectedValue
                     },
                     arrow: selectedValue === 'none' ? false : true,
-                    classes: 'example-step-extra-class'
+                    classes: 'border'
                 });
                 tour.start();
                 updateCoordinates();
@@ -246,7 +246,7 @@
                         on: direction === 'none' ? 'bottom' : direction
                     },
                     arrow: direction === 'none' ? false : true,
-                    classes: 'example-step-extra-class'
+                    classes: 'border'
                 });
                 tour.start();
                 updateCoordinates();
@@ -347,7 +347,7 @@
                 element: '#target',
                 on: 'right'
             },
-            classes: 'example-step-extra-class'
+            classes: 'border'
         });
 
     </script>

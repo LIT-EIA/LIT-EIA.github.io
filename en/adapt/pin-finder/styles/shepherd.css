@@ -267,10 +267,3 @@
 .shepherd-header {
     border-radius: 0;
 }
-
-body,
-body h2,
-body a {
-    background: #bfbfbf !important;
-    color: black !important;
-}
