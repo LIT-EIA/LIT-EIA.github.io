@@ -3,7 +3,7 @@
         "name": "",
         "notes": {
             "security": [
-                "[Improved] Updated IP filtering for previews on the ESDC network to ensure alignment with ongoing network modernization efforts."
+                "[Improved] Updated IP filtering for previews on the ESDC network to ensure alignment with network modernization."
             ],
             "authoring": [
              "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components.",
