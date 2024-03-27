@@ -3,7 +3,7 @@
         "name": "",
         "notes": {
             "security": [
-                "[New] IP filtering update to align with Network Modernization"
+                "[Improved] IP filtering update to align with Network Modernization"
             ],
             "authoring": [
              "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components.",
