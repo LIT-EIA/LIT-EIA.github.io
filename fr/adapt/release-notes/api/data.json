@@ -2,6 +2,9 @@
       {
         "name": "",
         "notes": {
+            "security": [
+                "[Amélioré] Mise à jour du filtrage IP pour les prévisualisations sur le réseau EDSC afin d'assurer l'alignement avec la modernisation du réseau."
+            ],
             "authoring": [
                 "[Nouveau] L'éditeur de rapport de largeur des composants qui permet de contrôler le rapport de largeur en pourcentage entre les composants de gauche et de droite dans un bloc. Cette fonction ne s'applique qu'en cas d'utilisation de deux composants."
             ]
