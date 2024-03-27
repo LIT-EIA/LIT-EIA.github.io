@@ -3,6 +3,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Nouveau] L'éditeur de rapport de largeur des composants qui permet de contrôler le rapport de largeur en pourcentage entre les composants de gauche et de droite dans un bloc. Cette fonction ne s'applique qu'en cas d'utilisation de deux composants."
+            ]
+        },
+        "pub_date": "2024-04-11T12:00:00Z",
+        "version": "1.4.4"
+      },
+      {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Amélioré] Fonctionnalité d'insensibilité à la casse pour les adresses électroniques de connexion, améliorant le confort d'utilisation lors de la procédure de connexion"
             ],
             "a11y": [
