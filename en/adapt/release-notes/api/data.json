@@ -3,11 +3,19 @@
         "name": "",
         "notes": {
             "authoring": [
-             "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components.",
-             "[Fixed] Cancel button with non visible text introduced in new theme."
+                "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components",
+                "[Fixed] Cancel button with non visible text introduced in new theme",
+                "[Fixed] Ribbon message showing on reset password page",
+                "[Fixed] Some cancel buttons displayed white on white",
+                "[Improved] Extended file size limit from 15 MB to 20 MB, enabling users to upload longer videos"
             ],
             "theme": [
-             "[New] Half-width component sizes are set dynamically from the block component width ratio"
+                "[New] Half-width component sizes are set dynamically from the block component width ratio",
+                "[New] Narrative component sections sizes are set dynamically from the narrative width ratio"
+            ],
+            "components": [
+                "[New] Slider on the narrative component form to select the width ratio. The slider allows you to set different sizes for the text and image parts",
+                "[New] Added captions support for Inuktitut and Inuinnaqtun in media component"
             ]
         },
         "pub_date": "2024-04-11T12:00:00Z",
