@@ -47,7 +47,8 @@
                 "[New] Abbreviation button to create abbr tags visually",
                 "[New] Special characters button allowing to insert various HTML characters (e.g. equation signs)",
                 "[Improved] Language of parts button, now featuring only the opposite language of the course",
-                "[Improved] Copy-pasting, allowing better results when copying from the Office suite"
+                "[Improved] Copy-pasting, allowing better results when copying from the Office suite",
+                "[Fixed] The intermittent greyed-out text field issue by upgrading version of CK Editor"
             ]
         },
         "pub_date": "2024-03-07T12:00:00Z",
