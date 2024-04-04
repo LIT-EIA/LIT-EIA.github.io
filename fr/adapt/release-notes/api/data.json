@@ -1,18 +1,29 @@
 [
-      {
+    {
         "name": "",
         "notes": {
             "security": [
-                "[Amélioré] Mise à jour du filtrage IP pour les prévisualisations sur le réseau EDSC afin d'assurer l'alignement avec la modernisation du réseau."
+                "[Amélioré] Mise à jour du filtrage IP pour les prévisualisations sur le réseau ESDC pour garantir l'alignement avec la modernisation du réseau."
             ],
             "authoring": [
-                "[Nouveau] L'éditeur de rapport de largeur des composants qui permet de contrôler le rapport de largeur en pourcentage entre les composants de gauche et de droite dans un bloc. Cette fonction ne s'applique qu'en cas d'utilisation de deux composants."
+                "[Nouveau] Curseur sur le formulaire de bloc pour sélectionner le rapport de largeur du composant. Le curseur vous permet de définir différentes tailles de composants de demi-largeur",
+                "[Corrigé] Bouton Annuler avec texte non visible introduit dans le nouveau thème",
+                "[Corrigé] Message ruban s'affichant sur la page de réinitialisation du mot de passe",
+                "[Amélioré] Limite de taille de fichier étendue de 15 Mo à 20 Mo, permettant aux utilisateurs de téléverser des vidéos plus longues"
+            ],
+            "theme": [
+                "[Nouveau] Les tailles des composants de demi-largeur sont définies dynamiquement à partir du rapport de largeur du composant sur le bloc",
+                "[Nouveau] Les tailles des sections de composants narratifs sont définies dynamiquement à partir du rapport de largeur narratif"
+            ],
+            "components": [
+                "[Nouveau] Curseur sur le formulaire de composant narratif pour sélectionner le rapport de largeur. Le curseur vous permet de définir différentes tailles pour les parties texte et image",
+                "[Nouveau] Support pour sous-titres ajouté pour l'inuktitut et l'inuinnaqtun dans le composant multimédia"
             ]
         },
-        "pub_date": "2024-04-11T12:00:00Z",
+        "pub_date": "2024-04-15T12:00:00Z",
         "version": "1.4.4"
-      },
-      {
+    },
+    {
         "name": "",
         "notes": {
             "authoring": [
@@ -41,8 +52,8 @@
         },
         "pub_date": "2024-03-07T12:00:00Z",
         "version": "1.4.3"
-      },
-      {
+    },
+    {
         "name": "",
         "notes": {
             "authoring": [
@@ -51,8 +62,8 @@
         },
         "pub_date": "2023-12-20T11:00:00Z",
         "version": "PATCH"
-      },
-      {
+    },
+    {
         "name": "",
         "notes": {
             "authoring": [
@@ -61,8 +72,8 @@
         },
         "pub_date": "2023-12-01T13:30:00Z",
         "version": "PATCH"
-      },
-      {
+    },
+    {
         "name": "",
         "notes": {
             "security": [
@@ -250,7 +261,7 @@
         },
         "pub_date": "2022-08-19T12:00:00Z",
         "version": "1.2.3"
-    },  
+    },
     {
         "name": "",
         "notes": {
@@ -260,7 +271,7 @@
         },
         "pub_date": "2022-06-22T12:00:00Z",
         "version": "1.2.2"
-    },     
+    },
     {
         "name": "",
         "notes": {
@@ -275,7 +286,7 @@
         },
         "pub_date": "2022-03-12T12:00:00Z",
         "version": "1.2.1"
-    },     
+    },
     {
         "name": "",
         "notes": {
@@ -284,7 +295,7 @@
                 "[Corrigé] Fonctionnalité de la copie des articles, assurant un placement précis",
                 "[Corrigé] Problème où la navigation supérieure obstruait parfois le bouton d'enregistrement pour certains utilisateurs",
                 "[Amélioré] Performances lors de la génération d'aperçus"
-            ], 
+            ],
             "theme": [
                 "[Nouveau] Nouvelle classe de style icône pour les composants Texte, bien que les icônes soient en attente",
                 "[Corrigé] Styles de liste à puces imbriquées pour correspondre à ceux de l'outil de création",
@@ -313,7 +324,7 @@
     {
         "name": "",
         "notes": {
-            "authoring":[
+            "authoring": [
                 "[Nouveau] Certaines parties de l'interface sont disponibles en français"
             ],
             "tools": [
