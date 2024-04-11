@@ -18,6 +18,9 @@
             "components": [
                 "[New] Slider on the narrative component form to select the width ratio. The slider allows you to set different sizes for the text and image parts",
                 "[New] Added captions support for Inuktitut and Inuinnaqtun in media component"
+            ],
+            "ckeditor": [
+                "[New] The caption is included in the table toolbar"
             ]
         },
         "pub_date": "2024-04-15T12:00:00Z",
