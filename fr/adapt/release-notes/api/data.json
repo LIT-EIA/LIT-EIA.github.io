@@ -18,6 +18,9 @@
             "components": [
                 "[Nouveau] Curseur sur le formulaire de composant narratif pour sélectionner le rapport de largeur. Le curseur vous permet de définir différentes tailles pour les parties texte et image",
                 "[Nouveau] Support pour sous-titres ajouté pour l'inuktitut et l'inuinnaqtun dans le composant multimédia"
+            ],
+            "ckeditor": [
+                "[Nouveau] La légende est ajoutée à la barre d'outils du tableau"
             ]
         },
         "pub_date": "2024-04-15T12:00:00Z",
