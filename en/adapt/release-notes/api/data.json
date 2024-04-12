@@ -17,8 +17,7 @@
                 "[Fixed] Table captions are now on top of tables"
             ],
             "components": [
-                "[New] Slider on the narrative component form to select the width ratio. The slider allows you to set different sizes for the text and image parts",
-                "[New] Added captions support for Inuktitut and Inuinnaqtun in media component"
+                "[New] Slider on the narrative component form to select the width ratio. The slider allows you to set different sizes for the text and image parts"
             ],
             "ckeditor": [
                 "[New] The caption is now included in the table toolbar"

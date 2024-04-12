@@ -17,8 +17,7 @@
                 "[Corrigé] Les légendes des tableaux sont désormais placées au-dessus des tableaux"
             ],
             "components": [
-                "[Nouveau] Curseur sur le formulaire de composant narratif pour sélectionner le rapport de largeur. Le curseur vous permet de définir différentes tailles pour les parties texte et image",
-                "[Nouveau] Support pour sous-titres ajouté pour l'inuktitut et l'inuinnaqtun dans le composant multimédia"
+                "[Nouveau] Curseur sur le formulaire de composant narratif pour sélectionner le rapport de largeur. Le curseur vous permet de définir différentes tailles pour les parties texte et image"
             ],
             "ckeditor": [
                 "[Nouveau] La légende est maintenant ajoutée à la barre d'outils du tableau"
