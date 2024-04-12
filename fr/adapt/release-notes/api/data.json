@@ -13,14 +13,15 @@
             ],
             "theme": [
                 "[Nouveau] Les tailles des composants de demi-largeur sont définies dynamiquement à partir du rapport de largeur du composant sur le bloc",
-                "[Nouveau] Les tailles des sections de composants narratifs sont définies dynamiquement à partir du rapport de largeur narratif"
+                "[Nouveau] Les tailles des sections de composants narratifs sont définies dynamiquement à partir du rapport de largeur narratif",
+                "[Corrigé] Les légendes des tableaux sont désormais placées au-dessus des tableaux"
             ],
             "components": [
                 "[Nouveau] Curseur sur le formulaire de composant narratif pour sélectionner le rapport de largeur. Le curseur vous permet de définir différentes tailles pour les parties texte et image",
                 "[Nouveau] Support pour sous-titres ajouté pour l'inuktitut et l'inuinnaqtun dans le composant multimédia"
             ],
             "ckeditor": [
-                "[Nouveau] La légende est ajoutée à la barre d'outils du tableau"
+                "[Nouveau] La légende est maintenant ajoutée à la barre d'outils du tableau"
             ]
         },
         "pub_date": "2024-04-15T12:00:00Z",
