@@ -2,9 +2,38 @@
     {
         "name": "",
         "notes": {
-            "security": [
-                "[Improved] Updated IP filtering for previews on the ESDC network to ensure alignment with network modernization."
+            "components": [
+                "[New] Guided Tour component available. This component allows to create a step by step tour over a set of images",
+                "[New] Accessibility Statement component available. This component allows to display an accessibility statement to learners at course start",
+                "[Improved] Media component now renders an html5 audio player",
+                "[Improved] Media component video player can now be used with closed captions tracks of any languages, including Inuktitut and Inuinnaqtun",
+                "[Fixed] Media component tracking on play/ended",
+                "[Removed] Unused options from media component form",
+                "[Removed] Script that fixed the player for accessbility post-render in Adapt-accessibilityfixes but was causing other issues"
             ],
+            "tools": [
+                "[New] Published Adapt Wiki",
+                "[New] Guided Tour Pin Location Finder Tool is now available to quickly find location of guided tour's pins",
+                "[New] Hot Graphic Pin Location Finder Tool is now available to quickly find location of hot graphic's pins"
+            ],
+            "a11y": [
+                "[Fixed] Significant changes to the app's HTML/CSS to ensure logical focus order when using the keyboard and functionality when CSS is disabled",
+                "[Fixed] Context menus (gear icon) not associated in a logical order with their parent element",
+                "[Fixed] To avoid truncation in the title bar, the page options are now in a dropdown menu on smaller screens",
+                "[Fixed] To avoid truncation in the navigation bar, the user login information and logout button are now in a dropdown menu",
+                "[Fixed] Dropdown menus now feature a focus trap for keyboard navigation",
+                "[Fixed] Item lists overflowing out of bound when using very long strings and preventing re-ordering by drag-and-drop",
+                "[Fixed] Allowing mobile screen sizes with a meta tag",
+                "[Fixed] To avoid truncation in the main content window, the main sidebar can now fold on mobile view",
+                "[Fixed] Multiple CSS adjustments for mobile screens"
+            ]
+        },
+        "pub_date": "2024-05-17T12:00:00Z",
+        "version": "1.4.5"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components",
                 "[Fixed] Cancel button with non visible text introduced in new theme",
