@@ -34,6 +34,9 @@
     {
         "name": "",
         "notes": {
+            "security": [
+                "[Improved] Updated IP filtering for previews on the ESDC network to ensure alignment with network modernization."
+            ],
             "authoring": [
                 "[New] Slider on the block form to select the component width ratio. The slider allows you to set different size of half width components",
                 "[Fixed] Cancel button with non visible text introduced in new theme",
