@@ -11,8 +11,11 @@
                 "[Removed] Unused options from media component form",
                 "[Removed] Script that fixed the player for accessbility post-render in Adapt-accessibilityfixes but was causing other issues"
             ],
+            "authoring": [
+                "[Improved] Item sidebar is now larger to enhanced user experience"
+            ],
             "tools": [
-                "[New] Published Adapt Wiki",
+                "[New] Published Adapt Wiki to offer users a self-service platform for accessing current information, troubleshooting guides, and community insights, enhancing their web app experience",
                 "[New] Guided Tour Pin Location Finder Tool is now available to quickly find location of guided tour's pins",
                 "[New] Hot Graphic Pin Location Finder Tool is now available to quickly find location of hot graphic's pins"
             ],
