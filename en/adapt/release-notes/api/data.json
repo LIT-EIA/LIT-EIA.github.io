@@ -9,6 +9,7 @@
                 "[Improved] Media component video player can now be used with closed captions tracks of any languages, including Inuktitut and Inuinnaqtun",
                 "[Fixed] Media component tracking on play/ended",
                 "[Removed] Unused options from media component form",
+                "[Removed] Strapline field from hotgraphic component, the strapline UI now uses the displayTitle",
                 "[Removed] Script that fixed the player for accessbility post-render in Adapt-accessibilityfixes but was causing other issues"
             ],
             "authoring": [
