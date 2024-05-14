@@ -28,6 +28,7 @@
             "a11y": [
                 "[Fixed] Significant changes to the app's HTML/CSS to ensure logical focus order when using the keyboard and functionality when CSS is disabled",
                 "[Fixed] Context menus (gear icon) not associated in a logical order with their parent element",
+                "[Fixed] Context menus (gear icon) don't have a valid title or aria-label",
                 "[Fixed] To avoid truncation in the title bar, the page options are now in a dropdown menu on smaller screens",
                 "[Fixed] To avoid truncation in the navigation bar, the user login information and logout button are now in a dropdown menu",
                 "[Fixed] Dropdown menus now feature a focus trap for keyboard navigation",
