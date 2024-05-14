@@ -8,9 +8,14 @@
                 "[Improved] Media component now renders an html5 audio player",
                 "[Improved] Media component video player can now be used with closed captions tracks of any languages, including Inuktitut and Inuinnaqtun",
                 "[Fixed] Media component tracking on play/ended",
+                "[Fixed] Duplication issue with hotgraphic component when zomming/resizing screen",
                 "[Removed] Unused options from media component form",
-                "[Removed] Strapline field from hotgraphic component, the strapline UI now uses the displayTitle",
+                "[Removed] Strapline field from hotgraphic and narrative components, the strapline UI now uses the displayTitle",
                 "[Removed] Script that fixed the player for accessbility post-render in Adapt-accessibilityfixes but was causing other issues"
+            ],
+            "theme": [
+                "[Fixed] Table does not display the same as in CK editor",
+                "[Fixed] Narrative width ratio not displayed properly on mobile"
             ],
             "authoring": [
                 "[Improved] Item sidebar is now larger to enhanced user experience"
@@ -30,6 +35,9 @@
                 "[Fixed] Allowing mobile screen sizes with a meta tag",
                 "[Fixed] To avoid truncation in the main content window, the main sidebar can now fold on mobile view",
                 "[Fixed] Multiple CSS adjustments for mobile screens"
+            ],
+            "ckeditor": [
+                "[Improved] The tables are now 100% width by default"
             ]
         },
         "pub_date": "2024-06-06T12:00:00Z",
