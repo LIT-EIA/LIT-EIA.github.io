@@ -1,797 +1,804 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
 
 <head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-   <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
         Modified by CSPS Learning Services
          -->
-   <title>MeD Online Training</title>
-   <meta content="width=device-width, initial-scale=1" name="viewport" />
-   <!-- Meta data -->
-   <meta name="description" content="" />
-   <!-- Meta data-->
-   <!--[if gte IE 9 | !IE ]><!-->
-   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-   <link href="./WET/assets/favicon.ico" rel="icon" type="image/x-icon" />
-   <link rel="stylesheet" href="./WET/css/theme.css" />
-   <!--<![endif]-->
-   <link rel="stylesheet" href="./core/js/lib/jquery/plugins/fullpage/fullpage.css" />
-   <link rel="stylesheet" href="./theme/main.css" />
-   <link rel="stylesheet" href="./theme/plugins/qsbeta/qsbeta.css" />
-   <link rel="stylesheet" class="theme" id="theme-style" href="./theme/theme.css" />
-   <link rel="stylesheet" class="printcss" id="printstyle" href="./theme/csps_print.css" type="text/css" media="print">
-   <link rel="stylesheet" href="./common/css/custom.css" />
-   <script data-main="core/js/main" src="./core/js/lib/require.js"></script>
-   <noscript>
+    <title>MeD Online Training</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- Meta data -->
+    <meta name="description" content="" />
+    <!-- Meta data-->
+    <!--[if gte IE 9 | !IE ]><!-->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="./WET/assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="./WET/css/theme.css" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="./core/js/lib/jquery/plugins/fullpage/fullpage.css" />
+    <link rel="stylesheet" href="./theme/main.css" />
+    <link rel="stylesheet" href="./theme/plugins/qsbeta/qsbeta.css" />
+    <link rel="stylesheet" class="theme" id="theme-style" href="./theme/theme.css" />
+    <link rel="stylesheet" class="printcss" id="printstyle" href="./theme/csps_print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="./common/css/custom.css" />
+    <script data-main="core/js/main" src="./core/js/lib/require.js"></script>
+    <noscript>
       <link rel="stylesheet" href="./WET/css/noscript.css" />
    </noscript>
 </head>
 
 <body vocab="http://schema.org/" typeof="WebPage">
-   <ul id="wb-tphp">
-      <li class="wb-slc">
-         <a class="wb-sl" href="#dynamic_content">Skip to main content</a>
-      </li>
-   </ul>
-   <header role="banner" class="loading">
-      <div id="wb-bnr">
-         <div id="wb-bar">
-            <div class="top-menu container">
-               <div class="row">
-                  <section id="wb-lng" class="visible-md visible-lg">
-                     <h2 id="toolbar-title">Toolbar</h2>
-                     <ul class="text-right" role="menu" aria-labelledby="toolbar-title">
-                        <li role="menuitem"><a href="#" class="lang hide" lang="fr" hreflang="fr">Français</a><span class="wb-inv" lang="fr">(Changer de langue)</span></li>
-                        <li role="menuitem"><a href="#" class="home hide" title="Home">Home</a></li>
-                        <li role="menuitem"><a class="help wb-lbx hide" data-effect="mfp-zoom-in" title="Help" href="#">Help</a></li>
-                        <li role="menuitem"><a href="#" class="toolbox hide" aria-haspopup="true" title="Toolbox">Toolbox</a>
-                           <ul class='list-unstyled open tb-container' style="display:none;" aria-hidden="true" role="menu">
-                              <li role="menuitem"><a class="wb-lbx tb-item favorites hide" data-effect="mfp-zoom-in" title="Favourites" href="#">Favourites</a></li>
-                              <li role="menuitem"><a class="wb-lbx tb-item glossary hide" data-effect="mfp-zoom-in" title="Glossary" href="#">Glossary</a></li>
-                              <li role="menuitem"><a class="wb-lbx tb-item resources hide" data-effect="mfp-zoom-in" title="Resources" href="#">Resources</a></li>
-                           </ul>
-                        </li>
-                        <li role="menuitem"><a class="print hide" title="Print" href="javascript:print();">Print</a></li>
-                        <li role="menuitem"><a class="sitemap wb-lbx hide" data-effect="mfp-zoom-in" title="Sitemap" href="#sitemap_pop">Sitemap</a></li>
-                        <li role="menuitem"><a href="#" title="Exit" class="quit hide">Exit</a></li>
-                     </ul>
-                  </section>
-                  <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
-                     <h2>Mobile</h2>
-                     <ul class="pnl-btn list-inline text-right">
-                        <li><a href="#mb-pnl" title="menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Menu</span></span></span></a></li>
-                     </ul>
-                     <div id="mb-pnl"></div>
-                  </section>
-               </div>
+    <ul id="wb-tphp">
+        <li class="wb-slc">
+            <a class="wb-sl" href="#dynamic_content">Skip to main content</a>
+        </li>
+    </ul>
+    <header role="banner" class="loading">
+        <div id="wb-bnr">
+            <div id="wb-bar">
+                <div class="top-menu container">
+                    <div class="row">
+                        <section id="wb-lng" class="visible-md visible-lg">
+                            <h2 id="toolbar-title">Toolbar</h2>
+                            <ul class="text-right" role="menu" aria-labelledby="toolbar-title">
+                                <li role="menuitem"><a href="#" class="lang hide" lang="fr" hreflang="fr">Français</a><span class="wb-inv" lang="fr">(Changer de langue)</span></li>
+                                <li role="menuitem"><a href="#" class="home hide" title="Home">Home</a></li>
+                                <li role="menuitem"><a class="help wb-lbx hide" data-effect="mfp-zoom-in" title="Help" href="#">Help</a></li>
+                                <li role="menuitem"><a href="#" class="toolbox hide" aria-haspopup="true" title="Toolbox">Toolbox</a>
+                                    <ul class='list-unstyled open tb-container' style="display:none;" aria-hidden="true" role="menu">
+                                        <li role="menuitem"><a class="wb-lbx tb-item favorites hide" data-effect="mfp-zoom-in" title="Favourites" href="#">Favourites</a></li>
+                                        <li role="menuitem"><a class="wb-lbx tb-item glossary hide" data-effect="mfp-zoom-in" title="Glossary" href="#">Glossary</a></li>
+                                        <li role="menuitem"><a class="wb-lbx tb-item resources hide" data-effect="mfp-zoom-in" title="Resources" href="#">Resources</a></li>
+                                    </ul>
+                                </li>
+                                <li role="menuitem"><a class="print hide" title="Print" href="javascript:print();">Print</a></li>
+                                <li role="menuitem"><a class="sitemap wb-lbx hide" data-effect="mfp-zoom-in" title="Sitemap" href="#sitemap_pop">Sitemap</a></li>
+                                <li role="menuitem"><a href="#" title="Exit" class="quit hide">Exit</a></li>
+                            </ul>
+                        </section>
+                        <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+                            <h2>Mobile</h2>
+                            <ul class="pnl-btn list-inline text-right">
+                                <li><a href="#mb-pnl" title="menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Menu</span></span></span></a></li>
+                            </ul>
+                            <div id="mb-pnl"></div>
+                        </section>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="container">
-            <div class="row">
-               <div id="wb-sttl">
-                  <a href="#" tabindex="-1">
-                     <span>CSPS e-learning Framework</span>
-                  </a>
-               </div>
+            <div class="container">
+                <div class="row">
+                    <div id="wb-sttl">
+                        <a href="#" tabindex="-1">
+                            <span>CSPS e-learning Framework</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <nav role="navigation" id="wb-sm" data-ajax-replace="./content/supermenu/supermenu_en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg supermenu-wrapper" typeof="SiteNavigationElement" aria-label="Main Navigation">
-         <div class="container nvbar">
-            <h2>Topics menu</h2>
-         </div>
-      </nav>
-   </header>
-   <main role="main" property="mainContentOfPage" class="container loading">
-      <span class="spinner"></span>
-      <div class="breadcrumb visible-xs visible-sm row"></div>
-      <div id="dynamic_content"></div>
-   </main>
-   <footer role="contentinfo" id="wb-info" class="visible-xxs visible-xs visible-sm visible-md visible-lg wb-navcurr loading">
-      <div class="container">
-         <div id="globalNarrationWrapper">
-         
-            <!-- m0 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m0_Player" class="wb-mltmd">
-                  <audio title="Theme music" loop="loop" preload="metadata" crossorigin="anonymous" aria-describedby="m0_Transcript">
+        </div>
+        <nav role="navigation" id="wb-sm" data-ajax-replace="./content/supermenu/supermenu_en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg supermenu-wrapper" typeof="SiteNavigationElement" aria-label="Main Navigation">
+            <div class="container nvbar">
+                <h2>Topics menu</h2>
+            </div>
+        </nav>
+    </header>
+    <main role="main" property="mainContentOfPage" class="container loading">
+        <span class="spinner"></span>
+        <div class="breadcrumb visible-xs visible-sm row"></div>
+        <div id="dynamic_content"></div>
+    </main>
+    <footer role="contentinfo" id="wb-info" class="visible-xxs visible-xs visible-sm visible-md visible-lg wb-navcurr loading">
+        <div class="container">
+            <div id="globalNarrationWrapper">
+
+                <!-- m0 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m0_Player" class="wb-mltmd">
+                            <audio title="Theme music" loop="loop" preload="metadata" crossorigin="anonymous" aria-describedby="m0_Transcript">
                     <source src="content/medias/audio/music_zapsplat_superhero_theme_orchestral.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m0_Transcript">
-                <summary>Transcript</summary>
-                <p>[music playing]</p>
-              </details>
-            </div>
-            
-            <!-- m1-0 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-0_Player" class="wb-mltmd">
-                  <audio title="Narration audio" preload="metadata" crossorigin="anonymous" aria-describedby="m1-0_Transcript">
+                        </figure>
+                    </div>
+                    <details id="m0_Transcript">
+                        <summary>Transcript</summary>
+                        <p>[music playing]</p>
+                    </details>
+                </div>
+
+                <!-- m1-0 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-0_Player" class="wb-mltmd">
+                            <audio title="Narration audio" preload="metadata" crossorigin="anonymous" aria-describedby="m1-0_Transcript">
                     <source src="content/medias/audio/en/slide_1.2.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-0_Transcript">
-                <summary>Transcript</summary>
-                <p>Your mission: Protect the Department from the Invaders. Select your Guardian to begin and confirm your choice.</p>
-              </details>
-            </div>
-            
-            <!-- m1-1 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-1_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-1_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-0_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Your mission: Protect the Department from the Invaders. Select your Guardian to begin and confirm your choice.</p>
+                    </details>
+                </div>
+
+                <!-- m1-1 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-1_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-1_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.3.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-1_Transcript">
-                <summary>Transcript</summary>
-                <p>What is Phishing?</p>
-                <p>Phishing is one of the most popular ways for cyber criminals to attack people and organizations. It allows them to steal personal and financial information.</p>
-                <p>Sending emails is easier than hacking into a department’s firewall, and it is a highly successful way of attacking organizations.</p>
-                <p>ESDC has one of the largest holdings of personal information in the Government of Canada, making us a prime target for phishing attacks.</p>
-                <p>Phishing attacks are a real threat to our department. In the last year, there were over 8,000 malicious emails reported by ESDC employees. More than 1,100 of those were suspected phishing attacks. This is despite technology which blocks thousands of more emails every day.</p>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-2 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-2_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-2_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-1_Transcript">
+                        <summary>Transcript</summary>
+                        <p>What is Phishing?</p>
+                        <p>Phishing is one of the most popular ways for cyber criminals to attack people and organizations. It allows them to steal personal and financial information.</p>
+                        <p>Sending emails is easier than hacking into a department’s firewall, and it is a highly successful way of attacking organizations.</p>
+                        <p>ESDC has one of the largest holdings of personal information in the Government of Canada, making us a prime target for phishing attacks.</p>
+                        <p>Phishing attacks are a real threat to our department. In the last year, there were over 8,000 malicious emails reported by ESDC employees. More than 1,100 of those were suspected phishing attacks. This is despite technology which
+                            blocks thousands of more emails every day.</p>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-2 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-2_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-2_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.4.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-2_Transcript">
-                <summary>Transcript</summary>
-                <p>To defend the Department, you need to learn the HALT method. Use HALT to help you identify phishing e-mails.</p>
-                <p>Click the following words to learn more.</p>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-3 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-3_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-3_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-2_Transcript">
+                        <summary>Transcript</summary>
+                        <p>To defend the Department, you need to learn the HALT method. Use HALT to help you identify phishing e-mails.</p>
+                        <p>Click the following words to learn more.</p>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-3 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-3_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-3_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.9.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-3_Transcript">
-                <summary>Transcript</summary>
-                <p>Click the folder to discover your next mission.</p>
-              </details>
-            </div>
+                        </figure>
+                    </div>
+                    <details id="m1-3_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Click the folder to discover your next mission.</p>
+                    </details>
+                </div>
 
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-3_p1_Player" class="wb-mltmd">
-                  <audio title="Mission page 1 audio" aria-describedby="m1-3_p1_Transcript" preload="metadata" crossorigin="anonymous">
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-3_p1_Player" class="wb-mltmd">
+                            <audio title="Mission page 1 audio" aria-describedby="m1-3_p1_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.10.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-3_p1_Transcript">
-                <summary>Transcript</summary>
-                <p>Hackers are trying to break into our network to steal our valuable information by sending phishing emails to our employees.</p>
-                <p>We need your help as a Defender.</p>
-                <p>Use the HALT method to find, report and delete all the phishing attacks.</p>
-              </details>
-            </div>
+                        </figure>
+                    </div>
+                    <details id="m1-3_p1_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Hackers are trying to break into our network to steal our valuable information by sending phishing emails to our employees.</p>
+                        <p>We need your help as a Defender.</p>
+                        <p>Use the HALT method to find, report and delete all the phishing attacks.</p>
+                    </details>
+                </div>
 
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-3_p2_Player" class="wb-mltmd">
-                  <audio title="Mission page 2 audio" aria-describedby="m1-3_p2_Transcript" preload="metadata" crossorigin="anonymous">
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-3_p2_Player" class="wb-mltmd">
+                            <audio title="Mission page 2 audio" aria-describedby="m1-3_p2_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.11.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-3_p2_Transcript">
-                <summary>Transcript</summary>
-                <p>A few hints before you begin your mission…</p>
-                <p>Pay careful attention to emails if they:</p>
-                <ul>
-                  <li>Request personal information,</li>
-                  <li>Extort or bait you (e.g. send money), or</li>
-                  <li>Have a sense of urgency to respond/act on a request (e.g. you have 24 hours to comply).</li>
-                </ul>
-                <p>Other clues that you should watch out for:</p>
-                <ul>
-                  <li>Generic greeting</li>
-                  <li>Time stamp outside normal business hours</li>
-                  <li>Spelling and grammatical errors</li>
-                  <li>No signature block or contact information</li>
-                </ul>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-4 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-4_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-4_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-3_p2_Transcript">
+                        <summary>Transcript</summary>
+                        <p>A few hints before you begin your mission…</p>
+                        <p>Pay careful attention to emails if they:</p>
+                        <ul>
+                            <li>Request personal information,</li>
+                            <li>Extort or bait you (e.g. send money), or</li>
+                            <li>Have a sense of urgency to respond/act on a request (e.g. you have 24 hours to comply).</li>
+                        </ul>
+                        <p>Other clues that you should watch out for:</p>
+                        <ul>
+                            <li>Generic greeting</li>
+                            <li>Time stamp outside normal business hours</li>
+                            <li>Spelling and grammatical errors</li>
+                            <li>No signature block or contact information</li>
+                        </ul>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-4 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-4_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-4_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.12.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-4_Transcript">
-                <summary>Transcript</summary>
-                <p>Because you are a Defender, we value your analytical skills. Look at the next 10 emails and for every message:</p>
-                <ol>
-                  <li>Perform the <abbr>HALT</abbr> method.</li>
-                  <li>Decide if the email is a phishing attempt or if it’s safe and click on the appropriate button (&ldquo;Report this E-mail&rdquo; or &ldquo;Safe&rdquo;).</li>
-                  <li>If you report the email as phishing, find and click three (3) clues that prove it is a phishing attempt. You have five (5) attempts to find the three clues.</li>
-                </ol>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-5 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-5_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="transcriptWrapper" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-4_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Because you are a Defender, we value your analytical skills. Look at the next 10 emails and for every message:</p>
+                        <ol>
+                            <li>Perform the <abbr>HALT</abbr> method.</li>
+                            <li>Decide if the email is a phishing attempt or if it’s safe and click on the appropriate button (&ldquo;Report this E-mail&rdquo; or &ldquo;Safe&rdquo;).</li>
+                            <li>If you report the email as phishing, find and click three (3) clues that prove it is a phishing attempt. You have five (5) attempts to find the three clues.</li>
+                        </ol>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-5 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-5_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="transcriptWrapper" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_1.13.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-5_Transcript">
-                <summary>Transcript</summary>
-                <p>Rules:</p>
-                <ul>
-                  <li>10 points for each right answer (Report or Safe)</li>
-                  <li>5 points for each clue found</li>
-                  <li>10 bonus points for 5 right answers in a row</li>
-                </ul>
-                <p>In addition to using <abbr>HALT</abbr>, trust your common sense and intuition. If something feels off to you, it probably is!</p>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-6 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_2_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_2_Transcript">
+                        </figure>
+                    </div>
+                    <details id="m1-5_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Rules:</p>
+                        <ul>
+                            <li>10 points for each right answer (Report or Safe)</li>
+                            <li>5 points for each clue found</li>
+                            <li>10 bonus points for 5 right answers in a row</li>
+                        </ul>
+                        <p>In addition to using <abbr>HALT</abbr>, trust your common sense and intuition. If something feels off to you, it probably is!</p>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-6 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_2_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_2_Transcript">
                     <source src="content/medias/audio/en/slide_2.2.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_2_Transcript">
-                <summary>Transcript</summary>
-                <p>You are right to report this email, it seems suspicious. Good job Defender!</p>
-                <p>What are the clues that prompted you to report it?</p>
-                <p>Identify three clues.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_3_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_3_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_2_Transcript">
+                        <summary>Transcript</summary>
+                        <p>You are right to report this email, it seems suspicious. Good job Defender!</p>
+                        <p>What are the clues that prompted you to report it?</p>
+                        <p>Identify three clues.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_3_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_3_Transcript">
                     <source src="content/medias/audio/en/slide_2.3.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_3_Transcript">
-                <summary>Transcript</summary>
-                <p>Defender, we were attacked.</p>
-                <p>You missed the signs this time, but keep an eye out in the future.</p>
-                <p>Don’t get discouraged! Your help is invaluable.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_4_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_4_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_3_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Defender, we were attacked.</p>
+                        <p>You missed the signs this time, but keep an eye out in the future.</p>
+                        <p>Don’t get discouraged! Your help is invaluable.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_4_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_4_Transcript">
                     <source src="content/medias/audio/en/slide_2.4.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_4_Transcript">
-                <summary>Transcript</summary>
-                <p>Good try, but it’s not a clue!</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_5_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_5_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_4_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Good try, but it’s not a clue!</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_5_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_5_Transcript">
                     <source src="content/medias/audio/en/slide_2.5.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_5_Transcript">
-                <summary>Transcript</summary>
-                <p>You’re right!</p>
-                <p>This email address is not a legitimate address because of changes to the email ending (domain).</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_6_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_6_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_5_Transcript">
+                        <summary>Transcript</summary>
+                        <p>You’re right!</p>
+                        <p>This email address is not a legitimate address because of changes to the email ending (domain).</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_6_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_6_Transcript">
                     <source src="content/medias/audio/en/slide_2.6.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_6_Transcript">
-                <summary>Transcript</summary>
-                <p>Yes!</p>
-                <p>This is a strange request that would not be made by our IT team.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_7_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_7_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_6_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Yes!</p>
+                        <p>This is a strange request that would not be made by our IT team.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_7_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_7_Transcript">
                     <source src="content/medias/audio/en/slide_2.7.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_7_Transcript">
-                <summary>Transcript</summary>
-                <p>When you HOVER over this link, you can see it doesn’t go to the website shown on the screen.</p>
-                <p>Well spotted!</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_8_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_8_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_7_Transcript">
+                        <summary>Transcript</summary>
+                        <p>When you HOVER over this link, you can see it doesn’t go to the website shown on the screen.</p>
+                        <p>Well spotted!</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_8_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_8_Transcript">
                     <source src="content/medias/audio/en/slide_2.8.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_8_Transcript">
-                <summary>Transcript</summary>
-                <p>You are right!</p>
-                <p>Hackers often make urgent requests and put pressure on you to act.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_9_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_9_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_8_Transcript">
+                        <summary>Transcript</summary>
+                        <p>You are right!</p>
+                        <p>Hackers often make urgent requests and put pressure on you to act.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_9_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_9_Transcript">
                     <source src="content/medias/audio/en/slide_2.9.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_9_Transcript">
-                <summary>Transcript</summary>
-                <p>All of these can be a sign of a phishing attack:</p>
-                
-                <ul>
-                  <li>A generic signature block, without a name and a phone number</li>
-                  <li>A  signature block that doesn’t follow official guidelines </li>
-                  <li>The absence of a signature block</li>
-                </ul>
-                
-                <p>You didn’t get hooked!</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_12_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_12_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_9_Transcript">
+                        <summary>Transcript</summary>
+                        <p>All of these can be a sign of a phishing attack:</p>
+
+                        <ul>
+                            <li>A generic signature block, without a name and a phone number</li>
+                            <li>A signature block that doesn’t follow official guidelines </li>
+                            <li>The absence of a signature block</li>
+                        </ul>
+
+                        <p>You didn’t get hooked!</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_12_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_12_Transcript">
                     <source src="content/medias/audio/en/slide_2.12.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_12_Transcript">
-                <summary>Transcript</summary>
-                <p>Defender, this email is safe.</p>
-                <p>Well played. It looks like an attack, but you knew it was spam.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_13_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_13_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_12_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Defender, this email is safe.</p>
+                        <p>Well played. It looks like an attack, but you knew it was spam.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_13_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_13_Transcript">
                     <source src="content/medias/audio/en/slide_2.13.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_13_Transcript">
-                <summary>Transcript</summary>
-                <p>You were a little too vigilant. This email is not dangerous.</p>
-                <p>Did you use the <abbr>HALT</abbr> method? Is the email requesting an urgent action from you? Is there a suspicious link or attachment?</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_25_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_25_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_13_Transcript">
+                        <summary>Transcript</summary>
+                        <p>You were a little too vigilant. This email is not dangerous.</p>
+                        <p>Did you use the <abbr>HALT</abbr> method? Is the email requesting an urgent action from you? Is there a suspicious link or attachment?</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_25_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_25_Transcript">
                     <source src="content/medias/audio/en/slide_2.25.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_25_Transcript">
-                <summary>Transcript</summary>
-                <p>Exactly! A non-personalized, generic greeting or the absence of a greeting can be signs of a phishing attempt.</p>
-                <p>Hackers use vague wording to try to catch as many people as they can.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_26_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_26_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_25_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Exactly! A non-personalized, generic greeting or the absence of a greeting can be signs of a phishing attempt.</p>
+                        <p>Hackers use vague wording to try to catch as many people as they can.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_26_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_26_Transcript">
                     <source src="content/medias/audio/en/slide_2.26.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_26_Transcript">
-                <summary>Transcript</summary>
-                <p>Be suspicious of unexpected email attachments. The easiest way to identify whether a file is dangerous is by its file extension, which tells you what type of file it is.</p>
-                
-                <p>Some dangerous file extensions include:</p>
-                
-                <ul class="list-inline">
-                  <li>.msi,</li>
-                  <li>.bat,</li>
-                  <li>.com,</li>
-                  <li>.cmd,</li>
-                  <li>.hta,</li>
-                  <li>.scr,</li>
-                  <li>.pif,</li>
-                  <li>.reg,</li>
-                  <li>.js,</li>
-                  <li>.vbs,</li>
-                  <li>.wsf,</li>
-                  <li>.cpl,</li>
-                  <li>.jar,</li>
-                  <li>.exe,</li>
-                  <li>.docm,</li>
-                  <li>.xlsm,</li>
-                  <li>.pptm,</li>
-                  <li>.zip,</li>
-                  <li>.rar,</li>
-                  <li>.7z</li>
-                </ul>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_27_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_27_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_26_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Be suspicious of unexpected email attachments. The easiest way to identify whether a file is dangerous is by its file extension, which tells you what type of file it is.</p>
+
+                        <p>Some dangerous file extensions include:</p>
+
+                        <ul class="list-inline">
+                            <li>.msi,</li>
+                            <li>.bat,</li>
+                            <li>.com,</li>
+                            <li>.cmd,</li>
+                            <li>.hta,</li>
+                            <li>.scr,</li>
+                            <li>.pif,</li>
+                            <li>.reg,</li>
+                            <li>.js,</li>
+                            <li>.vbs,</li>
+                            <li>.wsf,</li>
+                            <li>.cpl,</li>
+                            <li>.jar,</li>
+                            <li>.exe,</li>
+                            <li>.docm,</li>
+                            <li>.xlsm,</li>
+                            <li>.pptm,</li>
+                            <li>.zip,</li>
+                            <li>.rar,</li>
+                            <li>.7z</li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_27_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_27_Transcript">
                     <source src="content/medias/audio/en/slide_2.27.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_27_Transcript">
-                <summary>Transcript</summary>
-                <p>You’re right!</p>
-                <p>Spelling, grammar or factual errors are frequent in phishing emails!</p>
-                <p>Hackers are getting better at crafting emails, but these types of errors are still common in phishing attacks.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_28_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_28_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_27_Transcript">
+                        <summary>Transcript</summary>
+                        <p>You’re right!</p>
+                        <p>Spelling, grammar or factual errors are frequent in phishing emails!</p>
+                        <p>Hackers are getting better at crafting emails, but these types of errors are still common in phishing attacks.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_28_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_28_Transcript">
                     <source src="content/medias/audio/en/slide_2.28.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_28_Transcript">
-                <summary>Transcript</summary>
-                <p>Absolutely!</p>
-                <p>The time stamp is an important clue to look at. Suspicious messages can arrive at strange times, outside of normal business hours.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper audio-wrapper-feedback">
-                <figure id="slide_2_33_Player" class="wb-mltmd">
-                  <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_33_Transcript">
+                        </figure>
+                    </div>
+                    <details id="slide_2_28_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Absolutely!</p>
+                        <p>The time stamp is an important clue to look at. Suspicious messages can arrive at strange times, outside of normal business hours.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper audio-wrapper-feedback">
+                        <figure id="slide_2_33_Player" class="wb-mltmd">
+                            <audio id="feedback_audio" title="Feedback audio" aria-describedby="slide_2_33_Transcript">
                     <source src="content/medias/audio/en/slide_2.33.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="slide_2_33_Transcript">
-                <summary>Transcript</summary>
-                <p>It seems like a good offer, but it’s too good to be true.</p>
-                <p>Criminals will do anything to tempt you to click the link.</p>
-              </details>
-            </div>
-    
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-6_results_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-6_results_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="slide_2_33_Transcript">
+                        <summary>Transcript</summary>
+                        <p>It seems like a good offer, but it’s too good to be true.</p>
+                        <p>Criminals will do anything to tempt you to click the link.</p>
+                    </details>
+                </div>
+
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-6_results_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-6_results_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_4.1.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-6_results_Transcript">
-                <summary>Transcript</summary>
-                <p>Congratulations, Defender! You completed your mission.</p>
-              </details>
-            </div>
-            
-            
-            
-            <!-- m1-7 -->
-            <div class="narration-wrapper">
-              <div class="audio-wrapper">
-                <figure id="m1-7_Player" class="wb-mltmd">
-                  <audio title="Narration audio" aria-describedby="m1-7_Transcript" preload="metadata" crossorigin="anonymous">
+                        </figure>
+                    </div>
+                    <details id="m1-6_results_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Congratulations, Defender! You completed your mission.</p>
+                    </details>
+                </div>
+
+
+
+                <!-- m1-7 -->
+                <div class="narration-wrapper">
+                    <div class="audio-wrapper">
+                        <figure id="m1-7_Player" class="wb-mltmd">
+                            <audio title="Narration audio" aria-describedby="m1-7_Transcript" preload="metadata" crossorigin="anonymous">
                     <source src="content/medias/audio/en/slide_4.2.mp3" type="audio/mp3" />
                   </audio>
-                </figure>
-              </div>
-              <details id="m1-7_Transcript">
-                <summary>Transcript</summary>
-                <p>Don’t forget to: Hover, Analyze, Look and Test every email that seems Phish-y.</p>
-                <p>If you need help or want to know more about phishing, consult Departmental Security on iService. You will find many resources to help you defend against the Invaders!</p>
-              </details>
-            </div>
-         
-         </div>
-         <div class="backnext">
-            <a href="#" class="back">Previous</a>
-            <span>
-               <span class="pagelbl"></span>
-            </span>
-            <a href="#" class="next">Next</a>
-         </div>
-      </div>
-   </footer>
-   <span class="spinner"></span>
+                        </figure>
+                    </div>
+                    <details id="m1-7_Transcript">
+                        <summary>Transcript</summary>
+                        <p>Don’t forget to: Hover, Analyze, Look and Test every email that seems Phish-y.</p>
+                        <p>If you need help or want to know more about phishing, consult Departmental Security on iService. You will find many resources to help you defend against the Invaders!</p>
+                    </details>
+                </div>
 
-   <div id="globalLightboxes">
-      
-      <!-- <a href="#lbxHover" class="wb-lbx">&nbsp;</a> -->
-      <section id="lbxHover" class="mfp-hide modal-dialog modal-content overlay-def">
-        <header class="modal-header">
-          <h2 class="modal-title">Hover</h2>
-        </header>
-        <div id="lbxHoverNarrationContent" class="modal-body">
-          <div id="lbxHoverNarrationSection1" class="narration-section" data-position="0.3">
-            <p><span class="halt-letter">H</span>over your cursor over any link (without clicking) to reveal the <strong>TRUE</strong> path.</p>
-            <div id="hoverDemonstration">
-              <span class="fake-link">https://xpaypal.com</span>
-              <span id="lbxHoverNarrationTooltip" class="narration-section fake-link-tooltip" data-position="2.5">https://www.paypal.co.uk.login.malicioussite1234.net</span>
-              <i id="lbxHoverNarrationPointer" class="glyphicon glyphicon-hand-up" data-position="2.0"></i>
             </div>
-          </div>
-          <div id="lbxHoverNarrationSection2" class="narration-section" data-position="5.7">
-            <p>If the text doesn’t match the link, it’s the <strong>first clue</strong> that the message is suspicious.</p>
-          </div>
+            <div class="backnext">
+                <a href="#" class="back">Previous</a>
+                <span>
+               <span class="pagelbl"></span>
+                </span>
+                <a href="#" class="next">Next</a>
+            </div>
         </div>
-        <div class="modal-footer narration-controls">
-          <div class="audio-wrapper">
-            <figure id="lbxHoverAudioPlayer" class="wb-mltmd">
-              <audio title="Hover narration" describedby="lbxHoverTranscript" preload="metadata" crossorigin="anonymous">
+    </footer>
+    <span class="spinner"></span>
+
+    <div id="globalLightboxes">
+
+        <!-- <a href="#lbxHover" class="wb-lbx">&nbsp;</a> -->
+        <section id="lbxHover" class="mfp-hide modal-dialog modal-content overlay-def">
+            <header class="modal-header">
+                <h2 class="modal-title">Hover</h2>
+            </header>
+            <div id="lbxHoverNarrationContent" class="modal-body">
+                <div id="lbxHoverNarrationSection1" class="narration-section" data-position="0.3">
+                    <p><span class="halt-letter">H</span>over your cursor over any link (without clicking) to reveal the <strong>TRUE</strong> path.</p>
+                    <div id="hoverDemonstration">
+                        <span class="fake-link">https://xpaypal.com</span>
+                        <span id="lbxHoverNarrationTooltip" class="narration-section fake-link-tooltip" data-position="2.5">https://www.paypal.co.uk.login.malicioussite1234.net</span>
+                        <i id="lbxHoverNarrationPointer" class="glyphicon glyphicon-hand-up" data-position="2.0"></i>
+                    </div>
+                </div>
+                <div id="lbxHoverNarrationSection2" class="narration-section" data-position="5.7">
+                    <p>If the text doesn’t match the link, it’s the <strong>first clue</strong> that the message is suspicious.</p>
+                </div>
+            </div>
+            <div class="modal-footer narration-controls">
+                <div class="audio-wrapper">
+                    <figure id="lbxHoverAudioPlayer" class="wb-mltmd">
+                        <audio title="Hover narration" describedby="lbxHoverTranscript" preload="metadata" crossorigin="anonymous">
                 <source src="content/medias/audio/en/slide_1.5.mp3" type="audio/mp3" />
               </audio>
-            </figure>
-          </div>
-          <details id="lbxHoverTranscript">
-            <summary>Transcript</summary>
-            <p>Hover your cursor over any link (without clicking) to reveal the TRUE path.</p>
-            <p>If the text doesn’t match the link, it’s the first clue that the message is suspicious.</p>
-          </details>
-          <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
-        </div>
-      </section>
+                    </figure>
+                </div>
+                <details id="lbxHoverTranscript">
+                    <summary>Transcript</summary>
+                    <p>Hover your cursor over any link (without clicking) to reveal the TRUE path.</p>
+                    <p>If the text doesn’t match the link, it’s the first clue that the message is suspicious.</p>
+                </details>
+                <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
+            </div>
+        </section>
 
 
 
-      <!-- <a href="#lbxAnalyze" class="wb-lbx">&nbsp;</a> -->
-      <section id="lbxAnalyze" class="mfp-hide modal-dialog modal-content overlay-def">
-        <header class="modal-header">
-          <h2 class="modal-title">Analyze</h2>
-        </header>
-        <div id="lbxAnalyzeNarrationContent" class="modal-body">
-          <p id="lbxAnalyzeNarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">A</span>nalyze the sender’s email address and <strong>ask yourself</strong>:</p>
-          <ul>
-            <li id="lbxAnalyzeNarrationItem2" class="narration-section" data-position="4.0">Do I know this person?</li>
-            <li id="lbxAnalyzeNarrationItem3" class="narration-section" data-position="6.0">Would I expect to receive an email about this topic at work?</li>
-            <li id="lbxAnalyzeNarrationItem4" class="narration-section" data-position="9.7">Should I follow the instructions in the email?</li>
-          </ul>
-        </div>
-        <div class="modal-footer narration-controls">
-          <div class="audio-wrapper">
-            <figure id="lbxAnalyzeAudioPlayer" class="wb-mltmd">
-              <audio title="Analyze narration" describedby="lbxAnalyzeTranscript" preload="metadata" crossorigin="anonymous">
+        <!-- <a href="#lbxAnalyze" class="wb-lbx">&nbsp;</a> -->
+        <section id="lbxAnalyze" class="mfp-hide modal-dialog modal-content overlay-def">
+            <header class="modal-header">
+                <h2 class="modal-title">Analyze</h2>
+            </header>
+            <div id="lbxAnalyzeNarrationContent" class="modal-body">
+                <p id="lbxAnalyzeNarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">A</span>nalyze the sender’s email address and <strong>ask yourself</strong>:</p>
+                <ul>
+                    <li id="lbxAnalyzeNarrationItem2" class="narration-section" data-position="4.0">Do I know this person?</li>
+                    <li id="lbxAnalyzeNarrationItem3" class="narration-section" data-position="6.0">Would I expect to receive an email about this topic at work?</li>
+                    <li id="lbxAnalyzeNarrationItem4" class="narration-section" data-position="9.7">Should I follow the instructions in the email?</li>
+                </ul>
+            </div>
+            <div class="modal-footer narration-controls">
+                <div class="audio-wrapper">
+                    <figure id="lbxAnalyzeAudioPlayer" class="wb-mltmd">
+                        <audio title="Analyze narration" describedby="lbxAnalyzeTranscript" preload="metadata" crossorigin="anonymous">
                 <source src="content/medias/audio/en/slide_1.6.mp3" type="audio/mp3" />
               </audio>
-            </figure>
-          </div>
-          <details id="lbxAnalyzeTranscript">
-            <summary>Transcript</summary>
-            <p>Analyze the sender’s email address and ask yourself:</p>
-            <ul>
-              <li>Do I know this person?</li>
-              <li>Would I expect to receive an email about this topic at work?</li>
-              <li>Should I follow the instructions in the email?</li>
-            </ul>
-          </details>
-          <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
-        </div>
-      </section>
-
-
-
-      <!-- <a href="#lbxLook" class="wb-lbx">&nbsp;</a> -->
-      <section id="lbxLook" class="mfp-hide modal-dialog modal-content overlay-def">
-        <header class="modal-header">
-          <h2 class="modal-title">Look</h2>
-        </header>
-        <div class="modal-body">
-          <div id="lbxLookP1">
-            <p id="lbxLookP1NarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">L</span>ook for subtle changes to email addresses and links.</p>
-            
-            <p id="lbxLookP1NarrationItem2" class="narration-section" data-position="4.2"><span class="domain-label">Domains</span> should reference a valid organization and be consistent with the message.</p>
-            
-            <ul id="lbxLookP1NarrationItem3" class="narration-section list-no-bullets domain-examples" data-position="4.6">
-              <li>scammer@hrsdc-rhdcc.<span class="inline-highlight-domain">goc.ca</span></li>
-              <li>http://www.servicecanada.<span class="inline-highlight-domain">gov.ca</span>/eng/home</li>
-            </ul>
-            
-            <!--<div id="lbxLookP1NarrationItem4" class="narration-section text-right" data-position="9.2">-->
-            <div class="text-right">
-              <button id="btnLBXLookNext" class="btn nav-button light-bg">Next Page</button>
+                    </figure>
+                </div>
+                <details id="lbxAnalyzeTranscript">
+                    <summary>Transcript</summary>
+                    <p>Analyze the sender’s email address and ask yourself:</p>
+                    <ul>
+                        <li>Do I know this person?</li>
+                        <li>Would I expect to receive an email about this topic at work?</li>
+                        <li>Should I follow the instructions in the email?</li>
+                    </ul>
+                </details>
+                <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
             </div>
-          </div>
-          <div id="lbxLookP2">
-            <p id="lbxLookP2NarrationItem1" class="narration-section" data-position="0.3">Cyber criminals often use real <span class="subdomain-label">subdomains</span> to draw attention away from the <span class="domain-label">domain</span>.</p>
-            
-            <ul id="lbxLookP2NarrationItem2" class="narration-section list-no-bullets domain-examples" data-position="0.5">
-              <li class="has-inline-label">scammer@<span class="inline-highlight-subdomain">hrsdc-rhdcc<span class="inline-label inline-label-subdomain"> <span class="wb-inv">this is the</span> subdomain</span></span>.<span class="inline-highlight-domain">goc.ca<span class="inline-label inline-label-domain"> <span class="wb-inv">this is the</span> domain</span></span></li>
-              <li class="has-inline-label">http://www.<span class="inline-highlight-subdomain">servicecanada<span class="inline-label inline-label-subdomain"> <span class="wb-inv">this is the</span> subdomain</span></span>.<span class="inline-highlight-domain">gov.ca<span class="inline-label inline-label-domain"> <span class="wb-inv">this is the</span> domain</span></span>/eng/home</li>
-            </ul>
-            
-            <p id="lbxLookP2NarrationItem3" class="narration-section" data-position="5.7">Cyber criminals make subtle changes to <span class="domain-label">domains</span>. This is what to watch for.</p>
+        </section>
 
-            <!--<div id="lbxLookP2NarrationItem4" class="narration-section" data-position="11.4">-->
-              <button id="btnLBXLookPrev" class="btn nav-button nav-button-wide light-bg">Previous Page</button>
-            <!--</div>-->
-          </div>
-        </div>
-        <div class="modal-footer narration-controls">
-          <div id="lbxLookP1AudioWrapper" class="audio-wrapper">
-            <figure id="lbxLookP1AudioPlayer" class="wb-mltmd">
-              <audio title="Look narration, part 2" describedby="lbxLookP1Transcript" preload="metadata" crossorigin="anonymous">
+
+
+        <!-- <a href="#lbxLook" class="wb-lbx">&nbsp;</a> -->
+        <section id="lbxLook" class="mfp-hide modal-dialog modal-content overlay-def">
+            <header class="modal-header">
+                <h2 class="modal-title">Look</h2>
+            </header>
+            <div class="modal-body">
+                <div id="lbxLookP1">
+                    <p id="lbxLookP1NarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">L</span>ook for subtle changes to email addresses and links.</p>
+
+                    <p id="lbxLookP1NarrationItem2" class="narration-section" data-position="4.2"><span class="domain-label">Domains</span> should reference a valid organization and be consistent with the message.</p>
+
+                    <ul id="lbxLookP1NarrationItem3" class="narration-section list-no-bullets domain-examples" data-position="4.6">
+                        <li>scammer@hrsdc-rhdcc.<span class="inline-highlight-domain">goc.ca</span></li>
+                        <li>http://www.servicecanada.<span class="inline-highlight-domain">gov.ca</span>/eng/home</li>
+                    </ul>
+
+                    <!--<div id="lbxLookP1NarrationItem4" class="narration-section text-right" data-position="9.2">-->
+                    <div class="text-right">
+                        <button id="btnLBXLookNext" class="btn nav-button light-bg">Next Page</button>
+                    </div>
+                </div>
+                <div id="lbxLookP2">
+                    <p id="lbxLookP2NarrationItem1" class="narration-section" data-position="0.3">Cyber criminals often use real <span class="subdomain-label">subdomains</span> to draw attention away from the <span class="domain-label">domain</span>.</p>
+
+                    <ul id="lbxLookP2NarrationItem2" class="narration-section list-no-bullets domain-examples" data-position="0.5">
+                        <li class="has-inline-label">scammer@<span class="inline-highlight-subdomain">hrsdc-rhdcc<span class="inline-label inline-label-subdomain"> <span class="wb-inv">this is the</span> subdomain</span>
+                            </span>.<span class="inline-highlight-domain">goc.ca<span class="inline-label inline-label-domain"> <span class="wb-inv">this is the</span> domain</span>
+                            </span>
+                        </li>
+                        <li class="has-inline-label">http://www.<span class="inline-highlight-subdomain">servicecanada<span class="inline-label inline-label-subdomain"> <span class="wb-inv">this is the</span> subdomain</span>
+                            </span>.<span class="inline-highlight-domain">gov.ca<span class="inline-label inline-label-domain"> <span class="wb-inv">this is the</span> domain</span>
+                            </span>/eng/home</li>
+                    </ul>
+
+                    <p id="lbxLookP2NarrationItem3" class="narration-section" data-position="5.7">Cyber criminals make subtle changes to <span class="domain-label">domains</span>. This is what to watch for.</p>
+
+                    <!--<div id="lbxLookP2NarrationItem4" class="narration-section" data-position="11.4">-->
+                    <button id="btnLBXLookPrev" class="btn nav-button nav-button-wide light-bg">Previous Page</button>
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="modal-footer narration-controls">
+                <div id="lbxLookP1AudioWrapper" class="audio-wrapper">
+                    <figure id="lbxLookP1AudioPlayer" class="wb-mltmd">
+                        <audio title="Look narration, part 2" describedby="lbxLookP1Transcript" preload="metadata" crossorigin="anonymous">
                 <source src="content/medias/audio/en/slide_1.7.mp3" type="audio/mp3" />
               </audio>
-            </figure>
-          </div>
-          <details id="lbxLookP1Transcript">
-            <summary>Transcript</summary>
-            <p>Look for subtle changes to email addresses and links.</p>
-            <p>Domains should reference a valid organization and be consistent with the message.</p>
-          </details>
-          
-          <div id="lbxLookP2AudioWrapper" class="audio-wrapper">
-            <figure id="lbxLookP2AudioPlayer" class="wb-mltmd">
-              <audio title="Look narration, part 2" describedby="lbxLookP2Transcript" preload="metadata" crossorigin="anonymous">
+                    </figure>
+                </div>
+                <details id="lbxLookP1Transcript">
+                    <summary>Transcript</summary>
+                    <p>Look for subtle changes to email addresses and links.</p>
+                    <p>Domains should reference a valid organization and be consistent with the message.</p>
+                </details>
+
+                <div id="lbxLookP2AudioWrapper" class="audio-wrapper">
+                    <figure id="lbxLookP2AudioPlayer" class="wb-mltmd">
+                        <audio title="Look narration, part 2" describedby="lbxLookP2Transcript" preload="metadata" crossorigin="anonymous">
                 <source src="content/medias/audio/en/slide_1.7.1.mp3" type="audio/mp3" />
               </audio>
-            </figure>
-          </div>
-          <details id="lbxLookP2Transcript">
-            <summary>Transcript</summary>
-            <p>Cyber criminals often use real subdomains to draw attention away from the domain.</p>
-            <p>Cyber criminals make subtle changes to domains. This is what to watch for.</p>
-          </details>
-          <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
-        </div>
-      </section>
+                    </figure>
+                </div>
+                <details id="lbxLookP2Transcript">
+                    <summary>Transcript</summary>
+                    <p>Cyber criminals often use real subdomains to draw attention away from the domain.</p>
+                    <p>Cyber criminals make subtle changes to domains. This is what to watch for.</p>
+                </details>
+                <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
+            </div>
+        </section>
 
 
 
-      <!-- <a href="#lbxTest" class="wb-lbx">&nbsp;</a> -->
-      <section id="lbxTest" class="mfp-hide modal-dialog modal-content overlay-def">
-        <header class="modal-header">
-          <h2 class="modal-title">Test</h2>
-        </header>
-        <div class="modal-body">
-          <p id="lbxTestNarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">T</span>est the sender.</p>
-          
-          <p id="lbxTestNarrationItem2" class="narration-section" data-position="1.9">Call the individual/organization or visit their website to confirm the request using a verified telephone number or web address. Don’t use information provided in the email.</p>
-        </div>
-        <div class="modal-footer narration-controls">
-          <div class="audio-wrapper">
-            <figure id="lbxTestAudioPlayer" class="wb-mltmd">
-              <audio title="Test narration" describedby="lbxTestTranscript" preload="metadata" crossorigin="anonymous">
+        <!-- <a href="#lbxTest" class="wb-lbx">&nbsp;</a> -->
+        <section id="lbxTest" class="mfp-hide modal-dialog modal-content overlay-def">
+            <header class="modal-header">
+                <h2 class="modal-title">Test</h2>
+            </header>
+            <div class="modal-body">
+                <p id="lbxTestNarrationItem1" class="narration-section" data-position="0.3"><span class="halt-letter">T</span>est the sender.</p>
+
+                <p id="lbxTestNarrationItem2" class="narration-section" data-position="1.9">Call the individual/organization or visit their website to confirm the request using a verified telephone number or web address. Don’t use information provided in the email.</p>
+            </div>
+            <div class="modal-footer narration-controls">
+                <div class="audio-wrapper">
+                    <figure id="lbxTestAudioPlayer" class="wb-mltmd">
+                        <audio title="Test narration" describedby="lbxTestTranscript" preload="metadata" crossorigin="anonymous">
                 <source src="content/medias/audio/en/slide_1.8.mp3" type="audio/mp3" />
               </audio>
-            </figure>
-          </div>
-          <details id="lbxTestTranscript">
-            <summary>Transcript</summary>
-            <p>Test the sender.</p>
-            <p>Call the individual/organization or visit their website to confirm the request using a verified telephone number or web address. Don’t use information provided in the email.</p>
-          </details>
-          <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
-        </div>
-      </section>
-   
-   </div>
-   
-   <div id="globalSoundEffects">
-      
-      <audio id="buttonClickSound" preload="metadata" crossorigin="anonymous">
+                    </figure>
+                </div>
+                <details id="lbxTestTranscript">
+                    <summary>Transcript</summary>
+                    <p>Test the sender.</p>
+                    <p>Call the individual/organization or visit their website to confirm the request using a verified telephone number or web address. Don’t use information provided in the email.</p>
+                </details>
+                <button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay (escape key)">Close<span class="wb-inv"> Close overlay (escape key)</span></button>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="globalSoundEffects">
+
+        <audio id="buttonClickSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/multimedia_button_click_003.mp3" type="audio/mp3" />
       </audio>
-      
-      <audio id="guardianSelectSound" preload="metadata" crossorigin="anonymous">
+
+        <audio id="guardianSelectSound" preload="metadata" crossorigin="anonymous">
         <source id="slide_audio_mp3_src" src="content/medias/audio/sound_ex_machina_Button_Click.mp3" type="audio/mp3" />
       </audio>
-      
-      <audio id="folderOpenSound" preload="metadata" crossorigin="anonymous">
+
+        <audio id="folderOpenSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_foley_paper_page_turn_large_binder_001_18711.mp3" type="audio/mp3" />
       </audio>
-      
-      <audio id="pageTurnSound" preload="metadata" crossorigin="anonymous">
+
+        <audio id="pageTurnSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_household_book_cub_scouts_record_small_page_turn_003_20903.mp3" type="audio/mp3" />
       </audio>
-      
-      <audio id="correctSound" preload="metadata" crossorigin="anonymous">
+
+        <audio id="correctSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_multimedia_game_collect_coin_or_treasure_004_24871.mp3" type="audio/mp3" />
       </audio>
-      
-      <audio id="incorrectSound" preload="metadata" crossorigin="anonymous">
+
+        <audio id="incorrectSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_multimedia_game_error_tone_001_24919.mp3" type="audio/mp3" />
       </audio>
 
-      <audio id="displayResultsSound" preload="metadata" crossorigin="anonymous">
+        <audio id="displayResultsSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_household_rubber_glove_pull_finger_release_002_22249-x4.mp3" type="audio/mp3" />
       </audio>
 
-      <audio id="oneStarSound" preload="metadata" crossorigin="anonymous">
+        <audio id="oneStarSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_multimedia_game_star_win_gain_x1_12387.mp3" type="audio/mp3" />
       </audio>
 
-      <audio id="twoStarsSound" preload="metadata" crossorigin="anonymous">
+        <audio id="twoStarsSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_multimedia_game_star_win_gain_x2_12388.mp3" type="audio/mp3" />
       </audio>
 
-      <audio id="threeStarsSound" preload="metadata" crossorigin="anonymous">
+        <audio id="threeStarsSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_multimedia_game_star_win_gain_x3_12389.mp3" type="audio/mp3" />
       </audio>
 
-      <audio id="displayFlasherSound" preload="metadata" crossorigin="anonymous">
+        <audio id="displayFlasherSound" preload="metadata" crossorigin="anonymous">
         <source src="content/medias/audio/zapsplat_household_rubber_glove_pull_finger_release_002_22249.mp3" type="audio/mp3" />
       </audio>
-      
+
     </div>
-  <div id="imagePreloader" class="image-preload"></div>
-  <div id="preloadGuardianButtonImages" class="image-preload"></div>
+    <div id="imagePreloader" class="image-preload"></div>
+    <div id="preloadGuardianButtonImages" class="image-preload"></div>
 </body>
 
 </html>
