@@ -1,0 +1,388 @@
+
+<a id="qaLink" class="wb-lbx" style="display: block; position: fixed; bottom: 0; right: 2px; background-color: #ccc; padding: 10px;" href="#qaModal">QA Tools</a>
+<section id="qaModal" class="mfp-hide modal-dialog modal-content overlay-def">
+    <header class="modal-header">
+        <h2 class="modal-title">QA Tools</h2>
+    </header>
+    <div class="modal-body">
+      <p>This is a temporary tool to help during course testing.  The tabs below provide a way to QA the email scenarios, feedback, and the randomization functionality.</p>
+			<div id="qaTabs" class="wb-tabs" data-wb-tabs='{"ignoreSession": true}'>
+				<div class="tabpanels">
+					<details id="details-panel1" open>
+						<summary>Current Questions</summary>
+            <div>
+              <h3>Currently-Selected Email Scenarios</h3>
+              <p>These are the slides that were randomly selected for the current round:</p>
+              <p id="qaCurrentScenarios"></p>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+            </div>
+          </details>
+					<details id="details-panel2" open>
+						<summary>Beginner</summary>
+            <div id="qaLevel1">
+              <div class="qa-question-banks"></div>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+            </div>
+          </details>
+					<details id="details-panel3" open>
+						<summary>Master</summary>
+            <div id="qaLevel2">
+              <div class="qa-question-banks"></div>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+            </div>
+          </details>
+					<details id="details-panel4" open>
+						<summary>Expert</summary>
+            <div id="qaLevel3">
+              <div class="qa-question-banks"></div>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+            </div>
+          </details>
+					<details id="details-panel5" open>
+						<summary>Feedback</summary>
+            <div>
+              <h3>Feedback Slides:</h3>
+              <p>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.2">Slide 2.2</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.3">Slide 2.3</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.4">Slide 2.4</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.5">Slide 2.5</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.6">Slide 2.6</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.7">Slide 2.7</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.8">Slide 2.8</button>
+                <button class="btn btn-default qa-feedback-button"  data-feedback-id="2.9">Slide 2.9</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.12">Slide 2.12</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.13">Slide 2.13</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.25">Slide 2.25</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.26">Slide 2.26</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.27">Slide 2.27</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.28">Slide 2.28</button>
+                <button class="btn btn-default qa-feedback-button" data-feedback-id="2.33">Slide 2.33</button>
+              </p>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+              
+            </div>
+          </details>
+					<details id="details-panel6" open>
+						<summary>Randomization</summary>
+            <div>
+              <h3>Randomization Test</h3>
+              <p>Click the buttons below to test the logic for randomly selecting email scenarios for each level.</p>
+              <p>
+                <button class="btn btn-primary qa-test-randomization" data-level="1">Beginner</button>
+                <button class="btn btn-primary qa-test-randomization" data-level="2">Master</button>
+                <button class="btn btn-primary qa-test-randomization" data-level="3">Expert</button>
+              </p>
+              <div id="qaTestRandomization"></div>
+              <div class="qa-slide">
+                <hr/>
+                <h3 class="qa-slide-title"></h3>
+                <div class="qa-slide-content"></div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+                <!--<button class="btn btn-default qa-email-button" data-email-id="2.11">Slide 2.11</button>-->
+    </div>
+</section>
+
+<script>
+  require(['jquery', 'content/scripts/phishing-scenarios', 'content/scripts/narration-controller', 'utils'], function($, PhishingScenarios, NarrationController, Utils) {
+    'use strict';
+    
+    // Initialize WET lightbox and tabs
+    var $qaLbxLink = $('#qaLink').trigger("wb-init.wb-lbx"),
+        $qaTabs = $('#qaTabs').trigger("wb-init.wb-tabs");
+    
+    // Ensure audio stops when lightbox is closed
+    $qaLbxLink.on( "mfpClose", function(e) {
+      qaStopAudio();
+      resetTabs();
+    }).on( "mfpOpen", function(e) {
+      qaStopAudio();
+    });
+    
+    // Ensure audio stops when a different tab is selected
+    $qaTabs.on( "wb-updated.wb-tabs", function( event, $newPanel ) {
+      qaStopAudio();
+      resetTabs();
+    });
+    
+    function resetTabs() {
+      $qaTabs.find(".qa-slide").hide().find(".qa-slide-content").empty();
+      $qaTabs.find("#qaTestRandomization").empty();
+    }
+    
+    // Event handlers
+    $('#qaModal').on('click', '.qa-feedback-button', function() {
+      var $thisButton = $(this),
+          feedbackId = $thisButton.data('feedbackId'),
+          $qaWrapper = $thisButton.closest("details").find(".qa-slide");
+      
+      // Stop any playing feedback narration
+      qaStopAudio();
+          
+      $qaWrapper.find(".qa-slide-title").text('Feedback: Slide ' + feedbackId);
+      qaSlide($qaWrapper, feedbackId, qaFeedbackLoaded);
+    }).on('click', '.qa-email-button', function() {
+      var $thisButton = $(this),
+          emailId = $thisButton.data('emailId'),
+          $qaWrapper = $thisButton.closest("details").find(".qa-slide");
+      
+      // Stop any playing feedback narration
+      qaStopAudio();
+          
+      $qaWrapper.find(".qa-slide-title").text('Email Scenario: Slide ' + emailId);
+      qaSlide($qaWrapper, emailId, qaEmailLoaded);
+    })
+      .on("mouseenter", "[data-feedback-id]", showFeedbackSlideIdTooltip)
+      .on("mouseleave", "[data-feedback-id]", hideTooltip)
+      .on("mouseenter", '[data-is-phishing="true"] [data-potential-clue]', showClueNoFeedbackTooltip)
+      .on("mouseleave", '[data-is-phishing="true"] [data-potential-clue]', hideTooltip)
+      .on("mouseenter focusin", ".qa-slide-content a", showLinkHrefTooltip)
+      .on("mouseleave focusout", ".qa-slide-content a", hideTooltip)
+      .on("click", ".qa-slide-content a", function(e) {
+        e.preventDefault();
+        alert("This is a sample link."); 
+        return false;
+    }).on('click', ".qa-slide-content button", function() {
+      alert("Feedback navigation buttons are not functional in QA mode.");
+    }).on('click', ".qa-test-randomization", function() {
+      var $thisButton = $(this),
+          level = $thisButton.data("level"),
+          buttonLabel = $thisButton.text();
+      
+      testRandomization(level, buttonLabel);
+    });
+    
+    // Stop any playing feedback narration
+    function qaStopAudio() {
+      $(document).find('.wb-mltmd').each(function(index, el) {
+        el.player("pause");
+      });
+    }
+  
+    // Load a feedback or email slide
+    function qaSlide($qaWrapper, slideId, onLoaded) {
+      var scenarios = PhishingScenarios.getCurrentScenarios();
+      
+      scenarios && scenarios[0].loadFeedback(slideId, function(content) {
+        onLoaded($qaWrapper, "" + slideId, content);
+      });
+    }
+    
+    // Handle a loaded feedback slide
+    function qaFeedbackLoaded($qaWrapper, slideId, content) {
+      var slideIdWithUnderscore = slideId.replace(".", "_"),
+          transcriptSelector = '#slide_' + slideIdWithUnderscore + '_Transcript',
+          narrationTranscriptHtml = $(transcriptSelector).html().replace(/<summary>.+?<\/summary>\s*/gi, ""),
+          html = content + '<h4>Narration Transcript</h4>' + narrationTranscriptHtml;
+    
+      showSlideContent($qaWrapper, html);
+    }
+    
+    // Handle a loaded email slide
+    function qaEmailLoaded($qaWrapper, slideId, content) {
+      showSlideContent($qaWrapper, content);
+    }
+    
+    // Handle a loaded slide
+    function showSlideContent($qaWrapper, content) {
+    
+      $qaWrapper.find(".qa-slide-content").html(content);
+      $qaWrapper.hide().slideDown("fast");
+    }
+    
+    // Button factory method
+    function getScenarioButtonHtml(slideId) {
+      return '<button class="btn btn-default qa-email-button" data-email-id="' + slideId + '">Slide ' + slideId + '</button> ';
+    }
+    
+    // Utility method for generating a list of buttons that point to email scenarios
+    function getScenarioButtonsHtml(scenarios, includeSource) {
+      var html = "",
+          scenarioBank = PhishingScenarios.getScenarioBank();
+          
+      for (var i = 0; i < scenarios.length; i++) {
+        var scenario = scenarios[i],
+            scenarioBankInfo = includeSource ? ' ' + scenarioBank.getScenarioBankSource(scenario.id) : '';
+        
+        if (i > 0 && includeSource) {
+          html = html + '<br/>';
+        }
+        
+        html = html + getScenarioButtonHtml(scenario.id) + scenarioBankInfo;
+      }
+      
+      return html;
+    }
+    
+    // Initialize scenario bank lists for levels
+    function initializeScenarioBankTabs() {
+      for (var i = 1; i < 4; i++) {
+        initializeScenarioBankTabForLevel(i);
+      }
+    }
+    
+    function initializeScenarioBankTabForLevel(level) {
+      var scenarioBank = PhishingScenarios.getScenarioBank(),
+          scenarioBankForLevel = scenarioBank.getScenarioBankForLevel(level),
+          $targetWrapper = $("#qaLevel" + level).find(".qa-question-banks"),
+          html = "";
+      //getScenarioBankForLevel
+      //subBanks = ["nonPhishingScenariosWithImmediateFeedback", "phishingScenariosWithImmediateFeedback", "nonPhishingScenariosWithoutFeedback", "phishingScenariosWithoutFeedback"];
+      // Bank 1: Safe
+      html = html + getScenarioBankButtonsHtml(scenarioBankForLevel.nonPhishingScenariosWithImmediateFeedback, level, 1, false);
+      // Bank 1: Phishing
+      html = html + getScenarioBankButtonsHtml(scenarioBankForLevel.phishingScenariosWithImmediateFeedback, level, 1, true);
+      // Bank 2: Safe
+      html = html + getScenarioBankButtonsHtml(scenarioBankForLevel.nonPhishingScenariosWithoutFeedback, level, 2, false);
+      // Bank 2: Phishing
+      html = html + getScenarioBankButtonsHtml(scenarioBankForLevel.phishingScenariosWithoutFeedback, level, 2, true);
+      
+      $targetWrapper.html(html);
+    }
+    
+    function getScenarioBankButtonsHtml(slideIdArray, level, bankNumber, isPhishing) {
+      var scenarioBank = PhishingScenarios.getScenarioBank(),
+          scenarios = scenarioBank.getScenarios(slideIdArray, level, Utils.lang),
+          safeOrPhishing = isPhishing ? "Phishing" : "Safe",
+          scenarioButtonsHtml = getScenarioButtonsHtml(scenarios, false),
+          html = '<h3>Bank ' + bankNumber + '-' + level + ' (' + safeOrPhishing + ')</h3><p>' + scenarioButtonsHtml + '</p>';
+      
+      return html;
+    }
+    
+    // Display random email scenarios for the specified level
+    function testRandomization(level, label) {
+      var scenarioBank = PhishingScenarios.getScenarioBank(),
+          randomScenarios = scenarioBank.getScenarios(null, level, Utils.lang),
+          scenarioButtonsHtml = getScenarioButtonsHtml(randomScenarios, true),
+          html = '<h4>' + label + ' Level Random Scenarios</h4><p>' + scenarioButtonsHtml + '</p>';
+      
+      $("#qaTestRandomization").html(html);
+    }
+    
+    // Display the list of current scenarios
+    function displayCurrentScenarios() {
+      var scenarios = PhishingScenarios.getCurrentScenarios();
+      
+      if (scenarios && scenarios.length > 0) {
+        var html = getScenarioButtonsHtml(scenarios, true);
+        
+        $('#qaCurrentScenarios').html(html);
+      } else {
+        setTimeout(displayCurrentScenarios, 1000);
+      }
+    }
+    
+    
+    displayCurrentScenarios();
+    initializeScenarioBankTabs();
+  });
+  
+  
+  
+  
+  // Tooltip functions to display information about
+  
+  function showClueNoFeedbackTooltip(event) {
+    var $el = $(event.target),
+        feedback = findFeedbackId($el) || "Show X";
+        
+    showTooltip(event, "<strong>Feedback:</strong> " + feedback);
+  }
+  
+  function showFeedbackSlideIdTooltip(event) {
+    var $el = $(event.target),
+        feedbackId = findFeedbackId($el),
+        tooltipContent = '<strong>Feedback:</strong> ' + feedbackId;
+    
+    showTooltip(event, tooltipContent);
+  }
+  
+  function getFeedbackIdForElement($el) {
+    var feedbackId = $el.data("feedbackId");
+    
+    if (typeof feedbackId === "undefined") {
+      feedbackId = $el.closest('[data-feedback-id]').data("feedbackId");
+    }
+    
+    return feedbackId;
+  }
+  
+  function findFeedbackId($el) {
+    if (typeof $el.data("feedbackId") !== "undefined") {
+      return $el.data("feedbackId");
+    } else if ($el.closest('[data-clue]').length) {
+      var $closestClue = $el.closest('[data-clue]');
+      if (typeof $closestClue.data("feedbackId") !== "undefined") {
+        return "Slide " + $closestClue.data("feedbackId");
+      } else {
+        return "Show Checkmark";
+      }
+    }
+    return "";
+  }
+  
+  function findLinkHref($el) {
+    if ($el.is("a")) {
+      return $el.attr("href");
+    }
+    
+    return $el.closest('a').attr("href");
+  }
+  
+  function showLinkHrefTooltip(event) {
+    var $el = $(event.target),
+        feedbackId = findFeedbackId($el),
+        feedbackIdNote = feedbackId ? '<br><strong>Feedback:</strong> ' + feedbackId : '',
+        tooltipContent = findLinkHref($el) + feedbackIdNote;
+    
+    showTooltip(event, tooltipContent);
+  }
+  
+  function showTooltip(event, content) {
+    var $el = $(event.target),
+        isKeyboardFocus = event.type === "focusin",
+        offset = $el.offset(),
+        tooltipX = isKeyboardFocus ? offset.left : event.pageX,
+        tooltipY = isKeyboardFocus ? offset.top + $el.height() : event.pageY,
+        windowWidth = $(window).width() - 8, // Allow a bit of space between the tooltip and the edge
+        minWidth = windowWidth < 400 ? windowWidth : 400,
+        maxWidth = windowWidth - tooltipX;
+    
+    if (maxWidth < minWidth) {
+      tooltipX = tooltipX - (minWidth - maxWidth);
+      maxWidth = minWidth;
+    }
+    
+    $('div.sample-tooltip').remove();
+    $('<div class="sample-tooltip dont-break-out"></div>').html(content).appendTo('body').css({top: tooltipY + "px", left: tooltipX + "px", "max-width": maxWidth + "px"});
+  }
+  
+  function hideTooltip(event) {
+    $('div.sample-tooltip').remove();
+  }
+</script>

@@ -1,0 +1,66 @@
+<section>
+  <div id="contentFrameTop"></div>
+  <div id="contentFrame">
+    <div class="content-guardian">
+      <h1 class="wb-inv">Scenario Instructions</h1>
+      <p id="narrationItem1" class="narration-section">Because you are a Defender, we value your analytical skills. Look at the next 5 emails and for every message:</p>
+      
+      <ol class="fade-in-list">
+        <li id="narrationItem2" class="narration-section"><span class="list-bullet">1. </span><span>Perform the <span class="zoom-word"><span id="narrationItem3" class="halt-highlight">HALT</span></span><span class="wb-inv"> (Hover Analyze Look Test)</span> method.</span></li>
+        <li id="narrationItem4" class="narration-section"><span class="list-bullet">2. </span>Decide if the email is a phishing attempt or if it’s safe and click on the appropriate button (&ldquo;Report this E-mail&rdquo; or &ldquo;Safe&rdquo;).</li>
+        <li id="narrationItem5" class="narration-section"><span class="list-bullet">3. </span>If you report the email as phishing, find and click three (3) clues that prove it is a phishing attempt. You have five (5) attempts to find the three clues.</li>
+      </ol>
+    </div>
+  </div>
+  <div id="contentFrameBottom"></div>
+</section>
+
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData) {
+    var isMuted = PhishingData.getMuted(),
+        beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          narrationHandle.stop();
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+        timelineElements = [
+          {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}, position: 0.3},
+          {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}, position: 9.6},
+          {object: "#narrationItem3", duration: 0.2, vars: {scale: 1.3,transformOrigin:"50% 100%",repeat:1,repeatDelay:0.5,yoyo:true}, position: 11.8},
+          {object: "#narrationItem4", duration: 0.5, vars: {opacity:1}, position: 13.0},
+          {object: "#narrationItem5", duration: 0.5, vars: {opacity:1}, position: 23.2}
+        ],
+        timelineElementsViewed = [
+          {object: "#narrationItem3", duration: 0.2, vars: {scale: 1.3,transformOrigin:"50% 100%",repeat:1,repeatDelay:0.5,yoyo:true}, position: 11.8}
+        ],
+        narrationSettings = {
+          multimediaComponentSelector: '#m1-4_Player',
+          autoplay: true,
+          timelineElements: timelineElements //isMuted ? timelineElementsViewed : timelineElements
+        },
+        narrationHandle = NarrationController.setupNarration(narrationSettings),
+        $haltWord = $("#narrationItem3");
+    
+    $haltWord.parent().width($haltWord.outerWidth() + 10);
+    $haltWord.parent().height($haltWord.outerHeight());
+    $haltWord.css({position: "absolute", top: 0 + "px", left: 5 + "px", display: "inline-block"});
+    
+    NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+      
+    if (isMuted) {
+      $(".narration-section").css({opacity: 1});
+    }
+    
+    unlockPage(NavigationHelper.getNextPageId());
+  });
+</script>

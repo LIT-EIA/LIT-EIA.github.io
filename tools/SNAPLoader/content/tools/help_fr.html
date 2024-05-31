@@ -1,0 +1,70 @@
+﻿<section class="modal-dialog modal-content overlay-def mfp-with-anim mfp-move-horizontal">
+	<header class="modal-header">
+		<h2 class="modal-title" id="lbx-title">Aide</h2>
+		<button class="mfp-close overlay-close" title="Fermer">×<span class="wb-inv"> Fermer</span></button>
+	</header>
+	<div class="modal-body">
+		<section class="col-md-12">
+			<div id="tabs" class="wb-tabs">
+				<div class="tabpanels">
+					<details id="details-panel1" open>
+						<summary>Instructions à l’intention du participant</summary>
+            <h3>PRÉALABLES</h3>
+            <p>n/a</p>
+            <h3>PRÉPARATION</h3>
+            <p>Au cours de la formation, vous serez responsable de bien suivre toutes les instructions.</p>
+            <p>Au besoin, avant de commencer, vous devez prendre des dispositions pour l’utilisation d’un casque d’écoute.</p>
+					</details>
+          
+					<details id="details-panel2" open>
+						<summary>Instructions de navigation</summary>
+            <p>Utilisez le bouton <strong>Suivant</strong> pour passer à la diapositive suivante et sur le bouton <strong>Précédent</strong> pour retourner à la diapositive précédente, le cas échéant. De plus amples instructions vous seront fournies tout au long du jeu.</p>
+            <p><a class="no-visited" href="#" onclick="alert('Ce lien est un exemple'); return false;" title="Ce lien est un exemple">Le texte surligné en bleu</a> indique les hyperliens de sites Web contenant de l'information pertinente.</p>
+					</details>
+          
+					<details id="details-panel3" open>
+						<summary>Objectifs d’apprentissage</summary>
+            <p>Après ce jeu, vous devriez être capable de&nbsp;:</p>
+            <ul>
+              <li>distinguer un courriel d’hameçonnage d’un véritable courriel;</li>
+              <li>intégrer vos nouvelles connaissances à vos pratiques professionnelles.</li>
+            </ul>
+					</details>
+        
+					<details id="details-panel4" open>
+						<summary>Évaluation</summary>
+            <h3>COMMENT REMPLIR LE QUESTIONNAIRE D’ÉVALUATION EN LIGNE</h3>
+            <p>Une fois que vous avez terminé un module d’apprentissage, le système SIGA/Saba vous demandera de compléter l’évaluation du cours.</p>
+            <p>Il y a certains modules qui ne nécessitent pas une évaluation. Celle-ci vous sera envoyée automatiquement à partir de SIGA/Saba selon les exigences de chaque module.</p>  
+					</details>
+          
+					<details id="details-panel5">
+						<summary>Énoncé de confidentialité</summary>
+            <p>Les renseignements que vous fournissez sont recueillis en vertu de Loi sur l’emploi de la fonction publique pour assurer que vous rencontrez les exigences reliées à la formation opérationnelle en Assurance-emploi.</p>
+            <p>Les renseignements que vous fournissez pourraient être communiqués à votre gestionnaire et/ou à votre directeur pour soutenir l’administration de la gestion des programmes et activités du Ministère.</p>
+            <p>Les renseignements que vous fournissez pourraient être utilisés ou communiqués à des fins d’analyse de politique, de recherche ou d’évaluation. Afin de mener ces activités, diverses sources d’information sous la garde et le contrôle d’Emploi et Développement social Canada (EDSC) pourraient être consultées. Toutefois, les autres utilisations ou communications de vos renseignements personnels ne serviront jamais à prendre une décision administrative à votre sujet.</p>
+            <p>Vos renseignements personnels sont administrés conformément à la Loi sur le ministère de l’Emploi et du Développement social, la Loi sur la protection des renseignements personnels et à d’autres législations pertinentes. Vous avez droit à la protection de vos renseignements personnels et à leur accès qui sont conservés dans le fichier de renseignements personnels (FRP) standard&nbsp;: «&nbsp;Formation et perfectionnement - POE 905&nbsp;». La marche à suivre pour obtenir ces renseignements est décrite dans Info Source, accessible sur le site Web suivant&nbsp;: <a href="http://www.infosource.gc.ca" target="_blank">http://www.infosource.gc.ca</a>.</p>
+            <p>Vous pouvez également consulter InfoSource en ligne dans tous les Centres Service Canada.</p>
+					</details>
+
+		
+					<details id="details-panel6">
+						<summary>Paramètres</summary>
+            <h3>Effets sonores</h3>
+            <p><button id="btnEnableSoundEffects" class="btn btn-default">Activer les effets sonores</button><button id="btnDisableSoundEffects" class="btn btn-default">Désactiver les effets sonores</button></p>
+					</details>
+          
+				</div>
+			</div>
+		</section>
+	</div>
+</section>
+
+<script>
+  require(['jquery', 'content/scripts/phishing-data'], function($, PhishingData) {
+    var areSoundEffectsOn = PhishingData.areSoundEffectsOn();
+        
+    $("#btnEnableSoundEffects").toggle(!areSoundEffectsOn);
+    $("#btnDisableSoundEffects").toggle(areSoundEffectsOn);
+  });
+</script>

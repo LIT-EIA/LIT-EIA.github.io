@@ -1,0 +1,49 @@
+<div id="gameUI">
+  <div id="gameUILeft">
+    <div id="clueIndicators" tabindex="-1">
+      <h2 class="text-center">{{this.sectionTitleClues}}</h2>
+      
+      <ul id="guessIndicators">
+        <li id="guessIndicator1" class="guess-indicator"><span></span></li>
+        <li id="guessIndicator2" class="guess-indicator"><span></span></li>
+        <li id="guessIndicator3" class="guess-indicator"><span></span></li>
+        <li id="guessIndicator4" class="guess-indicator"><span></span></li>
+        <li id="guessIndicator5" class="guess-indicator"><span></span></li>
+      </ul>
+      
+      <ul id="clueFoundIndicators">
+        <li id="clueFoundIndicator1" class="clue-found-indicator"><span></span></li>
+        <li id="clueFoundIndicator2" class="clue-found-indicator"><span></span></li>
+        <li id="clueFoundIndicator3" class="clue-found-indicator"><span></span></li>
+      </ul>
+    </div>
+    <span id="forSizing">&nbsp;</span>
+    <div id="pointsIndicators" tabindex="-1">
+      <h2 class="text-center">{{this.sectionTitlePoints}}</h2>
+      
+      <div id="totalPoints">0</div>
+    </div>
+  </div>
+  <div id="gameUICenter">
+    <div id="gameUIFrameTop"></div>
+    <div id="gameUIFrame">
+      <div id="feedbackAlert"></div>
+      <div id="feedbackWrapper"></div>
+      <div id="scenarioWrapper"></div>
+    </div>
+    <div id="gameUIFrameBottom"></div>
+  </div>
+  <div id="gameUIRight">
+    <h2 class="wb-inv">{{this.sectionTitleButtons}}</h2>
+    <div id="identifyTypeButtons" class="game-ui-button-wrapper">
+      <button id="btnReportThisEmail" class="btn nav-button nav-button-report identify-type-button">{{this.labelReportThisEmail}}</button>
+      <button id="btnSafe" class="btn nav-button nav-button-safe identify-type-button">{{this.labelSafe}}</button>
+    </div>
+    <div id="nextEmailButton" class="game-ui-button-wrapper">
+      <button id="btnNextEmail" class="btn nav-button nav-button-wide move-next-button">{{this.labelNextEmail}}</button>
+    </div>
+    <div id="resultsButton" class="game-ui-button-wrapper">
+      <button id="btnResults" class="btn nav-button move-next-button">{{this.labelResults}}</button>
+    </div>
+  </div>
+</div>

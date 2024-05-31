@@ -1,0 +1,56 @@
+<div id="gameWrapper" tabindex="-1"></div>
+
+
+<script>
+  require(['content/module1/scenarios/scenario-bank','content/scripts/phishing-scenarios','content/scripts/phishing-data','content/scripts/narration-controller', 'content/scripts/sound-effects-controller', 'content/scripts/navigation-helper', 'content/scripts/phishing-results', 'utils'], 
+          function(scenarioBank, PhishingScenarios, PhishingData, NarrationController, SFXController, NavigationHelper, PhishingResults, utils) {
+  
+    var beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          $(".wb-mltmd").each(function (index, el) {
+            el.player("pause");
+            el.player("setCurrentTime", 0);
+          });
+          
+          // Ensure previous page is unlocked
+          unlockPage("m1-5");
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+          
+          PhishingResults.teardown();
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate);
+       
+    // Lock the previous page to avoid a possible navigation out of the scenarios
+    lockPage(NavigationHelper.getPreviousPageId());
+    // Lock the final page until the scenario is finished
+    lockPage(NavigationHelper.getNextPageId());
+    
+    // Hide the audio player and transcript
+    NarrationController.hidePlayer();
+          
+    PhishingScenarios.initialize({
+      scenarioBank: scenarioBank, 
+      onComplete: function() {
+        unlockPage(NavigationHelper.getPreviousPageId());
+        unlockPage(NavigationHelper.getNextPageId());
+      }, 
+      onNext: function() {
+        beforeNavigate();
+        NavigationHelper.goToNextPage();
+      }, 
+      onRetry: function() {
+        beforeNavigate();
+        NavigationHelper.goToHome();
+      },
+      reset: false
+    });
+  });
+</script>

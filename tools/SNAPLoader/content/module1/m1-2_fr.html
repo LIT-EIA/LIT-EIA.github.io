@@ -1,0 +1,264 @@
+<section>
+  <div id="contentFrameTop"></div>
+  <div id="contentFrame" class="text-center">
+    <div class="content-guardian">
+      <h1 class="wb-inv">La méthode <abbr title="Hésiter Analyser Lire Tester">HALTE</abbr></h1>
+      <p id="narrationItem1" class="narration-section" data-position="0.3">Pour défendre le ministère, vous devez apprendre la méthode <span class="halt-highlight"><abbr title="Hésiter Analyser Lire Tester">HALTE</abbr></span>.</p>
+      <p id="narrationItem2" class="narration-section instructions" data-position="9.2">Cliquez sur les mots suivants pour en savoir plus.</p>
+      <ul class="halt-list">
+        <li id="narrationItem3" class="narration-section" data-position="10.4">
+          <a id="btnHover" class="btn halt-button" href="#lbxHover"><span class="viewed-indicator"></span>Hésiter</a>
+        </li>
+        <li id="narrationItem4" class="narration-section" data-position="10.6">
+          <a id="btnAnalyze" class="btn halt-button" href="#lbxAnalyze"><span class="viewed-indicator"></span>Analyser</a>
+        </li>
+        <li id="narrationItem5" class="narration-section" data-position="10.8">
+          <a id="btnLook" class="btn halt-button" href="#lbxLook"><span class="viewed-indicator"></span>Lire</a>
+        </li>
+        <li id="narrationItem6" class="narration-section" data-position="11">
+          <a id="btnTest" class="btn halt-button" href="#lbxTest"><span class="viewed-indicator"></span>Tester</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="contentFrameBottom"></div>
+</section>
+  
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData) {
+    var lightboxOpen = false,
+        isMuted = PhishingData.getMuted(),
+        hViewed = isHALTLetterViewed("h"),
+        aViewed = isHALTLetterViewed("a"),
+        lViewed = isHALTLetterViewed("l"),
+        tViewed = isHALTLetterViewed("t"),
+        beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          narrationHandle.stop();
+          lbxHoverNarrationHandle.stop();
+          lbxAnalyzeNarrationHandle.stop();
+          lbxLookP1NarrationHandle.stop();
+          lbxLookP2NarrationHandle.stop();
+          lbxTestNarrationHandle.stop();
+          
+          $( document ).off("mfpOpen", handleMFPOpen).off( "mfpClose", handleMFPClose);
+          $(".halt-button").off("click", handleHaltButtonClick);
+          $('#btnLBXLookNext').off("click", handleLBXLookNextButtonClick);
+          $('#btnLBXLookPrev').off("click", handlLBXLookPreviousButtonClick);
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+        checkHALTViewedStatus = function() {
+          
+          addClassIfViewed("#btnHover", hViewed);
+          addClassIfViewed("#btnAnalyze", aViewed);
+          addClassIfViewed("#btnLook", lViewed);
+          addClassIfViewed("#btnTest", tViewed);
+        },
+        narrationTimelineElements = [
+          {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem3", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem4", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem5", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem6", duration: 0.5, vars: {opacity:1}}
+        ],
+        narrationSettings = {
+          multimediaComponentSelector: '#m1-2_Player',
+          autoplay: true,
+          timelineElements: narrationTimelineElements //isMuted ? [] : narrationTimelineElements
+        },
+        narrationHandle = NarrationController.setupNarration(narrationSettings),
+        lbxHoverTimelineElements = [
+          {object: "#lbxHoverNarrationTooltip", duration: 0, vars: {opacity:0}, position: 0},
+          {object: "#lbxHoverNarrationPointer", duration: 0, vars: {top:45}, position: 0},
+          {object: "#lbxHoverNarrationSection1", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxHoverNarrationPointer", duration: 0.5, vars: {top:30}},
+          {object: "#lbxHoverNarrationTooltip", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxHoverNarrationSection2", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxHoverTimelineElementsViewed = [
+          {object: "#lbxHoverNarrationTooltip", duration: 0, vars: {opacity:0}, position: 0},
+          {object: "#lbxHoverNarrationPointer", duration: 0, vars: {top:45}, position: 0},
+          {object: "#lbxHoverNarrationPointer", duration: 0.5, vars: {top:30}},
+          {object: "#lbxHoverNarrationTooltip", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxHoverNarrationSettings = {
+          multimediaComponentSelector: '#lbxHoverAudioPlayer',
+          autoplay: false,
+          timelineElements: lbxHoverTimelineElements //isMuted ? lbxHoverTimelineElementsViewed : lbxHoverTimelineElements
+        },
+        lbxHoverNarrationHandle = NarrationController.setupNarration(lbxHoverNarrationSettings),
+        lbxAnalyzeTimelineElements = [
+          {object: "#lbxAnalyzeNarrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxAnalyzeNarrationItem2", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxAnalyzeNarrationItem3", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxAnalyzeNarrationItem4", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxAnalyzeNarrationSettings = {
+          multimediaComponentSelector: '#lbxAnalyzeAudioPlayer',
+          autoplay: false,
+          timelineElements: lbxAnalyzeTimelineElements //isMuted ? [] : lbxAnalyzeTimelineElements
+        },
+        lbxAnalyzeNarrationHandle = NarrationController.setupNarration(lbxAnalyzeNarrationSettings),
+        lbxLookP1DisableNext = function() {
+          $("#btnLBXLookNext").prop("disabled", true).addClass('disabled');
+        },
+        lbxLookP1EnableNext = function() {
+          $("#btnLBXLookNext").prop("disabled", false).removeClass('disabled');
+        },
+        lbxLookP1TimelineElements = [
+          {object: "#lbxLookP1NarrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxLookP1NarrationItem2", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxLookP1NarrationItem3", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxLookP1NarrationSettings = {
+          multimediaComponentSelector: '#lbxLookP1AudioPlayer',
+          autoplay: false,
+          timelineElements: lbxLookP1TimelineElements //isMuted ? [] : lbxLookP1TimelineElements
+        },
+        lbxLookP1NarrationHandle = NarrationController.setupNarration(lbxLookP1NarrationSettings),
+        lbxLookP2DisableBack = function() {
+          $("#btnLBXLookPrev").prop("disabled", true).addClass('disabled');
+        },
+        lbxLookP2EnableBack = function() {
+          $("#btnLBXLookPrev").prop("disabled", false).removeClass('disabled');
+        },
+        lbxLookP2TimelineElements = [
+          {object: "#lbxLookP2NarrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxLookP2NarrationItem2", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxLookP2NarrationItem3", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxLookP2NarrationSettings = {
+          multimediaComponentSelector: '#lbxLookP2AudioPlayer',
+          autoplay: false,
+          timelineElements: lbxLookP2TimelineElements //isMuted ? [] : lbxLookP2TimelineElements
+        },
+        lbxLookP2NarrationHandle = NarrationController.setupNarration(lbxLookP2NarrationSettings),
+        lbxTestTimelineElements = [
+          {object: "#lbxTestNarrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#lbxTestNarrationItem2", duration: 0.5, vars: {opacity:1}}
+        ],
+        lbxTestNarrationSettings = {
+          multimediaComponentSelector: '#lbxTestAudioPlayer',
+          autoplay: false,
+          timelineElements: lbxTestTimelineElements //isMuted ? [] : lbxTestTimelineElements
+        },
+        lbxTestNarrationHandle = NarrationController.setupNarration(lbxTestNarrationSettings);
+    
+    NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+    
+    if (isMuted) {
+      $(".narration-section").css({opacity: 1});
+    }
+    checkHALTViewedStatus();
+    
+    function addClassIfViewed(selector, isViewed) {
+      if (isViewed) {
+        $(selector).closest('li').addClass('viewed');
+        $(selector).closest('.viewed-bullet').attr("title","viewed");
+      } else {
+        $(selector).closest('.viewed-bullet').attr("title","not viewed");
+      }
+    }
+    
+    function isHALTLetterViewed(letter) {
+      return PhishingData.getData("halt-" + letter) === "1";
+    }
+    
+    function setHALTLetterViewed(letter) {
+      PhishingData.setData("halt-" + letter, "1");
+    }
+    
+    var handleMFPOpen = function( event ) {
+          var src = $.magnificPopup.instance.items[ 0 ].src;
+          
+          lightboxOpen = true;
+          narrationHandle.stop();
+          
+          if (src.indexOf('lbxHover') > -1) {
+            hViewed = true;
+            setHALTLetterViewed("h");
+            lbxHoverNarrationHandle.rewind();
+            lbxHoverNarrationHandle.play();
+          } else if (src.indexOf('lbxAnalyze') > -1) {
+            aViewed = true;
+            setHALTLetterViewed("a");
+            lbxAnalyzeNarrationHandle.rewind();
+            lbxAnalyzeNarrationHandle.play();
+          } else if (src.indexOf('lbxLook') > -1) {
+            lViewed = true;
+            setHALTLetterViewed("l");
+            $('#lbxLookP2').hide();
+            $('#lbxLookP2AudioWrapper').hide();
+            $('#lbxLookP2Transcript').hide();
+            $('#lbxLookP1').show();
+            $('#lbxLookP1AudioWrapper').show();
+            $('#lbxLookP1Transcript').show();
+            lbxLookP1NarrationHandle.rewind();
+            lbxLookP1NarrationHandle.play();
+          } else if (src.indexOf('lbxTest') > -1) {
+            tViewed = true;
+            setHALTLetterViewed("t");
+            lbxTestNarrationHandle.rewind();
+            lbxTestNarrationHandle.play();
+          }
+          
+          checkHALTViewedStatus();
+        },
+        handleMFPClose = function(e) {
+          var src = $.magnificPopup.instance.items[ 0 ].src;
+          
+          lightboxOpen = false;
+          
+          lbxHoverNarrationHandle.stop();
+          lbxAnalyzeNarrationHandle.stop();
+          lbxLookP1NarrationHandle.stop();
+          lbxLookP2NarrationHandle.stop()
+          lbxTestNarrationHandle.stop();
+        },
+        handleHaltButtonClick = function(e) {
+          var $this = $(this),
+              href = $this.attr("href");
+          
+          $( document ).trigger( "open.wb-lbx", { src: href }, true );
+        },
+        handleLBXLookNextButtonClick = function() {
+          $('#lbxLookP1AudioWrapper').hide();
+          $('#lbxLookP1Transcript').hide();
+          $('#lbxLookP2AudioWrapper').show();
+          $('#lbxLookP2Transcript').show();
+          lbxLookP1NarrationHandle.stop();
+          $('#lbxLookP1').slideUp();
+          $('#lbxLookP2').slideDown();
+          lbxLookP2NarrationHandle.rewind();
+          lbxLookP2NarrationHandle.play();
+        },
+        handlLBXLookPreviousButtonClick = function() {
+          $('#lbxLookP2AudioWrapper').hide();
+          $('#lbxLookP2Transcript').hide();
+          $('#lbxLookP1AudioWrapper').show();
+          $('#lbxLookP1Transcript').show();
+          lbxLookP2NarrationHandle.stop();
+          $('#lbxLookP2').slideUp();
+          $('#lbxLookP1').slideDown();
+          lbxLookP1NarrationHandle.rewind();
+          lbxLookP1NarrationHandle.play();
+        };
+        
+    $( document ).off("mfpOpen", handleMFPOpen).on("mfpOpen", handleMFPOpen).off( "mfpClose", handleMFPClose).on( "mfpClose", handleMFPClose);
+    $(".halt-button").on("click", handleHaltButtonClick);
+    $('#btnLBXLookNext').on("click", handleLBXLookNextButtonClick);
+    $('#btnLBXLookPrev').on("click", handlLBXLookPreviousButtonClick);
+    $('#lbxLookP2').hide();
+  });
+</script>

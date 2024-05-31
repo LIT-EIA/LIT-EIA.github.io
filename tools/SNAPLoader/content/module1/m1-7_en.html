@@ -1,0 +1,74 @@
+<section id="narrationItem1" class="narration-section">
+  <div id="contentFrameTop"></div>
+  <div id="contentFrame">
+    <h1 class="wb-inv">Conclusion</h1>
+    <div class="content-guardian">
+      <p class="halt-vertical-p">Don’t forget to: <span class="halt-vertical-wrapper"><span class="halt-vertical">
+          <span class="halt-letter">H</span><span id="haltHover">over</span><br>
+          <span id="haltAnalyze"><span class="halt-letter">A</span>nalyze</span><br>
+          <span id="haltLook"><span class="halt-letter">L</span>ook</span><br>
+          <span id="haltTest"><span class="halt-letter">T</span>est</span>
+        </span></span> every email that seems Phish-y.</p>
+      <p id="narrationItem2" class="narration-section">If you need help or want to know more about phishing, consult Departmental Security on <a href="http://iservice.prv/eng/is/security/index.shtml" target="_blank">iService</a>. You will find many resources to help you defend against the Invaders!</p>
+    </div>
+    <p class="text-center"><button id="btnQuit" class="btn nav-button light-bg">Quit</button></p>
+  </div>
+  <div id="contentFrameBottom"></div>
+</section>
+
+
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData) {
+    var isMuted = PhishingData.getMuted(),
+        beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          narrationHandle.stop();
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+        $btnQuit = $('#btnQuit').click(function(e) {
+          beforeNavigate();
+          
+          // Quit the course
+          if (window.confirm(labels.nav.quitConfirm)) {				
+            window.opener.closeCourse();
+						window.close();
+          }
+        }),
+        timelineElements = [
+          {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}, position: 0.3},
+          {object: "#haltHover", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 2.2},
+          {object: "#haltAnalyze", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.7}, position: 3.1},
+          {object: "#haltLook", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 4.2},
+          {object: "#haltTest", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 4.8},
+          {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}, position: 8.0}
+        ],
+        alternateTimelineElements = [
+          {object: "#haltHover", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 2.2},
+          {object: "#haltAnalyze", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.7}, position: 3.1},
+          {object: "#haltLook", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 4.2},
+          {object: "#haltTest", duration: 0.2, vars: {color:"#FF8000", yoyo: true, repeat:1, repeatDelay:0.5}, position: 4.8}
+        ],
+        narrationSettings = {
+          multimediaComponentSelector: '#m1-7_Player',
+          autoplay: true,
+          timelineElements: timelineElements //isMuted ? alternateTimelineElements : timelineElements
+        },
+        narrationHandle = NarrationController.setupNarration(narrationSettings);
+      
+    NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+      
+    if (isMuted) {
+      $(".narration-section").css({opacity: 1});
+    }
+  });
+</script>

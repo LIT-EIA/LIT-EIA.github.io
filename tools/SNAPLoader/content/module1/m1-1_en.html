@@ -1,0 +1,65 @@
+<section id="mainContent" class="narration-section">
+  <div id="contentFrameTop"></div>
+  <div id="contentFrame" class="row">
+    <div class="content-guardian">
+      <h1 id="narrationItem0" class="narration-section" data-position="0.3">What is Phishing?</h1>
+      <p>
+        <span id="narrationItem1" class="narration-section" data-position="3.5">Phishing is one of the most popular ways for cyber criminals to attack people and organizations.</span> 
+        <span id="narrationItem2" class="narration-section" data-position="9.3">It allows them to steal personal and financial information.</span>
+      </p>
+      <p id="narrationItem3" class="narration-section" data-position="13.2">Sending emails is easier than hacking into a department’s firewall, and it is a highly successful way of attacking organizations.</p>
+      <p id="narrationItem4" class="narration-section" data-position="21.4">ESDC has one of the largest holdings of personal information in the Government of Canada, making us a prime target for phishing attacks.</p>
+      <p>
+        <span id="narrationItem5" class="narration-section" data-position="30.7">Phishing attacks are a real threat to our department.</span> 
+        <span id="narrationItem6" class="narration-section" data-position="33.7">In the last year, there were over 8,000 malicious emails reported by ESDC employees. More than 1,100 of those were suspected phishing attacks. This is despite technology which blocks thousands of more emails every day.</span>
+      </p>
+    </div>
+  </div>
+  <div id="contentFrameBottom"></div>
+</section>
+  
+
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data', 'content/scripts/phishing-greensock'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData, Greensock) {
+    // Animate main content
+    Greensock.TweenMax.to("#mainContent", 1.0, {opacity:1, delay: 1})
+    
+    var isMuted = PhishingData.getMuted(),
+        beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          narrationHandle.stop();
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+        timelineElements = [
+          {object: "#narrationItem0", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem3", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem4", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem5", duration: 0.5, vars: {opacity:1}},
+          {object: "#narrationItem6", duration: 0.5, vars: {opacity:1}}
+        ],
+        narrationSettings = {
+          multimediaComponentSelector: '#m1-1_Player',
+          autoplay: true,
+          timelineElements: timelineElements //isMuted ? [] : timelineElements
+        },
+        narrationHandle = NarrationController.setupNarration(narrationSettings);
+    
+    NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+    
+    if (isMuted) {
+      $(".narration-section").css({opacity: 1});
+    }
+  });
+</script>
