@@ -15,7 +15,8 @@
             ],
             "theme": [
                 "[Fixed] Table does not display the same as in CK editor",
-                "[Fixed] Narrative width ratio not displayed properly on mobile"
+                "[Fixed] Narrative width ratio not displayed properly on mobile",
+                "[Fixed] Weird invisible links in the document coming from Word's copy-paste feature"
             ],
             "authoring": [
                 "[Improved] Item sidebar is now larger to enhance user experience"
