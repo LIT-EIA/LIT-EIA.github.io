@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+     <meta charset="utf-8" />
+     <link rel="stylesheet" href="../../../common/css/custom.css" />
+  </head>
+  <body>
+    <div id="feedbackMessage" class="feedback-guardian">
+      <p id="narrationItem1" class="narration-section">Defender, this email is safe.</p>
+      
+      <p id="narrationItem2" class="narration-section">Well played. It looks like an attack, but you knew it was spam.</p>
+      
+      <div id="feedbackNavButton" class="back-to-scenario">
+        <button id="btnContinue" class="btn nav-button light-bg">Continue</button>
+      </div>
+      
+    </div>
+    
+    <script>
+      require(['jquery', 'content/scripts/narration-controller', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data'], function($, NarrationController, SFXController, PhishingData) {
+        var isMuted = PhishingData.getMuted(),
+            beforeLeaving = function() {
+              feedbackNarration.stop();
+              $btnContinue.off("click", beforeLeaving);
+            },
+            $btnContinue = $('#btnContinue').on("click", beforeLeaving),
+            narrationSettings = {
+              multimediaComponentSelector: '#slide_2_12_Player',
+              autoplay: true,
+              timelineElements: [
+                {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}, position: 0},
+                {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}, position: 2.9}
+              ]
+            },
+            feedbackNarration = NarrationController.setupNarration(narrationSettings);
+
+        // Show the trascript
+        NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+        
+        if (isMuted) {
+          $(".narration-section").css({opacity: 1});
+        }
+      });
+    </script>
+  </body>
+</html>

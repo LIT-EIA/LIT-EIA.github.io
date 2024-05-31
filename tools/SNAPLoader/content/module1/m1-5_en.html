@@ -1,0 +1,80 @@
+<section>
+  <div id="contentFrameTop"></div>
+  <div id="contentFrame">
+    <div class="content-guardian">
+      <h1 class="wb-inv">Scenario Rules</h1>
+      
+      <h2 id="narrationItem1" class="narration-section">RULES:</h2>
+      
+      <ul class="fade-in-list">
+        <li id="narrationItem2" class="narration-section"><span class="list-bullet">&bull; </span>10 points for each right answer (Report or Safe)</li>
+        <li id="narrationItem3" class="narration-section"><span class="list-bullet">&bull; </span>5 points for each clue found</li>
+        <li id="narrationItem4" class="narration-section"><span class="list-bullet">&bull; </span>10 bonus points for 3 right answers in a row</li>
+      </ul>
+      
+      <div id="narrationItem5" class="narration-section">
+        <div id="alertInfoBox" class="alert alert-info alert-info-on-white">
+          <p>In addition to using <abbr title="Hover Analyze Look Test">HALT</abbr>, trust your common sense and intuition. If something feels off to you, it probably is!</p>
+        </div>
+      </div>
+      
+      <p id="narrationItem6" class="text-center narration-section"><button id="btnGo" class="btn nav-button light-bg">Let&apos;s go!</button></p>
+    </div>
+  </div>
+  <div id="contentFrameBottom"></div>
+</section>
+
+
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data', 'content/scripts/phishing-scenarios'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData, PhishingScenarios) {
+    var isMuted = PhishingData.getMuted(),
+        beforeNavigate = function() {
+          // Audio reinforcement
+          SFXController.playClick();
+          
+          // Ensure the narration is stopped
+          narrationHandle.stop();
+          
+          $btnCustomNext.off("click", beforeNavigate);
+          $btnCustomPrev.off("click", beforeNavigate);
+          $btnCustomHome.off("click", beforeNavigate);
+        },
+        $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+        $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+        $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+        $btnGo = $('#btnGo').click(function(e) {
+          beforeNavigate();
+          
+          // Navigate to next page
+          NavigationHelper.goToNextPage();
+        }),
+        timelineElements = [
+          {object: "#alertInfoBox", duration: 0, vars: {className: "+=hide-icon"}, position: 0},
+          {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}, position: 0.3},
+          {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}, position: 2.7},
+          {object: "#narrationItem3", duration: 0.5, vars: {opacity:1}, position: 6.8},
+          {object: "#narrationItem4", duration: 0.5, vars: {opacity:1}, position: 9.7},
+          {object: "#narrationItem5", duration: 0.5, vars: {opacity:1}, position: 13.9},
+          {object: "#alertInfoBox", duration: 0, vars: {className: "-=hide-icon"}, position: 14.0},
+          {object: "#narrationItem6", duration: 0.5, vars: {opacity: 1}, position: 22.2}
+        ],
+        narrationSettings = {
+          multimediaComponentSelector: '#m1-5_Player',
+          autoplay: true,
+          timelineElements: timelineElements //isMuted ? [] : timelineElements
+        },
+        narrationHandle = NarrationController.setupNarration(narrationSettings);
+    
+    NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+    
+    if (isMuted) {
+      $(".narration-section").css({opacity: 1});
+    }
+    
+    // Reset the email scenarios saved data, if necessary
+    PhishingScenarios.initialize({
+      reset: true
+    });
+  });
+</script>

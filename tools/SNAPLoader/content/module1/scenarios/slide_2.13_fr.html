@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+     <meta charset="utf-8" />
+     <link rel="stylesheet" href="../../../common/css/custom.css" />
+  </head>
+  <body>
+    <div id="feedbackMessage" class="feedback-guardian">
+      <p id="narrationItem1" class="narration-section">Vous avez été un peu trop 	vigilant. Ce courriel n’est pas dangereux.</p>
+      
+      <p id="narrationItem2" class="narration-section">Avez-vous utilisé la méthode <abbr title="Hésiter, analyser, lire, tester">HALTE</abbr>? Est-ce que le courriel exige que vous agissiez rapidement? Y a-t-il un lien ou un fichier joint douteux?</p>
+      
+      <div id="feedbackNavButton" class="back-to-scenario">
+        <button id="btnContinue" class="btn nav-button light-bg">Continuer</button>
+      </div>
+      
+    </div>
+    
+    <script>
+      require(['jquery', 'content/scripts/narration-controller', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data'], function($, NarrationController, SFXController, PhishingData) {
+        var isMuted = PhishingData.getMuted(),
+            beforeLeaving = function() {
+              feedbackNarration.stop();
+              $btnContinue.off("click", beforeLeaving);
+            },
+            $btnContinue = $('#btnContinue').on("click", beforeLeaving),
+            narrationSettings = {
+              multimediaComponentSelector: '#slide_2_13_Player',
+              autoplay: true,
+              timelineElements: [
+                {object: "#narrationItem1", duration: 0.5, vars: {opacity:1}, position: 0},
+                {object: "#narrationItem2", duration: 0.5, vars: {opacity:1}, position: 4.0}
+              ]
+            },
+            feedbackNarration = NarrationController.setupNarration(narrationSettings);
+
+        // Show the trascript
+        NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+        
+        if (isMuted) {
+          $(".narration-section").css({opacity: 1});
+        }
+      });
+    </script>
+  </body>
+</html>

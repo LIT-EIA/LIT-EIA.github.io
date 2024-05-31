@@ -1,0 +1,111 @@
+<section id="startScreen">
+  <h1 id="startLogo"><img src="content/medias/images/logo_fr.png" alt="Défenseurs de l’hameçonnage"></h1>
+  <p class="instructions-start">Choisissez votre niveau</p>
+  <div id="startButtons">
+    <button data-level="1" class="btn nav-button level-button">Débutant</button><br/>
+    <button data-level="2" class="btn nav-button level-button">Maître</button><br/>
+    <button data-level="3" class="btn nav-button level-button">Expert</button>
+  </div>
+</section>
+<div id="narrationMessageWrapper">
+  <section id="narrationMessage">
+    <div id="contentFrameDarkTop"></div>
+    <div id="contentFrameDark">
+      <h2>Options de narration</h2>
+	  <p>Ce cours contient de la narration audio. Si vous utilisez un lecteur d’écran ou si vous ne voulez pas entendre la narration, sélectionnez <strong>Activer le mode muet</strong>.</p>
+      <p>Cliquez sur le bouton <strong>Continuer</strong> pour débuter.</p>
+      <div class="alert alert-info">
+		<p><strong>Note&nbsp;:</strong> Vous pouvez toujours enlever ou remettre la narration plus tard en cliquant sur le bouton <strong>Activer le mode muet</strong> (<i class="glyphicon glyphicon-volume-up"></i>) ou le bouton <strong>Désactiver le mode muet</strong> (<i class="glyphicon glyphicon-volume-off"></i>).</p>
+      </div>
+	  <p class="text-center"><label for="chkNarrationOptionsMute"><input type="checkbox" id="chkNarrationOptionsMute"/> Activer le mode muet</label></p>
+      <p class="text-center"><button id="btnContinue" class="btn nav-button nav-button-wide">Continuer</button></p>
+    </div>
+    <div id="contentFrameDarkBottom"></div>
+  </section>
+</div>
+
+
+<script>
+  require(['jquery', 'content/scripts/narration-controller', 'content/scripts/navigation-helper', 'content/scripts/sound-effects-controller', 'content/scripts/phishing-data', 'content/scripts/phishing-greensock'], 
+          function($, NarrationController, NavigationHelper, SFXController, PhishingData, Greensock) {
+    
+    if (PhishingData.hasSetMutedOption()) {
+      initializeStartScreen();
+    } else {
+      initializeNarrationOptions();
+    }
+    
+    function initializeNarrationOptions() {
+      PhishingData.setMuted(false);
+      $("#startScreen").hide();
+      $("#wb-info").children().hide();
+      $("#narrationMessageWrapper").fadeIn("fast");
+      $("#btnContinue").on("click", function(e) {
+        var isMute = $("#chkNarrationOptionsMute").prop("checked");
+        
+        if (isMute) {
+          PhishingData.setMuted(isMute);
+          $(".wb-mltmd").each(function(index, el) {
+            el.player("setMuted", isMute);
+          });
+        }
+        continueToStartScreen();
+      });
+    }
+    
+    function continueToStartScreen() {
+      $("#narrationMessageWrapper").fadeOut("slow", function() {
+        $("#startScreen").show().css("opacity", 0).focus();
+        Greensock.TweenMax.to("#startScreen", 1.0, {opacity:1});
+        $("#wb-info").children().show();
+        initializeStartScreen();
+      });
+    }
+    
+    function initializeStartScreen() {
+      $("#narrationMessageWrapper").hide();
+      
+      var narrationSettings = {
+            multimediaComponentSelector: '#m0_Player',
+            autoplay: true,
+            timelineElements: []
+          },
+          narrationHandle = NarrationController.setupNarration(narrationSettings),
+          stopAudio = function() {
+          },
+          beforeNavigate = function() {
+            var $that = $(this),
+                isLevelButton = $that.hasClass("level-button");
+            
+            // Audio reinforcement
+            SFXController.playClick();
+            
+            // Record level
+            if (isLevelButton) {
+              PhishingData.setLevelOfDifficulty($that.data("level"));
+            }
+            
+            // Fade out the audio
+            narrationHandle.fadeOut(function() {
+              if (isLevelButton) {
+                // Navigate to next page
+                NavigationHelper.goToNextPage();
+              }
+            });
+            
+            // Remove local handlers
+            $levelButtons.off("click", beforeNavigate);
+            $btnCustomNext.off("click", beforeNavigate);
+            $btnCustomPrev.off("click", beforeNavigate);
+            $btnCustomHome.off("click", beforeNavigate);
+          },
+          $btnCustomNext = $('#wb-info .next').on("click", beforeNavigate),
+          $btnCustomPrev = $('#wb-info .back').on("click", beforeNavigate),
+          $btnCustomHome = $('#wb-lng .home').on("click", beforeNavigate),
+          $levelButtons = $(".level-button").on("click", beforeNavigate);
+      
+      NarrationController.showPlayer(narrationSettings.multimediaComponentSelector);
+      
+    }
+  });
+</script>
