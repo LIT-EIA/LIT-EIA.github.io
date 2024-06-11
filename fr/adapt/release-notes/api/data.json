@@ -2,6 +2,50 @@
     {
         "name": "",
         "notes": {
+            "authoring": [
+                "[Nouveau] L'éditeur d'épingles pour les visites guidées est désormais disponible pour trouver rapidement l'emplacement des épingles d'une visite guidée",
+                "[Nouveau] L'éditeur d'épingles du composant d'image avec zones cliquables est désormais disponible pour trouver rapidement l'emplacement des épingles du composant d'image avec zones cliquables",
+                "[Amélioré] La barre latérale des éléments est désormais plus grande pour améliorer l'expérience de l'utilisateur"
+            ],
+            "components": [
+                "[Nouveau] Composant « Visite guidée » désormais disponible. Ce composant permet de créer une visite guidée pas à pas sur un ensemble d'images",
+                "[Nouveau] Le composant « Énoncé d'accessibilité » est désormais disponible. Ce composant permet d'afficher un énoncé d'accessibilité aux apprenants en début de cours",
+                "[Amélioré] Le dimensionnement de l'épingle composant d'image avec zones cliquables est maintenant relatif au dimensionnement de l'éditeur d'épingles",
+                "[Amélioré] Le composant média affiche désormais un lecteur audio html5",
+                "[Amélioré] Le lecteur vidéo du composant média peut désormais être utilisé avec des pistes de sous-titrage dans toutes les langues, y compris l'inuktitut et l'inuinnaqtun",
+                "[Corrigé] Problème de duplication avec le composant d'images avec zones cliquables lors du changement de taille de l'écran",
+                "[Corrigé] Suivi de progrès du composant média lecture/fin de lecture",
+                "[Supprimé] Options inutilisées du formulaire du composant média",
+                "[Supprimé] Champ « strapline » des composants images avec zones cliquables et narratif, l'interface utilisateur utilise désormais le titre d'affichage",
+                "[Supprimé] Script qui corrigeait le lecteur pour l'accessibilité en post-rendu dans Adapt-accessibilityfixes mais qui causait d'autres problèmes"
+            ],
+            "theme": [
+                "[Corrigé] Les tableaux ne s'affichent pas de la même manière que dans l'éditeur CK",
+                "[Corrigé] Le ratio de largeur du composant narration ne s'affiche pas correctement sur mobile",
+                "[Corrigé] Liens invisibles inattendus dans le document provenant de la fonction copier-coller de Word"
+            ],
+            "a11y": [
+                "[Corrigé] Modifications importantes du code HTML/CSS de l'application afin de garantir un ordre logique de focus lors de l'utilisation du clavier et des fonctionnalités lorsque le code CSS est désactivé",
+                "[Corrigé] Les menus contextuels (icône d'engrenage) ne sont pas associés dans un ordre logique à leur élément parent",
+                "[Corrigé] Les menus contextuels (icône d'engrenage) n'ont pas de titre ou d'étiquette aria valide",
+                "[Corrigé] Pour éviter la troncature de la barre de titre, les options de la page sont désormais présentées dans un menu déroulant sur les petits écrans",
+                "[Corrigé] Pour éviter la troncature de la barre de navigation, les informations de connexion de l'utilisateur et le bouton de déconnexion se trouvent désormais dans un menu déroulant",
+                "[Corrigé] Pour éviter la troncature de la fenêtre de contenu principal, la barre latérale principale peut désormais se replier sur la vue mobile.",
+                "[Corrigé] Les menus déroulants sont désormais dotés d'une trappe de focus pour la navigation au clavier",
+                "[Corrigé] Les listes d'éléments débordent lors de l'utilisation de très longues chaînes de caractères et empêchent le réordonnancement par glisser-déposer",
+                "[Corrigé] Autoriser les tailles d'écran mobile avec une balise méta",
+                "[Corrigé] Ajustements CSS multiples pour les écrans mobiles"
+            ],
+            "ckeditor": [
+                "[Amélioré] Les tableaux ont désormais une largeur de 100% par défaut"
+            ]
+        },
+        "pub_date": "2024-06-19T12:00:00Z",
+        "version": "1.4.5"
+    },
+    {
+        "name": "",
+        "notes": {
             "security": [
                 "[Amélioré] Mise à jour du filtrage IP pour les prévisualisations sur le réseau ESDC pour garantir l'alignement avec la modernisation du réseau."
             ],
