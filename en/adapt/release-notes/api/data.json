@@ -3,6 +3,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied"
+            ]
+        },
+        "pub_date": "2024-09-01T12:00:00Z",
+        "version": "1.4.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[New] Guided Tour Pin Editor is now available to quickly find location of guided tour's pins",
                 "[New] Hot Graphic Pin Editor is now available to quickly find location of hot graphic's pins",
                 "[Improved] Item sidebar is now larger to enhance user experience"
