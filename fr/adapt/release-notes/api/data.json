@@ -13,6 +13,16 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Nouveau] Index de base de données pour améliorer les temps de chargement"
+            ]
+        },
+        "pub_date": "2024-07-10T12:00:00Z",
+        "version": "1.4.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Nouveau] L'éditeur d'épingles pour les visites guidées est désormais disponible pour trouver rapidement l'emplacement des épingles d'une visite guidée",
                 "[Nouveau] L'éditeur d'épingles du composant d'image avec zones cliquables est désormais disponible pour trouver rapidement l'emplacement des épingles du composant d'image avec zones cliquables",
                 "[Amélioré] La barre latérale des éléments est désormais plus grande pour améliorer l'expérience de l'utilisateur"
