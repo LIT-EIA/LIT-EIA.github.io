@@ -84,7 +84,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div> <!-- end of conversationDiv -->
 		<div class="messageBar">
 			<div class="messageForm">
-				<input id="textbox" placeholder="Type your question or your keywords" name="msg" autocomplete="off" type="text">
+				<!-- <input id="textbox" aria-label="Type your question or your keywords" aria placeholder="Type your question or your keywords" name="msg" autocomplete="off" type="text"> -->
+				<input id="textbox" aria-labelledby="Enter Keyword or question" aria placeholder="Enter keyword or question" name="msg" autocomplete="off" type="text">
 				<button id="send" onclick="sendMessage()">Send </button>
 			</div>
 		</div>
@@ -97,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div id="rightDiv">
 				<div class="headerDiv">
 					<div class="header">
-						<h3 class="headerBanner left">Suggested Questions</h3>
+						<h2 class="headerBanner left">Suggested Questions</h2>
 
 					</div>
 				</div>
