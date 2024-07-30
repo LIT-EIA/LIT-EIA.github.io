@@ -17,6 +17,7 @@ function init(){
 	setLanguage();
 	displayIntroMessage();
 	populateKeywords();
+	focus();
 	
 }
 
@@ -64,19 +65,12 @@ function sendMessage(){
 		"Allô" ,  "allo" , "salut" , "bonjour" , "bonsoir" , "coucou" , "salutations" ,"ça va" , "ca va" , "hey" , "yo" ];
 	//textbox is the message bar.
 	
-
-
-
-	
 		var textboxMessage = document.getElementById("textbox").value;
 		var message = document.createElement("p");
 		message.innerText = textboxMessage;
 		console.log('result is ', message)
 		var messageParts = textboxMessage.split(" ");
-		
-
-
-		
+			
 		
 		document.getElementById("textbox").value = "";
 
@@ -317,9 +311,20 @@ function findAnswer(x) {
 	var answerElement = document.getElementById("A" + x.toString());
 	var answer = document.createElement("p");
 	answer.innerHTML = answerElement.innerHTML;
-	assistantTypes(answer, true);
+
+		assistantTypes(answer, true);
 	//Scroll down of the div.
+	
+
+	
+	
+	// Scroll down of the div.
 	scrollDownOfDiv("conversationDiv");
+		// Scroll to the answer element
+	
+		
+
+
 }  
 
 function scrollDownOfDiv(DivName){
@@ -398,7 +403,13 @@ function assistantTypes(elmt, withCloseMessage){
 			}			
 			
 			scrollDownOfDiv("conversationDiv");
-		}
+
+				// Set focus on the answer element
+			td2.setAttribute("tabindex", "0");
+			td2.focus();
+			td2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+		}	
 		
 	}, 600); 
 	isTyping = false
