@@ -12,6 +12,16 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[Urgent] Correction d'un bug du bouton de démarrage sur le composant Visite Guidée"
+            ]
+        },
+        "pub_date": "2024-08-02T11:00:00Z",
+        "version": "PATCH"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[Nouveau] Index de base de données pour améliorer les temps de chargement"
             ]
