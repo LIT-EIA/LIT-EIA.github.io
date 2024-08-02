@@ -12,6 +12,16 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[Urgent] Start Button bug fix on Guided Tour component"
+            ]
+        },
+        "pub_date": "2024-08-02T11:00:00Z",
+        "version": "PATCH"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[New] Database indexes to improve loading times"
             ]
