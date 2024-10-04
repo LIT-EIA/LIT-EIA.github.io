@@ -1,0 +1,4 @@
+- Do i consider the column of TYPE - where the inputter chose Learner / Admin ?\
+- That can help me solve that comma problem - about 10 questions 
+- Key words in English about 10 not giving expected results
+- 
