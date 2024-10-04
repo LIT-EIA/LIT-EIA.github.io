@@ -130,7 +130,7 @@
     "_disableAccessibilityState": false,
     "title": "Learning Objectives",
     "displayTitle": "Learning Objectives",
-    "body": "<p>At the end of this course, you will be able to:</p><ul><li>1st objective</li><li>2nd objective</li><li>add more if needed</li></ul>",
+    "body": "<p>At the end of this course, you will be able to:</p><br><ul><li>1st objective</li><li>2nd objective</li><li>add more if needed</li></ul>",
     "_id": "65368a22e7d85649a873eff0",
     "_parentId": "65368a22e7d85649a873efca",
     "_type": "component",
@@ -161,7 +161,7 @@
     "_disableAccessibilityState": false,
     "title": "How to Navigate Through the Course",
     "displayTitle": "How to Navigate Through the Course",
-    "body": "<p>This course is designed to be interactive.</p><p>As you navigate through each page, you may come across different interactive elements/buttons that contain more information or activities.</p><p>You will need to:</p><ul><li>Open each accordion (expand/collapse);</li><li>Select each button;</li><li>Select each pin button OR numbered button;</li><li>Select each clickable or selectable image button; and</li><li>Select the <strong>Continue</strong> button to reveal new sections of content on the page (please note that the <strong>Continue</strong> button becomes activated only once the section is complete).</li></ul><p>Activities, sections and images that have been viewed change to grey or have an added grey frame around them once activated; screen readers will announce them as \"completed\".</p><p>The Page Level Progress&nbsp;at the top right of the page indicates your progress within that page.</p><p>You can use the down arrow to move to the next section.</p><p>Please take a moment to select the <strong>Open course&nbsp;resources button</strong>, located in the top right corner of this window, to access the following important tools:</p><ul><li><strong>Glossary</strong>: to consult any unfamiliar terms or acronyms</li><li><strong>Resources</strong>: to view additional resources for this course</li><li><strong>Search</strong>: to search words in this course</li></ul><p>Select the <strong>Back link</strong>, located in the top left corner of this window, to return to the previously visited page.</p><p><strong>Note</strong>: the hyperlinks open in a new tab; these links are accessible from the network.</p>",
+    "body": "<p>This course is designed to be interactive.</p><br><p>As you navigate through each page, you may come across different interactive elements/buttons that contain more information or activities.</p><br><p>You will need to:</p><br><ul><li>Open each accordion (expand/collapse);</li><li>Select each button;</li><li>Select each pin button OR numbered button;</li><li>Select each clickable or selectable image button; and</li><li>Select the <strong>Continue</strong> button to reveal new sections of content on the page (please note that the <strong>Continue</strong> button becomes activated only once the section is complete).</li></ul><p>Activities, sections and images that have been viewed change to grey or have an added grey frame around them once activated; screen readers will announce them as \"completed\".</p><br><p>The Page Level Progress&nbsp;at the top right of the page indicates your progress within that page.</p><br><p>You can use the down arrow to move to the next section.</p><br><p>Please take a moment to select the <strong>Open course&nbsp;resources button</strong>, located in the top right corner of this window, to access the following important tools:</p><br><ul><li><strong>Glossary</strong>: to consult any unfamiliar terms or acronyms</li><li><strong>Resources</strong>: to view additional resources for this course</li><li><strong>Search</strong>: to search words in this course</li></ul><p>Select the <strong>Back link</strong>, located in the top left corner of this window, to return to the previously visited page.</p><br><p><strong>Note</strong>: the hyperlinks open in a new tab; these links are accessible from the network.</p>",
     "_id": "65368a22e7d85649a873eff1",
     "_parentId": "65368a22e7d85649a873efcc",
     "_type": "component",
@@ -229,7 +229,7 @@
     "_disableAccessibilityState": false,
     "title": "Text",
     "displayTitle": "Text - Display Title",
-    "body": "<p>The text component does exactly what you think it should - display text. When using this component there are a couple of things to remember:</p><ol><li>When copying and pasting text from other text editors, you may unintentionally import other formatting along with the text.&nbsp;This can affect the way text is displayed and/or announced by a screen reader. Be sure to use the \"paste as plain text\" button in the Adapt text editor,&nbsp;or use another text editor to strip out the formatting&nbsp;before pasting it into Adapt.</li><li>Text in languages other than the primary language must be marked up in the HTML code. Do not use the tool in the editor; it is not accessible. Use the Standard Issue Report and provide a list of all the instances of foreign language words (and their locations) to MeD so that they can properly mark-up the content.&nbsp;Exceptions to this rule are proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</li></ol><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The text component does exactly what you think it should - display text. When using this component there are a couple of things to remember:</p><br><ol><li>When copying and pasting text from other text editors, you may unintentionally import other formatting along with the text.&nbsp;This can affect the way text is displayed and/or announced by a screen reader. Be sure to use the \"paste as plain text\" button in the Adapt text editor,&nbsp;or use another text editor to strip out the formatting&nbsp;before pasting it into Adapt.</li><li>Text in languages other than the primary language must be marked up in the HTML code. Do not use the tool in the editor; it is not accessible. Use the Standard Issue Report and provide a list of all the instances of foreign language words (and their locations) to MeD so that they can properly mark-up the content.&nbsp;Exceptions to this rule are proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</li></ol><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873eff3",
     "_parentId": "65368a22e7d85649a873efcd",
     "_type": "component",
@@ -260,7 +260,7 @@
     "_disableAccessibilityState": false,
     "title": "Quick Navigation - Title",
     "displayTitle": "Quick Navigation - Display Title",
-    "body": "<p>This component MUST be the last component on every page of your course. Do not add a Tricle to this component since there is nothing that follows. [Include the instructions that follow, and <strong>delete this text</strong> to meet Adapt Best Practices guidlines]:</p><p>Select the&nbsp;<strong>\"Previous Page\"</strong>&nbsp;button to return to the previous page, select&nbsp;the&nbsp;<strong>\"Return to Main Menu\"</strong>&nbsp;button to return to the Main Menu, or&nbsp;select the&nbsp;<strong>\"Next Page\"</strong>&nbsp;button to continue to the next page.</p>",
+    "body": "<p>This component MUST be the last component on every page of your course. Do not add a Tricle to this component since there is nothing that follows. [Include the instructions that follow, and <strong>delete this text</strong> to meet Adapt Best Practices guidlines]:</p><br><p>Select the&nbsp;<strong>\"Previous Page\"</strong>&nbsp;button to return to the previous page, select&nbsp;the&nbsp;<strong>\"Return to Main Menu\"</strong>&nbsp;button to return to the Main Menu, or&nbsp;select the&nbsp;<strong>\"Next Page\"</strong>&nbsp;button to continue to the next page.</p>",
     "_id": "65368a22e7d85649a873eff4",
     "_parentId": "65368a22e7d85649a873efce",
     "_type": "component",
@@ -380,7 +380,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphic (with combineblock)",
     "displayTitle": "Graphic (with combineblock) - Display Title",
-    "body": "<p>The graphic component displays images and other types of&nbsp;graphic content optimized for various devices. If your images are being viewed on a mobile device or tablet, the, smaller images will be displayed to accommodate those dimensions.</p><p>In&nbsp;accessibility terms, there are always&nbsp;two types of images:</p><ul><li>Informative (alt text required)</li><li>Decorative (alt text must be left blank/empty)</li></ul><p>If an image&nbsp;has information in it that is essential to understanding the content, that information must be included in the alternative (alt) text. If the image(s) take&nbsp;away from, or distract from&nbsp;the learning material, you must leave the alt text empty (blank).</p><p><strong>Note:&nbsp;</strong>&nbsp;The \"block container\" for these&nbsp;two components has the \"combineblock\" class applied to it.&nbsp;The \"combineblock\" class is used to combine two (or more) blocks so that they <strong>appear as one block</strong>. It can only be used on the second block (or any subsequent blocks), but <strong>not on the first block</strong>.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The graphic component displays images and other types of&nbsp;graphic content optimized for various devices. If your images are being viewed on a mobile device or tablet, the, smaller images will be displayed to accommodate those dimensions.</p><br><p>In&nbsp;accessibility terms, there are always&nbsp;two types of images:</p><br><ul><li>Informative (alt text required)</li><li>Decorative (alt text must be left blank/empty)</li></ul><p>If an image&nbsp;has information in it that is essential to understanding the content, that information must be included in the alternative (alt) text. If the image(s) take&nbsp;away from, or distract from&nbsp;the learning material, you must leave the alt text empty (blank).</p><br><p><strong>Note:&nbsp;</strong>&nbsp;The \"block container\" for these&nbsp;two components has the \"combineblock\" class applied to it.&nbsp;The \"combineblock\" class is used to combine two (or more) blocks so that they <strong>appear as one block</strong>. It can only be used on the second block (or any subsequent blocks), but <strong>not on the first block</strong>.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873eff6",
     "_parentId": "65368a22e7d85649a873efd0",
     "_type": "component",
@@ -417,7 +417,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphical Multiple Choice - Title",
     "displayTitle": "Graphical Multiple Choice - Display Title",
-    "body": "<p>The Graphical Multiple Choice Question presents the learner with a series of images to select from. The Item text label for each image is displayed on the screen.&nbsp;&nbsp;</p><p>Things to consider when setting up this component:</p><ol><li>Ensure you leave the alt text empty, as the image description is already available in the answer option text below and after each graphic.&nbsp;It can be distracting when it is repeated twice for some learners.</li><li>Because graphical multiple choice&nbsp;questions tend to be&nbsp;better suited to sighted learners, it is important to create very accurate descriptions of each image.</li></ol><p><strong>Note:</strong> The Learner's Pick option is not yet ready to&nbsp;be used with graphical multiple choice type questions. To&nbsp;ensure your answer feedback resembles the format you chose for the other question types, consider using the same style that has been used for this component, as it mimics the appearance of the Learner's Pick option in the Project Settings.</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Graphical Multiple Choice Question presents the learner with a series of images to select from. The Item text label for each image is displayed on the screen.&nbsp;&nbsp;</p><br><p>Things to consider when setting up this component:</p><br><ol><li>Ensure you leave the alt text empty, as the image description is already available in the answer option text below and after each graphic.&nbsp;It can be distracting when it is repeated twice for some learners.</li><li>Because graphical multiple choice&nbsp;questions tend to be&nbsp;better suited to sighted learners, it is important to create very accurate descriptions of each image.</li></ol><p><strong>Note:</strong> The Learner's Pick option is not yet ready to&nbsp;be used with graphical multiple choice type questions. To&nbsp;ensure your answer feedback resembles the format you chose for the other question types, consider using the same style that has been used for this component, as it mimics the appearance of the Learner's Pick option in the Project Settings.</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873eff7",
     "_parentId": "65368a22e7d85649a873efd1",
     "_type": "component",
@@ -540,7 +540,7 @@
     "_disableAccessibilityState": false,
     "title": "Hot Graphic - Title",
     "displayTitle": "Hot Graphic - Display Title",
-    "body": "<p>The Hot Graphic is an image that you place graphic \"pins\" on, in order&nbsp;to provide more information about that area of the image. It is especially useful for maps, as in this case, or for referencing&nbsp;plotted points on&nbsp;a chart or diagram.&nbsp;Search&nbsp;\"Adapt Starter Course...\" in the Adapt Media library, if you wish&nbsp;to use the pins seen here.</p><p><strong>[Delete above text and replace with&nbsp;your own content. ]</strong></p>",
+    "body": "<p>The Hot Graphic is an image that you place graphic \"pins\" on, in order&nbsp;to provide more information about that area of the image. It is especially useful for maps, as in this case, or for referencing&nbsp;plotted points on&nbsp;a chart or diagram.&nbsp;Search&nbsp;\"Adapt Starter Course...\" in the Adapt Media library, if you wish&nbsp;to use the pins seen here.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content. ]</strong></p>",
     "_id": "65368a22e7d85649a873eff8",
     "_parentId": "65368a22e7d85649a873efd2",
     "_type": "component",
@@ -679,7 +679,7 @@
     "_disableAccessibilityState": false,
     "title": "Hot Grid",
     "displayTitle": "Hot Grid - Display Title",
-    "body": "<p>The Hot Grid component displays&nbsp;images in a gallery format. Each image&nbsp;can be selected to&nbsp;open&nbsp;a popup dialogue box with more information.&nbsp;Hot grids are best suited when you want to display a gallery of images, with more information about each one made available when selected.</p><p><strong>[Delete text above and below&nbsp;images, and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Hot Grid component displays&nbsp;images in a gallery format. Each image&nbsp;can be selected to&nbsp;open&nbsp;a popup dialogue box with more information.&nbsp;Hot grids are best suited when you want to display a gallery of images, with more information about each one made available when selected.</p><br><p><strong>[Delete text above and below&nbsp;images, and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873eff9",
     "_parentId": "65368a22e7d85649a873efd3",
     "_type": "component",
@@ -764,7 +764,7 @@
     "_disableAccessibilityState": false,
     "title": "Matching Question - Title",
     "displayTitle": "Matching Question - Display Title",
-    "body": "<p>The Matching Questions Component presents the learner with a question and a dropdown list of possible answers.</p><p>The Matching Questions Component works well with the Learner's Pick option which can be activated from the Project Settings are of the Adapt backend.</p><p><strong>Note:</strong>&nbsp;To meet accessibility guidelines it is necessary to<strong> limit the number of question options to only one</strong> (even though you are able to add more in the backend of Adapt). Learners with cognitive disabilities may have difficulty retaining information if presented with too many options at once</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Matching Questions Component presents the learner with a question and a dropdown list of possible answers.</p><br><p>The Matching Questions Component works well with the Learner's Pick option which can be activated from the Project Settings are of the Adapt backend.</p><br><p><strong>Note:</strong>&nbsp;To meet accessibility guidelines it is necessary to<strong> limit the number of question options to only one</strong> (even though you are able to add more in the backend of Adapt). Learners with cognitive disabilities may have difficulty retaining information if presented with too many options at once</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873effa",
     "_parentId": "65368a22e7d85649a873efd4",
     "_type": "component",
@@ -820,7 +820,7 @@
       "title": "Feedback",
       "correct": "<p><strong>Congratulations!&nbsp;</strong><strong>You are&nbsp;correct .</strong></p>",
       "_incorrect": {
-        "final": "<p><strong>Sorry that is incorrect.</strong></p><p>The correct answer is \"This is clearly the best answer\".</p>",
+        "final": "<p><strong>Sorry that is incorrect.</strong></p><br><p>The correct answer is \"This is clearly the best answer\".</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -864,7 +864,7 @@
     "_disableAccessibilityState": false,
     "title": "Narrative - Title",
     "displayTitle": "Narrative - Display Title",
-    "body": "<p>Like a PowerPoint&nbsp;presentation, the Narrative component instructs users to select arrow buttons to move backwards or forwards through a series of slides. This&nbsp;format is well suited to information that&nbsp;requires presenting&nbsp;in&nbsp;sequential order, or for images that&nbsp;do not require selecting for&nbsp;more information.</p><p>The MeD accessibility team recommends a minimum of 2 and a maximum of 8 slides per&nbsp;Narrative component.</p><p><strong>[Delete existing content and replace with&nbsp;your own images and text]</strong></p>",
+    "body": "<p>Like a PowerPoint&nbsp;presentation, the Narrative component instructs users to select arrow buttons to move backwards or forwards through a series of slides. This&nbsp;format is well suited to information that&nbsp;requires presenting&nbsp;in&nbsp;sequential order, or for images that&nbsp;do not require selecting for&nbsp;more information.</p><br><p>The MeD accessibility team recommends a minimum of 2 and a maximum of 8 slides per&nbsp;Narrative component.</p><br><p><strong>[Delete existing content and replace with&nbsp;your own images and text]</strong></p>",
     "_id": "65368a22e7d85649a873effb",
     "_parentId": "65368a22e7d85649a873efd5",
     "_type": "component",
@@ -988,7 +988,7 @@
     "_disableAccessibilityState": false,
     "title": "Multiple Choice - Title",
     "displayTitle": "Multiple Choice - Display Title",
-    "body": "<p>The Multiple Choice Questions Component presents the learner with a question and a list of possible answers. The designer can add as many answer options as desired.</p><p>This component works best when it is used with the Learner's Pick option, which can be activated in the Project Settings section of the Adapt backend.</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Multiple Choice Questions Component presents the learner with a question and a list of possible answers. The designer can add as many answer options as desired.</p><br><p>This component works best when it is used with the Learner's Pick option, which can be activated in the Project Settings section of the Adapt backend.</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873effc",
     "_parentId": "65368a22e7d85649a873efd6",
     "_type": "component",
@@ -1042,7 +1042,7 @@
       "title": "Feedback",
       "correct": "<p><strong>Congratulations! </strong>That is the&nbsp;CORRECT answer.</p>",
       "_incorrect": {
-        "final": "<p>Unfortunately, you have selected the INCORRECT answer.&nbsp;The correct answer is A.</p><p>&nbsp;</p>",
+        "final": "<p>Unfortunately, you have selected the INCORRECT answer.&nbsp;The correct answer is A.</p><br><p>&nbsp;</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -1086,7 +1086,7 @@
     "_disableAccessibilityState": false,
     "title": "Open Text Input - Title",
     "displayTitle": "Open Text Input - Display Title",
-    "body": "<p>The Open Text Input Component presents the learner with a text input form that allows them to enter a freeform answer up to a maximum number of characters. This component is well suited for questions that do not have an exact answer, but still require thinking and writing,&nbsp;such as a self-reflection question.&nbsp;</p><p><strong>Note</strong>: There are some known issues which we are working on. Use with caution.</p><p><strong>[Delete the preceding text&nbsp;and replace with&nbsp;your question.]</strong></p>",
+    "body": "<p>The Open Text Input Component presents the learner with a text input form that allows them to enter a freeform answer up to a maximum number of characters. This component is well suited for questions that do not have an exact answer, but still require thinking and writing,&nbsp;such as a self-reflection question.&nbsp;</p><br><p><strong>Note</strong>: There are some known issues which we are working on. Use with caution.</p><br><p><strong>[Delete the preceding text&nbsp;and replace with&nbsp;your question.]</strong></p>",
     "_id": "65368a22e7d85649a873effd",
     "_parentId": "65368a22e7d85649a873efd7",
     "_type": "component",
@@ -1148,7 +1148,7 @@
     "_disableAccessibilityState": false,
     "title": "Slider - Title",
     "displayTitle": "Slider - Display Title",
-    "body": "<p>The Slider Component presents learners with a question that can be answered using a scale and a&nbsp;range of numbers. The scale can be labelled at either end, with text the defines the context.&nbsp;The correct answer can be an exact point on the scale, or fall within a range. &nbsp;</p><p><strong>[Delete all text and type or paste your question here]</strong></p>",
+    "body": "<p>The Slider Component presents learners with a question that can be answered using a scale and a&nbsp;range of numbers. The scale can be labelled at either end, with text the defines the context.&nbsp;The correct answer can be an exact point on the scale, or fall within a range. &nbsp;</p><br><p><strong>[Delete all text and type or paste your question here]</strong></p>",
     "_id": "65368a22e7d85649a873effe",
     "_parentId": "65368a22e7d85649a873efd8",
     "_type": "component",
@@ -1190,9 +1190,9 @@
     "_showScaleNumbers": true,
     "_feedback": {
       "title": "Feedback",
-      "correct": "<p>You have selected the CORRECT answer(s).</p><p>The answer is: 7</p>",
+      "correct": "<p>You have selected the CORRECT answer(s).</p><br><p>The answer is: 7</p>",
       "_incorrect": {
-        "final": "<p>Unfortunately, you have selected the INCORRECT answer.</p><p>The answer is: 7</p>",
+        "final": "<p>Unfortunately, you have selected the INCORRECT answer.</p><br><p>The answer is: 7</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -1236,7 +1236,7 @@
     "_disableAccessibilityState": false,
     "title": "Media - Title",
     "displayTitle": "Media - Display Title",
-    "body": "<p>The Media Component is used to present learners with a short video or audio clip.&nbsp;</p><p>Provide a short description here to explain what this video is about to the learner. This will give learners who learn using other means the option to skip it if they want to.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Media Component is used to present learners with a short video or audio clip.&nbsp;</p><br><p>Provide a short description here to explain what this video is about to the learner. This will give learners who learn using other means the option to skip it if they want to.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873efff",
     "_parentId": "65368a22e7d85649a873efda",
     "_type": "component",
@@ -1297,7 +1297,7 @@
     "_disableAccessibilityState": false,
     "title": "Text (Half Width)",
     "displayTitle": "Text (Half Width) - Display Title",
-    "body": "<p>This is an example of a text and a graphic component at half width. \"Half width\" can be used with any other component. It is used here for demonstration purposes.</p><p><strong>Important!&nbsp;</strong>If you are using&nbsp;<strong>two (2) interactive components&nbsp;</strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have \"Page Level Progress\" assigned to each of them, and NOT at the Block Level, in order to remain accessible.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>This is an example of a text and a graphic component at half width. \"Half width\" can be used with any other component. It is used here for demonstration purposes.</p><br><p><strong>Important!&nbsp;</strong>If you are using&nbsp;<strong>two (2) interactive components&nbsp;</strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have \"Page Level Progress\" assigned to each of them, and NOT at the Block Level, in order to remain accessible.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f000",
     "_parentId": "65368a22e7d85649a873efdb",
     "_type": "component",
@@ -1365,7 +1365,7 @@
     "_disableAccessibilityState": false,
     "title": "Final Words",
     "displayTitle": "",
-    "body": "<p>Congratulations! You’ve completed the \"Add the title of your course\"&nbsp;course!</p><p>By now, you should be able to:</p><ul><li>Recall the requirements of the the course curriculum;</li><li>Understand the content</li></ul><p>good luck!</p>",
+    "body": "<p>Congratulations! You’ve completed the \"Add the title of your course\"&nbsp;course!</p><br><p>By now, you should be able to:</p><br><ul><li>Recall the requirements of the the course curriculum;</li><li>Understand the content</li></ul><p>good luck!</p>",
     "_id": "65368a22e7d85649a873f002",
     "_parentId": "65368a22e7d85649a873efd9",
     "_type": "component",
@@ -1433,7 +1433,7 @@
     "_disableAccessibilityState": false,
     "title": "Quick Navigation ",
     "displayTitle": "",
-    "body": "<p>To access the main menu, select the \"Return to Main Menu\" button or the \"Home\" button located in the upper left corner of the page in the navigation section.</p><p>If you have completed the course, close this window and complete the evaluation.</p>",
+    "body": "<p>To access the main menu, select the \"Return to Main Menu\" button or the \"Home\" button located in the upper left corner of the page in the navigation section.</p><br><p>If you have completed the course, close this window and complete the evaluation.</p>",
     "_id": "65368a22e7d85649a873f004",
     "_parentId": "65368a22e7d85649a873efdc",
     "_type": "component",
@@ -1553,7 +1553,7 @@
     "_disableAccessibilityState": false,
     "title": "Hot Graphic - Title",
     "displayTitle": "",
-    "body": "<p>The Hot Graphic is an image that you place graphic \"pins\" on, in order&nbsp;to provide more information about that area of the image. It is especially useful for maps, as in this case, or for referencing&nbsp;plotted points on&nbsp;a chart or diagram.&nbsp;Search&nbsp;\"Adapt Starter Course...\" in the Adapt Media library, if you wish&nbsp;to use the pins seen here.</p><p><strong>[Delete above text and replace with&nbsp;your own content. ]</strong></p>",
+    "body": "<p>The Hot Graphic is an image that you place graphic \"pins\" on, in order&nbsp;to provide more information about that area of the image. It is especially useful for maps, as in this case, or for referencing&nbsp;plotted points on&nbsp;a chart or diagram.&nbsp;Search&nbsp;\"Adapt Starter Course...\" in the Adapt Media library, if you wish&nbsp;to use the pins seen here.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content. ]</strong></p>",
     "_id": "65368a22e7d85649a873f005",
     "_parentId": "65368a22e7d85649a873efdd",
     "_type": "component",
@@ -1692,7 +1692,7 @@
     "_disableAccessibilityState": false,
     "title": "Hot Grid - Title",
     "displayTitle": "",
-    "body": "<p>The Hot Grid component displays&nbsp;images in a gallery format. Each image&nbsp;can be selected to&nbsp;open&nbsp;a popup dialogue box with more information.&nbsp;Hot grids are best suited when you want to display a gallery of images, with more information about each one made available when selected.</p><p><strong>[Delete text above and below&nbsp;images, and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Hot Grid component displays&nbsp;images in a gallery format. Each image&nbsp;can be selected to&nbsp;open&nbsp;a popup dialogue box with more information.&nbsp;Hot grids are best suited when you want to display a gallery of images, with more information about each one made available when selected.</p><br><p><strong>[Delete text above and below&nbsp;images, and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f006",
     "_parentId": "65368a22e7d85649a873efde",
     "_type": "component",
@@ -1777,7 +1777,7 @@
     "_disableAccessibilityState": false,
     "title": "Narrative - Title",
     "displayTitle": "",
-    "body": "<p>Like a PowerPoint&nbsp;presentation, the Narrative component instructs users to select arrow buttons to move backwards or forwards through a series of slides. This&nbsp;format is well suited to information that&nbsp;requires presenting&nbsp;in&nbsp;sequential order, or for images that&nbsp;do not require selecting for&nbsp;more information.</p><p>The MeD accessibility team recommends a minimum of 2 and a maximum of 8 slides per&nbsp;Narrative component.</p><p><strong>[Delete existing content and replace with&nbsp;your own images and text]</strong></p>",
+    "body": "<p>Like a PowerPoint&nbsp;presentation, the Narrative component instructs users to select arrow buttons to move backwards or forwards through a series of slides. This&nbsp;format is well suited to information that&nbsp;requires presenting&nbsp;in&nbsp;sequential order, or for images that&nbsp;do not require selecting for&nbsp;more information.</p><br><p>The MeD accessibility team recommends a minimum of 2 and a maximum of 8 slides per&nbsp;Narrative component.</p><br><p><strong>[Delete existing content and replace with&nbsp;your own images and text]</strong></p>",
     "_id": "65368a22e7d85649a873f007",
     "_parentId": "65368a22e7d85649a873efdf",
     "_type": "component",
@@ -1901,7 +1901,7 @@
     "_disableAccessibilityState": false,
     "title": "Media - Title",
     "displayTitle": "",
-    "body": "<p>The Media Component is used to present learners with a short video or audio clip.&nbsp;</p><p>Provide a short description here to explain what this video is about to the learner. This will give learners who learn using other means the option to skip it if they want to.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Media Component is used to present learners with a short video or audio clip.&nbsp;</p><br><p>Provide a short description here to explain what this video is about to the learner. This will give learners who learn using other means the option to skip it if they want to.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f008",
     "_parentId": "65368a22e7d85649a873efe0",
     "_type": "component",
@@ -1962,7 +1962,7 @@
     "_disableAccessibilityState": false,
     "title": "Text - Title",
     "displayTitle": "",
-    "body": "<p>The text component does exactly what you think it should - display text. When using this component there are a couple of things to remember:</p><ol><li>When copying and pasting text from other text editors, you may unintentionally import other formatting along with the text.&nbsp;This can affect the way text is displayed and/or announced by a screen reader. Be sure to use the \"paste as plain text\" button in the Adapt text editor,&nbsp;or use another text editor to strip out the formatting&nbsp;before pasting it into Adapt.</li><li>Text in languages other than the primary language must be marked up in the HTML code. Do not use the tool in the editor; it is not accessible. Use the Standard Issue Report and provide a list of all the instances of foreign language words (and their locations) to MeD so that they can properly mark-up the content.&nbsp;Exceptions to this rule are proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</li></ol><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The text component does exactly what you think it should - display text. When using this component there are a couple of things to remember:</p><br><ol><li>When copying and pasting text from other text editors, you may unintentionally import other formatting along with the text.&nbsp;This can affect the way text is displayed and/or announced by a screen reader. Be sure to use the \"paste as plain text\" button in the Adapt text editor,&nbsp;or use another text editor to strip out the formatting&nbsp;before pasting it into Adapt.</li><li>Text in languages other than the primary language must be marked up in the HTML code. Do not use the tool in the editor; it is not accessible. Use the Standard Issue Report and provide a list of all the instances of foreign language words (and their locations) to MeD so that they can properly mark-up the content.&nbsp;Exceptions to this rule are proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</li></ol><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f009",
     "_parentId": "65368a22e7d85649a873efe1",
     "_type": "component",
@@ -1993,7 +1993,7 @@
     "_disableAccessibilityState": false,
     "title": "Accordion - Title",
     "displayTitle": "",
-    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><p>Accordion panels can&nbsp;contain text and/or&nbsp;images. They are perfect for&nbsp;reducing the length of a page because of the way they collapse information.&nbsp;In some cases, the learner may be required to open all the panels. In these cases&nbsp;be sure to deselect the \"option\" checkbox&nbsp;in the Adapt backend, and&nbsp;add the text&nbsp;\"(required)\" to the pane&nbsp;Title. This way the learner knows they need to open that one in order to mark that section complete.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><br><p>Accordion panels can&nbsp;contain text and/or&nbsp;images. They are perfect for&nbsp;reducing the length of a page because of the way they collapse information.&nbsp;In some cases, the learner may be required to open all the panels. In these cases&nbsp;be sure to deselect the \"option\" checkbox&nbsp;in the Adapt backend, and&nbsp;add the text&nbsp;\"(required)\" to the pane&nbsp;Title. This way the learner knows they need to open that one in order to mark that section complete.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f00a",
     "_parentId": "65368a22e7d85649a873efe2",
     "_type": "component",
@@ -2016,7 +2016,7 @@
     "_items": [
       {
         "title": "1 - Concise Item Title (required)",
-        "body": "<p>Accordion 1 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 1 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2026,7 +2026,7 @@
       },
       {
         "title": "2 - Concise Item Title (required)",
-        "body": "<p>Accordion 2 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 2 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2036,7 +2036,7 @@
       },
       {
         "title": "3 - Concise Item Title (required)",
-        "body": "<p>Accordion 3 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 3 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2046,7 +2046,7 @@
       },
       {
         "title": "4 - Concise Item Title (required)",
-        "body": "<p>Accordion 4 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 4 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2056,7 +2056,7 @@
       },
       {
         "title": "5 - Concise Item Title (required)",
-        "body": "<p>Accordion 5 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 5 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2066,7 +2066,7 @@
       },
       {
         "title": "6 - Concise Item Title (required)",
-        "body": "<p>Accordion 6 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 6 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2076,7 +2076,7 @@
       },
       {
         "title": "7 - Concise Item Title (required)",
-        "body": "<p>Accordion 7 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 7 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2086,7 +2086,7 @@
       },
       {
         "title": "8 - Concise Item Title (required)",
-        "body": "<p>Accordion 8 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 8 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2108,7 +2108,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphic, Text/Graphic Title - with combineblock",
     "displayTitle": "",
-    "body": "<p>The graphic component displays images and other types of&nbsp;graphic content optimized for various devices. If your images are being viewed on a mobile device or tablet, the, smaller images will be displayed to accommodate those dimensions.</p><p>In&nbsp;accessibility terms, there are always&nbsp;two types of images:</p><ul><li>Informative (alt text required)</li><li>Decorative (alt text must be left blank/empty)</li></ul><p>If an image&nbsp;has information in it that is essential to understanding the content, that information must be included in the alternative (alt) text. If the image(s) take&nbsp;away from, or distract from&nbsp;the learning material, you must leave the alt text empty (blank).</p><p><strong>Note:&nbsp;</strong>&nbsp;The Block container for these&nbsp;two components has the \"combineblock\" class applied to it.&nbsp;The \"combineblock\" class is used to combine two (or more) blocks so that they <strong>appear as one block</strong>. It can only be used on the second block (or any subsequent blocks), but not on the first block.&nbsp;</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The graphic component displays images and other types of&nbsp;graphic content optimized for various devices. If your images are being viewed on a mobile device or tablet, the, smaller images will be displayed to accommodate those dimensions.</p><br><p>In&nbsp;accessibility terms, there are always&nbsp;two types of images:</p><br><ul><li>Informative (alt text required)</li><li>Decorative (alt text must be left blank/empty)</li></ul><p>If an image&nbsp;has information in it that is essential to understanding the content, that information must be included in the alternative (alt) text. If the image(s) take&nbsp;away from, or distract from&nbsp;the learning material, you must leave the alt text empty (blank).</p><br><p><strong>Note:&nbsp;</strong>&nbsp;The Block container for these&nbsp;two components has the \"combineblock\" class applied to it.&nbsp;The \"combineblock\" class is used to combine two (or more) blocks so that they <strong>appear as one block</strong>. It can only be used on the second block (or any subsequent blocks), but not on the first block.&nbsp;</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f00b",
     "_parentId": "65368a22e7d85649a873efe3",
     "_type": "component",
@@ -2145,7 +2145,7 @@
     "_disableAccessibilityState": false,
     "title": "Text - Half Width Title",
     "displayTitle": "",
-    "body": "<p>This is an example of a text component at half width. Half width can be used with any other component. It is used here for demonstration purposes.</p><p><strong>Important!&nbsp;</strong>If you are using <strong>two (2) interactive components </strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have Page Level Progress assigned to them, and NOT the Block Level Display title, in order to remain accessible.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>This is an example of a text component at half width. Half width can be used with any other component. It is used here for demonstration purposes.</p><br><p><strong>Important!&nbsp;</strong>If you are using <strong>two (2) interactive components </strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have Page Level Progress assigned to them, and NOT the Block Level Display title, in order to remain accessible.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f00c",
     "_parentId": "65368a22e7d85649a873efe4",
     "_type": "component",
@@ -2176,7 +2176,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphic - Half Width Title",
     "displayTitle": "",
-    "body": "<p>This is an example of a graphic component at half width. Half width can be used with any other component. It is used here for demonstration purposes.</p><p><strong>Important!&nbsp;</strong>If you are using <strong>two (2) interactive components </strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have Page Level Progress assigned to them, and NOT the Block Level Display title, in order to remain accessible.</p>",
+    "body": "<p>This is an example of a graphic component at half width. Half width can be used with any other component. It is used here for demonstration purposes.</p><br><p><strong>Important!&nbsp;</strong>If you are using <strong>two (2) interactive components </strong>per&nbsp;block (this example does&nbsp;not use interactive components), they MUST have Page Level Progress assigned to them, and NOT the Block Level Display title, in order to remain accessible.</p>",
     "_id": "65368a22e7d85649a873f00d",
     "_parentId": "65368a22e7d85649a873efe4",
     "_type": "component",
@@ -2213,7 +2213,7 @@
     "_disableAccessibilityState": false,
     "title": "Quick Navigation - Title",
     "displayTitle": "",
-    "body": "<p>This component MUST be the last component on every page of your course. Do not add a Tricle to this component since there is nothing that follows. [Include the instructions that follow, and <strong>delete this text</strong> to meet Adapt Best Practices guidlines]:</p><p>Select the&nbsp;<strong>\"Previous Page\"</strong>&nbsp;button to return to the previous page, select&nbsp;the&nbsp;<strong>\"Return to Main Menu\"</strong>&nbsp;button to return to the Main Menu, or&nbsp;select the&nbsp;<strong>\"Next Page\"</strong>&nbsp;button to continue to the next page.</p>",
+    "body": "<p>This component MUST be the last component on every page of your course. Do not add a Tricle to this component since there is nothing that follows. [Include the instructions that follow, and <strong>delete this text</strong> to meet Adapt Best Practices guidlines]:</p><br><p>Select the&nbsp;<strong>\"Previous Page\"</strong>&nbsp;button to return to the previous page, select&nbsp;the&nbsp;<strong>\"Return to Main Menu\"</strong>&nbsp;button to return to the Main Menu, or&nbsp;select the&nbsp;<strong>\"Next Page\"</strong>&nbsp;button to continue to the next page.</p>",
     "_id": "65368a22e7d85649a873f00e",
     "_parentId": "65368a22e7d85649a873efe5",
     "_type": "component",
@@ -2333,7 +2333,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphical Multiple Choice - Title",
     "displayTitle": "",
-    "body": "<p>The Graphical Multiple Choice Question presents the learner with a series of images to select from. The Item text label for each image is displayed on the screen.&nbsp;&nbsp;</p><p>Things to consider when setting up this component:</p><ol><li>Ensure you leave the alt text empty, as the image description is already available in the answer option text below and after each graphic.&nbsp;It can be distracting when it is repeated twice for some learners.</li><li>Because graphical multiple choice&nbsp;questions tend to be&nbsp;better suited to sighted learners, it is important to create very accurate descriptions of each image.</li></ol><p><strong>Note:</strong> The Learner's Pick option is not yet ready to&nbsp;be used with graphical multiple choice type questions. To&nbsp;ensure your answer feedback resembles the format you chose for the other question types, consider using the same style that has been used for this component, as it mimics the appearance of the Learner's Pick option in the Project Settings.</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Graphical Multiple Choice Question presents the learner with a series of images to select from. The Item text label for each image is displayed on the screen.&nbsp;&nbsp;</p><br><p>Things to consider when setting up this component:</p><br><ol><li>Ensure you leave the alt text empty, as the image description is already available in the answer option text below and after each graphic.&nbsp;It can be distracting when it is repeated twice for some learners.</li><li>Because graphical multiple choice&nbsp;questions tend to be&nbsp;better suited to sighted learners, it is important to create very accurate descriptions of each image.</li></ol><p><strong>Note:</strong> The Learner's Pick option is not yet ready to&nbsp;be used with graphical multiple choice type questions. To&nbsp;ensure your answer feedback resembles the format you chose for the other question types, consider using the same style that has been used for this component, as it mimics the appearance of the Learner's Pick option in the Project Settings.</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873f00f",
     "_parentId": "65368a22e7d85649a873efe6",
     "_type": "component",
@@ -2456,7 +2456,7 @@
     "_disableAccessibilityState": false,
     "title": "Matching Question - Title",
     "displayTitle": "",
-    "body": "<p>The Matching Questions Component presents the learner with a question and a dropdown list of possible answers.</p><p>The Matching Questions Component works well with the Learner's Pick option which can be activated from the Project Settings are of the Adapt backend.</p><p><strong>Note:</strong>&nbsp;To meet accessibility guidelines it is necessary to<strong> limit the number of question options to only one</strong> (even though you are able to add more in the backend of Adapt). Learners with cognitive disabilities may have difficulty retaining information if presented with too many options at once</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Matching Questions Component presents the learner with a question and a dropdown list of possible answers.</p><br><p>The Matching Questions Component works well with the Learner's Pick option which can be activated from the Project Settings are of the Adapt backend.</p><br><p><strong>Note:</strong>&nbsp;To meet accessibility guidelines it is necessary to<strong> limit the number of question options to only one</strong> (even though you are able to add more in the backend of Adapt). Learners with cognitive disabilities may have difficulty retaining information if presented with too many options at once</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873f010",
     "_parentId": "65368a22e7d85649a873efe7",
     "_type": "component",
@@ -2512,7 +2512,7 @@
       "title": "Feedback",
       "correct": "<p><strong>Congratulations!&nbsp;</strong><strong>You are&nbsp;correct .</strong></p>",
       "_incorrect": {
-        "final": "<p><strong>Sorry that is incorrect.</strong></p><p>The correct answer is \"This is clearly the best answer\".</p>",
+        "final": "<p><strong>Sorry that is incorrect.</strong></p><br><p>The correct answer is \"This is clearly the best answer\".</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -2556,7 +2556,7 @@
     "_disableAccessibilityState": false,
     "title": "Multiple Choice - Title",
     "displayTitle": "",
-    "body": "<p>The Multiple Choice Questions Component presents the learner with a question and a list of possible answers. The designer can add as many answer options as desired.</p><p>This component works best when it is used with the Learner's Pick option, which can be activated in the Project Settings section of the Adapt backend.</p><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
+    "body": "<p>The Multiple Choice Questions Component presents the learner with a question and a list of possible answers. The designer can add as many answer options as desired.</p><br><p>This component works best when it is used with the Learner's Pick option, which can be activated in the Project Settings section of the Adapt backend.</p><br><p><strong>[Delete question text and answer options,&nbsp;and replace with&nbsp;your own.]</strong></p>",
     "_id": "65368a22e7d85649a873f011",
     "_parentId": "65368a22e7d85649a873efe8",
     "_type": "component",
@@ -2610,7 +2610,7 @@
       "title": "Feedback",
       "correct": "<p><strong>Congratulations! </strong>That is the&nbsp;CORRECT answer.</p>",
       "_incorrect": {
-        "final": "<p>Unfortunately, you have selected the INCORRECT answer.&nbsp;The correct answer is A.</p><p>&nbsp;</p>",
+        "final": "<p>Unfortunately, you have selected the INCORRECT answer.&nbsp;The correct answer is A.</p><br><p>&nbsp;</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -2654,7 +2654,7 @@
     "_disableAccessibilityState": false,
     "title": "Open Text Input - Title",
     "displayTitle": "",
-    "body": "<p>The Open Text Input Component presents the learner with a text input form that allows them to enter a freeform answer up to a maximum number of characters. This component is well suited for questions that do not have an exact answer, but still require thinking and writing,&nbsp;such as a self-reflection question.&nbsp;</p><p><strong>Note</strong>: There are some known issues which we are working on. Use with caution.</p><p><strong>[Delete the preceding text&nbsp;and replace with&nbsp;your question.]</strong></p>",
+    "body": "<p>The Open Text Input Component presents the learner with a text input form that allows them to enter a freeform answer up to a maximum number of characters. This component is well suited for questions that do not have an exact answer, but still require thinking and writing,&nbsp;such as a self-reflection question.&nbsp;</p><br><p><strong>Note</strong>: There are some known issues which we are working on. Use with caution.</p><br><p><strong>[Delete the preceding text&nbsp;and replace with&nbsp;your question.]</strong></p>",
     "_id": "65368a22e7d85649a873f012",
     "_parentId": "65368a22e7d85649a873efe9",
     "_type": "component",
@@ -2716,7 +2716,7 @@
     "_disableAccessibilityState": false,
     "title": "Slider - Title",
     "displayTitle": "",
-    "body": "<p>The Slider Component presents learners with a question that can be answered using a scale and a&nbsp;range of numbers. The scale can be labelled at either end, with text the defines the context.&nbsp;The correct answer can be an exact point on the scale, or fall within a range. &nbsp;</p><p><strong>[Delete all text and type or paste your question here]</strong></p>",
+    "body": "<p>The Slider Component presents learners with a question that can be answered using a scale and a&nbsp;range of numbers. The scale can be labelled at either end, with text the defines the context.&nbsp;The correct answer can be an exact point on the scale, or fall within a range. &nbsp;</p><br><p><strong>[Delete all text and type or paste your question here]</strong></p>",
     "_id": "65368a22e7d85649a873f013",
     "_parentId": "65368a22e7d85649a873efea",
     "_type": "component",
@@ -2758,9 +2758,9 @@
     "_showScaleNumbers": true,
     "_feedback": {
       "title": "Feedback",
-      "correct": "<p>You have selected the CORRECT answer(s).</p><p>The answer is: 7</p>",
+      "correct": "<p>You have selected the CORRECT answer(s).</p><br><p>The answer is: 7</p>",
       "_incorrect": {
-        "final": "<p>Unfortunately, you have selected the INCORRECT answer.</p><p>The answer is: 7</p>",
+        "final": "<p>Unfortunately, you have selected the INCORRECT answer.</p><br><p>The answer is: 7</p>",
         "notFinal": ""
       },
       "_partlyCorrect": {
@@ -2804,7 +2804,7 @@
     "_disableAccessibilityState": false,
     "title": "Accordion",
     "displayTitle": "Accordion - Display Title",
-    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><p>Accordion panels can&nbsp;contain text and/or&nbsp;images. They are perfect for&nbsp;reducing the length of a page because of the way they collapse information.&nbsp;In some cases, the learner may be required to open all the panels. In these cases&nbsp;be sure to deselect the \"option\" checkbox&nbsp;in the Adapt backend, and&nbsp;add the text&nbsp;\"(required)\" to the pane&nbsp;Title. This way the learner knows they need to open that one in order to mark that section complete.</p><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
+    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><br><p>Accordion panels can&nbsp;contain text and/or&nbsp;images. They are perfect for&nbsp;reducing the length of a page because of the way they collapse information.&nbsp;In some cases, the learner may be required to open all the panels. In these cases&nbsp;be sure to deselect the \"option\" checkbox&nbsp;in the Adapt backend, and&nbsp;add the text&nbsp;\"(required)\" to the pane&nbsp;Title. This way the learner knows they need to open that one in order to mark that section complete.</p><br><p><strong>[Delete above text and replace with&nbsp;your own content]</strong></p>",
     "_id": "65368a22e7d85649a873f014",
     "_parentId": "65368a22e7d85649a873efeb",
     "_type": "component",
@@ -2827,7 +2827,7 @@
     "_items": [
       {
         "title": "1 - Concise Item Title (required)",
-        "body": "<p>Accordion 1 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 1 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2837,7 +2837,7 @@
       },
       {
         "title": "2 - Concise Item Title (required)",
-        "body": "<p>Accordion 2 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 2 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2847,7 +2847,7 @@
       },
       {
         "title": "3 - Concise Item Title (required)",
-        "body": "<p>Accordion 3 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 3 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2857,7 +2857,7 @@
       },
       {
         "title": "4 - Concise Item Title (required)",
-        "body": "<p>Accordion 4 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 4 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2867,7 +2867,7 @@
       },
       {
         "title": "5 - Concise Item Title (required)",
-        "body": "<p>Accordion 5 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 5 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2877,7 +2877,7 @@
       },
       {
         "title": "6 - Concise Item Title (required)",
-        "body": "<p>Accordion 6 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 6 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2887,7 +2887,7 @@
       },
       {
         "title": "7 - Concise Item Title (required)",
-        "body": "<p>Accordion 7 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 7 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -2897,7 +2897,7 @@
       },
       {
         "title": "8 - Concise Item Title (required)",
-        "body": "<p>Accordion 8 Content</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion 8 Content</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",
@@ -3083,7 +3083,7 @@
     "_disableAccessibilityState": false,
     "title": "Graphical Long Description",
     "displayTitle": "",
-    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><p>&nbsp;</p>",
+    "body": "<p>The Accordion Component displays a vertically stacked list of panels (called items on the Adapt backend)&nbsp;that acts as drawers for content. Selecting a panel toggles it open (while closing another -&nbsp;if another one is open).</p><br><p>&nbsp;</p>",
     "_id": "65368a22e7d85649a873f019",
     "_parentId": "65368a22e7d85649a873efee",
     "_type": "component",
@@ -3106,7 +3106,7 @@
     "_items": [
       {
         "title": "Long Description",
-        "body": "<p>Accordion for Long Description</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
+        "body": "<p>Accordion for Long Description</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum. Luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo odio aenean sed. Turpis cursus in hac habitasse platea dictumst quisque. Faucibus ornare suspendisse sed nisi. Sollicitudin aliquam ultrices sagittis orci. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Adipiscing elit ut aliquam purus sit amet. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Ornare lectus sit amet est placerat in. Augue lacus viverra vitae congue eu consequat ac felis.</p>",
         "_graphic": {
           "alt": "",
           "src": "",

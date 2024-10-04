@@ -2,7 +2,7 @@
   {
     "title": "How to use the Starter Course",
     "displayTitle": "How to use the Starter Course",
-    "body": "<p>To make the best use of this starter&nbsp;course, complete the following two steps before adding any course content:</p><ol><li>Swap in the your course material for your Introduction (this one) and Conclusion pages.</li><li>Copy and paste either&nbsp;the \"Blocks\" or \"Components\" pages&nbsp;(use&nbsp;<strong>only one type</strong>)&nbsp;for as many pages as your course requires.</li><li>Once you have all the pages that you need, go through each page&nbsp;and copy/paste&nbsp;the blocks/components&nbsp;you want more of, and delete the ones you want to get rid of.</li></ol><p>Please review the following blocks on this page as they are required to explain&nbsp;to learners how to use and navigate through your Adapt course.</p><p>That's all!</p>",
+    "body": "<p>To make the best use of this starter&nbsp;course, complete the following two steps before adding any course content:</p><br><ol><li>Swap in the your course material for your Introduction (this one) and Conclusion pages.</li><li>Copy and paste either&nbsp;the \"Blocks\" or \"Components\" pages&nbsp;(use&nbsp;<strong>only one type</strong>)&nbsp;for as many pages as your course requires.</li><li>Once you have all the pages that you need, go through each page&nbsp;and copy/paste&nbsp;the blocks/components&nbsp;you want more of, and delete the ones you want to get rid of.</li></ol><p>Please review the following blocks on this page as they are required to explain&nbsp;to learners how to use and navigate through your Adapt course.</p><br><p>That's all!</p>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -106,7 +106,7 @@
   {
     "title": "Basic Page Components",
     "displayTitle": "Basic Page Components",
-    "body": "<p>Basic components&nbsp;are the basic building blocks of your web page(s). They include:</p><ul><li>the text component</li><li>the graphic component</li><li>the accordion component (partially interactive)</li></ul>",
+    "body": "<p>Basic components&nbsp;are the basic building blocks of your web page(s). They include:</p><br><ul><li>the text component</li><li>the graphic component</li><li>the accordion component (partially interactive)</li></ul>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -158,7 +158,7 @@
   {
     "title": "Basic Page Components",
     "displayTitle": "Basic Page Components",
-    "body": "<p>Basic components&nbsp;are the basic building blocks of your web page(s). They include:</p><ul><li>the text component</li><li>the graphics component</li><li>the accordion component (partially interactive)</li></ul>",
+    "body": "<p>Basic components&nbsp;are the basic building blocks of your web page(s). They include:</p><br><ul><li>the text component</li><li>the graphics component</li><li>the accordion component (partially interactive)</li></ul>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -210,7 +210,7 @@
   {
     "title": "Interactive Type Components",
     "displayTitle": "Interactive Type Components",
-    "body": "<p>Interactive components help learners to remember information by having them perform an action. By having users&nbsp;engage with your content, you are triggering their senses and&nbsp;helping them to retain information. The current most accessible&nbsp;interactive components in Adapt include:</p><ul><li>the Hot Grid Component</li><li>the Hot Graphic Component</li><li>the Narrative Component</li><li>the Media Component (video or audio)</li></ul>",
+    "body": "<p>Interactive components help learners to remember information by having them perform an action. By having users&nbsp;engage with your content, you are triggering their senses and&nbsp;helping them to retain information. The current most accessible&nbsp;interactive components in Adapt include:</p><br><ul><li>the Hot Grid Component</li><li>the Hot Graphic Component</li><li>the Narrative Component</li><li>the Media Component (video or audio)</li></ul>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,
@@ -262,7 +262,7 @@
   {
     "title": "Interactive Type Components",
     "displayTitle": "Interactive Type Components",
-    "body": "<p>Interactive components help learners to remember information by having them perform an action. By having users&nbsp;engage with your content, you are triggering their senses and&nbsp;helping them to retain information. The current most accessible&nbsp;interactive components in Adapt include:</p><ul><li>the Hot Grid Component</li><li>the Hot Graphic Component</li><li>the Narrative Component</li><li>the Media Component (video or audio)</li></ul>",
+    "body": "<p>Interactive components help learners to remember information by having them perform an action. By having users&nbsp;engage with your content, you are triggering their senses and&nbsp;helping them to retain information. The current most accessible&nbsp;interactive components in Adapt include:</p><br><ul><li>the Hot Grid Component</li><li>the Hot Graphic Component</li><li>the Narrative Component</li><li>the Media Component (video or audio)</li></ul>",
     "_classes": "",
     "instruction": "",
     "_isOptional": false,

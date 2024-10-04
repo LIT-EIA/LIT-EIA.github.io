@@ -155,7 +155,7 @@
       },
       {
         "title": "Add Completed Course",
-        "body": "<p>The <strong>Add Completed Course</strong> option can be used to add:<o:p></o:p></p><ul><li>Courses that were completed prior to the launch of Saba (January 2017);<o:p></o:p></li><li>Courses that were completed outside of Saba; and/or<o:p></o:p></li><li>Courses from the Saba catalogue that were completed but were not tracked.</li></ul>",
+        "body": "<p>The <strong>Add Completed Course</strong> option can be used to add:<o:p></o:p></p><br><ul><li>Courses that were completed prior to the launch of Saba (January 2017);<o:p></o:p></li><li>Courses that were completed outside of Saba; and/or<o:p></o:p></li><li>Courses from the Saba catalogue that were completed but were not tracked.</li></ul>",
         "_graphic": {
           "src": "course/en/assets/a1f9842b0d58a686459b1971ef9e93a9ec3e2249.jpg",
           "alt": "Screenshot of the My Plan screen in Saba with the Actions menu open to show how learner can add learning to their plan."

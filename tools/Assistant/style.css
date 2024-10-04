@@ -18,6 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  cursor: default
 }
 
 
@@ -68,6 +69,7 @@ input:focus{
 }
 button{
 	cursor: pointer;
+	
 }
 h1, h2, h3{
 	color:white;
@@ -93,10 +95,11 @@ button{
 	display: none;
 }
 .bubble{
-	padding: 5px;
+	padding: 10px;
 	border-radius: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	
 }
 .inlineblock{
 	display:inline-block;
@@ -119,6 +122,8 @@ button{
 .center{
 	text-align: center;
 }
+
+
 
 #outerVirtualAssistantDiv{
 	position:absolute;
@@ -319,6 +324,7 @@ button{
 }
 
 #questions{
+	
 	padding-top: 15px;
 	padding-right: 15px;
 }
@@ -381,3 +387,4 @@ ul, ol{
 }
 
 
+/* BUBBLE ADDED */

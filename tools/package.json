@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "papaparse": "^5.4.1"
+    
+  },
+  "devDependencies": {
+   
+  }
+}
