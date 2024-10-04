@@ -1,4 +1,11 @@
+
+
+
 var isEnglish = true;
+let globaLang = "";
+// Execute based on language selection
+
+
 var typingTimeout;
 var isTyping = false;
 
@@ -8,6 +15,10 @@ var questionJSON = [];
 var answerJSON = [];
 
 var defaultforMessage = false;
+var rows = 0;
+
+
+
 
 
 //General approach: We usually display all questions, and then hide as we go.
@@ -18,11 +29,103 @@ function init(){
 	displayIntroMessage();
 	populateKeywords();
 	focus();
+	listAllQuestions();
+	addContent(globaLang);
 	
+
+	// addFrench();
+		
 }
+
+// var answersFR = getAnswersFR();
+var titlesEN = getTitles(); // EnglishQuestions
+var titlesFR = getFrenchQ(); // FrenchQuestions
+
+var keywordsEN = getKeywordsEN();
+var keywordsFR = getKeywordsFR();
+
+var answersEN = getAnswersEN();
+var answersFR = getAnswersFR();
+
+var categories = getCategory();
+
+
+// add Question , Answers and Keywords in English
+function addContent(language) {
+    const questionsList = document.getElementById('questions');
+    const answersList = document.getElementById('answers');
+
+    let titles = [];
+    let keywords = [];
+    let answers = [];
+	let type = []
+
+    if (language === 'EN') {
+        titles = titlesEN;
+        keywords = keywordsEN;
+        answers = answersEN;
+		type = categories;
+    } else if (language === 'FR') {
+        titles = titlesFR;
+        keywords = keywordsFR;
+        answers = answersFR;
+		type = categories;
+    }
+
+    let customIndex = 0; // Ensure this starts at 0
+
+    titles.forEach((title) => {
+        // Create a new button for each title
+        const button = document.createElement('button');
+        button.textContent = title.replace(); // Modify if needed
+
+         // Determine class name based on type content
+		 if (type[customIndex] === 'Learner') {
+            button.className = "bubble question hidden employee"; // For Learners
+        } else if (type[customIndex] === 'Manager') {
+            button.className = "bubble question hidden manager"; // For Managers
+        } else if (type[customIndex] === 'Admin') {
+            button.className = "bubble question hidden admin"; // For Admins
+        } else {
+            button.className = "bubble question visible block defualt"; // Default class if type doesn't match
+        }
+
+	
+
+		
+
+        button.setAttribute('id', `Q${customIndex}`);
+        button.setAttribute('onclick', `findAnswer(${customIndex})`);
+        questionsList.appendChild(button); // Append the new button to the list
+
+        // Create a paragraph element for keywords
+        const paragraph = document.createElement('p');
+        paragraph.className = "keywords";
+        paragraph.textContent = keywords[customIndex]; // Make sure customIndex aligns with keywords
+        button.appendChild(paragraph);
+
+        // Create a div element for answers
+        const answerDiv = document.createElement('DIV');
+        answerDiv.className = "bubble answer inlineblock";
+        answerDiv.innerHTML = answers[customIndex]; // Make sure customIndex aligns with answers
+        answerDiv.setAttribute('id', `A${customIndex}`);
+        answersList.appendChild(answerDiv);
+
+        customIndex++; // Increment the index for the next item
+    });
+
+    // Optional: Log for verification
+    console.log(`${language} Questions:`, questionsList);
+    console.log(`${language} Answers:`, answersList);
+}
+
+
+
 
 function setLanguage(){
 	var language = document.getElementById("language").innerText;
+
+	console.log("what is this", language);
 	
 	if (language == ""){
 		var ENLength = document.getElementsByClassName("EN").length;
@@ -31,9 +134,11 @@ function setLanguage(){
 		//On the website, so the language is not hidden
 		if (language == "Français"){
 			isEnglish = true;
+			globaLang = "EN"
 		} else {
 			//Used to be false.
 			isEnglish = false;
+			globaLang = "FR"
 		}
 	}
 	
@@ -255,6 +360,7 @@ function hideAllQuestionsButton(){
 
 //THIS IS A FUNCTION RELATED TO THE LIST INITIAL QUESTIONS BUTTON.
 function listAllQuestions(){
+
 	displayAllQuestions();	
 }
 
@@ -337,8 +443,12 @@ function userTypes(elmt){
 	elmt.classList.add("bubble");
 	elmt.classList.add("user");
 	elmt.classList.add("inlineblock");
-
-	var rows = document.getElementById("QNA").getElementsByTagName("tr").length;
+if(rows == 0){
+	 rows = (document.getElementById("QNA").getElementsByTagName("tr").length)
+	
+	}else{
+	rows++;	
+	}
 	var row = document.getElementById("QNA").insertRow(rows);
 	var cell = row.insertCell(0);
 	cell.classList.add("userBubble");
@@ -376,7 +486,14 @@ function assistantTypes(elmt, withCloseMessage){
 			document.getElementById("typingBubble").style.visibility = 'hidden';
 			document.getElementById("typingBubble").style.display = 'none';
 			//Create new row, and new celldata, and append answer.
-			var rows = document.getElementById("QNA").getElementsByTagName("tr").length;
+
+			if(rows == 0){
+				rows = (document.getElementById("QNA").getElementsByTagName("tr").length)
+			   
+			   }else{
+			   rows++;	
+			   }
+		
 			var row = document.getElementById("QNA").insertRow(rows);
 			var cell = row.insertCell(0);
 			
@@ -399,7 +516,7 @@ function assistantTypes(elmt, withCloseMessage){
 			
 			
 			if (withCloseMessage){
-				add_closeMessage();
+				add_closeMessage(td2);
 			}			
 			
 			scrollDownOfDiv("conversationDiv");
@@ -423,7 +540,7 @@ function assistantTypes(elmt, withCloseMessage){
 
 
 //adds the close message (for more assistance, survey)
-function add_closeMessage(){
+function add_closeMessage(tdElemt){
 	//This code that is commented was to put a note on each answer so to let the user know that they can send an email to NSD
 	var message = document.createElement("p");
 	message.classList.add("bubble");
@@ -472,22 +589,27 @@ function add_closeMessage(){
 		}else {
 			surveyMessage.append(" pour m'aider à m'améliorer et à mieux vous servir ! Dans le coin supérieur droit du questionnaire, vous trouverez des options pour sélectionner la langue de votre choix et/ou en utilisant le lecteur immersif.");
 		}
+
+	
 		
-		//adjust the format of the table 
-		var rows = document.getElementById("QNA").getElementsByTagName("tr").length;
-		var row = document.getElementById("QNA").insertRow(rows);
-		var cell = row.insertCell(0);
+	// 	//adjust the format of the table 
+		
+		
+	// 	var row = document.getElementById("QNA").insertRow(rows);
+	// 	var cell = row.insertCell(0);
+		
 				
-		const td1 = document.createElement("td");
-		td1.classList = "userIconTD"
-		cell.appendChild(td1);
+	// 	const td1 = document.createElement("td");
+	// 	td1.classList = "userIconTD"
+	// 	cell.appendChild(td1);
 				
-		//This appends the note below the answer.
-		const td2 = document.createElement("td")
-		td2.appendChild(message);
-		cell.appendChild(td1);
-		cell.appendChild(td2);		
-		//End  of questionnaire code.
+	// 	//This appends the note below the answer.
+	// 	const td2 = document.createElement("td")
+		tdElemt.appendChild(message);
+	// 	cell.appendChild(td1);
+	// 	cell.appendChild(td2);		
+	// 	console.log('rows is',rows) 
+	// 	//End  of questionnaire code.
 }
 
 
@@ -509,10 +631,13 @@ function askUserType(message){
 	var adminButton = document.createElement("button");
 	employeeButton.classList.add("bubble");
 	employeeButton.classList.add("question");
+	employeeButton.classList.add("bold")
 	managerButton.classList.add("bubble");
 	managerButton.classList.add("question");
+	managerButton.classList.add("bold");
 	adminButton.classList.add("bubble");
 	adminButton.classList.add("question");
+	adminButton.classList.add("bold");
 	
 	
 
@@ -653,7 +778,6 @@ function populateKeywords(){
 	var convertedtoJSONanswers = JSON.stringify(answerJSON);
 
 
-	 console.log("Revised keywords",newArray);
 	return newArray;
 
 }
@@ -671,6 +795,8 @@ function splitandFilter(word){
 
 	return updatedResult;
 }
+
+
 
 
 
