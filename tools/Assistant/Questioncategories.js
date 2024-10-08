@@ -42,10 +42,10 @@ Learner
 Learner
 Learner
 Manager 
-
+Admin
 Admin
 Manager 
-
+Admin
 Manager 
 Manager 
 Manager 
@@ -64,6 +64,8 @@ Learner
 Learner
 Learner
 Learner
+Admin
+Admin
 Admin
 Admin
 Admin
@@ -105,7 +107,7 @@ function parseCSV() {
             header: true,
             complete: (results) => {
                 categories = results.data.map(row => 
-                    row['Category']
+                    row['Category'].trim().replace(/^"|"$/g, '')
                    
                         // Remove leading and trailing double quotes
                 );
@@ -130,7 +132,7 @@ function getCategory() {
 }
 
 parseCSV().then(() => {
-    console.log("CSV Parsed and titles and keywords ready for export");
+    // console.log("CSV Parsed and titles and keywords ready for export");
 });
 
 

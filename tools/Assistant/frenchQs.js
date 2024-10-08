@@ -1,12 +1,12 @@
 
 
  const frenchQues= `QuestionFR
- À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?
- "Lorsque j'essaie de réinitialiser mon mot de passe Saba, cela ne fonctionne pas.  (Pour apprenants)"
+ "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
+ "Lorsque j'essaie de réinitialiser mon mot de passe Saba"XO" cela ne fonctionne pas.  (Pour apprenants)"
  J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
  Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)
- "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC), quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
- "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant, mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
+ "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC)"XO" quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
+ "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant"XO" mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
  Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE)? (Pour apprenants)
  Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)
  Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)
@@ -23,14 +23,14 @@
  Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé?  Quelque chose m’empêche de poursuivre mon cours ou de lancer le test.
  Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC)? (Pour apprenants)
  Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe? (Pour responsables)
- "En tant que responsable (gestionnaire ou chef d’équipe), que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)"
+ "En tant que responsable (gestionnaire ou chef d’équipe)"XO" que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)"
  Comment puis-je partager le lien vers une classe avec un autre apprenant? (Pour apprenants)
  Comment puis-je partager le lien vers une classe avec mon équipe? (Pour responsables)
- "Où puis-je trouver le lien pour un cours, une classe, un curriculum ou une certification?  Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
+ "Où puis-je trouver le lien pour un cours"XO" une classe"XO" un curriculum ou une certification?  Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
  Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)
- "Je dois corriger des erreurs dans mes informations personnelles, comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
+ "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
  Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)
- "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère, prend sa retraite ou revient au ministère?  Je ne peux pas accéder à mon ancien compte Saba. (Pour apprenants)"
+ "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère"XO" prend sa retraite ou revient au ministère?  Je ne peux pas accéder à mon ancien compte Saba. (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
  Comment puis-je changer la langue de ma classe? (Pour apprenants)
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
@@ -38,7 +38,7 @@
  Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
  Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
  Est-ce que je dois régulièrement mettre à jour mon mot de passe Saba? (Pour apprenants)
- "En tant que responsable (gestionnaire ou chef d’équipe), comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
+ "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
  Quelle formation dois-je compléter? (Pour apprenants)
  Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
@@ -111,10 +111,15 @@ function parseCSV() {
                         .trim()
                         .replace(/\s+/g, ' ')
                         .replace(/^"|"$/g, '')
-                        .replace(/""/g, '"') // Remove leading and trailing double quotes
+                        .replace(/""/g, '"').replace(/"XO"/g, ',') // Remove leading and trailing double quotes
                 );
 
-                // console.log('English Questions',titles);    // Optional: Log titles for verification
+                //  console.log('French Questions',frenchQuestions); 
+                 
+                   // Remove the last empty element if present
+                   if (frenchQuestions[frenchQuestions.length - 1] === "") {
+                    frenchQuestions.pop();
+                }// Optional: Log titles for verification
                 
 
                 resolve({ frenchQuestions}); // Resolve with the arrays
@@ -130,7 +135,7 @@ function getFrenchQ() {
 
 
 parseCSV().then(() => {
-    console.log("CSV Parsed and titles and keywords ready for export");
+    // console.log("CSV Parsed and titles and keywords ready for export");
 });
 
 // Expose the functions to the window object for global access
