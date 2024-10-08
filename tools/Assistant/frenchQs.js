@@ -1,7 +1,4 @@
-
-
  const frenchQues= `QuestionFR
- "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
  "Lorsque j'essaie de réinitialiser mon mot de passe Saba"XO" cela ne fonctionne pas.  (Pour apprenants)"
  J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
  Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)
@@ -11,6 +8,7 @@
  Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)
  Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)
  J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)
+ "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
  Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)
  Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)
  Comment puis-je avoir un accès d’administrateur de contenu dans Saba?  (Pour administrateurs)

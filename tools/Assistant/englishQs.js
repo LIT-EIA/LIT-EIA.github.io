@@ -1,16 +1,14 @@
-
-
  const csvData = `Title 
- What does the Saba Sign In page’s ""Remember Me"" option do?
  When I try to reset my Saba password "XO" it doesn’t work. (For learners)
  I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC? (For learners)
  How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile? (For learners)
  How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)
- "I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago"XO" yet it is not showing up in my Saba learning history as complete. What do I do? (For learners)"
+ I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago"XO" yet it is not showing up in my Saba learning history as complete. What do I do? (For learners)
  What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course? (For learners)
  What should I do if I encounter technical difficulties with Saba? (For learners)
  I cannot find my manager or team leader in Saba. (For learners)
  I need manager access (for managers/team leaders) in Saba. (For managers)
+ What does the Saba Sign In page’s "Remember Me" option do?
  I’m a new manager/team leader. How can I add my team members to my Saba account? (For managers)
  How do I get course content uploaded to Saba? (For administrators – job aid)
  How do I get the content administrator role in Saba? (For administrators)
@@ -23,14 +21,14 @@
  What should I do if my course is not marking complete?  Something is preventing me from continuing my course or launching the test. (For learners)
  What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course? (For learners)
  How do I access my team’s Essential Training Curriculum (ETC) completion data? (For managers)
- "As a manager (or team leader)"XO" what should I do to ensure that my Saba reports are accurate? (For managers)"
+ As a manager (or team leader)"XO" what should I do to ensure that my Saba reports are accurate? (For managers)
  How can I share the link to a class with another learner? (For learners)
  How can I share the link to a class with my team? (For managers)
- "Where can I find the link for a course"XO" a class"XO" curriculum or certification?  How can I guide learners to my training? (For administrators)"
+ Where can I find the link for a course"XO" a class"XO" curriculum or certification?  How can I guide learners to my training? (For administrators)
  Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)
- "I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)"
+ I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)
  I have returned from an absence; how do I get my Saba account reactivated? (For learners)
- "What happens to a Saba account when an employee leaves the Department"XO" retires"XO" or returns to the department?  I cannot access my old Saba account. (For learners)"
+ What happens to a Saba account when an employee leaves the Department"XO" retires"XO" or returns to the department?  I cannot access my old Saba account. (For learners)
  I want to bookmark the link to Saba. Which link should I use? (For learners)
  How do I switch the language of my class? (For learners)
  What should I do if my manager (or team leader) does not see my approval request? (For learners)
@@ -38,11 +36,11 @@
  How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)
  How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)
  Do I need to update my Saba password regularly? (For learners)
- "As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)"
+ As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)
  What training do I need to complete? (For learners)
  Can I log into Saba off the government network/ from my home computer? (For learners)
  Why is there an evaluation pending for a course that I have completed? (For learners)
- "What does the Saba sign in page’s ""Remember Me"" option do?"
+ What does the Saba sign in page’s "Remember Me" option do?
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
  How do I become a course administrator or instructor?
@@ -108,8 +106,8 @@ function parseCSV() {
             skipEmptyLines: true,                      
             complete: (results) => {
                 titles = results.data.map(row => 
-                    row['Title ']
-                    .replace(/""/g, '"')    // Convert "" to a single "
+                    row['Title '].replace(/^""|""$/g, '"') 
+                      // Convert "" to a single "
                     .trim()                 // Trim leading/trailing spaces
                     .replace(/\s+/g, ' ')
                     .replace(/"XO"/g, ',')

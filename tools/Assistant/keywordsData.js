@@ -1,7 +1,4 @@
-
-
 const keywordsData = `KeywordsEN,KeywordsFR
-"Remember Me, login, login page, Session duration,  duration, Session","Mémoriser mon profil,  connexion, page de connexion, Durée de la session, session"
 "peoplesoft, password, pass, pwd, change, update, access, new, login, log in, connect, first","peoplesoft, mot de passe, mdp, reinitialiser, mettre à jour, acces, accès, new, login, log in, connect, first"
 "essential, etc, curricula, courses, classes, transfer, start over, profile, repeat, redo, equivalence, missing, CFE","curriculum, curricula, complété, complete, completer, essentielle, cfe, obligatoire, EDSC, cours, classes, transférer, transfert, transferer, recommencer, profil, répéter, repeter, refaire, de nouveau, équivalence,"
 "essential, etc, curriculum, School of Public Service, school, curricula, courses, classes, transfer, start over, repeat, redo, transfer, equivalence, missing, CFE","curriculum, essentielle, cfe, ecole de la fonction publique du Canada, EFPC, ecole, répéter, repeter, refaire, de nouveau, transfert, transféré, transfere, équivalence, equivalence, manque, manquant manquantes, ETC"
@@ -11,6 +8,7 @@ const keywordsData = `KeywordsEN,KeywordsFR
 "technical, difficulties, problem, problems, tickets, national desk, national service, national service desk, NSD, client services, help, does not work ","Problèmes techniques, problemes, ticket, demande, billets, difficultes, probleme, problemes, inforservice, infoservice national, NSD, service clientèle, clientele, aide, ne fonctionne pas "
 "manager, managers, manager’s, team lead, lead","gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe"
 "manager, managers, manager’s, team lead, lead","gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe"
+"Remember Me, login, login page, Session duration,  duration, Session","Mémoriser mon profil,  connexion, page de connexion, Durée de la session, session"
 "manager, managers, manager’s, team lead, lead, find me","gestionnaire, gestionnaires, chef, chef d'équipe, chefs, chefs d'équipe, responsable, responsables, equipe, me trouver"
 " Upload, Content, Administrators, Process, Add, Add content, Content upload, Upload content, Upload files, Files, Job aid, SharePoint, Design team, Instruction, Content administrator, Teams, Import, Load, Transfer, Upload / Put online, Insert files, - Sub","Téléversement, contenu, administrateurs,  Processus,  Ajouter,  Ajouter contenu,  Téléversement de contenu, Upload,  Upload contenu,  Téléverser fichiers, aide- mémoire, SharePoint, équipe de conception, instruction,  Administrateur de contenu."
 "administrator access, administrator, admin permissions, permissions, administrator rights, account, content acces, access, interface, guide,Parameter, create account, role, list, existing account, content administrator, role permission, obtain","Accès administrateur,administrateur,  Permissions admin,  Permissions,  Droits administrateur, Compte, contenu acces, access, accès, interface, guide,Paramètre, créer compte, rôle, liste, compte existant"
