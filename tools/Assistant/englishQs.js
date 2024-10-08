@@ -115,7 +115,7 @@ function parseCSV() {
                     .replace(/"XO"/g, ',')
                 );
 
-                console.log('English Questions',titles);    // Optional: Log titles for verification
+                // console.log('English Questions',titles);    // Optional: Log titles for verification
                   // Remove the last empty element if present
                   if (titles[titles.length - 1] === "") {
                     titles.pop();

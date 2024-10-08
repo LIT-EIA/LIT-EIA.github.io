@@ -78,21 +78,36 @@ function addContent(language) {
         // Create a new button for each title
         const button = document.createElement('button');
         button.textContent = title.replace(); // Modify if needed
-
-         // Determine class name based on type content
-		 if (type[customIndex] === 'Learner') {
-            button.className = "bubble question hidden employee"; // For Learners
-        } else if (type[customIndex] === 'Manager') {
-            button.className = "bubble question hidden manager"; // For Managers
-        } else if (type[customIndex] === 'Admin') {
-            button.className = "bubble question hidden admin"; // For Admins
-        } else {
-            button.className = "bubble question visible block defualt"; // Default class if type doesn't match
-        }
-
 	
+    // Classify the first ten questions based on type and add the default class
+    // For the first 10 questions
+	if(customIndex<10){
+		if (type[customIndex] === 'Learner') {
+			// console.log('expected result', type[customIndex]);
+			button.className = "bubble question visible employee"; // For Learners
+		} else if (type[customIndex] === 'Manager') {
+			console.log('expected result', type[customIndex]);
+			button.className = "bubble question visible manager"; // For Managers
+		} else if (type[customIndex] === 'Admin') {
+			// console.log('expected result', type[customIndex]);
+			button.className = "bubble question visible admin"; // For Admins
+		}
 
-		
+	}else{
+  
+		// Classify remaining questions based on type without the default class
+		if (type[customIndex] === 'Learner') {
+			// console.log('expected result', type[customIndex]);
+			button.className = "bubble question hidden employee"; // For Learners
+		} else if (type[customIndex] === 'Manager') {
+			console.log('expected result', type[customIndex]);
+			button.className = "bubble question hidden manager"; // For Managers
+		} else if (type[customIndex] === 'Admin') {
+			// console.log('expected result', type[customIndex]);
+			button.className = "bubble question hidden admin"; // For Admins
+		}
+	
+	}
 
         button.setAttribute('id', `Q${customIndex}`);
         button.setAttribute('onclick', `findAnswer(${customIndex})`);
@@ -120,12 +135,10 @@ function addContent(language) {
 }
 
 
-
-
 function setLanguage(){
 	var language = document.getElementById("language").innerText;
 
-	console.log("what is this", language);
+	// console.log("what is this", language);
 	
 	if (language == ""){
 		var ENLength = document.getElementsByClassName("EN").length;
