@@ -27,11 +27,13 @@ var rows = 0;
 function init(){
 	setLanguage();
 	displayIntroMessage();
+	
+	
 	populateKeywords();
 	focus();
-	listAllQuestions();
 	addContent(globaLang);
-	
+	listInitialQuestions();
+	// listAllQuestions();
 
 	// addFrench();
 		
@@ -84,13 +86,13 @@ function addContent(language) {
 	if(customIndex<10){
 		if (type[customIndex] === 'Learner') {
 			// console.log('expected result', type[customIndex]);
-			button.className = "bubble question visible employee"; // For Learners
+			button.className = "bubble question  default visible employee"; // For Learners
 		} else if (type[customIndex] === 'Manager') {
 			console.log('expected result', type[customIndex]);
-			button.className = "bubble question visible manager"; // For Managers
+			button.className = "bubble question  default visible manager"; // For Managers
 		} else if (type[customIndex] === 'Admin') {
 			// console.log('expected result', type[customIndex]);
-			button.className = "bubble question visible admin"; // For Admins
+			button.className = "bubble question default  visible admin"; // For Admins
 		}
 
 	}else{
@@ -346,35 +348,38 @@ function isMatchKeywords(messageParts, keywords) {
 	
 	return false;
 }
-
+//helper function
 function showInitialQuestionsButton(){
 	var hmtlButton = document.getElementById("initialQuestions")
 	hmtlButton.style.visibility = 'visible';
 	hmtlButton.style.display = 'block';
 }
-
+//helper function
 function hideInitialQuestionsButton(){
 	var hmtlButton = document.getElementById("initialQuestions")
 	hmtlButton.style.visibility = 'hidden';
 	hmtlButton.style.display = 'none';
 }
-
+//helper function
 function showAllQuestionsButton(){
 	var hmtlButton = document.getElementById("allQuestions")
 	hmtlButton.style.visibility = 'visible';
 	hmtlButton.style.display = 'block';
 }
-
+//helper function
 function hideAllQuestionsButton(){
 	var hmtlButton = document.getElementById("allQuestions")
 	hmtlButton.style.visibility = 'hidden';
 	hmtlButton.style.display = 'none';
 }
 
+
 //THIS IS A FUNCTION RELATED TO THE LIST INITIAL QUESTIONS BUTTON.
 function listAllQuestions(){
 
 	displayAllQuestions();	
+
+	console.log("LIST ALL QS console log");
 }
 
 //THIS IS A FUNCTION RELATED TO THE LIST INITIAL QUESTIONS BUTTON.
@@ -400,9 +405,11 @@ function listInitialQuestions(){
 
 	showAllQuestionsButton();
 	hideInitialQuestionsButton();
+
+	console.log("HELLO");
 	
 }
-
+//hides all questions
 function hideAllQuestions(){
 	var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
 	for (let i = 0; i < nbQuestions; i++) {
@@ -410,7 +417,7 @@ function hideAllQuestions(){
 		document.getElementById("questions").getElementsByTagName("button")[i].style.display = 'none';
 	}
 }
-
+// displays all questions , initial question button hidden
 function displayAllQuestions(){
 	var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
 	for (let i = 0; i < nbQuestions; i++) {
