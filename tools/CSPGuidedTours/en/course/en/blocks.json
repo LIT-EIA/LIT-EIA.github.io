@@ -1,0 +1,32 @@
+[
+  {
+    "title": "We're excited to share the latest enhancements in the Client Service Portal! Here's what's new in version 2.2.0:",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 1,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "componentWidthRatio": 50,
+    "_id": "671119ed1c90a5b482036def",
+    "_parentId": "671119ec1c90a5b482036dee",
+    "_type": "block",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": false,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    }
+  }
+]

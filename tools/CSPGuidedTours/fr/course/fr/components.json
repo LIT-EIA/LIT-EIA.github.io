@@ -1,0 +1,263 @@
+[
+  {
+    "_component": "guidedtour",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "Nous sommes ravis de partager les dernières améliorations du Portail de Service aux clients! ",
+    "displayTitle": "Nous sommes ravis de partager les dernières améliorations du Portail de Service aux clients! ",
+    "body": "<p>Voici les nouveautés de la version 2.2.0 :</p>",
+    "_id": "6711b36b1c90a5b4820374c9",
+    "_parentId": "6711b36b1c90a5b4820374c8",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Sélectionnez « Démarrer la visite » pour en savoir plus sur les améliorations. Après avoir lu toutes les 14 étapes, sélectionnez « Fermer » pour terminer cette activité. ",
+    "_setCompletionOn": "allItems",
+    "mobileBody": "",
+    "mobileInstruction": "",
+    "_hidePagination": false,
+    "_items": [
+      {
+        "title": "Bouton Consultation avec DMC",
+        "body": "<p>Initiez facilement une consultation en cliquant sur le nouveau bouton dans la barre de navigation en haut, qui remplit automatiquement la boîte GD de DMC dans votre courriel.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/1195900ccbda3dbaace0673e64d159b7f3ada452.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 34.45,
+          "_top": 12.18,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Colonne de demandes complétées",
+        "body": "<p>Une nouvelle troisième colonne a été ajoutée à l'écran principal, vous permettant de voir une liste de vos demandes complétées d'un coup d'œil.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/fr/assets/ccf72791b043091f0c62421666414fefd595d94b.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 68.68,
+          "_top": 28.32,
+          "_bubbledirection": "left",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Informations améliorées",
+        "body": "<p>Nous avons repensé l'interface de l'écran principal pour afficher plus de détails sur chaque demande, facilitant ainsi l'organisation.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/fr/assets/68c028c96792d03bc3b4fbed784d3f19d442928c.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 38.55,
+          "_top": 29.77,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Aperçu des commentaires",
+        "body": "<p>Survoler l'icône de vue ou d'édition sur une demande affichera désormais le contenu de la boîte de commentaire de la demande, offrant un accès rapide aux notes importantes.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/695366e7e66613e3b4773439435ffa0f27634c10.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 22,
+          "_top": 37.72,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Champ de titre pour les demandes",
+        "body": "<p>Lors de la création ou de l’édition d’une demande, vous pouvez maintenant ajouter des titres à tous les types de demandes, ce qui aide à les différencier plus facilement sur l'écran principal.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/d7df80fbe2d2718c7b220fd94468dec3a403d3a0.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 60.56,
+          "_top": 49.04,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Champ d’hyperliens",
+        "body": "<p>Ce nouveau champ vous permet d’ajouter des hyperliens à vos demandes avec des identifiants uniques afin de faciliter la communication à propos de liens spécifiques.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/fr/assets/6325f96798235ea0440cb495514b56ee220ddb0e.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 35.01,
+          "_top": 47.59,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Champ d’hyperliens - Étape 2",
+        "body": "<p>Sélectionnez le bouton <strong>Ajouter des liens</strong> pour ajouter un lien, il sera automatiquement attribué un identifiant.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/b6be87bf32fd7d0a503c2eae9628a11047efea5c.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 30.47,
+          "_top": 52.17,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Champ d’hyperliens - Étape 3",
+        "body": "<p>Sélectionnez le bouton <strong>Éditer </strong>pour modifier un lien.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/b6be87bf32fd7d0a503c2eae9628a11047efea5c.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 81.22,
+          "_top": 62.53,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Champ d’hyperliens - Étape 4",
+        "body": "<p>Lorsque vous avez terminé l’édition, sélectionnez le bouton <strong>Sauvegarder </strong>pour mettre à jour le lien.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/07fa06b94fc9d94d2afe1b1b06a9f970ce2146f4.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 80.03,
+          "_top": 63.01,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Simplification des demandes",
+        "body": "<p>Vous remarquerez quelque chose de différent lorsque vous modifiez maintenant une demande créative à partir de vos demandes <strong>planifiées</strong>.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/5888efa65e73e3ce2f739d3dbe17c9633c354a5e.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 15.62,
+          "_top": 22.54,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Simplification des demandes - Étape 2",
+        "body": "<p>Le bouton Envoyer à DMC a été supprimé! Les demandes de créatives n’ont plus besoin d’être envoyées à DMC pour approbation; DMC les mettra en file d’attente pour vous après que vous aurez consulté DMC au sujet des demandes.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/fr/assets/25fe5ab7d8b197761d593aef6df3c7a92d975e89.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 66.28,
+          "_top": 83.49,
+          "_bubbledirection": "top",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Simplification des demandes - Étape 3",
+        "body": "<p>Vous remarquerez également quelque chose de différent pour certains types de demandes lorsque vous planifiez une nouvelle demande.</p>",
+        "_graphic": {
+          "src": "course/fr/assets/4a084e01f929ab6554d4c2df1d900fc33a018aea.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 8.46,
+          "_top": 23.26,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Simplification des demandes - Étape 4",
+        "body": "<p>Certaines types de demandes, comme les demandes de service multimédia payant, ne devront plus être envoyées à vos demandes planifiées, puis modifiées pour être activées; elles passeront l’étape de planification et seront envoyées directement à DMC pour approbation!</p>",
+        "_graphic": {
+          "src": "course/fr/assets/f4f32658f4d6d97fd2f63b688e6f10aef9e60315.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 73.81,
+          "_top": 75.3,
+          "_bubbledirection": "left",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "C'est tout!",
+        "body": "<p>C’est tout pour les dernières améliorations apportées au Portail du service à la clientèle.</p><p>Si vous rencontrez des problèmes avec ces nouvelles fonctionnalités, veuillez nous contacter via le <a href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=RljVnoGKRkKs2LGgGr_A0Un9OJIvHjNFiFE__NvAv8RUN083SEdWSDNUSE9JVU5RMzZRMk5YR1NOUi4u&amp;lang=fr-CA\" target=\"_blank\" rel=\"noopener noreferrer\">formulaire d'assistance technique</a>. Nous espérons que vous apprécierez ces améliorations et nous avons hâte de vous en présenter d’autres bientôt !<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/fr/assets/6d1f02ad8549cbf9f4af6b378e4e79fc618ca5a3.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 50.27,
+          "_top": 12.42,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      }
+    ]
+  }
+]

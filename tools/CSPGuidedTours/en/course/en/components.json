@@ -1,0 +1,263 @@
+[
+  {
+    "_component": "guidedtour",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_ariaLevel": 0,
+    "_disableAccessibilityState": false,
+    "title": "We're excited to share the latest enhancements in the Client Service Portal!",
+    "displayTitle": "We're excited to share the latest enhancements in the Client Service Portal!",
+    "body": "<p>Here's what's new in version 2.2.0</p>",
+    "_id": "671124f51c90a5b482036ea5",
+    "_parentId": "671119ed1c90a5b482036def",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_search": {
+      "_isEnabled": true,
+      "keywords": ""
+    },
+    "instruction": "Select \"Start Tour\" to learn more about the enhancements. After reading all 14 steps, select \"Close\" to complete this activity. ",
+    "_setCompletionOn": "allItems",
+    "mobileBody": "",
+    "mobileInstruction": "",
+    "_hidePagination": false,
+    "_items": [
+      {
+        "title": "Consultation with MED Button",
+        "body": "<p>Easily initiate a consultation by clicking the new button in the top navigation bar, which automatically fills in MED's GD box in your email.</p>",
+        "_graphic": {
+          "src": "course/en/assets/944a06ba6583339391917d4d3c702d453e02b772.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 34.5,
+          "_top": 12.66,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Closed Requests Column",
+        "body": "<p>A new third column has been added to the main screen, allowing you to view a list of your closed requests at a glance.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/7dbeb541aef9402c257a2fb44e4104829502bf2d.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 68.68,
+          "_top": 28.32,
+          "_bubbledirection": "left",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Enhanced Request Information",
+        "body": "<p>We've revamped the main screen interface to display more details about each request, making it easier to stay organized.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/5f73c83a9c944c7d20378f18f4c157503c1700a5.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 39.48,
+          "_top": 30.25,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Quick View Comments",
+        "body": "<p>Hovering over the view or edit icon on any request will now show the content of the request's comment box, providing quick access to important notes.</p>",
+        "_graphic": {
+          "src": "course/en/assets/417dbb5c9e11a380700f46eef7db91bd14129ffe.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 22,
+          "_top": 37.72,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Request Title Field",
+        "body": "<p>When creating or editing a request, you can now add titles to all request types helping you differentiate them more easily on the main screen.</p>",
+        "_graphic": {
+          "src": "course/en/assets/ea15008ebc8ebb248f48309b0b208494c4f17a5b.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 42.39,
+          "_top": 49.52,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Hyperlinks field",
+        "body": "<p>This new field allows you to add hyperlinks to your requests with unique IDs to facilitate communication about specific links.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/13c6c98e3e284e3dbf71cd35a0d2067187db7fbe.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 17.83,
+          "_top": 55.06,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Hyperlinks field - Step 2",
+        "body": "<p>Select the <strong>Add more links</strong> button to add a link, it will automatically be assigned an ID.</p>",
+        "_graphic": {
+          "src": "course/en/assets/36178e125a9ac4217e613e9e4c7c05ed286a5045.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 15.07,
+          "_top": 62.53,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Hyperlinks field - Step 3",
+        "body": "<p>Select the <strong>Edit </strong>button to change a link.</p>",
+        "_graphic": {
+          "src": "course/en/assets/36178e125a9ac4217e613e9e4c7c05ed286a5045.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 81.22,
+          "_top": 62.53,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Hyperlinks field - Step 4",
+        "body": "<p>When you've finished editing, select the <strong>Save </strong>button to update the link.</p>",
+        "_graphic": {
+          "src": "course/en/assets/8d5dc268371d6844d967c2a9d935cae7183ea2ec.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 79.78,
+          "_top": 62.77,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Request Streamlining",
+        "body": "<p>You will notice something different when you now edit a creative requests from your <strong>Planned </strong>requests.</p>",
+        "_graphic": {
+          "src": "course/en/assets/25319ab3dbadd006726b1ea330bc6bebd7962639.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 15.62,
+          "_top": 22.54,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Request Streamlining - Part 2",
+        "body": "<p>The Send to MED Button has been removed! Creative requests no longer need to be sent to MED for approval; MED will move them into the queue for you after you've had a consultation with them about the requests.<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/d0d48f468ae5a0108b13a5946ec701f8eedbefa0.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 66.28,
+          "_top": 83.49,
+          "_bubbledirection": "top",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Request Streamlining - Part 3",
+        "body": "<p>You will also notice something different for certain types of requests when planning a new one.</p>",
+        "_graphic": {
+          "src": "course/en/assets/9e7331dbede7bdc271bae4c188b21a94ae987478.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 8.32,
+          "_top": 22.06,
+          "_bubbledirection": "right",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "Request Streamlining - Part 4",
+        "body": "<p>Other requests such as Paid Multimedia requests will no longer have to be sent to your Planned requests, then edited in order to be activated; they will skip the planning stage and be sent directly to MED for approval!</p>",
+        "_graphic": {
+          "src": "course/en/assets/4dda17175d1f381d67dce3643b4ff6f880d9bc85.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 73.81,
+          "_top": 75.3,
+          "_bubbledirection": "left",
+          "_bordercolor": "#000000"
+        }
+      },
+      {
+        "title": "That's all!",
+        "body": "<p>That's it for the latest enhancements in the Client Service Portal.</p><p>If you experience any issues with these new features, please reach out to us via the <a href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=RljVnoGKRkKs2LGgGr_A0Un9OJIvHjNFiFE__NvAv8RUN083SEdWSDNUSE9JVU5RMzZRMk5YR1NOUi4u&amp;lang=en-CA\">Technical Support</a> form. We hope you enjoy these enhancements and look forward to bringing you more updates soon!<o:p></o:p></p>",
+        "_graphic": {
+          "src": "course/en/assets/18e5e76e7c7ad40330c4163977b411057f99b48c.png",
+          "alt": "",
+          "_forceFullWidth": false
+        },
+        "_pinfinder": "",
+        "_pin": {
+          "_left": 50.27,
+          "_top": 12.42,
+          "_bubbledirection": "bottom",
+          "_bordercolor": "#000000"
+        }
+      }
+    ]
+  }
+]
