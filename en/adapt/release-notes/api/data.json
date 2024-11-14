@@ -3,6 +3,19 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Fixed] Typos and inconsistencies in both French and English"
+            ],
+            "components": [
+                "[Fixed] The field order in the Graphical Multiple Choice Questions component to ensure consistency with the Multiple Choice Questions component"
+            ]
+        },
+        "pub_date": "2024-12-02T12:00:00Z",
+        "version": "1.4.7"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied"
             ]
         },
