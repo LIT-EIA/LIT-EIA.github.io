@@ -1,14 +1,4 @@
 {
-  "1195900ccbda3dbaace0673e64d159b7f3ada452.png": {
-    "title": "STEP001-FR.png",
-    "description": "CSP new release step 1 FR",
-    "tags": []
-  },
-  "ccf72791b043091f0c62421666414fefd595d94b.png": {
-    "title": "STEP002-FR.png",
-    "description": "CSP new release step 2 FR",
-    "tags": []
-  },
   "68c028c96792d03bc3b4fbed784d3f19d442928c.png": {
     "title": "STEP003-FR.png",
     "description": "CSP new release step 3 FR",
@@ -39,11 +29,6 @@
     "description": "CSP new release step 9 FR",
     "tags": []
   },
-  "25fe5ab7d8b197761d593aef6df3c7a92d975e89.png": {
-    "title": "STEP011-FR.png",
-    "description": "CSP new release step 11 FR",
-    "tags": []
-  },
   "f4f32658f4d6d97fd2f63b688e6f10aef9e60315.png": {
     "title": "STEP012-FR.png",
     "description": "CSP new release step 12 FR",
@@ -63,5 +48,35 @@
     "title": "STEP013-FR.png",
     "description": "CSP Final Step FR",
     "tags": []
+  },
+  "c435018862801663664f62be57736278c9ec9fae.jpg": {
+    "title": "STEP001-FR.jpg",
+    "description": "Step 1 fixed EN language in FR screenshot",
+    "tags": [
+      {
+        "title": "LIT",
+        "_id": "607f56e40f1c9f0f2676d3ef"
+      }
+    ]
+  },
+  "c3e57003920f92715fe097aa5d661a6b24e0c94e.png": {
+    "title": "STEP002-FR.png",
+    "description": "Step 2 fixed EN language in FR screenshot",
+    "tags": [
+      {
+        "title": "LIT",
+        "_id": "607f56e40f1c9f0f2676d3ef"
+      }
+    ]
+  },
+  "6c2dfd25937e3a33d7475c8330090d7db5b509b5.png": {
+    "title": "STEP011-FR.png",
+    "description": "Step 11 FR fixed typo",
+    "tags": [
+      {
+        "title": "LIT",
+        "_id": "607f56e40f1c9f0f2676d3ef"
+      }
+    ]
   }
 }

@@ -9,11 +9,6 @@
     "description": "CSP new release step 2 EN",
     "tags": []
   },
-  "5f73c83a9c944c7d20378f18f4c157503c1700a5.png": {
-    "title": "STEP003-EN.png",
-    "description": "CSP new release step 3 EN",
-    "tags": []
-  },
   "417dbb5c9e11a380700f46eef7db91bd14129ffe.png": {
     "title": "STEP004-EN.png",
     "description": "CSP new release step 4 EN",
@@ -39,11 +34,6 @@
     "description": "CSP new release step 9 EN",
     "tags": []
   },
-  "d0d48f468ae5a0108b13a5946ec701f8eedbefa0.png": {
-    "title": "STEP011-EN.png",
-    "description": "CSP new release step 11 EN",
-    "tags": []
-  },
   "4dda17175d1f381d67dce3643b4ff6f880d9bc85.png": {
     "title": "STEP012-EN.png",
     "description": "CSP new release step 12 EN",
@@ -63,5 +53,25 @@
     "title": "STEP013-EN.png",
     "description": "CSP Final step EN",
     "tags": []
+  },
+  "73da89ab30ee772d2cf118dd17074ec5373bb127.png": {
+    "title": "STEP011-EN.png",
+    "description": "Step 11 EN Fixed typo",
+    "tags": [
+      {
+        "title": "LIT",
+        "_id": "607f56e40f1c9f0f2676d3ef"
+      }
+    ]
+  },
+  "b176cdbe25b31ce1ba4a72cd2b3195ac5e2ea937.png": {
+    "title": "STEP003-EN.png",
+    "description": "Step 3 fixed background language",
+    "tags": [
+      {
+        "title": "LIT",
+        "_id": "607f56e40f1c9f0f2676d3ef"
+      }
+    ]
   }
 }

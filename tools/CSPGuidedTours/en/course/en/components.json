@@ -70,7 +70,7 @@
         "title": "Enhanced Request Information",
         "body": "<p>We've revamped the main screen interface to display more details about each request, making it easier to stay organized.<o:p></o:p></p>",
         "_graphic": {
-          "src": "course/en/assets/5f73c83a9c944c7d20378f18f4c157503c1700a5.png",
+          "src": "course/en/assets/b176cdbe25b31ce1ba4a72cd2b3195ac5e2ea937.png",
           "alt": "",
           "_forceFullWidth": false
         },
@@ -198,7 +198,7 @@
         "title": "Request Streamlining - Part 2",
         "body": "<p>The Send to MED Button has been removed! Creative requests no longer need to be sent to MED for approval; MED will move them into the queue for you after you've had a consultation with them about the requests.<o:p></o:p></p>",
         "_graphic": {
-          "src": "course/en/assets/d0d48f468ae5a0108b13a5946ec701f8eedbefa0.png",
+          "src": "course/en/assets/73da89ab30ee772d2cf118dd17074ec5373bb127.png",
           "alt": "",
           "_forceFullWidth": false
         },
