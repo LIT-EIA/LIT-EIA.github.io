@@ -91,7 +91,19 @@ const keywordsData = `KeywordsEN,KeywordsFR
 "View, reports, export, consult, display, download, exportation, report management,","Visionner, rapports, rapport, exporter, consulter, affichage, téléchargé, exportation, gestion des rapports, format des rapports,"
 "Find, field, ","Rechercher, trouver, champ, "
 "Add, add owner, course, course owner, assign, select, responsible, attach, associate","Ajouter, ajouter propriétaire, proprietaire, cours, propriétaire du cours, responsable, attribuer, assigné, assigne, définir, definir, sélectionner, selectionner, joindre, attacher, associer"
-
+"status, unsuccessful, successful, attend","statut, non réussi, non-réussi, réussi, reussi, non reussi, non-reussi, assisté, assister"
+"cancel a class, cancel, class","annuler une classe, annule, annuler, classe, annuler la classe"
+"add to a class, add learners to a class, add learners, class, add","ajouter à une classe, ajouter apprenants, ajouter, ajouter apprenants à une classe, classe"
+"close a class, close, class, how to close a classe, how to close","fermer une classe, fermer, classe, comment fermer une classe, comment fermer"
+"class roster, roster, list of learners, list, class","liste des inscrits. inscrits, liste des apprenants, liste, classe"
+"record attendance, learner results, record results, results, attendance","présence, résultats, enregistrer présence, enregistrer résultats"
+"instructor, navigating Saba, navigating","formateur, naviguer SABA, naviguer"
+"class attachment, attachment, private class, private class attachment, class","fichier joint, fichier privé, fichier joint privé, fichier, classe"
+"discontinue, discontinue a course, course","discontinuer, discontinuer un cours, cours"
+"internationalize, internationalize a course, language, translate","internationaliser, internationaliser un cours, langue"
+"internationalize, internationalize a class, language, add language, class, translate","internationaliser, internationaliser une classe, langue, ajouter une langue, classe"
+"prerequisites, prerequisite, add prerequisites, add prerequisite, prerequisite for course. course","prérequis, ajouter prérequis, prérequis pour un cours, cours"
+"add delivery types, add delivery type, delivery type, delivery type for course, virtual, blended, web-based, in-person. course","ajouter modalités pédagogiques, modalités pédagogiques, modalité, virtuelle, en personne, sur le web, mixe, cours"
 `
 
 

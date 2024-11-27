@@ -91,7 +91,19 @@
  Comment puis-je visionner et exporter des rapports? (Pour administrateurs – aide-mémoire)
  Comment puis-je chercher pour un cours? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter un propriétaire à un cours? (Pour administrateurs – aide-mémoire)
- `;
+ Pourquoi mon statut a-t-il été marqué comme « non réussi ou réussi» si je n'ai pas assisté à une classe virtuelle ou à une classe avec instructeur ?
+Comment puis-je annuler une classe? (Pour formateurs – aide-mémoire)
+Comment puis-je ajouter des apprenants à une classe? (Pour formateurs – aide-mémoire)
+Comment puis-je fermer une classe? (Pour formateurs – aide-mémoire)
+Comment puis-je trouver une liste des inscrits? (Pour formateurs – aide-mémoire)
+Comment puis-je enregistrer les présences et les résultats des apprenants? (Pour formateurs – aide-mémoire)
+Comment puis-je naviguer dans Saba en tant que formateur? (Pour formateurs – aide-mémoire)
+Comment puis-je utiliser un fichier joint privé? (Pour formateurs – aide-mémoire)
+Comment puis-je discontinuer un cours? (Pour administrateurs – aide-mémoire)
+Comment puis-je internationaliser un cours? (Pour administrateurs – aide-mémoire)
+Comment puis-je internationaliser une classe? (Pour administrateurs – aide-mémoire)
+Comment puis-je ajouter des prérequis à un cours? (Pour administrateurs – aide-mémoire)
+Comment puis-je ajouter les modalités pédagogiques? (Pour administrateurs – aide-mémoire)`;
  
  
 

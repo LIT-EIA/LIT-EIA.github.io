@@ -107,6 +107,8 @@ function addContent(language) {
 		} else if (type[customIndex] === 'Admin') {
 			// console.log('expected result', type[customIndex]);
 			button.className = "bubble question hidden admin"; // For Admins
+		} else if (type[customIndex] === 'Instructor'){
+			button.className = "bubble question hidden instructor"
 		}
 	
 	}
@@ -649,6 +651,7 @@ function askUserType(message){
 	var employeeButton = document.createElement("button");
 	var managerButton = document.createElement("button");
 	var adminButton = document.createElement("button");
+	var instructorButton = document.createElement("button")
 	employeeButton.classList.add("bubble");
 	employeeButton.classList.add("question");
 	employeeButton.classList.add("bold")
@@ -658,6 +661,9 @@ function askUserType(message){
 	adminButton.classList.add("bubble");
 	adminButton.classList.add("question");
 	adminButton.classList.add("bold");
+	instructorButton.classList.add("bubble");
+	instructorButton.classList.add("question");
+	instructorButton.classList.add("bold");
 	
 	
 
@@ -667,10 +673,12 @@ function askUserType(message){
 		employeeButton.innerText = "Learner";
 		managerButton.innerText = "Manager (and team leader)";
 		adminButton.innerText = "Administrator";
+		instructorButton.innerText = "Instructor"
 	}else{
 		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
+		instructorButton.innerText = "Formateur";
 	}
 	
 	employeeButton.onclick = function(){
@@ -687,10 +695,15 @@ function askUserType(message){
 		setUser(3);
 		//filterQuestionsByUserType();
 	};
+	instructorButton.onclick = function(){
+		setUser(4);
+		//filterQuestionsByUserType();
+	};
 	
 	message.append(employeeButton);
 	message.append(managerButton);
 	message.append(adminButton);
+	message.append(instructorButton);
 	assistantTypes(message);
 	
 }
@@ -706,6 +719,10 @@ function setUser(userTypeInt){
 	if (userTypeInt == 3){
 		userType = "admin";
 	}
+
+	if (userTypeInt == 4){
+		userType = "instructor";
+	}
 	filterQuestionsByUserType();
 }
 
@@ -718,7 +735,7 @@ function filterQuestionsByUserType(){
 		var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
 		var classes = htmlButton.classList;
 		
-		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin")){
+		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin") || classes.contains("instructor")){
 			if (classes.contains(userType)){
 				//We display it for the user.
 				//Leave empty as we display all questions by default.
