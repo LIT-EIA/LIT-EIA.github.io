@@ -91,7 +91,20 @@
  How can I view and Export Reports? (For administrators – job aid)
  How can I search for a course? (For administrators – job aid)
  How can I add an owner to a course? (For administrators – job aid)
- `
+Why was my status marked as "unsuccessful or successful" if I didn't attend a virtual or instructor-led class?
+How can I cancel a class? (For instructors – job aid)
+How can I add learners to a class? (For instructors – job aid)
+How can I close a class? (For instructors – job aid)
+How can I find a class roster? (For instructors – job aid)
+How can I record attendance and learner results? (For instructors – job aid)
+How can I navigate in Saba as an Instructor? (For instructors – job aid)
+How can I use private class attachments? (For instructors – job aid)
+How can I discontinue a course? (For administrators – job aid)
+How can I internationalize a course? (For administrators – job aid)
+How can I internationalize a class? (For administrators – job aid)
+How can I add prerequisites to a course? (For administrators – job aid)
+How can I add Delivery Types to a Course? (For administrators – job aid) `
+ 
  
 
 // Initialize variables to hold the Title and Keywords values
