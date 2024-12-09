@@ -3,23 +3,30 @@
         "name": "",
         "notes": {
             "authoring": [
-                "[Fixed] Typos and inconsistencies in both French and English"
+                "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied"
             ],
             "components": [
-                "[Fixed] The field order in the Graphical Multiple Choice Questions component to ensure consistency with the Multiple Choice Questions component"
+                "[New] Simulation component is now available",
+                "[New] Discussion (Talk) component is now available"
             ]
         },
-        "pub_date": "2024-12-02T12:00:00Z",
+        "pub_date": "2025-01-23T12:00:00Z",
         "version": "1.4.7"
     },
     {
         "name": "",
         "notes": {
             "authoring": [
-                "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied"
+                "[Fixed] Typos and inconsistencies in both French and English",
+                "[Improved] Extended file size limit to 100 MB for type video/mp4, enabling users to upload longer and higher resolution videos"
+            ],
+            "components": [
+                "[Fixed] Overflowing long titles in Guided Tour bubble",
+                "[Fixed] Disabled bubble changing using arrows",
+                "[Fixed] The field order in the Graphical Multiple Choice Questions component to ensure consistency with the Multiple Choice Questions component"
             ]
         },
-        "pub_date": "2024-09-01T12:00:00Z",
+        "pub_date": "2024-12-09T12:00:00Z",
         "version": "1.4.6"
     },
     {
