@@ -4,6 +4,10 @@
         "notes": {
             "authoring": [
                 "[Nouveau] Les champs conditionnels sont désormais disponibles. Certains éléments du formulaire seront masqués si leurs conditions spécifiques ne sont pas remplies"
+            ],
+            "components": [
+                "[Nouveau] Le composant Simulation est maintenant disponible",
+                "[Nouveau] Le composant Discussion est maintenant disponible"
             ]
         },
         "pub_date": "2025-01-23T12:00:00Z",
