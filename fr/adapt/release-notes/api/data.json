@@ -11,7 +11,7 @@
             ]
         },
         "pub_date": "2025-01-23T12:00:00Z",
-        "version": "1.4.7"
+        "version": "1.4.9"
     },
     {
         "name": "",
@@ -27,7 +27,17 @@
             ]
         },
         "pub_date": "2024-12-09T12:00:00Z",
-        "version": "1.4.6"
+        "version": "1.4.8"
+    },
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[Nouveau] Publication du [Guide de l’utilisateur d’ADAPT] (https://014gc.sharepoint.com/sites/81036/SitePages/ADA.aspx) en tant que référence rapide pour les concepteurs"
+            ]
+        },
+        "pub_date": "2024-10-07T11:00:00Z",
+        "version": "1.4.7"
     },
     {
         "name": "",
