@@ -34,16 +34,14 @@
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
  Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)
  Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
- Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
  Est-ce que je dois régulièrement mettre à jour mon mot de passe Saba? (Pour apprenants)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
  Quelle formation dois-je compléter? (Pour apprenants)
  Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
  À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?
- Comment puis-je approuver l'apprentissage de mon équipe? (Pour les managers)
+ Comment puis-je approuver l'apprentissage de mon équipe? (Pour apprenants)
  Est-ce que Saba a une page iService?
- Comment puis-je devenir administrateur de cours ou formateur?
  Comment puis-je devenir administrateur de cours ou formateur?
  Où puis-je trouver des informations sur les Curriculums de formation essentielle d’EDSC (CFE)?
  Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)
