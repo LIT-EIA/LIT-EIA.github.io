@@ -34,7 +34,6 @@
  What should I do if my manager (or team leader) does not see my approval request? (For learners)
  What should I do if I do not see my employee’s approval request? (For managers)
  How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)
- How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)
  Do I need to update my Saba password regularly? (For learners)
  As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)
  What training do I need to complete? (For learners)
@@ -43,7 +42,6 @@
  What does the Saba sign in page’s "Remember Me" option do?
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
- How do I become a course administrator or instructor?
  How do I become a course administrator or instructor?
  Where can I find information on the ESDC Essential Training Curricula (ETC)?
  Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)
