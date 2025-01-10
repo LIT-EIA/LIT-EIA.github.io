@@ -109,6 +109,8 @@ function addContent(language) {
 			button.className = "bubble question hidden admin"; // For Admins
 		} else if (type[customIndex] === 'Instructor'){
 			button.className = "bubble question hidden instructor"
+		}else if (type[customIndex] === 'Content Admin'){
+			button.className = "bubble question hidden content"
 		}
 	
 	}
@@ -652,6 +654,7 @@ function askUserType(message){
 	var managerButton = document.createElement("button");
 	var adminButton = document.createElement("button");
 	var instructorButton = document.createElement("button")
+	var contentButton = document.createElement("button")
 	employeeButton.classList.add("bubble");
 	employeeButton.classList.add("question");
 	employeeButton.classList.add("bold")
@@ -664,21 +667,30 @@ function askUserType(message){
 	instructorButton.classList.add("bubble");
 	instructorButton.classList.add("question");
 	instructorButton.classList.add("bold");
+
+	contentButton.classList.add("bubble");
+	contentButton.classList.add("question");
+	contentButton.classList.add("bold");
 	
 	
 
-	// 
+	// ENG: Content Administrator
+//FR: Administrateur de contenu 
+
+
 
 	if (isEnglish){
 		employeeButton.innerText = "Learner";
 		managerButton.innerText = "Manager (and team leader)";
 		adminButton.innerText = "Administrator";
-		instructorButton.innerText = "Instructor"
+		instructorButton.innerText = "Instructor";
+		contentButton.innerText = "Content Administrator";
 	}else{
 		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
 		instructorButton.innerText = "Formateur";
+		contentButton.innerText = "Administrateur de contenu";
 	}
 	
 	employeeButton.onclick = function(){
@@ -699,11 +711,16 @@ function askUserType(message){
 		setUser(4);
 		//filterQuestionsByUserType();
 	};
+
+	contentButton.onclick = function(){
+		setUser(5);
+	}
 	
 	message.append(employeeButton);
 	message.append(managerButton);
 	message.append(adminButton);
 	message.append(instructorButton);
+	message.append(contentButton);
 	assistantTypes(message);
 	
 }
@@ -723,6 +740,10 @@ function setUser(userTypeInt){
 	if (userTypeInt == 4){
 		userType = "instructor";
 	}
+
+	if (userTypeInt == 5){
+		userType = "content";
+	}
 	filterQuestionsByUserType();
 }
 
@@ -735,7 +756,7 @@ function filterQuestionsByUserType(){
 		var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
 		var classes = htmlButton.classList;
 		
-		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin") || classes.contains("instructor")){
+		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin") || classes.contains("instructor") || classes.contains("content") ){
 			if (classes.contains(userType)){
 				//We display it for the user.
 				//Leave empty as we display all questions by default.
