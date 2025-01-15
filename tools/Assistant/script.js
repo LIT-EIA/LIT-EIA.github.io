@@ -173,9 +173,9 @@ function setLanguage(){
 function displayIntroMessage(){
 	var message = document.createElement("p");
 	if (isEnglish){
-		message.innerText = "Hello, I am Sam, your Saba Virtual Assistant!\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the View all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
+		message.innerText = "Hello, I am Sam, your Saba Virtual Assistant! I’m programmed to answer your Saba-related inquiries based on a list of most common questions.\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the List all questions button, located directly in the “Suggested Questions” box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the “Suggested Questions” box, you can select it and I will answer in this chat box.";
 	}else {
-		message.innerText = "Bonjour Je suis Sam, votre spécialiste en assistance virtuelle! !\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
+		message.innerText = "Bonjour, je suis Sam, votre assistant virtuel Saba! Je suis programmé pour répondre à vos demandes de renseignements concernant Saba en me basant sur une liste de questions les plus courantes!\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
 	}
 	askUserType(message);
 	
@@ -574,7 +574,7 @@ function add_closeMessage(tdElemt){
 	nationalLink.target = 'blank';
 	
 	if (isEnglish){
-		message.innerText = "If you require more assistance, please open a ticket with the ";
+		message.innerText = "If you require more assistance, please open a ticket with the  ";
 		nationalLink.href = 'https://iservice.prv/eng/imit/nsd/index.shtml';
 		nationalLink.textContent = 'National Service Desk';
 	}else {
@@ -583,7 +583,13 @@ function add_closeMessage(tdElemt){
 		nationalLink.textContent = 'InfoService national';
 	}
 		message.appendChild(nationalLink);
-		message.append(".");
+		if (isEnglish){
+			message.append(" to get in touch with one of the Learning Infrastructure team's resolvers.");
+		}else{
+			message.append(" pour entrer en contact avec l’un des agents de l’équipe Infrastructure de l’apprentissage.")
+		}
+		
+		
 		
 		//Start of the Questionnaire code. Comment this block if you want to omit the questionnaire.
 		var messageBreak1 = document.createElement("br");
