@@ -101,7 +101,9 @@ How can I discontinue a course? (For administrators – job aid)
 How can I internationalize a course? (For administrators – job aid)
 How can I internationalize a class? (For administrators – job aid)
 How can I add prerequisites to a course? (For administrators – job aid)
-How can I add Delivery Types to a Course? (For administrators – job aid) `
+How can I add Delivery Types to a Course? (For administrators – job aid)
+How can I add a Completed Course? (For learners – job aid)
+`
  
  
 
