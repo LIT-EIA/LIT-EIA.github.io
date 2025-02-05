@@ -2,15 +2,19 @@
     {
         "name": "",
         "notes": {
-            "authoring": [
-                "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied"
-            ],
             "components": [
                 "[New] Simulation component is now available",
-                "[New] Discussion (Talk) component is now available"
+                "[New] Talk component is now available",
+                "[Improved] I18N component to allow default translations with overrides defined in Globals"
+            ],
+            "authoring": [
+                "[New] Simulation Zone Editor is now available to quickly define the position of elements",
+                "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied",
+                "[Improved] Upload limits reworked: video 100mb, audio 50mb, image 3mb",
+                "[Removed] GIF animation generation from videos to accelerate upload speed"
             ]
         },
-        "pub_date": "2025-01-23T12:00:00Z",
+        "pub_date": "2025-02-14T12:00:00Z",
         "version": "1.4.9"
     },
     {
