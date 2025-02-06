@@ -695,7 +695,7 @@ function askUserType(message){
 		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
-		instructorButton.innerText = "Formateur";
+		instructorButton.innerText = "Formateur/Formatrice";
 		contentButton.innerText = "Administrateur/Administratrice de contenu";
 	}
 	
