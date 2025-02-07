@@ -5,7 +5,7 @@
             "components": [
                 "[New] Simulation component is now available",
                 "[New] Talk component is now available",
-                "[Improved] I18N component to allow default translations with overrides defined in Globals settings"
+                "[Improved] I18N plugin to allow default translations with overrides defined in Globals settings"
             ],
             "authoring": [
                 "[New] Zone editor for simulation component is now available to quickly define the position of elements",

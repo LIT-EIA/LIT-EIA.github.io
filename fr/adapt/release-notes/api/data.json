@@ -3,9 +3,9 @@
         "name": "",
         "notes": {
             "components": [
-                "[Nouveau] Le composant Simulation est maintenant disponible",
-                "[Nouveau] Le composant Dialogue est maintenant disponible",
-                "[Amélioré] Le composant I18N pour permettre des traductions par défaut avec des substitutions définies dans les paramètes Globaux"
+                "[Nouveau] Le composant de Simulation est maintenant disponible",
+                "[Nouveau] Le composant de Dialogue est maintenant disponible",
+                "[Amélioré] Le plugiciel I18N pour permettre des traductions par défaut avec des substitutions définies dans les paramètes Globaux"
             ],
             "authoring": [
                 "[Nouveau] L'éditeur de zone pour le composant de simulation est maintenant disponible pour définir rapidement la position des éléments",
