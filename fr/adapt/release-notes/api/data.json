@@ -3,8 +3,8 @@
         "name": "",
         "notes": {
             "components": [
-                "[Nouveau] Le composant de Simulation est maintenant disponible",
-                "[Nouveau] Le composant de Dialogue est maintenant disponible",
+                "[Nouveau] Le [composant de Simulation](https://014gc.sharepoint.com/sites/81036/SitePages/fr/System-Simulation.aspx) est maintenant disponible",
+                "[Nouveau] Le [composant de Dialogue](https://014gc.sharepoint.com/sites/81036/SitePages/fr/Talk-Feature.aspx) est maintenant disponible",
                 "[Amélioré] Le plugiciel I18N pour permettre des traductions par défaut avec des substitutions définies dans les paramètes Globaux"
             ],
             "authoring": [
