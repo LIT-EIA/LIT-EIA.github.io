@@ -5,12 +5,12 @@
             "components": [
                 "[New] Simulation component is now available",
                 "[New] Talk component is now available",
-                "[Improved] I18N component to allow default translations with overrides defined in Globals"
+                "[Improved] I18N component to allow default translations with overrides defined in Globals settings"
             ],
             "authoring": [
-                "[New] Simulation Zone Editor is now available to quickly define the position of elements",
+                "[New] Zone editor for simulation component is now available to quickly define the position of elements",
                 "[New] Conditional fields are now available. Certain form elements will be hidden unless their specific conditions are satisfied",
-                "[Improved] Upload limits reworked: video 100mb, audio 50mb, image 3mb",
+                "[Improved] Upload limits have been redefined: video 100 megabytes, audio 50 megabytes, image 3 megabytes",
                 "[Removed] GIF animation generation from videos to accelerate upload speed"
             ]
         },

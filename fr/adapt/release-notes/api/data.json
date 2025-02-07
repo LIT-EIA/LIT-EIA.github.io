@@ -2,15 +2,19 @@
     {
         "name": "",
         "notes": {
-            "authoring": [
-                "[Nouveau] Les champs conditionnels sont désormais disponibles. Certains éléments du formulaire seront masqués si leurs conditions spécifiques ne sont pas remplies"
-            ],
             "components": [
                 "[Nouveau] Le composant Simulation est maintenant disponible",
-                "[Nouveau] Le composant Discussion est maintenant disponible"
+                "[Nouveau] Le composant Dialogue est maintenant disponible",
+                "[Amélioré] Le composant I18N pour permettre des traductions par défaut avec des substitutions définies dans les paramètes Globaux"
+            ],
+            "authoring": [
+                "[Nouveau] L'éditeur de zone pour le composant de simulation est maintenant disponible pour définir rapidement la position des éléments",
+                "[Nouveau] Les champs conditionnels sont désormais disponibles. Certains éléments du formulaire seront masqués si leurs conditions spécifiques ne sont pas remplies",
+                "[Amélioré] Les limites de téléversement ont été redéfinies : vidéo 100 mégaoctets, audio 50 mégaoctets, image 3 mégaoctets",
+                "[Supprimé] Génération d'animations GIF à partir de vidéos pour accélérer la vitesse de téléversement"
             ]
         },
-        "pub_date": "2025-01-23T12:00:00Z",
+        "pub_date": "2025-02-14T12:00:00Z",
         "version": "1.4.9"
     },
     {
