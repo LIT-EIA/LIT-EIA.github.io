@@ -3,6 +3,21 @@
         "name": "",
         "notes": {
             "components": [
+                "[Fixed] Dropdown menu focus issue on Simulation Component",
+                "[Fixed] Overflow issue with Trickle when using Simulation Component",
+                "[Fixed] Scroll issue when Iframe Scrolling Support is enabled on Guided Tour component"
+            ],
+            "theme": [
+                "[Fixed] Abbreviation underline contrast issue on dark blue background"
+            ]
+        },
+        "pub_date": "2025-03-05T11:00:00Z",
+        "version": "PATCH"
+    },
+    {
+        "name": "",
+        "notes": {
+            "components": [
                 "[New] [Simulation component](https://014gc.sharepoint.com/sites/81036/SitePages/Simulation-component.aspx) is now available",
                 "[New] [Talk component](https://014gc.sharepoint.com/:u:/r/sites/81036/SitePages/Talk-Feature.aspx?csf=1&web=1&e=zA2M3W) is now available",
                 "[Improved] i18n plugin to allow default translations with overrides defined in Globals settings"

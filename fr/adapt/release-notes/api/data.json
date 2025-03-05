@@ -1,4 +1,20 @@
+
 [
+    {
+        "name": "",
+        "notes": {
+            "components": [
+                "[Corrigé] Problème de focus du menu déroulant sur le composant Simulation",
+                "[Corrigé] Problème de dépassement de capacité avec le composant de ruissellement lors de l'utilisation du composant de simulation",
+                "[Corrigé] Problème de défilement lorsque le support du défilement d’iFrame et des lecteurs d’écran (« iFrame ») est activée dans le composant de visite guidée"
+            ],
+            "theme": [
+                "[Corrigé] Problème de contraste avec le soulignement des abréviations sur un arrière-plan bleu foncé"
+            ]
+        },
+        "pub_date": "2025-03-05T11:00:00Z",
+        "version": "PATCH"
+    },
     {
         "name": "",
         "notes": {
