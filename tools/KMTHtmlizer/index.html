@@ -4,229 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KMT Htmlizer</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         #validationResults {
             color: red;
         }
-		.radio-label {
-		  display: flex;
-		  align-items: center;
-		}
-		.radio-label input[type="radio"] {
-		  margin-right: 10px; /* Adjust the padding as needed */
-		}
-		
-		h2{
-			display:inline;
-		}
-		pre {
-			white-space: pre-wrap; /* Preserve newlines and spaces */
-			word-wrap: break-word; /* Prevent long words from overflowing */
-			font-family: monospace; /* Monospace font for code */
-			margin: 0;
-			padding: 0px;
-			background-color: #f4f4f4; /* Optional: add a background color to highlight the code */
-			border-radius: 5px; /* Optional: make the code block look cleaner */
-		}
+        .radio-label {
+            display: flex;
+            align-items: center;
+        }
+        .radio-label input[type="radio"] {
+            margin-right: 10px; /* Adjust the padding as needed */
+        }
+        h2 {
+            display: inline;
+        }
+        pre {
+            white-space: pre-wrap; /* Preserve newlines and spaces */
+            word-wrap: break-word; /* Prevent long words from overflowing */
+            font-family: monospace; /* Monospace font for code */
+            margin: 0;
+            padding: 0px;
+            background-color: #f4f4f4; /* Optional: add a background color to highlight the code */
+            border-radius: 5px; /* Optional: make the code block look cleaner */
+        }
+        code {
+            font-family: monospace; /* Monospace font for code */
+            font-size: 14px; /* Optional: you can adjust the font size */
+        }
 
-		code {
-			font-family: monospace; /* Monospace font for code */
-			font-size: 14px; /* Optional: you can adjust the font size */
+		button{
+			width:200px;
 		}
-
     </style>
 </head>
 <body class="container">
 
-    <h1>KMT Htmlizer version 20250306-01</h1>
+    <h1>KMT Htmlizer version 20250306-03</h1>
 
-	<div class="form-group border-bottom col-12">
-		<div id="bodyColumns" class="row">
-            
-            
-        		
-		<div class="col-md-6 border">
-		<details id="RegExFilter">
-			<summary><h2>Instructions</h2></summary>
-			<ol>
-				<li>Open a word document, accept all track changes</li>
-				<li>Save the document as <strong>HTML Filtered</strong></li>
-				<li>Open the saved html in Notepad</li>
-				<li>copy the code into the box below</li>
-				<li>Select the language of the document</li>
-				<li>Open the RegEx filters menu if you want to omit some cleanup steps</li>
-				<li>Select the <kbd>Clean HTML</kbd> button</li>
-				<li>You will see a preview of the cleaned content on the left, and HTML on the right</li>
-				<li>Scroll to the bottom of the page and select the <kbd>Copy</kbd> button</li>
-				<li>In the wysiwyg editor, select the <kbd>source</kbd> button, then paste the html</li>
-				<li>Select the <kbd>source</kbd> button again to close it and see the result</li>
-			</ol>
-		
-		</details>
-		
-		
+    <!-- Instructions and Regex Section (Visible by Default) -->
+    <div class="form-group border-bottom col-12">
+        <div class="row">
+            <div class="col-md-6 border">
+                <details id="RegExFilter" open>
+                    <summary><h2>Instructions</h2></summary>
+                    <ol>
+                        <li>Open a word document, accept all track changes</li>
+                        <li>Save the document as <strong>HTML Filtered</strong></li>
+                        <li>Open the saved html in Notepad</li>
+                        <li>Copy the code into the box below</li>
+                        <li>Select the language of the document</li>
+                        <li>Open the RegEx filters menu if you want to omit some cleanup steps</li>
+                        <li>Select the <kbd>Clean HTML</kbd> button</li>
+                        <li>You will see a preview of the cleaned content on the left, and HTML on the right</li>
+                        <li>Scroll to the bottom of the page and select the <kbd>Copy</kbd> button</li>
+                        <li>In the wysiwyg editor, select the <kbd>source</kbd> button, then paste the html</li>
+                        <li>Select the <kbd>source</kbd> button again to close it and see the result</li>
+                    </ol>
+                </details>
+            </div>
+
+            <div class="col-md-6 border">
+                <details id="RegExFilter" class="mb-3" open>
+                    <summary><h2>RegEx Filters</h2></summary>
+
+                    <!-- RegEx filter options with radio buttons -->
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeEmptyTagsYes" name="removeEmptyTags" value="yes" class="form-check-input" checked>
+                            <label for="removeEmptyTagsYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeEmptyTagsNo" name="removeEmptyTags" value="no" class="form-check-input">
+                            <label for="removeEmptyTagsNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Remove empty tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeStrongTagsYes" name="mergeStrongTags" value="yes" class="form-check-input" checked>
+                            <label for="mergeStrongTagsYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeStrongTagsNo" name="mergeStrongTags" value="no" class="form-check-input">
+                            <label for="mergeStrongTagsNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Merge repeated <kbd>STRONG</kbd> tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeChainedStrongTagsYes" name="mergeChainedStrongTags" value="yes" class="form-check-input" checked>
+                            <label for="mergeChainedStrongTagsYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeChainedStrongTagsNo" name="mergeChainedStrongTags" value="no" class="form-check-input">
+                            <label for="mergeChainedStrongTagsNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Merge chained <kbd>STRONG</kbd> tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeHyperlinksYes" name="mergeHyperlinks" value="yes" class="form-check-input" checked>
+                            <label for="mergeHyperlinksYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="mergeHyperlinksNo" name="mergeHyperlinks" value="no" class="form-check-input">
+                            <label for="mergeHyperlinksNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Merge repeated hyperlinks</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripTableAttributesYes" name="stripTableAttributes" value="yes" class="form-check-input" checked>
+                            <label for="stripTableAttributesYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripTableAttributesNo" name="stripTableAttributes" value="no" class="form-check-input">
+                            <label for="stripTableAttributesNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Strip attributes from <kbd>TABLE</kbd> elements</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripPAttributesYes" name="stripPAttributes" value="yes" class="form-check-input" checked>
+                            <label for="stripPAttributesYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripPAttributesNo" name="stripPAttributes" value="no" class="form-check-input">
+                            <label for="stripPAttributesNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Strip attributes from <kbd>P</kbd> tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripListAttributesYes" name="stripListAttributes" value="yes" class="form-check-input" checked>
+                            <label for="stripListAttributesYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="stripListAttributesNo" name="stripListAttributes" value="no" class="form-check-input">
+                            <label for="stripListAttributesNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Remove attributes from <kbd>OL</kbd> and <kbd>UL</kbd> tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeEmptyPTagsYes" name="removeEmptyPTags" value="yes" class="form-check-input" checked>
+                            <label for="removeEmptyPTagsYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeEmptyPTagsNo" name="removeEmptyPTags" value="no" class="form-check-input">
+                            <label for="removeEmptyPTagsNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Remove empty <kbd>P</kbd> tags</label>
+                    </div>
+
+                    <div class="form-group border-bottom col-12">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeNbspYes" name="removeNbsp" value="yes" class="form-check-input" checked>
+                            <label for="removeNbspYes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="removeNbspNo" name="removeNbsp" value="no" class="form-check-input">
+                            <label for="removeNbspNo" class="form-check-label">No</label>
+                        </div>
+                        <label class="ms-4">Remove all <kbd>&nbsp;</kbd></label>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Upload and Button Row -->
+    <div class="row mt-3 mb-3">
+        <div class="col-md-2">
+            <label for="language" class="form-label">Select Language:</label>
 		</div>
-		
-		<div class="col-md-6 border">
-		<details id="RegExFilter" class="mb-3">
-			<summary><h2>RegEx Filters</h2></summary>
+		<div class="col-md-4">
+            <select id="language" class="form-control" aria-label="Select the language of the document">
+                <option value="english">English</option>
+                <option value="french">French</option>
+            </select>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <button class="btn btn-primary btn-fixed-width" onclick="cleanHtml()">Clean HTML</button>
+        </div>
+    </div>
 
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="removeEmptyTagsYes" name="removeEmptyTags" value="yes" class="form-check-input" checked>
-					<label for="removeEmptyTagsYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="removeEmptyTagsNo" name="removeEmptyTags" value="no" class="form-check-input">
-					<label for="removeEmptyTagsNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Remove empty tags</label>
-			</div>
+    <!-- File Upload and Button Row 2 -->
+    <div class="row mt-3 mb-3">
+        <div class="col-md-6">
+            <input type="file" id="fileInput" class="form-control" />
+        </div>
+		<div class="col-md-6 d-flex justify-content-end">
+            <button class="btn btn-secondary btn-fixed-width" onclick="copyOutput()">Copy</button>
+        </div>
+    </div>
 
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeStrongTagsYes" name="mergeStrongTags" value="yes" class="form-check-input" checked>
-					<label for="mergeStrongTagsYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeStrongTagsNo" name="mergeStrongTags" value="no" class="form-check-input">
-					<label for="mergeStrongTagsNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Merge repeated <kbd>STRONG</kbd> tags</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeChainedStrongTagsYes" name="mergeChainedStrongTags" value="yes" class="form-check-input" checked>
-					<label for="mergeChainedStrongTagsYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeChainedStrongTagsNo" name="mergeChainedStrongTags" value="no" class="form-check-input">
-					<label for="mergeChainedStrongTagsNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Merge chained <kbd>STRONG</kbd> tags</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeHyperlinksYes" name="mergeHyperlinks" value="yes" class="form-check-input" checked>
-					<label for="mergeHyperlinksYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="mergeHyperlinksNo" name="mergeHyperlinks" value="no" class="form-check-input">
-					<label for="mergeHyperlinksNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Merge repeated hyperlinks</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripTableAttributesYes" name="stripTableAttributes" value="yes" class="form-check-input" checked>
-					<label for="stripTableAttributesYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripTableAttributesNo" name="stripTableAttributes" value="no" class="form-check-input">
-					<label for="stripTableAttributesNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Strip attributes from <kbd>TABLE</kbd> elements</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripPAttributesYes" name="stripPAttributes" value="yes" class="form-check-input" checked>
-					<label for="stripPAttributesYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripPAttributesNo" name="stripPAttributes" value="no" class="form-check-input">
-					<label for="stripPAttributesNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Strip attributes from <kbd>P</kbd> tags</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripListAttributesYes" name="stripListAttributes" value="yes" class="form-check-input" checked>
-					<label for="stripListAttributesYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="stripListAttributesNo" name="stripListAttributes" value="no" class="form-check-input">
-					<label for="stripListAttributesNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Remove attributes from <kbd>OL</kbd> and <kbd>UL</kbd> tags</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="removeEmptyPTagsYes" name="removeEmptyPTags" value="yes" class="form-check-input" checked>
-					<label for="removeEmptyPTagsYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="removeEmptyPTagsNo" name="removeEmptyPTags" value="no" class="form-check-input">
-					<label for="removeEmptyPTagsNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Remove empty <kbd>P</kbd> tags</label>
-			</div>
-
-			<div class="form-group border-bottom col-12">
-				<div class="form-check form-check-inline">
-					<input type="radio" id="replaceBrYes" name="replaceBr" value="yes" class="form-check-input" checked>
-					<label for="replaceBrYes" class="form-check-label">Yes</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="replaceBrNo" name="replaceBr" value="no" class="form-check-input">
-					<label for="replaceBrNo" class="form-check-label">No</label>
-				</div>
-				<label class="ms-4">Replace BR with closing <kbd>/P</kbd> and <kbd>P</kbd> </label>
-			</div>
-
-			<div class="form-group border-bottom">
-				<div class="form-check form-check-inline">
-					<label for="dashToggle" class="form-check-label">Whitespace around N or M dashes</label>
-					<select id="dashToggle" class="form-control">
-						<option value="add">Add whitespace</option>
-						<option value="remove">Remove whitespace</option>
-					</select>
-				</div>
-			</div>
-			
-			<div class="form-group border-bottom">
-				<label for="language">Select Language:</label>
-				<select id="language">
-					<option value="english">English</option>
-					<option value="french">French</option>
-				</select>
-			</div>
-			
-		</details>
-		</div>		
-		</div>
-		
-	</div>
+	
 
     <div class="form-group border-bottom col-12">
-        <textarea id="inputHtml" class="form-control" rows="10" placeholder="Enter your HTML here"></textarea>
-    </div>
-    <button class="btn btn-primary" onclick="cleanHtml()">Clean HTML</button>
-    <div class="border-bottom mt-4">
-	
-        <div id="documentTitle" class="border pt-4"></div>
-		<div id="validationResults" class="border pt-4"></div>
+        <textarea id="inputHtml" class="form-control" rows="10" placeholder="Enter your HTML here or choose an MS Word Filtered HTML output file above"></textarea>
+	</div>
 
-        <div id="bodyColumns" class="row">
+    <!-- Preview and Output Section -->
+    <div class="border-bottom mt-4">
+        <div id="documentTitle" class="border pt-4"></div>
+        <div id="validationResults" class="border pt-4"></div>
+
+        <div class="row">
             <div id="previewHtml" class="col-md-6 border pt-4"></div>
             <div id="outputHtml" class="col-md-6 border pt-4"></div>
         </div>
     </div>
 
-    <button class="btn btn-secondary" onclick="copyOutput()">Copy</button>
-
-    <script src="script.js"></script>
+    <!-- Include JS libraries for Bootstrap functionality -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Your Custom JS File -->
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const content = event.target.result;
+                    document.getElementById('inputHtml').value = content;
+                };
+                reader.readAsText(file);
+            }
+        });
+    </script>
+
 </body>
-
-
-
 </html>
