@@ -23,9 +23,6 @@ async function cleanHtml() {
 //Jquery fixes to the HTML produceed by MS Word ------------------------------------------------------------------
 
 
-
-
-
 	//remove the weird top of document UL after processing its contents
 	$parsedHtml.find('ul[type="disc"]').remove();
 
@@ -168,9 +165,8 @@ async function cleanHtml() {
 	
 	
 
-/*
 
-	// Attempt to fix list nesting
+	//$parsedHtml = fixListNesting($parsedHtml);
 	function fixListNesting($html) {
 		// Find all <ul> and <ol> elements
 		$html.find('ul, ol').each(function() {
@@ -190,7 +186,7 @@ async function cleanHtml() {
 
 		return $html;
 	}
-*/
+
 
 	// Run your regex on the content HTML (the plain text)	
 
@@ -223,21 +219,44 @@ async function cleanHtml() {
 	}
 
 
-	// Apply the function to $parsedHtml
-	//$parsedHtml = fixListNesting($parsedHtml);
 
 
-
-	//Fix documents with broken details / summary sections
-	//processImproperlyBuildDetailsSectionsAddSummary($parsedHtml);
-	
-	//Not working properly - needs to be fixed in the source word doc? Not sure how these are made exactly, tbd
-	//processImproperlyBuildDetailsSectionsAddDetails($parsedHtml);
+// Assuming $parsedHtml is your jQuery object containing the HTML
+cleanOutTopTabsCode($parsedHtml);
 
 
-
-
-
+function cleanOutTopTabsCode($parsedHtml) {
+	// 1. Remove <summary> tags with "Top Tab:" inside <details> and preserve the content inside <details>
+	$parsedHtml.find("details").each(function() {
+	  let $details = $(this);
+	  let $summary = $details.find("summary").filter(function() {
+		return $(this).text().includes("Top tab:");
+	  });
+  
+	  if ($summary.length > 0) {
+		// Keep the content inside <details> and remove only the <summary> tag
+		$summary.remove();
+	  }
+	});
+  
+	// 2. Remove <summary> tags with "Top Tab:" that are not inside a <details> tag
+	$parsedHtml.find("summary").each(function() {
+	  let $summary = $(this);
+	  if ($summary.text().includes("Top tab:") && !$summary.closest("details").length) {
+		$summary.remove(); // Remove the <summary> if it's not inside a <details> tag
+	  }
+	});
+  
+	// 3. Remove <details> elements that only contain <summary> with "Top Tab:" (now that we've removed the <summary>)
+	$parsedHtml.find("details").each(function() {
+	  let $details = $(this);
+	  // If <details> contains no other content besides the summary we've removed, we remove it
+	  if ($details.find("summary").length === 0 && !$details.contents().length) {
+		$details.remove();
+	  }
+	});
+  }
+  
 
 	
 	
@@ -254,108 +273,17 @@ async function cleanHtml() {
 
 //Store template code:
 
-
+//		<h2 class="mrgn-tp-md">Summary</h2>
 var $EnglishTaskTemplate = $(`
 <div class="wb-tabs ignore-session">
-<div class="tabpanels">
-<details id="details-panel1" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Overview</summary>
-	<h2 class="mrgn-tp-md">Summary</h2>
-	
-	<h2>What you need to know</h2>
-
-</details>
-
-<details id="details-panel2" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Step by Step</summary>
-
-<h2>What you need to do</h2>
-
-</details>
-
-<details id="details-panel3" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>References</summary>
-
-<h2>Forms</h2>
-
-<h2>Letters</h2>
-
-<h2>Glossary</h2>
-
-<h2>Keywords</h2>
-
-</details>
-
-</div>
-</div>
-`);
-
-
-var $FrenchTaskTemplate = $(`
-<div class="wb-tabs ignore-session">
-<div class="tabpanels">
-<details id="details-panel1" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Overview</summary>
-<h2 class="mrgn-tp-md">Summary</h2>
-
-<p>Section Content</p>
-
-<h2>What you need to know</h2>
-
-<p>Section Content</p>
-</details>
-
-<details id="details-panel2" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Step by Step</summary>
-
-<h2>What you need to do</h2>
-
-<p>Section Content</p>
-
-<details class="expand-collapse-toggle-section" id="details-panel2a"><summary><span class="wb-inv" style="color:green;">H2 Exp-coll: </span>Title 1</summary>
-
-<p>Insert text here. Publishing, copy this code to retain the background colour coding for the expand-collapse sections</p>
-</details>
-
-<details class="expand-collapse-toggle-section" id="details-panel2b"><summary><span class="wb-inv" style="color:green;">H2 Exp-coll: </span>Title 2</summary>
-
-<p>Insert text here. Publishing, copy this code to retain the background colour coding for the expand-collapse sections</p>
-</details>
-</details>
-
-<details id="details-panel3" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>References</summary>
-
-<h2>Forms</h2>
-
-<ul>
-	<li>Form 1</li>
-	<li>Form 2</li>
-	<li>Form 3</li>
-</ul>
-
-<p>[[ARTICLE:KA-03207]]</p>
-
-<h2>Letters</h2>
-
-<ul>
-	<li>Letter 1</li>
-	<li>Letter 2</li>
-	<li>Letter 3</li>
-</ul>
-
-<p>[[ARTICLE:KA-03208]]</p>
-
-<h2>Glossary</h2>
-
-<ul>
-	<li><strong>Term </strong>- Definition</li>
-	<li><strong>Term </strong>- Definition</li>
-	<li><strong>Term </strong>- Definition</li>
-</ul>
-
-<h2>Keywords</h2>
-
-<ul>
-	<li><strong>Term </strong>- Definition</li>
-	<li><strong>Term </strong>- Definition</li>
-</ul>
-</details>
-</div>
+	<div class="tabpanels">
+		<details id="details-panel1" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Overview</summary>
+		</details>
+		<details id="details-panel2" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>Step by Step</summary>
+		</details>
+		<details id="details-panel3" open=""><summary><span class="wb-inv" style="color:blue;">Top tab: </span>References</summary>
+		</details>
+	</div>
 </div>
 `);
 
@@ -402,86 +330,86 @@ var $FrenchTaskTemplate = $(`
 		$parsedHtml.find('h1').remove();
 
 
-
-function processEnglishTaskTemplate($parsedHtml, $EnglishTaskTemplate) {
-    let $container = $('<div></div>').append($EnglishTaskTemplate.contents());
-    $EnglishTaskTemplate.append($container);
-
-    let $disclaimer = $parsedHtml.find('p').filter(function() {
-        let text = $(this).text().trim();
-        return text.startsWith("Disclaimer:");
-    });
-
-    $disclaimer.each(function() {
-        if ($(this).closest('details').length === 0) {
-            $container.prepend($(this));
-        }
-    });
-
-    let headers = ["Summary", "What you need to do", "What you need to know", "Forms", "Letters", "Glossary", "Keywords"];
-    let articleIndicatorPattern = /^\[\[ARTICLE:/;
-    
-    headers.forEach((headerText) => {
-        let $header = $parsedHtml.find('h2, h3, h4').filter(function() {
-            let text = $(this).text().trim();
-            return text.replace(/\s+/g, ' ') === headerText;
-        }).first();
-
-        if (!$header.length) {
-            // Check if header is wrapped in a div
-            $header = $parsedHtml.find('div:has(h2, h3, h4)').filter(function() {
-                let $innerHeader = $(this).children('h2, h3, h4').first();
-                return $innerHeader.length && $innerHeader.text().trim().replace(/\s+/g, ' ') === headerText;
-            }).first().children('h2, h3, h4');
-        }
-
-        if ($header.length) {
-            let $headerParent = $header.parent();
-            let $content;
-            
-            if ($headerParent.is('div:has(h2, h3, h4)')) {
-                $content = $headerParent.nextUntil('div:has(h2, h3, h4), h2, h3, h4');
-            } else {
-                $content = $header.nextUntil('h2, h3, h4');
-            }
-            
-            let $englishHeader = $EnglishTaskTemplate.find('h2').filter(function() {
-                return $(this).text().trim() === headerText;
-            });
-            
-            if ($englishHeader.length) {
-                $englishHeader.nextUntil('h2').remove(); 
-                $englishHeader.after($content.clone());
-            }
-        } else {
-            $EnglishTaskTemplate.find('h2').filter(function() {
-                return $(this).text().trim() === headerText;
-            }).remove();
-        }
-    });
-    
-    let $articleIndicator = $parsedHtml.find('p').filter(function() {
-        return articleIndicatorPattern.test($(this).text().trim());
-    }).first();
-
-    if ($articleIndicator.length) {
-        let $detailsPanel = $EnglishTaskTemplate.find('#details-panel3');
-        if ($detailsPanel.length) {
-            $detailsPanel.append($articleIndicator.clone());
-        }
-    }
-}
+		processHeadersAndContent($parsedHtml, $EnglishTaskTemplate);
 
 
-
-
-
-processEnglishTaskTemplate($parsedHtml, $EnglishTaskTemplate);
-
-
-
-	
-
+		function processHeadersAndContent($parsedHtml, $EnglishTaskTemplate) {
+			// 1. Unwrap headers from div if they are the only content inside the div
+			$parsedHtml.find("div").each(function() {
+			  let $div = $(this);
+			  if ($div.children("h2, h3, h4, h5, h6").length === 1 && $div.children().length === 1) {
+				$div.replaceWith($div.children("h2, h3, h4, h5, h6")); // Unwrap the header from div
+			  }
+			});
+		  
+			// List of headers we're looking for
+			const headers = [
+			  "Summary", 
+			  "What you need to know", 
+			  "What you need to do", 
+			  "Forms", 
+			  "Letters", 
+			  "Glossary", 
+			  "Keywords"
+			];
+		  
+			// Define the mapping for headers to their respective <details> container IDs
+			const headerMapping = {
+			  "Summary": "#details-panel1",
+			  "What you need to know": "#details-panel1",
+			  "What you need to do": "#details-panel2",
+			  "Forms": "#details-panel3",
+			  "Letters": "#details-panel3",
+			  "Glossary": "#details-panel3",
+			  "Keywords": "#details-panel3"
+			};
+		  
+			// 2. Loop through each header and gather content
+			headers.forEach(function(headerText) {
+			  // Find the header in $parsedHtml
+			  let $header = $parsedHtml.find("h2, h3, h4, h5, h6").filter(function() {
+				return $(this).text().trim() === headerText;
+			  });
+		  
+			  // Check if header was found
+			  if ($header.length > 0) {
+				let content = [];
+				let nextHeaderFound = false;
+		  
+				// 3. Loop through elements after the current header and gather content until we hit the next header
+				$header.nextAll().each(function() {
+				  let $el = $(this);
+		  
+				  // If we encounter another header in the list, stop collecting
+				  if ($el.is("h2, h3, h4, h5, h6") && headers.includes($el.text().trim())) {
+					nextHeaderFound = true;
+				  }
+		  
+				  if (nextHeaderFound) {
+					return false;  // Stop adding content when we find the next header
+				  }
+		  
+				  // Collect the current element content
+				  content.push($el[0].outerHTML);
+				});
+		  
+				// 4. Determine the corresponding details container in the template
+				let detailsContainerId = headerMapping[headerText];
+		  
+				// If we have a valid details container ID, append the content to it
+				if (detailsContainerId) {
+				  let $detailsContainer = $EnglishTaskTemplate.find(detailsContainerId);
+				  if ($detailsContainer.length > 0) {
+					// Include the header itself in the content
+					content.unshift($header[0].outerHTML);  // Add header at the start of the content
+					$detailsContainer.append(content.join('')); // Append the collected content
+				  }
+				}
+			  }
+			});
+		  }
+					
+					
 
 // ====== ************************** ====== MS WORD Cleanup finished, start re-adding classes ====== ************************** ======
 //
@@ -489,8 +417,6 @@ processEnglishTaskTemplate($parsedHtml, $EnglishTaskTemplate);
 //
 // ====== ************************** ====== ************************************************* ====== ************************** ======
  
-
-
 
 
 // ******* [[ 2.1 - Capitalization ]] *******
@@ -802,10 +728,6 @@ processEnglishTaskTemplate($parsedHtml, $EnglishTaskTemplate);
 
 
 	// Validate with W3C
-	
-	validateInputHtml($parsedHtml);
-
-	// post the final HTML
 
 	// Check if the parsed HTML has elements
 	if ($EnglishTaskTemplate.length > 0) {
@@ -869,62 +791,6 @@ function copyOutput()
 }
 
 // Word doc cleanup functions -------------------------------------------------------------------------------
-
-
-//OLD FUNCTION
-// Main function to iterate over each <a> tag and apply logic
-function processImproperlyBuildDetailsSectionsAddSummary($parsedHtml) {
-    $parsedHtml.find('ul[type="disc"]').each(function () {
-        $(this).find('a').each(function () {
-            var linkText = $(this).text().trim(); // Get the text content of the <a> tag
-
-            // Find matching p and span tags
-            findMatchingElements(linkText, $parsedHtml);
-        });
-    });
-}
-
-
-//OLD FUNCTION
-	function processImproperlyBuildDetailsSectionsAddDetails($parsedHtml) {
-
-    // Initialize the details panel counter
-    var detailsCount = 1;
-
-    // Traverse through each summary in the parsed HTML
-    $parsedHtml.find('summary').each(function() {
-        // Find the parent element of the current summary
-        var $parent = $(this).parent();
-
-        // Create a new details element for each summary
-        var $details = $('<details></details>');
-
-        // Set the id for each details element dynamically
-        $details.attr('id', 'details-panel' + detailsCount);
-
-        // Append the summary to the details element
-        var $summary = $(this).clone();
-        $details.append($summary);
-
-        // Gather all the content following this summary until the next summary or end of parent container
-        var $nextElement = $(this).next();
-        while ($nextElement.length && !$nextElement.is('summary')) {
-            // Append this element to the details content
-            $details.append($nextElement);
-
-            // Move to the next sibling
-            $nextElement = $nextElement.next();
-        }
-
-        // Replace the summary and its following content with the new details element in the parent
-        $(this).replaceWith($details);
-
-        // Increment the details counter for the next set
-        detailsCount++;
-    });
-}
-
-
 
 
 
