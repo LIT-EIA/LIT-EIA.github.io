@@ -1,5 +1,4 @@
-/*  Just FYI, the regex patterns is mainly used for HTML output from DreamWeaver when copying MS word content*/
-
+const decoder = new TextDecoder('utf-8');
 
 async function cleanHtml() {
 

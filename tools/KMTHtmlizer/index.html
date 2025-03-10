@@ -237,14 +237,26 @@
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
+    
                 reader.onload = function(event) {
                     const content = event.target.result;
-                    document.getElementById('inputHtml').value = content;
+    
+                    // Create a TextDecoder for Windows-1252 encoding
+                    const decoder = new TextDecoder('windows-1252');
+    
+                    // Decode the content as a Uint8Array
+                    const decodedText = decoder.decode(new Uint8Array(content));
+    
+                    // Set the decoded text to the textarea or input field
+                    document.getElementById('inputHtml').value = decodedText;
                 };
-                reader.readAsText(file);
+    
+                // Read the file as an ArrayBuffer (binary data) to allow encoding manipulation
+                reader.readAsArrayBuffer(file);
             }
         });
     </script>
+    
 
 </body>
 </html>
