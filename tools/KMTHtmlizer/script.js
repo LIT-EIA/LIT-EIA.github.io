@@ -18,18 +18,16 @@ async function cleanHtml() {
 	var $parsedHtml = $(doc.body);
 
 	$parsedHtml = fixListNesting($parsedHtml);
+
 	function fixListNesting($html) {
 		const looseLis = [];
 		let needsUl = false;
 	
-		// Store the original parent element (div)
-		const $parent = $html.parent();
-	
-		// Step 1: Use .children() to iterate over only element nodes
-		$html.children().each(function() {
+		// Find all elements in the HTML and iterate through them
+		$html.find('*').each(function() {
 			const $child = $(this);
-	
-			// Check if the child is a <li> element and not inside a <ul> or <ol>
+			
+			// Check if the child is an <li> that is not inside any <ul> or <ol>
 			if ($child.is('li') && !$child.closest('ul, ol').length) {
 				// Collect loose <li> elements into the looseLis array
 				looseLis.push($child.detach());
@@ -39,46 +37,52 @@ async function cleanHtml() {
 				if (needsUl && looseLis.length > 0) {
 					// Wrap the loose <li> elements in a new <ul>
 					const newUl = $('<ul></ul>').append(looseLis);
-					$child.before(newUl); // Insert the <ul> before the current non-<li> element
+					$child.before(newUl); // Insert the new <ul> before the current non-<li> element
 					looseLis.length = 0; // Reset the array of loose <li> elements
 					needsUl = false; // Reset the flag for needing a new <ul>
 				}
 			}
+	
+			// Handle nested <li> elements inside another <li>
+			if ($child.is('li')) {
+				$child.find('> li').each(function() {
+					const $nestedLi = $(this);
+					const $parentLi = $nestedLi.parent();
+	
+					// Create a new <ul> to wrap the nested <li> items
+					const newUl = $('<ul></ul>');
+					newUl.append($nestedLi.detach());
+	
+					// Append the <ul> inside the parent <li>
+					$parentLi.append(newUl);
+				});
+			}
 		});
 	
-		// If there are any loose <li> elements remaining after iterating through the children, wrap them in a <ul>
+		// If there are any remaining loose <li> elements after iterating through all children, wrap them in a <ul>
 		if (needsUl && looseLis.length > 0) {
 			const newUl = $('<ul></ul>').append(looseLis);
 			$html.append(newUl); // Append the <ul> containing the remaining loose <li> elements
 		}
 	
-		// Step 2: Handle nested <li> elements (inside a <li>, e.g., <li><li></li></li>)
-		$html.find('li').each(function() {
-			const $parentLi = $(this);
-			const nestedLis = $parentLi.find('> li'); // Find <li> elements directly inside the current <li>
+		// Log the final result for debugging
+		console.log($html.html());
 	
-			if (nestedLis.length > 0) {
-				// Create a new <ul> to wrap the nested <li> elements
-				const newUl = $('<ul></ul>');
-	
-				// Move the nested <li> elements into the new <ul>
-				nestedLis.each(function() {
-					newUl.append($(this).detach());
-				});
-	
-				// Append the new <ul> inside the parent <li>
-				$parentLi.append(newUl);
-			}
-		});
-	
-		// Re-attach the modified children back into the original parent
-		if ($parent.length > 0) {
-			$parent.html($html); // Set the modified content back to the parent div
-		}
-	
-		console.log($html.html()); // For debugging
 		return $html;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
