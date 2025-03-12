@@ -66,35 +66,11 @@ async function cleanHtml() {
 		}
 	
 		// Log the final result for debugging
-		console.log($html.html());
-	
 		return $html;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-			
-	
-	
-	
-//console.log($html.html());
-//Jquery fixes to the HTML produceed by MS Word ------------------------------------------------------------------
 
+	
+	//Jquery fixes to the HTML produceed by MS Word ------------------------------------------------------------------
 
 	//remove the weird top of document UL after processing its contents
 	$parsedHtml.find('ul[type="disc"]').remove();
@@ -136,10 +112,8 @@ async function cleanHtml() {
 		}
 	});
 
-
 	// Remove kmMeta section (MS word metadata section, useless for final publishing)
-	$parsedHtml.find('#kmMeta').remove(); 
-	
+	$parsedHtml.find('#kmMeta').remove(); 	
 
 	// Loop through each element in the parsed HTML except <span>
 	$parsedHtml.find('*').each(function() {
@@ -196,7 +170,6 @@ async function cleanHtml() {
 		}
 		
 	});
-	
 
 	function removeEmptyTags($html) {
 		let hasEmptyTags = true;
@@ -221,10 +194,8 @@ async function cleanHtml() {
 		return $html;
 	}
 
-
 	// Apply the function to $parsedHtml
 	$parsedHtml = removeEmptyTags($parsedHtml);
-
 
 	//Clean up weird p tags with just a period
 	$parsedHtml.find('p').each(function() {
@@ -234,10 +205,6 @@ async function cleanHtml() {
     }
 	});
 	
-
-
-
-
 	// Run your regex on the content HTML (the plain text)	
 
 	$parsedHtml.html(cleanSummary($parsedHtml.html()));
@@ -271,7 +238,6 @@ async function cleanHtml() {
 
 // Assuming $parsedHtml is your jQuery object containing the HTML
 cleanOutTopTabsCode($parsedHtml);
-
 
 function cleanOutTopTabsCode($parsedHtml) {
 	// 1. Remove <summary> tags with "Top Tab:" inside <details> and preserve the content inside <details>
@@ -317,7 +283,7 @@ function cleanOutTopTabsCode($parsedHtml) {
 
 //Store template code:
 
-//		<h2 class="mrgn-tp-md">Summary</h2>
+//<h2 class="mrgn-tp-md">Summary</h2>
 var $EnglishTaskTemplate = $(`
 <div class="wb-tabs ignore-session">
 	<div class="tabpanels">
