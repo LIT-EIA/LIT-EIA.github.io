@@ -6,10 +6,9 @@ async function cleanHtml() {
 	let language = $('#language').val();
 
 //Initial RegEx fixes to apply before any Jquery dom fixes -------------------------------------------------------
-
 	
 	// Fix common tag issues in HTML
-	inputHtml = inputHtml.replace(/(<[a-zA-Z][^>]*)(?=<\/\1[^>]*>)/g, '$1>'); // Auto-close certain tags
+	//inputHtml = inputHtml.replace(/(<[a-zA-Z][^>]*)(?=<\/\1[^>]*>)/g, '$1>'); // Auto-close certain tags
 
 	// Use DOMParser to parse the cleaned HTML string
 	var parser = new DOMParser();
@@ -18,7 +17,78 @@ async function cleanHtml() {
 	// Convert parsed content to jQuery
 	var $parsedHtml = $(doc.body);
 
-
+	$parsedHtml = fixListNesting($parsedHtml);
+	function fixListNesting($html) {
+		const looseLis = [];
+		let needsUl = false;
+	
+		// Store the original parent element (div)
+		const $parent = $html.parent();
+	
+		// Step 1: Use .children() to iterate over only element nodes
+		$html.children().each(function() {
+			const $child = $(this);
+	
+			// Check if the child is a <li> element and not inside a <ul> or <ol>
+			if ($child.is('li') && !$child.closest('ul, ol').length) {
+				// Collect loose <li> elements into the looseLis array
+				looseLis.push($child.detach());
+				needsUl = true;
+			} else {
+				// If a non-<li> element is encountered and we have loose <li> elements collected
+				if (needsUl && looseLis.length > 0) {
+					// Wrap the loose <li> elements in a new <ul>
+					const newUl = $('<ul></ul>').append(looseLis);
+					$child.before(newUl); // Insert the <ul> before the current non-<li> element
+					looseLis.length = 0; // Reset the array of loose <li> elements
+					needsUl = false; // Reset the flag for needing a new <ul>
+				}
+			}
+		});
+	
+		// If there are any loose <li> elements remaining after iterating through the children, wrap them in a <ul>
+		if (needsUl && looseLis.length > 0) {
+			const newUl = $('<ul></ul>').append(looseLis);
+			$html.append(newUl); // Append the <ul> containing the remaining loose <li> elements
+		}
+	
+		// Step 2: Handle nested <li> elements (inside a <li>, e.g., <li><li></li></li>)
+		$html.find('li').each(function() {
+			const $parentLi = $(this);
+			const nestedLis = $parentLi.find('> li'); // Find <li> elements directly inside the current <li>
+	
+			if (nestedLis.length > 0) {
+				// Create a new <ul> to wrap the nested <li> elements
+				const newUl = $('<ul></ul>');
+	
+				// Move the nested <li> elements into the new <ul>
+				nestedLis.each(function() {
+					newUl.append($(this).detach());
+				});
+	
+				// Append the new <ul> inside the parent <li>
+				$parentLi.append(newUl);
+			}
+		});
+	
+		// Re-attach the modified children back into the original parent
+		if ($parent.length > 0) {
+			$parent.html($html); // Set the modified content back to the parent div
+		}
+	
+		console.log($html.html()); // For debugging
+		return $html;
+	}
+	
+	
+	
+	
+	
+			
+	
+	
+	
+//console.log($html.html());
 //Jquery fixes to the HTML produceed by MS Word ------------------------------------------------------------------
 
 
@@ -62,11 +132,9 @@ async function cleanHtml() {
 		}
 	});
 
+
 	// Remove kmMeta section (MS word metadata section, useless for final publishing)
-
 	$parsedHtml.find('#kmMeta').remove(); 
-
-
 	
 
 	// Loop through each element in the parsed HTML except <span>
@@ -149,9 +217,9 @@ async function cleanHtml() {
 		return $html;
 	}
 
+
 	// Apply the function to $parsedHtml
 	$parsedHtml = removeEmptyTags($parsedHtml);
-
 
 
 	//Clean up weird p tags with just a period
@@ -162,29 +230,8 @@ async function cleanHtml() {
     }
 	});
 	
-	
 
 
-	//$parsedHtml = fixListNesting($parsedHtml);
-	function fixListNesting($html) {
-		// Find all <ul> and <ol> elements
-		$html.find('ul, ol').each(function() {
-			const $list = $(this);
-
-			// Check if the list is properly nested inside a <li> element
-			const $parentLi = $list.closest('li');
-
-			// If the parent <li> is not found, it means the list is not nested properly
-			if ($parentLi.length === 0) {
-				// We will wrap the list with a new <li> element
-				const newLi = $('<li></li>');
-				$list.before(newLi);
-				newLi.append($list);
-			}
-		});
-
-		return $html;
-	}
 
 
 	// Run your regex on the content HTML (the plain text)	
@@ -216,8 +263,6 @@ async function cleanHtml() {
 
 	  return cleanedHtml;
 	}
-
-
 
 
 // Assuming $parsedHtml is your jQuery object containing the HTML
@@ -254,11 +299,7 @@ function cleanOutTopTabsCode($parsedHtml) {
 		$details.remove();
 	  }
 	});
-  }
-  
-
-	
-	
+  }	
 	
 	
 // Templatize -----------------------------------------------------------------------------------------------------------------------------
