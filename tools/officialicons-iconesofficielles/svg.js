@@ -140,14 +140,14 @@
 			"WHITE": "Solid White",
 
 			"SELECTICON":"Select icon",
-			"SELECTBGCOLOR":"Select Background Color",
-			"SELECTICONCOLOR":"Select Icon Color",
+			"SELECTBGCOLOR":"Select Background Colour",
+			"SELECTICONCOLOR":"Select Icon Colour",
 			"SELECTICONSIZE":"Select Icon Size", 
 			"download":"To download right click and save as.",
 
 			"SAVE" : "Download",
 
-			"TITLE": "Official Icons Color Changer",
+			"TITLE": "Official Icons Colour Changer",
 
 			"COPY" : "Copy"
 
@@ -192,7 +192,7 @@
 			"WHITE": "Blanc solide",
 
 			"SELECTICON":"Selection l'icône",
-			"SELECTBGCOLOR":"Selection la coulour de l'arrière-plan",
+			"SELECTBGCOLOR":"Selection la couleur de l'arrière-plan",
 			"SELECTICONCOLOR":"Selection la couleur de l'icône",
 			"SELECTICONSIZE":"Selection la grandeur de l'icône",
 			"download":"Pour télécharger cliquer le bouton droit et sauvegarder.",
@@ -401,10 +401,8 @@
 	$("#iconColorInput").on('input', function() {
 		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
 		debounceTimeout = setTimeout(function() {
-			const colorValue = $("#iconColorInput").val();
 			const iconID = icon.find(":selected").val();
-			const backgroundColorValue = getBackgroundColorValue();
-			drawIcon(iconID, colorValue, backgroundColorValue, getCurrentSize());
+			drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
 		}, 20); // Debounce timer for input
 	});
 	
@@ -412,10 +410,8 @@
 	$("#bgColorInput").on('input', function() {
 		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
 		debounceTimeout = setTimeout(function() {
-			const colorValue = $("#bgColorInput").val();
 			const iconID = icon.find(":selected").val();
-			const iconColorValue = getIconColorValue();
-			drawIcon(iconID, iconColorValue, colorValue, getCurrentSize());
+			drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
 		}, 20); // Debounce timer for input
 	});
 
@@ -427,8 +423,9 @@
 		// Set a new timeout to update after 10 milliseconds
 		debounceTimeout = setTimeout(function() {
 			if ($.isNumeric(customSize) && customSize > 0) {
-				drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), customSize);
-				$("#customSizeLabel").text(`x ${customSize}`); // Update the label
+				const iconID = icon.find(":selected").val();
+				drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
+				$("#customSizeLabel").text(` x ${customSize}`); // Update the label
 			}
 		}, 20); // Wait for 10 milliseconds
 	});
