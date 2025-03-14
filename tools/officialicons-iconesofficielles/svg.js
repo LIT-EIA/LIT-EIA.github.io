@@ -94,29 +94,363 @@
 	icons.push(new Path2D('M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z'));
 	
 	//Example
-	icons.push(new Path2D('M0,220.7a220.7,220.7 0 1,0 441.4,0a220.7,220.7 0 1,0 -441.4,0 M196.93,220.56H122.74c-.07,1.17-.1,2.06-.1,2.68q0,10.92,6.23,17.62a20,20,0,0,0,15.2,6.69q14.73,0,23-15.25l26.48,4.43q-7.72,16-20.66,24a54.12,54.12,0,0,1-29,8q-22.07,0-35.86-14T94.2,217.78a67.24,67.24,0,0,1,12.47-40q17-23.7,48.53-23.7,20.09,0,31.94,12.41T199,201.29A82.7,82.7,0,0,1,196.93,220.56Zm-24.94-18c.07-1.31.11-2.31.11-3q0-12.16-5.46-18.24T152,175.22a23.24,23.24,0,0,0-16.44,6.9q-7.26,6.91-9.84,20.41Z M262.35,235.39l-27.2,30.71H198.88l50.59-56.05-27.82-53.38h31.43l16,31.22,27.72-31.22h36l-50.8,56.78,27.62,52.65H278.12Z M363.42,266.12h29.26l-6,28.54H357.44Z'));
+	icons.push(new Path2D('M0,220.7 a220.7,220.7,0,1,0,441.4,0 a220.7,220.7,0,1,0,-441.4,0 M196.93,220.56 H122.74 c-0.07,1.17,-0.1,2.06,-0.1,2.68 q0,10.92,6.23,17.62 a20,20,0,0,0,15.2,6.69 q14.73,0,23,-15.25 l26.48,4.43 q-7.72,16,-20.66,24 a54.12,54.12,0,0,1,-29,8 q-22.07,0,-35.86,-14 T94.2,217.78 a67.24,67.24,0,0,1,12.47,-40 q17,-23.7,48.53,-23.7 q20.09,0,31.94,12.41 T199,201.29 A82.7,82.7,0,0,1,196.93,220.56 m-24.94,-18 c0.07,-1.31,0.11,-2.31,0.11,-3 q0,-12.16,-5.46,-18.24 T152,175.22 a23.24,23.24,0,0,0,-16.44,6.9 q-7.26,6.91,-9.84,20.41 Z M262.35,235.39 l-27.2,30.71 H198.88 l50.59,-56.05 l-27.82,-53.38 h31.43 l16,31.22 l27.72,-31.22 h36 l-50.8,56.78 l27.62,52.65 H278.12 Z M335.42,238.12 h29.26 l-6,28.54 H328.44Z'));
 	icons.push(new Path2D('M0,220.7a220.7,220.7 0 1,0 441.4,0a220.7,220.7 0 1,0 -441.4,0 M196.93,214H122.7c-.07,1.17-.1,2.06-.1,2.68q0,10.92,6.23,17.62A20,20,0,0,0,144,241q14.73,0,23-15.25l26.48,4.43q-7.72,16-20.66,24a54.14,54.14,0,0,1-29,8q-22.07,0-35.86-14t-13.79-37a67.26,67.26,0,0,1,12.47-40q17-23.7,48.53-23.69,20.09,0,31.94,12.41T199,194.7A82.51,82.51,0,0,1,196.93,214ZM172,196c.07-1.3.11-2.3.11-3q0-12.15-5.46-18.23T152,168.64a23.24,23.24,0,0,0-16.44,6.9q-7.26,6.9-9.84,20.4Z M210.42,265.27l31.22,4.53q0,4.74,1.55,7.16a12,12,0,0,0,5,4.12c2.3,1.14,5.44,1.7,9.43,1.7q9.36,0,15-3.71,4.22-2.88,6.9-9.27,1.65-4,4.23-17.52l1-5.15Q269.39,259.91,253,259.91q-16.06,0-26.38-11.34T216.4,215.4a87.43,87.43,0,0,1,7-35.35q7-16.06,19.68-24.31t25.86-8.24a36.54,36.54,0,0,1,20,5.76,38.59,38.59,0,0,1,14.11,16.18l4.13-19.37h27.71l-19,91.19q-4.63,21.94-7.83,31.32a55.15,55.15,0,0,1-7.31,14.94,35.58,35.58,0,0,1-10.41,9.33,45.75,45.75,0,0,1-14.84,5.41A98.48,98.48,0,0,1,257,303.9q-23.19,0-35-7.93t-11.85-26.38A34.59,34.59,0,0,1,210.42,265.27Zm34.83-52.86q0,12.47,5.62,19A17.76,17.76,0,0,0,264.93,238q7.72,0,15-5.87t11.13-16.69a62,62,0,0,0,3.86-20.92q0-11.64-6.28-18.75t-14.53-7.11q-7.94,0-14.58,6.28t-11,19.37A59.11,59.11,0,0,0,245.25,212.41Z M335,231h29.26l-6,28.55H329Z'));
-	
-	//At start
-	drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), iconSize.find(":selected").val());
-	
+
+
+
+	var arrLang = {
+		"en": {
+			"CALCULATION": "Calculation",
+			"FORMULA": "Formula",
+			"GOTO": "Go To",
+			"LEGISLATION": "Legislation",
+			"NICE": "Nice to Know",
+			"CHECKMARK": "Check Mark",
+			"BOOK": "Book",
+			"CALCULATE": "Calculate",
+			"CLOCK": "Clock",
+			"HAMMER": "Hammer",
+			"DESKTOP": "Desktop",
+			"EXCLAMATION": "Exclamation Circle",
+			"FOLDER": "Folder",
+			"GLOBE": "Globe",
+			"HEADSET": "Headset",
+			"HOURGLASS": "Hourglass",
+			"KEY": "Key",
+			"LIGHTBULB": "Lightbulb",
+			"LIST": "List-Alt",
+			"NETWORK": "Network",
+			"PAPERCLIP": "Paperclip",
+			"PENCIL": "Pencil",
+			"POLL": "Poll",
+			"PUZZLE": "Puzzle-Piece",
+			"QUESTION": "Question Circle",
+			"SEARCH": "Search",
+			"NOTE": "Sticky Note",
+			"THUMBS": "Thumbs Up",
+			"EXAMPLE_en": "Exemple English",
+			"EXAMPLE_fr": "Exemple French",
+
+			"COVE": "Deep Cove",
+			"VIOLET": "Red Violet",
+			"PURPLE": "Royal Purple",
+			"MATISSE": "Matisse",
+			"ATOLL": "Atoll",
+			"WHITE": "Solid White",
+
+			"SELECTICON":"Select icon",
+			"SELECTBGCOLOR":"Select Background Color",
+			"SELECTICONCOLOR":"Select Icon Color",
+			"SELECTICONSIZE":"Select Icon Size", 
+			"download":"To download right click and save as.",
+
+			"SAVE" : "Download",
+
+			"TITLE": "Official Icons Color Changer",
+
+			"COPY" : "Copy"
+
+		},
+		"fr": {
+			"CALCULATION": "Calcul",
+			"FORMULA": "Formule",
+			"GOTO": "Aller à",
+			"LEGISLATION": "Legislation",
+			"NICE": "Bon à savoir",
+			"CHECKMARK": "Coche",
+			"BOOK": "Livre",
+			"CALCULATE": "Calculer",
+			"CLOCK": "'Horloge",
+			"HAMMER": "Marteau",
+			"DESKTOP": "Ordinateur",
+			"EXCLAMATION": "Cercle d'exclamation",
+			"FOLDER": "ficher",
+			"GLOBE": "Globe",
+			"HEADSET": "Casque",
+			"HOURGLASS": "Sablier",
+			"KEY": "Clé",
+			"LIGHTBULB": "ampoule",
+			"LIST": "Liste-Alt",
+			"NETWORK": "Réseau",
+			"PAPERCLIP": "Trombone",
+			"PENCIL": "Crayon",
+			"POLL": "Sondage",
+			"PUZZLE": "Pièce de Cassetette",
+			"QUESTION": "Cercle de questions",
+			"SEARCH": "Chercher",
+			"NOTE": "Note collante",
+			"THUMBS": "Pouces vers le haut",
+			"EXAMPLE_en": "Example English",
+			"EXAMPLE_fr": "Example French",
+
+			"COVE": "Crique profonde",
+			"VIOLET": "Violette rouge",
+			"PURPLE": "Violet Royal",
+			"MATISSE": "Matisse",
+			"ATOLL": "Atoll",
+			"WHITE": "Blanc solide",
+
+			"SELECTICON":"Selection l'icône",
+			"SELECTBGCOLOR":"Selection la coulour de l'arrière-plan",
+			"SELECTICONCOLOR":"Selection la couleur de l'icône",
+			"SELECTICONSIZE":"Selection la grandeur de l'icône",
+			"download":"Pour télécharger cliquer le bouton droit et sauvegarder.",
+
+			"SAVE" : "Télécharger",
+
+			"TITLE": "Changeur de couleurs des icônes officielles",
+
+			"COPY" : "Copier"
+		}
+	};
+
+
+	$(document).ready(function() {
+	// The default language is English
+		var lang = "en";
+		$(".lang").each(function(index, element) {
+			$(this).text(arrLang[lang][$(this).attr("key")]);
+		});
+		$("#en").hide();
+		$("#fr").show();
+	});
+
+	// get/set the selected language
+	$(".translate").click(function() {
+		var lang = $(this).attr("id");
+	   
+		
+		$(".lang").each(function(index, element) {
+			$(this).text(arrLang[lang][$(this).attr("key")]);
+		});
+
+		if(lang == "fr"){
+			console.log("if");
+			$("#fr").hide();
+			$("#en").show();
+		}
+		else{
+			console.log("else");
+			$("#fr").show();
+			$("#en").hide();
+		}
+	});
+
+	//get the 
 	$("#iconSelector").change(function(){
-		drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), iconSize.find(":selected").val());
+		$('#alt_EN').html("alt: " + $("#iconSelector option:selected").attr("alten"));
+		$('#alt_FR').html("alt: " + $("#iconSelector option:selected").attr("altfr"));
+	})
+
+	$("#copyen").click(function() {
+		var icon_name;
+		icon_name = $(document).find('#iconSelector option:selected').attr("alten");
+		console.log(icon_name);
+		navigator.clipboard.writeText(icon_name);
+		
+		// Show success message
+		showCheckmark($(this).parent(), "Copied");
 	});
-	$("#iconColorSelector").change(function(){
-		drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), iconSize.find(":selected").val());
+	
+	$("#copyfr").click(function() {
+		var icon_name;
+		icon_name = $(document).find('#iconSelector option:selected').attr("altfr");
+		console.log(icon_name);
+		navigator.clipboard.writeText(icon_name);
+		
+		// Show success message
+		showCheckmark($(this).parent(), "Copié");
 	});
-	$("#bgColorSelector").change(function(){
-		drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), iconSize.find(":selected").val());
+	
+	// Function to show the checkmark
+	function showCheckmark(parentElement, message) {
+		// Create checkmark element
+		var checkmark = $('<span class="checkmark">✔️ ' + message + '</span>');
+		$(parentElement).append(checkmark);
+	
+		// Fade out and remove the checkmark after 10 seconds
+		setTimeout(function() {
+			checkmark.fadeOut(1000, function() {
+				$(this).remove();
+			});
+		}, 300);
+	}
+	
+
+  
+	function getLuminance(color) {
+		const rgb = parseInt(color.slice(1), 16);
+		const r = (rgb >> 16) & 0xff;
+		const g = (rgb >> 8) & 0xff;
+		const b = (rgb >> 0) & 0xff;
+	
+		const a = [r, g, b].map(c => {
+			c /= 255;
+			return (c <= 0.03928) ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+		});
+	
+		return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+	}
+	
+	function getContrastRatio(color1, color2) {
+		const lum1 = getLuminance(color1);
+		const lum2 = getLuminance(color2);
+		const brightest = Math.max(lum1, lum2);
+		const darkest = Math.min(lum1, lum2);
+	
+		return (brightest + 0.05) / (darkest + 0.05);
+	}
+	
+	function updateContrastRatio() {
+		const transparencyUsed = ($("#bgColorSelector").val() === "rgba(0,0,0,0)" || $("#iconColorSelector").val() === "rgba(0,0,0,0)");
+		const iconColor = $("#iconColorSelector").val() === "custom" ? $("#iconColorInput").val() : $("#iconColorSelector").val();
+		const bgColor = $("#bgColorSelector").val() === "custom" ? $("#bgColorInput").val() : $("#bgColorSelector").val();
+	
+		const contrastRatio = getContrastRatio(iconColor, bgColor);
+		const resultText = transparencyUsed ? "?" : contrastRatio.toFixed(2);
+		const accessibilityLevel = transparencyUsed ? "? 3.1" : contrastRatio >= 3 ? "> 3.1 ☑" : "< 3.1 ⚠";
+	
+		$("#resultratio").text($('#fr').is(':visible') ? `Contrast: ${resultText} ${accessibilityLevel}` : `Contraste : ${resultText} ${accessibilityLevel}`);
+	}
+	
+	$(document).ready(function() {
+		$("#iconColorSelector, #bgColorSelector").change(function() {
+			const isCustom = $(this).val() === "custom";
+			$(this).next('input[type="color"]').toggle(isCustom);
+	
+			if (!isCustom) {
+				$(this).next('input[type="color"]').val($(this).val());
+			}
+	
+			updateContrastRatio();
+		});
+	
+		$("input[type='color']").on("input", updateContrastRatio);
 	});
-	$("#sizeSelector").change(function(){
-		drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), iconSize.find(":selected").val());
+
+
+
+	let debounceTimeout; // Variable to hold the timeout
+
+	// Function to get the current size value, including custom
+	function getCurrentSize() {
+		const sizeValue = $("#sizeSelector").val(); // Correctly get value from sizeSelector
+		if (sizeValue === "custom") {
+			// If "Custom" is selected, use the input value
+			console.log(sizeValue);
+			return $("#customSizeInput").val(); // Fetch the custom input value if "Custom" is selected
+			
+		}
+		console.log("DNO" + sizeValue);
+		return sizeValue; // Return the selected size
+		
+	}
+	
+	// Function to get the current color value, including custom for both color pickers
+	function getIconColorValue() {
+		const iconColorValue = $("#iconColorSelector").val();
+		return iconColorValue === "custom" ? $("#iconColorInput").val() : iconColorValue;
+	}
+
+	function getBackgroundColorValue() {
+		const backgroundColorValue = $("#bgColorSelector").val();
+		return backgroundColorValue === "custom" ? $("#bgColorInput").val() : backgroundColorValue;
+	}
+	// Combined change event handler for all relevant select elements
+	$("#iconSelector, #iconColorSelector, #bgColorSelector, #sizeSelector").change(function() {
+		clearTimeout(debounceTimeout); // Clear the previous timeout to avoid immediate drawIcon call
+	
+		debounceTimeout = setTimeout(function() {
+			const iconID = icon.find(":selected").val();
+			const iconColorValue = getIconColorValue(); // Get current icon color
+			const backgroundColorValue = getBackgroundColorValue(); // Get current background color
+			const sizeValue = getCurrentSize(); // Get current size, including custom
+			
+			// Draw the icon with the gathered values
+			drawIcon(iconID, iconColorValue, backgroundColorValue, sizeValue);
+	
+			// Show/hide custom size input and label based on size selection
+			if ($("#sizeSelector").val() === "custom") {
+				$("#customSizeInput").show().focus(); // Show the input and focus on it
+				$("#customSizeLabel").remove(); // Remove any existing label
+		
+				// Create a new label element next to the input
+				const label = $(`<span id="customSizeLabel" style="margin-left: 10px;"> x ` + sizeValue + `</span>`);
+				$("#customSizeInput").after(label);
+			} else {
+				$("#customSizeInput").hide(); // Hide the input if not custom
+				$("#customSizeLabel").remove(); // Remove the label when not custom
+			}
+		}, 20); // Change this value to adjust the debounce timing (200 milliseconds in this example)
 	});
+	
+	// Handle changes for icon color and show/hide color picker
+	$("#iconColorSelector").change(function() {
+		const selectedValue = $(this).val();
+		$("#iconColorInput").toggle(selectedValue === "custom");
+	});
+	
+	// Handle changes for background color and show/hide color picker
+	$("#bgColorSelector").change(function() {
+		const selectedValue = $(this).val();
+		$("#bgColorInput").toggle(selectedValue === "custom");
+	});
+	
+	// Handle the color input change for icon color picker
+	$("#iconColorInput").on('input', function() {
+		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
+		debounceTimeout = setTimeout(function() {
+			const colorValue = $("#iconColorInput").val();
+			const iconID = icon.find(":selected").val();
+			const backgroundColorValue = getBackgroundColorValue();
+			drawIcon(iconID, colorValue, backgroundColorValue, getCurrentSize());
+		}, 20); // Debounce timer for input
+	});
+	
+	// Handle the color input change for background color picker
+	$("#bgColorInput").on('input', function() {
+		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
+		debounceTimeout = setTimeout(function() {
+			const colorValue = $("#bgColorInput").val();
+			const iconID = icon.find(":selected").val();
+			const iconColorValue = getIconColorValue();
+			drawIcon(iconID, iconColorValue, colorValue, getCurrentSize());
+		}, 20); // Debounce timer for input
+	});
+
+	// Event listener for the custom size input change with debounce
+	$("#customSizeInput").on('input', function() {
+		clearTimeout(debounceTimeout); // Clear the previous timer
+		const customSize = $(this).val();
+		
+		// Set a new timeout to update after 10 milliseconds
+		debounceTimeout = setTimeout(function() {
+			if ($.isNumeric(customSize) && customSize > 0) {
+				drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), customSize);
+				$("#customSizeLabel").text(`x ${customSize}`); // Update the label
+			}
+		}, 20); // Wait for 10 milliseconds
+	});
+
+	// Initial call to drawIcon
+	const initialSizeValue = getCurrentSize();
+	drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), initialSizeValue);
+
+	// Hide custom size input and label when not needed
+	$("#sizeSelector").change(function() {
+		if ($(this).val() !== "custom") {
+			$("#customSizeInput").hide();
+			$("#customSizeLabel").remove(); // Remove the label when not custom
+		}
+	});
+	
 	
 	function drawIcon(iconID, iconColor, bgColor, size)
 	{
 		const canvas = document.getElementById('canvas');
 		const context = canvas.getContext('2d');
+		const gridBackground = document.getElementById('gridBackground');
 		
 		//set the size of the canvas (square)
 		canvas.width = 680;
@@ -159,8 +493,10 @@
 				
 		canvas.width = size;
 		canvas.height = size;
+
+		gridBackground.style.width = size + 'px';
+		gridBackground.style.height = size + 'px';
 		
-		console.log(bgColor);
 		context.fillStyle = bgColor;
 		context.setTransform(1, 0, 0, 1, 0, 0);
 		context.rect(0, 0, size, size);
@@ -170,3 +506,41 @@
 		context.setTransform(scaling, 0, 0, scaling, startingX, startingY);
 		context.fill(p);	
 	}
+
+
+	var button = document.getElementById('savebtn');
+	button.addEventListener('click', function (e){
+		
+		var canvas = $('#canvas').get(0);
+		console.log(canvas);
+		var dataUrl = canvas.toDataURL('image/png');
+		
+		var a  = document.createElement('a');
+		a.href = dataUrl;
+
+		var icon_name;
+		var icon_bgcolor;
+		var icon_color;
+		var icon_size
+
+		var lang = $('#en').css("display");
+
+    // Get icon name based on selected language
+    if (lang == "block") {
+        icon_name = $('#iconSelector option:selected').attr("valueFR");
+    } else {
+        icon_name = $('#iconSelector option:selected').attr("valueEN");
+    }
+
+    // Get the background color, accounting for the custom option
+    icon_bgcolor = getBackgroundColorValue(); // This function already handles custom
+    // Get the icon color, accounting for the custom option
+    icon_color = getIconColorValue(); // This function already handles custom
+
+    // Get size value, including handling for custom size
+    icon_size = getCurrentSize(); // This function already handles custom size
+
+		a.download = icon_name + '_' + icon_bgcolor + '_' + icon_color + '_' + icon_size + '.png';
+		a.click();           
+		a.remove();
+	});

@@ -26,4 +26,127 @@ td{
 }
 body{
     font-family : "Arial";
+    background-color: #051c37; /* Dark background */
+    color: #fff; /* Light text color */
+    font-family: Arial, sans-serif;
+    margin: 0; /* Reset default body margins */
+    padding: 0; /* Reset default body paddings */
+    width:880px;
+    margin: 10px auto; /* Center the container */
+}
+
+
+.bodypart {
+    background-color: rgba(235, 235, 235, 1); /* Background for each row section */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Inner padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    color:black;
+}
+
+.navbar {
+    background-color: transparent; /* Make the navbar completely transparent */
+    padding: 0; /* Clear padding */
+}
+
+.btn{
+    color:white;
+    background-color: #cd1c69;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Light shadow */
+}
+
+.btn:hover, .btn:focus, .btn:active
+{
+    color:white;
+    background-color: #e03982;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Light shadow */
+    border:1px solid rgba(0,0,0,0);
+}
+
+.btn:selected
+{
+    color:white;
+    background-color: #cd1c69;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Light shadow */              
+}
+
+.translatectn {
+    margin-left: auto; /* Align buttons to the right */
+}
+
+.translate.btn
+{
+    color:white;
+    border:none;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Light shadow */
+}
+
+.translate.btn:hover
+{
+    color:white;
+    border:none;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Light shadow */
+}
+
+.form-select {
+    margin-bottom: 15px; /* Space between select elements */
+    background-color: #3d3d3d; /* Background for select elements */
+    color: #fff; /* Text color for select elements */
+    border: 1px solid #444; /* Border color for select elements */
+}
+
+.form-select:focus {
+    background-color: #4d4d4d; /* Background on focus */
+    border-color: #6c757d; /* Border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+canvas {
+    display: block;
+    background-color: rgba(0,0,0,0);
+    margin: 20px 0; /* Space above and below the canvas */
+    position: relative; /* Position relative to stack above the grid */
+    z-index: 2; /* Ensure canvas is above the grid background */
+}
+
+p {
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+
+.checkmark {
+    color: #03b42f; /* Green color for the checkmark */
+    margin-left: 10px; /* Space between button and checkmark */
+    display: inline-block; /* Make sure it displays inline */
+    font-size: 16px; /* Font size for checkmark */
+    transition: opacity 0.01s ease; /* Smooth fade transition */
+}
+
+h1{
+    font-size: 30px;
+}
+
+.gridbg {
+    position: absolute; /* Position absolute to overlap with canvas */
+    width: 180px; /* Match the canvas width */
+    height: 180px; /* Match the canvas height */
+    margin: 20px 0; /* Space above and below the canvas */
+    background-image:  
+        repeating-linear-gradient(45deg, 
+            #bbbbbb 25%, 
+            transparent 25%, 
+            transparent 75%, 
+            #bbbbbb 75%, 
+            #bbbbbb), 
+        repeating-linear-gradient(45deg,
+            #bbbbbb 25%, 
+            #dddddd 25%, 
+            #dddddd 75%, 
+            #bbbbbb 75%, 
+            #bbbbbb);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;    
+    z-index: 1; /* Ensure it's below the canvas */
 }
