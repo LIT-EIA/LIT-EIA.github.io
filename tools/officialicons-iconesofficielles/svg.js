@@ -146,6 +146,7 @@
 			"download":"To download right click and save as.",
 
 			"SAVE" : "Download",
+			"SAVEALL" : "Download all icons",
 
 			"TITLE": "Official Icons Colour Changer",
 
@@ -198,6 +199,7 @@
 			"download":"Pour télécharger cliquer le bouton droit et sauvegarder.",
 
 			"SAVE" : "Télécharger",
+			"SAVEALL" : "Télécharger toutes les icônes",
 
 			"TITLE": "Changeur de couleurs des icônes officielles",
 
@@ -226,12 +228,12 @@
 		});
 
 		if(lang == "fr"){
-			console.log("if");
+			
 			$("#fr").hide();
 			$("#en").show();
 		}
 		else{
-			console.log("else");
+			
 			$("#fr").show();
 			$("#en").hide();
 		}
@@ -246,7 +248,7 @@
 	$("#copyen").click(function() {
 		var icon_name;
 		icon_name = $(document).find('#iconSelector option:selected').attr("alten");
-		console.log(icon_name);
+		
 		navigator.clipboard.writeText(icon_name);
 		
 		// Show success message
@@ -256,7 +258,7 @@
 	$("#copyfr").click(function() {
 		var icon_name;
 		icon_name = $(document).find('#iconSelector option:selected').attr("altfr");
-		console.log(icon_name);
+		
 		navigator.clipboard.writeText(icon_name);
 		
 		// Show success message
@@ -338,11 +340,11 @@
 		const sizeValue = $("#sizeSelector").val(); // Correctly get value from sizeSelector
 		if (sizeValue === "custom") {
 			// If "Custom" is selected, use the input value
-			console.log(sizeValue);
+			
 			return $("#customSizeInput").val(); // Fetch the custom input value if "Custom" is selected
 			
 		}
-		console.log("DNO" + sizeValue);
+		
 		return sizeValue; // Return the selected size
 		
 	}
@@ -392,7 +394,7 @@
 			const sizeValue = getCurrentSize(); // Get current size, including custom
 			
 			// Draw the icon with the gathered values
-			drawIcon(iconID, iconColorValue, backgroundColorValue, sizeValue);
+			drawIcon(document.getElementById('canvas'), iconID, iconColorValue, backgroundColorValue, sizeValue);
 	
 			// Show/hide custom size input and label based on size selection
 			if ($("#sizeSelector").val() === "custom") {
@@ -426,7 +428,7 @@
 		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
 		debounceTimeout = setTimeout(function() {
 			const iconID = icon.find(":selected").val();
-			drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
+			drawIcon(document.getElementById('canvas'), iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
 		}, 20); // Debounce timer for input
 	});
 	
@@ -435,7 +437,7 @@
 		clearTimeout(debounceTimeout); // Clear the previous timer for color picker input
 		debounceTimeout = setTimeout(function() {
 			const iconID = icon.find(":selected").val();
-			drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
+			drawIcon(document.getElementById('canvas'), iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
 		}, 20); // Debounce timer for input
 	});
 
@@ -448,15 +450,14 @@
 		debounceTimeout = setTimeout(function() {
 			if ($.isNumeric(customSize) && customSize > 0) {
 				const iconID = icon.find(":selected").val();
-				drawIcon(iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
+				drawIcon(document.getElementById('canvas'), iconID, getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
 				$("#customSizeLabel").text(` x ${customSize}`); // Update the label
 			}
 		}, 20); // Wait for 10 milliseconds
 	});
 
 	// Initial call to drawIcon
-	const initialSizeValue = getCurrentSize();
-	drawIcon(icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), initialSizeValue);
+	drawIcon(document.getElementById('canvas'), icon.find(":selected").val(), iconColor.find(":selected").val(), backgroundColor.find(":selected").val(), getCurrentSize());
 
 	// Hide custom size input and label when not needed
 	$("#sizeSelector").change(function() {
@@ -467,9 +468,8 @@
 	});
 	
 	
-	function drawIcon(iconID, iconColor, bgColor, size)
+	function drawIcon(canvas, iconID, iconColor, bgColor, size)
 	{
-		const canvas = document.getElementById('canvas');
 		const context = canvas.getContext('2d');
 		const gridBackground = document.getElementById('gridBackground');
 		
@@ -533,7 +533,7 @@
 	button.addEventListener('click', function (e){
 		
 		var canvas = $('#canvas').get(0);
-		console.log(canvas);
+		
 		var dataUrl = canvas.toDataURL('image/png');
 		
 		var a  = document.createElement('a');
@@ -544,14 +544,10 @@
 		var icon_color;
 		var icon_size
 
-		var lang = $('#en').css("display");
+		var lang = $('#fr').is(':visible')
 
     // Get icon name based on selected language
-    if (lang == "block") {
-        icon_name = $('#iconSelector option:selected').attr("valueFR");
-    } else {
-        icon_name = $('#iconSelector option:selected').attr("valueEN");
-    }
+	icon_name = lang ? $('#iconSelector option:selected').attr("valueEN") : $('#iconSelector option:selected').attr("valueFR");
 
     // Get the background color, accounting for the custom option
     icon_bgcolor = getBackgroundColorName(); // This function already handles custom
@@ -564,4 +560,82 @@
 		a.download = icon_name + '_' + icon_size + 'x' + icon_size + '_' + icon_color + '_' + icon_bgcolor + '.png';
 		a.click();           
 		a.remove();
+	});
+
+	var allbtn = $('#saveallbtn');
+
+	allbtn.on('click', function (e) {
+		// Select elements and variables
+
+    // Create overlay element
+
+        var icon_bgcolor = getBackgroundColorName(); // This function already handles custom
+        var icon_color = getIconColorName(); // This function already handles custom
+        var icon_size = getCurrentSize(); // This function already handles custom size
+		var iconSelector = $('#iconSelector option');
+		var canvasContainer = $('#alliconcanvases'); // The container where new canvases will be appended
+		var zip = new JSZip(); // Create a new JSZip instance
+		var lang = $('#fr').is(':visible');
+		var zipFilename = (lang ? "ALLICONS_" : "TOUTESICONES_") + icon_size + 'x' + icon_size + '_' + icon_color + '_' + icon_bgcolor + '.zip'; // Name of the zip file
+		var canvasPromises = []; // Array to hold promises for async canvas drawing
+		var overlay = $('<div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">' + (lang ? "Processing, please wait a moment..." : "En cours de traitement, veuillez patienter un instant...") + '</div>');
+		// Append overlay to body
+		//
+
+		$('body').append(overlay);
+		
+		// Clear previous canvases
+		canvasContainer.empty();
+    // Add a 100ms delay before proceeding with the canvas processing
+    setTimeout(function() {	
+		// Loop through each option in the iconSelector
+		iconSelector.each(function(index, option) {
+			// Get icon name based on selected language
+			icon_name = lang ? $(option).attr("valueEN") : $(option).attr("valueFR");
+
+			var uniqueId = 'iconCanvas_' + index;
+			// Create a new canvas element
+			var canvas = document.createElement('canvas');
+			canvas.id = uniqueId;
+			canvas.width = getCurrentSize(); // Use your predefined size function or constant
+			canvas.height = getCurrentSize(); // Use your predefined size function or constant
+	
+			// Append the canvas to the container
+			canvasContainer.append(canvas);
+	
+			// Draw the icon on the canvas
+			drawIcon(canvas, $(option).val(), getIconColorValue(), getBackgroundColorValue(), getCurrentSize());
+	
+			// Convert the canvas to data URL and add it to the zip
+			// Use a Promise to ensure we handle the async nature of canvas.toDataURL
+			canvasPromises.push(new Promise((resolve) => {
+				// Convert the canvas to data URL
+				var dataUrl = canvas.toDataURL('image/png');
+				
+				// Add the data URL to the zip file
+				zip.file(icon_name + '_' + icon_size + 'x' + icon_size + '_' + icon_color + '_' + icon_bgcolor + '.png', dataUrl.split(',')[1], { base64: true }); // Store as base64 encoded
+				resolve();
+			}));
+    	});
+
+		// Wait for all drawing promises to complete
+		Promise.all(canvasPromises).then(() => {
+			// Generate the zip file
+			zip.generateAsync({ type: 'blob' }).then(function (content) {
+				// Create a link to download the zip file
+				var a = document.createElement('a');
+				a.href = URL.createObjectURL(content);
+				a.download = zipFilename;
+
+				// Append to body
+				document.body.appendChild(a);
+				a.click();
+				a.remove(); // Remove the link from the document
+
+				canvasContainer.empty();
+				// Remove the overlay
+				overlay.remove();
+			});
+		});
+		}, 100);
 	});
