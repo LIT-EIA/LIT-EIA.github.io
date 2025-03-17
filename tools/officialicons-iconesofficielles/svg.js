@@ -140,12 +140,12 @@
 			"WHITE": "Solid White",
 
 			"SELECTICON":"Select icon",
-			"SELECTBGCOLOR":"Select Background Colour",
-			"SELECTICONCOLOR":"Select Icon Colour",
-			"SELECTICONSIZE":"Select Icon Size", 
+			"SELECTBGCOLOR":"Background Colour",
+			"SELECTICONCOLOR":"Icon Colour",
+			"SELECTICONSIZE":"Icon Size", 
 			"download":"To download right click and save as.",
 
-			"SAVE" : "Download",
+			"SAVE" : "Download this icon",
 			"SAVEALL" : "Download all icons",
 
 			"TITLE": "Official Icons Colour Changer",
@@ -192,13 +192,13 @@
 			"ATOLL": "Atoll",
 			"WHITE": "Blanc solide",
 
-			"SELECTICON":"Selection l'icône",
-			"SELECTBGCOLOR":"Selection la couleur de l'arrière-plan",
-			"SELECTICONCOLOR":"Selection la couleur de l'icône",
-			"SELECTICONSIZE":"Selection la grandeur de l'icône",
+			"SELECTICON":"Sélectionnez un icône",
+			"SELECTBGCOLOR":"Arrière-plan",
+			"SELECTICONCOLOR":"Couleur de l'icône",
+			"SELECTICONSIZE":"Grandeur de l'icône",
 			"download":"Pour télécharger cliquer le bouton droit et sauvegarder.",
 
-			"SAVE" : "Télécharger",
+			"SAVE" : "Télécharger cet icône",
 			"SAVEALL" : "Télécharger toutes les icônes",
 
 			"TITLE": "Changeur de couleurs des icônes officielles",
@@ -414,12 +414,18 @@
 	// Handle changes for icon color and show/hide color picker
 	$("#iconColorSelector").change(function() {
 		const selectedValue = $(this).val();
-		$("#iconColorInput").toggle(selectedValue === "custom");
+		var selectedOption = $("#iconColorSelector option:selected");
+		var newColor = selectedOption.css("color");
+		$(this).css("color", newColor);
+		$("#iconColorInput").toggle(selectedValue === "custom");		
 	});
 	
 	// Handle changes for background color and show/hide color picker
 	$("#bgColorSelector").change(function() {
 		const selectedValue = $(this).val();
+		var selectedOption = $("#bgColorSelector option:selected");
+		var newColor = selectedOption.css("color");
+		$(this).css("color", newColor);
 		$("#bgColorInput").toggle(selectedValue === "custom");
 	});
 	

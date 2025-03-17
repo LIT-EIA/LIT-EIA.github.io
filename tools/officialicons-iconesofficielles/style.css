@@ -31,7 +31,7 @@ body{
     font-family: Arial, sans-serif;
     margin: 0; /* Reset default body margins */
     padding: 0; /* Reset default body paddings */
-    width:880px;
+    width:930px;
     margin: 10px auto; /* Center the container */
 }
 
@@ -92,16 +92,37 @@ body{
 
 .form-select {
     margin-bottom: 15px; /* Space between select elements */
-    background-color: #3d3d3d; /* Background for select elements */
-    color: #fff; /* Text color for select elements */
-    border: 1px solid #444; /* Border color for select elements */
+    border: 1px solid #cd1c69; /* Border color for select elements */
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Light shadow */
 }
 
-.form-select:focus {
-    background-color: #4d4d4d; /* Background on focus */
-    border-color: #6c757d; /* Border color on focus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+.form-select:focus, .form-select:hover{
+    background-color: #fff; /* Background on focus */
+    border-color: #69459c; /* Border color on focus */
+    border: 1px solid #cd1c69; /* Border color for select elements */
+    outline: 1px solid #cd1c69; /* Border color for select elements */
 }
+
+.form-select option{
+    background-color: #fff;
+}
+
+.form-select option:hover{
+    background-color: #69459c;
+    color:white;
+}
+
+#iconColorSelector{
+    background-color: #fff; /* Background for select elements */
+    color: #051c37; /* Text color for select elements */
+}
+#bgColorSelector{
+    background-color: #fff; /* Background for select elements */
+    color: black; /* Text color for select elements */
+}
+
+
+
 
 canvas {
     display: block;
@@ -126,6 +147,10 @@ p {
 
 h1{
     font-size: 30px;
+}
+
+#resultratio{
+    color:#cd1c69;
 }
 
 .gridbg {

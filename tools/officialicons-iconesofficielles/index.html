@@ -28,7 +28,7 @@
                 </div>
             </div>    
             <div class="row g-3">
-                <div class="col-6">
+                <div class="col-3">
                     <div class="bodypart">
                         <p class="lang" key="SELECTICON">Select icon</p>
                         <select class="form-select" id="iconSelector" aria-label="Select icon">
@@ -63,7 +63,7 @@
                             <option class="lang" key="EXAMPLE_fr" valueEN="ExamplesFrench" valueFR="ExemplesFrancais"  altfr="Exemples Français" alten="Examples French" value="28">Exemple French</option>
                         </select>
         
-                        <p class="lang" key="SELECTICONSIZE">Select Icon Size</p>
+                        <p class="lang" key="SELECTICONSIZE">Icon Size</p>
                         <select class="form-select" id="sizeSelector" aria-label="Select Icon Size">
                             <option value="16" key="16x16">16x16 pixels</option>
                             <option value="25" key="25x25">25x25 pixels</option>
@@ -75,28 +75,28 @@
                         </select>
                         <input class="mb-3" type="number" id="customSizeInput" style="display: none; width:70px;" placeholder="# pixels" min="0" max="9999" step="50">
 
-                        <p class="lang" key="SELECTICONCOLOR">Select Icon Colour</p>
+                        <p class="lang" key="SELECTICONCOLOR">Icon Colour</p>
                         <select class="form-select" id="iconColorSelector" aria-label="Select Background Color">
-                            <option class="lang" key="COVE" valueEN="DeepCove" valueFR="CriqueProfonde" selected="selected" value="#051c37">Deep Cove</option>
-                            <option class="lang" key="VIOLET" valueEN="RedViolet" valueFR="VioletteRouge" value="#cd1c69">Red Violet</option>
-                            <option class="lang" key="PURPLE" valueEN="RoyalPurple" valueFR="VioletRoyal" value="#69459c">Royal Purple</option>
-                            <option class="lang" key="MATISSE" valueEN="Matisse" valueFR="Matisse" value="#1f7c9b">Matisse</option>
-                            <option class="lang" key="ATOLL" valueEN="Atoll" valueFR="Atoll" value="#0d5e7b">Atoll</option>
-                            <option class="lang" key="WHITE" valueEN="SolidWhite" valueFR="BlanSolide" value="#FFFFFF">Solid White</option>
-                            <option value="custom" valueEN="custom" valueFR="personnalisé">Custom</option> <!-- New Custom option -->
+                            <option class="lang" key="COVE" valueEN="DeepCove" valueFR="CriqueProfonde" selected="selected" value="#051c37" style="color:#051c37">Deep Cove</option>
+                            <option class="lang" key="VIOLET" valueEN="RedViolet" valueFR="VioletteRouge" value="#cd1c69" style="color:#cd1c69">Red Violet</option>
+                            <option class="lang" key="PURPLE" valueEN="RoyalPurple" valueFR="VioletRoyal" value="#69459c" style="color:#69459c">Royal Purple</option>
+                            <option class="lang" key="MATISSE" valueEN="Matisse" valueFR="Matisse" value="#1f7c9b" style="color:#1f7c9b">Matisse</option>
+                            <option class="lang" key="ATOLL" valueEN="Atoll" valueFR="Atoll" value="#0d5e7b" style="color:#0d5e7b">Atoll</option>
+                            <option class="lang" key="WHITE" valueEN="SolidWhite" valueFR="BlanSolide" value="#FFFFFF" style="color:#000000">Solid White</option>
+                            <option value="custom" valueEN="custom" valueFR="personnalisé" style="color:#000000">Custom</option> <!-- New Custom option -->
                         </select>
                         <input type="color" id="iconColorInput" style="display: none; width:30px; margin-bottom: 15px;" />
 
-                        <p class="lang" key="SELECTBGCOLOR">Select Background Colour</p>
+                        <p class="lang" key="SELECTBGCOLOR">Background Colour</p>
                         <select class="form-select" id="bgColorSelector" aria-label="Select Icon Color">
-                            <option class="lang" key="WHITE" valueEN="SolidWhite" valueFR="BlanSolide" selected="selected" value="#FFFFFF">Solid White</option>
-                            <option class="lang" key="TRANSPARENT" valueEN="Transparent" valueFR="Transparent" value="rgba(0,0,0,0)">Transparent</option>
-                            <option class="lang" key="COVE" valueEN="DeepCove" valueFR="CriqueProfonde" value="#051c37">Deep Cove</option>
-                            <option class="lang" key="VIOLET" valueEN="RedViolet" valueFR="VioletteRouge" value="#cd1c69">Red Violet</option>
-                            <option class="lang" key="PURPLE" valueEN="RoyalPurple" valueFR="VioletRoyal" value="#69459c">Royal Purple</option>
-                            <option class="lang" key="MATISSE" valueEN="Matisse" valueFR="Matisse" value="#1f7c9b">Matisse</option>
-                            <option class="lang" key="ATOLL" valueEN="Atoll" valueFR="Atoll" value="#0d5e7b">Atoll</option>
-                            <option value="custom" valueEN="custom" valueFR="personnalisé">Custom</option>
+                            <option class="lang" key="WHITE" valueEN="SolidWhite" valueFR="BlanSolide" selected="selected" value="#FFFFFF" style="color:#000000">Solid White</option>
+                            <option class="lang" key="TRANSPARENT" valueEN="Transparent" valueFR="Transparent" value="rgba(0,0,0,0)"  style="color:#666666">Transparent</option>
+                            <option class="lang" key="COVE" valueEN="DeepCove" valueFR="CriqueProfonde" value="#051c37" style="color:#051c37">Deep Cove</option>
+                            <option class="lang" key="VIOLET" valueEN="RedViolet" valueFR="VioletteRouge" value="#cd1c69" style="color:#cd1c69">Red Violet</option>
+                            <option class="lang" key="PURPLE" valueEN="RoyalPurple" valueFR="VioletRoyal" value="#69459c" style="color:#69459c">Royal Purple</option>
+                            <option class="lang" key="MATISSE" valueEN="Matisse" valueFR="Matisse" value="#1f7c9b" style="color:#1f7c9b">Matisse</option>
+                            <option class="lang" key="ATOLL" valueEN="Atoll" valueFR="Atoll" value="#0d5e7b" style="color:#0d5e7b">Atoll</option>
+                            <option value="custom" valueEN="custom" valueFR="personnalisé" style="color:#000000">Custom</option>
                         </select>
                         <input type="color" id="bgColorInput" style="display: none; width:30px; margin-bottom: 15px;" />
 
@@ -107,10 +107,10 @@
 
 
                 <!-- Right column for save button and canvas -->
-                <div class="col-6">
+                <div class="col-9">
                     <div class="bodypart">
-                        <button class="lang btn" key="SAVE" id="savebtn" download="image.png" href="#">Download</button>
-                        <button class="lang btn" key="SAVEALL" id="saveallbtn" download="file.zip" href="#">Download all icons</button>
+                        <button class="lang btn" key="SAVE" id="savebtn" download="image.png" href="#">Download this icon</button>
+                        <button class="lang btn ms-2" key="SAVEALL" id="saveallbtn" download="file.zip" href="#">Download all icons</button>
                         <div id="gridBackground" class="gridbg"></div>
                         <canvas id="canvas" class="mb-3"></canvas>
                         <div class="d-flex">
