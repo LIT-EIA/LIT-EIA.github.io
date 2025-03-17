@@ -357,6 +357,30 @@
 		const backgroundColorValue = $("#bgColorSelector").val();
 		return backgroundColorValue === "custom" ? $("#bgColorInput").val() : backgroundColorValue;
 	}
+
+	// Function to get the current color value, including custom for both color pickers
+	function getIconColorName() {
+			if ($("#iconColorSelector").val() === "custom")
+			{
+				return $("#iconColorInput").val()
+			}
+			else
+			{
+				return $('#fr').is(':visible') ? $("#iconColorSelector option:selected").attr("valueEN") : $("#iconColorSelector option:selected").attr("valueFR");
+			}
+	}
+
+	function getBackgroundColorName() {
+		if ($("#bgColorSelector").val() === "custom")
+		{
+			return $("#bgColorInput").val()
+		}
+		else
+		{
+			return $('#fr').is(':visible') ? $("#bgColorSelector option:selected").attr("valueEN") : $("#bgColorSelector option:selected").attr("valueFR");
+		}		
+	}
+
 	// Combined change event handler for all relevant select elements
 	$("#iconSelector, #iconColorSelector, #bgColorSelector, #sizeSelector").change(function() {
 		clearTimeout(debounceTimeout); // Clear the previous timeout to avoid immediate drawIcon call
@@ -530,14 +554,14 @@
     }
 
     // Get the background color, accounting for the custom option
-    icon_bgcolor = getBackgroundColorValue(); // This function already handles custom
+    icon_bgcolor = getBackgroundColorName(); // This function already handles custom
     // Get the icon color, accounting for the custom option
-    icon_color = getIconColorValue(); // This function already handles custom
+    icon_color = getIconColorName(); // This function already handles custom
 
     // Get size value, including handling for custom size
     icon_size = getCurrentSize(); // This function already handles custom size
 
-		a.download = icon_name + '_' + icon_bgcolor + '_' + icon_color + '_' + icon_size + '.png';
+		a.download = icon_name + '_' + icon_size + 'x' + icon_size + '_' + icon_color + '_' + icon_bgcolor + '.png';
 		a.click();           
 		a.remove();
 	});
