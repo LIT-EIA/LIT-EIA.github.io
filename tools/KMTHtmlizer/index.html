@@ -35,12 +35,41 @@
 
 		button{
 			width:200px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 		}
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-check {
+            display: inline-block;
+            margin-right: 15px;
+            position: relative;
+            padding-left: 25px; /* Increase padding for left space */
+            cursor: pointer; /* Change cursor to pointer for better UX */
+            width:100%;
+            background-color:orange;
+        }
+
+        .form-check input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px; /* Increase width */
+            height: 20px; /* Increase height */
+            cursor: pointer; /* Change cursor to pointer for the checkbox */
+        }
+
+        .form-check label {
+            cursor: pointer; /* Change cursor to pointer for the label */
+        }
     </style>
 </head>
 <body class="container">
 
-    <h1>KMT Htmlizer version 20250312-01</h1>
+    <h1>KMT Htmlizer version 20250318-01</h1>
 
     <!-- Instructions and Regex Section (Visible by Default) -->
     <div class="form-group border-bottom col-12">
@@ -65,117 +94,39 @@
             </div>
 
             <div class="col-md-6 border">
-                <details id="RegExFilter" class="mb-3" open>
-                    <summary><h2>RegEx Filters</h2></summary>
-
-                    <!-- RegEx filter options with radio buttons -->
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeEmptyTagsYes" name="removeEmptyTags" value="yes" class="form-check-input" checked>
-                            <label for="removeEmptyTagsYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeEmptyTagsNo" name="removeEmptyTags" value="no" class="form-check-input">
-                            <label for="removeEmptyTagsNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Remove empty tags</label>
+                <details id="RegExFilter" open>
+                    <summary>RegEx Filters</summary>
+                
+                    <div class="form-group">
+                        <label class="form-check" for="removeEmptyTags">
+                            <input type="checkbox" id="removeEmptyTags" value="removeEmptyTags" checked> Remove empty tags
+                        </label>
+                        <label class="form-check" for="mergeRepeatedStrongTags">
+                            <input type="checkbox" id="mergeRepeatedStrongTags" value="mergeRepeatedStrongTags" checked> Merge repeated <kbd>STRONG</kbd> tags
+                        </label>
+                        <label class="form-check" for="mergeChainedStrongTags">
+                            <input type="checkbox" id="mergeChainedStrongTags" value="mergeChainedStrongTags" checked> Merge chained <kbd>STRONG</kbd> tags
+                        </label>
+                        <label class="form-check" for="mergeHyperlinks">
+                            <input type="checkbox" id="mergeHyperlinks" value="mergeHyperlinks" checked> Merge repeated hyperlinks
+                        </label>
+                        <label class="form-check" for="stripTableAttributes">
+                            <input type="checkbox" id="stripTableAttributes" value="stripTableAttributes" checked> Strip attributes from <kbd>TABLE</kbd> elements
+                        </label>
+                        <label class="form-check" for="stripPAttributes">
+                            <input type="checkbox" id="stripPAttributes" value="stripPAttributes" checked> Strip attributes from <kbd>P</kbd> tags
+                        </label>
+                        <label class="form-check" for="stripListAttributes">
+                            <input type="checkbox" id="stripListAttributes" value="stripListAttributes" checked> Remove attributes from <kbd>OL</kbd> and <kbd>UL</kbd> tags
+                        </label>
+                        <label class="form-check" for="removeEmptyPTags">
+                            <input type="checkbox" id="removeEmptyPTags" value="removeEmptyPTags" checked> Remove empty <kbd>P</kbd> tags
+                        </label>
+                        <label class="form-check" for="removeNbsp">
+                            <input type="checkbox" id="removeNbsp" value="removeNbsp" checked> Remove all <kbd>&amp;nbsp;</kbd>
+                        </label>
                     </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeStrongTagsYes" name="mergeStrongTags" value="yes" class="form-check-input" checked>
-                            <label for="mergeStrongTagsYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeStrongTagsNo" name="mergeStrongTags" value="no" class="form-check-input">
-                            <label for="mergeStrongTagsNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Merge repeated <kbd>STRONG</kbd> tags</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeChainedStrongTagsYes" name="mergeChainedStrongTags" value="yes" class="form-check-input" checked>
-                            <label for="mergeChainedStrongTagsYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeChainedStrongTagsNo" name="mergeChainedStrongTags" value="no" class="form-check-input">
-                            <label for="mergeChainedStrongTagsNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Merge chained <kbd>STRONG</kbd> tags</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeHyperlinksYes" name="mergeHyperlinks" value="yes" class="form-check-input" checked>
-                            <label for="mergeHyperlinksYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="mergeHyperlinksNo" name="mergeHyperlinks" value="no" class="form-check-input">
-                            <label for="mergeHyperlinksNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Merge repeated hyperlinks</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripTableAttributesYes" name="stripTableAttributes" value="yes" class="form-check-input" checked>
-                            <label for="stripTableAttributesYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripTableAttributesNo" name="stripTableAttributes" value="no" class="form-check-input">
-                            <label for="stripTableAttributesNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Strip attributes from <kbd>TABLE</kbd> elements</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripPAttributesYes" name="stripPAttributes" value="yes" class="form-check-input" checked>
-                            <label for="stripPAttributesYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripPAttributesNo" name="stripPAttributes" value="no" class="form-check-input">
-                            <label for="stripPAttributesNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Strip attributes from <kbd>P</kbd> tags</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripListAttributesYes" name="stripListAttributes" value="yes" class="form-check-input" checked>
-                            <label for="stripListAttributesYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="stripListAttributesNo" name="stripListAttributes" value="no" class="form-check-input">
-                            <label for="stripListAttributesNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Remove attributes from <kbd>OL</kbd> and <kbd>UL</kbd> tags</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeEmptyPTagsYes" name="removeEmptyPTags" value="yes" class="form-check-input" checked>
-                            <label for="removeEmptyPTagsYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeEmptyPTagsNo" name="removeEmptyPTags" value="no" class="form-check-input">
-                            <label for="removeEmptyPTagsNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Remove empty <kbd>P</kbd> tags</label>
-                    </div>
-
-                    <div class="form-group border-bottom col-12">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeNbspYes" name="removeNbsp" value="yes" class="form-check-input" checked>
-                            <label for="removeNbspYes" class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" id="removeNbspNo" name="removeNbsp" value="no" class="form-check-input">
-                            <label for="removeNbspNo" class="form-check-label">No</label>
-                        </div>
-                        <label class="ms-4">Remove all <kbd>&nbsp;</kbd></label>
-                    </div>
+                
                 </details>
             </div>
         </div>
@@ -203,7 +154,7 @@
             <input type="file" id="fileInput" class="form-control" />
         </div>
 		<div class="col-md-6 d-flex justify-content-end">
-            <button class="btn btn-secondary btn-fixed-width" onclick="copyOutput()">Copy</button>
+            <button class="btn btn-secondary btn-fixed-width" onclick="copyOutput()">Copy cleaned HTML</button>
         </div>
     </div>
 

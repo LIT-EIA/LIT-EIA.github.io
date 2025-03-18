@@ -4,14 +4,6 @@ async function cleanHtml() {
 
 	let inputHtml = $('#inputHtml').val();
 	let language = $('#language').val();
-	const mergeStrongTagsValue = $('input[name="mergeStrongTags"]:checked').val();
-	const mergeChainedStrongTagsValue = $('input[name="mergeChainedStrongTags"]:checked').val();
-	const mergeHyperlinksValue = $('input[name="mergeHyperlinks"]:checked').val();
-	const stripTableAttributesValue = $('input[name="stripTableAttributes"]:checked').val();
-	const stripPAttributesValue = $('input[name="stripPAttributes"]:checked').val();
-	const stripListAttributesValue = $('input[name="stripListAttributes"]:checked').val();
-	const removeEmptyPTagsValue = $('input[name="removeEmptyPTags"]:checked').val();
-	const replaceBrValue = $('input[name="replaceBr"]:checked').val();
 	var $EnglishTaskTemplate = $(`
 	<div class="wb-tabs ignore-session">
 		<div class="tabpanels">
@@ -286,62 +278,57 @@ async function cleanHtml() {
 	applyDisclaimerClasses($EnglishTaskTemplate);
 	applyNoteClasses($EnglishTaskTemplate);
 
-
 	// Add IDs and classes to nested details tags
 	$parsedHtml = updateDetailsTags($parsedHtml);
+
+
+
 
 	var parsedHtmlAsText = $parsedHtml.html();
 
 // Main function to handle all the processing
 
+	var checkArray = []
+	checkArray.push($('#removeEmptyTags'));
+	checkArray.push($('#mergeRepeatedStrongTags'));
+	checkArray.push($('#mergeChainedStrongTags'));
+	checkArray.push($('#mergeHyperlinks'));
+	checkArray.push($('#stripTableAttributes'));
+	checkArray.push($('#stripPAttributes'));
+	checkArray.push($('#stripListAttributes'));
+	checkArray.push($('#removeEmptyPTags'));
+	checkArray.push($('#removeNbsp'));
 
-	let processingOptions = {
-		'mergeStrongTags': mergeStrongTagsValue,
-		'mergeChainedStrongTags': mergeChainedStrongTagsValue,
-		'mergeHyperlinks': mergeHyperlinksValue,
-		'stripTableAttributes': stripTableAttributesValue,
-		'stripPAttributes': stripPAttributesValue,
-		'stripListAttributes': stripListAttributesValue,
-		'removeEmptyPTags': removeEmptyPTagsValue,
-		'replaceBr': replaceBrValue,
-	};
-
-	for (let key in processingOptions) {
-		switch (processingOptions[key]) {
-			case 'yes':
-				switch (key) {
-					case 'mergeStrongTags':
-						parsedHtmlAsText = mergeRepeatedStrongTags(parsedHtmlAsText);
+	for (let checkbox in checkArray) {
+		if($(this).is(':checked'))
+		{
+			switch ($(this).prop().id) {
+				case 'removeEmptyTags' :
+					parsedHtmlAsText = removeEmptyTags(parsedHtmlAsText); break;
+				case 'mergeRepeatedStrongTags':
+					parsedHtmlAsText = mergeRepeatedStrongTags(parsedHtmlAsText); break;
+				case 'mergeChainedStrongTags':
+					parsedHtmlAsText = mergeChainedStrongTags(parsedHtmlAsText); break;
+				case 'mergeHyperlinks':
+					parsedHtmlAsText = mergeHyperlinks(parsedHtmlAsText); break;
+				case 'stripTableAttributes':
+					parsedHtmlAsText = stripTableAttributes(parsedHtmlAsText); break;
+				case 'stripPAttributes':
+					parsedHtmlAsText = stripPAttributes(parsedHtmlAsText); break;
+				case 'stripListAttributes':
+					parsedHtmlAsText = stripListAttributes(parsedHtmlAsText); break;
+				case 'removeEmptyPTags':
+					parsedHtmlAsText = removeEmptyPTags(parsedHtmlAsText); break;
+				case 'removeNbsp':
+					parsedHtmlAsText = removeNbsp(parsedHtmlAsText); break;
+					default:
+						console.warn('Unrecognized id:', $(checkbox).prop('id'));
 						break;
-					case 'mergeChainedStrongTags':
-						parsedHtmlAsText = mergeChainedStrongTags(parsedHtmlAsText);
-						break;
-					case 'mergeHyperlinks':
-						parsedHtmlAsText = mergeHyperlinks(parsedHtmlAsText);
-						break;
-					case 'stripTableAttributes':
-						parsedHtmlAsText = stripTableAttributes(parsedHtmlAsText);
-						break;
-					case 'stripPAttributes':
-						parsedHtmlAsText = stripPAttributes(parsedHtmlAsText);
-						break;
-					case 'stripListAttributes':
-						parsedHtmlAsText = stripListAttributes(parsedHtmlAsText);
-						break;
-					case 'removeEmptyPTags':
-						parsedHtmlAsText = removeEmptyPTags(parsedHtmlAsText);
-						break;
-					case 'replaceBr':
-						parsedHtmlAsText = replaceBr(parsedHtmlAsText);
-						break;
-				}
-				break;
-			default:
-				// Do nothing, which means we ignore the 'no' cases
-				break;
+			}
 		}
 	}
 
+	parsedHtmlAsText = replaceBr(parsedHtmlAsText);
 	parsedHtmlAsText = wrapTables(parsedHtmlAsText);
 	parsedHtmlAsText = cleanseWhitespace(parsedHtmlAsText);
 	parsedHtmlAsText = wrapPunctuationInStrong(parsedHtmlAsText);
@@ -1018,6 +1005,10 @@ function addDetailsAttributes($parsedHtml) {
 	function removeEmptyPTags(parsedHtmlAsText) {
 	  parsedHtmlAsText = parsedHtmlAsText.replace(/<p>\s* \s*<\/p>/g, '').replace(/<p>\s*<\/p>/g, '');
 	  return parsedHtmlAsText;
+	}
+	function removeNbsp(parsedHtmlAsText)
+	{
+		return parsedHtmlAsText;
 	}
 
 	// Function to replace <br> with closing </p> and opening <p>
