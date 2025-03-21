@@ -2,6 +2,22 @@
     {
         "name": "",
         "notes": {
+            "environment": [
+                "[Improved] Disk space enlarged"
+            ],
+            "authoring": [
+                "[Removed] Preload on videos in Asset Library"
+            ], 
+            "tools": [
+                "[New] Overnight cleanup of unused assets"
+            ]
+        },
+        "pub_date": "2025-03-28T11:00:00Z",
+        "version": "1.5.0"
+    },
+    {
+        "name": "",
+        "notes": {
             "components": [
                 "[Fixed] Dropdown menu focus issue on Simulation Component",
                 "[Fixed] Overflow issue with Trickle when using Simulation Component",

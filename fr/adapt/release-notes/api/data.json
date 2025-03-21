@@ -3,6 +3,22 @@
     {
         "name": "",
         "notes": {
+            "environment": [
+                "[Amélioré] Augmentation de l'espace disque"
+            ],
+            "authoring": [
+                "[Supprimé] Préchargement des vidéos dans la bibliothèque d'actifs"
+            ],
+            "tools": [
+                "[Nouveau] Nettoyage de nuit des médias inutilisés"
+            ]
+        },
+        "pub_date": "2025-03-28T11:00:00Z",
+        "version": "1.5.0"
+    },
+    {
+        "name": "",
+        "notes": {
             "components": [
                 "[Corrigé] Problème de focus du menu déroulant sur le composant Simulation",
                 "[Corrigé] Problème de dépassement de capacité avec le composant de ruissellement lors de l'utilisation du composant de simulation",
