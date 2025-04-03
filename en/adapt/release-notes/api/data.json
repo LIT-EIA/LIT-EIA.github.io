@@ -2,6 +2,18 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[Fixed] Scrolling issues implicating Guided Tour/Simulation/Trickle components",
+                "[Fixed] CSS adjustments on task list in Simulation component",
+                "[Improved] Page Level Progress tracking indicator now takes into account blocks"
+            ]
+        },
+        "pub_date": "2025-04-03T11:00:00Z",
+        "version": "1.5.1"
+    },
+    {
+        "name": "",
+        "notes": {
             "environment": [
                 "[Improved] Disk space enlarged"
             ],

@@ -3,6 +3,18 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[Corrigé] Problèmes de défilement impliquant les composants visite guidée/simulation/ruissellement",
+                "[Corrigé] Ajustements CSS sur la liste des tâches dans le composant simulation",
+                "[Amélioré] L'indicateur de suivi de la progression au niveau de la page prend désormais en compte les blocs"
+            ]
+        },
+        "pub_date": "2025-04-03T11:00:00Z",
+        "version": "1.5.1"
+    },
+    {
+        "name": "",
+        "notes": {
             "environment": [
                 "[Amélioré] Augmentation de l'espace disque"
             ],
