@@ -3,6 +3,21 @@
     {
         "name": "",
         "notes": {
+            "authoring": [
+                "[Nouveau] Politique en matière de mots de passe",
+                "[Nouveau] Authentification multifactorielle par courriel",
+                "[Corrigé] Problème d'importation avec les médias"
+            ],
+            "components": [
+                "[Amélioré] Outils de développement est désactivé automatiquement lors de la publication d'un cours"
+            ]
+        },
+        "pub_date": "2025-05-05T11:00:00Z",
+        "version": "1.5.2"
+    },
+    {
+        "name": "",
+        "notes": {
             "components": [
                 "[Corrigé] Problèmes de défilement impliquant les composants visite guidée/simulation/ruissellement",
                 "[Corrigé] Ajustements CSS sur la liste des tâches dans le composant simulation",

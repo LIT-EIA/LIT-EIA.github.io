@@ -2,6 +2,21 @@
     {
         "name": "",
         "notes": {
+            "authoring": [
+                "[New] Password Policy",
+                "[New] Multi-Factor Authentication via email",
+                "[Fixed] Import issue with assets"
+            ],
+            "components": [
+                "[Improved] Devtools is disabled automatically when publishing a course"
+            ]
+        },
+        "pub_date": "2025-05-05T11:00:00Z",
+        "version": "1.5.2"
+    },
+    {
+        "name": "",
+        "notes": {
             "components": [
                 "[Fixed] Scrolling issues implicating Guided Tour/Simulation/Trickle components",
                 "[Fixed] CSS adjustments on task list in Simulation component",
