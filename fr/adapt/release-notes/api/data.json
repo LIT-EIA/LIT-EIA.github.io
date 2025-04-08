@@ -5,7 +5,16 @@
         "notes": {
             "authoring": [
                 "[Nouveau] Politique en matière de mots de passe",
-                "[Nouveau] Authentification multifactorielle par courriel",
+                "[Nouveau] Authentification multifactorielle par courriel"
+            ]
+        },
+        "pub_date": "2025-05-05T11:00:00Z",
+        "version": "1.5.2"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Corrigé] Problème d'importation avec les médias"
             ],
             "components": [

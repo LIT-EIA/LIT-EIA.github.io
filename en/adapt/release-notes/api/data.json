@@ -4,14 +4,23 @@
         "notes": {
             "authoring": [
                 "[New] Password Policy",
-                "[New] Multi-Factor Authentication via email",
+                "[New] Multi-Factor Authentication via email"
+            ]
+        },
+        "pub_date": "2025-05-05T11:00:00Z",
+        "version": "1.5.2"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Fixed] Import issue with assets"
             ],
             "components": [
                 "[Improved] Devtools is disabled automatically when publishing a course"
             ]
         },
-        "pub_date": "2025-05-05T11:00:00Z",
+        "pub_date": "2025-04-07T11:00:00Z",
         "version": "1.5.2"
     },
     {
