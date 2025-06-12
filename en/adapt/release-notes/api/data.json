@@ -5,9 +5,17 @@
             "authoring": [
                 "[New] Password Policy",
                 "[New] Multi-Factor Authentication via email"
+            ],
+
+            "tools": [
+                "[New] Ability to export emails from usermanagement menu",
+                "[New] Nightwatch & backend test unit integration"
+            ],
+            "security" : [
+                "[New] New user password automatically generated"
             ]
         },
-        "pub_date": "2025-07-01T11:00:00Z",
+        "pub_date": "2025-07-16T11:00:00Z",
         "version": "1.5.3"
     },
     {
