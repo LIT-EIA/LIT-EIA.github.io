@@ -8,11 +8,11 @@
             ],
 
             "tools": [
-                "[New] Ability to export emails from usermanagement menu",
-                "[New] Nightwatch & backend test unit integration"
+                "[New] Ability to export emails from user management menu",
+                "[New] Nightwatch8 (end-to-end) & unit testing integration"
             ],
             "security" : [
-                "[New] New user password automatically generated"
+                "[New] Password automatically generated for new users"
             ]
         },
         "pub_date": "2025-07-16T11:00:00Z",

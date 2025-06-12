@@ -10,7 +10,7 @@
 
             "tools": [
                 "[Nouveau] Capacité d'exporter des courriels depuis le menu de gestion des utilisateurs",
-                "[Nouveau] Intégration des tests Nightwatch (de bout en bout) et des tests du programme d'arrière-plan "
+                "[Nouveau] Intégration des tests Nightwatch (de bout en bout) et des tests du programme d'arrière-plan (tests unitaires) "
             ],
             "security" : [
                 "[Nouveau] Mot de passe d'un nouvel utilisateur généré automatiquement"
