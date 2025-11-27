@@ -1,0 +1,740 @@
+{
+  "intents": [
+    {
+      "intentName": "What_does_the_Saba_Sign_In_page_s__Remember_Me__op",
+      "sampleUtterances": [
+        "What does the Saba Sign In page’s \"Remember Me\" option do?",
+        "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
+      ],
+      "response": "When you select the &quot;Remember Me&quot; checkbox, your username and password are saved on your device. When you return to Saba, your login credentials will be pre-filled, so you will only need to select the Sign In button to start your session.Session duration: The session duration for Saba has been extended to one hour, with a warning message sent 10 minutes before its expiration."
+    },
+    {
+      "intentName": "When_I_try_to_reset_my_Saba_password__it_doesn_t_w",
+      "sampleUtterances": [
+        "When I try to reset my Saba password, it doesn’t work. (For learners)",
+        "Lorsque j'essaie de réinitialiser mon mot de passe Saba, cela ne fonctionne pas. (Pour apprenants)"
+      ],
+      "response": "To avoid login issues:Always access Saba from the following URL: http://esdc.sabacloud.com/.When required, enter your temporary password or password manually, as copy-pasting may add a space.Follow the instructions in the “Reset Your Password” job aid.If you do not receive an email within an hour of following the above instructions, open a ticket with the National Service Desk by selecting Saba as the Product/system/application."
+    },
+    {
+      "intentName": "I_already_completed_an_Essential_Training_Curricul",
+      "sampleUtterances": [
+        "I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC? (For learners)",
+        "J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)"
+      ],
+      "response": "Depending on the course, you may be automatically granted equivalency in Saba. Before opening a ticket, please wait one to two weeks before viewing your Saba profile again to confirm whether your completed courses were updated in Saba.If your completed courses are still missing after this waiting period, please open a ticket with the National Service Desk to credit an ETC course completed in another department.In your ticket, please include the following information:The name of the course;The date the course was completed; andYour proof/certificate of completion (located in your CSPS learning profile).If the course counts as an equivalent, we will mark it complete on your Saba account. If the course owners determine that ESDC’s version is different, you will need to register and complete it."
+    },
+    {
+      "intentName": "How_can_I_ensure_that_the_Essential_Training_Curri",
+      "sampleUtterances": [
+        "How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile? (For learners)",
+        "Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)"
+      ],
+      "response": "In order for your CSPS learning to be properly captured in your Saba profile, make sure that your current ESDC/Service Canada email address is listed in your CSPS Learning Platform profile by doing the following:Log in to your CSPS profile;Select Settings;Select Account information and confirm that your departmental email address is listed; andReview the Current organization section and confirm your organization is listed as ESDC. You can update your classification and your employment status if needed as well.If you need help with your CSPS Learning Platform account, please contact CSPS' Client Contact Centre."
+    },
+    {
+      "intentName": "How_quickly_will_my_Saba_profile_be_updated_with_m",
+      "sampleUtterances": [
+        "How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)",
+        "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC), quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
+      ],
+      "response": "ETC course completion information is transferred from CSPS to Saba on a daily basis. If you complete a CSPS course, your Saba profile should be updated within two business days."
+    },
+    {
+      "intentName": "I_completed_an_Essential_Training_Curriculum__ETC_",
+      "sampleUtterances": [
+        "I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago , yet it is not showing up in my Saba learning history as complete. What do I do? (For learners)",
+        "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant, mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
+      ],
+      "response": "Here is what you need to do if you completed a course in the CSPS learning platform, yet it does not show as complete in your Saba learning history.Follow these steps:Log in to your CSPS profile;Select Settings;Select Account information and confirm that your departmental email address is listed; andReview the Current organization section and confirm your organization is listed as ESDC. You can update your classification and your employment status if needed as well.If your CSPS learner profile was not up to date at the time you completed the course, or if you completed the course more than two weeks ago, please open a ticket with the National Service Desk. Explain the situation and provide proof of completion (such as a screenshot of your certificate of completion from CSPS) so your Saba account can be updated."
+    },
+    {
+      "intentName": "What_should_I_do_if_I_need_an_alternate__Alt__vers",
+      "sampleUtterances": [
+        "What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course? (For learners)",
+        "Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE)? (Pour apprenants)"
+      ],
+      "response": "The Alt version of an ESDC course is located directly in the attachment section of the course in Saba. To request an Alt version of a CSPS course, learners need to contact their regional Learning Service Delivery team."
+    },
+    {
+      "intentName": "What_should_I_do_if_I_encounter_technical_difficul",
+      "sampleUtterances": [
+        "What should I do if I encounter technical difficulties with Saba? (For learners)",
+        "Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)"
+      ],
+      "response": "If you are having difficulties accessing Saba and/or launching a course, you can troubleshoot the issue before submitting a ticket. Here are suggestions that might help:Restart your computer to make sure every program is up to date.Try another web browser such as Edge (recommended), Firefox or Chrome.Clear your cache.If you are still encountering issues, please open a ticket with the National Service Desk. Be sure to include the following information:The course name and/or ID.A description of the issue you are encountering, as well as any relevant information.If possible, a screenshot of the issue (please mention that an attachment is included in your ticket)."
+    },
+    {
+      "intentName": "I_cannot_find_my_manager_or_team_leader_in_Saba___",
+      "sampleUtterances": [
+        "I cannot find my manager or team leader in Saba. (For learners)",
+        "Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)"
+      ],
+      "response": "If you cannot find your manager or team leader in your search results, please confirm the spelling of their name; for example, you must include hyphens or accents such as “é”.If you are still unable to find them, please open a ticket with the National Service Desk for assistance."
+    },
+    {
+      "intentName": "I_need_manager_access__for_managers_team_leaders__",
+      "sampleUtterances": [
+        "I need manager access (for managers/team leaders) in Saba. (For managers)",
+        "J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)"
+      ],
+      "response": "In many cases, manager access must be manually added to your Saba profile by the Learning Infrastructure team. In order to get the access, you will have to open a ticket with the National Service Desk. Following this request, the Learning Infrastructure team will grant you manager access, and your team will be able to add you as their Saba manager. Your “My Team” menu will become available once you have at least one employee in your team on Saba."
+    },
+    {
+      "intentName": "I_m_a_new_manager_team_leader__How_can_I_add_my_te",
+      "sampleUtterances": [
+        "I’m a new manager/team leader. How can I add my team members to my Saba account? (For managers)",
+        "Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)"
+      ],
+      "response": "Employees must select their own manager (manager or team leader) in Saba to appear in a manager’s My Team page. They can select you as their manager once the manager access is added to your Saba profile. In many cases, manager access must be manually added to your Saba profile by the Learning Infrastructure team. In order to get the access, you will have to open a ticket with the National Service Desk. Following this request, the Learning Infrastructure team will grant you manager access, and your team will be able to add you as their Saba manager. Your “My Team” menu will become available once you have at least one employee in your team on Saba."
+    },
+    {
+      "intentName": "How_do_I_get_course_content_uploaded_to_Saba___For",
+      "sampleUtterances": [
+        "How do I get course content uploaded to Saba? (For administrators – job aid)",
+        "Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)"
+      ],
+      "response": "Design Teams are responsible of uploadingtheir content to Saba. To do so, each team must have a member with content administrator access.For your information, the names of College content administrators who have been trained to upload content to Saba can be found on our SharePoint in the Design Teamssection.Instructions on the upload process are available in the form of job aids for content administrators."
+    },
+    {
+      "intentName": "How_do_I_get_the_content_administrator_role_in_Sab",
+      "sampleUtterances": [
+        "How do I get the content administrator role in Saba? (For administrators)",
+        "Comment puis-je avoir un accès d’administrateur de contenu dans Saba? (Pour administrateurs)"
+      ],
+      "response": "Most design teams should have a member with content administrator access.If you need content uploaded to Saba, please consult the College content administrators list to confirm whether you already have a colleague who could complete the upload for you.If you have questions on the process, or if you need content administrator access, please contact our Learning Infrastructure team mailbox.Instructions on the upload process are available for content administrators."
+    },
+    {
+      "intentName": "How_do_I_get_my_Canada_School_of_Public_Service__C",
+      "sampleUtterances": [
+        "How do I get my Canada School of Public Service (CSPS) completion data transferred to my Essential Training Curriculum (ETC) or my mandatory training on Saba? (For learners)",
+        "Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (EFPC) à mon Curriculum de formation essentielle (CFE) ou ma formation obligatoire sur Saba? (Pour apprenants)"
+      ],
+      "response": "We import mandatory departmental training data from CSPS to Saba on a daily basis. This means that when you complete a mandatory course on the CSPS platform, this course should show as completed in your Saba profile on the following day.If you completed courses in CSPS but do not see the data in Saba the next day, it is likely that your Saba information does not match with your CSPS information.What should I do if the migration of my course completions has failed?You will need to ensure that your email address and department (current organization) match in CSPS and Saba. To do so, please consult both platforms:A) For CSPS –Log in to the Canada School of Public Service platform.Select the Settings item from the header.Choose Account Information from the drop-down menu, which will open the “Account Information” page.Review your information and update your email and/or organization if it is incorrect.*If you need help updating/creating your CSPS account, contact CSPS’s Client Contact Centre.B) For Saba –Log in to the Saba platform.Select the Main menu button, which appears as three lines in the top left-hand corner of the page.From the Main menu collapse, select the Me item.Under the new menu, select the Profile item.Verify your email in the “Business Contact” box. If your e-mail address is not correct, you will need to update it in PeopleSoft, since it is migrated directly from PeopleSoft to Saba every day.a. You will find the steps to update your e-mail address on the iService GuidePS - maSGE (PeopleSoft) page, then by following the thread below, or by selecting the link in step iv:i. Employeesii. Employee Self-Serviceiii. Personal Informationiv. Maintain an Email AddressWhat do I need to do next?Wait 2 business days after changing an email address or department, and then verify whether your courses have been migrated.Open a ticket with the National Service Desk if:a. Your recent completions do not appear on Saba despite confirming that your information matches on both platforms or after waiting two days after updating your information.b. You took CSPS courses that could be credited at ESDC more than a year ago (in this case, we need to manually extract the data)."
+    },
+    {
+      "intentName": "One_of_my_employees_has_exhausted_all_their_attemp",
+      "sampleUtterances": [
+        "One of my employees has exhausted all their attempts at passing a test. How do I add an attempt? (For managers)",
+        "Un de mes employés a épuisé toutes ses tentatives pour réussir un test. Comment faire pour ajouter une tentative? (Pour responsables)"
+      ],
+      "response": "To grant an additional attempt to an employee under your team on Saba, you must provide your approval to the Learning Infrastructure team. You will have to provide your employee’s name, as well as the course name and ID. You can do this by either:A) Opening a ticket with the National Service Desk for your employee, orB) Emailing your approval for the specific course directly to your employee so they can attach it to their National Service Desk ticket.Following this request, the Learning Infrastructure team will add one additional attempt."
+    },
+    {
+      "intentName": "I_have_exhausted_all_attempts_at_passing_a_test__H",
+      "sampleUtterances": [
+        "I have exhausted all attempts at passing a test. How can I obtain another attempt? (For learners)",
+        "J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative? (Pour apprenants)"
+      ],
+      "response": "To obtain an additional attempt for your test, ask your Saba manager (team leader or manager) to either:A) Open a ticket with the National Service Desk on your behalf, orB) Email you their approval for the specific course so you can attach it to your National Service Desk ticket.They will need to provide your name as well as the course name and ID. Following this request, the Learning Infrastructure team will add one additional attempt."
+    },
+    {
+      "intentName": "How_do_I_make_sure_my_Indigenous_Awareness_and_Rec",
+      "sampleUtterances": [
+        "How do I make sure my Indigenous Awareness and Reconciliation learning is accurately captured in my Saba learning history? (For learners)",
+        "Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba? (Pour apprenants)"
+      ],
+      "response": "To ensure that your Indigenous Awareness and Reconciliation learning is properly recorded in Saba, visit the Indigenous Awareness and Reconciliation learning iService page and use the following instructions to get credit for your learning."
+    },
+    {
+      "intentName": "What_is_my_Saba_username_",
+      "sampleUtterances": [
+        "What is my Saba username?",
+        "Quel est mon nom d’utilisateur pour Saba?"
+      ],
+      "response": "Your Saba username is the same as you’re the one you use to log in your computer every day and your PeopleSoft user ID (e.g. Jane.Doe).Please note that your password may be different for Saba, as password requirements differ.If you are unable to login, you can reset your password using your email address."
+    },
+    {
+      "intentName": "Are_there_several_ways_to_find_courses_I_can_regis",
+      "sampleUtterances": [
+        "Are there several ways to find courses I can register to in Saba?",
+        "Existe-t-il plusieurs façons de trouver des cours auxquels je peux m’inscrire dans Saba?"
+      ],
+      "response": "In addition to searching directly in the Saba learning catalogue, you can find courses by using the College@ESDC’s Course Finder, or by contacting the College by completing one of the forms in the Human Resources Service Centre."
+    },
+    {
+      "intentName": "What_should_I_do_if_my_course_is_not_marking_compl",
+      "sampleUtterances": [
+        "What should I do if my course is not marking complete? Something is preventing me from continuing my course or launching the test. (For learners)",
+        "Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé? Quelque chose m’empêche de poursuivre mon cours ou de lancer le test."
+      ],
+      "response": "Most web-based courses are built to track your progress with interactive elements. To have them automatically mark complete, each element must have been viewed/activated. Please relaunch the course to confirm that you:Opened each accordion (expand/collapse);Selected each button;Selected each pin button;Selected each clickable or selectable image button; and,Selected the Continue button to reveal new sections of content on the page. Please note that the Continue button becomes activated only once the section is complete.If you are still experiencing the issue, please open a ticket with the National Service Desk (NSD) for assistance from the Learning Infrastructure team."
+    },
+    {
+      "intentName": "What_should_I_do_if_I_encounter_technical_difficul",
+      "sampleUtterances": [
+        "What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course? (For learners)",
+        "Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC)? (Pour apprenants)"
+      ],
+      "response": "If you have difficulties accessing CSPS and/or launching a course, contact the CSPS Client Contact Centre."
+    },
+    {
+      "intentName": "How_do_I_access_my_team_s_Essential_Training_Curri",
+      "sampleUtterances": [
+        "How do I access my team’s Essential Training Curriculum (ETC) completion data? (For managers)",
+        "Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe? (Pour responsables)"
+      ],
+      "response": "The deadline to complete the ETC is March 31st, for most employees. The completion deadline for employees who joined the department after April 1st is one year from the date they were assigned the curriculum (see Individual Deadlines in Saba). Please note: These employees are excluded from their team’s ETC completion objectives. Follow these instructions to view an accurate picture of your team’s completion data:Select the Main menu button, which appears as three lines in the top left-hand corner of the page.Select the My Team item to display the “Direct Team” page. Select the Expand icon, which appears as four (4) tiles in the top left-hand corner of the Direct Team page.Select Manager Dashboards. This opens the Manager Dashboards page. The default report shown is the Summary Report for ESDC’s Essential Training Curriculum, and contains four (4) additional reports.Select either the “In Progress” box or the “Completed” box of the desired report, which will bring you to the full report.To export your data in Excel, select the download button (Export as a PDF…) appearing as a downward arrow, which is located in the top right-hand corner of the page. For more information:Refer to the “Accessing my Team’s Essential Training Curriculum (ETC) Completion Data” job aid.Visit the ETC for Team Leaders, Supervisors, Managers and Executives FAQ page.Visit the Tracking and Reporting section of the ETC iService page for more information on tracking and generating reports."
+    },
+    {
+      "intentName": "As_a_manager__or_team_leader___what_should_I_do_to",
+      "sampleUtterances": [
+        "As a manager (or team leader), what should I do to ensure that my Saba reports are accurate? (For managers)",
+        "En tant que responsable (gestionnaire ou chef d’équipe), que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)"
+      ],
+      "response": "To ensure that your Saba reports are accurate, review the organizational structure of your employees in PeopleSoft. If your organizational structure is not up to date, please open a ticket with the National Service Desk to have it updated. Please note: If your data is not up to date, a 100% completion rate will not be achievable."
+    },
+    {
+      "intentName": "How_can_I_share_the_link_to_a_class_with_another_l",
+      "sampleUtterances": [
+        "How can I share the link to a class with another learner? (For learners)",
+        "Comment puis-je partager le lien vers une classe avec un autre apprenant? (Pour apprenants)"
+      ],
+      "response": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link to a Saba course, please open a ticket with the National Service Desk (NSD). Choose Saba and then “I would like the Web address for Saba.” Let us know for which course or class you would like the link."
+    },
+    {
+      "intentName": "How_can_I_share_the_link_to_a_class_with_my_team__",
+      "sampleUtterances": [
+        "How can I share the link to a class with my team? (For managers)",
+        "Comment puis-je partager le lien vers une classe avec mon équipe? (Pour responsables)"
+      ],
+      "response": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link to a Saba course, please open a ticket with the National Service Desk (NSD). Choose Saba and then “I would like the Web address for Saba.” Let us know for which course you would like the link."
+    },
+    {
+      "intentName": "Where_can_I_find_the_link_for_a_course__a_class__c",
+      "sampleUtterances": [
+        "Where can I find the link for a course, a class, curriculum or certification? How can I guide learners to my training? (For administrators)",
+        "Où puis-je trouver le lien pour un cours, une classe, un curriculum ou une certification? Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
+      ],
+      "response": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link, please follow these steps:For a course or class:Log into your Saba account.From the Main menu collapse, select the Admin item.Select the Learning Admin tile.Select the Manage Classes hyperlink.Search for your class.Open Class Details page by selecting the course name.In the Main tab’s Class Details section, copy the deeplink URL based on your needs. Each option lists two URLs; be sure to copy the shortest link (the second).Recommended options:Course Deeplink URL: will open the learner’s view of a course.Class Deeplink URL: will open the learner’s view of a specific class.Other options (may result in unwanted registrations or no-shows):Registration Deeplink URL: will open the learner’s view of a specific class, AND automatically register the person opening the link for this class.Register and Launch Deeplink URL (only for Web based classes): will automatically register the person opening this link and launch its first activity that is not evaluated.For a curriculum or certification:You can also share a deeplink to a curriculum or certification page for learners to register for all classes. This is especially useful when a course can only be accessed through a curriculum or certification, allowing learners to register for classes directly from that page.From the Learning Admin menu, select the Manage Learning Catalog hyperlink.Search for the curriculum or certification.Open Curriculum or certification’s details page.Copy the Deeplink URL."
+    },
+    {
+      "intentName": "Why_isn_t_my_Essential_Training_Curriculum__ETC__f",
+      "sampleUtterances": [
+        "Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)",
+        "Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)"
+      ],
+      "response": "If you are required to complete an additional ETC (for managers or team leaders), you will need to register yourself to the appropriate manager ETC based on your role. The system does not assign these ETCs since it cannot determine which one/s you need. Note that the ESDC Essential Training Curriculum for Employees is automatically added to Saba profiles since it must be completed by all indeterminate and term employees across ESDC. For more information, go to the iService’s ESDC Essential Training Curricula page."
+    },
+    {
+      "intentName": "I_need_to_correct_errors_in_my_personal_informatio",
+      "sampleUtterances": [
+        "I need to correct errors in my personal information, such as my name and/or my email address. (For learners)",
+        "Je dois corriger des erreurs dans mes informations personnelles, comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
+      ],
+      "response": "Saba information is synchronized daily with PeopleSoft. Should you come across any inaccuracies, kindly refer to the Instructions for Employees and Managers for guidance on resolution. Detailed instructions for myEMS (PeopleSoft) are available on PSGuide."
+    },
+    {
+      "intentName": "I_have_returned_from_an_absence__how_do_I_get_my_S",
+      "sampleUtterances": [
+        "I have returned from an absence; how do I get my Saba account reactivated? (For learners)",
+        "Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)"
+      ],
+      "response": "If your Saba account has been deactivated (ex. leave, change of department…), it might need to be reactivated by the Learning Infrastructure team before you can access it again.If you are unable to log in with your password or do not receive a password reset email within one hour of resetting it, please open a ticket with National Service Desk (NSD) to have your account reactivated."
+    },
+    {
+      "intentName": "What_happens_to_a_Saba_account_when_an_employee_le",
+      "sampleUtterances": [
+        "What happens to a Saba account when an employee leaves the Department, retires, or returns to the department? I cannot access my old Saba account. (For learners)",
+        "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère, prend sa retraite ou revient au ministère? Je ne peux pas accéder à mon ancien compte Saba. (Pour apprenants)"
+      ],
+      "response": "A Saba account cannot be deleted. It becomes terminated and will not be accessible. It will not show up in reporting nor be available unless the Learning Infrastructure team re-activates it following a National Service Desk (NSD) request."
+    },
+    {
+      "intentName": "I_want_to_bookmark_the_link_to_Saba__Which_link_sh",
+      "sampleUtterances": [
+        "I want to bookmark the link to Saba. Which link should I use? (For learners)",
+        "Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)"
+      ],
+      "response": "The link to bookmark is https://esdc.sabacloud.com. Since every login attempt creates a unique session link, it is important to use the original link to avoid issues."
+    },
+    {
+      "intentName": "How_do_I_switch_the_language_of_my_class___For_lea",
+      "sampleUtterances": [
+        "How do I switch the language of my class? (For learners)",
+        "Comment puis-je changer la langue de ma classe? (Pour apprenants)"
+      ],
+      "response": "Your course registration is associated to a specific class, which is offered in either French, English or bilingual. If the class is not in your preferred language, you can drop the first registration and enroll to a class in the other language, or also enroll in the other language.Please note that there may be limited availability in virtual, in-person and blended classes. You might not find a suitable class as a replacement, but you can contact the course owners to inquire about future offerings. You can find the course owner's contact information at the bottom of the course overview page."
+    },
+    {
+      "intentName": "What_should_I_do_if_my_manager__or_team_leader__do",
+      "sampleUtterances": [
+        "What should I do if my manager (or team leader) does not see my approval request? (For learners)",
+        "Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)"
+      ],
+      "response": "This issue usually happens when you update your manager in Saba. When you register to a course that needs approval, the request is sent to the manager on your profile at that moment; it cannot be approved by another manager or transferred to them.If the class is full, do not drop the class. In this case, please open a ticket with the National Service Desk and attach an email confirmation from your current manager so the Learning Infrastructure team can approve the class on their behalf.If the class still has seats available for new registrations, you can drop the class and re-register, which will trigger a new approval request."
+    },
+    {
+      "intentName": "What_should_I_do_if_I_do_not_see_my_employee_s_app",
+      "sampleUtterances": [
+        "What should I do if I do not see my employee’s approval request? (For managers)",
+        "Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)"
+      ],
+      "response": "This issue usually happens when an employee updates their manager on Saba. When one registers to a course that needs approval, the request is sent to the manager on profile at that moment; it cannot be approved by another manager or transferred to them.If the class is full, your employee should not drop the class. In this case, please open a ticket with the National Service Desk to provide your approval to the Learning Infrastructure team, who can approve the class on your behalf.If the class still has seats available for new registrations, your employee can drop the class and re-register, which will trigger a new approval request."
+    },
+    {
+      "intentName": "How_long_can_I_be_inactive_in_Saba_before_I_am_aut",
+      "sampleUtterances": [
+        "How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)",
+        "Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)"
+      ],
+      "response": "To safeguard your data, your session will time out after 60 minutes of inactivity as directed by Treasury Board Secretariat's policies."
+    },
+    {
+      "intentName": "How_long_can_I_be_inactive_in_Saba_before_I_am_aut",
+      "sampleUtterances": [
+        "How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)",
+        "Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)"
+      ],
+      "response": "To safeguard your data, your session will time out after 60 minutes of inactivity as directed by Treasury Board Secretariat's policies."
+    },
+    {
+      "intentName": "Do_I_need_to_update_my_Saba_password_regularly___F",
+      "sampleUtterances": [
+        "Do I need to update my Saba password regularly? (For learners)",
+        "Est-ce que je dois régulièrement mettre à jour mon mot de passe Saba? (Pour apprenants)"
+      ],
+      "response": "You are no longer required to regularly update your password. This reflects the password guidance for GC system owners."
+    },
+    {
+      "intentName": "As_a_manager__or_team_leader___how_do_I_add_or_rem",
+      "sampleUtterances": [
+        "As a manager (or team leader), how do I add or remove employees from My Team? (For managers)",
+        "En tant que responsable (gestionnaire ou chef d’équipe), comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
+      ],
+      "response": "Managers (or team leaders) do not have the option of making changes to their teams. It is up to the learner to proactively keep their managers up to date in Saba. To add or remove an employee, you will need to ask the employee to update their manager in their Saba profile. In situations where direct communication with your employee is not possible, for example if they have left the department, the Learning Infrastructure team is able to make the necessary changes. If this is the case, please can open a ticket with the National Service Desk"
+    },
+    {
+      "intentName": "What_training_do_I_need_to_complete___For_learners",
+      "sampleUtterances": [
+        "What training do I need to complete? (For learners)",
+        "Quelle formation dois-je compléter? (Pour apprenants)"
+      ],
+      "response": "As an Employment and Social Development Canada (ESDC) employee, you will need to complete the ESDC Essential Training Curricula.For job-specific training, please speak to your manager (or team leader).For other learning related inquiries, contact the College@ESDC via the Human Resources Service Centre (HRSC) Portal."
+    },
+    {
+      "intentName": "Can_I_log_into_Saba_off_the_government_network__fr",
+      "sampleUtterances": [
+        "Can I log into Saba off the government network/ from my home computer? (For learners)",
+        "Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)"
+      ],
+      "response": "You can access Saba from any device with an internet connexion, even off the government network. Please note that you may need to access some content within the government firewall to see all the related class material."
+    },
+    {
+      "intentName": "Why_is_there_an_evaluation_pending_for_a_course_th",
+      "sampleUtterances": [
+        "Why is there an evaluation pending for a course that I have completed? (For learners)",
+        "Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)"
+      ],
+      "response": "Most courses have an evaluation that will show on your Saba profile after you have completed the training. This evaluation is optional, but will provide your anonymous feedback to course owners, who can then improve their training. Completing the evaluation or launching and closing it will remove it from your profile. Alternatively, it may expire and disappear on its own."
+    },
+    {
+      "intentName": "What_does_the_Saba_sign_in_page_s__Remember_Me__op",
+      "sampleUtterances": [
+        "What does the Saba sign in page’s \"Remember Me\" option do?",
+        "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
+      ],
+      "response": "When you select the “Remember Me” checkbox, your username and password are saved on your device. When you return to Saba, your login credentials will be pre-filled, so you will only need to select the Sign In button to start your session. Session duration: The session duration for Saba has been extended to one hour, with a warning message sent 10 minutes before its expiration."
+    },
+    {
+      "intentName": "How_can_I_approve_my_team_s_learning___For_manager",
+      "sampleUtterances": [
+        "How can I approve my team’s learning? (For managers)",
+        "Comment puis-je approuver l'apprentissage de mon équipe? (Pour les managers)"
+      ],
+      "response": "When one of your team members registers to a class that requires approval, the manager identified on their Saba account will receive an approval request in the form of an automatic email notification from Saba, as well as a pending approval on their Direct Team page. To approve or reject your team members’ requests, please follow one of the two options:A) From Saba’s email notification in your Outlook:Select the Approve or Reject hyperlink.Log into your Saba account.A confirmation message will appear.B) Directly from your Saba account:Log into your Saba account.Open the primary navigation menu.Select the My Team item.Select Pending Approvals.Select the training, then Approve Selected to approve the training.If you are unable to approve the requests, you can find more information by searching the following question:“What should I do if I do not see my employee’s approval request?”"
+    },
+    {
+      "intentName": "Does_Saba_have_an_iService_page_",
+      "sampleUtterances": [
+        "Does Saba have an iService page?",
+        "Est-ce que Saba a une page iService?"
+      ],
+      "response": "Saba has several iService pages explaining different roles. Visit Saba’s iService homepage!"
+    },
+    {
+      "intentName": "How_do_I_become_a_course_administrator_or_instruct",
+      "sampleUtterances": [
+        "How do I become a course administrator or instructor?",
+        "Comment puis-je devenir administrateur de cours ou formateur?"
+      ],
+      "response": "To add a Course Administrator or Instructor role to your existing Saba account, you must complete the associated course. For more information, please consult our course administrators and instructors page!"
+    },
+    {
+      "intentName": "How_do_I_become_a_course_administrator_or_instruct",
+      "sampleUtterances": [
+        "How do I become a course administrator or instructor?",
+        "Comment puis-je devenir administrateur de cours ou formateur?"
+      ],
+      "response": "To add a Course Administrator or Instructor role to your existing Saba account, you must complete the associated course. For more information, please consult our course administrators and instructors page!"
+    },
+    {
+      "intentName": "Where_can_I_find_information_on_the_ESDC_Essential",
+      "sampleUtterances": [
+        "Where can I find information on the ESDC Essential Training Curricula (ETC)?",
+        "Où puis-je trouver des informations sur les Curriculums de formation essentielle d’EDSC (CFE)?"
+      ],
+      "response": "You can visit iService’s ESDC Essential Training Curricula page."
+    },
+    {
+      "intentName": "Where_can_I_find_the_managers___or_team_leaders___",
+      "sampleUtterances": [
+        "Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)",
+        "Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)"
+      ],
+      "response": "Some job aids have not made their way to this location yet! You can still find all the manager job aids on the Saba “Managers (and Team Leaders)” page on iService."
+    },
+    {
+      "intentName": "How_can_I_access_my_team_s_essential_training_curr",
+      "sampleUtterances": [
+        "How can I access my team’s essential training curriculum (ETC) completion data? (For managers – job aid)",
+        "Comment puis-je accéder aux données d'achèvement du programme de formation essentielle (CFE) de mon équipe? (Pour responsables – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “Accessing my Team’s Essential Training Curriculum (ETC) Completion Data” job aid."
+    },
+    {
+      "intentName": "Can_I_assign_a_proxy_to_complete_actions_on_my_beh",
+      "sampleUtterances": [
+        "Can I assign a proxy to complete actions on my behalf on Saba? (For managers – job aid)",
+        "Puis-je assigner un mandataire pour effectuer des actions en mon nom sur Saba? (Pour responsables – aide-mémoire)"
+      ],
+      "response": "Executives can assign up to two proxies to access their My Team page and assign learning, review organizational chart, and run reports.You can find instructions on assigning a proxy in the “Assign a Proxy” job aid."
+    },
+    {
+      "intentName": "How_can_I_act_as_a_proxy_for_an_executive___For_ma",
+      "sampleUtterances": [
+        "How can I act as a proxy for an executive? (For managers – job aid)",
+        "Comment puis-je agir comme mandataire pour un cadre exécutif? (Pour responsables – aide-mémoire)"
+      ],
+      "response": "Executives can assign up to two proxies to act on their behalf. Once you are assigned as a proxy for an executive, you can access their My Team page and assign learning, review organizational chart, and run reports.You can find instructions on acting as a proxy in the “Act as Proxy” job aid."
+    },
+    {
+      "intentName": "How_can_I_add_a_learning_activity_to_a_team_member",
+      "sampleUtterances": [
+        "How can I add a learning activity to a team member’s plan? (For managers – job aid)",
+        "Comment puis-je ajouter une activité au plan d’un membre de mon équipe? (Pour responsables – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “Add a Learning Activity to a Team Member’s Plan” job aid."
+    },
+    {
+      "intentName": "Where_can_I_find_all_the_Learner_job_aids___For_le",
+      "sampleUtterances": [
+        "Where can I find all the Learner job aids? (For learners – job aid)",
+        "Où puis-je trouver tous les aide-mémoires pour apprenants? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "To browse all job aids, please access our Sharepoint and choose your preferred language, then the role associated with your question. Please note that we named our folders and documents following the Directive on Official Languages for Communications and Services, which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names."
+    },
+    {
+      "intentName": "How_can_I_accept_a_waitlisted_seat___For_learners_",
+      "sampleUtterances": [
+        "How can I accept a waitlisted seat? (For learners – job aid)",
+        "Comment puis-je accepter une place en attente? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Accept a Waitlisted Seat” job aid."
+    },
+    {
+      "intentName": "How_can_I_access_my_Saba_account_for_the_first_tim",
+      "sampleUtterances": [
+        "How can I access my Saba account for the first time? (For learners – job aid)",
+        "Comment puis-je accéder à mon compte Saba pour la première fois? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Access Your Saba Account for the First Time” job aid."
+    },
+    {
+      "intentName": "How_can_I_activate_accessibility_mode___For_learne",
+      "sampleUtterances": [
+        "How can I activate accessibility mode? (For learners – job aid)",
+        "Comment puis-je activer le mode d’accessibilité?"
+      ],
+      "response": "This answer can be found in the “(Learner) Activate Accessibility Mode” job aid."
+    },
+    {
+      "intentName": "How_can_I_add_a_course___external_learning_to_my_c",
+      "sampleUtterances": [
+        "How can I add a course / external learning to my completed learning if I did not take it on Saba (Excluding courses from the Essential Training Curriculums [ETC])? (For learners – job aid)",
+        "Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des Curriculum de formation essentielle [CFE])? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Add a Completed Course” job aid."
+    },
+    {
+      "intentName": "How_can_I_change_my_language_preference___For_lear",
+      "sampleUtterances": [
+        "How can I change my language preference? (For learners – job aid)",
+        "Comment puis-je changer ma langue de préférence? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Change Your Language Preference” job aid."
+    },
+    {
+      "intentName": "How_can_I_change_my_password___For_learners___job_",
+      "sampleUtterances": [
+        "How can I change my password? (For learners – job aid)",
+        "Comment puis-je changer mon mot de passe? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Change Your Password” job aid."
+    },
+    {
+      "intentName": "How_can_I_drop_a_class___For_learners___job_aid_",
+      "sampleUtterances": [
+        "How can I drop a class? (For learners – job aid)",
+        "Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Drop a Class” job aid."
+    },
+    {
+      "intentName": "How_do_I_navigate_within_Saba___For_learners___job",
+      "sampleUtterances": [
+        "How do I navigate within Saba? (For learners – job aid)",
+        "Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Navigate Within Saba” job aid."
+    },
+    {
+      "intentName": "How_can_I_print_or_export_a_certificate_of_achieve",
+      "sampleUtterances": [
+        "How can I print or export a certificate of achievement? (For learners – job aid)",
+        "Comment puis-je imprimer ou exporter un certificat d’achèvement? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Print or Export a Certificate of Achievement” job aid."
+    },
+    {
+      "intentName": "How_can_I_reset_my_password___For_learners___job_a",
+      "sampleUtterances": [
+        "How can I reset my password? (For learners – job aid)",
+        "Comment puis-je réinitialiser mon mot de passe? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Reset Your Password” job aid."
+    },
+    {
+      "intentName": "How_do_I_search_Saba_s_learning_catalogue___For_le",
+      "sampleUtterances": [
+        "How do I search Saba’s learning catalogue? (For learners – job aid)",
+        "Comment puis-je chercher dans le catalogue de formation de Saba? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Search the Learning Catalogue” job aid."
+    },
+    {
+      "intentName": "How_do_I_update_my_manager__or_team_leader__in_Sab",
+      "sampleUtterances": [
+        "How do I update my manager (or team leader) in Saba? (For learners – job aid)",
+        "Comment puis-je mettre à jour mon responsable (gestionnaire ou chef d’équipe) dans Saba? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Update Your Manager in Saba” job aid."
+    },
+    {
+      "intentName": "How_do_I_view_a_class_attachment___For_learners___",
+      "sampleUtterances": [
+        "How do I view a class attachment? (For learners – job aid)",
+        "Comment puis-je visionner les fichiers joints d’une classe? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) View a Class Attachment” job aid."
+    },
+    {
+      "intentName": "How_can_I_relaunch_content_from_a_course_that_I_pr",
+      "sampleUtterances": [
+        "How can I relaunch content from a course that I previously completed? (For learners – job aid)",
+        "Comment puis-je lancer de nouveau le contenu d’un cours que j’ai achevé dans le passé? (Pour apprenants – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Learner) Relaunch Content From a Completed Course” job aid."
+    },
+    {
+      "intentName": "Where_can_I_find_all_the_administrator_job_aids_th",
+      "sampleUtterances": [
+        "Where can I find all the administrator job aids that are linked here? (For administrators – job aid)",
+        "Où puis-je trouver tous les aide-mémoires pour administrateurs qui sont liés ici? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "To browse all job aids, please access our Sharepoint and choose your preferred language, then the role associated with your question. Please note that we named our folders and documents following the Directive on Official Languages for Communications and Services, which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names."
+    },
+    {
+      "intentName": "How_do_I_add_a_facilitator_to_a_class___For_admini",
+      "sampleUtterances": [
+        "How do I add a facilitator to a class? (For administrators – job aid)",
+        "Comment puis-je ajouter un formateur à une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Add a Facilitator to a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_add_an_evaluation_to_a_class___For_admini",
+      "sampleUtterances": [
+        "How do I add an evaluation to a class? (For administrators – job aid)",
+        "Comment puis-je ajouter une évaluation à une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Add an Evaluation to a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_add_attachments_to_a_class___For_administ",
+      "sampleUtterances": [
+        "How do I add attachments to a class? (For administrators – job aid)",
+        "Comment puis-je ajouter des fichiers joints à une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Add Attachments to a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_create_a_blended_class___For_administrato",
+      "sampleUtterances": [
+        "How do I create a blended class? (For administrators – job aid)",
+        "Comment puis-je créer une classe mixte? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Create a Blended Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_create_a_virtual_class___For_administrato",
+      "sampleUtterances": [
+        "How do I create a virtual class? (For administrators – job aid)",
+        "Comment puis-je créer une classe virtuelle? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Create a Virtual Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_create_a_Web_based_class___For_administra",
+      "sampleUtterances": [
+        "How do I create a Web-based class? (For administrators – job aid)",
+        "Comment puis-je créer une classe sur le Web? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Create a Web-Based Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_create_an_instructor_led_class___For_admi",
+      "sampleUtterances": [
+        "How do I create an instructor-led class? (For administrators – job aid)",
+        "Comment puis-je créer une classe tutorée? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Create an Instructor-Led Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_attach_content_to_a_Web_based_or_blended_",
+      "sampleUtterances": [
+        "How do I attach content to a Web-based or blended class? (For administrators – job aid)",
+        "Comment puis-je joindre du contenu à une classe sur le Web ou mixte? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Attach Content to a Web Based or Blended Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_add_a_learner_to_a_class_through_the_rost",
+      "sampleUtterances": [
+        "How do I add a learner to a class through the roster? (For administrators – job aid)",
+        "Comment puis-je ajouter un apprenant à une classe à partir de la liste des inscrits? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Add a Learner to a Class Through the Roster” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_assign_a_learning_activity_to_a_learner_u",
+      "sampleUtterances": [
+        "How do I assign a learning activity to a learner using the registrar desktop? (For administrators – job aid)",
+        "Comment puis-je affecter un événement de formation à un apprenant à partir du bureau du chargé d’inscription? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Assign a Learning Activity to a Learner using the Registrar Desktop” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_cancel_a_class___For_administrators___job",
+      "sampleUtterances": [
+        "How do I cancel a class? (For administrators – job aid)",
+        "Comment puis-je annuler une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Cancel a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_modify_a_registration___For_administrator",
+      "sampleUtterances": [
+        "How do I modify a registration? (For administrators – job aid)",
+        "Comment puis-je modifier une inscription? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Modify a Registration” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_record_a_learner_s_status_in_a_class___Fo",
+      "sampleUtterances": [
+        "How do I record a learner’s status in a class? (For administrators – job aid)",
+        "Comment puis-je enregistrer le statut d’apprenants dans une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Record Learner Status in a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_close_a_class___For_administrators___job_",
+      "sampleUtterances": [
+        "How do I close a class? (For administrators – job aid)",
+        "Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Close a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_reschedule_a_class___For_administrators__",
+      "sampleUtterances": [
+        "How do I reschedule a class? (For administrators – job aid)",
+        "Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Reschedule a Class” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_do_I_search_for_a_class_and_find_its_roster___",
+      "sampleUtterances": [
+        "How do I search for a class and find its roster? (For administrators – job aid)",
+        "Comment puis-je chercher une classe et trouver une liste des inscrits? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Search for a Class and Find its Roster” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "I_can_t_find_certain_administrators_job_aids___For",
+      "sampleUtterances": [
+        "I can't find certain administrators job aids. (For administrators – job aid)",
+        "Je n’arrive pas à trouver certains aide-mémoires pour administrateurs. (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "Some job aids have not made it to this location yet! You can follow these instructions to find them on your Saba account:Open the primary navigation menu.Select the Groups item.In the My Groups box, select the Saba Course Admin Group hyperlink.Scroll down the page to find the Resources box and select the English Job Aids item to view different sections of job aids related to your role.Select the subject or role relating to your question to view all associated job aids.* When a category contains more than five job aids, use the arrows under the Resources box to view the next documents. In addition to the job aids I have provided here, the Saba Course Admin Group page includes all of the following job aids:Course AdministrationNew Version of a CourseDiscontinue a CourseInternationalize a CourseAdd Delivery Types to a CourseAdd Prerequisites to a CourseSearch for a CourseInstructor roleAdding Learners to a ClassCancelling a ClassAccessing a Saba Classroom ClassClosing a ClassFinding a Class RosterLeading a Class in Saba ClassroomNavigating Saba as an InstructorRecording Attendance and Learner ResultsUsing Private Class AttachmentsCornerstone ClassroomUsing Breakout RoomsUsing the whiteboard and Markup ToolsLeading a Virtual Class using Saba ClassroomCreate a Virtual Training Class Using Saba ClassroomApplication Share in Saba ClassroomAdding and Viewing Content in Saba Classroom"
+    },
+    {
+      "intentName": "How_can_I_upload_to_Saba_Development___For_adminis",
+      "sampleUtterances": [
+        "How can I upload to Saba Development? (For administrators – job aid)",
+        "Comment puis-je téléverses vers Saba Développement? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Upload Process to Saba Dev” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_upload_to_Saba_Production___For_administ",
+      "sampleUtterances": [
+        "How can I upload to Saba Production? (For administrators – job aid)",
+        "Comment puis-je téléverser vers Saba Production? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Upload Process to Saba Prod” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_publish_courses_created_on_Adapt___For_a",
+      "sampleUtterances": [
+        "How can I publish courses created on Adapt? (For administrators – job aid)",
+        "Comment puis-je publier des cours créés dans Adapt? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Adapt Course Publishing” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_create_and_Manage_Scheduled_Reports___Fo",
+      "sampleUtterances": [
+        "How can I create and Manage Scheduled Reports? (For administrators – job aid)",
+        "Comment puis-je créer et gérer la programmation de rapports? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Create and Manage Scheduled Reports” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_view_and_Export_Reports___For_administra",
+      "sampleUtterances": [
+        "How can I view and Export Reports? (For administrators – job aid)",
+        "Comment puis-je visionner et exporter des rapports? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) View and Export Reports” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_search_for_a_course___For_administrators",
+      "sampleUtterances": [
+        "How can I search for a course? (For administrators – job aid)",
+        "Comment puis-je chercher pour un cours? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Search for a Course” job aid. Please consult it to discover all the steps of the procedure!"
+    },
+    {
+      "intentName": "How_can_I_add_an_owner_to_a_course___For_administr",
+      "sampleUtterances": [
+        "How can I add an owner to a course? (For administrators – job aid)",
+        "Comment puis-je ajouter un propriétaire à un cours? (Pour administrateurs – aide-mémoire)"
+      ],
+      "response": "This answer can be found in the “(Administrator) Add an Owner to a Course” job aid. Please consult it to discover all the steps of the procedure!"
+    }
+  ]
+}
