@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saba Support Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            max-height: 700px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .chat-header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .chat-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .loading-indicator {
+            background: #f0f4ff;
+            padding: 15px;
+            text-align: center;
+            color: #667eea;
+            font-size: 14px;
+            border-bottom: 1px solid #e0e7ff;
+        }
+
+        .loading-indicator.hidden {
+            display: none;
+        }
+
+        .loading-indicator .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 3px solid #e0e7ff;
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .message.bot .message-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-right: 12px;
+        }
+
+        .message.user .message-avatar {
+            background: #48bb78;
+            margin-left: 12px;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 15px 18px;
+            border-radius: 18px;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            border: 1px solid #e0e7ff;
+            color: #2d3748;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .chat-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .send-button {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .send-button:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .send-button:active:not(:disabled) {
+            transform: scale(0.95);
+        }
+
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: 15px 18px;
+            background: white;
+            border: 1px solid #e0e7ff;
+            border-radius: 18px;
+            max-width: 70px;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        .language-indicator {
+            font-size: 11px;
+            color: #718096;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .suggestions-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .suggestion-button {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #2d3748;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .suggestion-button:hover {
+            background: #edf2f7;
+            border-color: #667eea;
+            transform: translateX(4px);
+        }
+
+        .suggestion-button:active {
+            transform: translateX(2px);
+        }
+
+        .suggestion-label {
+            font-size: 12px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #718096;
+        }
+
+        .welcome-message h2 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+
+        @media (max-width: 768px) {
+            .chat-container {
+                height: 100vh;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .chat-header {
+                border-radius: 0;
+            }
+
+            .message-content {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>🎓 Assistant de soutien Saba / Saba Support Assistant</h1>
+            <p>Posez-moi vos questions sur le système de gestion de l'apprentissage Saba / Ask me anything about Saba Learning Management System</p>
+        </div>
+        
+        <div class="loading-indicator" id="loadingIndicator">
+            <span class="spinner"></span>
+            <span>Chargement du modèle IA... Cela peut prendre un moment lors du premier chargement. / Loading AI model... This may take a moment on first load.</span>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <h2>Bienvenue! / Welcome!</h2>
+                <p>Je suis là pour vous aider avec des questions sur Saba. Posez-moi vos questions en français ou en anglais!</p>
+                <p>I'm here to help you with questions about Saba. Ask me in French or English!</p>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <input 
+                    type="text" 
+                    class="chat-input" 
+                    id="chatInput" 
+                    placeholder="Tapez votre question ici... / Type your question here..."
+                    autocomplete="off"
+                >
+                <button class="send-button" id="sendButton" disabled>
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2';
+
+        env.allowLocalModels = false;
+        env.allowRemoteModels = true;
+
+        // EMBEDDED DATA
+        const VAT_DATA = [{"question_en": "What does the Saba Sign In page’s \"Remember Me\" option do?", "answer_en": "When you select the &quot;Remember Me&quot; checkbox, your username and password are saved on your device. When you return to Saba, your login credentials will be pre-filled, so you will only need to select the Sign In button to start your session.Session duration: The session duration for Saba has been extended to one hour, with a warning message sent 10 minutes before its expiration.", "question_fr": "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?", "answer_fr": "Lorsque vous sélectionnez la case « Mémoriser mon profil », votre nom d'utilisateur et votre mot de passe seront sauvegardés sur votre appareil. Quand vous reviendrez sur Saba, vos identifiants de connexion seront préremplis et il vous suffira de sélectionner le bouton Ouvrir une Session débuter votre session. Durée de la session : La durée de la session pour Saba a été augmentée à une heure, avec l'envoi d'un message d'avertissement 10 minutes avant son expiration."}, {"question_en": "When I try to reset my Saba password, it doesn’t work. (For learners)", "answer_en": "To avoid login issues:Always access Saba from the following URL: http://esdc.sabacloud.com/.When required, enter your temporary password or password manually, as copy-pasting may add a space.Follow the instructions in the “Reset Your Password” job aid.If you do not receive an email within an hour of following the above instructions, open a ticket with the National Service Desk by selecting Saba as the Product/system/application.", "question_fr": "Lorsque j'essaie de réinitialiser mon mot de passe Saba, cela ne fonctionne pas. (Pour apprenants)", "answer_fr": "Pour éviter les problèmes de connexion :Accédez toujours à Saba à partir de l'URL suivante : http://esdc.sabacloud.com/.Lorsque nécessaire, saisissez votre mot de passe temporaire ou votre mot de passe manuellement, car le copier-coller peut ajouter un espace.Veuillez suivre les directives présentées dans l’aide-mémoire: «Réinitialiser son mot de passe ».Si vous ne recevez pas de courriel dans l’heure après avoir suivi les instructions ci-dessus, veuillez ouvrir un billet auprès de l’InfoService national en inscrivant Saba lorsque vous devez sélectionner produit/système/application."}, {"question_en": "I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC? (For learners)", "answer_en": "Depending on the course, you may be automatically granted equivalency in Saba. Before opening a ticket, please wait one to two weeks before viewing your Saba profile again to confirm whether your completed courses were updated in Saba.If your completed courses are still missing after this waiting period, please open a ticket with the National Service Desk to credit an ETC course completed in another department.In your ticket, please include the following information:The name of the course;The date the course was completed; andYour proof/certificate of completion (located in your CSPS learning profile).If the course counts as an equivalent, we will mark it complete on your Saba account. If the course owners determine that ESDC’s version is different, you will need to register and complete it.", "question_fr": "J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)", "answer_fr": "Tout dépendant du cours, vous pourriez automatiquement recevoir une mention d’équivalence dans Saba. Avant d’ouvrir un billet, veuillez attendre une à deux semaines pour consulter votre profil Saba de nouveau afin de confirmer si vos données d’achèvement ont été mises à jour dans Saba.Si vos données d’achèvement sont toujours manquantes après cette période d’attente, veuillez ouvrir un billet auprès de l’InfoService National pour faire créditer un cours du CFE suivi dans un autre ministère.Dans votre billet, veuillez mentionner ce qui suit :Le titre du cours;La date d’achèvement du cours;Une preuve ou un certificat d’achèvement (que vous trouverez dans votre profil d’apprentissage de l’EFPC).Si le cours est considéré comme équivalent, nous le marquerons comme achevé dans votre compte Saba. Si les propriétaires du cours déterminent que la version d'EDSC est différente, vous devrez vous y inscrire et le compléter."}, {"question_en": "How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile? (For learners)", "answer_en": "In order for your CSPS learning to be properly captured in your Saba profile, make sure that your current ESDC/Service Canada email address is listed in your CSPS Learning Platform profile by doing the following:Log in to your CSPS profile;Select Settings;Select Account information and confirm that your departmental email address is listed; andReview the Current organization section and confirm your organization is listed as ESDC. You can update your classification and your employment status if needed as well.If you need help with your CSPS Learning Platform account, please contact CSPS' Client Contact Centre.", "question_fr": "Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)", "answer_fr": "Afin que les cours de l’EFPC que vous avez suivis soient reflétés dans votre profil Saba, vérifiez que votre adresse courriel actuelle d’EDSC ou de Service Canada figure dans votre profil de la plateforme d’apprentissage d’EFPC. Pour ce faire, suivez les étapes suivantes :Connectez-vous à votre compte d’apprentissage de l’EFPC.Sélectionnez Paramètres.Sélectionnez Informations sur le compte et assurez-vous que l’adresse courriel indiquée est bien votre adresse ministérielle.Sous la section Organisation actuelle, assurez-vous que l’organisation indiquée est bien « EDSC ». Vous pouvez également modifier votre classification et votre statut d’emploi au besoin."}, {"question_en": "How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)", "answer_en": "ETC course completion information is transferred from CSPS to Saba on a daily basis. If you complete a CSPS course, your Saba profile should be updated within two business days.", "question_fr": "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC), quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)", "answer_fr": "Les données sur l’achèvement des cours du CFE sont transférées de la plateforme de l’EFPC vers Saba quotidiennement. Lorsque vous terminez un cours de l’EFPC, votre profil Saba devrait être mis à jour dans les deux jours ouvrables."}, {"question_en": "I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago , yet it is not showing up in my Saba learning history as complete. What do I do? (For learners)", "answer_en": "Here is what you need to do if you completed a course in the CSPS learning platform, yet it does not show as complete in your Saba learning history.Follow these steps:Log in to your CSPS profile;Select Settings;Select Account information and confirm that your departmental email address is listed; andReview the Current organization section and confirm your organization is listed as ESDC. You can update your classification and your employment status if needed as well.If your CSPS learner profile was not up to date at the time you completed the course, or if you completed the course more than two weeks ago, please open a ticket with the National Service Desk. Explain the situation and provide proof of completion (such as a screenshot of your certificate of completion from CSPS) so your Saba account can be updated.", "question_fr": "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant, mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)", "answer_fr": "Voici les étapes à suivre si vous avez complété un cours sur la plateforme d’apprentissage de l’EFPC, mais que votre historique Saba n’indique pas que vous l’avez terminé.Suivez ces étapes :Connectez-vous à votre profil de la l’EFPC.Sélectionnez Paramètres.Sélectionnez Informations sur le compte et assurez-vous que l’adresse courriel indiquée est bien votre adresse ministérielle.Sous la section Organisation actuelle, assurez-vous que l’organisation indiquée est bien « EDSC ». Vous pouvez également modifier votre classification et votre statut d’emploi au besoin. Si votre profil d’apprenant de l’EFPC n’était pas à jour au moment où vous avez suivi le cours ou si vous l’avez terminé il y a plus de deux semaines, veuillez ouvrir un billet auprès de l’InfoService national. Dans le billet, expliquez la situation et fournissez une preuve d’achèvement (p. ex., une saisie d’écran de votre certificat d’achèvement de l’EFPC) afin que votre compte Saba soit mis à jour."}, {"question_en": "What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course? (For learners)", "answer_en": "The Alt version of an ESDC course is located directly in the attachment section of the course in Saba. To request an Alt version of a CSPS course, learners need to contact their regional Learning Service Delivery team.", "question_fr": "Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE)? (Pour apprenants)", "answer_fr": "Les versions alternatives des cours d’EDSC se trouvent directement sous la section Pièces jointes de la classe dans Saba. Pour obtenir une version alternative d’un cours de l’EFPC, vous devez communiquer avec votre équipe régionale de prestation des services d’apprentissage."}, {"question_en": "What should I do if I encounter technical difficulties with Saba? (For learners)", "answer_en": "If you are having difficulties accessing Saba and/or launching a course, you can troubleshoot the issue before submitting a ticket. Here are suggestions that might help:Restart your computer to make sure every program is up to date.Try another web browser such as Edge (recommended), Firefox or Chrome.Clear your cache.If you are still encountering issues, please open a ticket with the National Service Desk. Be sure to include the following information:The course name and/or ID.A description of the issue you are encountering, as well as any relevant information.If possible, a screenshot of the issue (please mention that an attachment is included in your ticket).", "question_fr": "Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)", "answer_fr": "Si vous éprouvez des difficultés à accéder à Saba ou à lancer un cours, vous pouvez tenter de résoudre le problème avant de soumettre un billet. Voici quelques suggestions qui pourraient vous aider :Redémarrer votre ordinateur afin de vous assurer que tous les programmes sont à jour.Essayer un autre navigateur internet tel que : Edge (option recommandée), Firefox, Chrome.Vider votre mémoire cache.Si vous rencontrez toujours des problèmes, veuillez ouvrir un billet auprès de l’InfoService national. Veuillez inclure les informations suivantes :Le nom et/ou l'identifiant du cours.Une description du problème que vous rencontrez, ainsi que toute information pertinente.Si possible, une capture d'écran du problème (veuillez aussi mentionner qu'une pièce jointe est incluse dans votre billet)."}, {"question_en": "I cannot find my manager or team leader in Saba. (For learners)", "answer_en": "If you cannot find your manager or team leader in your search results, please confirm the spelling of their name; for example, you must include hyphens or accents such as “é”.If you are still unable to find them, please open a ticket with the National Service Desk for assistance.", "question_fr": "Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)", "answer_fr": "Si vous n’arrivez pas à trouver votre ou votre chef d’équipe pas dans les résultats de votre recherche, veuillez d’abord confirmer l’orthographe de son nom; par exemple, vous devez inclure les traits d’union ou les accents tels que « é ».Si vous ne parvenez toujours pas à le trouver, veuillez ouvrir un billet auprès de l'InfoService national pour obtenir de l’aide."}, {"question_en": "I need manager access (for managers/team leaders) in Saba. (For managers)", "answer_en": "In many cases, manager access must be manually added to your Saba profile by the Learning Infrastructure team. In order to get the access, you will have to open a ticket with the National Service Desk. Following this request, the Learning Infrastructure team will grant you manager access, and your team will be able to add you as their Saba manager. Your “My Team” menu will become available once you have at least one employee in your team on Saba.", "question_fr": "J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)", "answer_fr": "Dans de nombreux cas, l’accès responsable doit être ajouté manuellement à votre profil Saba par l’équipe Infrastructure de l’apprentissage. Pour obtenir cet accès, vous devrez ouvrir un billet auprès de l'InfoService national. À la suite de cette demande, l'équipe Infrastructure de l’apprentissage vous accordera l’accès responsable, et votre équipe pourra vous ajouter en tant que responsable Saba. Votre menu « Mon équipe » sera disponible dès que vous aurez au moins un employé dans votre équipe sur Saba."}, {"question_en": "I’m a new manager/team leader. How can I add my team members to my Saba account? (For managers)", "answer_en": "Employees must select their own manager (manager or team leader) in Saba to appear in a manager’s My Team page. They can select you as their manager once the manager access is added to your Saba profile. In many cases, manager access must be manually added to your Saba profile by the Learning Infrastructure team. In order to get the access, you will have to open a ticket with the National Service Desk. Following this request, the Learning Infrastructure team will grant you manager access, and your team will be able to add you as their Saba manager. Your “My Team” menu will become available once you have at least one employee in your team on Saba.", "question_fr": "Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)", "answer_fr": "Les employés doivent sélectionner leur propre responsable (gestionnaire ou chef d’équipe) dans Saba pour apparaître dans la page Mon équipe de leur responsable. Ils peuvent vous sélectionner en tant que responsable une fois que l'accès responsable est ajouté à votre profil Saba. Dans de nombreux cas, l’accès responsable doit être ajouté manuellement à votre profil Saba par l’équipe Infrastructure de l’apprentissage. Pour obtenir cet accès, vous devrez ouvrir un billet auprès de l'InfoService national. À la suite de cette demande, l'équipe Infrastructure de l’apprentissage vous accordera l’accès responsable, et votre équipe pourra vous ajouter en tant que responsable Saba. Votre menu « Mon équipe » sera disponible dès que vous aurez au moins un employé dans votre équipe sur Saba."}, {"question_en": "How do I get course content uploaded to Saba? (For administrators – job aid)", "answer_en": "Design Teams are responsible of uploadingtheir content to Saba. To do so, each team must have a member with content administrator access.For your information, the names of College content administrators who have been trained to upload content to Saba can be found on our SharePoint in the Design Teamssection.Instructions on the upload process are available in the form of job aids for content administrators.", "question_fr": "Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)", "answer_fr": "Les équipes de conception sont responsables du téléversement de leur contenu vers Saba. Pour ce faire, chaque équipe doit avoir un membre avec l’accès d’administrateur de contenu.Pour votre information, les noms des administrateurs de contenu du Collège qui ont été formés pour téléverser du contenu dans Saba sont disponibles sur notre SharePoint dans la sectionÉquipe de conception.Des instructions sur le processus de téléversement sont disponibles sous forme d’aide-mémoires pour les administrateurs de contenu."}, {"question_en": "How do I get the content administrator role in Saba? (For administrators)", "answer_en": "Most design teams should have a member with content administrator access.If you need content uploaded to Saba, please consult the College content administrators list to confirm whether you already have a colleague who could complete the upload for you.If you have questions on the process, or if you need content administrator access, please contact our Learning Infrastructure team mailbox.Instructions on the upload process are available for content administrators.", "question_fr": "Comment puis-je avoir un accès d’administrateur de contenu dans Saba? (Pour administrateurs)", "answer_fr": "La plupart des équipes de conception devraient avoir un membre disposant d’un accès d’administrateur de contenu.Si vous devez téléverser du contenu vers Saba, veuillez consulter la liste des administrateurs de contenu du Collège pour vérifier si vous avez déjà un/e collègue qui pourrait effectuer le téléversement pour vous.Si vous avez des questions sur le processus ou si vous avez besoin d’un accès d’administrateur de contenu, veuillez contacter notre boîte courriel de l’Équipe Infrastructure de l’apprentissage.Des instructions sur le processus de téléversement sont disponibles pour les administrateurs de contenu."}, {"question_en": "How do I get my Canada School of Public Service (CSPS) completion data transferred to my Essential Training Curriculum (ETC) or my mandatory training on Saba? (For learners)", "answer_en": "We import mandatory departmental training data from CSPS to Saba on a daily basis. This means that when you complete a mandatory course on the CSPS platform, this course should show as completed in your Saba profile on the following day.If you completed courses in CSPS but do not see the data in Saba the next day, it is likely that your Saba information does not match with your CSPS information.What should I do if the migration of my course completions has failed?You will need to ensure that your email address and department (current organization) match in CSPS and Saba. To do so, please consult both platforms:A) For CSPS –Log in to the Canada School of Public Service platform.Select the Settings item from the header.Choose Account Information from the drop-down menu, which will open the “Account Information” page.Review your information and update your email and/or organization if it is incorrect.*If you need help updating/creating your CSPS account, contact CSPS’s Client Contact Centre.B) For Saba –Log in to the Saba platform.Select the Main menu button, which appears as three lines in the top left-hand corner of the page.From the Main menu collapse, select the Me item.Under the new menu, select the Profile item.Verify your email in the “Business Contact” box. If your e-mail address is not correct, you will need to update it in PeopleSoft, since it is migrated directly from PeopleSoft to Saba every day.a. You will find the steps to update your e-mail address on the iService GuidePS - maSGE (PeopleSoft) page, then by following the thread below, or by selecting the link in step iv:i. Employeesii. Employee Self-Serviceiii. Personal Informationiv. Maintain an Email AddressWhat do I need to do next?Wait 2 business days after changing an email address or department, and then verify whether your courses have been migrated.Open a ticket with the National Service Desk if:a. Your recent completions do not appear on Saba despite confirming that your information matches on both platforms or after waiting two days after updating your information.b. You took CSPS courses that could be credited at ESDC more than a year ago (in this case, we need to manually extract the data).", "question_fr": "Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (EFPC) à mon Curriculum de formation essentielle (CFE) ou ma formation obligatoire sur Saba? (Pour apprenants)", "answer_fr": "Nous importons les données des formations obligatoires pour le département de l’EFPC à Saba à chaque jour. Cela signifie que lorsque vous terminez un cours obligatoire sur la plateforme de l’EFPC, ce cours devrait apparaître comme terminé dans votre profil Saba le jour suivant.Si vous avez terminé des cours sur l’EFPC mais qu’ils ne s’affichent pas comme terminés sur Saba le lendemain, il est probable que votre information sur Saba ne correspond pas à celle sur l’EFPC.Que faire si la migration de mes achèvements a échoué pour mes cours?Vous devrez vous assurer que votre adresse courriel et votre ministère (organisation) concordent sur l’EFPC et sur Saba. Pour ce faire, veuillez consulter les deux plateformes :A) Pour l’EFPC –Connectez-vous à la plateforme de l’École de la fonction publique du Canada.Sélectionnez l’élément Paramètres dans l’en-tête.Choisissez Information sur le compte dans le menu déroulant, ce qui ouvrira la page « Information sur le compte ».Révisez vos renseignements et mettez à jour votre adresse de courriel et votre organisation actuelle s’ils sont incorrects.*Si vous avez besoin d'aide pour mettre à jour votre compte de l’EFPC, veuillez communiquer avec leur Centre Contact Client.B) Pour Saba –Connectez-vous à Saba.Sélectionnez le bouton Menu Principal, qui apparaît sous forme de trois lignes dans le coin supérieur gauche de la page.Sous le Menu principal développé, sélectionnez l’item Moi.Sous le nouveau menu, sélectionnez l’item Profil.Vérifiez votre courriel dans la boîte « Contact d’affaires ». Si votre adresse courriel n’est pas correcte, vous devrez la mettre à jour dans PeopleSoft puisqu’elle est directement migrée de PeopleSoft à Saba chaque jour.a. Vous trouverez les étapes pour mettre à jour votre courriel sur la page GuidePS – maSGE (PeopleSoft) d’iService, puis en suivant le fil suivant, ou en sélectionnant le lien à l’étape iv :i. Employésii. Libre-service pour employésiii. Données personnellesiv. Assurer le suivi d’une adresse électronique (courriel)Que dois-je faire ensuite?Attendez 2 jours ouvrables après un changement d’adresse courriel ou de ministère et vérifiez ensuite si la migration de vos cours s’est effectuée.Ouvrez un billet auprès de l’InfoService national si :a. Vos achèvements récents n’apparaissent pas sur Saba malgré avoir confirmé que votre information correspond sur les deux plateformes ou après avoir attendu deux journées après avoir mis à jour votre information.b. Vous avez suivi des cours sur l’EFPC qui pourraient être crédités à l’EDSC il y a plus d’un an (dans ce cas, nous devons extraire manuellement les données)."}, {"question_en": "One of my employees has exhausted all their attempts at passing a test. How do I add an attempt? (For managers)", "answer_en": "To grant an additional attempt to an employee under your team on Saba, you must provide your approval to the Learning Infrastructure team. You will have to provide your employee’s name, as well as the course name and ID. You can do this by either:A) Opening a ticket with the National Service Desk for your employee, orB) Emailing your approval for the specific course directly to your employee so they can attach it to their National Service Desk ticket.Following this request, the Learning Infrastructure team will add one additional attempt.", "question_fr": "Un de mes employés a épuisé toutes ses tentatives pour réussir un test. Comment faire pour ajouter une tentative? (Pour responsables)", "answer_fr": "Pour accorder une tentative supplémentaire à un employé de votre équipe sur Saba, vous devez donner votre approbation à l’équipe Infrastructure de l’apprentissage. Vous devrez fournir le nom de votre employé, ainsi que le nom et l’identifiant du cours. Pour ce faire, vous pouvez soit :A) Ouvrir un billet auprès de l’InfoService national pour votre employé, ouB) Envoyer votre approbation par courriel pour le cours en question directement à votre employé afin qu’il puisse la joindre à leur billet de l’InfoService national.À la suite de cette demande, l'équipe infrastructure de l’apprentissage ajoutera une tentative supplémentaire."}, {"question_en": "I have exhausted all attempts at passing a test. How can I obtain another attempt? (For learners)", "answer_en": "To obtain an additional attempt for your test, ask your Saba manager (team leader or manager) to either:A) Open a ticket with the National Service Desk on your behalf, orB) Email you their approval for the specific course so you can attach it to your National Service Desk ticket.They will need to provide your name as well as the course name and ID. Following this request, the Learning Infrastructure team will add one additional attempt.", "question_fr": "J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative? (Pour apprenants)", "answer_fr": "Afin d’obtenir une tentative supplémentaire pour votre test, demandez à votre responsable Saba (chef d’équipe ou gestionnaire) soit :A) D’ouvrir un billet auprès de l’InfoService national en votre nom, ouB) De vous envoyer son approbation par courriel pour le cours en question afin que vous puissiez la joindre à votre billet ouvert auprès de l’InfoService national.Il devra s’assurer de fournir votre nom ainsi que le nom et l’identifiant du cours. À la suite de cette demande, l'équipe Infrastructure de l’apprentissage ajoutera une tentative supplémentaire."}, {"question_en": "How do I make sure my Indigenous Awareness and Reconciliation learning is accurately captured in my Saba learning history? (For learners)", "answer_en": "To ensure that your Indigenous Awareness and Reconciliation learning is properly recorded in Saba, visit the Indigenous Awareness and Reconciliation learning iService page and use the following instructions to get credit for your learning.", "question_fr": "Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba? (Pour apprenants)", "answer_fr": "Pour vous assurer que votre formation sur la sensibilisation aux cultures autochtones est correctement consignée dans Saba, visitez la page Formation sur la sensibilisation aux cultures autochtones sur iService et suivez les directives de la section Obtenir vos crédits d’apprentissage."}, {"question_en": "What is my Saba username?", "answer_en": "Your Saba username is the same as you’re the one you use to log in your computer every day and your PeopleSoft user ID (e.g. Jane.Doe).Please note that your password may be different for Saba, as password requirements differ.If you are unable to login, you can reset your password using your email address.", "question_fr": "Quel est mon nom d’utilisateur pour Saba?", "answer_fr": "Votre nom d'utilisateur Saba est le même que celui que vous utilisez pour ouvrir une session sur votre poste de travail chaque jour, ainsi que votre nom d’utilisateur PeopleSoft (par ex. Marie.Unetelle).Veuillez noter que votre mot de passe pourrait être différent pour Saba puisque les exigences en matière de mot de passe diffèrent.Si vous ne parvenez pas à vous connecter, vous pouvez réinitialiser votre mot de passe à l'aide de votre adresse courriel."}, {"question_en": "Are there several ways to find courses I can register to in Saba?", "answer_en": "In addition to searching directly in the Saba learning catalogue, you can find courses by using the College@ESDC’s Course Finder, or by contacting the College by completing one of the forms in the Human Resources Service Centre.", "question_fr": "Existe-t-il plusieurs façons de trouver des cours auxquels je peux m’inscrire dans Saba?", "answer_fr": "En plus de chercher directement dans le catalogue de formation de Saba, vous pouvez trouver des cours en utilisant l’explorateur de cours du Collège@EDSC ou en contactant le Collège en remplissant l'un des formulaires disponibles au centre de services en ressources humaines."}, {"question_en": "What should I do if my course is not marking complete? Something is preventing me from continuing my course or launching the test. (For learners)", "answer_en": "Most web-based courses are built to track your progress with interactive elements. To have them automatically mark complete, each element must have been viewed/activated. Please relaunch the course to confirm that you:Opened each accordion (expand/collapse);Selected each button;Selected each pin button;Selected each clickable or selectable image button; and,Selected the Continue button to reveal new sections of content on the page. Please note that the Continue button becomes activated only once the section is complete.If you are still experiencing the issue, please open a ticket with the National Service Desk (NSD) for assistance from the Learning Infrastructure team.", "question_fr": "Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé? Quelque chose m’empêche de poursuivre mon cours ou de lancer le test.", "answer_fr": "La plupart des cours en ligne sont conçus pour suivre votre progression à l'aide d'éléments interactifs. Pour qu'ils soient automatiquement marqués comme achevés, chaque élément doit avoir été vu/activé. Veuillez lancer de nouveau le cours pour confirmer que vous avez :Sélectionné ou cliqué sur chaque fenêtre accordéon (haut/bas);Sélectionné ou cliqué sur chaque bouton;Sélectionné ou cliqué sur chaque épingle; Sélectionné ou cliqué sur chaque flèche; etSélectionné ou cliqué sur le bouton Continuer pour passer d’une page à l’autre - veuillez noter que le bouton Continuer n'est activé qu'une fois la section terminée.Si le problème persiste, veuillez ouvrir un billet auprès de l’InfoService national (ISN) pour obtenir l'assistance de l'équipe Infrastructure de l’apprentissage"}, {"question_en": "What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course? (For learners)", "answer_en": "If you have difficulties accessing CSPS and/or launching a course, contact the CSPS Client Contact Centre.", "question_fr": "Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC)? (Pour apprenants)", "answer_fr": "Si vous éprouvez des difficultés pour accéder à un cours de l’EFPC ou pour lancer un cours dans la plateforme, veuillez communiquer avec le Centre de contact avec la clientèle de l’EFPC."}, {"question_en": "How do I access my team’s Essential Training Curriculum (ETC) completion data? (For managers)", "answer_en": "The deadline to complete the ETC is March 31st, for most employees. The completion deadline for employees who joined the department after April 1st is one year from the date they were assigned the curriculum (see Individual Deadlines in Saba). Please note: These employees are excluded from their team’s ETC completion objectives. Follow these instructions to view an accurate picture of your team’s completion data:Select the Main menu button, which appears as three lines in the top left-hand corner of the page.Select the My Team item to display the “Direct Team” page. Select the Expand icon, which appears as four (4) tiles in the top left-hand corner of the Direct Team page.Select Manager Dashboards. This opens the Manager Dashboards page. The default report shown is the Summary Report for ESDC’s Essential Training Curriculum, and contains four (4) additional reports.Select either the “In Progress” box or the “Completed” box of the desired report, which will bring you to the full report.To export your data in Excel, select the download button (Export as a PDF…) appearing as a downward arrow, which is located in the top right-hand corner of the page. For more information:Refer to the “Accessing my Team’s Essential Training Curriculum (ETC) Completion Data” job aid.Visit the ETC for Team Leaders, Supervisors, Managers and Executives FAQ page.Visit the Tracking and Reporting section of the ETC iService page for more information on tracking and generating reports.", "question_fr": "Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe? (Pour responsables)", "answer_fr": "La date limite d’achèvement du CFE est le 31 mars pour la majorité des employés. La date limite pour les employés qui ont rejoint le ministère après le 1er avril est d’un an à compter de la date à laquelle le curriculum leur a été attribué (voir les délais individuels dans Saba). Veuillez noter que ces employés sont exclus des objectifs d’achèvement du CFE de leur équipe. Pour un aperçu précis des données d’achèvement de votre équipe, veuillez suivre ces directives :Sélectionnez le bouton Menu Principal, qui apparaît sous forme de trois lignes dans le coin supérieur gauche de l’écran.Sélectionnez l’item Mon équipe pour afficher la page Équipe directe. Sélectionnez l’icône Développer, qui apparaît sous forme de quatre (4) carreaux dans le coin supérieur gauche de la page Équipe directe.Sélectionnez Tableaux de bord de superviseur. Ceci ouvrira la page « Tableau de bord de superviseur ». Le rapport montré par défaut est le « Rapport sommaire d'achèvement - Programme de formation obligatoire », et contient quatre (4) rapports supplémentaires.Sélectionnez la boîte “En cours” ou la boîte “Complété” du rapport désiré, ce qui vous amènera au rapport complet.Pour exporter vos données à Excel, sélectionnez le bouton télécharger (Exporter ce rapport en format PDF…), apparaissant sous forme d’une flèche vers le bas, qui se trouve dans le coin supérieur droit de la page. Pour plus de précision:Consultez l’aide-mémoire « Accéder aux données d’achèvement du curriculum de formation essentielle (CFE) de mon équipe ».Consultez la page de FAQ du CFE pour les chefs d’équipe, superviseurs, gestionnaires et cadres.Consultez la section suivi et production de rapports de la page CFE pour de plus amples renseignements sur le sujet."}, {"question_en": "As a manager (or team leader), what should I do to ensure that my Saba reports are accurate? (For managers)", "answer_en": "To ensure that your Saba reports are accurate, review the organizational structure of your employees in PeopleSoft. If your organizational structure is not up to date, please open a ticket with the National Service Desk to have it updated. Please note: If your data is not up to date, a 100% completion rate will not be achievable.", "question_fr": "En tant que responsable (gestionnaire ou chef d’équipe), que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)", "answer_fr": "Pour vous assurer que vos rapports soient exacts, révisez la structure organisationnelle de vos employés dans Peoplesoft. Si vous constatez que votre structure organisationnelle n'est pas à jour, ouvrez un billet auprès de l’InfoService national afin qu’une mise à jour soit faite.Veuillez noter que si vos données ne sont pas à jour, un taux d’achèvement de 100% ne sera pas réalisable."}, {"question_en": "How can I share the link to a class with another learner? (For learners)", "answer_en": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link to a Saba course, please open a ticket with the National Service Desk (NSD). Choose Saba and then “I would like the Web address for Saba.” Let us know for which course or class you would like the link.", "question_fr": "Comment puis-je partager le lien vers une classe avec un autre apprenant? (Pour apprenants)", "answer_fr": "Pour des raisons de sécurité, ne partagez pas les liens reçus de Saba ou copiés à partir de votre compte Saba. Si vous souhaitez partager un lien vers un cours offert dans Saba, veuillez ouvrir un billet auprès de l’InfoService national (ISN). Saisissez « Saba », sélectionnez « J’aimerais obtenir l’adresse Web du système Saba », puis indiquez le cours ou la classe pour laquelle vous souhaitez obtenir le lien."}, {"question_en": "How can I share the link to a class with my team? (For managers)", "answer_en": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link to a Saba course, please open a ticket with the National Service Desk (NSD). Choose Saba and then “I would like the Web address for Saba.” Let us know for which course you would like the link.", "question_fr": "Comment puis-je partager le lien vers une classe avec mon équipe? (Pour responsables)", "answer_fr": "Pour des raisons de sécurité, ne partagez pas les liens reçus de Saba ou copiés à partir de votre compte Saba. Si vous souhaitez partager un lien vers un cours offert dans Saba, veuillez ouvrir un billet auprès de l’InfoService national (ISN). Saisissez « Saba », sélectionnez « J’aimerais obtenir l’adresse Web du système Saba », puis indiquez le cours ou la classe dont vous souhaitez obtenir le lien."}, {"question_en": "Where can I find the link for a course, a class, curriculum or certification? How can I guide learners to my training? (For administrators)", "answer_en": "For security reasons, please do not share links received from Saba, or copied from your Saba account. If you wish to share a link, please follow these steps:For a course or class:Log into your Saba account.From the Main menu collapse, select the Admin item.Select the Learning Admin tile.Select the Manage Classes hyperlink.Search for your class.Open Class Details page by selecting the course name.In the Main tab’s Class Details section, copy the deeplink URL based on your needs. Each option lists two URLs; be sure to copy the shortest link (the second).Recommended options:Course Deeplink URL: will open the learner’s view of a course.Class Deeplink URL: will open the learner’s view of a specific class.Other options (may result in unwanted registrations or no-shows):Registration Deeplink URL: will open the learner’s view of a specific class, AND automatically register the person opening the link for this class.Register and Launch Deeplink URL (only for Web based classes): will automatically register the person opening this link and launch its first activity that is not evaluated.For a curriculum or certification:You can also share a deeplink to a curriculum or certification page for learners to register for all classes. This is especially useful when a course can only be accessed through a curriculum or certification, allowing learners to register for classes directly from that page.From the Learning Admin menu, select the Manage Learning Catalog hyperlink.Search for the curriculum or certification.Open Curriculum or certification’s details page.Copy the Deeplink URL.", "question_fr": "Où puis-je trouver le lien pour un cours, une classe, un curriculum ou une certification? Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)", "answer_fr": "Pour des raisons de sécurité, ne partagez pas les liens reçus de Saba ou copiés à partir de votre compte Saba. Si vous souhaitez partager un lien, veuillez suivre ces étapes:Pour un cours ou une classe :Connectez-vous à votre compte Saba.À partir du Menu principal développé, sélectionnez l’item Admin.Sélectionnez la tuile Administration des formations.Sélectionnez l’hyperlien Gérer les classes.Cherchez pour votre classe.Ouvrez la page des Détails de la classe en sélectionnant le Nom du cours.Dans la section Détails de la classe de l’onglet Principal, copiez l’URL de lien profond en fonction de vos besoins. Chaque option contient deux adresses web; assurez-vous de copier le lien le plus court (le second).Options recommandées :URL de lien profond vers le cours : ouvrira la vue d’apprenant d’un cours.URL de lien profond vers la classe : ouvrira la vue d’apprenant d’une classe spécifique.Autres options (peuvent entraîner des inscriptions non souhaitées ou des absences)URL de lien profond vers l’inscription : ouvrira la vue d’apprenant d’une classe spécifique, ET inscrira automatiquement la personne accédant au lien à cette classe.URL de lien profond d’inscription et de lancement (pour les cours Sur le Web seulement) : Inscrira automatiquement la personne accédant au lien de la classe et lancera sa première activité qui n’est pas évaluée.Pour un curriculum ou une certification :Vous pouvez également partager un lien profond vers la page d’un curriculum ou d’une certification pour que les apprenants puissent s’inscrire à toutes les classes. Ceci est particulièrement utile lorsqu’un cours n’est accessible que par le biais d’un curriculum ou d’une certification, permettant ainsi aux apprenants de s’inscrire aux classes directement à partir de cette page.À partir du menu Administration des formations, sélectionnez l’hyperlien Gérer le catalogue de formation.Cherchez pour le curriculum (programme d’études) ou la certification.Ouvrez la page Détails du curriculum (cursus) ou de la certification.Copiez l’URL lien profond (URL Deeplink)."}, {"question_en": "Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)", "answer_en": "If you are required to complete an additional ETC (for managers or team leaders), you will need to register yourself to the appropriate manager ETC based on your role. The system does not assign these ETCs since it cannot determine which one/s you need. Note that the ESDC Essential Training Curriculum for Employees is automatically added to Saba profiles since it must be completed by all indeterminate and term employees across ESDC. For more information, go to the iService’s ESDC Essential Training Curricula page.", "question_fr": "Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)", "answer_fr": "Si vous êtes tenu de suivre une CFE additionnelle (pour les gestionnaires ou les chefs d’équipe), vous devrez vous inscrire vous-même au CFE pour gestionnaire approprié en fonction de votre rôle. Le système n’attribue pas ces CFE car il ne peut pas déterminer celui/ceux dont vous avez besoin. Notez que le Curriculum de formation essentielle d’EDSC pour les employés est automatiquement ajouté aux profils Saba puisqu’il doit être suivi par tous les employés nommés pour une période indéterminée ou pour une période déterminée au sein d’EDSC. Pour plus d'informations, consultez la page iService des Curriculums de formation essentielle d’EDSC."}, {"question_en": "I need to correct errors in my personal information, such as my name and/or my email address. (For learners)", "answer_en": "Saba information is synchronized daily with PeopleSoft. Should you come across any inaccuracies, kindly refer to the Instructions for Employees and Managers for guidance on resolution. Detailed instructions for myEMS (PeopleSoft) are available on PSGuide.", "question_fr": "Je dois corriger des erreurs dans mes informations personnelles, comme mon nom et/ou mon adresse électronique. (Pour apprenants)", "answer_fr": "Les informations de Saba sont synchronisées quotidiennement avec PeopleSoft. Si vous constatez des incohérences, veuillez suivre les instructions à l’intention des employés et des gestionnaires pour les corriger. Des instructions détaillées pour maSGE (PeopleSoft) sont disponibles sur GuidePS."}, {"question_en": "I have returned from an absence; how do I get my Saba account reactivated? (For learners)", "answer_en": "If your Saba account has been deactivated (ex. leave, change of department…), it might need to be reactivated by the Learning Infrastructure team before you can access it again.If you are unable to log in with your password or do not receive a password reset email within one hour of resetting it, please open a ticket with National Service Desk (NSD) to have your account reactivated.", "question_fr": "Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)", "answer_fr": "Si votre compte Saba a été désactivé (par exemple; congé, changement de ministère…), il pourrait être nécessaire que l’équipe Infrastructure d’apprentissage l’active de nouveau avant que vous puissiez y accéder. Si vous n’arrivez pas à vous connecter à l’aide de votre mot de passe ou que vous ne recevez pas le courriel de réinitialisation de mot de passe dans l’heure suivant votre réinitialisation, veuillez ouvrir un billet auprès de l’InfoService national (ISN)."}, {"question_en": "What happens to a Saba account when an employee leaves the Department, retires, or returns to the department? I cannot access my old Saba account. (For learners)", "answer_en": "A Saba account cannot be deleted. It becomes terminated and will not be accessible. It will not show up in reporting nor be available unless the Learning Infrastructure team re-activates it following a National Service Desk (NSD) request.", "question_fr": "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère, prend sa retraite ou revient au ministère? Je ne peux pas accéder à mon ancien compte Saba. (Pour apprenants)", "answer_fr": "Un compte Saba ne peut pas être supprimé. Il sera désactivé et ne sera pas accessible. Il n’apparaîtra pas lors de la production de rapports et ne sera pas disponible à moins que l’équipe Infrastructure de l’apprentissage ne le réactive à la suite d’une demande auprès de l’InfoService national (ISN)."}, {"question_en": "I want to bookmark the link to Saba. Which link should I use? (For learners)", "answer_en": "The link to bookmark is https://esdc.sabacloud.com. Since every login attempt creates a unique session link, it is important to use the original link to avoid issues.", "question_fr": "Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)", "answer_fr": "Le lien à mettre en signet est https://esdc.sabacloud.com. Puisque chaque tentative de connexion crée un lien de session unique, il est important d’utiliser le lien original pour éviter tout problème."}, {"question_en": "How do I switch the language of my class? (For learners)", "answer_en": "Your course registration is associated to a specific class, which is offered in either French, English or bilingual. If the class is not in your preferred language, you can drop the first registration and enroll to a class in the other language, or also enroll in the other language.Please note that there may be limited availability in virtual, in-person and blended classes. You might not find a suitable class as a replacement, but you can contact the course owners to inquire about future offerings. You can find the course owner's contact information at the bottom of the course overview page.", "question_fr": "Comment puis-je changer la langue de ma classe? (Pour apprenants)", "answer_fr": "Votre inscription à un cours est associée à une classe spécifique, qui est offerte en français, en anglais ou bilingue. Si la classe n'est pas dans votre langue préférée, vous pouvez abandonner votre première inscription et vous inscrire à la classe dans l'autre langue, ou bien vous inscrire dans les deux langues.Veuillez noter que la disponibilité des classes virtuelles, tutorées et mixtes pourrait être limitée. Il est possible que vous ne trouviez pas de classe qui vous convienne en remplacement, mais vous pouvez contacter le propriétaire du cours pour vous renseigner sur les offres futures. Vous trouverez les coordonnées du propriétaire du cours au bas de la page d'aperçu du cours."}, {"question_en": "What should I do if my manager (or team leader) does not see my approval request? (For learners)", "answer_en": "This issue usually happens when you update your manager in Saba. When you register to a course that needs approval, the request is sent to the manager on your profile at that moment; it cannot be approved by another manager or transferred to them.If the class is full, do not drop the class. In this case, please open a ticket with the National Service Desk and attach an email confirmation from your current manager so the Learning Infrastructure team can approve the class on their behalf.If the class still has seats available for new registrations, you can drop the class and re-register, which will trigger a new approval request.", "question_fr": "Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)", "answer_fr": "Ce problème survient généralement lorsque vous mettez à jour votre responsable dans Saba. Lorsque vous vous inscrivez à un cours qui doit être approuvé, la demande est envoyée au responsable qui figure sur votre profil à ce moment-là; elle ne peut pas être approuvée par un autre responsable ou lui être transférée.Si la classe n’a plus de places disponibles, n’abandonnez pas la classe. Dans ce cas, veuillez soumettre une demande auprès de l’InfoService national (ISN) et joindre un courriel de confirmation de votre responsable actuel afin que l’équipe Infrastructure de l’apprentissage puisse approuver la classe en son nom.Si la classe a encore des places disponibles pour de nouvelles inscriptions, vous pouvez l'abandonner et vous y réinscrire, ce qui générera une nouvelle demande d'approbation."}, {"question_en": "What should I do if I do not see my employee’s approval request? (For managers)", "answer_en": "This issue usually happens when an employee updates their manager on Saba. When one registers to a course that needs approval, the request is sent to the manager on profile at that moment; it cannot be approved by another manager or transferred to them.If the class is full, your employee should not drop the class. In this case, please open a ticket with the National Service Desk to provide your approval to the Learning Infrastructure team, who can approve the class on your behalf.If the class still has seats available for new registrations, your employee can drop the class and re-register, which will trigger a new approval request.", "question_fr": "Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)", "answer_fr": "Ce problème survient généralement lorsque vous mettez à jour votre responsable. Lorsque quelqu’un s’inscrit à un cours qui doit être approuvé, la demande est envoyée au responsable qui figure sur le profile à ce moment-là; elle ne peut pas être approuvée par un autre responsable ou lui être transférée.Si la classe n’a plus de places disponibles, n’abandonnez pas la classe. Dans ce cas, veuillez soumettre une demande auprès de l’InfoService national (ISN). Pour fournir votre approbation à l’équipe Infrastructure de l’apprentissage, qui pourra approuver la classe en votre nom.Si la classe a encore des places disponibles pour de nouvelles inscriptions, votre employé(e) peut l'abandonner et s’y réinscrire, ce qui générera une nouvelle demande d'approbation."}, {"question_en": "How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)", "answer_en": "To safeguard your data, your session will time out after 60 minutes of inactivity as directed by Treasury Board Secretariat's policies.", "question_fr": "Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)", "answer_fr": "Afin de sauvegarder vos données, votre session se terminera après 60 minutes d’inactivité, conformément à la politique du Secrétariat du Conseil du Trésor."}, {"question_en": "How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)", "answer_en": "To safeguard your data, your session will time out after 60 minutes of inactivity as directed by Treasury Board Secretariat's policies.", "question_fr": "Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)", "answer_fr": "Afin de sauvegarder vos données, votre session se terminera après 60 minutes d’inactivité, conformément à la politique du Secrétariat du Conseil du Trésor."}, {"question_en": "Do I need to update my Saba password regularly? (For learners)", "answer_en": "You are no longer required to regularly update your password. This reflects the password guidance for GC system owners.", "question_fr": "Est-ce que je dois régulièrement mettre à jour mon mot de passe Saba? (Pour apprenants)", "answer_fr": "Il n'est plus requis de régulièrement mettre à jour votre mot de passe. Ceci reflète les recommandations sur les mots de passe pour les propriétaires de systèmes du GC."}, {"question_en": "As a manager (or team leader), how do I add or remove employees from My Team? (For managers)", "answer_en": "Managers (or team leaders) do not have the option of making changes to their teams. It is up to the learner to proactively keep their managers up to date in Saba. To add or remove an employee, you will need to ask the employee to update their manager in their Saba profile. In situations where direct communication with your employee is not possible, for example if they have left the department, the Learning Infrastructure team is able to make the necessary changes. If this is the case, please can open a ticket with the National Service Desk", "question_fr": "En tant que responsable (gestionnaire ou chef d’équipe), comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)", "answer_fr": "Les responsables (gestionnaires ou chefs d’équipe) n'ont pas la possibilité d'apporter des modifications à leur équipe. La responsabilité revient à l'apprenant d'assurer la mise à jour de leur responsable dans Saba. Pour ajouter ou retirer un(e) employé(e), vous devrez demander à l'employé(e) de mettre à jour son responsable dans son profil Saba. Dans les situations où la communication directe avec votre employé(e) n'est pas possible, par exemple s’il/elle/iel a quitté le ministère, l'équipe Infrastructure de l'apprentissage est en mesure de faire les changements nécessaires. Si cela est le cas, veuillez soumettre une demande auprès de l’InfoService national (ISN)"}, {"question_en": "What training do I need to complete? (For learners)", "answer_en": "As an Employment and Social Development Canada (ESDC) employee, you will need to complete the ESDC Essential Training Curricula.For job-specific training, please speak to your manager (or team leader).For other learning related inquiries, contact the College@ESDC via the Human Resources Service Centre (HRSC) Portal.", "question_fr": "Quelle formation dois-je compléter? (Pour apprenants)", "answer_fr": "En tant qu’employé(e) d’Emploi et Développement social Canada (EDSC), vous devrez suivre le curriculum de formation essentielle d’EDSC.Pour les formations spécifiques à votre poste, veuillez vous adresser à votre responsable (gestionnaire ou chef d’équipe).Pour toute autre demande d’information reliée à l’apprentissage, communiquez avec l’équipe du Collège@EDSC par l’intermédiaire du portail du Centre de services en ressources humaines (CSRH)."}, {"question_en": "Can I log into Saba off the government network/ from my home computer? (For learners)", "answer_en": "You can access Saba from any device with an internet connexion, even off the government network. Please note that you may need to access some content within the government firewall to see all the related class material.", "question_fr": "Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)", "answer_fr": "Vous pouvez accéder à Saba à partir de n’importe quel appareil disposant d’une connexion internet, même en dehors du réseau gouvernemental. Veuillez noter qu’il se peut que vous deviez accéder à certains contenus à l’intérieur du pare-feu du gouvernement afin de voir tout le matériel de la classe."}, {"question_en": "Why is there an evaluation pending for a course that I have completed? (For learners)", "answer_en": "Most courses have an evaluation that will show on your Saba profile after you have completed the training. This evaluation is optional, but will provide your anonymous feedback to course owners, who can then improve their training. Completing the evaluation or launching and closing it will remove it from your profile. Alternatively, it may expire and disappear on its own.", "question_fr": "Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)", "answer_fr": "La plupart des cours comportent une évaluation qui s’affichera sur votre profil Saba une fois que vous aurez terminé la formation. Cette évaluation est facultative, mais elle fournit une rétroaction anonyme aux propriétaires de cours, qui pourront ainsi améliorer leur formation. Remplir l’évaluation ou la lancer et la fermer la retirera de votre profil. Elle pourrait également expirer et disparaître d’elle-même."}, {"question_en": "What does the Saba sign in page’s \"Remember Me\" option do?", "answer_en": "When you select the “Remember Me” checkbox, your username and password are saved on your device. When you return to Saba, your login credentials will be pre-filled, so you will only need to select the Sign In button to start your session. Session duration: The session duration for Saba has been extended to one hour, with a warning message sent 10 minutes before its expiration.", "question_fr": "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?", "answer_fr": "Lorsque vous sélectionnez la case « Mémoriser mon profil », votre nom d'utilisateur et votre mot de passe seront sauvegardés sur votre appareil. Quand vous reviendrez sur Saba, vos identifiants de connexion seront préremplis et il vous suffira de sélectionner le bouton Ouvrir une Session débuter votre session. Durée de la session : La durée de la session pour Saba a été augmentée à une heure, avec l'envoi d'un message d'avertissement 10 minutes avant son expiration."}, {"question_en": "How can I approve my team’s learning? (For managers)", "answer_en": "When one of your team members registers to a class that requires approval, the manager identified on their Saba account will receive an approval request in the form of an automatic email notification from Saba, as well as a pending approval on their Direct Team page. To approve or reject your team members’ requests, please follow one of the two options:A) From Saba’s email notification in your Outlook:Select the Approve or Reject hyperlink.Log into your Saba account.A confirmation message will appear.B) Directly from your Saba account:Log into your Saba account.Open the primary navigation menu.Select the My Team item.Select Pending Approvals.Select the training, then Approve Selected to approve the training.If you are unable to approve the requests, you can find more information by searching the following question:“What should I do if I do not see my employee’s approval request?”", "question_fr": "Comment puis-je approuver l'apprentissage de mon équipe? (Pour les managers)", "answer_fr": "Lorsqu’un des membres de votre équipe s’inscrit à une classe nécessitant une approbation, le/la responsable identifié(e) sur son compte recevra la demande d’approbation sous forme de notification automatique par courriel de Saba, ainsi qu’une demande d’approbation en attente sur sa page « Équipe directe ». Afin d’approuver les demandes des membres de votre équipe, veuillez suivre l’une de ces deux options:A) À partir de la notification par courriel dans votre Outlook :Sélectionnez l’hyperlien Approuver ou Rejeter.Connectez-vous à votre compte Saba.Un message de confirmation apparaîtra.B) Directement à partir de votre compte Saba :Connectez-vous à Saba.Ouvrez le menu principal.Sélectionnez l’item Mon équipe.Sélectionnez En attente d’approbation.Sélectionnez la formation, puis Approuver l’élément sélectionné pour approuver la formation. Si vous ne parvenez pas à approuver les demandes, vous pouvez trouver plus d’informations en recherchant la question suivante :« Que faire si je ne vois pas les demandes d'approbation de mon employé(e)?”"}, {"question_en": "Does Saba have an iService page?", "answer_en": "Saba has several iService pages explaining different roles. Visit Saba’s iService homepage!", "question_fr": "Est-ce que Saba a une page iService?", "answer_fr": "Saba a plusieurs pages iService expliquant les différents rôles. Consultez la page d'accueil iService de Saba!"}, {"question_en": "How do I become a course administrator or instructor?", "answer_en": "To add a Course Administrator or Instructor role to your existing Saba account, you must complete the associated course. For more information, please consult our course administrators and instructors page!", "question_fr": "Comment puis-je devenir administrateur de cours ou formateur?", "answer_fr": "Pour ajouter un rôle d'administrateur de cours ou de formateur à votre compte Saba existant, vous devez compléter le cours qui y est associé. Pour plus d'informations, veuillez consulter notre page pour administrateurs de cours et formateurs."}, {"question_en": "How do I become a course administrator or instructor?", "answer_en": "To add a Course Administrator or Instructor role to your existing Saba account, you must complete the associated course. For more information, please consult our course administrators and instructors page!", "question_fr": "Comment puis-je devenir administrateur de cours ou formateur?", "answer_fr": "Pour ajouter un rôle d'administrateur de cours ou de formateur à votre compte Saba existant, vous devez compléter le cours qui y est associé. Pour plus d'informations, veuillez consulter notre page pour administrateurs de cours et formateurs."}, {"question_en": "Where can I find information on the ESDC Essential Training Curricula (ETC)?", "answer_en": "You can visit iService’s ESDC Essential Training Curricula page.", "question_fr": "Où puis-je trouver des informations sur les Curriculums de formation essentielle d’EDSC (CFE)?", "answer_fr": "Vous pouvez consulter la page iService des Curriculums de formation essentielle d’EDSC."}, {"question_en": "Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)", "answer_en": "Some job aids have not made their way to this location yet! You can still find all the manager job aids on the Saba “Managers (and Team Leaders)” page on iService.", "question_fr": "Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)", "answer_fr": "Certains aide-mémoires ne sont pas encore arrivés à cet endroit! Vous pouvez toujours trouver les aide-mémoires de responsables sur la page Saba « Responsables (pour gestionnaires et chefs d’équipe) » d’iService."}, {"question_en": "How can I access my team’s essential training curriculum (ETC) completion data? (For managers – job aid)", "answer_en": "This answer can be found in the “Accessing my Team’s Essential Training Curriculum (ETC) Completion Data” job aid.", "question_fr": "Comment puis-je accéder aux données d'achèvement du programme de formation essentielle (CFE) de mon équipe? (Pour responsables – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « Accéder aux données d’achèvement du curriculum de formation essentielle (CFE) de mon équipe »."}, {"question_en": "Can I assign a proxy to complete actions on my behalf on Saba? (For managers – job aid)", "answer_en": "Executives can assign up to two proxies to access their My Team page and assign learning, review organizational chart, and run reports.You can find instructions on assigning a proxy in the “Assign a Proxy” job aid.", "question_fr": "Puis-je assigner un mandataire pour effectuer des actions en mon nom sur Saba? (Pour responsables – aide-mémoire)", "answer_fr": "Les cadres exécutifs peuvent assigner jusqu’à deux mandataires qui pourront accéder à leur page « Mon équipe » et assigner l’apprentissage, examiner les organigrammes et exécuter des rapports.Vous pouvez trouver les instructions dans l’aide-mémoire « Assigner un mandataire »."}, {"question_en": "How can I act as a proxy for an executive? (For managers – job aid)", "answer_en": "Executives can assign up to two proxies to act on their behalf. Once you are assigned as a proxy for an executive, you can access their My Team page and assign learning, review organizational chart, and run reports.You can find instructions on acting as a proxy in the “Act as Proxy” job aid.", "question_fr": "Comment puis-je agir comme mandataire pour un cadre exécutif? (Pour responsables – aide-mémoire)", "answer_fr": "Les cadres exécutifs peuvent assigner jusqu’à deux mandataires pour agir en leur nom. Une fois assigné comme mandataire pour un cadre, vous pourrez accéder à leur page « Mon équipe » ainsi qu’assigner de l’apprentissage, examiner les organigrammes et exécuter des rapports.Vous pouvez trouver les instructions relatives à la fonction de mandataire dans l’aide-mémoire « Agir en qualité de mandataire »."}, {"question_en": "How can I add a learning activity to a team member’s plan? (For managers – job aid)", "answer_en": "This answer can be found in the “Add a Learning Activity to a Team Member’s Plan” job aid.", "question_fr": "Comment puis-je ajouter une activité au plan d’un membre de mon équipe? (Pour responsables – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « Ajouter une activité au plan de mon équipe »."}, {"question_en": "Where can I find all the Learner job aids? (For learners – job aid)", "answer_en": "To browse all job aids, please access our Sharepoint and choose your preferred language, then the role associated with your question. Please note that we named our folders and documents following the Directive on Official Languages for Communications and Services, which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names.", "question_fr": "Où puis-je trouver tous les aide-mémoires pour apprenants? (Pour apprenants – aide-mémoire)", "answer_fr": "Pour naviguer tous les aide-mémoires, veuillez accéder à notre Sharepoint et choisir votre langue préférée, puis le rôle associé à votre question. Veuillez noter que nous avons nommé nos dossiers et documents conformément à la Directive sur les langues officielles pour les communications et services, qui indique que le français doit apparaître en premier dans nos titres. Agrandissez la colonne « Nom » dans SharePoint pour visionner la partie anglaise des noms de fichiers plus longs."}, {"question_en": "How can I accept a waitlisted seat? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Accept a Waitlisted Seat” job aid.", "question_fr": "Comment puis-je accepter une place en attente? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Accepter une place en attente »."}, {"question_en": "How can I access my Saba account for the first time? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Access Your Saba Account for the First Time” job aid.", "question_fr": "Comment puis-je accéder à mon compte Saba pour la première fois? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) – Accéder à votre compte Saba pour la première fois »."}, {"question_en": "How can I activate accessibility mode? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Activate Accessibility Mode” job aid.", "question_fr": "Comment puis-je activer le mode d’accessibilité?", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Activer le mode d’accessibilité »."}, {"question_en": "How can I add a course / external learning to my completed learning if I did not take it on Saba (Excluding courses from the Essential Training Curriculums [ETC])? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Add a Completed Course” job aid.", "question_fr": "Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des Curriculum de formation essentielle [CFE])? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Ajouter une formation achevée »."}, {"question_en": "How can I change my language preference? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Change Your Language Preference” job aid.", "question_fr": "Comment puis-je changer ma langue de préférence? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Changer sa langue de préférence »."}, {"question_en": "How can I change my password? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Change Your Password” job aid.", "question_fr": "Comment puis-je changer mon mot de passe? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Changer son mot de passe »."}, {"question_en": "How can I drop a class? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Drop a Class” job aid.", "question_fr": "Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Abandonner une classe »."}, {"question_en": "How do I navigate within Saba? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Navigate Within Saba” job aid.", "question_fr": "Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Naviguer dans Saba »."}, {"question_en": "How can I print or export a certificate of achievement? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Print or Export a Certificate of Achievement” job aid.", "question_fr": "Comment puis-je imprimer ou exporter un certificat d’achèvement? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Imprimer ou exporter un certificat d’achèvement »."}, {"question_en": "How can I reset my password? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Reset Your Password” job aid.", "question_fr": "Comment puis-je réinitialiser mon mot de passe? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Réinitialiser son mot de passe »."}, {"question_en": "How do I search Saba’s learning catalogue? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Search the Learning Catalogue” job aid.", "question_fr": "Comment puis-je chercher dans le catalogue de formation de Saba? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Chercher dans le catalogue de formation »."}, {"question_en": "How do I update my manager (or team leader) in Saba? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Update Your Manager in Saba” job aid.", "question_fr": "Comment puis-je mettre à jour mon responsable (gestionnaire ou chef d’équipe) dans Saba? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Mettre à jour son responsable dans Saba »."}, {"question_en": "How do I view a class attachment? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) View a Class Attachment” job aid.", "question_fr": "Comment puis-je visionner les fichiers joints d’une classe? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Visionner les fichiers joints d’une classe »."}, {"question_en": "How can I relaunch content from a course that I previously completed? (For learners – job aid)", "answer_en": "This answer can be found in the “(Learner) Relaunch Content From a Completed Course” job aid.", "question_fr": "Comment puis-je lancer de nouveau le contenu d’un cours que j’ai achevé dans le passé? (Pour apprenants – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Apprenant) Lancer de nouveau le contenu d’un cours complété »."}, {"question_en": "Where can I find all the administrator job aids that are linked here? (For administrators – job aid)", "answer_en": "To browse all job aids, please access our Sharepoint and choose your preferred language, then the role associated with your question. Please note that we named our folders and documents following the Directive on Official Languages for Communications and Services, which indicates that French must appear first in our titles. Expand the “Name” column in SharePoint to view the English portion of longer file names.", "question_fr": "Où puis-je trouver tous les aide-mémoires pour administrateurs qui sont liés ici? (Pour administrateurs – aide-mémoire)", "answer_fr": "Pour naviguer tous les aide-mémoires, veuillez accéder à notre Sharepoint et choisir votre langue préférée, puis le rôle associé à votre question. Veuillez noter que nous avons nommé nos dossiers et documents conformément à la Directive sur les langues officielles pour les communications et services, qui indique que le français doit apparaître en premier dans nos titres. Agrandissez la colonne « Nom » dans SharePoint pour visionner la partie anglaise des noms de fichiers plus longs."}, {"question_en": "How do I add a facilitator to a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Add a Facilitator to a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je ajouter un formateur à une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Ajouter un formateur à une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I add an evaluation to a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Add an Evaluation to a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je ajouter une évaluation à une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Ajouter une évaluation à une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I add attachments to a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Add Attachments to a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je ajouter des fichiers joints à une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Ajouter des fichiers joints à une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I create a blended class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Create a Blended Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je créer une classe mixte? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Créer une classe mixte ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I create a virtual class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Create a Virtual Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je créer une classe virtuelle? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Créer une classe virtuelle ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I create a Web-based class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Create a Web-Based Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je créer une classe sur le Web? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Créer une classe sur le Web ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I create an instructor-led class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Create an Instructor-Led Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je créer une classe tutorée? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Créer une classe tutorée ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I attach content to a Web-based or blended class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Attach Content to a Web Based or Blended Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je joindre du contenu à une classe sur le Web ou mixte? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Joindre du contenu à une classe sur le Web ou mixte ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I add a learner to a class through the roster? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Add a Learner to a Class Through the Roster” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je ajouter un apprenant à une classe à partir de la liste des inscrits? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Ajouter un apprenant à une classe à partir de la liste des inscrits ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I assign a learning activity to a learner using the registrar desktop? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Assign a Learning Activity to a Learner using the Registrar Desktop” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je affecter un événement de formation à un apprenant à partir du bureau du chargé d’inscription? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Affecter un événement de formation à un apprenant à partir du bureau du chargé d’inscription ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I cancel a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Cancel a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je annuler une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Annuler une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I modify a registration? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Modify a Registration” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je modifier une inscription? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Modifier une inscription ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I record a learner’s status in a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Record Learner Status in a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je enregistrer le statut d’apprenants dans une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Enregistrer le statut d'apprenants dans une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I close a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Close a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Fermer une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I reschedule a class? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Reschedule a Class” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Reporter une classe ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How do I search for a class and find its roster? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Search for a Class and Find its Roster” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je chercher une classe et trouver une liste des inscrits? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Chercher une classe et trouver une liste des inscrits ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "I can't find certain administrators job aids. (For administrators – job aid)", "answer_en": "Some job aids have not made it to this location yet! You can follow these instructions to find them on your Saba account:Open the primary navigation menu.Select the Groups item.In the My Groups box, select the Saba Course Admin Group hyperlink.Scroll down the page to find the Resources box and select the English Job Aids item to view different sections of job aids related to your role.Select the subject or role relating to your question to view all associated job aids.* When a category contains more than five job aids, use the arrows under the Resources box to view the next documents. In addition to the job aids I have provided here, the Saba Course Admin Group page includes all of the following job aids:Course AdministrationNew Version of a CourseDiscontinue a CourseInternationalize a CourseAdd Delivery Types to a CourseAdd Prerequisites to a CourseSearch for a CourseInstructor roleAdding Learners to a ClassCancelling a ClassAccessing a Saba Classroom ClassClosing a ClassFinding a Class RosterLeading a Class in Saba ClassroomNavigating Saba as an InstructorRecording Attendance and Learner ResultsUsing Private Class AttachmentsCornerstone ClassroomUsing Breakout RoomsUsing the whiteboard and Markup ToolsLeading a Virtual Class using Saba ClassroomCreate a Virtual Training Class Using Saba ClassroomApplication Share in Saba ClassroomAdding and Viewing Content in Saba Classroom", "question_fr": "Je n’arrive pas à trouver certains aide-mémoires pour administrateurs. (Pour administrateurs – aide-mémoire)", "answer_fr": "Certains aide-mémoires ne sont pas encore arrivés ici! Vous pouvez toujours trouver ces aide-mémoires sur votre compte Saba :Ouvrez le menu de navigation principal.Sélectionnez l'item Groupes.Dans l'encadré « Mes groupes », sélectionnez l'hyperlien Groupe des administrateurs de formations Saba.Faites défiler la page pour trouver l'encadré « Ressources », et sélectionnez l'item Aide-mémoires en français pour visionner différentes sections d'aide-mémoires en lien avec votre rôle.Sélectionnez le sujet ou le rôle lié à votre question afin de visionner tous les aide-mémoires associés.* Lorsqu'une catégorie contient plus de cinq aide-mémoires, utilisez les flèches au bas de l'encadré « Ressources » pour voir les prochains documents.En plus des aide-mémoires que j’ai fournis ici, le groupe des administrateurs de formations Saba inclut tous les aide-mémoires sur les sujets suivants :Administration de coursNouvelle version de coursDiscontinuer un coursInternationaliser un coursAjouter les modalités pédagogiques à un coursAjouter des prérequis à un coursChercher pour un coursRôle de formateurAjouter des apprenants à une classeAnnuler une classeAccéder à une classe Saba ClassroomFermer une classeTrouver une liste des inscritsDiriger une classe Saba ClassroomNaviguer dans Saba en tant que formateurEnregistrer les présences et les résultats des apprenantsUtiliser un fichier joint privéCornerstone Classroom (Salle de classe Cornerstone)Utiliser des salles de travail en petits groupesUtiliser le tableau blanc et les outils de marquage dans Saba ClassroomDiriger les classes virtuelle SabaCréer une classe virtuelle avec la classe virtuelle SabaPartage d’application dans une salle de classe virtuelle SabaAjouter et visionner du contenu"}, {"question_en": "How can I upload to Saba Development? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Upload Process to Saba Dev” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je téléverses vers Saba Développement? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Processus de téléversement vers Saba Dev ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I upload to Saba Production? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Upload Process to Saba Prod” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je téléverser vers Saba Production? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Processus de téléversement vers Saba Prod ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I publish courses created on Adapt? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Adapt Course Publishing” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je publier des cours créés dans Adapt? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire « (Administrateur) Publication de cours créés dans Adapt ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I create and Manage Scheduled Reports? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Create and Manage Scheduled Reports” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je créer et gérer la programmation de rapports? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire «(Administrateur) Créer et gérer la programmation de rapports ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I view and Export Reports? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) View and Export Reports” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je visionner et exporter des rapports? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire «(Administrateur) Visionner et exporter des rapports ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I search for a course? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Search for a Course” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je chercher pour un cours? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire «(Administrateur) Chercher pour un cours ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}, {"question_en": "How can I add an owner to a course? (For administrators – job aid)", "answer_en": "This answer can be found in the “(Administrator) Add an Owner to a Course” job aid. Please consult it to discover all the steps of the procedure!", "question_fr": "Comment puis-je ajouter un propriétaire à un cours? (Pour administrateurs – aide-mémoire)", "answer_fr": "Cette réponse se trouve dans l’aide-mémoire «(Administrateur) Ajouter un propriétaire à un cours ». N’hésitez pas à le consulter pour découvrir toutes les étapes de la procédure!"}];
+
+        class SabaChatbot {
+            constructor() {
+                this.embedder = null;
+                this.questionEmbeddings = [];
+                this.isInitialized = false;
+            }
+
+            async initialize() {
+                try {
+                    console.log('Loading multilingual embedding model...');
+                    
+                    this.embedder = await pipeline(
+                        'feature-extraction',
+                        'Xenova/paraphrase-multilingual-MiniLM-L12-v2'
+                    );
+
+                    console.log('Computing question embeddings...');
+                    for (const item of VAT_DATA) {
+                        const enEmbedding = await this.getEmbedding(item.question_en);
+                        const frEmbedding = await this.getEmbedding(item.question_fr);
+                        
+                        this.questionEmbeddings.push({
+                            enEmbedding,
+                            frEmbedding,
+                            question_en: item.question_en,
+                            question_fr: item.question_fr,
+                            answer_en: item.answer_en,
+                            answer_fr: item.answer_fr
+                        });
+                    }
+
+                    this.isInitialized = true;
+                    console.log('Chatbot initialized successfully!');
+                    return true;
+                } catch (error) {
+                    console.error('Failed to initialize chatbot:', error);
+                    throw error;
+                }
+            }
+
+            async getEmbedding(text) {
+                const output = await this.embedder(text, { pooling: 'mean', normalize: true });
+                return Array.from(output.data);
+            }
+
+            cosineSimilarity(vecA, vecB) {
+                const dotProduct = vecA.reduce((sum, a, i) => sum + a * vecB[i], 0);
+                return dotProduct;
+            }
+
+            detectLanguage(text) {
+                const normalizedText = text.toLowerCase().trim();
+                
+                const frenchPatterns = {
+                    accents: /[àâäéèêëïîôùûüÿœæç]/g,
+                    strongIndicators: [
+                        'je', 'suis', 'est-ce', 'puis-je', 'pourrais-je', 'voudrais',
+                        'comment', 'pourquoi', 'quel', 'quelle', 'quels', 'quelles',
+                        'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'son', 'sa', 'ses',
+                        'notre', 'votre', 'leur', 'cours', 'profil', 'mot de passe',
+                        'formation', 'achèvement', 'certificat', 'réinitialiser',
+                        'mémoriser', 'ouvrir', 'dois-je', 'puis', 'dans', 'sur',
+                        'avec', 'pour', 'sans', 'chez', 'lors', 'après', 'avant',
+                        'toujours', 'jamais', 'peut-être', 'également', 'lorsque',
+                        'quand', 'où', 'celui', 'celle', 'ceux', 'celles'
+                    ],
+                    functionWords: ['le', 'la', 'les', 'un', 'une', 'des', 'du', 'de', 'à', 'au', 'aux'],
+                    verbs: ['suis', 'est', 'sont', 'ai', 'a', 'ont', 'fait', 'faire', 'aller', 'vais', 'va', 'vont']
+                };
+
+                const englishPatterns = {
+                    strongIndicators: [
+                        'how', 'what', 'when', 'where', 'why', 'can', 'could', 'would',
+                        'should', 'will', 'the', 'my', 'your', 'his', 'her', 'our', 'their',
+                        'do', 'does', 'did', 'have', 'has', 'had', 'am', 'is', 'are', 'was', 'were'
+                    ]
+                };
+
+                let frenchScore = 0;
+                let englishScore = 0;
+
+                const accentMatches = normalizedText.match(frenchPatterns.accents);
+                if (accentMatches && accentMatches.length > 0) {
+                    frenchScore += accentMatches.length * 3;
+                }
+
+                const words = normalizedText.split(/\s+/);
+
+                for (const word of words) {
+                    if (frenchPatterns.strongIndicators.includes(word)) {
+                        frenchScore += 2;
+                    }
+                    if (frenchPatterns.functionWords.includes(word)) {
+                        frenchScore += 1.5;
+                    }
+                    if (frenchPatterns.verbs.includes(word)) {
+                        frenchScore += 1;
+                    }
+                }
+
+                for (const word of words) {
+                    if (englishPatterns.strongIndicators.includes(word)) {
+                        englishScore += 2;
+                    }
+                }
+
+                if (normalizedText.includes('est-ce que') || normalizedText.includes("qu'est-ce")) {
+                    frenchScore += 5;
+                }
+                if (normalizedText.includes('je dois') || normalizedText.includes('je peux')) {
+                    frenchScore += 5;
+                }
+
+                console.log(`Language detection - French: ${frenchScore}, English: ${englishScore}`);
+                
+                return frenchScore > englishScore ? 'fr' : 'en';
+            }
+
+            isSabaRelated(text) {
+                const sabaKeywords = [
+                    'saba', 'learning', 'course', 'training', 'profile', 'password',
+                    'login', 'sign in', 'sign-in', 'etc', 'essential training', 'csps', 
+                    'curriculum', 'completion', 'certificate', 'esdc', 'register',
+                    'enroll', 'session', 'remember me', 'reset', 'learner',
+                    'canada school', 'public service', 'alternate', 'version',
+                    'formation', 'cours', 'profil', 'connexion', 'ouvrir',
+                    'cfe', 'efpc', 'achèvement', 'certificat', 'edsc',
+                    'inscription', 'mémoriser', 'réinitialiser', 'apprenant',
+                    'école', 'fonction publique', 'accessible'
+                ];
+
+                const normalizedText = text.toLowerCase();
+                return sabaKeywords.some(keyword => normalizedText.includes(keyword));
+            }
+
+            async findBestMatch(userQuestion) {
+                if (!this.isInitialized) {
+                    throw new Error('Chatbot not initialized');
+                }
+
+                if (!this.isSabaRelated(userQuestion)) {
+                    return null;
+                }
+
+                const detectedLanguage = this.detectLanguage(userQuestion);
+                console.log(`Detected language: ${detectedLanguage}`);
+                
+                const queryEmbedding = await this.getEmbedding(userQuestion);
+
+                let bestEnMatch = { score: -1, index: -1 };
+                let bestFrMatch = { score: -1, index: -1 };
+
+                for (let i = 0; i < this.questionEmbeddings.length; i++) {
+                    const item = this.questionEmbeddings[i];
+                    
+                    const enSimilarity = this.cosineSimilarity(queryEmbedding, item.enEmbedding);
+                    if (enSimilarity > bestEnMatch.score) {
+                        bestEnMatch = { score: enSimilarity, index: i };
+                    }
+                    
+                    const frSimilarity = this.cosineSimilarity(queryEmbedding, item.frEmbedding);
+                    if (frSimilarity > bestFrMatch.score) {
+                        bestFrMatch = { score: frSimilarity, index: i };
+                    }
+                }
+
+                let finalMatch;
+                let finalLanguage;
+                let finalScore;
+
+                if (detectedLanguage === 'fr') {
+                    if (bestFrMatch.score >= 0.4 || bestFrMatch.score > bestEnMatch.score * 0.85) {
+                        finalMatch = this.questionEmbeddings[bestFrMatch.index];
+                        finalLanguage = 'fr';
+                        finalScore = bestFrMatch.score;
+                    } else {
+                        finalMatch = this.questionEmbeddings[bestEnMatch.index];
+                        finalLanguage = 'en';
+                        finalScore = bestEnMatch.score;
+                    }
+                } else {
+                    if (bestEnMatch.score >= 0.4 || bestEnMatch.score > bestFrMatch.score * 0.85) {
+                        finalMatch = this.questionEmbeddings[bestEnMatch.index];
+                        finalLanguage = 'en';
+                        finalScore = bestEnMatch.score;
+                    } else {
+                        finalMatch = this.questionEmbeddings[bestFrMatch.index];
+                        finalLanguage = 'fr';
+                        finalScore = bestFrMatch.score;
+                    }
+                }
+
+                console.log(`Best EN match: ${bestEnMatch.score.toFixed(3)}, Best FR match: ${bestFrMatch.score.toFixed(3)}`);
+                console.log(`Final: ${finalLanguage} with score ${finalScore.toFixed(3)}`);
+
+                if (finalScore < 0.35) {
+                    return null;
+                }
+
+                return {
+                    ...finalMatch,
+                    similarity: finalScore,
+                    detectedLanguage: finalLanguage
+                };
+            }
+
+            async getTopMatches(userQuestion, topN = 3) {
+                if (!this.isInitialized) {
+                    throw new Error('Chatbot not initialized');
+                }
+
+                const detectedLanguage = this.detectLanguage(userQuestion);
+                const queryEmbedding = await this.getEmbedding(userQuestion);
+
+                const allMatches = [];
+
+                for (let i = 0; i < this.questionEmbeddings.length; i++) {
+                    const item = this.questionEmbeddings[i];
+                    
+                    const enSimilarity = this.cosineSimilarity(queryEmbedding, item.enEmbedding);
+                    const frSimilarity = this.cosineSimilarity(queryEmbedding, item.frEmbedding);
+                    
+                    // Use the language-appropriate similarity
+                    const similarity = detectedLanguage === 'fr' ? frSimilarity : enSimilarity;
+                    
+                    allMatches.push({
+                        ...item,
+                        similarity: similarity,
+                        index: i,
+                        detectedLanguage: detectedLanguage
+                    });
+                }
+
+                // Sort by similarity and get top N
+                allMatches.sort((a, b) => b.similarity - a.similarity);
+                return allMatches.slice(0, topN);
+            }
+
+            async getResponse(userQuestion) {
+                try {
+                    const match = await this.findBestMatch(userQuestion);
+
+                    if (!match) {
+                        const language = this.detectLanguage(userQuestion);
+                        const topMatches = await this.getTopMatches(userQuestion, 3);
+                        
+                        if (language === 'fr') {
+                            return {
+                                response: "Je suis désolé, mais je n'ai pas trouvé de réponse exacte à votre question. Vouliez-vous peut-être demander l'une de ces questions?",
+                                language: 'fr',
+                                suggestions: topMatches
+                            };
+                        } else {
+                            return {
+                                response: "I'm sorry, but I couldn't find an exact answer to your question. Did you perhaps mean to ask one of these questions?",
+                                language: 'en',
+                                suggestions: topMatches
+                            };
+                        }
+                    }
+
+                    const language = match.detectedLanguage;
+                    const answer = language === 'fr' ? match.answer_fr : match.answer_en;
+
+                    return {
+                        response: answer,
+                        language: language,
+                        confidence: match.similarity
+                    };
+                } catch (error) {
+                    console.error('Error getting response:', error);
+                    return {
+                        response: "Je m'excuse, une erreur s'est produite. Veuillez réessayer. / I apologize, but I encountered an error. Please try again.",
+                        language: 'en'
+                    };
+                }
+            }
+        }
+
+        class ChatUI {
+            constructor() {
+                this.chatMessages = document.getElementById('chatMessages');
+                this.chatInput = document.getElementById('chatInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.loadingIndicator = document.getElementById('loadingIndicator');
+                
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                this.sendButton.addEventListener('click', () => this.handleSend());
+                this.chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.handleSend();
+                    }
+                });
+            }
+
+            async handleSend() {
+                const message = this.chatInput.value.trim();
+                if (!message) return;
+
+                this.addMessage(message, 'user');
+                this.chatInput.value = '';
+                this.disableInput();
+
+                await this.showTypingIndicator();
+                
+                const response = await chatbot.getResponse(message);
+                
+                this.removeTypingIndicator();
+                this.addMessage(response.response, 'bot', response.language, response.suggestions);
+                this.enableInput();
+            }
+
+            addMessage(text, sender, language = null, suggestions = null) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = sender === 'bot' ? '🤖' : '👤';
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = text;
+
+                if (language && sender === 'bot') {
+                    const langIndicator = document.createElement('div');
+                    langIndicator.className = 'language-indicator';
+                    langIndicator.textContent = language === 'fr' ? 'Répondu en français / Answered in French' : 'Answered in English / Répondu en anglais';
+                    contentDiv.appendChild(langIndicator);
+                }
+
+                // Add suggestions if provided
+                if (suggestions && suggestions.length > 0) {
+                    const suggestionsContainer = document.createElement('div');
+                    suggestionsContainer.className = 'suggestions-container';
+                    
+                    const label = document.createElement('span');
+                    label.className = 'suggestion-label';
+                    label.textContent = language === 'fr' ? 'Questions suggérées :' : 'Suggested questions:';
+                    suggestionsContainer.appendChild(label);
+
+                    suggestions.forEach((suggestion, index) => {
+                        const button = document.createElement('button');
+                        button.className = 'suggestion-button';
+                        const questionText = language === 'fr' ? suggestion.question_fr : suggestion.question_en;
+                        button.textContent = questionText;
+                        button.onclick = () => this.handleSuggestionClick(suggestion, language);
+                        suggestionsContainer.appendChild(button);
+                    });
+
+                    contentDiv.appendChild(suggestionsContainer);
+                }
+
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(contentDiv);
+
+                const welcomeMsg = this.chatMessages.querySelector('.welcome-message');
+                if (welcomeMsg) {
+                    welcomeMsg.remove();
+                }
+
+                this.chatMessages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+
+            handleSuggestionClick(suggestion, language) {
+                const answer = language === 'fr' ? suggestion.answer_fr : suggestion.answer_en;
+                this.addMessage(answer, 'bot', language);
+                this.scrollToBottom();
+            }
+
+            async showTypingIndicator() {
+                return new Promise(resolve => {
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'message bot';
+                    typingDiv.id = 'typing-indicator';
+
+                    const avatar = document.createElement('div');
+                    avatar.className = 'message-avatar';
+                    avatar.textContent = '🤖';
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'typing-indicator';
+                    indicator.innerHTML = '<span></span><span></span><span></span>';
+
+                    typingDiv.appendChild(avatar);
+                    typingDiv.appendChild(indicator);
+                    this.chatMessages.appendChild(typingDiv);
+                    this.scrollToBottom();
+
+                    setTimeout(resolve, 500);
+                });
+            }
+
+            removeTypingIndicator() {
+                const indicator = document.getElementById('typing-indicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+
+            disableInput() {
+                this.chatInput.disabled = true;
+                this.sendButton.disabled = true;
+            }
+
+            enableInput() {
+                this.chatInput.disabled = false;
+                this.sendButton.disabled = false;
+                this.chatInput.focus();
+            }
+
+            scrollToBottom() {
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+
+            hideLoading() {
+                this.loadingIndicator.classList.add('hidden');
+            }
+
+            showError(message) {
+                this.loadingIndicator.innerHTML = `<span style="color: #e53e3e;">❌ ${message}</span>`;
+                setTimeout(() => {
+                    this.loadingIndicator.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        const chatbot = new SabaChatbot();
+        const ui = new ChatUI();
+
+        (async () => {
+            try {
+                await chatbot.initialize();
+                ui.hideLoading();
+                ui.enableInput();
+                console.log('✅ Chatbot ready!');
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                ui.showError('Échec du chargement du modèle IA. Veuillez actualiser la page. / Failed to load AI model. Please refresh the page.');
+            }
+        })();
+    </script>
+</body>
+</html>
