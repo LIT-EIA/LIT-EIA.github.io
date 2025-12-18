@@ -451,67 +451,330 @@
                 
                 const frenchPatterns = {
                     accents: /[àâäéèêëïîôùûüÿœæç]/g,
-                    strongIndicators: [
-                        'je', 'suis', 'est-ce', 'puis-je', 'pourrais-je', 'voudrais',
-                        'comment', 'pourquoi', 'quel', 'quelle', 'quels', 'quelles',
-                        'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'son', 'sa', 'ses',
-                        'notre', 'votre', 'leur', 'cours', 'profil', 'mot de passe',
-                        'formation', 'achèvement', 'certificat', 'réinitialiser',
-                        'mémoriser', 'ouvrir', 'dois-je', 'puis', 'dans', 'sur',
-                        'avec', 'pour', 'sans', 'chez', 'lors', 'après', 'avant',
-                        'toujours', 'jamais', 'peut-être', 'également', 'lorsque',
-                        'quand', 'où', 'celui', 'celle', 'ceux', 'celles'
+                    // Very strong French-only words (greetings, common expressions)
+                    veryStrongIndicators: [
+                        'bonjour', 'bonsoir', 'salut', 'merci', 'oui', 'non',
+                        'allo', 'allô', 'coucou', 'bienvenue', 'enchanté',
+                        'pardon', 'excusez-moi', "s'il vous plaît", 'svp',
+                        "d'accord", 'voilà', 'voici', 'alors', 'donc', 'aussi',
+                        'maintenant', 'aujourd hui', "aujourd'hui", 'demain', 'hier',
+                        'quelque', 'quelqu', 'chaque', 'plusieurs', 'aucun', 'aucune'
                     ],
-                    functionWords: ['le', 'la', 'les', 'un', 'une', 'des', 'du', 'de', 'à', 'au', 'aux'],
-                    verbs: ['suis', 'est', 'sont', 'ai', 'a', 'ont', 'fait', 'faire', 'aller', 'vais', 'va', 'vont']
+                    strongIndicators: [
+                        // Personal pronouns
+                        'je', 'tu', 'il', 'elle', 'nous', 'vous', 'ils', 'elles',
+                        // Question starters
+                        'est-ce', 'puis-je', 'pourrais-je', 'voudrais', 'aimerais',
+                        'comment', 'pourquoi', 'combien',
+                        // Possessives
+                        'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'son', 'sa', 'ses',
+                        'notre', 'nos', 'votre', 'vos', 'leur', 'leurs',
+                        // Demonstratives
+                        'quel', 'quelle', 'quels', 'quelles', 'lequel', 'laquelle',
+                        // Common verbs (infinitive and conjugated)
+                        'avoir', 'être', 'faire', 'aller', 'dire', 'venir', 'voir', 'prendre',
+                        'trouver', 'donner', 'parler', 'aimer', 'mettre', 'savoir', 'falloir',
+                        'croire', 'rendre', 'devenir', 'tenir', 'passer', 'demander',
+                        'chercher', 'cherche', 'cherches', 'cherchons', 'cherchez', 'cherchent',
+                        'arriver', 'arrive', 'arrives', 'arrivons', 'arrivez', 'arrivent',
+                        'utiliser', 'utilise', 'utilises', 'utilisons', 'utilisez', 'utilisent',
+                        'créer', 'crée', 'crées', 'créons', 'créez', 'créent',
+                        'montrer', 'montre', 'montres', 'montrons', 'montrez', 'montrent',
+                        // Conjugated common verbs
+                        'suis', 'sommes', 'êtes', 'été', 'étais', 'serai', 'serais',
+                        'avais', 'avons', 'aviez', 'aurais', 'aurai',
+                        'fais', 'faisons', 'faites', 'faisais', 'ferai', 'ferais',
+                        // Prepositions and conjunctions
+                        'mais', 'ou', 'et', 'donc', 'car', 'ni', 'or',
+                        'puis', 'dans', 'sur', 'sous', 'vers', 'chez', 'entre', 'parmi',
+                        'avec', 'pour', 'sans', 'par', 'envers', 'malgré',
+                        'lors', 'depuis', 'pendant', 'durant', 'après', 'avant',
+                        // Adverbs
+                        'très', 'trop', 'peu', 'assez', 'beaucoup', 'plus', 'moins',
+                        'toujours', 'jamais', 'souvent', 'parfois', 'rarement',
+                        'peut-être', 'sûrement', 'certainement', 'probablement',
+                        'également', 'encore', 'déjà', 'enfin', 'ainsi',
+                        'lorsque', 'quand', 'où', 'comme', 'si',
+                        // Pronouns
+                        'celui', 'celle', 'ceux', 'celles', 'cela', 'ceci', 'ça',
+                        // Negation
+                        'ne', 'pas', 'plus', 'jamais', 'rien', 'personne', 'aucun',
+                        // Common words
+                        'tout', 'tous', 'toute', 'toutes', 'autre', 'autres',
+                        'même', 'mêmes', 'tel', 'telle', 'certain', 'certaine',
+                        // Saba-specific
+                        'cours', 'profil', 'mot de passe', 'formation', 'achèvement',
+                        'certificat', 'réinitialiser', 'mémoriser', 'ouvrir',
+                        'aide', 'aidez-moi', 'problème', 'erreur', 'connexion',
+                        'inscription', 'accès', 'compte', 'équipe', 'employé',
+                        'gestionnaire', 'apprenant', 'responsable', 'bloqué', 'désactivé',
+                        'activer', 'réactiver', 'modifier', 'changer', 'mettre à jour',
+                        'télécharger', 'téléverser', 'supprimer', 'ajouter',
+                        'marque', 'marquer', 'complété', 'complétée', 'terminé', 'achevé'
+                    ],
+                    functionWords: ['le', 'la', 'les', 'l', 'un', 'une', 'des', 'du', 'de', 'd', 'à', 'au', 'aux', 'ce', 'cette', 'ces', 'en', 'y', 'se', 's'],
+                    verbs: [
+                        'suis', 'est', 'sont', 'était', 'étaient', 'sera', 'seront',
+                        'ai', 'as', 'a', 'avons', 'avez', 'ont', 'avait', 'avaient', 'aura', 'auront',
+                        'fait', 'faire', 'fais', 'font', 'faisait', 'fera',
+                        'aller', 'vais', 'vas', 'va', 'allons', 'allez', 'vont', 'allait', 'ira',
+                        'dois', 'doit', 'doivent', 'devait', 'devra',
+                        'peux', 'peut', 'peuvent', 'pouvait', 'pourra',
+                        'veux', 'veut', 'veulent', 'voulait', 'voudra',
+                        'sais', 'sait', 'savent', 'savait', 'saura',
+                        'trouve', 'trouves', 'trouvent', 'trouvait', 'trouvera',
+                        'cherche', 'cherches', 'cherchent', 'cherchait', 'cherchera',
+                        'arrive', 'arrives', 'arrivent', 'arrivait', 'arrivera'
+                    ],
+                    questionWords: ['qui', 'que', 'quoi', 'où', 'quand', 'comment', 'pourquoi', 'combien', 'lequel', 'laquelle'],
+                    phrases: [
+                        'est-ce que', "qu'est-ce", 'je dois', 'je peux', 'je voudrais', 'je veux',
+                        'je suis', "j'ai", "j'ai besoin", "j'ai un", "j'ai des",
+                        'il faut', 'il y a', 'comment faire', "comment puis-je", "comment est-ce",
+                        'où puis-je', 'où est', 'où se trouve', 'que faire', 'quoi faire',
+                        'quel est', 'quelle est', 'quels sont', 'quelles sont',
+                        "c'est quoi", "c'est comment", "c'est où",
+                        "n'ai pas", "ne fonctionne pas", "ne marche pas", "ne peux pas"
+                    ]
                 };
 
                 const englishPatterns = {
+                    // Very strong English-only words (greetings, common expressions)
+                    veryStrongIndicators: [
+                        'hello', 'hi', 'hey', 'thanks', 'thank you', 'yes', 'no',
+                        'please', 'sorry', 'excuse me', 'okay', 'ok',
+                        'welcome', 'goodbye', 'bye', 'help', 'issue', 'problem',
+                        'today', 'tomorrow', 'yesterday', 'now', 'then', 'here', 'there',
+                        'something', 'anything', 'nothing', 'everything', 'someone', 'anyone'
+                    ],
                     strongIndicators: [
-                        'how', 'what', 'when', 'where', 'why', 'can', 'could', 'would',
-                        'should', 'will', 'the', 'my', 'your', 'his', 'her', 'our', 'their',
-                        'do', 'does', 'did', 'have', 'has', 'had', 'am', 'is', 'are', 'was', 'were'
+                        // Question words
+                        'how', 'what', 'when', 'where', 'why', 'which', 'who', 'whom', 'whose',
+                        // Modal verbs
+                        'can', 'could', 'would', 'should', 'will', 'shall', 'may', 'might', 'must',
+                        // Possessives
+                        'my', 'your', 'his', 'her', 'its', 'our', 'their',
+                        // Demonstratives
+                        'this', 'that', 'these', 'those',
+                        // Common verbs
+                        'do', 'does', 'did', 'doing', 'done',
+                        'have', 'has', 'had', 'having',
+                        'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+                        'get', 'gets', 'got', 'getting',
+                        'make', 'makes', 'made', 'making',
+                        'go', 'goes', 'went', 'going', 'gone',
+                        'see', 'sees', 'saw', 'seen', 'seeing',
+                        'know', 'knows', 'knew', 'known', 'knowing',
+                        'think', 'thinks', 'thought', 'thinking',
+                        'take', 'takes', 'took', 'taken', 'taking',
+                        'come', 'comes', 'came', 'coming',
+                        'want', 'wants', 'wanted', 'wanting',
+                        'need', 'needs', 'needed', 'needing',
+                        'find', 'finds', 'found', 'finding',
+                        'give', 'gives', 'gave', 'given', 'giving',
+                        'tell', 'tells', 'told', 'telling',
+                        'work', 'works', 'worked', 'working',
+                        'call', 'calls', 'called', 'calling',
+                        'try', 'tries', 'tried', 'trying',
+                        'ask', 'asks', 'asked', 'asking',
+                        'use', 'uses', 'used', 'using',
+                        'feel', 'feels', 'felt', 'feeling',
+                        'become', 'becomes', 'became', 'becoming',
+                        'leave', 'leaves', 'left', 'leaving',
+                        // Prepositions
+                        'to', 'of', 'in', 'on', 'at', 'by', 'for', 'with', 'from', 'as',
+                        'into', 'about', 'like', 'through', 'over', 'after', 'before',
+                        'between', 'under', 'above', 'during', 'without', 'within',
+                        // Conjunctions
+                        'and', 'but', 'or', 'so', 'because', 'if', 'than', 'while', 'since',
+                        // Adverbs
+                        'not', 'just', 'very', 'too', 'also', 'well', 'only', 'still', 'even',
+                        'much', 'more', 'most', 'less', 'least', 'never', 'always', 'often',
+                        'sometimes', 'usually', 'really', 'actually', 'probably', 'maybe',
+                        // Saba-specific
+                        'access', 'login', 'sign in', 'sign-in', 'password', 'account',
+                        'profile', 'course', 'training', 'team', 'manager', 'employee',
+                        'learner', 'reset', 'change', 'update', 'error', 'blocked',
+                        'disabled', 'activate', 'reactivate', 'modify', 'download',
+                        'upload', 'delete', 'remove', 'add'
+                    ],
+                    functionWords: ['a', 'an', 'the', 'to', 'of', 'in', 'on', 'at', 'by', 'for', 'with', 'from', 'as', 'it'],
+                    questionWords: ['who', 'what', 'when', 'where', 'why', 'which', 'whose', 'whom', 'how'],
+                    phrases: [
+                        'how do i', 'how can i', 'how to', 'how do you',
+                        'what is', 'what are', 'what do', 'what does', "what's",
+                        'where is', 'where are', 'where can', 'where do',
+                        'when is', 'when do', 'when can',
+                        'why is', 'why do', 'why does',
+                        'i need', 'i want', 'i have', 'i am', "i'm", 'i can', "i can't",
+                        'do i need', 'can i', 'should i', 'will i',
+                        "i don't", "can't", "won't", "doesn't", "isn't", "aren't",
+                        "doesn't work", "not working", "isn't working",
+                        'help me', 'please help', 'need help'
                     ]
                 };
 
                 let frenchScore = 0;
                 let englishScore = 0;
+                let hasStrongFrenchPattern = false;
 
+                // Check for accented characters (strong French indicator)
                 const accentMatches = normalizedText.match(frenchPatterns.accents);
                 if (accentMatches && accentMatches.length > 0) {
-                    frenchScore += accentMatches.length * 3;
+                    frenchScore += accentMatches.length * 5;
+                    console.log(`Found ${accentMatches.length} accented characters: +${accentMatches.length * 5} French`);
+                }
+
+                // Special check for French negation pattern "ne...pas/plus/jamais" (very strong indicator)
+                const nePattern = /\bne\b.*\b(pas|plus|jamais|rien|personne|aucun|aucune|guère|point)\b/;
+                if (nePattern.test(normalizedText)) {
+                    frenchScore += 25; // Very strong indicator of French
+                    hasStrongFrenchPattern = true;
+                    console.log('Detected French negation pattern (ne...pas/plus/etc.): +25 French');
+                }
+
+                // Check for other French-specific patterns
+                const frenchStructurePatterns = [
+                    { pattern: /\b(mon|ma|mes|ton|ta|tes|son|sa|ses)\s+\w+/, name: 'possessive + word' },
+                    { pattern: /\b(le|la|les)\s+(ne|n')/, name: 'article + negation' },
+                    { pattern: /\bne\s+\w+\s+pas\b/, name: 'ne + verb + pas' },
+                    { pattern: /\b(je|tu|il|elle|nous|vous|ils|elles)\s+(ne|n')/, name: 'pronoun + negation' },
+                    { pattern: /\b(ne|n')\s*\w+\s+(pas|plus|jamais|rien)\b/, name: 'negation variation' },
+                ];
+                
+                for (const item of frenchStructurePatterns) {
+                    if (item.pattern.test(normalizedText)) {
+                        frenchScore += 15;
+                        hasStrongFrenchPattern = true;
+                        console.log(`Detected French structure pattern (${item.name}): +15 French`);
+                    }
+                }
+
+                // Check for French phrases (very strong indicators)
+                for (const phrase of frenchPatterns.phrases) {
+                    if (normalizedText.includes(phrase)) {
+                        frenchScore += 10;
+                    }
+                }
+
+                // Check for English phrases (very strong indicators)
+                for (const phrase of englishPatterns.phrases) {
+                    if (normalizedText.includes(phrase)) {
+                        englishScore += 10;
+                    }
                 }
 
                 const words = normalizedText.split(/\s+/);
+                const wordCount = words.length;
 
-                for (const word of words) {
-                    if (frenchPatterns.strongIndicators.includes(word)) {
-                        frenchScore += 2;
-                    }
-                    if (frenchPatterns.functionWords.includes(word)) {
-                        frenchScore += 1.5;
-                    }
-                    if (frenchPatterns.verbs.includes(word)) {
-                        frenchScore += 1;
-                    }
-                }
-
-                for (const word of words) {
-                    if (englishPatterns.strongIndicators.includes(word)) {
-                        englishScore += 2;
-                    }
-                }
-
-                if (normalizedText.includes('est-ce que') || normalizedText.includes("qu'est-ce")) {
-                    frenchScore += 5;
-                }
-                if (normalizedText.includes('je dois') || normalizedText.includes('je peux')) {
-                    frenchScore += 5;
-                }
-
-                console.log(`Language detection - French: ${frenchScore}, English: ${englishScore}`);
+                // Check individual words
+                let consecutiveFrenchWords = 0;
+                let consecutiveEnglishWords = 0;
                 
-                return frenchScore > englishScore ? 'fr' : 'en';
+                for (const word of words) {
+                    let wordFoundInFrench = false;
+                    let wordFoundInEnglish = false;
+                    let frenchPoints = 0;
+                    let englishPoints = 0;
+                    
+                    // French patterns - check very strong indicators first
+                    if (frenchPatterns.veryStrongIndicators.includes(word)) {
+                        frenchPoints = 15;
+                        wordFoundInFrench = true;
+                    } else if (frenchPatterns.strongIndicators.includes(word)) {
+                        frenchPoints = 5;
+                        wordFoundInFrench = true;
+                    } else if (frenchPatterns.questionWords.includes(word)) {
+                        frenchPoints = 6;
+                        wordFoundInFrench = true;
+                    } else if (frenchPatterns.verbs.includes(word)) {
+                        frenchPoints = 4;
+                        wordFoundInFrench = true;
+                    } else if (frenchPatterns.functionWords.includes(word)) {
+                        frenchPoints = 3;
+                        wordFoundInFrench = true;
+                    }
+
+                    // English patterns - check very strong indicators first
+                    if (englishPatterns.veryStrongIndicators.includes(word)) {
+                        englishPoints = 15;
+                        wordFoundInEnglish = true;
+                    } else if (englishPatterns.strongIndicators.includes(word)) {
+                        englishPoints = 5;
+                        wordFoundInEnglish = true;
+                    } else if (englishPatterns.questionWords.includes(word)) {
+                        englishPoints = 6;
+                        wordFoundInEnglish = true;
+                    } else if (englishPatterns.functionWords.includes(word)) {
+                        englishPoints = 3;
+                        wordFoundInEnglish = true;
+                    }
+                    
+                    // Add points
+                    if (frenchPoints > 0) {
+                        frenchScore += frenchPoints;
+                        console.log(`  Word "${word}": +${frenchPoints} French`);
+                    }
+                    if (englishPoints > 0) {
+                        englishScore += englishPoints;
+                        console.log(`  Word "${word}": +${englishPoints} English`);
+                    }
+                    
+                    // Track consecutive words in same language (bonus for fluent sentences)
+                    if (wordFoundInFrench && !wordFoundInEnglish) {
+                        consecutiveFrenchWords++;
+                        consecutiveEnglishWords = 0;
+                        if (consecutiveFrenchWords >= 2) {
+                            frenchScore += 2; // Bonus for consecutive French words
+                            console.log(`  Consecutive French bonus: +2`);
+                        }
+                    } else if (wordFoundInEnglish && !wordFoundInFrench) {
+                        consecutiveEnglishWords++;
+                        consecutiveFrenchWords = 0;
+                        if (consecutiveEnglishWords >= 2) {
+                            englishScore += 2; // Bonus for consecutive English words
+                            console.log(`  Consecutive English bonus: +2`);
+                        }
+                    } else if (wordFoundInFrench && wordFoundInEnglish) {
+                        // Ambiguous word - give points to both but don't break streak
+                        // Favor the language with current streak
+                        if (consecutiveFrenchWords > consecutiveEnglishWords) {
+                            consecutiveFrenchWords++;
+                        } else if (consecutiveEnglishWords > consecutiveFrenchWords) {
+                            consecutiveEnglishWords++;
+                        }
+                    } else {
+                        // Unknown word - reset streaks
+                        consecutiveFrenchWords = 0;
+                        consecutiveEnglishWords = 0;
+                    }
+                }
+
+                // Normalize scores by word count to handle different text lengths
+                const normalizedFrenchScore = wordCount > 0 ? frenchScore / wordCount : 0;
+                const normalizedEnglishScore = wordCount > 0 ? englishScore / wordCount : 0;
+
+                // Calculate confidence
+                const totalScore = frenchScore + englishScore;
+                const confidence = totalScore > 0
+                    ? Math.abs(frenchScore - englishScore) / totalScore
+                    : 0;
+
+                const detectedLanguage = frenchScore > englishScore ? 'fr' : 'en';
+                const confidencePercent = (confidence * 100).toFixed(1);
+
+                console.log(`Language Detection Results:
+                    - French Score: ${frenchScore.toFixed(2)} (normalized: ${normalizedFrenchScore.toFixed(2)})
+                    - English Score: ${englishScore.toFixed(2)} (normalized: ${normalizedEnglishScore.toFixed(2)})
+                    - Detected: ${detectedLanguage.toUpperCase()}
+                    - Confidence: ${confidencePercent}%`);
+                
+                return {
+                    language: detectedLanguage,
+                    confidence: confidence,
+                    frenchScore: frenchScore,
+                    englishScore: englishScore
+                };
             }
 
             isSabaRelated(text) {
@@ -540,7 +803,8 @@
                     return null;
                 }
 
-                const detectedLanguage = this.detectLanguage(userQuestion);
+                const languageDetection = this.detectLanguage(userQuestion);
+                const detectedLanguage = languageDetection.language;
                 console.log(`Detected language: ${detectedLanguage}`);
                 
                 const queryEmbedding = await this.getEmbedding(userQuestion);
@@ -607,7 +871,8 @@
                     throw new Error('Chatbot not initialized');
                 }
 
-                const detectedLanguage = this.detectLanguage(userQuestion);
+                const languageDetection = this.detectLanguage(userQuestion);
+                const detectedLanguage = languageDetection.language;
                 const queryEmbedding = await this.getEmbedding(userQuestion);
 
                 const allMatches = [];
@@ -636,40 +901,59 @@
 
             async getResponse(userQuestion) {
                 try {
+                    // Detect language first to ensure we respond in the user's language
+                    const languageDetection = this.detectLanguage(userQuestion);
+                    const userLanguage = languageDetection.language;
+                    
                     const match = await this.findBestMatch(userQuestion);
+                    
+                    // Always get top matches for related questions (get 4 to filter out the matched one)
+                    const topMatches = await this.getTopMatches(userQuestion, 4);
 
-                    if (!match) {
-                        const language = this.detectLanguage(userQuestion);
-                        const topMatches = await this.getTopMatches(userQuestion, 3);
+                    // If no match OR match quality is poor (below 0.10), only show suggestions
+                    if (!match || match.similarity < 0.10) {
+                        const qualityMessage = match && match.similarity < 0.10
+                            ? (userLanguage === 'fr'
+                                ? "Je n'ai pas trouvé de réponse suffisamment pertinente à votre question. Vouliez-vous peut-être demander l'une de ces questions?"
+                                : "I couldn't find a sufficiently relevant answer to your question. Did you perhaps mean to ask one of these questions?")
+                            : (userLanguage === 'fr'
+                                ? "Je suis désolé, mais je n'ai pas trouvé de réponse à votre question. Vouliez-vous peut-être demander l'une de ces questions?"
+                                : "I'm sorry, but I couldn't find an answer to your question. Did you perhaps mean to ask one of these questions?");
                         
-                        if (language === 'fr') {
-                            return {
-                                response: "Je suis désolé, mais je n'ai pas trouvé de réponse exacte à votre question. Vouliez-vous peut-être demander l'une de ces questions?",
-                                language: 'fr',
-                                suggestions: topMatches
-                            };
-                        } else {
-                            return {
-                                response: "I'm sorry, but I couldn't find an exact answer to your question. Did you perhaps mean to ask one of these questions?",
-                                language: 'en',
-                                suggestions: topMatches
-                            };
-                        }
+                        return {
+                            response: qualityMessage,
+                            language: userLanguage,
+                            languageConfidence: languageDetection.confidence,
+                            suggestions: topMatches.slice(0, 3)
+                        };
                     }
 
-                    const language = match.detectedLanguage;
-                    const answer = language === 'fr' ? match.answer_fr : match.answer_en;
+                    // Use the user's detected language, not the match's language
+                    // This ensures responses are in the language the question was asked
+                    const answer = userLanguage === 'fr' ? match.answer_fr : match.answer_en;
+
+                    // Filter out the matched question and get 3 related questions
+                    const relatedQuestions = topMatches
+                        .filter(item => {
+                            // Filter out the exact match
+                            return item.question_en !== match.question_en ||
+                                   item.question_fr !== match.question_fr;
+                        })
+                        .slice(0, 3);
 
                     return {
                         response: answer,
-                        language: language,
-                        confidence: match.similarity
+                        language: userLanguage,
+                        languageConfidence: languageDetection.confidence,
+                        confidence: match.similarity,
+                        suggestions: relatedQuestions
                     };
                 } catch (error) {
                     console.error('Error getting response:', error);
                     return {
                         response: "Je m'excuse, une erreur s'est produite. Veuillez réessayer. / I apologize, but I encountered an error. Please try again.",
-                        language: 'en'
+                        language: 'en',
+                        languageConfidence: 0
                     };
                 }
             }
@@ -708,11 +992,11 @@
                 const response = await chatbot.getResponse(message);
                 
                 this.removeTypingIndicator();
-                this.addMessage(response.response, 'bot', response.language, response.suggestions);
+                this.addMessage(response.response, 'bot', response.language, response.suggestions, response.confidence);
                 this.enableInput();
             }
 
-            addMessage(text, sender, language = null, suggestions = null) {
+            addMessage(text, sender, language = null, suggestions = null, hasMatch = null) {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message ${sender}`;
 
@@ -738,7 +1022,19 @@
                     
                     const label = document.createElement('span');
                     label.className = 'suggestion-label';
-                    label.textContent = language === 'fr' ? 'Questions suggérées :' : 'Suggested questions:';
+                    
+                    // Different label based on whether we found a match or not
+                    if (hasMatch !== null && hasMatch !== undefined) {
+                        // We found an answer, showing related questions
+                        label.textContent = language === 'fr'
+                            ? 'Questions connexes :'
+                            : 'Related questions:';
+                    } else {
+                        // No match found, showing suggestions
+                        label.textContent = language === 'fr'
+                            ? 'Questions suggérées :'
+                            : 'Suggested questions:';
+                    }
                     suggestionsContainer.appendChild(label);
 
                     suggestions.forEach((suggestion, index) => {
