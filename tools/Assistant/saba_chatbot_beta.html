@@ -32,9 +32,218 @@
             color: white;
             padding: 25px 30px;
             text-align: center;
+            position: relative;
         }
         .header h1 { font-size: 28px; margin-bottom: 5px; font-weight: 600; }
         .header p { font-size: 14px; opacity: 0.9; }
+        .faq-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .faq-badge {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .faq-badge.loaded { display: flex; }
+        .faq-badge .count {
+            background: white;
+            color: #667eea;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .view-all-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        .view-all-btn.loaded { display: block; }
+        .view-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .faq-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .faq-modal.active { display: flex; }
+        .faq-modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+        .faq-modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-modal-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .faq-modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .faq-modal-close:hover {
+            background: white;
+            color: #667eea;
+            transform: rotate(90deg);
+        }
+        .faq-search {
+            padding: 20px 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .faq-search input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .faq-search input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .faq-list-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 30px;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+        }
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .faq-question:hover {
+            background: #eff0ff;
+        }
+        .faq-question-text {
+            flex: 1;
+            color: #333;
+        }
+        .faq-question-text .fr-question,
+        .faq-question-text .en-question {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .faq-question-text .en-question {
+            margin-bottom: 0;
+        }
+        .faq-question-text .lang-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #667eea;
+            margin-right: 5px;
+        }
+        .faq-question:focus {
+            outline: 3px solid #667eea;
+            outline-offset: -3px;
+        }
+        .faq-toggle {
+            color: #667eea;
+            font-size: 20px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.expanded .faq-toggle {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item.expanded .faq-answer {
+            padding: 0 20px 15px 20px;
+            max-height: 500px;
+        }
+        .faq-answer-content {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .faq-answer-content strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
         .chat-container {
             flex: 1;
             overflow-y: auto;
@@ -224,6 +433,13 @@
             .message-content { max-width: 85%; }
             .input-container { padding: 15px 20px; }
             #sendButton { padding: 15px 25px; }
+            .faq-counter {
+                position: static;
+                margin-top: 15px;
+                justify-content: center;
+            }
+            .faq-modal-content { max-height: 95vh; }
+            .faq-list-container { padding: 15px 20px; }
         }
     </style>
 </head>
@@ -232,6 +448,14 @@
         <div class="header">
             <h1>Assistant Saba | Saba Assistant</h1>
             <p>Posez vos questions sur Saba | Ask your questions about Saba</p>
+            <div class="faq-counter">
+                <div class="faq-badge" id="faqBadge">
+                    📚 FAQ: <span class="count" id="faqCount">0</span>
+                </div>
+                <button class="view-all-btn" id="viewAllBtn" onclick="toggleFAQModal()">
+                    📋 Voir tout | View All
+                </button>
+            </div>
         </div>
         
         <div class="chat-container" id="chatContainer">
@@ -264,6 +488,27 @@
                 >
             </div>
             <button id="sendButton" onclick="sendMessage()" disabled>Envoyer | Send</button>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div class="faq-modal" id="faqModal" onclick="closeFAQModal(event)">
+        <div class="faq-modal-content" onclick="event.stopPropagation()">
+            <div class="faq-modal-header">
+                <h2>📚 Toutes les FAQ | All FAQs (<span id="modalFaqCount">0</span>)</h2>
+                <button class="faq-modal-close" onclick="toggleFAQModal()">×</button>
+            </div>
+            <div class="faq-search">
+                <input
+                    type="text"
+                    id="faqSearchInput"
+                    placeholder="🔍 Rechercher FAQ... | Search FAQs..."
+                    onkeyup="filterFAQs()"
+                >
+            </div>
+            <div class="faq-list-container" id="faqListContainer">
+                <div class="no-results">Loading FAQs...</div>
+            </div>
         </div>
     </div>
 
@@ -346,11 +591,150 @@
                 const response = await fetch('https://raw.githubusercontent.com/LIT-EIA/LIT-EIA.github.io/refs/heads/master/tools/Assistant/aws_kendra_faq.json');
                 faqData = await response.json();
                 console.log('FAQ data loaded:', faqData.length, 'entries');
+                
+                // Update FAQ counter
+                updateFAQCounter();
+                populateFAQModal();
+                
                 document.getElementById('loadingStatus').textContent = '✓ Données chargées! Initialisation du modèle... | Data loaded! Initializing model...';
                 await initializeModel();
             } catch (error) {
                 console.error('Error loading FAQ data:', error);
                 document.getElementById('loadingStatus').innerHTML = '❌ Erreur de chargement des données | Error loading data<br>Vérifiez votre connexion internet | Check your internet connection';
+            }
+        }
+
+        // Update FAQ counter badge
+        function updateFAQCounter() {
+            const badge = document.getElementById('faqBadge');
+            const countEl = document.getElementById('faqCount');
+            const viewBtn = document.getElementById('viewAllBtn');
+            const modalCount = document.getElementById('modalFaqCount');
+            
+            countEl.textContent = faqData.length;
+            modalCount.textContent = faqData.length;
+            badge.classList.add('loaded');
+            viewBtn.classList.add('loaded');
+        }
+
+        // Populate FAQ modal with all FAQs
+        function populateFAQModal() {
+            const container = document.getElementById('faqListContainer');
+            container.innerHTML = '';
+            
+            if (faqData.length === 0) {
+                container.innerHTML = '<div class="no-results">No FAQs available</div>';
+                return;
+            }
+            
+            faqData.forEach((item, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.dataset.index = index;
+                
+                faqItem.innerHTML = `
+                    <div class="faq-question" onclick="toggleFAQItem(${index})" onkeydown="handleFAQKeydown(event, ${index})" tabindex="0" role="button" aria-expanded="false">
+                        <div class="faq-question-text">
+                            <div class="fr-question">
+                                <span class="lang-label">FR:</span>${item.question_fr}
+                            </div>
+                            <div class="en-question">
+                                <span class="lang-label">EN:</span>${item.question_en}
+                            </div>
+                        </div>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>Français:</strong>
+                            <div>${formatAnswer(item.answer_fr)}</div>
+                            <br>
+                            <strong>English:</strong>
+                            <div>${formatAnswer(item.answer_en)}</div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(faqItem);
+            });
+        }
+
+        // Toggle FAQ item expansion
+        function toggleFAQItem(index) {
+            const item = document.querySelector(`.faq-item[data-index="${index}"]`);
+            if (item) {
+                item.classList.toggle('expanded');
+                const question = item.querySelector('.faq-question');
+                const isExpanded = item.classList.contains('expanded');
+                question.setAttribute('aria-expanded', isExpanded);
+            }
+        }
+
+        // Handle keyboard navigation for FAQ items
+        function handleFAQKeydown(event, index) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleFAQItem(index);
+            }
+        }
+
+        // Toggle FAQ modal
+        function toggleFAQModal() {
+            const modal = document.getElementById('faqModal');
+            const container = document.querySelector('.container');
+            modal.classList.toggle('active');
+            
+            // Hide/show chatbot container
+            if (modal.classList.contains('active')) {
+                container.style.display = 'none';
+                document.getElementById('faqSearchInput').value = '';
+                filterFAQs();
+            } else {
+                container.style.display = 'flex';
+            }
+        }
+
+        // Close modal when clicking outside
+        function closeFAQModal(event) {
+            if (event.target.id === 'faqModal') {
+                toggleFAQModal();
+            }
+        }
+
+        // Filter FAQs based on search input
+        function filterFAQs() {
+            const searchTerm = document.getElementById('faqSearchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.faq-item');
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                const index = parseInt(item.dataset.index);
+                const faqItem = faqData[index];
+                const searchText = `${faqItem.question_en} ${faqItem.question_fr} ${faqItem.answer_en} ${faqItem.answer_fr}`.toLowerCase();
+                
+                if (searchText.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('expanded');
+                }
+            });
+            
+            // Show no results message if needed
+            const container = document.getElementById('faqListContainer');
+            let noResults = container.querySelector('.no-results');
+            
+            if (visibleCount === 0 && searchTerm) {
+                if (!noResults) {
+                    noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    container.appendChild(noResults);
+                }
+                noResults.textContent = '❌ Aucune FAQ trouvée | No FAQs found matching your search';
+                noResults.style.display = 'block';
+            } else if (noResults) {
+                noResults.style.display = 'none';
             }
         }
 
@@ -584,6 +968,11 @@
         window.sendMessage = sendMessage;
         window.askExample = askExample;
         window.askSuggestion = askSuggestion;
+        window.toggleFAQModal = toggleFAQModal;
+        window.closeFAQModal = closeFAQModal;
+        window.toggleFAQItem = toggleFAQItem;
+        window.handleFAQKeydown = handleFAQKeydown;
+        window.filterFAQs = filterFAQs;
 
         document.getElementById('userInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
