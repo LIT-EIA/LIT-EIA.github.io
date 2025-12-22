@@ -8,7 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,14 +28,13 @@
             max-height: 800px;
         }
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             padding: 25px 30px;
             text-align: center;
             position: relative;
         }
-        .header h1 { font-size: 28px; margin-bottom: 5px; font-weight: 600; }
-        .header p { font-size: 14px; opacity: 0.9; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 600; }
         .faq-counter {
             display: flex;
             align-items: center;
@@ -44,43 +43,46 @@
             margin-top: 15px;
         }
         .faq-badge {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 600;
             color: white;
             display: none;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             backdrop-filter: blur(10px);
         }
         .faq-badge.loaded { display: flex; }
         .faq-badge .count {
             background: white;
-            color: #667eea;
-            padding: 2px 10px;
+            color: #000;
+            padding: 2px 9px;
             border-radius: 12px;
             font-size: 13px;
             font-weight: 700;
         }
         .view-all-btn {
             background: white;
-            color: #667eea;
+            color: #000;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            padding: 10px 12px;
+            border-radius: 50%;
+            font-size: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: none;
+            width: 44px;
+            height: 44px;
+            line-height: 1;
         }
-        .view-all-btn.loaded { display: block; }
+        .view-all-btn.loaded { display: flex; align-items: center; justify-content: center; }
         .view-all-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) scale(1.05);
+            background: #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         .faq-modal {
             position: fixed;
@@ -108,7 +110,7 @@
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
         }
         .faq-modal-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             padding: 20px 30px;
             display: flex;
@@ -116,8 +118,11 @@
             align-items: center;
         }
         .faq-modal-header h2 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .faq-modal-close {
             background: rgba(255, 255, 255, 0.2);
@@ -135,7 +140,7 @@
         }
         .faq-modal-close:hover {
             background: white;
-            color: #667eea;
+            color: #000;
             transform: rotate(90deg);
         }
         .faq-search {
@@ -152,8 +157,8 @@
             transition: all 0.3s ease;
         }
         .faq-search input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
         .faq-list-container {
             flex: 1;
@@ -169,8 +174,8 @@
             transition: all 0.3s ease;
         }
         .faq-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+            border-color: #000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
         .faq-question {
             padding: 15px 20px;
@@ -200,15 +205,15 @@
         .faq-question-text .lang-label {
             font-size: 11px;
             font-weight: 700;
-            color: #667eea;
+            color: #666;
             margin-right: 5px;
         }
         .faq-question:focus {
-            outline: 3px solid #667eea;
+            outline: 3px solid #000;
             outline-offset: -3px;
         }
         .faq-toggle {
-            color: #667eea;
+            color: #000;
             font-size: 20px;
             font-weight: bold;
             transition: transform 0.3s ease;
@@ -235,7 +240,7 @@
             font-size: 14px;
         }
         .faq-answer-content strong {
-            color: #667eea;
+            color: #000;
             display: block;
             margin-bottom: 5px;
         }
@@ -268,7 +273,7 @@
             word-wrap: break-word;
         }
         .message.user .message-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             border-bottom-right-radius: 4px;
         }
@@ -279,7 +284,7 @@
             border-bottom-left-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
-        .message.assistant .message-content strong { color: #667eea; }
+        .message.assistant .message-content strong { color: #000; }
         .message.assistant .message-content p { margin-bottom: 10px; }
         .message.assistant .message-content p:last-child { margin-bottom: 0; }
         .suggestions {
@@ -288,7 +293,7 @@
             border-top: 2px solid #e0e0e0;
         }
         .suggestions h4 {
-            color: #667eea;
+            color: #000;
             font-size: 14px;
             margin-bottom: 10px;
         }
@@ -303,7 +308,7 @@
             border: 1px solid #e0e0ff;
         }
         .suggestion-item:hover {
-            background: #667eea;
+            background: #000;
             color: white;
             transform: translateX(5px);
         }
@@ -326,24 +331,29 @@
             font-family: inherit;
         }
         #userInput:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
         #sendButton {
-            padding: 15px 35px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             border: none;
-            border-radius: 25px;
-            font-size: 15px;
-            font-weight: 600;
+            border-radius: 50%;
+            font-size: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            white-space: nowrap;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
         #sendButton:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px) scale(1.05);
+            background: #1a1a1a;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
         #sendButton:disabled { opacity: 0.6; cursor: not-allowed; }
         .typing-indicator {
@@ -354,7 +364,7 @@
         .typing-indicator span {
             width: 8px;
             height: 8px;
-            background: #667eea;
+            background: #000;
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
@@ -370,7 +380,7 @@
             color: #666;
         }
         .welcome-message h2 {
-            color: #667eea;
+            color: #000;
             margin-bottom: 15px;
             font-size: 24px;
         }
@@ -387,8 +397,8 @@
             margin-right: auto;
         }
         .example-questions h3 {
-            font-size: 16px;
-            color: #667eea;
+            font-size: 15px;
+            color: #000;
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -404,15 +414,15 @@
             font-size: 14px;
         }
         .example-questions li:hover {
-            background: #f0f0ff;
-            border-color: #667eea;
+            background: #f5f5f5;
+            border-color: #000;
             transform: translateX(5px);
         }
         .loading-status {
             text-align: center;
             padding: 10px;
-            background: #e3f2fd;
-            color: #1976d2;
+            background: #f5f5f5;
+            color: #333;
             font-size: 14px;
             border-radius: 8px;
             margin: 10px 0;
@@ -420,7 +430,7 @@
         .language-indicator {
             display: inline-block;
             padding: 2px 8px;
-            background: #667eea;
+            background: #000;
             color: white;
             border-radius: 4px;
             font-size: 11px;
@@ -446,27 +456,26 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Assistant Saba | Saba Assistant</h1>
-            <p>Posez vos questions sur Saba | Ask your questions about Saba</p>
+            <h1>Assistant Saba</h1>
             <div class="faq-counter">
-                <div class="faq-badge" id="faqBadge">
-                    📚 FAQ: <span class="count" id="faqCount">0</span>
+                <div class="faq-badge" id="faqBadge" title="Nombre de FAQ disponibles | Number of FAQs available">
+                    FAQ: <span class="count" id="faqCount">0</span>
                 </div>
-                <button class="view-all-btn" id="viewAllBtn" onclick="toggleFAQModal()">
-                    📋 Voir tout | View All
+                <button class="view-all-btn" id="viewAllBtn" onclick="toggleFAQModal()" title="Voir toutes les FAQ | View all FAQs">
+                    ≡
                 </button>
             </div>
         </div>
         
         <div class="chat-container" id="chatContainer">
             <div class="welcome-message">
-                <h2>🤖 Bienvenue | Welcome</h2>
-                <p><strong>FR:</strong> Je suis votre assistant virtuel Saba. Je peux répondre à vos questions sur Saba en français ou en anglais!</p>
-                <p><strong>EN:</strong> I'm your Saba virtual assistant. I can answer your questions about Saba in French or English!</p>
-                <div class="loading-status" id="loadingStatus">⏳ Chargement des données FAQ... | Loading FAQ data...</div>
+                <h2>Bienvenue | Welcome</h2>
+                <p><strong>FR:</strong> Je peux répondre à vos questions sur Saba en français ou en anglais!</p>
+                <p><strong>EN:</strong> I can answer your questions about Saba in French or English!</p>
+                <div class="loading-status" id="loadingStatus">⟳ Chargement... | Loading...</div>
                 
                 <div class="example-questions" style="display: none;" id="exampleQuestions">
-                    <h3>💡 Questions d'exemple | Example questions:</h3>
+                    <h3>Exemples | Examples:</h3>
                     <ul>
                         <li onclick="askExample(this)">Comment puis-je réinitialiser mon mot de passe Saba?</li>
                         <li onclick="askExample(this)">What is my Saba username?</li>
@@ -479,15 +488,15 @@
         
         <div class="input-container">
             <div class="input-wrapper">
-                <input 
-                    type="text" 
-                    id="userInput" 
-                    placeholder="Tapez votre question ici... | Type your question here..."
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Posez votre question... | Ask your question..."
                     autocomplete="off"
                     disabled
                 >
             </div>
-            <button id="sendButton" onclick="sendMessage()" disabled>Envoyer | Send</button>
+            <button id="sendButton" onclick="sendMessage()" disabled title="Envoyer | Send">→</button>
         </div>
     </div>
 
@@ -495,14 +504,14 @@
     <div class="faq-modal" id="faqModal" onclick="closeFAQModal(event)">
         <div class="faq-modal-content" onclick="event.stopPropagation()">
             <div class="faq-modal-header">
-                <h2>📚 Toutes les FAQ | All FAQs (<span id="modalFaqCount">0</span>)</h2>
-                <button class="faq-modal-close" onclick="toggleFAQModal()">×</button>
+                <h2><span id="modalFaqCount">0</span> FAQ</h2>
+                <button class="faq-modal-close" onclick="toggleFAQModal()" title="Fermer | Close">×</button>
             </div>
             <div class="faq-search">
                 <input
                     type="text"
                     id="faqSearchInput"
-                    placeholder="🔍 Rechercher FAQ... | Search FAQs..."
+                    placeholder="Rechercher... | Search..."
                     onkeyup="filterFAQs()"
                 >
             </div>
@@ -596,11 +605,11 @@
                 updateFAQCounter();
                 populateFAQModal();
                 
-                document.getElementById('loadingStatus').textContent = '✓ Données chargées! Initialisation du modèle... | Data loaded! Initializing model...';
+                document.getElementById('loadingStatus').textContent = '⟳ Chargement... | Loading...';
                 await initializeModel();
             } catch (error) {
                 console.error('Error loading FAQ data:', error);
-                document.getElementById('loadingStatus').innerHTML = '❌ Erreur de chargement des données | Error loading data<br>Vérifiez votre connexion internet | Check your internet connection';
+                document.getElementById('loadingStatus').innerHTML = '✕ Erreur de chargement | Loading error<br>Vérifiez connexion | Check connection';
             }
         }
 
@@ -731,7 +740,7 @@
                     noResults.className = 'no-results';
                     container.appendChild(noResults);
                 }
-                noResults.textContent = '❌ Aucune FAQ trouvée | No FAQs found matching your search';
+                noResults.textContent = 'Aucun résultat | No results';
                 noResults.style.display = 'block';
             } else if (noResults) {
                 noResults.style.display = 'none';
@@ -741,11 +750,11 @@
         // Initialize the embedding model
         async function initializeModel() {
             try {
-                document.getElementById('loadingStatus').textContent = '⏳ Téléchargement du modèle IA... | Downloading AI model...';
+                document.getElementById('loadingStatus').textContent = '⟳ Initialisation... | Initializing...';
                 
                 extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
                 
-                document.getElementById('loadingStatus').textContent = '⏳ Création des embeddings... | Creating embeddings...';
+                document.getElementById('loadingStatus').textContent = '⟳ Traitement... | Processing...';
                 
                 await createEmbeddings();
                 
@@ -759,7 +768,7 @@
                 console.log('Model initialized successfully');
             } catch (error) {
                 console.error('Error initializing model:', error);
-                document.getElementById('loadingStatus').innerHTML = '❌ Erreur d\'initialisation du modèle | Model initialization error<br>Rechargez la page | Reload the page';
+                document.getElementById('loadingStatus').innerHTML = '✕ Erreur | Error<br>⟳ Rechargez | Reload';
             }
         }
 
@@ -773,8 +782,8 @@
                 embeddings.push(output.data);
                 
                 if (i % 10 === 0) {
-                    document.getElementById('loadingStatus').textContent = 
-                        `⏳ Traitement... | Processing... ${i}/${faqData.length}`;
+                    document.getElementById('loadingStatus').textContent =
+                        `⟳ ${i}/${faqData.length}`;
                 }
             }
         }
@@ -901,7 +910,7 @@
                     // Add suggestions for related questions
                     if (otherMatches.length > 0 && otherMatches[0].score > 0.25) {
                         responseHTML += `<div class="suggestions">`;
-                        responseHTML += `<h4>${language === 'fr' ? '📌 Questions connexes qui pourraient vous intéresser :' : '📌 Related questions that might interest you:'}</h4>`;
+                        responseHTML += `<h4>${language === 'fr' ? 'Questions connexes :' : 'Related questions:'}</h4>`;
                         
                         otherMatches.slice(0, 3).forEach((match, idx) => {
                             if (match.score > 0.25) {
@@ -918,13 +927,13 @@
                 } else {
                     // No good match, show top 3 suggestions
                     if (language === 'fr') {
-                        responseHTML += `<strong>Je n'ai pas trouvé de réponse exacte, mais voici des questions similaires qui pourraient vous aider :</strong>`;
+                        responseHTML += `<strong>Voici des questions similaires :</strong>`;
                     } else {
-                        responseHTML += `<strong>I couldn't find an exact match, but here are similar questions that might help:</strong>`;
+                        responseHTML += `<strong>Here are similar questions:</strong>`;
                     }
                     
                     responseHTML += `<div class="suggestions">`;
-                    responseHTML += `<h4>${language === 'fr' ? '💡 Suggestions :' : '💡 Suggestions:'}</h4>`;
+                    responseHTML += `<h4>${language === 'fr' ? 'Suggestions :' : 'Suggestions:'}</h4>`;
                     
                     matches.slice(0, 3).forEach((match, idx) => {
                         const item = faqData[match.index];
@@ -944,9 +953,9 @@
                 console.error('Error:', error);
                 const lang = detectLanguage(message).language;
                 if (lang === 'fr') {
-                    addMessage("Désolé, une erreur s'est produite. Veuillez réessayer.");
+                    addMessage("✕ Erreur. Veuillez réessayer.");
                 } else {
-                    addMessage("Sorry, an error occurred. Please try again.");
+                    addMessage("✕ Error. Please try again.");
                 }
             }
             
