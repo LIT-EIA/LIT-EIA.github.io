@@ -8,7 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #000a1f 0%, #004080 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,61 +28,52 @@
             max-height: 800px;
         }
         .header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #000a1f 0%, #003d75 100%);
             color: white;
             padding: 25px 30px;
-            text-align: center;
+            text-align: left;
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 600; }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00d9ff;
+        }
         .faq-counter {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
-            margin-top: 15px;
         }
         .faq-badge {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
+            background: rgba(0, 217, 255, 0.1);
+            border: 2px solid #00d9ff;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #00d9ff;
             display: none;
             align-items: center;
-            gap: 6px;
-            backdrop-filter: blur(10px);
-        }
-        .faq-badge.loaded { display: flex; }
-        .faq-badge .count {
-            background: white;
-            color: #000;
-            padding: 2px 9px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-        .view-all-btn {
-            background: white;
-            color: #000;
-            border: none;
-            padding: 10px 12px;
-            border-radius: 50%;
-            font-size: 20px;
+            gap: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: none;
-            width: 44px;
-            height: 44px;
-            line-height: 1;
         }
-        .view-all-btn.loaded { display: flex; align-items: center; justify-content: center; }
-        .view-all-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            background: #f0f0f0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        .faq-badge.loaded { display: flex; }
+        .faq-badge:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+        }
+        .faq-badge .count {
+            background: #00d9ff;
+            color: #001433;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 700;
         }
         .faq-modal {
             position: fixed;
@@ -103,14 +94,15 @@
             border-radius: 20px;
             width: 100%;
             max-width: 900px;
-            max-height: 85vh;
+            height: 90vh;
+            max-height: 800px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
         .faq-modal-header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #000a1f 0%, #003d75 100%);
             color: white;
             padding: 20px 30px;
             display: flex;
@@ -118,16 +110,17 @@
             align-items: center;
         }
         .faq-modal-header h2 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #00d9ff;
         }
         .faq-modal-close {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            color: white;
+            background: rgba(0, 217, 255, 0.2);
+            border: 2px solid #00d9ff;
+            color: #00d9ff;
             font-size: 24px;
             width: 40px;
             height: 40px;
@@ -139,8 +132,8 @@
             transition: all 0.3s ease;
         }
         .faq-modal-close:hover {
-            background: white;
-            color: #000;
+            background: #00d9ff;
+            color: #001433;
             transform: rotate(90deg);
         }
         .faq-search {
@@ -157,8 +150,8 @@
             transition: all 0.3s ease;
         }
         .faq-search input:focus {
-            border-color: #000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+            border-color: #00d9ff;
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
         }
         .faq-list-container {
             flex: 1;
@@ -174,8 +167,8 @@
             transition: all 0.3s ease;
         }
         .faq-item:hover {
-            border-color: #000;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            border-color: #00d9ff;
+            box-shadow: 0 3px 10px rgba(0, 217, 255, 0.2);
         }
         .faq-question {
             padding: 15px 20px;
@@ -205,15 +198,15 @@
         .faq-question-text .lang-label {
             font-size: 11px;
             font-weight: 700;
-            color: #666;
+            color: #555;
             margin-right: 5px;
         }
         .faq-question:focus {
-            outline: 3px solid #000;
+            outline: 3px solid #00d9ff;
             outline-offset: -3px;
         }
         .faq-toggle {
-            color: #000;
+            color: #00d9ff;
             font-size: 20px;
             font-weight: bold;
             transition: transform 0.3s ease;
@@ -240,9 +233,10 @@
             font-size: 14px;
         }
         .faq-answer-content strong {
-            color: #000;
+            color: #0088cc;
             display: block;
             margin-bottom: 5px;
+            font-weight: 700;
         }
         .no-results {
             text-align: center;
@@ -273,7 +267,7 @@
             word-wrap: break-word;
         }
         .message.user .message-content {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #000a1f 0%, #003d75 100%);
             color: white;
             border-bottom-right-radius: 4px;
         }
@@ -284,7 +278,10 @@
             border-bottom-left-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
-        .message.assistant .message-content strong { color: #000; }
+        .message.assistant .message-content strong {
+            color: #0088cc;
+            font-weight: 700;
+        }
         .message.assistant .message-content p { margin-bottom: 10px; }
         .message.assistant .message-content p:last-child { margin-bottom: 0; }
         .suggestions {
@@ -293,23 +290,25 @@
             border-top: 2px solid #e0e0e0;
         }
         .suggestions h4 {
-            color: #000;
+            color: #0088cc;
             font-size: 14px;
+            font-weight: 700;
             margin-bottom: 10px;
         }
         .suggestion-item {
-            background: #f0f0ff;
+            background: rgba(0, 217, 255, 0.05);
             padding: 8px 12px;
             margin-bottom: 6px;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 13px;
-            border: 1px solid #e0e0ff;
+            border: 1px solid rgba(0, 217, 255, 0.2);
         }
         .suggestion-item:hover {
-            background: #000;
-            color: white;
+            background: #00d9ff;
+            color: #001433;
+            border-color: #00d9ff;
             transform: translateX(5px);
         }
         .input-container {
@@ -331,13 +330,13 @@
             font-family: inherit;
         }
         #userInput:focus {
-            border-color: #000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+            border-color: #00d9ff;
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
         }
         #sendButton {
             padding: 15px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: white;
+            background: #00d9ff;
+            color: #001433;
             border: none;
             border-radius: 50%;
             font-size: 20px;
@@ -352,8 +351,8 @@
         }
         #sendButton:hover:not(:disabled) {
             transform: translateY(-2px) scale(1.05);
-            background: #1a1a1a;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            background: #00f0ff;
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.5);
         }
         #sendButton:disabled { opacity: 0.6; cursor: not-allowed; }
         .typing-indicator {
@@ -364,7 +363,7 @@
         .typing-indicator span {
             width: 8px;
             height: 8px;
-            background: #000;
+            background: #0088cc;
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
@@ -375,14 +374,15 @@
             30% { transform: translateY(-10px); opacity: 1; }
         }
         .welcome-message {
-            text-align: center;
+            text-align: left;
             padding: 40px 20px;
             color: #666;
         }
         .welcome-message h2 {
-            color: #000;
+            color: #0088cc;
             margin-bottom: 15px;
             font-size: 24px;
+            font-weight: 700;
         }
         .welcome-message p {
             font-size: 15px;
@@ -393,14 +393,12 @@
             margin-top: 25px;
             text-align: left;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .example-questions h3 {
             font-size: 15px;
-            color: #000;
+            color: #0088cc;
             margin-bottom: 12px;
-            font-weight: 600;
+            font-weight: 700;
         }
         .example-questions ul { list-style: none; padding: 0; }
         .example-questions li {
@@ -414,15 +412,15 @@
             font-size: 14px;
         }
         .example-questions li:hover {
-            background: #f5f5f5;
-            border-color: #000;
+            background: rgba(0, 217, 255, 0.05);
+            border-color: #00d9ff;
             transform: translateX(5px);
         }
         .loading-status {
             text-align: center;
             padding: 10px;
             background: #f5f5f5;
-            color: #333;
+            color: #222;
             font-size: 14px;
             border-radius: 8px;
             margin: 10px 0;
@@ -430,11 +428,11 @@
         .language-indicator {
             display: inline-block;
             padding: 2px 8px;
-            background: #000;
-            color: white;
+            background: #00d9ff;
+            color: #001433;
             border-radius: 4px;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
         }
         @media (max-width: 768px) {
@@ -443,12 +441,17 @@
             .message-content { max-width: 85%; }
             .input-container { padding: 15px 20px; }
             #sendButton { padding: 15px 25px; }
-            .faq-counter {
-                position: static;
-                margin-top: 15px;
-                justify-content: center;
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
             }
-            .faq-modal-content { max-height: 95vh; }
+            .faq-counter {
+                margin-top: 10px;
+            }
+            .faq-modal-content {
+                height: 95vh;
+                border-radius: 0;
+            }
             .faq-list-container { padding: 15px 20px; }
         }
     </style>
@@ -458,12 +461,9 @@
         <div class="header">
             <h1>Assistant Saba</h1>
             <div class="faq-counter">
-                <div class="faq-badge" id="faqBadge" title="Nombre de FAQ disponibles | Number of FAQs available">
-                    FAQ: <span class="count" id="faqCount">0</span>
+                <div class="faq-badge" id="faqBadge" onclick="toggleFAQModal()" title="Voir toutes les FAQ | View all FAQs">
+                    📚 FAQ <span class="count" id="faqCount">0</span>
                 </div>
-                <button class="view-all-btn" id="viewAllBtn" onclick="toggleFAQModal()" title="Voir toutes les FAQ | View all FAQs">
-                    ≡
-                </button>
             </div>
         </div>
         
@@ -496,7 +496,11 @@
                     disabled
                 >
             </div>
-            <button id="sendButton" onclick="sendMessage()" disabled title="Envoyer | Send">→</button>
+            <button id="sendButton" onclick="sendMessage()" disabled title="Envoyer | Send">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </div>
 
@@ -504,7 +508,7 @@
     <div class="faq-modal" id="faqModal" onclick="closeFAQModal(event)">
         <div class="faq-modal-content" onclick="event.stopPropagation()">
             <div class="faq-modal-header">
-                <h2><span id="modalFaqCount">0</span> FAQ</h2>
+                <h2>FAQ <span id="modalFaqCount">0</span></h2>
                 <button class="faq-modal-close" onclick="toggleFAQModal()" title="Fermer | Close">×</button>
             </div>
             <div class="faq-search">
@@ -617,13 +621,11 @@
         function updateFAQCounter() {
             const badge = document.getElementById('faqBadge');
             const countEl = document.getElementById('faqCount');
-            const viewBtn = document.getElementById('viewAllBtn');
             const modalCount = document.getElementById('modalFaqCount');
             
             countEl.textContent = faqData.length;
             modalCount.textContent = faqData.length;
             badge.classList.add('loaded');
-            viewBtn.classList.add('loaded');
         }
 
         // Populate FAQ modal with all FAQs
