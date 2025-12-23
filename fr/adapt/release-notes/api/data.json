@@ -3,6 +3,25 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[Nouveau] Le composant glisser-déposer est maintenant disponible. Ce composant permet aux apprenants de faire glisser plusieurs éléments dans une ou plusieurs colonnes d'éléments ou zones de dépôt. Il est idéal pour les activités de catégorisation, d'appariement ou de tri.",
+                "[Amélioré] Capacités de reportage SCORM de l'extension spoor pour le SGA Saba"
+            ],
+            "a11y": [
+                "[Corrigé] Reconstruction complète du composant Réponse ouverte pour améliorer l'accessibilité et la facilité d'utilisation.",
+                "[Amélioré] Numérotation des tâches dans le composant Simulation"
+            ],
+            "security": [
+                "[Nouveau] Adapt est désormais disponible uniquement via l'infrastructure réseau de EDSC",
+                "[Nouveau] Utilisation obligatoire de SAVE-D pour accéder à l'application pour les contracteurs et les utilisateurs externes"
+            ]
+        },
+        "pub_date": "2026-02-02T12:00:00Z",
+        "version": "1.5.4"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[Nouveau] Politique en matière de mots de passe",
                 "[Nouveau] Authentification multifactorielle par courriel"

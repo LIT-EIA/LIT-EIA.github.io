@@ -2,16 +2,34 @@
     {
         "name": "",
         "notes": {
+            "components": [
+                "[New] Drag & Drop Multiple component available. This component allows learners to drag multiple items into one or more item columns or drop zones. It’s ideal for categorization, matching, or sorting activities.",
+                "[Improved] SCORM Reporting capabilities of the spoor extension for Saba LMS"
+            ],
+            "a11y": [
+                "[Fixed] Complete rebuild of the Open Text Input component for accessibility and useability",
+                "[Improved] Task numbering in Simulation component"
+            ],
+            "security": [
+                "[New] Adapt is now available through the ESDC network infrastructure only",
+                "[New] Madatory use of SAVE-D to access the application for contractors and external users"
+            ]
+        },
+        "pub_date": "2026-02-02T12:00:00Z",
+        "version": "1.5.4"
+    },
+    {
+        "name": "",
+        "notes": {
             "authoring": [
                 "[New] Password Policy",
                 "[New] Multi-Factor Authentication via email"
             ],
-
             "tools": [
                 "[New] Ability to export emails from user management menu",
                 "[New] Nightwatch8 (end-to-end) & unit testing integration"
             ],
-            "security" : [
+            "security": [
                 "[New] Password automatically generated for new users"
             ]
         },
@@ -51,7 +69,7 @@
             ],
             "authoring": [
                 "[Removed] Preload on videos in Asset Library"
-            ], 
+            ],
             "tools": [
                 "[New] Overnight cleanup of unused assets"
             ]
