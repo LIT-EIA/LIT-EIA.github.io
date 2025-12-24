@@ -600,7 +600,7 @@ function add_closeMessage(tdElemt){
 		var surveyMessage = document.createElement("p");
 		var surveyLink = document.createElement('a');
 				
-		surveyLink.href = 'https://forms.office.com/Pages/ResponsePage.aspx?id=RljVnoGKRkKs2LGgGr_A0Rpgr_uBAAVNpXqsYz-z7BlUOVg5NDdIVUhDN1g1OEpGNEZVT1RYVlhOQi4u';
+		surveyLink.href = 'https://forms.office.com/Pages/ResponsePage.aspx?id=RljVnoGKRkKs2LGgGr_A0cPxtgg3kb9EnwLqsAYp2pZUNUE5SFRUOEZXNjFHQzBTN0JWQldSOENCSS4u';
 		surveyLink.target = 'blank';
 				
 		if (isEnglish){
