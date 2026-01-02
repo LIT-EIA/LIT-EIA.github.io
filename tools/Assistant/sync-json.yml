@@ -17,7 +17,7 @@ jobs:
 
       - name: Download JSON from SharePoint
         run: |
-          curl -L "https://014gc.sharepoint.com/sites/ILMS-SIGA/Other/Saba%20Reporting%20Working%20Group/02.%20Client%20Data%20Requests/02.%20Client%20Files/SABA%20Report/VATAllQuestion.json" -o data.json
+          curl -L "https://014gc.sharepoint.com/:u:/s/ILMS-SIGA/IQAtrTqNxTTmQLLat60b-G-EAW5n_y-w804dsz-O4AQSi88?e=1pM5yO" -o data.json
 
       - name: Move file into repo folder
         run: |
