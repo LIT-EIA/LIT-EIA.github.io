@@ -1,4 +1,4 @@
-name: Sync JSON from OneDrive
+name: Sync JSON from SharePoint
 
 on:
   schedule:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo 
         uses: actions/checkout@v4
         with: 
-          ref: main 
+          ref: Master 
           fetch-depth: 0
 
       - name: Download JSON from SharePoint
