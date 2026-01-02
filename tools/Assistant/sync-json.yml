@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Download JSON from OneDrive
+      - name: Download JSON from SharePoint
         run: |
           curl -L "https://014gc.sharepoint.com/sites/ILMS-SIGA/Other/Saba%20Reporting%20Working%20Group/02.%20Client%20Data%20Requests/02.%20Client%20Files/SABA%20Report/VATAllQuestion.json" -o data.json
 
@@ -33,5 +33,5 @@ jobs:
             echo "No changes"
             exit 0
           fi
-          git commit -m "Sync JSON from OneDrive"
+          git commit -m "Sync JSON from SharePoint"
           git push
