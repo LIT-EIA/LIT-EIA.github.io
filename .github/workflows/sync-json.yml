@@ -21,6 +21,13 @@ jobs:
       - name: Download JSON from SharePoint
         run: |
           curl -L "https://014gc.sharepoint.com/:u:/s/ILMS-SIGA/IQAtrTqNxTTmQLLat60b-G-EAW5n_y-w804dsz-O4AQSi88?e=1pM5yO" -o data.json
+      
+      - name: Debug downloaded file
+        run: |
+          echo "File size:"
+          ls -l data.json
+          echo "File content:"
+          head -n 20 data.json
 
       - name: Move file into repo folder
         run: |
