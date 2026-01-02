@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo 
         uses: actions/checkout@v4
         with: 
-          ref: Master 
+          ref: master 
           fetch-depth: 0
 
       - name: Download JSON from SharePoint
