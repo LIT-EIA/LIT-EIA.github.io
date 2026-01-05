@@ -103,6 +103,8 @@ Admin
 Admin
 Admin
 Learner
+Learner
+Content Viewer
 `
 
 
