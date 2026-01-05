@@ -102,7 +102,9 @@ Comment puis-je internationaliser un cours? (Pour administrateurs – aide-mémo
 Comment puis-je internationaliser une classe? (Pour administrateurs – aide-mémoire)
 Comment puis-je ajouter des prérequis à un cours? (Pour administrateurs – aide-mémoire)
 Comment puis-je ajouter les modalités pédagogiques? (Pour administrateurs – aide-mémoire)
-Comment puis-je ajouter une formation achevée? (Pour apprenants)`;
+Comment puis-je ajouter une formation achevée? (Pour apprenants)
+Comment puis-je ajouter une formation achevée? (Pour apprenants – aide-mémoire)
+Comment puis-je consulter le contenu d'un cours sans m'inscrire à une classe? (Pour le rôle de visionneur de contenu - Aide-mémoires)`;
  
  
 
