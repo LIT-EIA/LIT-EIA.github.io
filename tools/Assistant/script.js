@@ -111,6 +111,8 @@ function addContent(language) {
 			button.className = "bubble question hidden instructor"
 		}else if (type[customIndex] === 'Content Admin'){
 			button.className = "bubble question hidden content"
+		}else if (type[customIndex] === 'Content Viewver'){
+			button.className = "bubble question hidden content"
 		}
 	
 	}
