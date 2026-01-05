@@ -103,7 +103,7 @@ How can I internationalize a class? (For administrators – job aid)
 How can I add prerequisites to a course? (For administrators – job aid)
 How can I add Delivery Types to a Course? (For administrators – job aid)
 How can I add a Completed Course? (For learners – job aid)
-`
+How can I view the content of a course without registering to a class? (For Content Viewer role - Job aid)`
  
  
 
