@@ -112,7 +112,7 @@ function addContent(language) {
 		}else if (type[customIndex] === 'Content Admin'){
 			button.className = "bubble question hidden content"
 		}else if (type[customIndex] === 'Content Viewer'){
-			button.className = "bubble question hidden content"
+			button.className = "bubble question hidden viewer"
 		}
 	
 	}
@@ -730,6 +730,9 @@ function askUserType(message){
 	contentButton.onclick = function(){
 		setUser(5);
 	}
+	contentViewer.onclick = function(){
+		setUser(6);
+	}
 	
 	message.append(employeeButton);
 	message.append(managerButton);
@@ -760,6 +763,9 @@ function setUser(userTypeInt){
 	if (userTypeInt == 5){
 		userType = "content";
 	}
+	if (userTypeInt == 6){
+		userType = "viewer";
+	}
 	filterQuestionsByUserType();
 }
 
@@ -772,7 +778,7 @@ function filterQuestionsByUserType(){
 		var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
 		var classes = htmlButton.classList;
 		
-		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin") || classes.contains("instructor") || classes.contains("content") ){
+		if (classes.contains("employee") || classes.contains("manager") || classes.contains("admin") || classes.contains("instructor") || classes.contains("content") || classes.contains("viewer")){
 			if (classes.contains(userType)){
 				//We display it for the user.
 				//Leave empty as we display all questions by default.
