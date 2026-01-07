@@ -111,7 +111,7 @@ function addContent(language) {
 			button.className = "bubble question hidden instructor"
 		}else if (type[customIndex] === 'Content Admin'){
 			button.className = "bubble question hidden content"
-		}else if (type[customIndex] === 'Content Viewver'){
+		}else if (type[customIndex] === 'Content Viewer'){
 			button.className = "bubble question hidden content"
 		}
 	
@@ -663,6 +663,7 @@ function askUserType(message){
 	var adminButton = document.createElement("button");
 	var instructorButton = document.createElement("button")
 	var contentButton = document.createElement("button")
+	var contentViewer = document.createElement("button");
 	employeeButton.classList.add("bubble");
 	employeeButton.classList.add("question");
 	employeeButton.classList.add("bold")
@@ -679,6 +680,10 @@ function askUserType(message){
 	contentButton.classList.add("bubble");
 	contentButton.classList.add("question");
 	contentButton.classList.add("bold");
+
+	contentViewer.classList.add("bubble");
+	contentViewer.classList.add("question");
+	contentViewer.classList.add("bold");
 	
 	
 
@@ -693,12 +698,14 @@ function askUserType(message){
 		adminButton.innerText = "Administrator";
 		instructorButton.innerText = "Instructor";
 		contentButton.innerText = "Content Administrator";
+		contentViewer.innerText = "Content Viewer";
 	}else{
 		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
 		instructorButton.innerText = "Formateur/Formatrice";
 		contentButton.innerText = "Administrateur/Administratrice de contenu";
+		contentViewer.innerText = "Visionnement du contenu";
 	}
 	
 	employeeButton.onclick = function(){
@@ -729,6 +736,7 @@ function askUserType(message){
 	message.append(adminButton);
 	message.append(instructorButton);
 	message.append(contentButton);
+	message.append(contentViewer);
 	assistantTypes(message);
 	
 }
