@@ -698,14 +698,14 @@ function askUserType(message){
 		adminButton.innerText = "Administrator";
 		instructorButton.innerText = "Instructor";
 		contentButton.innerText = "Content Administrator";
-		contentViewer.innerText = "Content Viewer";
+		contentViewer.innerText = "Content Viewer Role";
 	}else{
 		employeeButton.innerText = "Apprenant(e)" ;
 		managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
 		adminButton.innerText = "Administrateur/Administratrice";
 		instructorButton.innerText = "Formateur/Formatrice";
 		contentButton.innerText = "Administrateur/Administratrice de contenu";
-		contentViewer.innerText = "Visionnement du contenu";
+		contentViewer.innerText = "Rôle de visionnement de contenu";
 	}
 	
 	employeeButton.onclick = function(){
