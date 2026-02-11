@@ -11,7 +11,7 @@
  What does the Saba Sign In page’s "Remember Me" option do?
  I’m a new manager/team leader. How can I add my team members to my Saba account? (For managers)
  How do I get course content uploaded to Saba? (For administrators – job aid)
- How do I get the content administrator role in Saba? (For administrators)
+ How do I get the content uploader role in Saba? (For administrators)
  How do I get my Canada School of Public Service (CSPS) completion data transferred to my Essential Training Curriculum (ETC) or my mandatory training on Saba? (For learners)
  One of my employees has exhausted all their attempts at passing a test. How do I add an attempt? (For managers)
  I have exhausted all attempts at passing a test. How can I obtain another attempt? (For learners)
