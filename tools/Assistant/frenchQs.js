@@ -11,7 +11,7 @@
  "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
  Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)
  Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)
- Comment puis-je avoir un accès d’administrateur de contenu dans Saba?  (Pour administrateurs)
+ Comment puis-je avoir un accès de téléverseur de contenu dans Saba?  (Pour administrateurs)
  Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (EFPC) à mon Curriculum de formation essentielle (CFE) ou ma formation obligatoire sur Saba? (Pour apprenants)
  Un de mes employés a épuisé toutes ses tentatives pour réussir un test. Comment faire pour ajouter une tentative? (Pour responsables)
  J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative? (Pour apprenants)
