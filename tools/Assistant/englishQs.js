@@ -22,7 +22,7 @@
  What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course? (For learners)
  How do I access my team’s Essential Training Curriculum (ETC) completion data? (For managers)
  As a manager (or team leader)"XO" what should I do to ensure that my Saba reports are accurate? (For managers)
- How can I share the link to a class with another learner? (For learners)
+ How can I share a Saba link to a class or a course with another learner? (For learners)
  How can I share the link to a class with my team? (For managers)
  Where can I find the link for a course"XO" a class"XO" curriculum or certification?  How can I guide learners to my training? (For administrators)
  Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)
