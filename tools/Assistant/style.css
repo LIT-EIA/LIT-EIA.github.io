@@ -366,6 +366,15 @@ ul, ol{
 	margin-left:10px;
 }
 
+ol {
+    padding-left: 2.5ch;
+}
+ 
+ol li {
+    padding-left: 0.5ch;
+    text-indent: -0.5ch;
+}
+
 
 
 
