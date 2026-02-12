@@ -8,7 +8,7 @@
  Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)
  Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)
  J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)
- "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
+ Combien de temps ma session Saba restera-t-elle active avant de se déconnecter automatiquement en raison de l'inactivité ?
  Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)
  Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)
  Comment puis-je avoir un accès de téléverseur de contenu dans Saba?  (Pour administrateurs)
