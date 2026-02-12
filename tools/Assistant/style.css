@@ -366,13 +366,13 @@ ul, ol{
 	margin-left:10px;
 }
 
-ol {
-    padding-left: 2.5ch;
+ul {
+    list-style: disc outside none; 
+    margin-left: 0; 
+    padding-left: 1em;
 }
- 
-ol li {
-    padding-left: 0.5ch;
-    text-indent: -0.5ch;
+li {
+    padding-left: 1em;
 }
 
 
