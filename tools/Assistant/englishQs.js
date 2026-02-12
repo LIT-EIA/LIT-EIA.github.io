@@ -8,7 +8,7 @@
  What should I do if I encounter technical difficulties with Saba? (For learners)
  I cannot find my manager or team leader in Saba. (For learners)
  I need manager access (for managers/team leaders) in Saba. (For managers)
- What does the Saba Sign In page’s "Remember Me" option do?
+ How long will my Saba session remain active before it automatically disconnects due to inactivity?
  I’m a new manager/team leader. How can I add my team members to my Saba account? (For managers)
  How do I get course content uploaded to Saba? (For administrators – job aid)
  How do I get the content uploader role in Saba? (For administrators)
