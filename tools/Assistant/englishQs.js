@@ -38,7 +38,6 @@
  What training do I need to complete? (For learners)
  Can I log into Saba off the government network/ from my home computer? (For learners)
  Why is there an evaluation pending for a course that I have completed? (For learners)
- How long will my Saba session remain active before it automatically disconnects due to inactivity?
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
  How do I become a course administrator or instructor?
