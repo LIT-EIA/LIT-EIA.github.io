@@ -81,6 +81,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#allQuestions {
+	background-color: #CDEBF4;
+}
+
+#initialQuestions {
+	background-color: #FCE4EC;
+}
+
+
 
 button{
 	font-size: 15px;
@@ -110,7 +119,7 @@ button{
 }
 
 .user{
-	background-color: #2E2E2E;
+	background-color: #1B6074;
 	color: white;
 	align:right;
 	
@@ -129,8 +138,8 @@ button{
 	position:absolute;
 	top:15px;
 	bottom:15px;
-	left:20px;
-	right:20px;
+	left:15px;
+	right:15px;
 	font-family: Arial;
 }
 
@@ -157,17 +166,35 @@ button{
 }
 .messageForm{
 	
-	background-color: GrayText;
+	background-color: #1f7c9b;
 	border-radius: 5px;
 	padding:10px;
+
+
+	display: flex;
+	align-items: center;
 	
 }
 #textbox{
-	margin-left: 15px;
+	margin-left: 5px;
 	height:30px;
-	width:calc(100% - 120px);
+	/* width:calc(100% - 120px);*/
 	border-radius: 5px;
 	border-color: transparent;
+	padding-left:15px;
+	margin-right:10px;
+	flex: 1 1 auto; /* takes only needed space */
+}
+
+#send{
+	height:36px;
+	border-radius: 6px;
+	border-color: lightcyan;
+	background-color: white;
+	color: black;
+
+  flex: 0 0 80px; /* fixed width */
+	width:80px;
 }
 
 
@@ -198,17 +225,9 @@ button{
 	
 }
 
-
-#send{
-	height:35px;
-	border-radius: 10px;
-	border-color: transparent;
-	background-color: white;
-	color: black;
-}
 .headerDiv{
 	height:25px;
-	background-color: #006699;
+	background-color: #1f7c9b;
 }
 .header{
 	float: left;
@@ -269,7 +288,7 @@ button{
 	right:50%;
 	border-radius:10px;
 	background: white;
-	margin-right:10px;
+	margin-right:15px;
 	 
 }
 #outerRightDiv{
@@ -356,23 +375,13 @@ button{
 	float:right;
 }
 
-
-
-ul, ol, li {
-  list-style-position: inside;  
-}
-ul, ol{
-	
-	margin-left:10px;
+ol, li {
+	list-style-position: outside;
+	margin-left: 20px;
 }
 
-ul {
-    list-style: disc outside none; 
-    margin-left: 0; 
-    padding-left: 1em;
-}
 li {
-    padding-left: 1em;
+	margin-bottom:5px;
 }
 
 
