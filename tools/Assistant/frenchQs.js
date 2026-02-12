@@ -15,7 +15,7 @@
  Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (EFPC) à mon Curriculum de formation essentielle (CFE) ou ma formation obligatoire sur Saba? (Pour apprenants)
  Un de mes employés a épuisé toutes ses tentatives pour réussir un test. Comment faire pour ajouter une tentative? (Pour responsables)
  J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative? (Pour apprenants)
- Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba? (Pour apprenants)
+ Comment puis-je m’assurer que ma formation sur la réconciliation est consignée correctement dans Saba? (Pour apprenants)
  Quel est mon nom d’utilisateur pour Saba?
  Existe-t-il plusieurs façons de trouver des cours auxquels je peux m’inscrire dans Saba?
  Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé?  Quelque chose m’empêche de poursuivre mon cours ou de lancer le test.
