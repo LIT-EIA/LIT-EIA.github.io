@@ -38,7 +38,6 @@
  Quelle formation dois-je compléter? (Pour apprenants)
  Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
- Combien de temps ma session Saba restera-t-elle active avant de se déconnecter automatiquement en raison de l'inactivité ?
  Comment puis-je approuver l'apprentissage de mon équipe? (Pour apprenants)
  Est-ce que Saba a une page iService?
  Comment puis-je devenir administrateur de cours ou formateur?
