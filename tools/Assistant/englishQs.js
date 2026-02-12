@@ -15,7 +15,7 @@
  How do I get my Canada School of Public Service (CSPS) completion data transferred to my Essential Training Curriculum (ETC) or my mandatory training on Saba? (For learners)
  One of my employees has exhausted all their attempts at passing a test. How do I add an attempt? (For managers)
  I have exhausted all attempts at passing a test. How can I obtain another attempt? (For learners)
- How do I make sure my Indigenous Awareness and Reconciliation learning is accurately captured in my Saba learning history? (For learners)
+ How do I make sure my Reconciliation learning is accurately captured in my Saba learning history? (For learners)
  What is my Saba username?
  Are there several ways to find courses I can register to in Saba?
  What should I do if my course is not marking complete?  Something is preventing me from continuing my course or launching the test. (For learners)
