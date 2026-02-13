@@ -27,7 +27,6 @@
  Where can I find the link for a course"XO" a class"XO" curriculum or certification?  How can I guide learners to my training? (For administrators)
  Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)
  I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)
- I have returned from an absence; how do I get my Saba account reactivated? (For learners)
  What should I do if I return to the department but can't access my Saba account? (For learners)
  I want to bookmark the link to Saba. Which link should I use? (For learners)
  How do I switch the language of my class? (For learners)
