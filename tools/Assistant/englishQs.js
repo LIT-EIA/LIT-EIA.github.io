@@ -28,7 +28,7 @@
  Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)
  I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)
  I have returned from an absence; how do I get my Saba account reactivated? (For learners)
- What happens to a Saba account when an employee leaves the Department"XO" or retires"XO" but then returns to the department?  I cannot access my Saba account. (For learners)
+ What happens to a Saba account when an employee leaves the Department"XO" or retires but then returns to the department?  I cannot access my Saba account. (For learners)
  I want to bookmark the link to Saba. Which link should I use? (For learners)
  How do I switch the language of my class? (For learners)
  What should I do if my manager (or team leader) does not see my approval request? (For learners)
