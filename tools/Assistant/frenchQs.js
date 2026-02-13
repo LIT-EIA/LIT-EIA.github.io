@@ -28,7 +28,7 @@
  Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)
  "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
  Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)
- "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère"XO" prend sa retraite ou revient au ministère?  Je ne peux pas accéder à mon compte Saba. (Pour apprenants)"
+ "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère"XO" ou prend sa retraite mais revient au ministère?  Je ne peux pas accéder à mon compte Saba. (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
  Comment puis-je changer la langue de ma classe? (Pour apprenants)
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
