@@ -27,7 +27,6 @@
  "Où puis-je trouver le lien pour un cours"XO" une classe"XO" un curriculum ou une certification?  Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
  Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)
  "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
- Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)
  "Que devrais-je faire si je reviens au ministère mais que je ne peux pas accéder à mon compte Saba ? (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
  Comment puis-je changer la langue de ma classe? (Pour apprenants)
