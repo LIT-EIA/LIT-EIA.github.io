@@ -157,6 +157,9 @@ h1,h2{
 	margin-top: 10px;
 }
 
-
+/* Styles for indentation and lists */
+        .indent {
+            margin-left: 50px; /* Indentation for 'a.' */
+        }
 
 
