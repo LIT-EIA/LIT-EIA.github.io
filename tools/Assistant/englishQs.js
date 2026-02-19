@@ -1,5 +1,4 @@
  const csvData = `Title 
- When I try to reset my Saba password "XO" it doesn’t work. (For learners)
  I already completed an Essential Training Curriculum (ETC) course at a previous department. Do I need to take the course again at ESDC? (For learners)
  How can I ensure that the Essential Training Curriculum (ETC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile? (For learners)
  How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)
