@@ -6,8 +6,6 @@ Learner
 Learner
 Learner  
 Learner
-Learner 
-Learner
 Manager 
 Manager 
 Admin
