@@ -33,7 +33,7 @@
  Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
  Quelle formation dois-je compléter? (Pour apprenants)
- Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
+ Est-ce que je peux accéder à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
  Comment puis-je approuver l'apprentissage de mon équipe? (Pour apprenants)
  Est-ce que Saba a une page iService?
