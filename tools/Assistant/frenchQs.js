@@ -31,7 +31,6 @@
  Comment puis-je changer la langue de ma classe? (Pour apprenants)
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
  Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)
- Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
  Quelle formation dois-je compléter? (Pour apprenants)
  Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
