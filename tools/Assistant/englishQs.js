@@ -33,7 +33,7 @@
  What should I do if I do not see my employee’s approval request? (For managers)
  As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)
  What training do I need to complete? (For learners)
- Can I log into Saba off the government network/ from my home computer? (For learners)
+ Can I access Saba off the government network/ from my home computer? (For learners)
  Why is there an evaluation pending for a course that I have completed? (For learners)
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
