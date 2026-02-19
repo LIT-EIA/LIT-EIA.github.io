@@ -31,7 +31,6 @@
  How do I switch the language of my class? (For learners)
  What should I do if my manager (or team leader) does not see my approval request? (For learners)
  What should I do if I do not see my employee’s approval request? (For managers)
- How long can I be inactive in Saba before I am automatically logged out of Saba? (For learners)
  As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)
  What training do I need to complete? (For learners)
  Can I log into Saba off the government network/ from my home computer? (For learners)
