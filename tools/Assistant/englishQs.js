@@ -12,7 +12,7 @@
  How do I get course content uploaded to Saba? (For administrators – job aid)
  How do I get the content uploader role in Saba? (For administrators)
  How do I get my Canada School of Public Service (CSPS) completion data transferred to my Essential Training Curriculum (ETC) or my mandatory training on Saba? (For learners)
- One of my employees has exhausted all their attempts at passing a test. How do I add an attempt? (For managers)
+ One of my employees has used all their chances to pass a test. How can I add another attempt? (For managers)
  I have exhausted all attempts at passing a test. How can I obtain another attempt? (For learners)
  How do I make sure my Reconciliation learning is accurately captured in my Saba learning history? (For learners)
  What is my Saba username?
