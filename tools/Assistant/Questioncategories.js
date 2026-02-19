@@ -30,26 +30,20 @@ Learner
 Learner
 Learner
 Learner
-Learner
-Manager 
-Learner
-Learner
-Manager
-Learner
-Learner
-Learner
-Learner
-Manager 
-Admin
-Manager 
-Admin
-Manager 
-Manager 
 Manager 
 Manager
 Learner
 Learner
 Learner
+Manager 
+Learner
+Learner
+Learner 
+Manager
+Manager 
+Manager 
+Manager 
+Manager
 Learner
 Learner
 Learner
@@ -61,8 +55,10 @@ Learner
 Learner
 Learner
 Learner
-Admin
-Admin
+Learner
+Learner
+Learner
+Learner
 Admin
 Admin
 Admin
@@ -84,6 +80,7 @@ Admin
 Content Admin
 Content Admin
 Content Admin
+Admin
 Admin
 Admin
 Admin
