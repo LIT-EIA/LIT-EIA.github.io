@@ -28,7 +28,7 @@
  "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
  "Que devrais-je faire si je reviens au ministère mais que je ne peux pas accéder à mon compte Saba ? (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
- Comment puis-je changer la langue de ma classe? (Pour apprenants)
+ Comment puis-je changer la langue de la classe à laquelle je suis inscrit(e) ? (Pour apprenants)
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
  Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
