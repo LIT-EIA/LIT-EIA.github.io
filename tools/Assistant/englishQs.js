@@ -28,7 +28,7 @@
  I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)
  What should I do if I return to the department but can't access my Saba account? (For learners)
  I want to bookmark the link to Saba. Which link should I use? (For learners)
- How do I switch the language of my class? (For learners)
+ How can I change the language of the class I'm registered for? (For learners)
  What should I do if my manager (or team leader) does not see my approval request? (For learners)
  What should I do if I do not see my employee’s approval request? (For managers)
  As a manager (or team leader)"XO" how do I add or remove employees from My Team? (For managers)
