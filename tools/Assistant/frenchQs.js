@@ -74,7 +74,6 @@
  Comment puis-je fermer une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je chercher une classe et trouver une liste des inscrits? (Pour administrateurs – aide-mémoire)
- Je n’arrive pas à trouver certains aide-mémoires pour administrateurs. (Pour administrateurs – aide-mémoire)
  Comment puis-je téléverser vers Saba Développement? (Pour administrateurs de contenu– aide-mémoire)
  Comment puis-je téléverser vers Saba Production? (Pour administrateurs de contenu– aide-mémoire)
  Comment puis-je publier des cours créés dans Adapt? (Pour administrateurs de contenu– aide-mémoire)
