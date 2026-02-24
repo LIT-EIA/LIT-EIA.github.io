@@ -37,7 +37,7 @@
  Why is there an evaluation pending for a course that I have completed? (For learners)
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
- How do I become a course administrator or instructor?
+ What steps do I need to take to have the role of a Saba course administrator or instructor?
  Where can I find information on the ESDC Essential Training Curricula (ETC)?
  Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)
  How can I access my team’s essential training curriculum (ETC) completion data? (For managers – job aid)
