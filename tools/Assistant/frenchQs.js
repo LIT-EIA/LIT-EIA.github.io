@@ -54,7 +54,7 @@
  Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)
  Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je imprimer ou exporter un certificat d’achèvement? (Pour apprenants – aide-mémoire)
- Comment puis-je chercher dans le catalogue de formation de Saba? (Pour apprenants – aide-mémoire)
+ Comment puis-je chercher dans le catalogue de formation Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je mettre à jour mon responsable (gestionnaire ou chef d’équipe) dans Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je visionner les fichiers joints d’une classe? (Pour apprenants – aide-mémoire)
  Comment puis-je lancer de nouveau le contenu d’un cours que j’ai achevé dans le passé? (Pour apprenants – aide-mémoire)
