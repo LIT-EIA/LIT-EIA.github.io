@@ -53,7 +53,7 @@
  How can I drop a class? (For learners – job aid)
  How do I navigate within Saba? (For learners – job aid)
  How can I print or export a certificate of achievement? (For learners – job aid)
- How do I search Saba’s learning catalogue? (For learners – job aid)
+ How can I search in the Saba learning catalog? (For learners – job aid)
  How can I update my manager (or team leader) in Saba? (For learners – job aid)
  How do I view a class attachment? (For learners – job aid)
  How can I relaunch content from a course that I previously completed? (For learners – job aid)
