@@ -50,7 +50,6 @@
  Comment puis-je activer le mode d’accessibilité?
  Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des Curriculum de formation essentielle [CFE])? (Pour apprenants – aide-mémoire)
  Comment puis-je changer ma langue de préférence?  (Pour apprenants – aide-mémoire)
- Comment puis-je changer mon mot de passe? (Pour apprenants – aide-mémoire)
  Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)
  Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je imprimer ou exporter un certificat d’achèvement? (Pour apprenants – aide-mémoire)
