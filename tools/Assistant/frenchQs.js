@@ -71,7 +71,7 @@
  Comment puis-je annuler une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je modifier une inscription? (Pour administrateurs – aide-mémoire)
  Comment puis-je enregistrer le statut d’apprenants dans une classe? (Pour administrateurs – aide-mémoire)
- Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)
+ Comment puis-je fermer une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je chercher une classe et trouver une liste des inscrits? (Pour administrateurs – aide-mémoire)
  Je n’arrive pas à trouver certains aide-mémoires pour administrateurs. (Pour administrateurs – aide-mémoire)
