@@ -50,7 +50,6 @@
  How can I activate accessibility mode? (For learners – job aid)
  How can I add a course / external learning to my completed learning if I did not take it on Saba (Excluding courses from the Essential Training Curriculums [ETC])? (For learners – job aid)
  How can I change my language preference? (For learners – job aid)
- How can I change my password? (For learners – job aid)
  How can I drop a class? (For learners – job aid)
  How do I navigate within Saba? (For learners – job aid)
  How can I print or export a certificate of achievement? (For learners – job aid)
