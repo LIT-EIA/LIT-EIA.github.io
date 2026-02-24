@@ -57,7 +57,7 @@
  How can I update my manager (or team leader) in Saba? (For learners – job aid)
  How do I view a class attachment? (For learners – job aid)
  How can I relaunch content from a course that I previously completed? (For learners – job aid)
- Where can I find all the administrator job aids that are linked here? (For administrators – job aid)
+ Where can I find all the administrator job aids? (For administrators – job aid)
  How do I add a facilitator to a class? (For administrators – job aid)
  How do I add an evaluation to a class? (For administrators – job aid)
  How do I add attachments to a class? (For administrators – job aid)
