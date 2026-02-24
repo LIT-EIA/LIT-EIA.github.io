@@ -74,7 +74,6 @@
  How do I close a class? (For administrators – job aid)
  How do I reschedule a class? (For administrators – job aid)
  How do I search for a class and find its roster? (For administrators – job aid)
- How can I upload to Saba Development? (For Content Administrators – job aid)
  How can I upload to Saba Production? (For Content Administrators – job aid)
  How can I publish courses created on Adapt? (For Content Administrators – job aid)
  How can I create and Manage Scheduled Reports? (For administrators – job aid)
