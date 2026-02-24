@@ -57,7 +57,6 @@ Learner
 Learner
 Learner
 Learner
-Learner
 Admin
 Admin
 Admin
