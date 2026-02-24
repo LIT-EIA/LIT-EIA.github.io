@@ -57,7 +57,7 @@
  Comment puis-je mettre à jour mon responsable (gestionnaire ou chef d’équipe) dans Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je visionner les fichiers joints d’une classe? (Pour apprenants – aide-mémoire)
  Comment puis-je lancer de nouveau le contenu d’un cours que j’ai achevé dans le passé? (Pour apprenants – aide-mémoire)
- Où puis-je trouver tous les aide-mémoires pour administrateurs qui sont liés ici? (Pour administrateurs – aide-mémoire)
+ Où puis-je trouver tous les aide-mémoires pour administrateurs ? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter un formateur à une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter une évaluation à une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter des fichiers joints à une classe? (Pour administrateurs – aide-mémoire)
