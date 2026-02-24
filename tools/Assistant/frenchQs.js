@@ -37,7 +37,7 @@
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
  Comment puis-je approuver l'apprentissage de mon équipe? (Pour apprenants)
  Est-ce que Saba a une page iService?
- Comment puis-je devenir administrateur de cours ou formateur?
+ Quelles étapes dois-je suivre pour avoir le role d’administrateur de cours Saba ou de formateur?
  Où puis-je trouver des informations sur les Curriculums de formation essentielle d’EDSC (CFE)?
  Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)
  Comment puis-je accéder aux données d'achèvement du programme de formation essentielle (CFE) de mon équipe? (Pour responsables – aide-mémoire)
