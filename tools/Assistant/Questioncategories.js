@@ -80,7 +80,6 @@ Admin
 Admin
 Admin
 Admin
-Admin
 Learner
 Instructor
 Instructor
