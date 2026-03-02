@@ -94,6 +94,8 @@ const keywordsData = `KeywordsEN,KeywordsFR
 "prerequisites, prerequisite, add prerequisites, add prerequisite, prerequisite for course. course","prérequis, ajouter prérequis, prérequis pour un cours, cours"
 "add delivery types, add delivery type, delivery type, delivery type for course, virtual, blended, web-based, in-person. course","ajouter modalités pédagogiques, modalités pédagogiques, modalité, virtuelle, en personne, sur le web, mixe, cours"
 "add, add completed course, completed course, ajouter", "ajouter une formation achevée, ajouter formation achevée, ajouter une formation complétée, ajouter formation complétée"
+
+
 `;
 
 
