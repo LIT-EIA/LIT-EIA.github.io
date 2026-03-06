@@ -51,6 +51,13 @@ var answersFR = getAnswersFR();
 
 var categories = getCategory();
 
+function sanitizeForAnalytics(text) {
+    return text
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove accents
+        .replace(/"/g, "'")                               // replace double quotes
+        .replace(/[^\w\s()-]/g, "")                       // remove odd punctuation
+        .trim();
+}
 
 // add Question , Answers and Keywords in English
 function addContent(language) {
@@ -80,6 +87,10 @@ function addContent(language) {
         // Create a new button for each title
         const button = document.createElement('button');
         button.textContent = title.replace(); // Modify if needed
+        button.setAttribute(
+            "data-gc-analytics-customclick",
+            `ESDC-EDSC:SABAAI:${sanitizeForAnalytics(title)}`
+        );
 	
     // Classify the first ten questions based on type and add the default class
     // For the first 10 questions
