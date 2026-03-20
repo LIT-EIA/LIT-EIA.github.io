@@ -5,7 +5,7 @@
   <meta name="dcterms.language" content="eng"/>
   <meta name="dcterms.creator" content="Employment and Social Development Canada"/>
   <meta name="dcterms.accessRights" content="3"/>
-  <meta name= "gcaaterms.sitename" content="ESDC-EDSC_SABAVA-SABAAV"/>
+  <meta name= "gcaaterms.sitename" content="ESDC-EDSC_Intranet_SABAVA-SABAAV"/>
 	
 	<title>SABA Virtual Assistant Tool </title>
 
@@ -125,10 +125,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="built-in-questions">
 
 	<button id="allQuestions" class="bubble question  "  
-	style="margin-bottom:0px" onclick="listAllQuestions()">List all questions.</button>
+	style="margin-bottom:0px" onclick="listAllQuestions(); pushbeacon(event, 'List all questions')">List all questions.</button>
 		
 	<button id="initialQuestions" class="bubble question hidden " 
-	 onclick="listInitialQuestions()">List initial options.</button>
+	 onclick="listInitialQuestions(); pushbeacon(event, 'List initial options')">List initial options.</button>
 
 
 </div><!-- End of Built in Questions Buttons -->
