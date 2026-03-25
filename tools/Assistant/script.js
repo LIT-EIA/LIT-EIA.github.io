@@ -17,28 +17,17 @@ var answerJSON = [];
 var defaultforMessage = false;
 var rows = 0;
 
-function getMeta(metaName) {
-  return $('meta[name="' + metaName + '"]').attr("content");
-}
-
 function pushbeacon(event, customTitle = null) {
   const titleText = customTitle
     ? customTitle
     : $(event.target).text().trim();
 
-  let page = {
-    title: "Suggested questions - " + titleText,
-    language: getMeta("dcterms.language"),
-    creator: getMeta("dcterms.creator"),
-    loginStatus: getMeta("dcterms.accessRights"),
-    siteName: getMeta("gcaaterms.sitename")
-  };
+  $('meta[name="dcterms.title"]').attr("content", "Suggested questions - " + titleText);
 
-  console.log("Page data for analytics:", page);
+  console.log('pushbeacon: ', titleText);
 
   adobeDataLayer.push({
-    event: "pageLoad",
-    page: page
+    event: "pageLoad"
   });
 }
 
