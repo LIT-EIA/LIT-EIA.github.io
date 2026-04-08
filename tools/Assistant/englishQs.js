@@ -40,7 +40,7 @@
  What steps do I need to take to have the role of a Saba course administrator or instructor?
  Where can I find information on the Mandatory Training Curriculum (MTC) and/or the Foundational Training Curriculum (FTC)?
  Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)
- How can I access my team’s essential training curriculum (ETC) completion data? (For managers – job aid)
+ How can I access my team’s mandatory training curriculum (MTC) or foundational training curriculum (FTC) completion data? (For managers – job aid)
  Can I assign a proxy to complete actions on my behalf on Saba? (For managers – job aid)
  How can I act as a proxy for an executive? (For managers – job aid)
  How can I add a learning activity to a team member’s plan? (For managers – job aid)
