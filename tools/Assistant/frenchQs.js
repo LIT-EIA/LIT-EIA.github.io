@@ -3,7 +3,7 @@
  Comment puis-je m’assurer que mes résultats aux cours du curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) offerts par L’École de la fonction publique du Canada (ÉFPC) soient transférés dans mon profil Saba? (Pour apprenants)
  "Une fois que j’ai terminé un cours du Curriculum de formations obligatoires (CFO) ou Curriculum de formations fondamentales (CFF) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC)"XO" quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
  "J’ai suivi un cours de L’École de la fonction publique du Canada (ÉFPC) qui figure dans le curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) il y a plus d’une semaine. Pourtant"XO" mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
- Que dois-je faire si j’ai besoin d’une version alternative d’un cours du Curriculum de formation essentielle (CFE)? (Pour apprenants)
+ Que dois-je faire si j’ai besoin d’une version alternative d’un cours du Curriculum de formations obligatoires (CFO) ou du Curriculum de formations fondamentales (CFF)? (Pour apprenants)
  Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)
  Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)
  J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)
