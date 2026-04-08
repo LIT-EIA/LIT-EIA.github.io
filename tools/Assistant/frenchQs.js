@@ -48,7 +48,7 @@
  Comment puis-je accepter une place en attente? (Pour apprenants – aide-mémoire)
  Comment puis-je accéder à mon compte Saba pour la première fois? (Pour apprenants – aide-mémoire)
  Comment puis-je activer le mode d’accessibilité?
- Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des Curriculum de formation essentielle [CFE])? (Pour apprenants – aide-mémoire)
+ Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des curriculums de formations obligatoires ou fondamentales [CFO/CFF])? (Pour apprenants – aide-mémoire)
  Comment puis-je changer ma langue de préférence?  (Pour apprenants – aide-mémoire)
  Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)
  Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)
