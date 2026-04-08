@@ -1,5 +1,5 @@
  const frenchQues= `QuestionFR
- J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
+ J’ai déjà suivi un des cours du curriculum de formations obligatoires ou fondamentales lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
  Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)
  "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC)"XO" quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
  "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant"XO" mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
