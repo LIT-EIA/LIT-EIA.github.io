@@ -40,7 +40,7 @@
  Quelles étapes dois-je suivre pour avoir le role d’administrateur de cours Saba ou de formateur?
  Où puis-je trouver des informations sur le curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) ?
  Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)
- Comment puis-je accéder aux données d'achèvement du programme de formation essentielle (CFE) de mon équipe? (Pour responsables – aide-mémoire)
+ Comment puis-je accéder aux données d'achèvement du curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) de mon équipe? (Pour responsables – aide-mémoire)
  Puis-je assigner un mandataire pour effectuer des actions en mon nom sur Saba? (Pour responsables – aide-mémoire)
  Comment puis-je agir comme mandataire pour un cadre exécutif?  (Pour responsables – aide-mémoire)
  Comment puis-je ajouter une activité au plan d’un membre de mon équipe? (Pour responsables – aide-mémoire)
