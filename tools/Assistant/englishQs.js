@@ -1,7 +1,7 @@
  const csvData = `Title 
  I already completed a Mandatory or Foundational course at a previous department. Do I need to take the course again at ESDC? (For learners)
  How can I ensure that the Mandatory Training Curriculum (MTC) or Foundational Training Curriculum (FTC) courses I am directed to take through Canada School of Public Service (CSPS) are included in my Saba profile? (For learners)
- How quickly will my Saba profile be updated with my completion results once I complete an Essential Training Curriculum (ETC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)
+ How quickly will my Saba profile be updated with my completion results once I complete a Mandatory Training Curriculum (MTC) or a Foundational Training Curriculum (FTC) course on the Canada School of Public Service (CSPS) Learning Platform? (For learners)
  I completed an Essential Training Curriculum (ETC) course in the Canada School of Public Service (CSPS) Learning Platform more than a week ago"XO" yet it is not showing up in my Saba learning history as complete. What do I do? (For learners)
  What should I do if I need an alternate (Alt) version of an Essential Training Curriculum (ETC) course? (For learners)
  What should I do if I encounter technical difficulties with Saba? (For learners)
