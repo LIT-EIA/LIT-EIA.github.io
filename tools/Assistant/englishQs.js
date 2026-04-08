@@ -38,7 +38,7 @@
  How can I approve my team’s learning? (For managers)
  Does Saba have an iService page?
  What steps do I need to take to have the role of a Saba course administrator or instructor?
- Where can I find information on the ESDC Essential Training Curricula (ETC)?
+ Where can I find information on the Mandatory Training Curriculum (MTC) and/or the Foundational Training Curriculum (FTC)?
  Where can I find the managers’ (or team leaders’) job aids? (For managers – job aid)
  How can I access my team’s essential training curriculum (ETC) completion data? (For managers – job aid)
  Can I assign a proxy to complete actions on my behalf on Saba? (For managers – job aid)
