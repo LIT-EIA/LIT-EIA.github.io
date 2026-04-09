@@ -24,7 +24,7 @@
  How can I share a Saba link to a class or a course with another learner? (For learners)
  How can I share a Saba link to a class or a course with my team? (For managers)
  Where can I find the link for a course"XO" a class"XO" curriculum or certification?  How can I guide learners to my training? (For administrators)
- Why isn’t my Essential Training Curriculum (ETC) for managers automatically added to my profile? (For learners)
+ Why isn’t my Mandatory Training Curriculum (MTC) and Foundational Training Curriculum (FTC) for managers and leads been automatically added to my profile? (For learners)
  I need to correct errors in my personal information"XO" such as my name and/or my email address. (For learners)
  What should I do if I return to the department but can't access my Saba account? (For learners)
  I want to bookmark the link to Saba. Which link should I use? (For learners)
