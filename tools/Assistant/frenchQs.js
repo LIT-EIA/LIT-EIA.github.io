@@ -19,7 +19,7 @@
  Existe-t-il plusieurs façons de trouver des cours auxquels je peux m’inscrire dans Saba?
  Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé?  Quelque chose m’empêche de poursuivre mon cours ou de lancer le test.
  Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC)? (Pour apprenants)
- Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe? (Pour responsables)
+ Comment puis-je accéder aux données d’achèvement du Curriculum de formations obligatoires (CFO) ou fondamentales (CFF) de mon équipe? (Pour responsables)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)"
  Comment puis-je partager un lien Saba vers une classe ou un cours avec un autre apprenant? (Pour apprenants)
  Comment puis-je partager un lien Saba vers une classe ou un cours avec mon équipe? (Pour responsables)
