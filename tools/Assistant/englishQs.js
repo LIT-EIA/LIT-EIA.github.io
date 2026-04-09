@@ -19,7 +19,7 @@
  Are there several ways to find courses I can register to in Saba?
  What should I do if my course is not marking complete?  Something is preventing me from continuing my course or launching the test. (For learners)
  What should I do if I encounter technical difficulties while trying to access or complete a Canada School of Public Service (CSPS) course? (For learners)
- How do I access my team’s Essential Training Curriculum (ETC) completion data? (For managers)
+ How do I access my team’s Mandatory or Foundational Training Curriculum (MTC/FTC) completion data? (For managers)
  As a manager (or team leader)"XO" what should I do to ensure that my Saba reports are accurate? (For managers)
  How can I share a Saba link to a class or a course with another learner? (For learners)
  How can I share a Saba link to a class or a course with my team? (For managers)
