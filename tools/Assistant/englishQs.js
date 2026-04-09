@@ -97,7 +97,7 @@ How can I add a Completed Course? (For learners – job aid)
 How can I view the content of a course without registering to a class? (For Content Viewer role - Job aid)
 I have a problem or a question related to accessibility.
 I’m trying to complete my MTC and/or FTC, but I don’t see classes available for a CSPS course, what should I do? (For learners)
-`
+`;
  
 
 // Initialize variables to hold the Title and Keywords values
