@@ -24,7 +24,7 @@
  Comment puis-je partager un lien Saba vers une classe ou un cours avec un autre apprenant? (Pour apprenants)
  Comment puis-je partager un lien Saba vers une classe ou un cours avec mon équipe? (Pour responsables)
  "Où puis-je trouver le lien pour un cours"XO" une classe"XO" un curriculum ou une certification?  Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
- Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)
+ Pourquoi mon Curriculum de formations obligatoires (CFO) ou mon Curriculum de formations fondamentales (CFF) pour gestionnaires et superviseurs ne sont-ils pas automatiquement ajoutés à mon profil? (Pour apprenants)
  "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
  "Que devrais-je faire si je reviens au ministère mais que je ne peux pas accéder à mon compte Saba ? (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
