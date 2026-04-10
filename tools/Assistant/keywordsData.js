@@ -96,6 +96,7 @@ const keywordsData = `KeywordsEN,KeywordsFR
 "add, add completed course, completed course, ajouter", "ajouter une formation achevée, ajouter formation achevée, ajouter une formation complétée, ajouter formation complétée"
 
 
+
 `;
 
 
