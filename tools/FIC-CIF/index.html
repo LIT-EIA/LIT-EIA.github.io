@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Destination
+    const targetUrl = "https://apps.powerapps.com/play/e/d1b055db-44e9-493c-b2a7-9fc038dcec73/a/4db8aa07-827f-47bd-9b56-c66588349d00?hideNavBar=true#";
+
+    // Detect user language (e.g., "en", "fr-CA", "fr")
+    const lang = navigator.language.toLowerCase();
+
+    // Localized messages
+    const messages = {
+      en: "Redirecting, please wait…",
+      fr: "Redirection en cours, veuillez patienter…"
+    };
+
+    // Choose message
+    const message =
+      lang.startsWith("fr") ? messages.fr : messages.en;
+
+    // Set text and redirect instantly
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("message").textContent = message;
+      window.location.replace(targetUrl);
+    });
+  </script>
+</head>
+<body>
+  <p id="message"></p>
+</body>
+</html>
