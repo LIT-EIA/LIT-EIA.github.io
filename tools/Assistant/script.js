@@ -716,14 +716,14 @@ function askUserType(message) {
     managerButton.innerText = "Manager (and team leader)";
     adminButton.innerText = "Administrator";
     instructorButton.innerText = "Instructor";
-    contentButton.innerText = "Content Administrator";
+    contentButton.innerText = "Content Uploader";
     contentViewer.innerText = "Content Viewer Role";
   } else {
     employeeButton.innerText = "Apprenant(e)";
     managerButton.innerText = "Responsable (gestionnaire et chef d'équipe)";
     adminButton.innerText = "Administrateur/Administratrice";
     instructorButton.innerText = "Formateur/Formatrice";
-    contentButton.innerText = "Administrateur/Administratrice de contenu";
+    contentButton.innerText = "Téléverseur de contenu";
     contentViewer.innerText = "Rôle de visionnement de contenu";
   }
 
