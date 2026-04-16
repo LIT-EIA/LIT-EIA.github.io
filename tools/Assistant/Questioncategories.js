@@ -74,8 +74,8 @@ Admin
 Admin
 Admin
 Admin
-Content Admin
-Content Admin
+Content Uploader
+Content Uploader
 Admin
 Admin
 Admin
