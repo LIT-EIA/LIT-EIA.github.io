@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="utf-8">
+  <meta name="dcterms.title" content="SABA Virtual Assistant"/>
+  <meta name="dcterms.language" content="eng"/>
+  <meta name="dcterms.creator" content="Employment and Social Development Canada"/>
+  <meta name="dcterms.accessRights" content="3"/>
+  <meta name= "gcaaterms.sitename" content="ESDC-EDSC_Intranet_SABAVA-SABAAV"/>
 	
 	<title>SABA Virtual Assistant Tool </title>
 
 	
 	<link rel="stylesheet" href="style.css">
 	<!-- <link rel="stylesheet" href="main.css"> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="//assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"></script>
 
 	<script src="papaparse.min.js"></script>
 	<script src="englishQs.js"></script>
@@ -58,7 +65,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<h1 class="headerBanner left">Virtual Assistant</h1>
 				</div>
 				<!-- Language Switch here. -->
-				<div id="language"><a class="light" href="https://lit-eia.github.io/tools/Assistant/assistantFR" lang="fr">Français</a></div>
+				<div id="language"><a data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-French" class="light" href="https://lit-eia.github.io/tools/Assistant/assistantFR" lang="fr">Français</a></div>
 				
 				
 			</div>
@@ -118,10 +125,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="built-in-questions">
 
 	<button id="allQuestions" class="bubble question  "  
-	style="margin-bottom:0px" onclick="listAllQuestions()">List all questions.</button>
+	style="margin-bottom:0px" onclick="listAllQuestions(); pushbeacon(event, 'List all questions')">List all questions.</button>
 		
 	<button id="initialQuestions" class="bubble question hidden " 
-	 onclick="listInitialQuestions()">List initial options.</button>
+	 onclick="listInitialQuestions(); pushbeacon(event, 'List initial options')">List initial options.</button>
 
 
 </div><!-- End of Built in Questions Buttons -->
@@ -204,7 +211,7 @@ window.onload = () =>{
 
 
 
-
+<script type="text/javascript">_satellite.pageBottom();</script>
 </body>
 
 </html>

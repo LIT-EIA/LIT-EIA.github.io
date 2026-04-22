@@ -1,51 +1,46 @@
  const frenchQues= `QuestionFR
- "Lorsque j'essaie de réinitialiser mon mot de passe Saba"XO" cela ne fonctionne pas.  (Pour apprenants)"
- J’ai déjà suivi un des cours du curriculum de formation essentielle (CFE) lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
- Comment puis-je m’assurer que mes résultats aux cours du curriculum de formation essentielle (CFE) offerts par L’École de la fonction publique du Canada (EFPC) soient transférés dans mon profil Saba? (Pour apprenants)
- "Une fois que j’ai terminé un cours du Curriculum de formation essentielle (CFE) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC)"XO" quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
- "J’ai suivi un cours de L’École de la fonction publique du Canada (EFPC) qui figure dans le curriculum de formation essentielle (CFE) il y a plus d’une semaine. Pourtant"XO" mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
- Que dois-je faire si j’ai besoin d’une version accessible d’un cours du Curriculum de formation essentielle (CFE)? (Pour apprenants)
+ J’ai déjà suivi un des cours du curriculum de formations obligatoires ou fondamentales lorsque je travaillais à un autre ministère. Dois-je le suivre à nouveau maintenant que je suis à EDSC? (Pour apprenants)
+ Comment puis-je m’assurer que mes résultats aux cours du curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) offerts par L’École de la fonction publique du Canada (ÉFPC) soient transférés dans mon profil Saba? (Pour apprenants)
+ "Une fois que j’ai terminé un cours du Curriculum de formations obligatoires (CFO) ou Curriculum de formations fondamentales (CFF) dans la plateforme d’apprentissage de L’École de la fonction publique du Canada (EFPC)"XO" quel est le délai à prévoir avant que mon profil Saba soit mis à jour avec mes données d’achèvement? (Pour apprenants)"
+ "J’ai suivi un cours de L’École de la fonction publique du Canada (ÉFPC) qui figure dans le curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) il y a plus d’une semaine. Pourtant"XO" mon historique d’apprentissage dans Saba n’indique pas que j’ai terminé ce cours. Que dois-je faire? (Pour apprenants)"
+ Que dois-je faire si j’ai besoin d’une version alternative d’un cours du Curriculum de formations obligatoires (CFO) ou du Curriculum de formations fondamentales (CFF)? (Pour apprenants)
  Quelle est la procédure à suivre si j’éprouve des difficultés dans Saba? (Pour apprenants)
  Je ne trouve pas mon gestionnaire ou mon chef d’équipe dans Saba. (Pour apprenants)
  J'ai besoin d'un accès de responsable (pour gestionnaires/chefs d'équipe) dans Saba. (Pour responsables)
- "À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?"
+ Combien de temps ma session Saba restera-t-elle active avant de se déconnecter automatiquement en raison de l'inactivité ?
  Je suis nouvellement gestionnaire/chef d’équipe. Comment puis-je ajouter les membres de mon équipe à mon compte Saba? (Pour responsables)
  Comment puis-je téléverser du contenu vers Saba? (Pour administrateurs)
- Comment puis-je avoir un accès d’administrateur de contenu dans Saba?  (Pour administrateurs)
- Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (EFPC) à mon Curriculum de formation essentielle (CFE) ou ma formation obligatoire sur Saba? (Pour apprenants)
- Un de mes employés a épuisé toutes ses tentatives pour réussir un test. Comment faire pour ajouter une tentative? (Pour responsables)
+ Comment puis-je avoir un accès de téléverseur de contenu dans Saba?  (Pour administrateurs)
+ Comment puis-je transférer mes données d’achèvement de l’École de la fonction publique du Canada (ÉFPC) à mon curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) sur Saba? (Pour apprenants)
+ Un de mes employés a épuisé toutes ses chances de réussir un test. Comment puis-je ajouter une autre tentative ? (Pour responsables)
  J'ai épuisé toutes mes tentatives pour réussir un examen. Comment puis-je obtenir une nouvelle tentative? (Pour apprenants)
- Comment puis-je m’assurer que ma formation sur la sensibilisation aux cultures autochtones et de la réconciliation est consignée correctement dans Saba? (Pour apprenants)
+ Comment puis-je m’assurer que ma formation sur la réconciliation est consignée correctement dans Saba? (Pour apprenants)
  Quel est mon nom d’utilisateur pour Saba?
  Existe-t-il plusieurs façons de trouver des cours auxquels je peux m’inscrire dans Saba?
  Que devrais-je faire si mon cours ne se marque pas comme ayant été achevé?  Quelque chose m’empêche de poursuivre mon cours ou de lancer le test.
  Quelle est la procédure à suivre si j’éprouve des difficultés lorsque j’essaie d’accéder à un cours de L’École de la fonction publique du Canada (EFPC)? (Pour apprenants)
- Comment puis-je accéder aux données d’achèvement du Curriculum de formation essentielle (CFE) de mon équipe? (Pour responsables)
+ Comment puis-je accéder aux données d’achèvement du Curriculum de formations obligatoires (CFO) ou fondamentales (CFF) de mon équipe? (Pour responsables)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" que dois-je faire pour m'assurer que mes rapports sont exacts? (Pour responsables)"
- Comment puis-je partager le lien vers une classe avec un autre apprenant? (Pour apprenants)
- Comment puis-je partager le lien vers une classe avec mon équipe? (Pour responsables)
+ Comment puis-je partager un lien Saba vers une classe ou un cours avec un autre apprenant? (Pour apprenants)
+ Comment puis-je partager un lien Saba vers une classe ou un cours avec mon équipe? (Pour responsables)
  "Où puis-je trouver le lien pour un cours"XO" une classe"XO" un curriculum ou une certification?  Comment puis-je diriger les apprenants vers ma formation? (Pour administrateurs)"
- Pourquoi mon Curriculum de formation essentielle (CFE) pour les gestionnaires n’est-il pas automatiquement ajouté à mon profil? (Pour apprenants)
+ Pourquoi mon Curriculum de formations obligatoires (CFO) ou mon Curriculum de formations fondamentales (CFF) pour gestionnaires et superviseurs ne sont-ils pas automatiquement ajoutés à mon profil? (Pour apprenants)
  "Je dois corriger des erreurs dans mes informations personnelles"XO" comme mon nom et/ou mon adresse électronique. (Pour apprenants)"
- Je suis de retour d’une absence; comment puis-je réactiver mon compte Saba? (Pour apprenants)
- "Qu’arrive-t-il à un compte Saba lorsqu’un employé quitte le ministère"XO" prend sa retraite ou revient au ministère?  Je ne peux pas accéder à mon ancien compte Saba. (Pour apprenants)"
+ "Que devrais-je faire si je reviens au ministère mais que je ne peux pas accéder à mon compte Saba ? (Pour apprenants)"
  Je veux ajouter le lien vers Saba à mes signets. Lequel dois-je utiliser? (Pour apprenants)
- Comment puis-je changer la langue de ma classe? (Pour apprenants)
+ Comment puis-je changer la langue de la classe à laquelle je suis inscrit(e) ? (Pour apprenants)
  Que faire si mon responsable (gestionnaire ou chef d’équipe) ne voit pas mes demandes d'approbation? (Pour apprenants)
  Que faire si je ne vois pas les demandes d'approbation de mon employé(e)? (Pour responsables)
- Combien de temps puis-je être inactif dans Saba avant d’être automatiquement déconnecté de Saba? (Pour apprenants)
- Est-ce que je dois régulièrement mettre à jour mon mot de passe Saba? (Pour apprenants)
  "En tant que responsable (gestionnaire ou chef d’équipe)"XO" comment puis-je ajouter ou retirer des employés de mon équipe? (Pour responsables)"
  Quelle formation dois-je compléter? (Pour apprenants)
- Est-ce que je peux me connecter à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
+ Est-ce que je peux accéder à Saba en dehors du réseau gouvernemental ou à partir de mon ordinateur personnel? (Pour apprenants)
  Pourquoi y a-t-il une évaluation en attente pour un cours que j'ai terminé? (Pour apprenants)
- À quoi sert l'option « Mémoriser mon profil » sur la page d'ouverture de session de Saba?
  Comment puis-je approuver l'apprentissage de mon équipe? (Pour apprenants)
  Est-ce que Saba a une page iService?
- Comment puis-je devenir administrateur de cours ou formateur?
- Où puis-je trouver des informations sur les Curriculums de formation essentielle d’EDSC (CFE)?
+ Quelles étapes dois-je suivre pour avoir le role d’administrateur de cours Saba ou de formateur?
+ Où puis-je trouver des informations sur le curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) ?
  Où puis-je trouver tous les aide-mémoires pour responsables (gestionnaires ou chefs d’équipe)? (Pour responsables – aide-mémoire)
- Comment puis-je accéder aux données d'achèvement du programme de formation essentielle (CFE) de mon équipe? (Pour responsables – aide-mémoire)
+ Comment puis-je accéder aux données d'achèvement du curriculum de formations obligatoires (CFO) ou curriculum de formations fondamentales (CFF) de mon équipe? (Pour responsables – aide-mémoire)
  Puis-je assigner un mandataire pour effectuer des actions en mon nom sur Saba? (Pour responsables – aide-mémoire)
  Comment puis-je agir comme mandataire pour un cadre exécutif?  (Pour responsables – aide-mémoire)
  Comment puis-je ajouter une activité au plan d’un membre de mon équipe? (Pour responsables – aide-mémoire)
@@ -53,18 +48,16 @@
  Comment puis-je accepter une place en attente? (Pour apprenants – aide-mémoire)
  Comment puis-je accéder à mon compte Saba pour la première fois? (Pour apprenants – aide-mémoire)
  Comment puis-je activer le mode d’accessibilité?
- Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des Curriculum de formation essentielle [CFE])? (Pour apprenants – aide-mémoire)
+ Comment puis-je ajouter un cours / une formation externe à ma formation achevée si je ne l’ai pas suivi sur Saba (excluant les cours des curriculums de formations obligatoires ou fondamentales [CFO/CFF])? (Pour apprenants – aide-mémoire)
  Comment puis-je changer ma langue de préférence?  (Pour apprenants – aide-mémoire)
- Comment puis-je changer mon mot de passe? (Pour apprenants – aide-mémoire)
  Comment puis-je abandonner une classe (Pour apprenants – aide-mémoire)
  Comment puis-je naviguer dans Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je imprimer ou exporter un certificat d’achèvement? (Pour apprenants – aide-mémoire)
- Comment puis-je réinitialiser mon mot de passe? (Pour apprenants – aide-mémoire)
- Comment puis-je chercher dans le catalogue de formation de Saba? (Pour apprenants – aide-mémoire)
+ Comment puis-je chercher dans le catalogue de formation Saba? (Pour apprenants – aide-mémoire)
  Comment puis-je mettre à jour mon responsable (gestionnaire ou chef d’équipe) dans Saba? (Pour apprenants – aide-mémoire)
- Comment puis-je visionner les fichiers joints d’une classe? (Pour apprenants – aide-mémoire)
+ Comment puis-je visionner les fichiers joints dans une classe? (Pour apprenants – aide-mémoire)
  Comment puis-je lancer de nouveau le contenu d’un cours que j’ai achevé dans le passé? (Pour apprenants – aide-mémoire)
- Où puis-je trouver tous les aide-mémoires pour administrateurs qui sont liés ici? (Pour administrateurs – aide-mémoire)
+ Où puis-je trouver tous les aide-mémoires pour administrateurs ? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter un formateur à une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter une évaluation à une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je ajouter des fichiers joints à une classe? (Pour administrateurs – aide-mémoire)
@@ -78,13 +71,11 @@
  Comment puis-je annuler une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je modifier une inscription? (Pour administrateurs – aide-mémoire)
  Comment puis-je enregistrer le statut d’apprenants dans une classe? (Pour administrateurs – aide-mémoire)
- Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)
+ Comment puis-je fermer une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je reporter une classe? (Pour administrateurs – aide-mémoire)
  Comment puis-je chercher une classe et trouver une liste des inscrits? (Pour administrateurs – aide-mémoire)
- Je n’arrive pas à trouver certains aide-mémoires pour administrateurs. (Pour administrateurs – aide-mémoire)
- Comment puis-je téléverser vers Saba Développement? (Pour administrateurs de contenu– aide-mémoire)
- Comment puis-je téléverser vers Saba Production? (Pour administrateurs de contenu– aide-mémoire)
- Comment puis-je publier des cours créés dans Adapt? (Pour administrateurs de contenu– aide-mémoire)
+ Comment puis-je téléverser vers Saba ? (Pour téléverseur de contenu – aide-mémoire)
+ Comment puis-je publier des cours créés dans Adapt? (Pour téléverseur de contenu– aide-mémoire)
  Comment puis-je créer et gérer la programmation de rapports? (Pour administrateurs – aide-mémoire)
  Comment puis-je visionner et exporter des rapports? (Pour administrateurs – aide-mémoire)
  Comment puis-je chercher pour un cours? (Pour administrateurs – aide-mémoire)
@@ -102,7 +93,11 @@ Comment puis-je internationaliser un cours? (Pour administrateurs – aide-mémo
 Comment puis-je internationaliser une classe? (Pour administrateurs – aide-mémoire)
 Comment puis-je ajouter des prérequis à un cours? (Pour administrateurs – aide-mémoire)
 Comment puis-je ajouter les modalités pédagogiques? (Pour administrateurs – aide-mémoire)
-Comment puis-je ajouter une formation achevée? (Pour apprenants)`;
+Comment puis-je ajouter une formation achevée? (Pour apprenants)
+Comment puis-je consulter le contenu d'un cours sans m'inscrire à une classe? (Pour le rôle de visionneur de contenu - Aide-mémoires)
+J’ai un problème ou une question en lien avec l’accessibilité.
+J'essaie de terminer mon CFO et/ou mon CFF mais je ne trouve pas de classes disponibles pour un cours de l’EFPC. Que dois-je faire ?
+`;
  
  
 

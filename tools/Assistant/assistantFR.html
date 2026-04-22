@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head><meta charset="utf-8">
+  <meta name="dcterms.title" content="Assistant virtuel SABA"/>
+  <meta name="dcterms.language" content="fra"/>
+  <meta name="dcterms.creator" content="Emploi et Développement social Canada"/>
+  <meta name="dcterms.accessRights" content="3"/>
+  <meta name= "gcaaterms.sitename" content="ESDC-EDSC_Intranet_SABAVA-SABAAV"/>
 	
 	<title>Assistance Virtuelle</title>
 	<!-- <link rel="stylesheet" href="https://eia-lit.github.io/Assistant/style.css"> -->
 	<!--  <script src="https://eia-lit.github.io/Assistant/script.js"></script>  -->
 	<link rel="stylesheet" href="style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="//assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"></script>
 
 	<script src="papaparse.min.js"></script>
 	<script  src="frenchQs.js"></script>
@@ -55,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<h1 class="headerBanner left">Sp&eacute;cialiste en assistance virtuelle</h1>
 				</div>
 				<!-- Language Switch here. -->
-				<div id="language"><a class="light" href="https://lit-eia.github.io/tools/Assistant/assistantEN" lang="en">English</a></div>
+				<div id="language"><a data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-English" class="light" href="https://lit-eia.github.io/tools/Assistant/assistantEN" lang="en">English</a></div>
 				
 				
 			</div>
@@ -85,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div> <!-- end of conversationDiv -->
 		<div class="messageBar">
 			<div class="messageForm">
-				<input id="textbox" aria-placeholder="Entrez un mot-clé ou une question" aria-labelledby="Enter Keyword or question" name="msg" autocomplete="off" type="text">
+				<input id="textbox" aria placeholder="Entrez un mot-clé ou une question" aria-labelledby="Enter Keyword or question" name="msg" autocomplete="off" type="text">
 				<button id="send" onclick="sendMessage()">Envoyer</button>
 			</div>
 		</div>
@@ -111,9 +118,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="built-in-questions">
 
-	<button id="allQuestions" class="bubble question"  style="margin-bottom:0px" onclick="listAllQuestions()">Afficher toutes les questions</button>
-		
-	<button id="initialQuestions" class="bubble question hidden"  onclick="listInitialQuestions()">Afficher les questions initales.</button>
+	<button id="allQuestions" class="bubble question"  style="margin-bottom:0px" onclick="listAllQuestions(); pushbeacon(event, 'List all questions')">Afficher toutes les questions</button>
+
+	<button id="initialQuestions" class="bubble question hidden"  onclick="listInitialQuestions(); pushbeacon(event, 'List initial questions')">Afficher les questions initales.</button>
 
 
 </div><!-- End of Built in Questions Buttons -->
@@ -184,6 +191,7 @@ window.onload = () =>{
 
 
 </script>
+<script type="text/javascript">_satellite.pageBottom();</script>
 
 </body>
 </htlm>
