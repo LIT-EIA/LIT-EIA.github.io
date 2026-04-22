@@ -1,5 +1,14 @@
-
 [
+    {
+        "name": "",
+        "notes": {
+            "security": [
+                "[Nouveau] Rôle de responsable visant à limiter l'utilisation des fonctionnalités critiques et à réduire le risque de modifications accidentelles"
+            ]
+        },
+        "pub_date": "2026-04-21T12:00:00Z",
+        "version": "1.5.6"
+    },
     {
         "name": "",
         "notes": {
@@ -26,12 +35,11 @@
                 "[Nouveau] Politique en matière de mots de passe",
                 "[Nouveau] Authentification multifactorielle par courriel"
             ],
-
             "tools": [
                 "[Nouveau] Capacité d'exporter des courriels depuis le menu de gestion des utilisateurs",
                 "[Nouveau] Intégration des tests Nightwatch (de bout en bout) et des tests du programme d'arrière-plan (tests unitaires) "
             ],
-            "security" : [
+            "security": [
                 "[Nouveau] Mot de passe d'un nouvel utilisateur généré automatiquement"
             ]
         },

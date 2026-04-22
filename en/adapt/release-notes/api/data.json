@@ -1,4 +1,14 @@
 [
+        {
+        "name": "",
+        "notes": {
+            "security": [
+                "[New] Maintainer role to limit usage of critical features and reduce risk of accidental changes"
+            ]
+        },
+        "pub_date": "2026-04-21T12:00:00Z",
+        "version": "1.5.6"
+    },
     {
         "name": "",
         "notes": {
