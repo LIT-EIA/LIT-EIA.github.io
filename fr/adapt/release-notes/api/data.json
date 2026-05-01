@@ -2,12 +2,22 @@
     {
         "name": "",
         "notes": {
+            "authoring": [
+                "[New] Bouton « Exporter le document » qui permet aux utilisateurs d’exporter l’intégralité de leur cours Adapt dans un document Microsoft Word (.docx) structuré"
+            ]
+        },
+        "pub_date": "2026-05-13T12:00:00Z",
+        "version": "1.5.6"
+    },
+    {
+        "name": "",
+        "notes": {
             "security": [
                 "[Nouveau] Rôle de responsable visant à limiter l'utilisation des fonctionnalités critiques et à réduire le risque de modifications accidentelles"
             ]
         },
         "pub_date": "2026-04-21T12:00:00Z",
-        "version": "1.5.6"
+        "version": "1.5.5"
     },
     {
         "name": "",
