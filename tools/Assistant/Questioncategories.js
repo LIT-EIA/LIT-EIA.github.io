@@ -93,7 +93,6 @@ Admin
 Admin
 Admin
 Admin
-Learner
 Content Viewer
 Learner
 Learner
