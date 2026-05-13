@@ -3,7 +3,11 @@
         "name": "",
         "notes": {
             "authoring": [
-                "[Nouveau] Bouton « Exporter le document » qui permet aux utilisateurs d’exporter l’intégralité de leur cours Adapt dans un document Microsoft Word (.docx) structuré"
+                "[Nouveau] Bouton « Exporter le document » qui permet aux utilisateurs d’exporter l’intégralité de leur cours Adapt dans un document Microsoft Word (.docx) structuré",
+                "[Nouveau] Le nombre d'utilisateurs actifs s'affiche désormais sur la page Gestion des utilisateurs"
+            ], 
+            "components": [
+                "[Amélioré] Le suivi assoupli dans l'extension Spoor peut désormais être configuré à l'aide de pourcentages personnalisés"
             ]
         },
         "pub_date": "2026-05-13T12:00:00Z",

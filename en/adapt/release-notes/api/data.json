@@ -3,7 +3,11 @@
         "name": "",
         "notes": {
             "authoring": [
-                "[New] Export to document button that allows users to export their entire Adapt course into a structured Microsoft Word (.docx) document"
+                "[New] Export to document button that allows users to export their entire Adapt course into a structured Microsoft Word (.docx) document",
+                "[New] Active user status counts are now displayed in the User Management page"
+            ], 
+            "components": [
+                "[Improved] Relaxed tracking in the Spoor extension can now be configured with custom percentage values"
             ]
         },
         "pub_date": "2026-05-13T12:00:00Z",
