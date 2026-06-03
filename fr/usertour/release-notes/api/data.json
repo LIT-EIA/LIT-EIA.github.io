@@ -1,0 +1,125 @@
+[
+  {
+    "name": "",
+    "notes": {
+      "editor": [
+        "[Amélioré] Lien d’intégration de l’assistant Usertour mis à jour pour forcer l’invalidation du cache"
+      ]
+    },
+    "pub_date": "2026-06-02T12:00:00Z",
+    "version": "0.0.9"
+  },
+  {
+    "name": "",
+    "notes": {
+      "launcher": [
+        "[Nouveau] Sélecteur d’icônes prenant en charge les icônes Remix intégrées, les icônes via URL et les téléversements personnalisés pour une meilleure personnalisation du lanceur (fusionné depuis la branche principale)",
+        "[Corrigé] Info-bulle « Cliqué » affichant un état incorrect",
+        "[Corrigé] Attribution du flux « Effectuer une action » non correctement enregistrée dans l’éditeur"
+      ]
+    },
+    "pub_date": "2026-05-27T12:00:00Z",
+    "version": "0.0.8"
+  },
+  {
+    "name": "",
+    "notes": {
+      "conditions": [
+        "[Nouveau] Condition « Nom de la page » permettant de déclencher des flux et des lanceurs selon le nom de la page courante",
+        "[Nouveau] Condition obligatoire appliquée lorsque le démarrage automatique est activé sur les flux et les lanceurs, améliorant la fiabilité du déclenchement"
+      ],
+      "editor": [
+        "[Nouveau] Action « Passer l’étape » ajoutée à l’éditeur, permettant de contourner des étapes ou de quitter des flux avec un comportement contrôlé"
+      ],
+      "launcher": [
+        "[Corrigé] Détection de superposition causant un masquage incorrect des lanceurs lorsqu’ils sont couverts par des éléments dynamiques",
+        "[Amélioré] Détection de visibilité du lanceur pour les éléments partiellement hors écran ou rendus dynamiquement"
+      ]
+    },
+    "pub_date": "2026-05-21T12:00:00Z",
+    "version": "0.0.7"
+  },
+  {
+    "name": "",
+    "notes": {
+      "launcher": [
+        "[Corrigé] Détachement et rattachement incorrect du lanceur lors des événements de défilement",
+        "[Corrigé] Type d’action du bouton du lanceur non correctement enregistré dans le constructeur"
+      ],
+      "environment": [
+        "[Corrigé] Problèmes de configuration Docker layer et docker-compose.yml affectant les environnements locaux"
+      ]
+    },
+    "pub_date": "2026-05-13T12:00:00Z",
+    "version": "0.0.6"
+  },
+  {
+    "name": "",
+    "notes": {
+      "iframe-sdk": [
+        "[Nouveau] Pipeline de rendu dédié pour les lanceurs dans les contextes iframe avec un positionnement précis et une gestion du défilement",
+        "[Corrigé] Problèmes de positionnement des infobulles/Popper pour les éléments dans des iframes défilables",
+        "[Corrigé] Conditions de déclenchement ne se déclenchant pas de manière cohérente via les événements DOM ou de navigation"
+      ],
+      "environment": [
+        "[Amélioré] Suppression des logs de débogage verbeux des modules principaux du SDK pour améliorer les performances"
+      ]
+    },
+    "pub_date": "2026-04-17T12:00:00Z",
+    "version": "0.0.5"
+  },
+  {
+    "name": "",
+    "notes": {
+      "conditions": [
+        "[Nouveau] Conditions isVisible et !isVisible prenant en charge les contextes de fenêtre principale et iframe pour un ciblage plus précis"
+      ],
+      "launcher": [
+        "[Corrigé] Le lanceur échouait à se fixer aux éléments dans des modales ou des conteneurs rendus dynamiquement",
+        "[Amélioré] Stratégie de nouvelle tentative d’attachement aux éléments DOM, réduisant les tentatives prématurées ou répétées"
+      ],
+      "security": [
+        "[Amélioré] Les emails de réinitialisation de mot de passe sont également affichés dans le terminal en environnement de développement pour le débogage"
+      ]
+    },
+    "pub_date": "2026-02-20T12:00:00Z",
+    "version": "0.0.4"
+  },
+  {
+    "name": "",
+    "notes": {
+      "editor": [
+        "[Nouveau] Page des plugins pour installer des outils de sélection et intégrer le SDK Usertour",
+        "[Amélioré] Visibilité du contenu brouillon et gestion des environnements dans les listes de contenu"
+      ],
+      "security": [
+        "[Amélioré] Mise à jour du flux d’inscription incluant des corrections de routage, des exigences de mot de passe renforcées et une meilleure UX d’inscription"
+      ],
+      "environment": [
+        "[Amélioré] Mise à jour de la configuration de build pour apps/server et apps/sdk"
+      ]
+    },
+    "pub_date": "2026-01-27T12:00:00Z",
+    "version": "0.0.3"
+  },
+  {
+    "name": "",
+    "notes": {
+      "iframe-sdk": [
+        "[Nouveau] Prise en charge du SDK pour le contenu exécuté dans des iframes, incluant la communication inter-frames, l’analyse des sélecteurs et la documentation d’intégration"
+      ]
+    },
+    "pub_date": "2025-12-23T12:00:00Z",
+    "version": "0.0.2"
+  },
+  {
+    "name": "",
+    "notes": {
+      "editor": [
+        "[Supprimé] Inscription et connexions sociales"
+      ]
+    },
+    "pub_date": "2025-09-12T12:00:00Z",
+    "version": "0.0.1"
+  }
+]

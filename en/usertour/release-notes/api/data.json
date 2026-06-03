@@ -1,0 +1,125 @@
+[
+    {
+        "name": "",
+        "notes": {
+            "editor": [
+                "[Improved] Usertour Helper embed link updated to force cache invalidation"
+            ]
+        },
+        "pub_date": "2026-06-02T12:00:00Z",
+        "version": "0.0.9"
+    },
+    {
+        "name": "",
+        "notes": {
+            "launcher": [
+                "[New] Icon picker supporting built-in Remix icon presets, URL-based icons, and custom uploads for greater launcher customization (merged from upstream)",
+                "[Fixed] \"Clicked\" tooltip showing incorrect state",
+                "[Fixed] \"Perform action\" flow assignment not persisted correctly in the editor"
+            ]
+        },
+        "pub_date": "2026-05-27T12:00:00Z",
+        "version": "0.0.8"
+    },
+    {
+        "name": "",
+        "notes": {
+            "conditions": [
+                "[New] Page Name condition allowing flows and launchers to trigger based on the current page name",
+                "[New] Mandatory condition enforced when auto-start is enabled on flows and launchers, improving trigger reliability"
+            ],
+            "editor": [
+                "[New] Skip step action added to the editor, allowing users to bypass steps or exit flows with controlled behavior"
+            ],
+            "launcher": [
+                "[Fixed] Overlay detection causing launchers to incorrectly be treated as hidden when covered by dynamic elements",
+                "[Improved] Launcher visibility detection for partially off-screen or dynamically rendered elements"
+            ]
+        },
+        "pub_date": "2026-05-21T12:00:00Z",
+        "version": "0.0.7"
+    },
+    {
+        "name": "",
+        "notes": {
+            "launcher": [
+                "[Fixed] Launcher detaching and reattaching incorrectly during scroll events",
+                "[Fixed] Launcher button action type not being saved correctly in the builder"
+            ],
+            "environment": [
+                "[Fixed] Docker layer and docker-compose.yml configuration issues affecting local environments"
+            ]
+        },
+        "pub_date": "2026-05-13T12:00:00Z",
+        "version": "0.0.6"
+    },
+    {
+        "name": "",
+        "notes": {
+            "iframe-sdk": [
+                "[New] Dedicated launcher rendering pipeline for iframe contexts with accurate positioning and scroll handling",
+                "[Fixed] Popper/tooltip positioning issues for elements inside scrollable iframes",
+                "[Fixed] Trigger conditions not consistently firing when driven by DOM or navigation events"
+            ],
+            "environment": [
+                "[Improved] Removed verbose debug logging from SDK core modules to improve runtime performance"
+            ]
+        },
+        "pub_date": "2026-04-17T12:00:00Z",
+        "version": "0.0.5"
+    },
+    {
+        "name": "",
+        "notes": {
+            "conditions": [
+                "[New] isVisible and !isVisible conditions supporting both main window and iframe contexts for more precise targeting"
+            ],
+            "launcher": [
+                "[Fixed] Launcher failing to attach to elements inside modals or dynamically rendered containers",
+                "[Improved] Attachment retry strategy for DOM element targeting, reducing premature or repeated retries"
+            ],
+            "security": [
+                "[Improved] Password reset emails also printed to terminal in development environments for debugging"
+            ]
+        },
+        "pub_date": "2026-02-20T12:00:00Z",
+        "version": "0.0.4"
+    },
+    {
+        "name": "",
+        "notes": {
+            "editor": [
+                "[New] Plugins page for installing selector tools and embedding the Usertour SDK",
+                "[Improved] Draft content visibility and environment handling in content listings"
+            ],
+            "security": [
+                "[Improved] Signup flow updates including routing fixes, stronger password requirements, and improved registration UX"
+            ],
+            "environment": [
+                "[Improved] Build configuration updates across apps/server and apps/sdk"
+            ]
+        },
+        "pub_date": "2026-01-27T12:00:00Z",
+        "version": "0.0.3"
+    },
+    {
+        "name": "",
+        "notes": {
+            "iframe-sdk": [
+                "[New] SDK support for content running inside iframes, including cross-frame communication utilities, selector parsing, and integration documentation"
+            ]
+        },
+        "pub_date": "2025-12-23T12:00:00Z",
+        "version": "0.0.2"
+    },
+    {
+        "name": "",
+        "notes": {
+            "editor": [
+                "[Removed] Signup and social logins"
+            ]
+        },
+        "pub_date": "2025-09-12T12:00:00Z",
+        "version": "0.0.1"
+    }
+]
