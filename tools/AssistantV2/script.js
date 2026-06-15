@@ -55,7 +55,6 @@ var answerJSON = [];
 
 /**
  * Generate a CSS-safe class name from a category string
- * Converts "David's Questions" -> "davids-questions"
  */
 function generateRoleClass(category) {
   if (!category) return 'general';
