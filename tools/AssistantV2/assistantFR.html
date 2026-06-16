@@ -61,13 +61,12 @@
       </section>
       <aside class="sidebar" aria-label="Panneau des questions suggérées">
         <div class="sidebar-header">
-          <h2>Questions suggérées</h2>
+          <h2>Questions les plus fréquentes</h2>
           <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()">Effacer le chat</button>
         </div>
         <div class="sidebar-content">
           <div id="built-in-questions" class="quick-actions">
-            <button id="allQuestions" class="action-btn action-btn-primary" onclick="listAllQuestions(); pushbeacon(event, 'List all questions')"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span>Afficher toutes les questions</span></button>
-            <button id="initialQuestions" class="action-btn action-btn-secondary hidden" onclick="listInitialQuestions(); pushbeacon(event, 'List initial questions')"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Afficher les options initiales</span></button>
+            <button id="toggleQuestionsBtn" class="action-btn action-btn-primary" onclick="toggleQuestions(); pushbeacon(event, 'Toggle questions')"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span id="toggleQuestionsText">Afficher toutes les questions</span></button>
           </div>
           <div id="questions" class="questions-list" role="list"></div>
         </div>

@@ -551,8 +551,11 @@ function sendMessage() {
         }
       }
 
+      // When showing filtered results, we're not in "all questions" or "initial questions" mode
+      // Update the toggle button to show "List all questions" / "Afficher toutes les questions"
+      showingAllQuestions = false;
+      updateToggleButtonText();
       showAllQuestionsButton();
-      showInitialQuestionsButton();
       assistantTypes(message, false);
     } else {
       var message = document.createElement("p");
@@ -606,11 +609,27 @@ function findAnswer(x) {
 // QUESTION VISIBILITY & FILTERING
 // ============================================================================
 
+// Track the current state of the questions display
+var showingAllQuestions = false;
+
+/**
+ * Toggle between showing all questions and showing initial questions
+ */
+function toggleQuestions() {
+  if (showingAllQuestions) {
+    listInitialQuestions();
+  } else {
+    listAllQuestions();
+  }
+}
+
 /**
  * Show all questions
  */
 function listAllQuestions() {
   displayAllQuestions();
+  showingAllQuestions = true;
+  updateToggleButtonText();
 }
 
 /**
@@ -637,8 +656,34 @@ function listInitialQuestions() {
     }
   }
 
+  showingAllQuestions = false;
+  updateToggleButtonText();
   showAllQuestionsButton();
   hideInitialQuestionsButton();
+}
+
+/**
+ * Update the toggle button text based on current state
+ */
+function updateToggleButtonText() {
+  var buttonTextElement = document.getElementById("toggleQuestionsText");
+  if (!buttonTextElement) return;
+
+  if (showingAllQuestions) {
+    // Currently showing all questions, so button should offer to show initial
+    if (isEnglish) {
+      buttonTextElement.innerText = "Show initial questions";
+    } else {
+      buttonTextElement.innerText = "Afficher les questions initiales";
+    }
+  } else {
+    // Currently showing initial questions, so button should offer to show all
+    if (isEnglish) {
+      buttonTextElement.innerText = "List all questions";
+    } else {
+      buttonTextElement.innerText = "Afficher toutes les questions";
+    }
+  }
 }
 
 /**
@@ -667,6 +712,8 @@ function displayAllQuestions() {
     btn.style.visibility = 'visible';
     btn.style.display = 'block';
   }
+  showingAllQuestions = true;
+  updateToggleButtonText();
   showInitialQuestionsButton();
   hideAllQuestionsButton();
 }
