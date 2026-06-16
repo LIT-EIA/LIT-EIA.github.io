@@ -7,9 +7,9 @@
 }
 
 :root {
-  --primary-color: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #dbeafe;
+  --primary-color: #e03e59;
+  --primary-hover: #c7344d;
+  --primary-light: #fce7eb;
   --secondary-color: #64748b;
   --background: #f8fafc;
   --surface: #ffffff;
@@ -24,6 +24,9 @@
   --radius-lg: 16px;
   --transition: 150ms ease;
   --min-touch-target: 44px; /* WCAG 2.0 minimum touch target size */
+  /* College logo accent colors */
+  --accent-blue: #159ad0;
+  --accent-cyan: #1fb2c5;
 }
 
 html {
@@ -125,6 +128,13 @@ body {
 .logo-title {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-icon {
@@ -390,15 +400,15 @@ body {
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: var(--background);
+  background: linear-gradient(135deg, rgba(21, 154, 208, 0.05) 0%, rgba(31, 178, 197, 0.05) 100%);
   overflow: hidden;
   min-height: 0; /* Important for flex child scrolling */
 }
 
 .sidebar-header {
   padding: 12px 16px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--accent-blue);
+  border-bottom: none;
   flex-shrink: 0;
   display: flex;
   justify-content: space-between;
@@ -408,7 +418,7 @@ body {
 .sidebar-header h2 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
 }
 
@@ -420,9 +430,9 @@ body {
 .clear-chat-btn {
   padding: 6px 12px;
   min-height: var(--min-touch-target); /* Minimum touch target */
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-sm);
   font-size: 0.8125rem;
   cursor: pointer;
@@ -430,15 +440,15 @@ body {
 }
 
 .clear-chat-btn:hover {
-  background: #fee2e2;
-  border-color: #fca5a5;
-  color: #dc2626;
+  background: rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--accent-blue);
 }
 
 .clear-chat-btn:focus {
-  outline: 2px solid #dc2626;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fecaca;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
 .sidebar-content {
@@ -487,13 +497,12 @@ body {
 }
 
 .action-btn-primary {
-  background: var(--primary-color);
+  background: var(--accent-blue);
   color: white;
 }
 
 .action-btn-primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #117a9f 100%, #17919d 100%);
 }
 
 .action-btn-primary:active {
@@ -541,13 +550,13 @@ body {
 }
 
 .questions-list .bubble.question:hover {
-  background: var(--primary-light);
-  border-color: var(--primary-color);
+  background: linear-gradient(135deg, rgba(21, 154, 208, 0.1) 0%, rgba(31, 178, 197, 0.1) 100%);
+  border-color: var(--accent-cyan);
   transform: translateX(4px);
 }
 
 .questions-list .bubble.question:focus {
-  outline: 2px solid var(--primary-color);
+  outline: 2px solid var(--accent-blue);
   outline-offset: 2px;
 }
 
@@ -600,14 +609,24 @@ body {
 }
 
 .bubble.question.bold:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--primary-light), var(--shadow-md);
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 0 6px rgba(224, 62, 89, 0.2), var(--shadow-lg);
 }
 
 .userBubble {
   text-align: right;
   padding-bottom: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+/* Add spacing between conversation bubbles */
+#QNA tr {
+  margin-bottom: 12px;
+  display: block;
 }
 
 .userBubble td:first-child {
@@ -782,6 +801,10 @@ li {
 
   .app-header h1 {
     font-size: 1rem;
+  }
+
+  .header-logo {
+    height: 32px;
   }
 
   .messageBar {

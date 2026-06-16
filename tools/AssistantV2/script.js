@@ -36,26 +36,18 @@ var userType = "";
 // Data arrays populated from qaData.js
 var questionsEN = [];
 var questionsFR = [];
-var keywordsENData = [];
-var keywordsFRData = [];
 var answersENArr = [];
 var answersFRArr = [];
 var categoriesArr = [];
 var categoriesENArr = [];
 var categoriesFRArr = [];
 
-// Runtime keyword cache
-var keywordJSON = [];
-var questionJSON = [];
-var answerJSON = [];
-
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
 
 /**
- * Generate a CSS-safe class name from a category string
- */
+ * Generate a CSS-safe class name from a category string */
 function generateRoleClass(category) {
   if (!category) return 'general';
   return category
@@ -167,15 +159,15 @@ function extractKeywords(text) {
 }
 
 /**
- * Calculate match score between user query and question/keywords
+ * Calculate match score between user query and question text
  * Higher score = better match
  * Scoring: Exact match = 3, Stemmed match = 2, Partial match = 1
  */
-function calculateMatchScore(userKeywords, questionText, keywordsText) {
+function calculateMatchScore(userKeywords, questionText, additionalText) {
   var score = 0;
   var questionNorm = normalizeText(questionText);
-  var keywordsNorm = normalizeText(keywordsText);
-  var combinedText = questionNorm + ' ' + keywordsNorm;
+  var additionalNorm = normalizeText(additionalText || '');
+  var combinedText = questionNorm + ' ' + additionalNorm;
   var combinedKeywords = extractKeywords(combinedText);
 
   for (var i = 0; i < userKeywords.length; i++) {
@@ -238,23 +230,26 @@ function sanitizeForAnalytics(text) {
  * Main initialization function - called when the page loads
  */
 function init() {
+  // Focus skip-link for accessibility (first focusable element)
+  const skipLink = document.querySelector('.skip-link');
+  if (skipLink) {
+    skipLink.focus();
+  }
+
   loadAllData();
   setLanguage();
   displayIntroMessage();
-  populateKeywords();
   addContent(globalLang);
   listInitialQuestions();
 }
 
 /**
  * Load all data from qaData.js
- * Populates global arrays with questions, answers, keywords, and categories
+ * Populates global arrays with questions, answers, and categories
  */
 function loadAllData() {
   questionsEN = getTitles() || [];
   questionsFR = getFrenchQ() || [];
-  keywordsENData = getKeywordsEN() || [];
-  keywordsFRData = getKeywordsFR() || [];
   answersENArr = getAnswersEN() || [];
   answersFRArr = getAnswersFR() || [];
   categoriesArr = getCategory() || [];
@@ -324,7 +319,7 @@ function getCategoryRoleClass(category) {
 }
 
 /**
- * Add questions, answers, and keywords to the page
+ * Add questions and answers to the page
  * Populates the DOM with content based on selected language
  */
 function addContent(language) {
@@ -332,16 +327,14 @@ function addContent(language) {
   const answersList = document.getElementById('answers');
 
   // Select data arrays based on language
-  let titles, keywords, answers, categories;
+  let titles, answers, categories;
 
   if (language === 'EN') {
     titles = questionsEN;
-    keywords = keywordsENData;
     answers = answersENArr;
     categories = categoriesArr;
   } else if (language === 'FR') {
     titles = questionsFR;
-    keywords = keywordsFRData;
     answers = answersFRArr;
     categories = categoriesArr;
   }
@@ -375,12 +368,6 @@ function addContent(language) {
     button.setAttribute('onclick', `findAnswer(${i});`);
     questionsList.appendChild(button);
 
-    // Add keywords paragraph (hidden, used for searching)
-    const paragraph = document.createElement('p');
-    paragraph.className = "keywords";
-    paragraph.textContent = keywords[i] || '';
-    button.appendChild(paragraph);
-
     // Create answer div (hidden until question is clicked)
     const answerDiv = document.createElement('DIV');
     answerDiv.className = "bubble answer inlineblock";
@@ -391,28 +378,17 @@ function addContent(language) {
 }
 
 /**
- * Populate and cache keywords for runtime use
+ * Get question text for each question based on current language
+ * Used for search matching
  */
-function populateKeywords() {
+function getQuestionTexts() {
   const newArray = [];
-  const questionsArray = [];
-  const answerArray = [];
-
   let length = document.getElementById("questions").getElementsByTagName("button").length;
 
   for (let i = 0; i < length; i++) {
-    var keywords = document.getElementById("questions").getElementsByClassName("keywords")[i].innerText;
-    let questions = document.getElementById("questions").querySelectorAll("button")[i].innerText;
-    let answers = document.getElementById("answers").querySelectorAll("div")[i].innerText;
-
-    newArray.push([keywords]);
-    questionsArray.push(questions);
-    answerArray.push(answers);
+    var questionText = document.getElementById("questions").getElementsByTagName("button")[i].innerText;
+    newArray.push(questionText);
   }
-
-  keywordJSON = newArray;
-  questionJSON = questionsArray;
-  answerJSON = answerArray;
 
   return newArray;
 }
@@ -435,7 +411,7 @@ function displayIntroMessage() {
   }
 
   askUserType(message);
-  assistantTypes(message, false);
+  assistantTypes(message, false, true); // Skip focus for intro message
 }
 
 /**
@@ -515,7 +491,6 @@ function sendMessage() {
     userTypes(userMessage);
 
     var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
-    var keywordsArray = populateKeywords();
 
     // Extract keywords from user input using NLP
     var userKeywords = extractKeywords(textboxMessage);
@@ -526,9 +501,13 @@ function sendMessage() {
     for (let i = 0; i < nbQuestions; i++) {
       var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
       var questionText = htmlButton.innerText;
-      var keywordsText = keywordsArray[i] ? keywordsArray[i].join(' ') : '';
 
-      var score = calculateMatchScore(userKeywords, questionText, keywordsText);
+      // Get the corresponding question in both languages for better matching
+      var questionEN = questionsEN[i] || '';
+      var questionFR = questionsFR[i] || '';
+      var combinedQuestions = questionEN + ' ' + questionFR;
+
+      var score = calculateMatchScore(userKeywords, questionText, combinedQuestions);
 
       if (score > 0) {
         scoredQuestions.push({ index: i, button: htmlButton, score: score });
@@ -762,25 +741,6 @@ function setUserByRoleClass(roleClass) {
 }
 
 /**
- * Legacy function - kept for backward compatibility
- * @deprecated Use setUserByRoleClass instead
- */
-function setUser(userTypeInt) {
-  // Legacy numeric mapping for backwards compatibility
-  var legacyMap = {
-    1: "learner",
-    2: "manager",
-    3: "admin",
-    4: "instructor",
-    5: "content-admin",
-    6: "content-viewer"
-  };
-
-  userType = legacyMap[userTypeInt] || "learner";
-  filterQuestionsByUserType();
-}
-
-/**
  * Filter questions to show only those matching the selected role
  */
 function filterQuestionsByUserType() {
@@ -864,7 +824,7 @@ function userTypes(elmt) {
 
   const img = document.createElement("img");
   img.classList.add("userIcon");
-  img.src = "https://raw.githubusercontent.com/EIA-LIT/Assistant/main/user.png";
+  img.src = "./avatar.png";
   img.alt = "";
   td2.appendChild(img);
 }
@@ -873,8 +833,9 @@ function userTypes(elmt) {
  * Display assistant message in chat with typing animation
  * @param {HTMLElement} elmt - Message element to display
  * @param {boolean} withCloseMessage - Whether to include close/survey message
+ * @param {boolean} skipFocus - Whether to skip auto-focusing (used for intro message)
  */
-function assistantTypes(elmt, withCloseMessage) {
+function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
   elmt.classList.add("bubble", "assistant", "inlineblock");
 
   document.getElementById("typingBubble").style.visibility = 'visible';
@@ -897,7 +858,7 @@ function assistantTypes(elmt, withCloseMessage) {
 
       const img = document.createElement("img");
       img.classList.add("userIcon");
-      img.src = "https://raw.githubusercontent.com/EIA-LIT/Assistant/main/avatar.png";
+      img.src = "./avatar.png";
       img.alt = "";
 
       const td1 = document.createElement("td");
@@ -915,10 +876,12 @@ function assistantTypes(elmt, withCloseMessage) {
 
       scrollDownOfDiv("conversationDiv");
 
-      // Set focus on the answer element
-      td2.setAttribute("tabindex", "0");
-      td2.focus();
-      td2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Only set focus if not skipped (e.g., not the intro message)
+      if (!skipFocus) {
+        td2.setAttribute("tabindex", "0");
+        td2.focus();
+        td2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }, 600);
 
