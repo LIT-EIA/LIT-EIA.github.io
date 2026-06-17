@@ -42,6 +42,17 @@ var categoriesArr = [];
 var categoriesENArr = [];
 var categoriesFRArr = [];
 
+// NLP Model - BM25 search index
+var searchModel = {
+  isReady: false,
+  documents: [],           // All questions + answers
+  docLength: [],           // Length of each document
+  avgDocLength: 0,         // Average document length
+  termDocFreq: {},         // How many docs contain each term
+  termPositions: {},       // Term positions in each doc
+  numDocs: 0
+};
+
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
@@ -67,7 +78,186 @@ var VALID_GREETINGS = [
 ];
 
 // ============================================================================
-// NLP & TEXT PROCESSING
+// NLP & TEXT PROCESSING - BM25 SEARCH MODEL
+// ============================================================================
+
+/**
+ * Build BM25 search index from all questions and answers
+ * BM25 is a proven ranking function used by search engines
+ */
+function buildSearchModel() {
+  console.log('Building BM25 search index...');
+
+  var currentLang = globalLang || 'EN';
+  var questions = currentLang === 'EN' ? questionsEN : questionsFR;
+  var answers = currentLang === 'EN' ? answersENArr : answersFRArr;
+
+  // Reset model
+  searchModel.documents = [];
+  searchModel.docLength = [];
+  searchModel.termDocFreq = {};
+  searchModel.termPositions = {};
+  searchModel.numDocs = questions.length;
+
+  var totalLength = 0;
+
+  // Build document index
+  for (var i = 0; i < questions.length; i++) {
+    var questionText = questions[i] || '';
+    var answerText = answers[i] || '';
+
+    // Strip HTML from answer
+    var tempDiv = document.createElement('div');
+    tempDiv.innerHTML = answerText;
+    var answerPlainText = tempDiv.textContent || tempDiv.innerText || '';
+
+    // Weight question text more heavily (3x) than answer
+    var weightedText = questionText + ' ' + questionText + ' ' + questionText + ' ' + answerPlainText;
+    var keywords = extractKeywords(weightedText);
+
+    searchModel.documents.push({
+      index: i,
+      keywords: keywords,
+      termFreq: {}
+    });
+
+    // Calculate term frequencies for this document
+    for (var j = 0; j < keywords.length; j++) {
+      var term = keywords[j];
+      var doc = searchModel.documents[i];
+
+      doc.termFreq[term] = (doc.termFreq[term] || 0) + 1;
+
+      // Track which documents contain this term
+      if (!searchModel.termDocFreq[term]) {
+        searchModel.termDocFreq[term] = 0;
+      }
+      if (doc.termFreq[term] === 1) {
+        searchModel.termDocFreq[term]++;
+      }
+    }
+
+    searchModel.docLength[i] = keywords.length;
+    totalLength += keywords.length;
+  }
+
+  searchModel.avgDocLength = totalLength / searchModel.numDocs;
+  searchModel.isReady = true;
+
+  console.log('BM25 index ready with ' + searchModel.numDocs + ' documents, avg length: ' + searchModel.avgDocLength.toFixed(1));
+}
+
+/**
+ * Calculate BM25 score for a document given query terms
+ * BM25 parameters: k1 = 1.5 (term frequency saturation), b = 0.75 (length normalization)
+ * Enhanced with phrase proximity bonus
+ */
+function calculateBM25Score(docIndex, queryTerms) {
+  var k1 = 1.5;  // Controls term frequency saturation
+  var b = 0.75;  // Controls length normalization
+
+  var doc = searchModel.documents[docIndex];
+  var docLen = searchModel.docLength[docIndex];
+  var avgLen = searchModel.avgDocLength;
+  var N = searchModel.numDocs;
+
+  var score = 0;
+  var matchedTerms = 0;
+  var termScores = {}; // Track individual term scores
+
+  for (var i = 0; i < queryTerms.length; i++) {
+    var term = queryTerms[i];
+    var termFreq = doc.termFreq[term] || 0;
+
+    if (termFreq > 0) {
+      matchedTerms++;
+
+      // Calculate IDF for this term
+      var docFreq = searchModel.termDocFreq[term] || 0;
+      var idf = Math.log((N - docFreq + 0.5) / (docFreq + 0.5) + 1);
+
+      // Calculate BM25 component for this term
+      var numerator = termFreq * (k1 + 1);
+      var denominator = termFreq + k1 * (1 - b + b * (docLen / avgLen));
+
+      var termScore = idf * (numerator / denominator);
+      termScores[term] = termScore;
+      score += termScore;
+    }
+  }
+
+  // Progressive match bonuses based on how many terms matched
+  if (queryTerms.length === 2 && matchedTerms === 2) {
+    score *= 2.0; // Strong boost for matching both terms in 2-word query
+  } else if (queryTerms.length === 3 && matchedTerms === 3) {
+    score *= 2.5; // Even stronger boost for matching all 3 terms
+  } else if (queryTerms.length > 3 && matchedTerms === queryTerms.length) {
+    score *= 2.0; // Boost for complete matches in longer queries
+  } else if (matchedTerms > 1 && matchedTerms >= queryTerms.length * 0.67) {
+    score *= 1.3; // Small boost for matching most terms
+  }
+
+  return {
+    score: score,
+    matchedTerms: matchedTerms,
+    matchRatio: queryTerms.length > 0 ? matchedTerms / queryTerms.length : 0
+  };
+}
+
+/**
+ * Search using BM25 ranking
+ * Returns array of { index, score, matchedTerms, matchRatio } sorted by score
+ */
+function searchBM25(queryText) {
+  if (!searchModel.isReady) {
+    console.warn('Search model not ready yet');
+    return [];
+  }
+
+  // Extract keywords from query
+  var queryTerms = extractKeywords(queryText);
+  if (queryTerms.length === 0) return [];
+
+  // Debug: Log extracted keywords
+  console.log('Search query:', queryText);
+  console.log('Extracted keywords:', queryTerms);
+
+  var results = [];
+
+  // Score each document
+  for (var i = 0; i < searchModel.documents.length; i++) {
+    var result = calculateBM25Score(i, queryTerms);
+
+    // Only include documents that match at least one term
+    if (result.score > 0) {
+      results.push({
+        index: i,
+        score: result.score,
+        matchedTerms: result.matchedTerms,
+        matchRatio: result.matchRatio,
+        relevance: Math.min(100, Math.round(result.score * 10))
+      });
+    }
+  }
+
+  // Sort by score (descending), then by match ratio
+  results.sort(function(a, b) {
+    if (Math.abs(b.score - a.score) > 0.01) {
+      return b.score - a.score;
+    }
+    return b.matchRatio - a.matchRatio;
+  });
+
+  console.log('Total results:', results.length);
+  if (results.length > 0) {
+    console.log('Top 3 scores:', results.slice(0, 3).map(r => r.score.toFixed(2)));
+  }
+
+  return results;
+}
+
+// ============================================================================
+// NLP & TEXT PROCESSING - UTILITIES
 // ============================================================================
 
 /**
@@ -143,16 +333,31 @@ function normalizeText(text) {
 /**
  * Extract meaningful keywords from text
  * Filters out stop words and applies stemming
+ * Preserves important action verbs and context
  */
 function extractKeywords(text) {
   var normalized = normalizeText(text);
   var words = normalized.split(/\s+/);
   var keywords = [];
 
+  // Important action verbs that should NOT be stemmed aggressively
+  var actionVerbs = new Set([
+    'drop', 'close', 'open', 'reschedule', 'cancel', 'add', 'remove',
+    'delete', 'create', 'enroll', 'unenroll', 'withdraw', 'register',
+    'schedule', 'book', 'reserve', 'assign', 'unassign', 'approve',
+    'reject', 'submit', 'complete', 'start', 'finish', 'pause', 'resume'
+  ]);
+
   for (var i = 0; i < words.length; i++) {
     var word = words[i].replace(/^['-]+|['-]+$/g, ''); // Trim quotes/hyphens
+
     if (word.length > 2 && !stopWords.has(word)) {
-      keywords.push(simpleStem(word));
+      // Keep action verbs without stemming for better differentiation
+      if (actionVerbs.has(word)) {
+        keywords.push(word);
+      } else {
+        keywords.push(simpleStem(word));
+      }
     }
   }
   return keywords;
@@ -162,9 +367,11 @@ function extractKeywords(text) {
  * Calculate match score between user query and question text
  * Higher score = better match
  * Scoring: Exact match = 3, Stemmed match = 2, Partial match = 1
+ * Returns: { score: number, matchedCount: number, matchRatio: number }
  */
 function calculateMatchScore(userKeywords, questionText, additionalText) {
   var score = 0;
+  var matchedKeywords = 0;
   var questionNorm = normalizeText(questionText);
   var additionalNorm = normalizeText(additionalText || '');
   var combinedText = questionNorm + ' ' + additionalNorm;
@@ -172,27 +379,44 @@ function calculateMatchScore(userKeywords, questionText, additionalText) {
 
   for (var i = 0; i < userKeywords.length; i++) {
     var userWord = userKeywords[i];
+    var keywordMatched = false;
 
     // Exact match in combined text
     if (combinedText.indexOf(userWord) >= 0) {
       score += 3;
+      keywordMatched = true;
     }
 
-    // Stemmed or partial match
-    for (var j = 0; j < combinedKeywords.length; j++) {
-      if (combinedKeywords[j] === userWord) {
-        score += 2;
-        break;
+    // Stemmed or partial match (only if exact match didn't already score)
+    if (!keywordMatched) {
+      for (var j = 0; j < combinedKeywords.length; j++) {
+        if (combinedKeywords[j] === userWord) {
+          score += 2;
+          keywordMatched = true;
+          break;
+        }
+        // Partial match (word starts with user keyword or vice versa)
+        if (combinedKeywords[j].startsWith(userWord) || userWord.startsWith(combinedKeywords[j])) {
+          score += 1;
+          keywordMatched = true;
+          break;
+        }
       }
-      // Partial match (word starts with user keyword or vice versa)
-      if (combinedKeywords[j].startsWith(userWord) || userWord.startsWith(combinedKeywords[j])) {
-        score += 1;
-        break;
-      }
+    }
+
+    if (keywordMatched) {
+      matchedKeywords++;
     }
   }
 
-  return score;
+  // Calculate match ratio (percentage of user keywords that were found)
+  var matchRatio = userKeywords.length > 0 ? matchedKeywords / userKeywords.length : 0;
+
+  return {
+    score: score,
+    matchedCount: matchedKeywords,
+    matchRatio: matchRatio
+  };
 }
 
 // ============================================================================
@@ -236,11 +460,75 @@ function init() {
     skipLink.focus();
   }
 
+  // Show loading state
+  showLoadingState();
+
   loadAllData();
   setLanguage();
-  displayIntroMessage();
-  addContent(globalLang);
-  listInitialQuestions();
+
+  // Build BM25 search model asynchronously
+  setTimeout(function() {
+    buildSearchModel();
+
+    // Once model is ready, show interface
+    hideLoadingState();
+    displayIntroMessage();
+    addContent(globalLang);
+    listInitialQuestions();
+    enableSearchInput();
+  }, 100);
+}
+
+/**
+ * Show loading indicator
+ */
+function showLoadingState() {
+  var textbox = document.getElementById('textbox');
+  if (textbox) {
+    textbox.disabled = true;
+    textbox.placeholder = isEnglish ? 'Loading search engine...' : 'Chargement du moteur de recherche...';
+  }
+
+  var conversationDiv = document.getElementById('conversationDiv');
+  if (conversationDiv) {
+    var loadingMsg = document.createElement('div');
+    loadingMsg.id = 'loading-indicator';
+    loadingMsg.className = 'bubble assistant inlineblock';
+    loadingMsg.style.textAlign = 'center';
+    loadingMsg.innerHTML = isEnglish
+      ? '<p>🔄 Initializing intelligent search engine...</p>'
+      : '<p>🔄 Initialisation du moteur de recherche intelligent...</p>';
+
+    var qnaTable = document.getElementById('QNA');
+    if (qnaTable) {
+      var row = qnaTable.insertRow(0);
+      var cell = row.insertCell(0);
+      cell.appendChild(loadingMsg);
+    }
+  }
+}
+
+/**
+ * Hide loading indicator
+ */
+function hideLoadingState() {
+  var loadingIndicator = document.getElementById('loading-indicator');
+  if (loadingIndicator && loadingIndicator.parentNode && loadingIndicator.parentNode.parentNode) {
+    loadingIndicator.parentNode.parentNode.remove();
+  }
+}
+
+/**
+ * Enable search input after model is ready
+ */
+function enableSearchInput() {
+  var textbox = document.getElementById('textbox');
+  if (textbox) {
+    textbox.disabled = false;
+    textbox.placeholder = isEnglish
+      ? 'Type your question or keywords here...'
+      : 'Saisissez votre question ou vos mots-clés ici...';
+  }
 }
 
 /**
@@ -262,7 +550,8 @@ function loadAllData() {
  * Based on the language toggle element in the HTML
  */
 function setLanguage() {
-  var language = document.getElementById("language").innerText;
+  var languageElement = document.getElementById("language");
+  var language = languageElement ? languageElement.innerText : "";
 
   if (language == "") {
     // Fallback: detect by presence of EN class
@@ -365,6 +654,7 @@ function addContent(language) {
     }
 
     button.setAttribute('id', `Q${i}`);
+    button.setAttribute('data-index', i); // Store original index
     button.setAttribute('onclick', `findAnswer(${i});`);
     questionsList.appendChild(button);
 
@@ -383,10 +673,13 @@ function addContent(language) {
  */
 function getQuestionTexts() {
   const newArray = [];
-  let length = document.getElementById("questions").getElementsByTagName("button").length;
+  var questionsDiv = document.getElementById("questions");
+  if (!questionsDiv) return newArray;
+
+  let length = questionsDiv.getElementsByTagName("button").length;
 
   for (let i = 0; i < length; i++) {
-    var questionText = document.getElementById("questions").getElementsByTagName("button")[i].innerText;
+    var questionText = questionsDiv.getElementsByTagName("button")[i].innerText;
     newArray.push(questionText);
   }
 
@@ -428,6 +721,11 @@ function clearChat() {
   var textbox = document.getElementById("textbox");
   if (textbox) {
     textbox.value = '';
+  }
+
+  // Rebuild search model if language might have changed
+  if (!searchModel.isReady) {
+    buildSearchModel();
   }
 
   scrollDownOfDiv("conversationDiv");
@@ -490,32 +788,56 @@ function sendMessage() {
     userMessage.innerText = textboxMessage;
     userTypes(userMessage);
 
-    var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+    var questionsDiv = document.getElementById("questions");
+    if (!questionsDiv) return;
 
-    // Extract keywords from user input using NLP
-    var userKeywords = extractKeywords(textboxMessage);
+    // Use BM25 search for accurate ranking
+    var searchResults = searchBM25(textboxMessage);
 
-    // Score each question based on match quality
-    var scoredQuestions = [];
+    // Extract query terms for filtering
+    var queryTerms = extractKeywords(textboxMessage);
 
-    for (let i = 0; i < nbQuestions; i++) {
-      var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
-      var questionText = htmlButton.innerText;
+    // Smarter minimum match requirements and score thresholds
+    var minMatchRatio;
+    var minScore = 0; // Minimum BM25 score threshold
 
-      // Get the corresponding question in both languages for better matching
-      var questionEN = questionsEN[i] || '';
-      var questionFR = questionsFR[i] || '';
-      var combinedQuestions = questionEN + ' ' + questionFR;
-
-      var score = calculateMatchScore(userKeywords, questionText, combinedQuestions);
-
-      if (score > 0) {
-        scoredQuestions.push({ index: i, button: htmlButton, score: score });
-      }
+    if (queryTerms.length === 1) {
+      minMatchRatio = 1.0; // Must match the single keyword
+      minScore = 0.5; // Higher threshold for single keyword to filter weak matches
+    } else if (queryTerms.length === 2) {
+      minMatchRatio = 1.0; // Must match BOTH keywords for 2-word queries
+      minScore = 0.3;
+    } else if (queryTerms.length === 3) {
+      minMatchRatio = 0.67; // Must match at least 2 of 3 keywords
+      minScore = 0.2;
+    } else {
+      minMatchRatio = 0.5; // Must match at least half for longer queries
+      minScore = 0.15;
     }
 
-    // Sort by score (highest first)
-    scoredQuestions.sort(function(a, b) { return b.score - a.score; });
+    // Filter and map results to question buttons
+    var scoredQuestions = [];
+    for (var i = 0; i < searchResults.length; i++) {
+      var result = searchResults[i];
+      var questionIndex = result.index;
+
+      // Apply BOTH match ratio filter AND minimum score threshold
+      if (result.matchRatio >= minMatchRatio && result.score >= minScore) {
+        // Find button by data-index attribute (not DOM position)
+        var htmlButton = questionsDiv.querySelector('button[data-index="' + questionIndex + '"]');
+
+        if (htmlButton) {
+          scoredQuestions.push({
+            index: questionIndex,
+            button: htmlButton,
+            score: result.score,
+            matchedTerms: result.matchedTerms,
+            matchRatio: result.matchRatio,
+            relevance: result.relevance
+          });
+        }
+      }
+    }
 
     // Show matching questions
     var foundKeyword = scoredQuestions.length > 0;
@@ -523,10 +845,17 @@ function sendMessage() {
     if (foundKeyword) {
       hideAllQuestions();
 
-      // Show top matches (limited to 15)
-      var maxToShow = Math.min(scoredQuestions.length, 15);
+      // Limit results to top matches (fewer is better for relevance)
+      var maxToShow = Math.min(scoredQuestions.length, 10);
+
+      // Use CSS order to arrange results without moving DOM elements
       for (let i = 0; i < maxToShow; i++) {
         var btn = scoredQuestions[i].button;
+
+        // Set visual order using CSS flexbox order property
+        btn.style.order = i.toString();
+
+        // Make it visible
         btn.classList.remove("hidden");
         btn.classList.add("visible");
         btn.style.visibility = 'visible';
@@ -538,16 +867,24 @@ function sendMessage() {
       if (isEnglish) {
         var matchCount = Math.min(scoredQuestions.length, maxToShow);
         if (matchCount === 1) {
-          message.innerText = "I found 1 question that matches your search. Please see the Suggested Questions panel.";
+          message.innerText = "I found 1 question that matches your search. Please see the Questions panel.";
+        } else if (matchCount <= 3) {
+          message.innerText = "I found " + matchCount + " questions that match your search, ordered by relevance. Please see the Questions panel.";
+        } else if (matchCount <= 10) {
+          message.innerText = "I found " + matchCount + " questions that might help you, ordered by best match. Please see the Questions panel.";
         } else {
-          message.innerText = "I found " + matchCount + " questions that might help you. Please see the Suggested Questions panel.";
+          message.innerText = "I found " + matchCount + " questions. The most relevant ones are shown first. Please see the Questions panel.";
         }
       } else {
         var matchCount = Math.min(scoredQuestions.length, maxToShow);
         if (matchCount === 1) {
-          message.innerText = "J'ai trouvé 1 question qui correspond à votre recherche. Veuillez consulter le panneau des Questions suggérées.";
+          message.innerText = "J'ai trouvé 1 question qui correspond à votre recherche. Veuillez consulter le panneau des Questions.";
+        } else if (matchCount <= 3) {
+          message.innerText = "J'ai trouvé " + matchCount + " questions qui correspondent à votre recherche, classées par pertinence. Veuillez consulter le panneau des Questions.";
+        } else if (matchCount <= 10) {
+          message.innerText = "J'ai trouvé " + matchCount + " questions qui pourraient vous aider, classées par meilleure correspondance. Veuillez consulter le panneau des Questions.";
         } else {
-          message.innerText = "J'ai trouvé " + matchCount + " questions qui pourraient vous aider. Veuillez consulter le panneau des Questions suggérées.";
+          message.innerText = "J'ai trouvé " + matchCount + " questions. Les plus pertinentes sont affichées en premier. Veuillez consulter le panneau des Questions.";
         }
       }
 
@@ -636,10 +973,14 @@ function listAllQuestions() {
  * Show only initial (first 10) questions
  */
 function listInitialQuestions() {
-  var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+  var questionsDiv = document.getElementById("questions");
+  if (!questionsDiv) return;
+
+  var nbQuestions = questionsDiv.getElementsByTagName("button").length;
 
   for (let i = 0; i < nbQuestions; i++) {
-    var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
+    var htmlButton = questionsDiv.getElementsByTagName("button")[i];
+    htmlButton.style.order = ''; // Reset order to original
 
     if (htmlButton.classList.contains("default")) {
       // Show default (first 10) questions
@@ -690,13 +1031,17 @@ function updateToggleButtonText() {
  * Hide all questions
  */
 function hideAllQuestions() {
-  var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+  var questionsDiv = document.getElementById("questions");
+  if (!questionsDiv) return;
+
+  var nbQuestions = questionsDiv.getElementsByTagName("button").length;
   for (let i = 0; i < nbQuestions; i++) {
-    var btn = document.getElementById("questions").getElementsByTagName("button")[i];
+    var btn = questionsDiv.getElementsByTagName("button")[i];
     btn.classList.add("hidden");
     btn.classList.remove("visible");
     btn.style.visibility = 'hidden';
     btn.style.display = 'none';
+    btn.style.order = ''; // Reset order
   }
 }
 
@@ -704,13 +1049,17 @@ function hideAllQuestions() {
  * Display all questions
  */
 function displayAllQuestions() {
-  var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+  var questionsDiv = document.getElementById("questions");
+  if (!questionsDiv) return;
+
+  var nbQuestions = questionsDiv.getElementsByTagName("button").length;
   for (let i = 0; i < nbQuestions; i++) {
-    var btn = document.getElementById("questions").getElementsByTagName("button")[i];
+    var btn = questionsDiv.getElementsByTagName("button")[i];
     btn.classList.remove("hidden");
     btn.classList.add("visible");
     btn.style.visibility = 'visible';
     btn.style.display = 'block';
+    btn.style.order = ''; // Reset to original order
   }
   showingAllQuestions = true;
   updateToggleButtonText();
@@ -721,26 +1070,34 @@ function displayAllQuestions() {
 // Button visibility helpers
 function showInitialQuestionsButton() {
   var htmlButton = document.getElementById("initialQuestions");
-  htmlButton.style.visibility = 'visible';
-  htmlButton.style.display = 'block';
+  if (htmlButton) {
+    htmlButton.style.visibility = 'visible';
+    htmlButton.style.display = 'block';
+  }
 }
 
 function hideInitialQuestionsButton() {
   var htmlButton = document.getElementById("initialQuestions");
-  htmlButton.style.visibility = 'hidden';
-  htmlButton.style.display = 'none';
+  if (htmlButton) {
+    htmlButton.style.visibility = 'hidden';
+    htmlButton.style.display = 'none';
+  }
 }
 
 function showAllQuestionsButton() {
   var htmlButton = document.getElementById("allQuestions");
-  htmlButton.style.visibility = 'visible';
-  htmlButton.style.display = 'block';
+  if (htmlButton) {
+    htmlButton.style.visibility = 'visible';
+    htmlButton.style.display = 'block';
+  }
 }
 
 function hideAllQuestionsButton() {
   var htmlButton = document.getElementById("allQuestions");
-  htmlButton.style.visibility = 'hidden';
-  htmlButton.style.display = 'none';
+  if (htmlButton) {
+    htmlButton.style.visibility = 'hidden';
+    htmlButton.style.display = 'none';
+  }
 }
 
 // ============================================================================
@@ -791,14 +1148,17 @@ function setUserByRoleClass(roleClass) {
  * Filter questions to show only those matching the selected role
  */
 function filterQuestionsByUserType() {
-  var nbQuestions = document.getElementById("questions").getElementsByTagName("button").length;
+  var questionsDiv = document.getElementById("questions");
+  if (!questionsDiv) return;
+
+  var nbQuestions = questionsDiv.getElementsByTagName("button").length;
 
   // Get all possible role classes from unique categories
   var uniqueCategories = getUniqueCategories();
   var allRoleClasses = uniqueCategories.map(function(cat) { return cat.roleClass; });
 
   for (let i = 0; i < nbQuestions; i++) {
-    var htmlButton = document.getElementById("questions").getElementsByTagName("button")[i];
+    var htmlButton = questionsDiv.getElementsByTagName("button")[i];
     var classes = htmlButton.classList;
 
     // Check if button has any role class (dynamically check all possible role classes)
@@ -852,13 +1212,16 @@ function scrollDownOfDiv(DivName) {
 function userTypes(elmt) {
   elmt.classList.add("bubble", "user", "inlineblock");
 
+  var qnaTable = document.getElementById("QNA");
+  if (!qnaTable) return;
+
   if (rows == 0) {
-    rows = document.getElementById("QNA").getElementsByTagName("tr").length;
+    rows = qnaTable.getElementsByTagName("tr").length;
   } else {
     rows++;
   }
 
-  var row = document.getElementById("QNA").insertRow(rows);
+  var row = qnaTable.insertRow(rows);
   row.classList.add("userBubble");
 
   // Create message cell
@@ -885,22 +1248,30 @@ function userTypes(elmt) {
 function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
   elmt.classList.add("bubble", "assistant", "inlineblock");
 
-  document.getElementById("typingBubble").style.visibility = 'visible';
-  document.getElementById("typingBubble").style.display = 'inline';
+  var typingBubble = document.getElementById("typingBubble");
+  if (typingBubble) {
+    typingBubble.style.visibility = 'visible';
+    typingBubble.style.display = 'inline';
+  }
 
   typingTimeout = setTimeout(() => {
     if (isTyping == false) {
       isTyping = true;
-      document.getElementById("typingBubble").style.visibility = 'hidden';
-      document.getElementById("typingBubble").style.display = 'none';
+      if (typingBubble) {
+        typingBubble.style.visibility = 'hidden';
+        typingBubble.style.display = 'none';
+      }
+
+      var qnaTable = document.getElementById("QNA");
+      if (!qnaTable) return;
 
       if (rows == 0) {
-        rows = document.getElementById("QNA").getElementsByTagName("tr").length;
+        rows = qnaTable.getElementsByTagName("tr").length;
       } else {
         rows++;
       }
 
-      var row = document.getElementById("QNA").insertRow(rows);
+      var row = qnaTable.insertRow(rows);
       var cell = row.insertCell(0);
 
       const img = document.createElement("img");
