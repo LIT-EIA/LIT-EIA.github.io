@@ -623,6 +623,24 @@ body {
   margin-bottom: 16px;
 }
 
+/* User Icon SVG - Pure CSS icon without img tag */
+.userBubble .userIconTD::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23e03e59;stop-opacity:1" /><stop offset="100%" style="stop-color:%23c7344d;stop-opacity:1" /></linearGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23userGrad)"/><g fill="white" opacity="0.95"><circle cx="50" cy="38" r="16"/><path d="M50 58c-14 0-26 8-30 18h60c-4-10-16-18-30-18z"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.userBubble .userIcon {
+  display: none;
+}
+
 /* Add spacing between conversation bubbles */
 #QNA tr {
   margin-bottom: 12px;
