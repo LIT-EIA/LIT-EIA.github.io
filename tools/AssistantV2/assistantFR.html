@@ -51,22 +51,22 @@
             <div class="input-wrapper">
               <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
               <input type="text" id="textbox" name="msg" autocomplete="off" placeholder="Entrez un mot-clé ou une question..." aria-describedby="search-hint">
-              <button type="button" id="clear-search" class="clear-btn" aria-label="Effacer" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+              <button type="button" id="clear-search" class="clear-btn" aria-label="Effacer la recherche" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
             </div>
-            <button type="button" id="send" class="send-btn" onclick="sendMessage()"><span>Envoyer</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"></path></svg></button>
+            <button type="button" id="send" class="send-btn" onclick="sendMessage()" aria-label="Envoyer le message"><span>Envoyer</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"></path></svg></button>
           </div>
           <p id="search-hint" class="search-hint">Tapez des mots-clés pour filtrer les questions</p>
-          <div id="suggestions-container" class="suggestions-container" role="listbox" aria-label="Suggestions" style="display:none;"></div>
+          <div id="suggestions-container" class="suggestions-container" role="listbox" aria-label="Suggestions de recherche" aria-relevant="additions removals" style="display:none;"></div>
         </div>
       </section>
       <aside class="sidebar" aria-label="Panneau des questions suggérées">
         <div class="sidebar-header">
           <h2>Questions les plus fréquentes</h2>
-          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()">Effacer le chat</button>
+          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()" aria-label="Effacer tous les messages du chat">Effacer le chat</button>
         </div>
         <div class="sidebar-content">
           <div id="built-in-questions" class="quick-actions">
-            <button id="toggleQuestionsBtn" class="action-btn action-btn-primary" onclick="toggleQuestions(); pushbeacon(event, 'Toggle questions')"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span id="toggleQuestionsText">Afficher toutes les questions</span></button>
+            <button id="toggleQuestionsBtn" class="action-btn action-btn-primary" onclick="toggleQuestions(); pushbeacon(event, 'Toggle questions')" aria-label="Basculer entre toutes les questions et les questions initiales"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span id="toggleQuestionsText">Afficher toutes les questions</span></button>
           </div>
           <div id="questions" class="questions-list" role="list"></div>
         </div>

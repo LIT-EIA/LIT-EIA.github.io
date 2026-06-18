@@ -454,12 +454,6 @@ function sanitizeForAnalytics(text) {
  * Main initialization function - called when the page loads
  */
 function init() {
-  // Focus skip-link for accessibility (first focusable element)
-  const skipLink = document.querySelector('.skip-link');
-  if (skipLink) {
-    skipLink.focus();
-  }
-
   // Show loading state
   showLoadingState();
 
