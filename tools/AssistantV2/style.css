@@ -529,7 +529,6 @@ input:focus:not(:focus-visible) {
   transition: all var(--transition);
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .clear-chat-btn:hover {
@@ -870,7 +869,6 @@ input:focus:not(:focus-visible) {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .assistantIconTD,
@@ -931,7 +929,6 @@ input:focus:not(:focus-visible) {
 .bubble td,
 .bubble th {
   padding: 12px;
-  border: 1px solid var(--border);
   vertical-align: top;
 }
 
