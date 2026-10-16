@@ -716,6 +716,7 @@ input:focus:not(:focus-visible) {
 .bubble.inlineblock {
   display: inline-block;
   text-align: left;
+  margin-top:15px;
 }
 
 .bubble.inlineblock:focus,
