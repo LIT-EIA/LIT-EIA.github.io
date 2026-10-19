@@ -178,9 +178,49 @@ input:focus:not(:focus-visible) {
   letter-spacing: -0.02em;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .header-nav {
   display: flex;
   align-items: center;
+}
+
+.clear-chat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  min-height: var(--touch-target);
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.clear-chat-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.clear-chat-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.clear-chat-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .lang-switch {
@@ -260,12 +300,13 @@ input:focus:not(:focus-visible) {
   table-layout: fixed;
 }
 
-#QNA tr {
+/* Chat rows only (direct children), so tables inside answers keep normal layout */
+#QNA > tbody > tr {
   display: block;
   margin-bottom: 16px;
 }
 
-#QNA td {
+#QNA > tbody > tr > td {
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
@@ -516,31 +557,6 @@ input:focus:not(:focus-visible) {
   display: none;
 }
 
-.clear-chat-btn {
-  padding: 8px 14px;
-  min-height: var(--touch-target);
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--text-on-dark);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-md);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition);
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.clear-chat-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.clear-chat-btn:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.8);
-  outline-offset: 2px;
-}
-
 .sidebar-content {
   flex: 1;
   display: flex;
@@ -772,7 +788,7 @@ input:focus:not(:focus-visible) {
   margin-bottom: 16px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
 }
 
@@ -806,14 +822,25 @@ input:focus:not(:focus-visible) {
 }
 
 /* Assistant message row alignment */
-#QNA tr:not(.userBubble) > td > .assistantIconTD,
-#QNA tr:not(.userBubble) > td > td:first-child {
+#QNA > tbody > tr:not(.userBubble) > td {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Answer cell receives programmatic focus after sending; no outline needed */
+#QNA > tbody > tr > td > td[tabindex="-1"]:focus {
+  outline: none;
+}
+
+#QNA > tbody > tr:not(.userBubble) > td > .assistantIconTD,
+#QNA > tbody > tr:not(.userBubble) > td > td:first-child {
   width: 44px;
   flex-shrink: 0;
   padding: 4px;
 }
 
-#QNA tr:not(.userBubble) > td > td:last-child {
+#QNA > tbody > tr:not(.userBubble) > td > td:last-child {
   flex: 1;
   min-width: 0;
 }
@@ -870,14 +897,17 @@ input:focus:not(:focus-visible) {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  object-fit: contain;
 }
 
 .assistantIconTD,
 .userIconTD {
   width: 44px;
-  vertical-align: top;
+  vertical-align: middle;
   padding: 4px;
   flex-shrink: 0;
+  /* Match the bubbles' top margin so icons line up with the bubble itself */
+  margin-top: 15px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -931,6 +961,7 @@ input:focus:not(:focus-visible) {
 .bubble th {
   padding: 12px;
   vertical-align: top;
+  overflow-wrap: break-word;
 }
 
 
@@ -986,7 +1017,8 @@ input:focus:not(:focus-visible) {
     height: 40px;
   }
 
-  .lang-switch {
+  .lang-switch,
+  .clear-chat-btn {
     padding: 8px 14px;
     font-size: 0.875rem;
   }
@@ -1110,7 +1142,14 @@ input:focus:not(:focus-visible) {
 
   .clear-chat-btn {
     padding: 6px 10px;
-    font-size: 0.75rem;
+  }
+
+  .clear-chat-btn span {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
   }
 
   .action-btn {
