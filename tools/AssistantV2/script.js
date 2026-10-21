@@ -895,7 +895,7 @@ function displayIntroMessage() {
   }
 
   askUserType(message);
-  assistantTypes(message, false, true); // Skip focus for intro message
+  assistantTypes(message, false, true, false); // Skip focus and support message for intro message
 }
 
 /**
@@ -1435,8 +1435,9 @@ function userTypes(elmt) {
  * @param {HTMLElement} elmt - Message element to display
  * @param {boolean} withCloseMessage - Whether to include close/survey message
  * @param {boolean} skipFocus - Whether to skip auto-focusing (used for intro message)
+ * @param {boolean} withSupportMessage - Whether to include the "more assistance" message
  */
-function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
+function assistantTypes(elmt, withCloseMessage, skipFocus = false, withSupportMessage = true) {
   elmt.classList.add("bubble", "assistant", "inlineblock");
 
   var typingBubble = document.getElementById("typingBubble");
@@ -1479,8 +1480,8 @@ function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
       td2.appendChild(elmt);
       cell.appendChild(td2);
 
-      if (withCloseMessage) {
-        add_closeMessage(td2);
+      if (withSupportMessage || withCloseMessage) {
+        add_closeMessage(td2, withCloseMessage);
       }
 
       scrollDownOfDiv("conversationDiv");
@@ -1498,9 +1499,11 @@ function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
 }
 
 /**
- * Add closing message with survey link
+ * Add closing message with support link, and optionally the survey link
+ * @param {HTMLElement} tdElemt - Cell to append the message to
+ * @param {boolean} withSurvey - Whether to include the survey link
  */
-function add_closeMessage(tdElemt) {
+function add_closeMessage(tdElemt, withSurvey) {
   var message = document.createElement("p");
   message.classList.add("bubble", "assistant", "inlineblock");
 
@@ -1523,6 +1526,11 @@ function add_closeMessage(tdElemt) {
     message.append(" to get in touch with one of the Learning Infrastructure team's resolvers.");
   } else {
     message.append(" pour entrer en contact avec l'un des agents de l'équipe Infrastructure de l'apprentissage.");
+  }
+
+  if (!withSurvey) {
+    tdElemt.appendChild(message);
+    return;
   }
 
   // Add survey link
