@@ -1084,7 +1084,7 @@ function sendMessage() {
       showingAllQuestions = false;
       updateToggleButtonText();
       showAllQuestionsButton();
-      assistantTypes(message, false);
+      assistantTypes(message, true);
     } else {
       var message = document.createElement("p");
 
@@ -1094,7 +1094,7 @@ function sendMessage() {
         message.innerText = "Je suis désolé, je n'ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question.";
       }
 
-      assistantTypes(message, false);
+      assistantTypes(message, true);
     }
   }
 
