@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Audio Response</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.5;
+    color: #111111;
+    background: #ffffff;
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.language-toggle {
+    color: #005ea5;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.language-toggle:hover {
+    color: #003f73;
+}
+
+.language-toggle:focus-visible,
+button:focus-visible {
+    outline: 4px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+.panel {
+    border: 2px solid #666666;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.question {
+    padding: 1rem;
+    background: #f2f6fa;
+    border-left: 6px solid #005ea5;
+    font-size: 1.1rem;
+}
+
+button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #003366;
+    border-radius: 4px;
+    background: #005ea5;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: #004b87;
+}
+
+button:disabled {
+    background: #888888;
+    border-color: #666666;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+progress {
+    width: 100%;
+    height: 24px;
+}
+
+.time {
+    margin-top: 0.5rem;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <a
+        href="#"
+        id="languageToggle"
+        class="language-toggle">
+        Français
+    </a>
+</div>
+
+<div
+    id="liveRegion"
+    class="sr-only"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true">
+</div>
+
+<h1 id="pageTitle">Audio Response</h1>
+
+<section class="panel">
+    <h2 id="questionHeading">Question</h2>
+
+    <div
+        id="questionText"
+        class="question">
+        Please record your response.
+    </div>
+</section>
+
+<section class="panel">
+
+    <h2 id="recordingHeading">Recording</h2>
+
+    <button
+        id="recordBtn"
+        type="button">
+        Start Recording
+    </button>
+
+    <div style="margin-top:1rem;">
+
+        <label
+            id="recordProgressLabel"
+            for="recordBar">
+            Recording Progress
+        </label>
+
+        <progress
+            id="recordBar"
+            value="0"
+            max="100">
+        </progress>
+
+        <div
+            id="recordTime"
+            class="time">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="panel">
+
+    <h2 id="playbackHeading">Playback</h2>
+
+    <button
+        id="playBtn"
+        type="button"
+        disabled>
+        Play Recording
+    </button>
+
+    <div style="margin-top:1rem;">
+
+        <label
+            id="playProgressLabel"
+            for="playBar">
+            Playback Progress
+        </label>
+
+        <progress
+            id="playBar"
+            value="0"
+            max="100">
+        </progress>
+
+        <div
+            id="playTime"
+            class="time">
+            Not started
+        </div>
+
+    </div>
+
+</section>
+
+<section class="panel">
+
+    <h2 id="statusHeading">Status</h2>
+
+    <div
+        id="statusText"
+        class="status">
+        Ready
+    </div>
+
+</section>
+
+<audio id="audioPlayer"></audio>
+
+<script>
+
+/* ====================================================
+   URL PARAMETERS
+==================================================== */
+
+const params = new URLSearchParams(window.location.search);
+
+const questionEN =
+    params.get("question_en") ||
+    "Please record your response.";
+
+const questionFR =
+    params.get("question_fr") ||
+    "Veuillez enregistrer votre réponse.";
+
+let timeLimit =
+    parseInt(params.get("timelimit"), 10);
+
+if (isNaN(timeLimit) || timeLimit < 1) {
+    timeLimit = 60;
+}
+
+let startLanguage =
+    (params.get("startlang") || "en")
+    .toLowerCase();
+
+switch (startLanguage) {
+
+    case "fr":
+    case "fra":
+    case "french":
+        startLanguage = "fr";
+        break;
+
+    case "en":
+    case "eng":
+    case "english":
+        startLanguage = "en";
+        break;
+
+    default:
+        startLanguage = "en";
+}
+
+/* ====================================================
+   TEXT
+==================================================== */
+
+let currentLanguage = "en";
+
+const text = {
+
+    en: {
+        pageTitle: "Audio Response",
+        questionHeading: "Question",
+        recordingHeading: "Recording",
+        playbackHeading: "Playback",
+        statusHeading: "Status",
+        recordProgress: "Recording Progress",
+        playProgress: "Playback Progress",
+        startRecording: "Start Recording",
+        stopRecording: "Stop Recording",
+        playRecording: "Play Recording",
+        ready: "Ready",
+        notStarted: "Not started",
+        toggleLabel: "Français"
+    },
+
+    fr: {
+        pageTitle: "Réponse audio",
+        questionHeading: "Question",
+        recordingHeading: "Enregistrement",
+        playbackHeading: "Lecture",
+        statusHeading: "État",
+        recordProgress: "Progression de l'enregistrement",
+        playProgress: "Progression de la lecture",
+        startRecording: "Commencer l'enregistrement",
+        stopRecording: "Arrêter l'enregistrement",
+        playRecording: "Lire l'enregistrement",
+        ready: "Prêt",
+        notStarted: "Non commencée",
+        toggleLabel: "English"
+    }
+
+};
+
+/* ====================================================
+   ELEMENTS
+==================================================== */
+
+const recordBtn = document.getElementById("recordBtn");
+const playBtn = document.getElementById("playBtn");
+
+const recordBar = document.getElementById("recordBar");
+const playBar = document.getElementById("playBar");
+
+const recordTime = document.getElementById("recordTime");
+const playTime = document.getElementById("playTime");
+
+const audioPlayer = document.getElementById("audioPlayer");
+
+const statusText = document.getElementById("statusText");
+const liveRegion = document.getElementById("liveRegion");
+
+const languageToggle =
+    document.getElementById("languageToggle");
+
+/* ====================================================
+   ACCESSIBILITY
+==================================================== */
+
+function announce(message) {
+
+    statusText.textContent = message;
+
+    liveRegion.textContent = "";
+
+    setTimeout(() => {
+        liveRegion.textContent = message;
+    }, 50);
+}
+
+/* ====================================================
+   LANGUAGE
+==================================================== */
+
+function applyLanguage(lang) {
+
+    currentLanguage = lang;
+
+    const t = text[lang];
+
+    document.documentElement.lang = lang;
+
+    document.title =
+        t.pageTitle;
+
+    document.getElementById("pageTitle").textContent =
+        t.pageTitle;
+
+    document.getElementById("questionHeading").textContent =
+        t.questionHeading;
+
+    document.getElementById("recordingHeading").textContent =
+        t.recordingHeading;
+
+    document.getElementById("playbackHeading").textContent =
+        t.playbackHeading;
+
+    document.getElementById("statusHeading").textContent =
+        t.statusHeading;
+
+    document.getElementById("recordProgressLabel").textContent =
+        t.recordProgress;
+
+    document.getElementById("playProgressLabel").textContent =
+        t.playProgress;
+
+    document.getElementById("questionText").textContent =
+        lang === "fr"
+            ? questionFR
+            : questionEN;
+
+    languageToggle.textContent =
+        t.toggleLabel;
+
+    languageToggle.setAttribute(
+        "aria-label",
+        lang === "fr"
+            ? "Switch to English"
+            : "Passer au français"
+    );
+
+    if (
+        !mediaRecorder ||
+        mediaRecorder.state !== "recording"
+    ) {
+        recordBtn.textContent =
+            t.startRecording;
+    }
+
+    playBtn.textContent =
+        t.playRecording;
+}
+
+languageToggle.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    applyLanguage(
+        currentLanguage === "en"
+            ? "fr"
+            : "en"
+    );
+
+});
+
+/* ====================================================
+   AUDIO RECORDING
+==================================================== */
+
+let mediaRecorder;
+let audioChunks = [];
+
+let recordingTimer;
+let playbackTimer;
+
+let recordingStart;
+
+recordTime.textContent =
+    `0 / ${timeLimit} s`;
+
+recordBtn.addEventListener("click", async () => {
+
+    if (
+        mediaRecorder &&
+        mediaRecorder.state === "recording"
+    ) {
+        stopRecording();
+        return;
+    }
+
+    try {
+
+        const stream =
+            await navigator.mediaDevices.getUserMedia({
+                audio: true
+            });
+
+        audioChunks = [];
+
+        mediaRecorder =
+            new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = (event) => {
+            audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = () => {
+
+            const blob =
+                new Blob(audioChunks, {
+                    type: "audio/webm"
+                });
+
+            audioPlayer.src =
+                URL.createObjectURL(blob);
+
+            playBtn.disabled = false;
+
+            announce(
+                currentLanguage === "fr"
+                    ? "Enregistrement terminé."
+                    : "Recording complete."
+            );
+        };
+
+        mediaRecorder.start();
+
+        recordingStart = Date.now();
+
+        recordBar.value = 0;
+
+        recordBtn.textContent =
+            currentLanguage === "fr"
+                ? text.fr.stopRecording
+                : text.en.stopRecording;
+
+        announce(
+            currentLanguage === "fr"
+                ? "Enregistrement commencé."
+                : "Recording started."
+        );
+
+        recordingTimer = setInterval(() => {
+
+            const elapsed =
+                (Date.now() - recordingStart) / 1000;
+
+            const percentage =
+                Math.min(
+                    (elapsed / timeLimit) * 100,
+                    100
+                );
+
+            recordBar.value =
+                percentage;
+
+            recordTime.textContent =
+                `${Math.floor(elapsed)} / ${timeLimit} s`;
+
+            if (elapsed >= timeLimit) {
+
+                announce(
+                    currentLanguage === "fr"
+                        ? "Limite de temps atteinte."
+                        : "Time limit reached."
+                );
+
+                stopRecording();
+            }
+
+        }, 100);
+
+    }
+    catch {
+
+        announce(
+            currentLanguage === "fr"
+                ? "Accès au microphone refusé."
+                : "Microphone permission denied."
+        );
+    }
+
+});
+
+function stopRecording() {
+
+    clearInterval(recordingTimer);
+
+    if (
+        mediaRecorder &&
+        mediaRecorder.state === "recording"
+    ) {
+
+        mediaRecorder.stop();
+
+        mediaRecorder.stream
+            .getTracks()
+            .forEach(track => track.stop());
+
+    }
+
+    recordBtn.textContent =
+        currentLanguage === "fr"
+            ? text.fr.startRecording
+            : text.en.startRecording;
+}
+
+/* ====================================================
+   PLAYBACK
+==================================================== */
+
+playBtn.addEventListener("click", () => {
+
+    if (!audioPlayer.src) {
+
+        announce(
+            currentLanguage === "fr"
+                ? "Aucun enregistrement disponible."
+                : "No recording available."
+        );
+
+        return;
+    }
+
+    audioPlayer.currentTime = 0;
+
+    audioPlayer.play();
+
+    playBar.value = 0;
+
+    announce(
+        currentLanguage === "fr"
+            ? "Lecture commencée."
+            : "Playback started."
+    );
+
+    clearInterval(playbackTimer);
+
+    playbackTimer = setInterval(() => {
+
+        if (!audioPlayer.duration) {
+            return;
+        }
+
+        const percent =
+            (audioPlayer.currentTime /
+                audioPlayer.duration) * 100;
+
+        playBar.value = percent;
+
+        playTime.textContent =
+            `${Math.floor(audioPlayer.currentTime)} / ${Math.floor(audioPlayer.duration)} s`;
+
+    }, 100);
+
+});
+
+audioPlayer.addEventListener("ended", () => {
+
+    clearInterval(playbackTimer);
+
+    playBar.value = 100;
+
+    announce(
+        currentLanguage === "fr"
+            ? "Lecture terminée."
+            : "Playback complete."
+    );
+
+});
+
+/* ====================================================
+   INITIALIZATION
+==================================================== */
+
+applyLanguage(startLanguage);
+
+</script>
+
+</body>
+</html>

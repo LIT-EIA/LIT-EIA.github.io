@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Audio Response URL Builder</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.5;
+}
+
+.panel {
+    border: 2px solid #666;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+textarea,
+input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .75rem;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: .8rem 1.2rem;
+    border: 2px solid #003366;
+    background: #005ea5;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #004b87;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+    outline: 4px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+.result-row {
+    margin-top: 1rem;
+}
+
+.url-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .75rem;
+    font-family: Consolas, Monaco, monospace;
+    background: #f5f5f5;
+    border: 1px solid #cccccc;
+    word-break: break-all;
+}
+
+.copy-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: .75rem;
+    align-items: center;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .copy-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>Audio Response URL Builder</h1>
+
+<div class="panel">
+
+    <label for="questionEN">
+        English Question
+    </label>
+
+    <textarea
+        id="questionEN"
+        placeholder="Enter the English question here..."></textarea>
+
+</div>
+
+<div class="panel">
+
+    <label for="questionFR">
+        French Question
+    </label>
+
+    <textarea
+        id="questionFR"
+        placeholder="Entrez la question française ici..."></textarea>
+
+</div>
+
+<div class="panel">
+
+    <label for="timeLimit">
+        Time Limit (seconds)
+    </label>
+
+    <input
+        id="timeLimit"
+        type="number"
+        min="1"
+        value="60">
+
+</div>
+
+<button
+    id="generateBtn"
+    type="button">
+    Generate Links
+</button>
+
+<div
+    id="results"
+    class="hidden">
+
+    <div class="panel">
+
+        <h2>English Link</h2>
+
+        <div
+            id="englishUrl"
+            class="url-box"></div>
+
+        <div class="copy-row">
+
+            <button
+                id="copyEnglish"
+                type="button">
+                Copy English Link
+            </button>
+
+            <div
+                id="englishStatus"
+                class="status"></div>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <h2>French Link</h2>
+
+        <div
+            id="frenchUrl"
+            class="url-box"></div>
+
+        <div class="copy-row">
+
+            <button
+                id="copyFrench"
+                type="button">
+                Copy French Link
+            </button>
+
+            <div
+                id="frenchStatus"
+                class="status"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const recorderPage = "index.html";
+
+let generatedEnglishUrl = "";
+let generatedFrenchUrl = "";
+
+document
+    .getElementById("generateBtn")
+    .addEventListener("click", () => {
+
+        const questionEN =
+            document
+            .getElementById("questionEN")
+            .value
+            .trim();
+
+        const questionFR =
+            document
+            .getElementById("questionFR")
+            .value
+            .trim();
+
+        let timeLimit =
+            parseInt(
+                document
+                .getElementById("timeLimit")
+                .value,
+                10
+            );
+
+        if (
+            isNaN(timeLimit) ||
+            timeLimit < 1
+        ) {
+            timeLimit = 60;
+        }
+
+        const englishParams =
+            new URLSearchParams();
+
+        englishParams.set(
+            "startlang",
+            "en"
+        );
+
+        englishParams.set(
+            "question_en",
+            questionEN
+        );
+
+        englishParams.set(
+            "question_fr",
+            questionFR
+        );
+
+        englishParams.set(
+            "timelimit",
+            timeLimit
+        );
+
+        const frenchParams =
+            new URLSearchParams();
+
+        frenchParams.set(
+            "startlang",
+            "fr"
+        );
+
+        frenchParams.set(
+            "question_en",
+            questionEN
+        );
+
+        frenchParams.set(
+            "question_fr",
+            questionFR
+        );
+
+        frenchParams.set(
+            "timelimit",
+            timeLimit
+        );
+
+        generatedEnglishUrl =
+            `${recorderPage}?${englishParams.toString()}`;
+
+        generatedFrenchUrl =
+            `${recorderPage}?${frenchParams.toString()}`;
+
+        document
+            .getElementById("englishUrl")
+            .textContent =
+            generatedEnglishUrl;
+
+        document
+            .getElementById("frenchUrl")
+            .textContent =
+            generatedFrenchUrl;
+
+        document
+            .getElementById("results")
+            .classList
+            .remove("hidden");
+
+        document
+            .getElementById("englishStatus")
+            .textContent = "";
+
+        document
+            .getElementById("frenchStatus")
+            .textContent = "";
+    });
+
+document
+    .getElementById("copyEnglish")
+    .addEventListener("click", async () => {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                generatedEnglishUrl
+            );
+
+            document
+                .getElementById("englishStatus")
+                .textContent =
+                "Copied.";
+
+        } catch {
+
+            document
+                .getElementById("englishStatus")
+                .textContent =
+                "Unable to copy.";
+
+        }
+    });
+
+document
+    .getElementById("copyFrench")
+    .addEventListener("click", async () => {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                generatedFrenchUrl
+            );
+
+            document
+                .getElementById("frenchStatus")
+                .textContent =
+                "Copied.";
+
+        } catch {
+
+            document
+                .getElementById("frenchStatus")
+                .textContent =
+                "Unable to copy.";
+
+        }
+    });
+
+</script>
+
+</body>
+</html>
