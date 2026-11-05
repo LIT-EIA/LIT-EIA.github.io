@@ -51,9 +51,12 @@
           <img src="CollegeLogo.png" alt="College Logo" class="header-logo">
           <h1>Virtual Assistant</h1>
         </div>
-        <nav class="header-nav" aria-label="Language selection">
-          <div id="language"><a href="assistantFR.html" lang="fr" class="lang-switch" data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-French">Français</a></div>
-        </nav>
+        <div class="header-actions">
+          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()" aria-label="Clear all chat messages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg><span>Clear Chat</span></button>
+          <nav class="header-nav" aria-label="Language selection">
+            <div id="language"><a href="assistantFR.html" lang="fr" class="lang-switch" data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-French">Français</a></div>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -104,7 +107,6 @@
       <aside class="sidebar" aria-label="Suggested questions panel">
         <div class="sidebar-header">
           <h2>Most frequent questions</h2>
-          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()" aria-label="Clear all chat messages">Clear Chat</button>
         </div>
         <div class="sidebar-content">
           <div id="built-in-questions" class="quick-actions">

@@ -50,8 +50,13 @@ var searchModel = {
   avgDocLength: 0,         // Average document length
   termDocFreq: {},         // How many docs contain each term
   termPositions: {},       // Term positions in each doc
+  wordFreq: {},            // Every known word before stemming, for typo correction
   numDocs: 0
 };
+
+// Concept groups (synonyms) from qaData.concepts, pre-processed into keyword phrases
+var conceptPhrases = [];   // { terms: [...], group: n }, longest phrases first
+var EXPANSION_WEIGHT = 0.5; // A synonym match counts for half of a literal match
 
 // ============================================================================
 // CONFIGURATION
@@ -97,6 +102,7 @@ function buildSearchModel() {
   searchModel.docLength = [];
   searchModel.termDocFreq = {};
   searchModel.termPositions = {};
+  searchModel.wordFreq = {};
   searchModel.numDocs = questions.length;
 
   var totalLength = 0;
@@ -114,6 +120,7 @@ function buildSearchModel() {
     // Weight question text more heavily (3x) than answer
     var weightedText = questionText + ' ' + questionText + ' ' + questionText + ' ' + answerPlainText;
     var keywords = extractKeywords(weightedText);
+    addToVocabulary(questionText + ' ' + answerPlainText);
 
     searchModel.documents.push({
       index: i,
@@ -142,65 +149,253 @@ function buildSearchModel() {
   }
 
   searchModel.avgDocLength = totalLength / searchModel.numDocs;
+  buildConceptIndex();
   searchModel.isReady = true;
 
   console.log('BM25 index ready with ' + searchModel.numDocs + ' documents, avg length: ' + searchModel.avgDocLength.toFixed(1));
 }
 
 /**
- * Calculate BM25 score for a document given query terms
- * BM25 parameters: k1 = 1.5 (term frequency saturation), b = 0.75 (length normalization)
- * Enhanced with phrase proximity bonus
+ * Pre-process the "concepts" groups from qaData.js into keyword phrases,
+ * using the same normalization/stemming as the search index
  */
-function calculateBM25Score(docIndex, queryTerms) {
+function buildConceptIndex() {
+  conceptPhrases = [];
+  var groups = (typeof qaData !== 'undefined' && qaData.concepts) || [];
+  var seen = {};
+
+  for (var g = 0; g < groups.length; g++) {
+    for (var p = 0; p < groups[g].length; p++) {
+      addToVocabulary(groups[g][p]);
+      var terms = extractKeywords(groups[g][p]);
+      var key = g + ':' + terms.join(' ');
+      if (terms.length > 0 && !seen[key]) {
+        seen[key] = true;
+        conceptPhrases.push({ terms: terms, group: g });
+      }
+    }
+  }
+
+  // Longest phrases first so "reset password" is detected before "password"
+  conceptPhrases.sort(function (a, b) { return b.terms.length - a.terms.length; });
+}
+
+/**
+ * Record the words of a text (before stemming) so typos can be corrected
+ * against real words from the questions, answers and concepts
+ */
+function addToVocabulary(text) {
+  var words = normalizeText(text).split(/\s+/);
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i].replace(/^['-]+|['-]+$/g, '');
+    if (word.length > 2 && !stopWords.has(word)) {
+      searchModel.wordFreq[word] = (searchModel.wordFreq[word] || 0) + 1;
+    }
+  }
+}
+
+/**
+ * Edit distance (Damerau-Levenshtein, optimal string alignment): insertions,
+ * deletions, substitutions and swapped neighbours each count as one edit.
+ * Gives up early and returns maxDist + 1 once the distance exceeds maxDist.
+ */
+function editDistance(a, b, maxDist) {
+  if (Math.abs(a.length - b.length) > maxDist) return maxDist + 1;
+
+  var prevPrev = [];
+  var prev = [];
+  for (var j = 0; j <= b.length; j++) prev[j] = j;
+
+  for (var i = 1; i <= a.length; i++) {
+    var curr = [i];
+    var rowMin = i;
+    for (var j = 1; j <= b.length; j++) {
+      var cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+        curr[j] = Math.min(curr[j], prevPrev[j - 2] + 1);
+      }
+      rowMin = Math.min(rowMin, curr[j]);
+    }
+    if (rowMin > maxDist) return maxDist + 1;
+    prevPrev = prev;
+    prev = curr;
+  }
+  return prev[b.length];
+}
+
+/**
+ * Replace misspelled query words with the closest known word, allowing a
+ * little room for typos: 1 edit for 5-8 letters, 2 for longer words, and for
+ * 4-letter words only a swap of two neighbouring letters ("tset" -> "test") or
+ * one missing letter ("pase" -> "passe").
+ * Words that are known, or whose stem is indexed, are left untouched.
+ * Ties go to the most frequent word.
+ */
+function correctTypos(queryText) {
+  var words = normalizeText(queryText).split(/\s+/);
+
+  return words.map(function (word) {
+    var stem = extractKeywords(word)[0];
+    if (!stem || searchModel.wordFreq[word] || searchModel.termDocFreq[stem]) return word;
+
+    var maxDist = word.length >= 9 ? 2 : (word.length >= 4 ? 1 : 0);
+    if (maxDist === 0) return word;
+    var shortWord = word.length === 4;
+    var sortedWord = word.split('').sort().join('');
+
+    var best = word;
+    var bestDist = maxDist + 1;
+    var bestFreq = -1;
+    for (var candidate in searchModel.wordFreq) {
+      var dist = editDistance(word, candidate, maxDist);
+      if (dist > maxDist) continue;
+      var isSwap = candidate.length === 4 && candidate.split('').sort().join('') === sortedWord;
+      if (shortWord && !isSwap && candidate.length !== 5) continue;
+      var freq = searchModel.wordFreq[candidate];
+      if (dist < bestDist || (dist === bestDist && freq > bestFreq)) {
+        best = candidate;
+        bestDist = dist;
+        bestFreq = freq;
+      }
+    }
+
+    if (best !== word) console.log('Typo correction:', word, '->', best);
+    return best;
+  }).join(' ');
+}
+
+/**
+ * Split a query into "slots". A slot is either a concept phrase found in the
+ * query (e.g. "mot de passe") or a single remaining keyword. Each slot carries
+ * the other phrases of its concept groups as expansions (synonyms).
+ * Returns array of { terms: [...], expansions: [[...], ...] }
+ */
+function analyzeQuery(queryText) {
+  var queryTerms = extractKeywords(correctTypos(queryText));
+  var used = queryTerms.map(function () { return false; });
+  var slots = [];
+
+  for (var p = 0; p < conceptPhrases.length; p++) {
+    var phrase = conceptPhrases[p];
+    var key = phrase.terms.join(' ');
+
+    // Same phrase already detected through another group: just add the group
+    var existing = slots.filter(function (s) { return s.key === key; })[0];
+    if (existing) {
+      if (existing.groups.indexOf(phrase.group) < 0) existing.groups.push(phrase.group);
+      continue;
+    }
+
+    // All phrase terms must be present in the query (any order)
+    var positions = [];
+    for (var t = 0; t < phrase.terms.length; t++) {
+      var pos = -1;
+      for (var j = 0; j < queryTerms.length; j++) {
+        if (!used[j] && queryTerms[j] === phrase.terms[t] && positions.indexOf(j) < 0) { pos = j; break; }
+      }
+      if (pos < 0) break;
+      positions.push(pos);
+    }
+    if (positions.length !== phrase.terms.length) continue;
+
+    positions.forEach(function (j) { used[j] = true; });
+    slots.push({ key: key, terms: phrase.terms, groups: [phrase.group] });
+  }
+
+  for (var i = 0; i < queryTerms.length; i++) {
+    if (!used[i]) slots.push({ key: queryTerms[i], terms: [queryTerms[i]], groups: [] });
+  }
+
+  slots.forEach(function (slot) {
+    var seenExp = {};
+    seenExp[slot.key] = true;
+    slot.expansions = [];
+    conceptPhrases.forEach(function (phrase) {
+      var expKey = phrase.terms.join(' ');
+      if (slot.groups.indexOf(phrase.group) >= 0 && !seenExp[expKey]) {
+        seenExp[expKey] = true;
+        slot.expansions.push(phrase.terms);
+      }
+    });
+  });
+
+  return slots;
+}
+
+/**
+ * BM25 score of a single term in a document (0 if absent)
+ * BM25 parameters: k1 = 1.5 (term frequency saturation), b = 0.75 (length normalization)
+ */
+function bm25TermScore(docIndex, term) {
   var k1 = 1.5;  // Controls term frequency saturation
   var b = 0.75;  // Controls length normalization
 
-  var doc = searchModel.documents[docIndex];
-  var docLen = searchModel.docLength[docIndex];
-  var avgLen = searchModel.avgDocLength;
-  var N = searchModel.numDocs;
+  var termFreq = searchModel.documents[docIndex].termFreq[term] || 0;
+  if (termFreq === 0) return 0;
 
+  var docLen = searchModel.docLength[docIndex];
+  var N = searchModel.numDocs;
+  var docFreq = searchModel.termDocFreq[term] || 0;
+  var idf = Math.log((N - docFreq + 0.5) / (docFreq + 0.5) + 1);
+
+  var numerator = termFreq * (k1 + 1);
+  var denominator = termFreq + k1 * (1 - b + b * (docLen / searchModel.avgDocLength));
+  return idf * (numerator / denominator);
+}
+
+/**
+ * BM25 score of a phrase: sum of its terms, or 0 unless every term is present
+ */
+function bm25PhraseScore(docIndex, terms) {
+  var total = 0;
+  for (var i = 0; i < terms.length; i++) {
+    var s = bm25TermScore(docIndex, terms[i]);
+    if (s === 0) return 0;
+    total += s;
+  }
+  return total;
+}
+
+/**
+ * Calculate BM25 score for a document given query slots (see analyzeQuery).
+ * A slot matches literally, or through its synonyms at EXPANSION_WEIGHT.
+ */
+function calculateBM25Score(docIndex, slots) {
   var score = 0;
   var matchedTerms = 0;
-  var termScores = {}; // Track individual term scores
 
-  for (var i = 0; i < queryTerms.length; i++) {
-    var term = queryTerms[i];
-    var termFreq = doc.termFreq[term] || 0;
+  for (var i = 0; i < slots.length; i++) {
+    var slotScore = bm25PhraseScore(docIndex, slots[i].terms);
 
-    if (termFreq > 0) {
+    // No literal match: fall back on synonyms (each matching synonym adds up)
+    if (slotScore === 0) {
+      for (var e = 0; e < slots[i].expansions.length; e++) {
+        slotScore += EXPANSION_WEIGHT * bm25PhraseScore(docIndex, slots[i].expansions[e]);
+      }
+    }
+
+    if (slotScore > 0) {
       matchedTerms++;
-
-      // Calculate IDF for this term
-      var docFreq = searchModel.termDocFreq[term] || 0;
-      var idf = Math.log((N - docFreq + 0.5) / (docFreq + 0.5) + 1);
-
-      // Calculate BM25 component for this term
-      var numerator = termFreq * (k1 + 1);
-      var denominator = termFreq + k1 * (1 - b + b * (docLen / avgLen));
-
-      var termScore = idf * (numerator / denominator);
-      termScores[term] = termScore;
-      score += termScore;
+      score += slotScore;
     }
   }
 
   // Progressive match bonuses based on how many terms matched
-  if (queryTerms.length === 2 && matchedTerms === 2) {
+  if (slots.length === 2 && matchedTerms === 2) {
     score *= 2.0; // Strong boost for matching both terms in 2-word query
-  } else if (queryTerms.length === 3 && matchedTerms === 3) {
+  } else if (slots.length === 3 && matchedTerms === 3) {
     score *= 2.5; // Even stronger boost for matching all 3 terms
-  } else if (queryTerms.length > 3 && matchedTerms === queryTerms.length) {
+  } else if (slots.length > 3 && matchedTerms === slots.length) {
     score *= 2.0; // Boost for complete matches in longer queries
-  } else if (matchedTerms > 1 && matchedTerms >= queryTerms.length * 0.67) {
+  } else if (matchedTerms > 1 && matchedTerms >= slots.length * 0.67) {
     score *= 1.3; // Small boost for matching most terms
   }
 
   return {
     score: score,
     matchedTerms: matchedTerms,
-    matchRatio: queryTerms.length > 0 ? matchedTerms / queryTerms.length : 0
+    matchRatio: slots.length > 0 ? matchedTerms / slots.length : 0
   };
 }
 
@@ -214,19 +409,21 @@ function searchBM25(queryText) {
     return [];
   }
 
-  // Extract keywords from query
-  var queryTerms = extractKeywords(queryText);
-  if (queryTerms.length === 0) return [];
+  // Split query into keyword/concept slots
+  var slots = analyzeQuery(queryText);
+  if (slots.length === 0) return [];
 
   // Debug: Log extracted keywords
   console.log('Search query:', queryText);
-  console.log('Extracted keywords:', queryTerms);
+  console.log('Query slots:', slots.map(function (s) {
+    return s.key + (s.expansions.length ? ' (+' + s.expansions.length + ' synonyms)' : '');
+  }));
 
   var results = [];
 
   // Score each document
   for (var i = 0; i < searchModel.documents.length; i++) {
-    var result = calculateBM25Score(i, queryTerms);
+    var result = calculateBM25Score(i, slots);
 
     // Only include documents that match at least one term
     if (result.score > 0) {
@@ -324,8 +521,8 @@ function normalizeText(text) {
   return text
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
-    .replace(/[''`]/g, "'")
-    .replace(/[^\w\s'-]/g, ' ')
+    .replace(/['‘’`]/g, ' ') // Apostrophes split words (French elision: l'inscription -> inscription)
+    .replace(/[^\w\s-]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -692,13 +889,13 @@ function displayIntroMessage() {
   var message = document.createElement("p");
 
   if (isEnglish) {
-    message.innerText = "Hello, I am Sam, your Saba Virtual Assistant! I'm programmed to answer your Saba-related inquiries based on a list of most common questions.\n\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the List all questions button, located directly in the \"Suggested Questions\" box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\n\nOnce you find the appropriate question in the \"Suggested Questions\" box, you can select it and I will answer in this chat box.";
+    message.innerText = "Hello, I am Sam, your Saba Virtual Assistant! I'm programmed to answer your Saba-related inquiries based on a list of most common questions.\nTo begin, you can filter my questions in three ways:\n\n1) To find all predetermined questions, select the List all questions button, located directly in the \"Suggested Questions\" box on the right\n\n2) To filter the questions by keyword, enter one or several keywords or an enquiry in the message field below.\n\n3) To filter the questions by role, select the role related to your question directly in this bubble.\nOnce you find the appropriate question in the \"Suggested Questions\" box, you can select it and I will answer in this chat box.";
   } else {
-    message.innerText = "Bonjour, je suis Sam, votre assistant virtuel Saba! Je suis programmé pour répondre à vos demandes de renseignements concernant Saba en me basant sur une liste de questions les plus courantes\n\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n 1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\n\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
+    message.innerText = "Bonjour, je suis Sam, votre assistant virtuel Saba! Je suis programmé pour répondre à vos demandes de renseignements concernant Saba en me basant sur une liste de questions les plus courantes\nPour commencer, vous pouvez filtrer mes questions de trois façons:\n\n 1) Pour trouver toutes les questions prédéterminées, sélectionnez le bouton Afficher toutes les questions, situé dans la boîte « Questions suggérées » à droite.\n\n2) Pour filtrer les questions par mot-clé, saisissez un ou plusieurs mots-clés ou une question dans le champ de message ci-dessous.\n\n3) Pour filtrer les questions par rôle, sélectionnez le rôle lié à votre question directement dans cette bulle.\nQuand vous aurez trouvé la question appropriée dans la boîte « Questions suggérées », vous pourrez la sélectionner et je vous répondrai dans cette boîte de dialogue.";
   }
 
   askUserType(message);
-  assistantTypes(message, false, true); // Skip focus for intro message
+  assistantTypes(message, false, true, false); // Skip focus and support message for intro message
 }
 
 /**
@@ -788,8 +985,8 @@ function sendMessage() {
     // Use BM25 search for accurate ranking
     var searchResults = searchBM25(textboxMessage);
 
-    // Extract query terms for filtering
-    var queryTerms = extractKeywords(textboxMessage);
+    // Query slots (keywords/concept phrases) for filtering
+    var queryTerms = analyzeQuery(textboxMessage);
 
     // Smarter minimum match requirements and score thresholds
     var minMatchRatio;
@@ -887,7 +1084,7 @@ function sendMessage() {
       showingAllQuestions = false;
       updateToggleButtonText();
       showAllQuestionsButton();
-      assistantTypes(message, false);
+      assistantTypes(message, true);
     } else {
       var message = document.createElement("p");
 
@@ -897,7 +1094,7 @@ function sendMessage() {
         message.innerText = "Je suis désolé, je n'ai trouvé aucune information à ce sujet. Veuillez essayer un autre mot-clé ou une autre question.";
       }
 
-      assistantTypes(message, false);
+      assistantTypes(message, true);
     }
   }
 
@@ -1238,8 +1435,9 @@ function userTypes(elmt) {
  * @param {HTMLElement} elmt - Message element to display
  * @param {boolean} withCloseMessage - Whether to include close/survey message
  * @param {boolean} skipFocus - Whether to skip auto-focusing (used for intro message)
+ * @param {boolean} withSupportMessage - Whether to include the "more assistance" message
  */
-function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
+function assistantTypes(elmt, withCloseMessage, skipFocus = false, withSupportMessage = true) {
   elmt.classList.add("bubble", "assistant", "inlineblock");
 
   var typingBubble = document.getElementById("typingBubble");
@@ -1282,15 +1480,15 @@ function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
       td2.appendChild(elmt);
       cell.appendChild(td2);
 
-      if (withCloseMessage) {
-        add_closeMessage(td2);
+      if (withSupportMessage || withCloseMessage) {
+        add_closeMessage(td2, withCloseMessage);
       }
 
       scrollDownOfDiv("conversationDiv");
 
       // Only set focus if not skipped (e.g., not the intro message)
       if (!skipFocus) {
-        td2.setAttribute("tabindex", "0");
+        td2.setAttribute("tabindex", "-1");
         td2.focus();
         td2.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -1301,9 +1499,11 @@ function assistantTypes(elmt, withCloseMessage, skipFocus = false) {
 }
 
 /**
- * Add closing message with survey link
+ * Add closing message with support link, and optionally the survey link
+ * @param {HTMLElement} tdElemt - Cell to append the message to
+ * @param {boolean} withSurvey - Whether to include the survey link
  */
-function add_closeMessage(tdElemt) {
+function add_closeMessage(tdElemt, withSurvey) {
   var message = document.createElement("p");
   message.classList.add("bubble", "assistant", "inlineblock");
 
@@ -1326,6 +1526,11 @@ function add_closeMessage(tdElemt) {
     message.append(" to get in touch with one of the Learning Infrastructure team's resolvers.");
   } else {
     message.append(" pour entrer en contact avec l'un des agents de l'équipe Infrastructure de l'apprentissage.");
+  }
+
+  if (!withSurvey) {
+    tdElemt.appendChild(message);
+    return;
   }
 
   // Add survey link

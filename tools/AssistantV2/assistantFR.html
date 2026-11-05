@@ -32,9 +32,12 @@
           <img src="CollegeLogo.png" alt="Logo du collège" class="header-logo">
           <h1>Assistant virtuel</h1>
         </div>
-        <nav class="header-nav" aria-label="Sélection de la langue">
-          <div id="language"><a href="assistantEN.html" lang="en" class="lang-switch" data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-English">English</a></div>
-        </nav>
+        <div class="header-actions">
+          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()" aria-label="Effacer tous les messages du chat"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg><span>Effacer le chat</span></button>
+          <nav class="header-nav" aria-label="Sélection de la langue">
+            <div id="language"><a href="assistantEN.html" lang="en" class="lang-switch" data-gc-analytics-customclick="ESDC-EDSC:SABAAI:Toggle-English">English</a></div>
+          </nav>
+        </div>
       </div>
     </header>
     <main id="main-content" class="main-content">
@@ -62,7 +65,6 @@
       <aside class="sidebar" aria-label="Panneau des questions suggérées">
         <div class="sidebar-header">
           <h2>Questions les plus fréquentes</h2>
-          <button type="button" id="clear-chat-btn" class="clear-chat-btn" onclick="clearChat()" aria-label="Effacer tous les messages du chat">Effacer le chat</button>
         </div>
         <div class="sidebar-content">
           <div id="built-in-questions" class="quick-actions">
