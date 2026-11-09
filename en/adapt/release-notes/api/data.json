@@ -3,6 +3,24 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Improved] Upgraded project dependencies to address security vulnerabilities and incorporate the latest improvements",
+                "[Improved] Improved SVG thumbnail support by displaying the actual SVG image as the thumbnail instead of a generic placeholder image",
+                "[Improved] Added the ability to delete assets directly from the asset upload page, streamlining asset management and helping users remove unwanted or duplicate uploads without leaving the upload workflow",
+                "[Fixed] Added a validation and cleanup process for course hierarchies prior to publishing to prevent orphaned components caused by rare synchronization issues",
+                "[Fixed] Enhanced course search filtering by escaping special regular expression characters, resolving issues with searches containing parentheses"
+            ], 
+            "components": [
+                "[Fixed] Fixed an issue where reordering Talk Characters could disrupt character mappings in Talk Messages, causing message bubbles to be associated with the wrong character",
+                "[Fixed] Fixed an accessibility issue in Hot Grid popups where focusable links and controls in subsequent popup pages were not correctly included in the keyboard navigation sequence. This could cause screen readers to skip interactive elements after navigating between popup items"
+            ]
+        },
+        "pub_date": "2026-12-01T12:00:00Z",
+        "version": "1.5.7"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[New] Export to document button that allows users to export their entire Adapt course into a structured Microsoft Word (.docx) document",
                 "[New] Active user status counts are now displayed in the User Management page"
             ], 
