@@ -3,6 +3,24 @@
         "name": "",
         "notes": {
             "authoring": [
+                "[Amélioré] Mise à niveau des dépendances du projet afin de corriger les vulnérabilités de sécurité et d’intégrer les dernières améliorations",
+                "[Amélioré] Amélioration de la prise en charge des miniatures SVG en affichant l’image SVG réelle plutôt qu’une image de remplacement générique",
+                "[Amélioré] Ajout de la possibilité de supprimer des ressources directement depuis la page de téléversement, simplifiant leur gestion et permettant de retirer facilement les doublons ou les fichiers non désirés sans quitter le processus de téléversement",
+                "[Corrigé] Ajout d’un processus de validation et de nettoyage de la hiérarchie des cours avant la publication afin de prévenir les composants orphelins causés par de rares problèmes de synchronisation",
+                "[Corrigé] Amélioration du filtre de recherche des cours par l’échappement des caractères spéciaux d’expressions régulières, corrigeant les problèmes de recherche liés aux parenthèses"
+            ], 
+            "components": [
+                "[Corrigé] Correction d’un problème où la réorganisation des Personnages de conversation pouvait désynchroniser les associations dans les Messages de conversation, entraînant l’affichage incorrect des bulles de message",
+                "[Corrigé] Correction d’un problème d’accessibilité dans les fenêtres contextuelles de la Grille d’images cliquables où les liens et contrôles interactifs des pages suivantes n’étaient pas correctement intégrés à l’ordre de navigation au clavier. Dans certains cas, les lecteurs d’écran pouvaient ignorer ces éléments après la navigation entre les différentes fenêtres contextuelles."
+            ]
+        },
+        "pub_date": "2026-12-01T12:00:00Z",
+        "version": "1.5.7"
+    },
+    {
+        "name": "",
+        "notes": {
+            "authoring": [
                 "[Nouveau] Bouton « Exporter le document » qui permet aux utilisateurs d’exporter l’intégralité de leur cours Adapt dans un document Microsoft Word (.docx) structuré",
                 "[Nouveau] Le nombre d'utilisateurs actifs s'affiche désormais sur la page Gestion des utilisateurs"
             ], 
