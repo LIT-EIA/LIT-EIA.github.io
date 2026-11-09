@@ -10,7 +10,7 @@
                 "[Corrigé] Amélioration du filtre de recherche des cours par l’échappement des caractères spéciaux d’expressions régulières, corrigeant les problèmes de recherche liés aux parenthèses"
             ], 
             "components": [
-                "[Corrigé] Correction d’un problème où la réorganisation des Personnages de conversation pouvait désynchroniser les associations dans les Messages de conversation, entraînant l’affichage incorrect des bulles de message",
+                "[Corrigé] Correction d’un problème où la réorganisation des Personnages du composant de dialogue pouvait désynchroniser les associations dans les Messages du composant de dialogue, entraînant l’affichage incorrect des bulles de message",
                 "[Corrigé] Correction d’un problème d’accessibilité dans les fenêtres contextuelles de la Grille d’images cliquables où les liens et contrôles interactifs des pages suivantes n’étaient pas correctement intégrés à l’ordre de navigation au clavier. Dans certains cas, les lecteurs d’écran pouvaient ignorer ces éléments après la navigation entre les différentes fenêtres contextuelles."
             ]
         },
