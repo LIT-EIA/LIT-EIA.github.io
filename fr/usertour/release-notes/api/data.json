@@ -2,7 +2,7 @@
     {
       "name": "",
       "notes": {
-          "accessibility": [
+          "a11y": [
               "[Corrigé] Ordre de tabulation de l'éditeur entre les panneaux de détails du contenu et l'aperçu du contenu",
               "[Corrigé] Boutons composés uniquement d'une icône sans nom accessible dans l'éditeur, l'éditeur de contenu, les réglages et les pages Utilisateurs et Entreprises",
               "[Corrigé] Mise en page de l'éditeur et éditeurs de règles qui ne s'adaptaient pas lorsque l'interface est agrandie ou que le texte est grossi"
@@ -17,7 +17,7 @@
   {
       "name": "",
       "notes": {
-          "accessibility": [
+          "a11y": [
               "[Nouveau] Les parcours du SDK respectent les critères « Utilisable » des WCAG 2.x : focus maintenu dans les étapes, contournement vers le contenu, retour du focus à la fermeture et fermeture avec la touche Échap",
               "[Nouveau] Annonces pour lecteurs d'écran nommant l'élément ciblé par chaque étape, ainsi que des indications pour quitter (EN/FR)",
               "[Nouveau] Lanceurs accessibles au clavier, avec un indicateur de focus visible et une récupération lorsque le piège à focus d'une fenêtre modale de l'application hôte les saute",
@@ -40,7 +40,7 @@
   {
       "name": "",
       "notes": {
-          "accessibility": [
+          "a11y": [
               "[Nouveau] Titres de page propres à chaque écran, repère de contenu principal et lien d'accès direct au contenu dans l'application d'administration",
               "[Nouveau] Langue de la page synchronisée avec la langue d'interface choisie",
               "[Amélioré] Contraste des jetons de conception rehaussé pour respecter les critères WCAG 1.4.3 et 1.4.11, avec focus clavier visible sur les options de sélection et les info-bulles",
