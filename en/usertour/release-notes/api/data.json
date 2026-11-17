@@ -2,6 +2,77 @@
     {
         "name": "",
         "notes": {
+            "accessibility": [
+                "[Fixed] Builder tab order between the content detail panels and the content preview",
+                "[Fixed] Icon-only buttons missing accessible names across the builder, editor, settings, users and companies pages",
+                "[Fixed] Builder layout and rule editors not reflowing when the interface is zoomed or text is enlarged"
+            ],
+            "editor": [
+                "[Fixed] Missing translations on loading and save states for content, theme and project pages"
+            ]
+        },
+        "pub_date": "2026-11-16T12:00:00Z",
+        "version": "0.0.13"
+    },
+    {
+        "name": "",
+        "notes": {
+            "accessibility": [
+                "[New] SDK tours meet WCAG 2.x operable criteria: focus loop within steps, skip-to-content bypass, focus returned on close and Escape to dismiss",
+                "[New] Screen reader announcements naming each step's target element, plus exit hints (EN/FR)",
+                "[New] Keyboard-accessible launchers with a visible focus ring and recovery when a host modal's focus trap skips them",
+                "[New] Shadow-root rendering of SDK content so screen readers no longer treat each step as a new page",
+                "[New] Accessible keyboard reordering of flow steps and checklist items in the builder",
+                "[New] Per-environment launcher focus settings to match the host app's modal focus trap, with optional timing overrides",
+                "[New] Focus trap detection in the debug bookmarklet",
+                "[Fixed] Flow, launcher and checklist builder findings from the accessibility report, including inline validation messages announced to screen readers"
+            ],
+            "environment": [
+                "[New] Debug mode toggle in the bookmarklet, applied live without reloading the page",
+                "[New] Namespaced SDK debug loggers (content, launcher, iframe, conditions...) toggled from the bookmarklet",
+                "[Improved] Bookmarklet now built from source",
+                "[Removed] Unused iframe-sdk module"
+            ]
+        },
+        "pub_date": "2026-11-05T12:00:00Z",
+        "version": "0.0.12"
+    },
+    {
+        "name": "",
+        "notes": {
+            "accessibility": [
+                "[New] Per-route page titles, a main landmark and a skip-to-content link across the admin app",
+                "[New] Page language kept in sync with the selected UI language",
+                "[Improved] Design-token contrast raised to meet WCAG 1.4.3 / 1.4.11, with visible keyboard focus on select options and tooltips",
+                "[Improved] Labelled navigation, sidebars, forms, dialogs, tables and filters across auth, content, users, companies and settings pages",
+                "[Improved] Heading structure corrected to one h1 per page with consistent section headings",
+                "[Improved] Theme editor controls made keyboard and screen reader accessible"
+            ]
+        },
+        "pub_date": "2026-10-14T12:00:00Z",
+        "version": "0.0.11"
+    },
+    {
+        "name": "",
+        "notes": {
+            "editor": [
+                "[New] Full French translation of the admin interface, builder and editor",
+                "[Improved] Debug bookmarklet now served from the Usertour server instead of an external link",
+                "[Fixed] Favicon not loading due to an incorrect asset path"
+            ],
+            "iframe-sdk": [
+                "[Fixed] Cross-frame messages (element found, step complete, step actions) not reaching registered handlers"
+            ],
+            "environment": [
+                "[Improved] Start script and nginx configuration updates for serving the bookmarklet"
+            ]
+        },
+        "pub_date": "2026-09-10T12:00:00Z",
+        "version": "0.0.10"
+    },
+    {
+        "name": "",
+        "notes": {
             "editor": [
                 "[Improved] Usertour Helper embed link updated to force cache invalidation"
             ]

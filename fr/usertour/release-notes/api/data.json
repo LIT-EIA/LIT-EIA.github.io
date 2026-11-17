@@ -1,4 +1,75 @@
 [
+    {
+      "name": "",
+      "notes": {
+          "accessibility": [
+              "[Corrigé] Ordre de tabulation de l'éditeur entre les panneaux de détails du contenu et l'aperçu du contenu",
+              "[Corrigé] Boutons composés uniquement d'une icône sans nom accessible dans l'éditeur, l'éditeur de contenu, les réglages et les pages Utilisateurs et Entreprises",
+              "[Corrigé] Mise en page de l'éditeur et éditeurs de règles qui ne s'adaptaient pas lorsque l'interface est agrandie ou que le texte est grossi"
+          ],
+          "editor": [
+              "[Corrigé] Traductions manquantes dans les états de chargement et d'enregistrement des pages de contenu, de thème et de projet"
+          ]
+      },
+      "pub_date": "2026-11-16T12:00:00Z",
+      "version": "0.0.13"
+  },
+  {
+      "name": "",
+      "notes": {
+          "accessibility": [
+              "[Nouveau] Les parcours du SDK respectent les critères « Utilisable » des WCAG 2.x : focus maintenu dans les étapes, contournement vers le contenu, retour du focus à la fermeture et fermeture avec la touche Échap",
+              "[Nouveau] Annonces pour lecteurs d'écran nommant l'élément ciblé par chaque étape, ainsi que des indications pour quitter (EN/FR)",
+              "[Nouveau] Lanceurs accessibles au clavier, avec un indicateur de focus visible et une récupération lorsque le piège à focus d'une fenêtre modale de l'application hôte les saute",
+              "[Nouveau] Rendu du contenu du SDK dans un shadow root, pour que les lecteurs d'écran ne traitent plus chaque étape comme une nouvelle page",
+              "[Nouveau] Réorganisation accessible au clavier des étapes de parcours et des éléments de listes de tâches dans l'éditeur",
+              "[Nouveau] Réglages du focus des lanceurs par environnement, adaptés au piège à focus des fenêtres modales de l'application hôte, avec délais personnalisables",
+              "[Nouveau] Détection des pièges à focus dans l'applisignet de débogage",
+              "[Corrigé] Problèmes relevés dans le rapport d'accessibilité pour l'éditeur de parcours, de lanceurs et de listes de tâches, y compris des messages de validation en ligne annoncés aux lecteurs d'écran"
+          ],
+          "environment": [
+              "[Nouveau] Bascule du mode débogage dans l'applisignet, appliquée en direct sans recharger la page",
+              "[Nouveau] Journaux de débogage du SDK par espace de noms (contenu, lanceur, iframe, conditions...) activables depuis l'applisignet",
+              "[Amélioré] L'applisignet est maintenant compilé à partir du code source",
+              "[Supprimé] Module iframe-sdk inutilisé"
+          ]
+      },
+      "pub_date": "2026-11-05T12:00:00Z",
+      "version": "0.0.12"
+  },
+  {
+      "name": "",
+      "notes": {
+          "accessibility": [
+              "[Nouveau] Titres de page propres à chaque écran, repère de contenu principal et lien d'accès direct au contenu dans l'application d'administration",
+              "[Nouveau] Langue de la page synchronisée avec la langue d'interface choisie",
+              "[Amélioré] Contraste des jetons de conception rehaussé pour respecter les critères WCAG 1.4.3 et 1.4.11, avec focus clavier visible sur les options de sélection et les info-bulles",
+              "[Amélioré] Étiquettes ajoutées à la navigation, aux barres latérales, aux formulaires, aux boîtes de dialogue, aux tableaux et aux filtres des pages d'authentification, de contenu, d'utilisateurs, d'entreprises et de réglages",
+              "[Amélioré] Structure des titres corrigée : un seul h1 par page et des titres de section cohérents",
+              "[Amélioré] Commandes de l'éditeur de thème rendues accessibles au clavier et aux lecteurs d'écran"
+          ]
+      },
+      "pub_date": "2026-10-14T12:00:00Z",
+      "version": "0.0.11"
+  },
+  {
+      "name": "",
+      "notes": {
+          "editor": [
+              "[Nouveau] Traduction française complète de l'interface d'administration, de l'éditeur et de l'éditeur de contenu",
+              "[Amélioré] L'applisignet de débogage est maintenant servi par le serveur Usertour plutôt que par un lien externe",
+              "[Corrigé] Favicon qui ne se chargeait pas en raison d'un chemin de ressource incorrect"
+          ],
+          "iframe-sdk": [
+              "[Corrigé] Messages entre cadres (élément trouvé, étape terminée, actions d'étape) qui n'atteignaient pas les gestionnaires enregistrés"
+          ],
+          "environment": [
+              "[Amélioré] Mise à jour du script de démarrage et de la configuration nginx pour servir l'applisignet"
+          ]
+      },
+      "pub_date": "2026-09-10T12:00:00Z",
+      "version": "0.0.10"
+  },
   {
     "name": "",
     "notes": {
